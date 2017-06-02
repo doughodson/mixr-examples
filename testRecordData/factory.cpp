@@ -41,7 +41,7 @@ oe::base::Object* factory(const std::string& name)
     if (obj == nullptr) obj = oe::xrecorder::factory(name);
     if (obj == nullptr) obj = oe::xpanel::factory(name);
 
-    // OpenEaagles packages
+    // MXRP packages
     if (obj == nullptr) obj = oe::simulation::factory(name);
     if (obj == nullptr) obj = oe::instruments::factory(name);
     if (obj == nullptr) obj = oe::iodevice::factory(name);

@@ -246,7 +246,7 @@ bool ZeroMQHandler::sendData(const char* const packet, const int size)
    if (socket == nullptr || !ready) return 0;
 
    // We set the flags here.  We are not handling multi-part messages since
-   // I have not found a good way to handle them in OpenEaagles yet. But,
+   // I have not found a good way to handle them in MXRP yet. But,
    // our message buffers should not be too large so it will be OK for a
    // while.
    int flags = 0;
@@ -273,7 +273,7 @@ unsigned int ZeroMQHandler::recvData(char* const packet, const int maxSize)
    if (dontWait || noWait) flags = ZMQ_DONTWAIT;
 
    // Send the message.  The return value will be the number of bytes or
-   // -1 on error.  Since we really do not handle errors in OpenEaagles
+   // -1 on error.  Since we really do not handle errors in MXRP
    // NetHandler 0 will be returned.
    int result = zmq_recv(socket, packet, maxSize, flags);
 

@@ -2,8 +2,7 @@
 // This is a simple map page example that will allow the user to see players on the red / blue side, and show
 // examples of how to change ranges, display lat/lon lines, and limit where you can move the map.  It is 
 // not intended to be a complete example, but it can be used as a good template to discern how to set up a map
-// to read in an OpenEaagles scenario.  Any questions, please direct them to the OpenEaagles forum at
-// www.openeaagles.org
+// to read in a scenario.
 // --------------------------------------------------------------------------------------------------------------
 ( MapTestStation 
 

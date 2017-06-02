@@ -1,7 +1,7 @@
 
 #include "MainWindow.hpp"
 #include "Station.hpp"
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
 #include <QTimer>
 #include <sstream>

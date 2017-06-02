@@ -5,9 +5,9 @@ PGM = mainNonRT1
 
 OBJS = main.o
 
-LDFLAGS += -loe_models -loe_simulation -lJSBSim
-LDFLAGS += -loe_instruments -loe_terrain
-LDFLAGS += -loe_base
+LDFLAGS += -lmxrp_models -lmxrp_simulation -lJSBSim
+LDFLAGS += -lmxrp_instruments -lmxrp_terrain
+LDFLAGS += -lmxrp_base
 LDFLAGS += -lrt -lX11
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lpthread

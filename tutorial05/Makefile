@@ -5,7 +5,7 @@ PGM = tutorial05
 
 OBJS = main.o MyObj.o
 
-LDFLAGS += -loe_base -lpthread -lrt
+LDFLAGS += -lmxrp_base -lpthread -lrt
 
 all: $(PGM)
 

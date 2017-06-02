@@ -1,7 +1,7 @@
 
 #include "PlayerItem.hpp"
 #include "MapItem.hpp"
-#include "openeaagles/models/player/Player.hpp"
+#include "mxrp/models/player/Player.hpp"
 
 #include <QPainter>
 #include <sstream>

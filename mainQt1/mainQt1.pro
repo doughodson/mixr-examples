@@ -1,17 +1,17 @@
 
 # path to framework
-OE_ROOT = $$(OE_ROOT)
-isEmpty(OE_ROOT) OE_ROOT = $$PWD/../../OpenEaagles
-message(OE_ROOT = $${OE_ROOT})
+MXRP_ROOT = $$(MXRP_ROOT)
+isEmpty(MXRP_ROOT) MXRP_ROOT = $$PWD/../../mxrp
+message(MXRP_ROOT = $${MXRP_ROOT})
 
 # version of Visual Studio, if applicable
 MS_VER = vs2013-32
 #MS_VER = vs2015-32
 
 # path to 3rd party libraries
-OE_3RD_PARTY_ROOT = $$(OE_3RD_PARTY_ROOT)
-isEmpty(OE_3RD_PARTY_ROOT) OE_3RD_PARTY_ROOT = $$PWD/../../OpenEaagles3rdParty
-message(OE_3RD_PARTY_ROOT = $${OE_3RD_PARTY_ROOT})
+MXRP_3RD_PARTY_ROOT = $$(MXRP_3RD_PARTY_ROOT)
+isEmpty(MXRP_3RD_PARTY_ROOT) MXRP_3RD_PARTY_ROOT = $$PWD/../../mxrp-3rdparty
+message(MXRP_3RD_PARTY_ROOT = $${MXRP_3RD_PARTY_ROOT})
 
 QT += core widgets
 
@@ -32,7 +32,7 @@ OTHER_FILES += configs/*.epp
 
 # include paths
 INCLUDEPATH += \
-   $${OE_ROOT}/include
+   $${MXRP_ROOT}/include
 
 # default location for intermediate files
 UI_DIR = ./tmp/ui
@@ -43,16 +43,16 @@ RCC_DIR = ./tmp/rcc
 # libraries
 # Windows release libraries
 win32:CONFIG(release, debug|release): LIBS +=        \
-    # openeaagles
-    -L$${OE_ROOT}/lib/                               \
-    -L$${OE_3RD_PARTY_ROOT}/lib/$${MS_VER}           \
-    -loe_interop_dis                                 \
-    -loe_interop                                     \
-    -loe_simulation                                  \
-    -loe_models                                      \
-    -loe_terrain                                     \
-    -loe_otw                                         \
-    -loe_base                                        \
+    # mxrp
+    -L$${MXRP_ROOT}/lib/                             \
+    -L$${MXRP_3RD_PARTY_ROOT}/lib/$${MS_VER}         \
+    -lmxrp_interop_dis                               \
+    -lmxrp_interop                                   \
+    -lmxrp_simulation                                \
+    -lmxrp_models                                    \
+    -lmxrp_terrain                                   \
+    -lmxrp_otw                                       \
+    -lmxrp_base                                      \
     -lccl_lib                                        \
     -ljsbsim                                         \
     # system
@@ -61,16 +61,16 @@ win32:CONFIG(release, debug|release): LIBS +=        \
 
 # Windows debug libraries
 else:win32:CONFIG(debug, debug|release): LIBS +=        \
-    # openeaagles
-    -L$${OE_ROOT}/lib/                                  \
-    -L$${OE_3RD_PARTY_ROOT}/lib/$${MS_VER}              \
-    -loe_interop_dis_d                                  \
-    -loe_interop_d                                      \
-    -loe_simulation_d                                   \
-    -loe_models_d                                       \
-    -loe_terrain_d                                      \
-    -loe_otw_d                                          \
-    -loe_base_d                                         \
+    # mxrp
+    -L$${MXRP_ROOT}/lib/                                \
+    -L$${MXRP_3RD_PARTY_ROOT}/lib/$${MS_VER}            \
+    -lmxrp_interop_dis_d                                \
+    -lmxrp_interop_d                                    \
+    -lmxrp_simulation_d                                 \
+    -lmxrp_models_d                                     \
+    -lmxrp_terrain_d                                    \
+    -lmxrp_otw_d                                        \
+    -lmxrp_base_d                                       \
     -lccl_lib_d                                         \
     -ljsbsim_d                                          \
     # system
@@ -79,16 +79,16 @@ else:win32:CONFIG(debug, debug|release): LIBS +=        \
 
 # Linux libraries
 else:unix:!macx:!symbian: LIBS +=       \
-    # openeaagles
-    -L$${OE_ROOT}/lib/                  \
-    -L$${OE_3RD_PARTY_ROOT}/lib/        \
-    -loe_interop_dis                    \
-    -loe_interop                        \
-    -loe_otw                            \
-    -loe_simulation                     \
-    -loe_models                         \
-    -loe_terrain                        \
-    -loe_base                           \
+    # mxrp
+    -L$${MXRP_ROOT}/lib/                \
+    -L$${MXRP_3RD_PARTY_ROOT}/lib/      \
+    -lmxrp_interop_dis                  \
+    -lmxrp_interop                      \
+    -lmxrp_otw                          \
+    -lmxrp_simulation                   \
+    -lmxrp_models                       \
+    -lmxrp_terrain                      \
+    -lmxrp_base                         \
     -lcigicl                            \
     -lJSBSim                            \
     # system

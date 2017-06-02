@@ -5,7 +5,7 @@ PGM = tutorial01
 
 OBJS = main.o
 
-LDFLAGS += -loe_base -lpthread
+LDFLAGS += -lmxrp_base -lpthread
 
 all: $(PGM)
 

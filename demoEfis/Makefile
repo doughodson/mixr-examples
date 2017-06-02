@@ -5,7 +5,7 @@ PGM = demoEfis
 
 OBJS = TestElectronic.o TestMechanical.o main.o
 
-LDFLAGS += -loe_gui_glut -loe_instruments -loe_graphics -loe_base
+LDFLAGS += -lmxrp_gui_glut -lmxrp_instruments -lmxrp_graphics -lmxrp_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

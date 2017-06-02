@@ -1,36 +1,36 @@
 
 # ---------------------------------------------------------------------
-# Setup environment variables for OpenEaagles and examples
+# Setup environment variables for MXRP and examples
 # (Edit as required)
 # ---------------------------------------------------------------------
 
 # ---
-# OpenEaagles Examples root
+# MXRP Examples root
 # ---
-OE_EXAMPLES_ROOT=$PWD
-export OE_EXAMPLES_ROOT
+MXRP_EXAMPLES_ROOT=$PWD
+export MXRP_EXAMPLES_ROOT
 
 # ---
-# OpenEaagles root
+# MXRP root
 # ---
-OE_ROOT=$PWD/../OpenEaagles
-export OE_ROOT
+MXRP_ROOT=$PWD/../mxrp
+export MXRP_ROOT
 
 # ---
-# OpenEaagles 3rd party (e.g. cigi, JSBSim) root
+# MXRP 3rd party (e.g. cigi, JSBSim) root
 # ---
-OE_3RD_PARTY_ROOT=$PWD/../oe_3rdparty
-export OE_3RD_PARTY_ROOT
+MXRP_3RD_PARTY_ROOT=$PWD/../mxrp_3rdparty
+export MXRP_3RD_PARTY_ROOT
 
 # ---
 # Update the loader library path with our 3rd party library path
 # ---
-LD_LIBRARY_PATH=$OE_3RD_PARTY_ROOT/lib:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=$MXRP_3RD_PARTY_ROOT/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH
 
 # ---
 # Update path to search for binaries in our 3rd party library path
 # ---
-PATH=$OE_3RD_PARTY_ROOT/bin:$PATH
+PATH=$MXRP_3RD_PARTY_ROOT/bin:$PATH
 export PATH
 

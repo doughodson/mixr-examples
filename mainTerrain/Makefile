@@ -2,10 +2,10 @@
 include ../makedefs
 
 PGM = mainTerrain
-OBJS =  Display.o factory.o main.o
+OBJS = Display.o factory.o main.o
 
-LDFLAGS += -loe_terrain -loe_simulation
-LDFLAGS += -loe_gui_glut -loe_graphics -loe_base
+LDFLAGS += -lmxrp_terrain -lmxrp_simulation
+LDFLAGS += -lmxrp_gui_glut -lmxrp_graphics -lmxrp_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

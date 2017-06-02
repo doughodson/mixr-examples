@@ -1,7 +1,7 @@
 #
 include ../../makedefs
 
-LIB = $(OE_EXAMPLES_LIB_DIR)/libxrecorder.a
+LIB = $(MXRP_EXAMPLES_LIB_DIR)/libxrecorder.a
 
 OBJS += \
 	protobuf/DataRecord.pb.o \

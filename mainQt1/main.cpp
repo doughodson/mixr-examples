@@ -4,15 +4,15 @@
 #include "MainWindow.hpp"
 #include "Station.hpp"
 
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
 
 // factories
-#include "openeaagles/base/factory.hpp"
-#include "openeaagles/simulation/factory.hpp"
-#include "openeaagles/models/factory.hpp"
-#include "openeaagles/interop/dis/factory.hpp"
-#include "openeaagles/otw/factory.hpp"
+#include "mxrp/base/factory.hpp"
+#include "mxrp/simulation/factory.hpp"
+#include "mxrp/models/factory.hpp"
+#include "mxrp/interop/dis/factory.hpp"
+#include "mxrp/otw/factory.hpp"
 
 #include <cstdlib>
 #include <string>

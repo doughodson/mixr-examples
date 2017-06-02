@@ -2,11 +2,11 @@
 #define TEST_ND
 
 #include "TestSD.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/units/angle_utils.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/units/angle_utils.hpp"
 #include "SituationalDisplay.hpp"
-#include "openeaagles/graphics/SymbolLoader.hpp"
+#include "mxrp/graphics/SymbolLoader.hpp"
 
 using namespace oe;
 

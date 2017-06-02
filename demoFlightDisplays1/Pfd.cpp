@@ -3,8 +3,8 @@
 
 #include "SituationalDisplay.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/units/angle_utils.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/units/angle_utils.hpp"
 
 #include <cstring>
 #include <cmath>

@@ -2,7 +2,7 @@
 #ifndef __TestAdi2_H__
 #define __TestAdi2_H__
 
-#include "openeaagles/graphics/Page.hpp"
+#include "mxrp/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestAdi2

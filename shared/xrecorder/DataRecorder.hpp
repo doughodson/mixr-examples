@@ -2,7 +2,7 @@
 #ifndef __oe_xrecorder_DataRecorder_H__
 #define __oe_xrecorder_DataRecorder_H__
 
-#include "openeaagles/recorder/DataRecorder.hpp"
+#include "mxrp/recorder/DataRecorder.hpp"
 
 namespace oe {
 namespace xrecorder {

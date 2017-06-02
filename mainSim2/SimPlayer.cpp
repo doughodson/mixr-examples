@@ -1,7 +1,7 @@
 
 #include "SimPlayer.hpp"
-#include "openeaagles/base/List.hpp"
-#include "openeaagles/base/units/Angles.hpp"
+#include "mxrp/base/List.hpp"
+#include "mxrp/base/units/Angles.hpp"
 
 IMPLEMENT_SUBCLASS(SimPlayer, "SimPlayer")
 EMPTY_DELETEDATA(SimPlayer)

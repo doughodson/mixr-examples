@@ -2,7 +2,7 @@
 #ifndef __InstrumentPanel_H__
 #define __InstrumentPanel_H__
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 namespace oe {
 namespace models { class Player; }

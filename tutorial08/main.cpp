@@ -2,17 +2,17 @@
 #include <string>
 #include <cstdlib>
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/Timers.hpp"
-#include "openeaagles/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/Timers.hpp"
+#include "mxrp/base/edl_parser.hpp"
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 // factories
-#include "openeaagles/base/factory.hpp"
-#include "openeaagles/graphics/factory.hpp"
-#include "openeaagles/gui/glut/factory.hpp"
+#include "mxrp/base/factory.hpp"
+#include "mxrp/graphics/factory.hpp"
+#include "mxrp/gui/glut/factory.hpp"
 
 #include "MyPager.hpp"
 #include "Worm.hpp"

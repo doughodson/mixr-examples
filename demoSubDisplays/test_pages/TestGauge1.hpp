@@ -2,7 +2,7 @@
 #ifndef __TestGauge1_H__
 #define __TestGauge1_H__
 
-#include "openeaagles/graphics/Page.hpp"
+#include "mxrp/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestGauge1

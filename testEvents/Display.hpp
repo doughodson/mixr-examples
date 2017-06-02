@@ -2,7 +2,7 @@
 #ifndef __Display_H__
 #define __Display_H__
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 #include <array>
 #include <string>
 

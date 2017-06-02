@@ -4,15 +4,15 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/Timers.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/graphics/Graphic.hpp"
-#include "openeaagles/graphics/Texture.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/base/Timers.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/graphics/Graphic.hpp"
+#include "mxrp/graphics/Texture.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 #include <string>

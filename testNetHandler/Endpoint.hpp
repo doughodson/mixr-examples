@@ -2,7 +2,7 @@
 #ifndef __Endpoint_H__
 #define __Endpoint_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 namespace oe {
 namespace base { class NetHandler; class Number; }

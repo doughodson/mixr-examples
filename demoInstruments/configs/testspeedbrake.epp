@@ -37,7 +37,7 @@ testspeedbrake:
         // position (TestSpeedBrake.cpp, updateData() function).  The NumericReadout automatically updates the new value and displays it for you.  This way you can dynamically change the 
         // value of the speedbrake in this readout.  This is the how we pass event messages to our components via the .epp files.  
         
-        #include "openeaagles/instruments/dials/speedbrake.epp"
+        #include "mxrp/instruments/dials/speedbrake.epp"
         // include our basic speedbrake module, which is simply an instrument object that is named and understands event messages, we could also copy and paste speedbrake.epp directly into 
         // here, and it would work just the same.  This is an instrument library object
         

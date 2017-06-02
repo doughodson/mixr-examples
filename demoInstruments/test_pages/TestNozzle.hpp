@@ -2,7 +2,7 @@
 #ifndef __TestNozzle_H__
 #define __TestNozzle_H__
 
-#include "openeaagles/graphics/Page.hpp"
+#include "mxrp/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestNozzle

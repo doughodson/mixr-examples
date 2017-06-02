@@ -2,7 +2,7 @@
 #ifndef __oe_xpanel_Hsi_H__
 #define __oe_xpanel_Hsi_H__
 
-#include "openeaagles/graphics/Rotators.hpp"
+#include "mxrp/graphics/Rotators.hpp"
 
 namespace oe {
 namespace xpanel {

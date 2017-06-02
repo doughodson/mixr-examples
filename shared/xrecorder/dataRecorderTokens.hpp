@@ -13,7 +13,7 @@
 #ifndef __oe_xrecorder_Id_Tokens_H__
 #define __oe_xrecorder_Id_Tokens_H__
 
-#include "openeaagles/simulation/dataRecorderTokens.hpp"
+#include "mxrp/simulation/dataRecorderTokens.hpp"
 
 #define REID_MY_DATA_EVENT       REID_FIRST_USER_EVENT
 

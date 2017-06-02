@@ -3,12 +3,12 @@
 
 #include "TestStation.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
 
-#include "openeaagles/base/osg/Vec3d"
+#include "mxrp/base/osg/Vec3d"
 
-#include "openeaagles/base/units/Distances.hpp"
-#include "openeaagles/base/units/Times.hpp"
+#include "mxrp/base/units/Distances.hpp"
+#include "mxrp/base/units/Times.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(AdiDisplay, "AdiDisplay")
 EMPTY_SERIALIZER(AdiDisplay)

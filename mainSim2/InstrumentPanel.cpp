@@ -3,16 +3,16 @@
 #include "SimStation.hpp"
 #include "SimPlayer.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/player/Player.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/Player.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/instruments/eadi3d/Eadi3DPage.hpp"
+#include "mxrp/instruments/eadi3d/Eadi3DPage.hpp"
 
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/Pair.hpp"
 
 #include <GL/glut.h>
 

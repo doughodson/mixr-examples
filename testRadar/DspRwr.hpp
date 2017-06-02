@@ -2,7 +2,7 @@
 #ifndef __DspRwr_H__
 #define __DspRwr_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 namespace oe {
 namespace models { class Rwr; }

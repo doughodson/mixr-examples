@@ -1,8 +1,8 @@
 
 #include "Sender.hpp"
 
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
 #include <cstdio>
 #include <cstdlib>

@@ -2,7 +2,7 @@
 #ifndef __MyComp_H__
 #define __MyComp_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 namespace oe {
 namespace base { class String; }

@@ -1,15 +1,15 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 #include "DataRecordTest.hpp"
 #include "PrintMyData.hpp"
 
-#include "openeaagles/base/factory.hpp"
-#include "openeaagles/recorder/factory.hpp"
-#include "openeaagles/simulation/factory.hpp"
-#include "openeaagles/models/factory.hpp"
+#include "mxrp/base/factory.hpp"
+#include "mxrp/recorder/factory.hpp"
+#include "mxrp/simulation/factory.hpp"
+#include "mxrp/models/factory.hpp"
 
 #include <string>
 

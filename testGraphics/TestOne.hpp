@@ -2,7 +2,7 @@
 #ifndef __TestOne_H__
 #define __TestOne_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 #include <array>
 
 namespace oe {

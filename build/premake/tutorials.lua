@@ -11,14 +11,14 @@ project "tutorial01"
       "../../tutorial01/**.h*",
       "../../tutorial01/**.cpp",
    }
-   includedirs { OEIncPath }
-   libdirs     { OELibPath }
+   includedirs { MXRP_IncPath }
+   libdirs     { MXRP_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_base"}
+      links {"mxrp_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_base_d"}
+      links {"mxrp_base_d"}
       links {LibWindows}
 
 -- tutorial02
@@ -30,14 +30,14 @@ project "tutorial02"
       "../../tutorial02/**.h*",
       "../../tutorial02/**.cpp",
    }
-   includedirs { OEIncPath }
-   libdirs     { OELibPath }
+   includedirs { MXRP_IncPath }
+   libdirs     { MXRP_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_base"}
+      links {"mxrp_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_base_d"}
+      links {"mxrp_base_d"}
       links {LibWindows}
 
 -- tutorial03
@@ -51,14 +51,14 @@ project "tutorial03"
       "../../tutorial03/**.epp",
       "../../tutorial03/**.edl"
    }
-   includedirs { OEIncPath }
-   libdirs     { OELibPath }
+   includedirs { MXRP_IncPath }
+   libdirs     { MXRP_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_base"}
+      links {"mxrp_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_base_d"}
+      links {"mxrp_base_d"}
       links {LibWindows}
 
 -- tutorial04
@@ -72,14 +72,14 @@ project "tutorial04"
       "../../tutorial04/**.epp",
       "../../tutorial04/**.edl"
    }
-   includedirs { OEIncPath }
-   libdirs     { OELibPath }
+   includedirs { MXRP_IncPath }
+   libdirs     { MXRP_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_base"}
+      links {"mxrp_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_base_d"}
+      links {"mxrp_base_d"}
       links {LibWindows}
 
 -- tutorial05
@@ -93,14 +93,14 @@ project "tutorial05"
       "../../tutorial05/**.epp",
       "../../tutorial05/**.edl"
    }
-   includedirs { OEIncPath }
-   libdirs     { OELibPath }
+   includedirs { MXRP_IncPath }
+   libdirs     { MXRP_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_base"}
+      links {"mxrp_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_base_d"}
+      links {"mxrp_base_d"}
       links {LibWindows}
 
 -- tutorial06
@@ -114,14 +114,14 @@ project "tutorial06"
       "../../tutorial06/**.epp",
       "../../tutorial06/**.edl"
    }
-   includedirs { OEIncPath }
-   libdirs     { OELibPath }
+   includedirs { MXRP_IncPath }
+   libdirs     { MXRP_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_base"}
+      links {"mxrp_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_base_d"}
+      links {"mxrp_base_d"}
       links {LibWindows}
 
 -- tutorial07
@@ -135,15 +135,15 @@ project "tutorial07"
       "../../tutorial07/**.epp",
       "../../tutorial07/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}
       links {LibWindows}
@@ -159,15 +159,15 @@ project "tutorial08"
       "../../tutorial08/**.epp",
       "../../tutorial08/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}
       links {LibWindows}

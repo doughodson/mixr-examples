@@ -1,11 +1,11 @@
 
 #include "MyObj.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/List.hpp"
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/String.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/Identifier.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/List.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/String.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/Identifier.hpp"
 #include <cstdlib>
 
 IMPLEMENT_SUBCLASS(MyObj, "MyObj")

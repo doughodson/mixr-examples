@@ -2,7 +2,7 @@
 #ifndef __TestTwo_H__
 #define __TestTwo_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestTwo

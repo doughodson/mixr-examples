@@ -14,28 +14,28 @@ project "mainCockpit"
       "../../mainCockpit/**.epp",
       "../../mainCockpit/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath, OEExamplesIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath, OEExamplesLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
    links       { "libxPanel" }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_models", "JSBSim", "libzmq"}
-      links {"oe_otw", LibCigi}
-      links {"oe_interop_dis", "oe_interop", "oe_recorder", "oe_iodevice"}
-      links {"oe_simulation", "oe_terrain"}
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_models", "JSBSim", "libzmq"}
+      links {"mxrp_otw", LibCigi}
+      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_recorder", "mxrp_iodevice"}
+      links {"mxrp_simulation", "mxrp_terrain"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {"libprotobuf"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_models_d", "JSBSim_d", "libzmq_d"}
-      links {"oe_otw_d",  LibCigi_d}
-      links {"oe_interop_dis_d", "oe_interop_d", "oe_recorder_d", "oe_iodevice_d"}
-      links {"oe_simulation_d", "oe_terrain_d"}
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_models_d", "JSBSim_d", "libzmq_d"}
+      links {"mxrp_otw_d",  LibCigi_d}
+      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_recorder_d", "mxrp_iodevice_d"}
+      links {"mxrp_simulation_d", "mxrp_terrain_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"libprotobuf_d" }
       links {LibWindows}
@@ -52,17 +52,17 @@ project "mainGndMapRdr"
       "../../mainGndMapRdr/**.epp",
       "../../mainGndMapRdr/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_models", "oe_simulation", "JSBSim", "oe_terrain"}
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_models", "mxrp_simulation", "JSBSim", "mxrp_terrain"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_models_d", "oe_simulation_d", "JSBSim_d", "oe_terrain_d"}
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_models_d", "mxrp_simulation_d", "JSBSim_d", "mxrp_terrain_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -78,24 +78,24 @@ project "mainLaero"
       "../../mainLaero/**.epp",
       "../../mainLaero/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_models", "JSBSim", "libzmq" }
-      links {"oe_interop_dis", "oe_interop", "oe_iodevice"}
-      links {"oe_simulation", "oe_terrain"}
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_models", "JSBSim", "libzmq" }
+      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice"}
+      links {"mxrp_simulation", "mxrp_terrain"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_models_d", "JSBSim_d", "libzmq_d" }
-      links {"oe_interop_dis_d", "oe_interop_d", "oe_iodevice_d"}
-      links {"oe_simulation_d", "oe_terrain_d"}
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_models_d", "JSBSim_d", "libzmq_d" }
+      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d"}
+      links {"mxrp_simulation_d", "mxrp_terrain_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -111,21 +111,21 @@ project "mainNonRT1"
       "../../mainNonRT1/**.epp",
       "../../mainNonRT1/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_models", "JSBSim"}
-      links {"oe_otw", LibCigi}
-      links {"oe_simulation", "oe_terrain"}
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_models", "JSBSim"}
+      links {"mxrp_otw", LibCigi}
+      links {"mxrp_simulation", "mxrp_terrain"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_models_d", "JSBSim_d"}
-      links {"oe_otw_d", LibCigi_d}
-      links {"oe_simulation_d", "oe_terrain_d"}
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_models_d", "JSBSim_d"}
+      links {"mxrp_otw_d", LibCigi_d}
+      links {"mxrp_simulation_d", "mxrp_terrain_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -140,15 +140,15 @@ project "mainPuzzle1"
       "../../mainPuzzle1/**.epp",
       "../../mainPuzzle1/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_gui_glut", "oe_graphics", "oe_base"}
+      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_gui_glut_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -163,15 +163,15 @@ project "mainPuzzle2"
       "../../mainPuzzle2/**.epp",
       "../../mainPuzzle2/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_gui_glut", "oe_graphics", "oe_base"}
+      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_gui_glut_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -186,26 +186,26 @@ project "mainSim1"
       "../../mainSim1/**.epp",
       "../../mainSim1/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_models", "JSBSim", "libzmq"}
-      links {"oe_otw", LibCigi}
-      links {"oe_interop_dis", "oe_interop"}
-      links {"oe_simulation", "oe_terrain"}
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_models", "JSBSim", "libzmq"}
+      links {"mxrp_otw", LibCigi}
+      links {"mxrp_interop_dis", "mxrp_interop"}
+      links {"mxrp_simulation", "mxrp_terrain"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_models_d", "JSBSim_d", "libzmq_d"}
-      links {"oe_otw_d", LibCigi_d}
-      links {"oe_interop_dis_d", "oe_interop_d"}
-      links {"oe_simulation_d", "oe_terrain_d"}
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_models_d", "JSBSim_d", "libzmq_d"}
+      links {"mxrp_otw_d", LibCigi_d}
+      links {"mxrp_interop_dis_d", "mxrp_interop_d"}
+      links {"mxrp_simulation_d", "mxrp_terrain_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -220,26 +220,26 @@ project "mainSim2"
       "../../mainSim2/**.epp",
       "../../mainSim2/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_models", "JSBSim", "libzmq"}
-      links {"oe_otw", LibCigi}
-      links {"oe_interop_dis", "oe_interop", "oe_iodevice"}
-      links {"oe_simulation", "oe_terrain"}
-      links {"oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base"}
+      links {"mxrp_models", "JSBSim", "libzmq"}
+      links {"mxrp_otw", LibCigi}
+      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice"}
+      links {"mxrp_simulation", "mxrp_terrain"}
+      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_models_d", "JSBSim_d", "libzmq_d"}
-      links {"oe_otw_d", LibCigi_d}
-      links {"oe_interop_dis_d", "oe_interop_d", "oe_iodevice_d"}
-      links {"oe_simulation_d", "oe_terrain_d"}
-      links {"oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_models_d", "JSBSim_d", "libzmq_d"}
+      links {"mxrp_otw_d", LibCigi_d}
+      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d"}
+      links {"mxrp_simulation_d", "mxrp_terrain_d"}
+      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -254,26 +254,26 @@ project "mainSim3"
       "../../mainSim3/**.epp",
       "../../mainSim3/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links { "oe_models", "JSBSim", "libzmq" }
-      links { "oe_otw", LibCigi }
-      links { "oe_interop_dis", "oe_interop", LibCigi }
-      links { "oe_simulation", "oe_terrain" }
-      links { "oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base" }
+      links { "mxrp_models", "JSBSim", "libzmq" }
+      links { "mxrp_otw", LibCigi }
+      links { "mxrp_interop_dis", "mxrp_interop", LibCigi }
+      links { "mxrp_simulation", "mxrp_terrain" }
+      links { "mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
    filter "configurations:Debug*"
-      links { "oe_models_d", "JSBSim_d", "libzmq_d" }
-      links { "oe_otw_d", LibCigi_d }
-      links { "oe_interop_dis_d", "oe_interop_d" }
-      links { "oe_simulation_d", "oe_terrain_d" }
-      links { "oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d" }
+      links { "mxrp_models_d", "JSBSim_d", "libzmq_d" }
+      links { "mxrp_otw_d", LibCigi_d }
+      links { "mxrp_interop_dis_d", "mxrp_interop_d" }
+      links { "mxrp_simulation_d", "mxrp_terrain_d" }
+      links { "mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }
       links { LibWindows }
 
@@ -288,17 +288,17 @@ project "mainTerrain"
       "../../mainTerrain/**.epp",
       "../../mainTerrain/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"oe_terrain", "oe_simulation"}
-      links {"oe_gui_glut", "oe_graphics", "oe_base"}
+      links {"mxrp_terrain", "mxrp_simulation"}
+      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"oe_terrain_d", "oe_simulation_d"}
-      links {"oe_gui_glut_d", "oe_graphics_d", "oe_base_d"}
+      links {"mxrp_terrain_d", "mxrp_simulation_d"}
+      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -313,23 +313,23 @@ project "mainUbf1"
       "../../mainUbf1/**.epp",
       "../../mainUbf1/**.edl"
    }
-   includedirs { OEIncPath, OE3rdPartyIncPath, OEExamplesIncPath }
-   libdirs     { OELibPath, OE3rdPartyLibPath, OEExamplesLibPath }
+   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
+   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
    links { "libxbehaviors",  "libxpanel" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links { "oe_models", "JSBSim" }
-      links { "oe_otw", LibCigi }
-      links { "oe_interop_dis", "oe_interop", "oe_iodevice" }
-      links { "oe_simulation", "oe_terrain" }
-      links { "oe_gui_glut", "oe_instruments", "oe_graphics", "oe_base" }
+      links { "mxrp_models", "JSBSim" }
+      links { "mxrp_otw", LibCigi }
+      links { "mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice" }
+      links { "mxrp_simulation", "mxrp_terrain" }
+      links { "mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
    filter "configurations:Debug*"
-      links { "oe_models_d", "JSBSim_d" }
-      links { "oe_otw_d", LibCigi_d }
-      links { "oe_interop_dis_d", "oe_interop_d", "oe_iodevice_d" }
-      links { "oe_simulation_d", "oe_terrain_d" }
-      links { "oe_gui_glut_d", "oe_instruments_d", "oe_graphics_d", "oe_base_d" }
+      links { "mxrp_models_d", "JSBSim_d" }
+      links { "mxrp_otw_d", LibCigi_d }
+      links { "mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d" }
+      links { "mxrp_simulation_d", "mxrp_terrain_d" }
+      links { "mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }
       links { LibWindows }

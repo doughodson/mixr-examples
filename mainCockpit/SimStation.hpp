@@ -2,7 +2,7 @@
 #ifndef __SimStation_H__
 #define __SimStation_H__
 
-#include "openeaagles/simulation/Station.hpp"
+#include "mxrp/simulation/Station.hpp"
 
 namespace oe {
    namespace base { class Table1; }

@@ -1,26 +1,26 @@
 
 #include "DataRecordTest.hpp"
 
-#include "openeaagles/recorder/FileReader.hpp"
-#include "openeaagles/recorder/FileWriter.hpp"
-#include "openeaagles/recorder/InputHandler.hpp"
-#include "openeaagles/recorder/NetInput.hpp"
+#include "mxrp/recorder/FileReader.hpp"
+#include "mxrp/recorder/FileWriter.hpp"
+#include "mxrp/recorder/InputHandler.hpp"
+#include "mxrp/recorder/NetInput.hpp"
 
-#include "openeaagles/recorder/DataRecorder.hpp"
-#include "openeaagles/recorder/OutputHandler.hpp"
-#include "openeaagles/recorder/NetOutput.hpp"
-#include "openeaagles/recorder/DataRecordHandle.hpp"
-#include "openeaagles/recorder/TabPrinter.hpp"
-#include "openeaagles/recorder/PrintPlayer.hpp"
-#include "openeaagles/recorder/PrintSelected.hpp"
+#include "mxrp/recorder/DataRecorder.hpp"
+#include "mxrp/recorder/OutputHandler.hpp"
+#include "mxrp/recorder/NetOutput.hpp"
+#include "mxrp/recorder/DataRecordHandle.hpp"
+#include "mxrp/recorder/TabPrinter.hpp"
+#include "mxrp/recorder/PrintPlayer.hpp"
+#include "mxrp/recorder/PrintSelected.hpp"
 
-#include "openeaagles/recorder/protobuf/DataRecord.pb.h"
+#include "mxrp/recorder/protobuf/DataRecord.pb.h"
 
-#include "openeaagles/models/player/Player.hpp"
+#include "mxrp/models/player/Player.hpp"
 
-#include "openeaagles/base/String.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/String.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
 
 #include "google/protobuf/descriptor.h"
 #include "google/protobuf/message.h"

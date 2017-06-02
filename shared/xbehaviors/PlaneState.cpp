@@ -1,18 +1,18 @@
 
 #include "PlaneState.hpp"
 
-#include "openeaagles/base/List.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/List.hpp"
+#include "mxrp/base/PairStream.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/player/Missile.hpp"
-#include "openeaagles/models/system/Radar.hpp"
-#include "openeaagles/models/system/TrackManager.hpp"
-#include "openeaagles/models/Track.hpp"
-#include "openeaagles/models/system/OnboardComputer.hpp"
-#include "openeaagles/models/system/StoresMgr.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/Missile.hpp"
+#include "mxrp/models/system/Radar.hpp"
+#include "mxrp/models/system/TrackManager.hpp"
+#include "mxrp/models/Track.hpp"
+#include "mxrp/models/system/OnboardComputer.hpp"
+#include "mxrp/models/system/StoresMgr.hpp"
 
-#include "openeaagles/models/WorldModel.hpp"
+#include "mxrp/models/WorldModel.hpp"
 
 namespace oe {
 namespace xbehaviors {

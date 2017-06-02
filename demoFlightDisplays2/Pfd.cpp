@@ -1,7 +1,7 @@
 
 #include "Pfd.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/units/distance_utils.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/units/distance_utils.hpp"
 
 using namespace oe;
 

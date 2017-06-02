@@ -2,7 +2,7 @@
 #ifndef __Tester_H__
 #define __Tester_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 namespace oe {
 namespace base { class PairStream; }

@@ -2,7 +2,7 @@
 #ifndef __TdAzPtr_H__
 #define __TdAzPtr_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TdAzPtr

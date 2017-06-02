@@ -1,22 +1,22 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 #include "TestDisplay.hpp"
 #include "TestStation.hpp"
 #include "TestComputer.hpp"
 
 // factories
-#include "openeaagles/base/factory.hpp"
-#include "openeaagles/graphics/factory.hpp"
-#include "openeaagles/instruments/factory.hpp"
-#include "openeaagles/gui/glut/factory.hpp"
-#include "openeaagles/simulation/factory.hpp"
-#include "openeaagles/models/factory.hpp"
-#include "openeaagles/terrain/factory.hpp"
-#include "openeaagles/interop/dis/factory.hpp"
-#include "openeaagles/otw/factory.hpp"
+#include "mxrp/base/factory.hpp"
+#include "mxrp/graphics/factory.hpp"
+#include "mxrp/instruments/factory.hpp"
+#include "mxrp/gui/glut/factory.hpp"
+#include "mxrp/simulation/factory.hpp"
+#include "mxrp/models/factory.hpp"
+#include "mxrp/terrain/factory.hpp"
+#include "mxrp/interop/dis/factory.hpp"
+#include "mxrp/otw/factory.hpp"
 
 #include <string>
 

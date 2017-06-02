@@ -3,13 +3,13 @@
 #include <iostream>
 #include <cstdio>
 
-#include "openeaagles/base/Statistic.hpp"
+#include "mxrp/base/Statistic.hpp"
 
-#include "openeaagles/base/Rng.hpp"
-#include "openeaagles/base/distributions/Uniform.hpp"
-#include "openeaagles/base/distributions/Pareto.hpp"
-#include "openeaagles/base/distributions/Lognormal.hpp"
-#include "openeaagles/base/distributions/Exponential.hpp"
+#include "mxrp/base/Rng.hpp"
+#include "mxrp/base/distributions/Uniform.hpp"
+#include "mxrp/base/distributions/Pareto.hpp"
+#include "mxrp/base/distributions/Lognormal.hpp"
+#include "mxrp/base/distributions/Exponential.hpp"
 
 // this test is to match original Mersenne Twister output
 void testValidation()

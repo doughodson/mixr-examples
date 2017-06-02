@@ -1,13 +1,13 @@
 
-#include "openeaagles/simulation/Simulation.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/simulation/Simulation.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
 
 // factories
-#include "openeaagles/simulation/factory.hpp"
-#include "openeaagles/models/factory.hpp"
-#include "openeaagles/terrain/factory.hpp"
-#include "openeaagles/base/factory.hpp"
+#include "mxrp/simulation/factory.hpp"
+#include "mxrp/models/factory.hpp"
+#include "mxrp/terrain/factory.hpp"
+#include "mxrp/base/factory.hpp"
 
 #include <string>
 #include <cstdlib>

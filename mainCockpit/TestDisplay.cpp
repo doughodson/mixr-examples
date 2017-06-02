@@ -5,22 +5,22 @@
 #include "xpanel/DspRwr.hpp"
 #include "xpanel/Pfd.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/player/Missile.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/Missile.hpp"
 
-#include "openeaagles/models/system/Jammer.hpp"
-#include "openeaagles/models/system/Radar.hpp"
-#include "openeaagles/models/system/Rwr.hpp"
-#include "openeaagles/models/system/StoresMgr.hpp"
-#include "openeaagles/models/sensor/Gmti.hpp"
-#include "openeaagles/models/sensor/Tws.hpp"
+#include "mxrp/models/system/Jammer.hpp"
+#include "mxrp/models/system/Radar.hpp"
+#include "mxrp/models/system/Rwr.hpp"
+#include "mxrp/models/system/StoresMgr.hpp"
+#include "mxrp/models/sensor/Gmti.hpp"
+#include "mxrp/models/sensor/Tws.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/graphics/SymbolLoader.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/graphics/SymbolLoader.hpp"
 #include <GL/glut.h>
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")

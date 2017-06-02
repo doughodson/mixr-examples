@@ -2,7 +2,7 @@
 #ifndef __WorldModel_H__
 #define __WOrldModel_H__
 
-#include "openeaagles/models/WorldModel.hpp"
+#include "mxrp/models/WorldModel.hpp"
 
 namespace oe {
 namespace dafif { class AirportLoader; class NavaidLoader; class WaypointLoader; }

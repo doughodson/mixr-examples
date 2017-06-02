@@ -1,8 +1,8 @@
 
 #include "MfdPage.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/graphics/Rotators.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/graphics/Rotators.hpp"
+#include "mxrp/base/PairStream.hpp"
 
 using namespace oe;
 

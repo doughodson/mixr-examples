@@ -2,9 +2,9 @@
 #define TEST_PFD
 
 #include "TestPfd.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/base/Pair.hpp"
 #include "Pfd.hpp"
-#include "openeaagles/graphics/Display.hpp"
+#include "mxrp/graphics/Display.hpp"
 
 using namespace oe;
 

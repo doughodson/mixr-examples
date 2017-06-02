@@ -1,10 +1,10 @@
 
 #include "RdrAlt.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/graphics/readouts/NumericReadout.hpp"
-#include "openeaagles/graphics/Display.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/graphics/readouts/NumericReadout.hpp"
+#include "mxrp/graphics/Display.hpp"
 
 using namespace oe;
 

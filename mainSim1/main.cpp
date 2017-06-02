@@ -1,19 +1,19 @@
 
-#include "openeaagles/simulation/Station.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/Integer.hpp"
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/simulation/Station.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/Integer.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
 // factories
 #include "../shared/xzmq/factory.hpp"
-#include "openeaagles/simulation/factory.hpp"
-#include "openeaagles/models/factory.hpp"
-#include "openeaagles/interop/dis/factory.hpp"
-#include "openeaagles/otw/factory.hpp"
-#include "openeaagles/terrain/factory.hpp"
-#include "openeaagles/base/factory.hpp"
+#include "mxrp/simulation/factory.hpp"
+#include "mxrp/models/factory.hpp"
+#include "mxrp/interop/dis/factory.hpp"
+#include "mxrp/otw/factory.hpp"
+#include "mxrp/terrain/factory.hpp"
+#include "mxrp/base/factory.hpp"
 
 #include <string>
 #include <cstdlib>

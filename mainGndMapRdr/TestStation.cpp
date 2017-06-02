@@ -2,16 +2,16 @@
 #include "TestStation.hpp"
 #include "Display.hpp"
 
-#include "openeaagles/models/player/Player.hpp"
-#include "openeaagles/models/system/Gimbal.hpp"
+#include "mxrp/models/player/Player.hpp"
+#include "mxrp/models/system/Gimbal.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/base/Identifier.hpp"
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/units/Angles.hpp"
+#include "mxrp/base/Identifier.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/units/Angles.hpp"
 
 using namespace oe;
 

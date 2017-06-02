@@ -6,8 +6,8 @@
     project "libxbehaviors"
       kind "StaticLib"
       targetname "xbehaviors"
-      targetdir (OEExamplesLibPath)
-      includedirs { OEIncPath, OE3rdPartyIncPath, OEExamplesIncPath }
+      targetdir (MXRP_ExamplesLibPath)
+      includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
       files {
          "../../shared/xbehaviors/*.h*",
          "../../shared/xbehaviors/*.cpp",
@@ -17,9 +17,9 @@
     --  eXample library that extends the data recorder
     project "libxrecorder"
       kind "StaticLib"
-      includedirs { OEIncPath, OE3rdPartyIncPath, OEExamplesIncPath }
+      includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
       targetname "xrecorder"
-      targetdir (OEExamplesLibPath)
+      targetdir (MXRP_ExamplesLibPath)
       files {
          "../../shared/xrecorder/**.h*",
          "../../shared/xrecorder/**.cpp",
@@ -33,8 +33,8 @@
     project "libxpanel"
       kind "StaticLib"
       targetname "xpanel"
-      targetdir (OEExamplesLibPath)
-      includedirs { OEIncPath, OE3rdPartyIncPath, OEExamplesIncPath }
+      targetdir (MXRP_ExamplesLibPath)
+      includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
       files {
          "../../shared/xpanel/*.h*",
          "../../shared/xpanel/*.cpp",
@@ -46,8 +46,8 @@
     project "libxzmq"
       kind "StaticLib"
       targetname "xzmq"
-      targetdir (OEExamplesLibPath)
-      includedirs { OEIncPath, OE3rdPartyIncPath, OEExamplesIncPath }
+      targetdir (MXRP_ExamplesLibPath)
+      includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
       defines { "ZMQ_STATIC" }
       files {
          "../../shared/xzmq/*.h*",

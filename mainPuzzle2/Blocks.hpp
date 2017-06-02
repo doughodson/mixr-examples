@@ -2,7 +2,7 @@
 #ifndef __Blocks_H__
 #define __Blocks_H__
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 namespace oe {
 namespace base { class List; class Integer; }

@@ -1,7 +1,7 @@
 
 #include "TestButtons.hpp"
-#include "openeaagles/instruments/buttons/Knob.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/instruments/buttons/Knob.hpp"
+#include "mxrp/base/Pair.hpp"
 
 using namespace oe;
 

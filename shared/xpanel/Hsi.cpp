@@ -1,7 +1,7 @@
 
 #include "Hsi.hpp"
 
-#include "openeaagles/base/Number.hpp"
+#include "mxrp/base/Number.hpp"
 
 namespace oe {
 namespace xpanel {

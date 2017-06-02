@@ -2,8 +2,8 @@
 #ifndef __Pfd_H__
 #define __Pfd_H__
 
-#include "openeaagles/graphics/Page.hpp"
-#include "openeaagles/base/units/angle_utils.hpp"
+#include "mxrp/graphics/Page.hpp"
+#include "mxrp/base/units/angle_utils.hpp"
 
 //------------------------------------------------------------------------------
 // Class: Pfd

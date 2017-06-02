@@ -2,7 +2,7 @@
 #ifndef __MyObj_H__
 #define __MyObj_H__
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 namespace oe {
 namespace base { class PairStream; class List; class String; class Number; class Identifier; }

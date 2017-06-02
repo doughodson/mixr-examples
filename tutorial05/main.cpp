@@ -3,14 +3,14 @@
 #include <string>
 #include <cstdlib>
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/String.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/String.hpp"
 
 // factories
-#include "openeaagles/base/factory.hpp"
+#include "mxrp/base/factory.hpp"
 
 #include "MyObj.hpp"
 

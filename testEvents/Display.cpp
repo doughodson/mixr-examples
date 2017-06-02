@@ -2,12 +2,12 @@
 #include "Display.hpp"
 #include "TestObject.hpp"
 
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/graphics/Material.hpp"
-#include "openeaagles/base/Rng.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/util/math_utils.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/graphics/Material.hpp"
+#include "mxrp/base/Rng.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/util/math_utils.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
 #include <cstring>
 #include <array>

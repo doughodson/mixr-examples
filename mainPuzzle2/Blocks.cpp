@@ -2,8 +2,8 @@
 #include "Blocks.hpp"
 #include "Puzzle.hpp"
 
-#include "openeaagles/base/Integer.hpp"
-#include "openeaagles/base/List.hpp"
+#include "mxrp/base/Integer.hpp"
+#include "mxrp/base/List.hpp"
 
 using namespace oe;
 

@@ -2,7 +2,7 @@
 #ifndef __Table_H__
 #define __Table_H__
 
-#include "openeaagles/graphics/Field.hpp"
+#include "mxrp/graphics/Field.hpp"
 
 namespace oe {
 namespace base { class Number; class PairStream; }

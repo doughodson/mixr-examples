@@ -2,7 +2,7 @@
 #ifndef __oe_xbehaviors_PlaneAction_H__
 #define __oe_xbehaviors_PlaneAction_H__
 
-#include "openeaagles/base/ubf/AbstractAction.hpp"
+#include "mxrp/base/ubf/AbstractAction.hpp"
 
 namespace oe {
 namespace simulation { class Player; }

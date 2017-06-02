@@ -2,7 +2,7 @@
 #ifndef __Puzzle_H__
 #define __Puzzle_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 #include <array>
 

@@ -4,11 +4,11 @@
 
 #include <iostream>
 
-#include "openeaagles/base/MetaObject.hpp"
+#include "mxrp/base/MetaObject.hpp"
 
-#include "openeaagles/base/Decibel.hpp"
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/Matrix.hpp"
+#include "mxrp/base/Decibel.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/Matrix.hpp"
 
 void printMetadata(const oe::base::MetaObject* metaObject)
 {

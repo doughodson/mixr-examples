@@ -2,7 +2,7 @@
 #ifndef __Random_H__
 #define __Random_H__
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 namespace oe {
 namespace base { class Number; }

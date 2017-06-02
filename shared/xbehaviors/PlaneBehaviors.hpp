@@ -15,7 +15,7 @@
 #ifndef __oe_xbehaviors_PlaneBehaviors_H__
 #define __oe_xbehaviors_PlaneBehaviors_H__
 
-#include "openeaagles/base/ubf/AbstractBehavior.hpp"
+#include "mxrp/base/ubf/AbstractBehavior.hpp"
 
 namespace oe {
 namespace base { class Distance; class State; }

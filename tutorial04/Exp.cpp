@@ -1,7 +1,7 @@
 
 #include "Exp.hpp"
 
-#include "openeaagles/base/Number.hpp"
+#include "mxrp/base/Number.hpp"
 #include <cstdlib>
 #include <cmath>
 #include <iostream>

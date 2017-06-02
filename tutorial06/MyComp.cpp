@@ -1,6 +1,6 @@
 
 #include "MyComp.hpp"
-#include "openeaagles/base/String.hpp"
+#include "mxrp/base/String.hpp"
 #include <cstdlib>
 
 IMPLEMENT_SUBCLASS(MyComp, "MyComp")

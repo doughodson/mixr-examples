@@ -8,7 +8,7 @@ testftitdial:
     }
     components: {
         // include our simple ftit base module
-        #include "openeaagles/instruments/dials/ftitdial.epp"
+        #include "mxrp/instruments/dials/ftitdial.epp"
         
         // simpl readouts
         ( AsciiText

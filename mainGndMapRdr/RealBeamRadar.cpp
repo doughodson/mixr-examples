@@ -1,22 +1,22 @@
 
 #include "RealBeamRadar.hpp"
 
-#include "openeaagles/models/player/Player.hpp"
-#include "openeaagles/models/system/Antenna.hpp"
-#include "openeaagles/models/WorldModel.hpp"
+#include "mxrp/models/player/Player.hpp"
+#include "mxrp/models/system/Antenna.hpp"
+#include "mxrp/models/WorldModel.hpp"
 
-#include "openeaagles/terrain/Terrain.hpp"
+#include "mxrp/terrain/Terrain.hpp"
 
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/Rgb.hpp"
-#include "openeaagles/base/Hsva.hpp"
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/String.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/Rgb.hpp"
+#include "mxrp/base/Hsva.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/String.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
 
-#include "openeaagles/base/util/nav_utils.hpp"
+#include "mxrp/base/util/nav_utils.hpp"
 
 #include <cmath>
 

@@ -2,7 +2,7 @@
 #ifndef __DataRecordTest_H__
 #define __DataRecordTest_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 namespace oe {
 namespace recorder { class InputHandler; class OutputHandler; }

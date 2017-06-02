@@ -2,8 +2,8 @@
 #include "TestStateMachine04B.hpp"
 #include "TestStateMachine04.hpp"
 
-#include "openeaagles/base/Integer.hpp"
-#include "openeaagles/base/Boolean.hpp"
+#include "mxrp/base/Integer.hpp"
+#include "mxrp/base/Boolean.hpp"
 
 using namespace oe;
 

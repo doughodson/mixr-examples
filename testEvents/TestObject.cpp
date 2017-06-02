@@ -1,7 +1,7 @@
 
 #include "TestObject.hpp"
 
-#include "openeaagles/base/util/str_utils.hpp"
+#include "mxrp/base/util/str_utils.hpp"
 #include <iostream>
 
 using namespace oe;

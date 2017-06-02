@@ -13,14 +13,14 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openeaagles/base/functors/Tables.hpp"
+#include "mxrp/base/functors/Tables.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
 // class factory
-#include "openeaagles/base/factory.hpp"
+#include "mxrp/base/factory.hpp"
 
 #include <string>
 

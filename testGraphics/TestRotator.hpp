@@ -2,7 +2,7 @@
 #ifndef __TestRotator_H__
 #define __TestRotator_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestRotator

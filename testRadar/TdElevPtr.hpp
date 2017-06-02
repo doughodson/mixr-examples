@@ -2,7 +2,7 @@
 #ifndef __TdElevPtr_H__
 #define __TdElevPtr_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TdElevPtr

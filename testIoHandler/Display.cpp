@@ -1,11 +1,11 @@
 
 #include "Display.hpp"
 
-#include "openeaagles/base/io/IoData.hpp"
-#include "openeaagles/base/io/IoHandler.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/String.hpp"
-#include "openeaagles/base/util/str_utils.hpp"
+#include "mxrp/base/io/IoData.hpp"
+#include "mxrp/base/io/IoHandler.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/String.hpp"
+#include "mxrp/base/util/str_utils.hpp"
 
 #include <cstdio>
 #include <cstdlib>

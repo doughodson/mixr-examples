@@ -11,7 +11,7 @@ testnozzle:
     
     components: {
         // include our nozzle module
-        #include "openeaagles/instruments/dials/nozzle.epp"
+        #include "mxrp/instruments/dials/nozzle.epp"
         
         // here is our digital readout
         ( AsciiText

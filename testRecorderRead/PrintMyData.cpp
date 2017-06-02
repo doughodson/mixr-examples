@@ -3,7 +3,7 @@
 
 #include "xrecorder/protobuf/DataRecord.pb.h"
 #include "xrecorder/dataRecorderTokens.hpp"
-#include "openeaagles/recorder/DataRecordHandle.hpp"
+#include "mxrp/recorder/DataRecordHandle.hpp"
 
 using namespace oe;
 

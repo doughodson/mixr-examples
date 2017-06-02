@@ -2,12 +2,12 @@
 // Example program that demonstrates UBF functionality
 //--------------------------------------------------------------
 
-#include "openeaagles/simulation/Station.hpp"
-#include "openeaagles/graphics/Graphic.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/Timers.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/simulation/Station.hpp"
+#include "mxrp/graphics/Graphic.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/Timers.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
 #include "factory.hpp"
 

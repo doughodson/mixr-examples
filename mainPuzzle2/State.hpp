@@ -2,7 +2,7 @@
 #ifndef __State_H__
 #define __State_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 #include <array>
 

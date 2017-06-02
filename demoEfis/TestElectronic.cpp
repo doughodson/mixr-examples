@@ -1,11 +1,11 @@
 
 #include "TestElectronic.hpp"
 
-#include "openeaagles/base/util/enum_utils.hpp"
-#include "openeaagles/base/units/LinearVelocity.hpp"
+#include "mxrp/base/util/enum_utils.hpp"
+#include "mxrp/base/units/LinearVelocity.hpp"
 
-#include "openeaagles/base/util/math_utils.hpp"
-#include "openeaagles/base/units/angle_utils.hpp"
+#include "mxrp/base/util/math_utils.hpp"
+#include "mxrp/base/units/angle_utils.hpp"
 
 #include <cmath>
 

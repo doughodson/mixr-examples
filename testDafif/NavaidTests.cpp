@@ -1,10 +1,10 @@
 
 #include "NavaidTests.hpp"
 
-#include "openeaagles/dafif/NavaidLoader.hpp"
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/base/units/Distances.hpp"
-#include "openeaagles/base/util/str_utils.hpp"
+#include "mxrp/dafif/NavaidLoader.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/base/units/Distances.hpp"
+#include "mxrp/base/util/str_utils.hpp"
 
 #include <iostream>
 

@@ -2,7 +2,7 @@
 #ifndef __AdiDisplay_H__
 #define __AdiDisplay_H__
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 namespace oe {
 namespace models { class Aircraft; }

@@ -2,8 +2,8 @@
 #include "DataRecordTest.hpp"
 #include "factory.hpp"
 
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
 
 #include <string>
 

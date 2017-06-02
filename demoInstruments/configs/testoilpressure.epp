@@ -11,7 +11,7 @@ testoilpressure:
     
     components: {
         // include our base oil pressure module
-        #include "openeaagles/instruments/dials/oilpressure.epp"
+        #include "mxrp/instruments/dials/oilpressure.epp"
         
         // here is our digital readout
         ( AsciiText

@@ -15,27 +15,27 @@ end
 --
 -- directory locations for framework and 3rd party dependencies
 --
-OE_ROOT           = "../../../OpenEaagles"
-OE_3RD_PARTY_ROOT = "../../../OpenEaagles3rdParty"
+MXRP_ROOT           = "../../../mxrp"
+MXRP_3RD_PARTY_ROOT = "../../../mxrp-3rdparty"
 
 --
 -- set include and library paths
 --
-OEIncPath         = OE_ROOT.."/include"
-OELibPath         = OE_ROOT.."/lib/"
-OE3rdPartyIncPath = OE_3RD_PARTY_ROOT.."/include"
-OE3rdPartyLibPath = OE_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
-OEExamplesIncPath = "../../shared"
-OEExamplesLibPath = "../../lib/"
-print ("OpenEaagles Paths:")
-print ("  Include   : "..OEIncPath)
-print ("  Libraries : "..OELibPath)
-print ("OpenEaagles3rdParty Paths:")
-print ("  Include   :"..OE3rdPartyIncPath)
-print ("  Libraries :"..OE3rdPartyLibPath)
-print ("OpenEaaglesExamples Paths:")
-print ("  Include   :"..OEExamplesIncPath)
-print ("  Libraries :"..OEExamplesLibPath)
+MXRP_IncPath         = MXRP_ROOT.."/include"
+MXRP_LibPath         = MXRP_ROOT.."/lib/"
+MXRP_3rdPartyIncPath = MXRP_3RD_PARTY_ROOT.."/include"
+MXRP_3rdPartyLibPath = MXRP_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
+MXRP_ExamplesIncPath = "../../shared"
+MXRP_ExamplesLibPath = "../../lib/"
+print ("MXRP Paths:")
+print ("  Include   : "..MXRP_IncPath)
+print ("  Libraries : "..MXRP_LibPath)
+print ("MXRP 3rdParty Paths:")
+print ("  Include   :"..MXRP_3rdPartyIncPath)
+print ("  Libraries :"..MXRP_3rdPartyLibPath)
+print ("MXRP Examples Paths:")
+print ("  Include   :"..MXRP_ExamplesIncPath)
+print ("  Libraries :"..MXRP_ExamplesLibPath)
 
 
 --
@@ -46,7 +46,7 @@ HLAIncPath = HLA_ROOT.."/include"
 HLALibPath = HLA_ROOT.."/lib"
 print ("HLA Paths:")
 print ("  Include   : "..HLALibPath)
---print ("  Libraries : "..OELibPath)
+--print ("  Libraries : "..MXRP_LibPath)
 
 --
 -- 3rd party library names

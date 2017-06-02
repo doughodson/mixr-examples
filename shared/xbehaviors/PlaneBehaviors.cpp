@@ -16,10 +16,10 @@
 #include "PlaneAction.hpp"
 #include "PlaneState.hpp"
 
-#include "openeaagles/base/units/Distances.hpp"
-#include "openeaagles/base/ubf/AbstractAction.hpp"
-#include "openeaagles/base/ubf/AbstractState.hpp"
-#include "openeaagles/base/util/constants.hpp"
+#include "mxrp/base/units/Distances.hpp"
+#include "mxrp/base/ubf/AbstractAction.hpp"
+#include "mxrp/base/ubf/AbstractState.hpp"
+#include "mxrp/base/util/constants.hpp"
 
 namespace oe {
 namespace xbehaviors {

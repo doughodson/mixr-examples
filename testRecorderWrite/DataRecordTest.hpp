@@ -2,9 +2,9 @@
 #ifndef __DataRecordTest_H__
 #define __DataRecordTest_H__
 
-#include "openeaagles/recorder/OutputHandler.hpp"
+#include "mxrp/recorder/OutputHandler.hpp"
 
-#include "openeaagles/recorder/PrintSelected.hpp"
+#include "mxrp/recorder/PrintSelected.hpp"
 #include <string>
 #include <array>
 

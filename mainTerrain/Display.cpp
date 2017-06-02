@@ -1,21 +1,21 @@
 
 #include "Display.hpp"
 
-#include "openeaagles/terrain/Terrain.hpp"
+#include "mxrp/terrain/Terrain.hpp"
 
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/Rgb.hpp"
-#include "openeaagles/base/Hsva.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/String.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/Rgb.hpp"
+#include "mxrp/base/Hsva.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/String.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
 
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/base/units/Distances.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/base/units/Distances.hpp"
 
-#include "openeaagles/base/util/nav_utils.hpp"
-#include "openeaagles/base/util/system_utils.hpp"
+#include "mxrp/base/util/nav_utils.hpp"
+#include "mxrp/base/util/system_utils.hpp"
 
 #include <cmath>
 

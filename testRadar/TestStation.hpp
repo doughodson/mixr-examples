@@ -2,7 +2,7 @@
 #ifndef __TestStation_H__
 #define __TestStation_H__
 
-#include "openeaagles/simulation/Station.hpp"
+#include "mxrp/simulation/Station.hpp"
 
 namespace oe {
 namespace base { class Number; }

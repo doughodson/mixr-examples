@@ -2,7 +2,7 @@
 #ifndef __RdrAlt_H__
 #define __RdrAlt_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 namespace oe {
 namespace base { class Number; }

@@ -1,7 +1,7 @@
 
 #include "DspRwr.hpp"
 
-#include "openeaagles/models/system/Rwr.hpp"
+#include "mxrp/models/system/Rwr.hpp"
 
 namespace oe {
 namespace xpanel {

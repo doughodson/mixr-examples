@@ -2,7 +2,7 @@
 #ifndef __Block_H__
 #define __Block_H__
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 namespace oe
 {

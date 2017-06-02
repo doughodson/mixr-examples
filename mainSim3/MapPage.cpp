@@ -3,15 +3,15 @@
 #include "Station.hpp"
 #include "Display.hpp"
 
-#include "openeaagles/models/player/Player.hpp"
-#include "openeaagles/models/WorldModel.hpp"
+#include "mxrp/models/player/Player.hpp"
+#include "mxrp/models/WorldModel.hpp"
 
-#include "openeaagles/graphics/SymbolLoader.hpp"
-#include "openeaagles/graphics/Display.hpp"
+#include "mxrp/graphics/SymbolLoader.hpp"
+#include "mxrp/graphics/Display.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/util/math_utils.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/util/math_utils.hpp"
 
 IMPLEMENT_SUBCLASS(MapPage, "MapTestMapPage")
 EMPTY_SLOTTABLE(MapPage)

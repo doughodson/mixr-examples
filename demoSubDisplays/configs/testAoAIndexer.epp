@@ -9,7 +9,7 @@ testAoAIndexer:
         p: testcompass
     }
     components: {
-        #include "openeaagles/instruments/gauges/digaoagauge.epp"
+        #include "mxrp/instruments/gauges/digaoagauge.epp"
         // Label to tell us what test we are running
         ( AsciiText
             position: [ 26 2 ]

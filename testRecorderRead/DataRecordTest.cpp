@@ -1,9 +1,9 @@
 
 #include "DataRecordTest.hpp"
 
-#include "openeaagles/recorder/InputHandler.hpp"
-#include "openeaagles/recorder/OutputHandler.hpp"
-#include "openeaagles/recorder/DataRecordHandle.hpp"
+#include "mxrp/recorder/InputHandler.hpp"
+#include "mxrp/recorder/OutputHandler.hpp"
+#include "mxrp/recorder/DataRecordHandle.hpp"
 
 #include "xrecorder/protobuf/DataRecord.pb.h"
 #include <iostream>

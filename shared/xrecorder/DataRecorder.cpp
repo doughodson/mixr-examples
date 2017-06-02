@@ -2,7 +2,7 @@
 #include "DataRecorder.hpp"
 #include "protobuf/DataRecord.pb.h"
 #include "dataRecorderTokens.hpp"
-#include "openeaagles/base/util/math_utils.hpp"
+#include "mxrp/base/util/math_utils.hpp"
 
 namespace oe {
 namespace xrecorder {

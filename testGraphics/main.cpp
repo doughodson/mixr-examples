@@ -1,21 +1,21 @@
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/Timers.hpp"
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/functors/Tables.hpp"
-#include "openeaagles/base/units/Angles.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/Timers.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/functors/Tables.hpp"
+#include "mxrp/base/units/Angles.hpp"
 
-#include "openeaagles/graphics/Graphic.hpp"
-#include "openeaagles/graphics/Image.hpp"
+#include "mxrp/graphics/Graphic.hpp"
+#include "mxrp/graphics/Image.hpp"
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 #include "TestDisplay.hpp"
 
 // factories
-#include "openeaagles/base/factory.hpp"
-#include "openeaagles/graphics/factory.hpp"
-#include "openeaagles/gui/glut/factory.hpp"
+#include "mxrp/base/factory.hpp"
+#include "mxrp/graphics/factory.hpp"
+#include "mxrp/gui/glut/factory.hpp"
 
 #include <GL/glut.h>
 

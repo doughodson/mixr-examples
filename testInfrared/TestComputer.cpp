@@ -1,13 +1,13 @@
 
 #include "TestComputer.hpp"
 
-#include "openeaagles/models/Track.hpp"
-#include "openeaagles/models/system/AngleOnlyTrackManager.hpp"
-#include "openeaagles/models/player/AbstractWeapon.hpp"
-#include "openeaagles/models/system/IrSeeker.hpp"
-#include "openeaagles/models/system/IrSensor.hpp"
+#include "mxrp/models/Track.hpp"
+#include "mxrp/models/system/AngleOnlyTrackManager.hpp"
+#include "mxrp/models/player/AbstractWeapon.hpp"
+#include "mxrp/models/system/IrSeeker.hpp"
+#include "mxrp/models/system/IrSensor.hpp"
 
-#include "openeaagles/models/WorldModel.hpp"
+#include "mxrp/models/WorldModel.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestComputer, "TestComputer")
 EMPTY_SERIALIZER(TestComputer)

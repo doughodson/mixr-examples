@@ -11,7 +11,7 @@ testgauge1:
     
     components: {
         // include our gauge module
-        #include "openeaagles/instruments/gauges/gauge.epp"
+        #include "mxrp/instruments/gauges/gauge.epp"
         
         // Label to tell us what test we are running
         ( AsciiText

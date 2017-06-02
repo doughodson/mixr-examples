@@ -1,15 +1,15 @@
 
 #include "TestStation.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/Timers.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/Timers.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 

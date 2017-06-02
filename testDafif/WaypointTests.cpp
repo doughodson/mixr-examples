@@ -1,8 +1,8 @@
 
 #include "WaypointTests.hpp"
 
-#include "openeaagles/dafif/WaypointLoader.hpp"
-#include "openeaagles/base/util/str_utils.hpp"
+#include "mxrp/dafif/WaypointLoader.hpp"
+#include "mxrp/base/util/str_utils.hpp"
 
 #include <iostream>
 

@@ -2,9 +2,9 @@
 // Test Matrix class functions
 //------------------------------------------------------------------------------
 
-#include "openeaagles/base/Matrix.hpp"
-#include "openeaagles/base/Vectors.hpp"
-#include "openeaagles/base/units/Angles.hpp"
+#include "mxrp/base/Matrix.hpp"
+#include "mxrp/base/Vectors.hpp"
+#include "mxrp/base/units/Angles.hpp"
 #include <iostream>
 #include <iomanip>
 

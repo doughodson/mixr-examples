@@ -1,14 +1,14 @@
 
 #include "DspRadar.hpp"
 
-#include "openeaagles/models/system/Antenna.hpp"
-#include "openeaagles/models/system/Radar.hpp"
-#include "openeaagles/models/Track.hpp"
-#include "openeaagles/models/system/TrackManager.hpp"
+#include "mxrp/models/system/Antenna.hpp"
+#include "mxrp/models/system/Radar.hpp"
+#include "mxrp/models/Track.hpp"
+#include "mxrp/models/system/TrackManager.hpp"
 
-#include "openeaagles/base/Hsv.hpp"
+#include "mxrp/base/Hsv.hpp"
 
-#include "openeaagles/base/util/math_utils.hpp"
+#include "mxrp/base/util/math_utils.hpp"
 
 namespace oe {
 namespace xpanel {

@@ -1,10 +1,10 @@
 
 #include "TestCompass.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/graphics/MapPage.hpp"
-#include "openeaagles/graphics/SymbolLoader.hpp"
-#include "openeaagles/base/Rgb.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/graphics/MapPage.hpp"
+#include "mxrp/graphics/SymbolLoader.hpp"
+#include "mxrp/base/Rgb.hpp"
 
 using namespace oe;
 

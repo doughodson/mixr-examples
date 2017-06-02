@@ -1,6 +1,6 @@
 
 #include "SpdLines.hpp"
-#include "openeaagles/base/Number.hpp"
+#include "mxrp/base/Number.hpp"
 #include <GL/glu.h>
 #include <iostream>
 

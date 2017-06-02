@@ -2,8 +2,8 @@
 #ifndef __Display_H__
 #define __Display_H__
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
-#include "openeaagles/base/units/distance_utils.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mxrp/base/units/distance_utils.hpp"
 
 namespace oe {
 namespace base { class Angle; class Distance; class Number; }

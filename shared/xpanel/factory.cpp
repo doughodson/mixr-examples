@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 #include "DspRadar.hpp"
 #include "DspRwr.hpp"

@@ -2,7 +2,7 @@
 #ifndef __MapPage_H__
 #define __MapPage_H__
 
-#include "openeaagles/graphics/MapPage.hpp"
+#include "mxrp/graphics/MapPage.hpp"
 
 #include <array>
 

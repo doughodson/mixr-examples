@@ -2,17 +2,17 @@
 #include "TestDisplay.hpp"
 #include "TestStation.hpp"
 
-#include "openeaagles/models/player/Aam.hpp"
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/system/StoresMgr.hpp"
+#include "mxrp/models/player/Aam.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/system/StoresMgr.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/graphics/SymbolLoader.hpp"
+#include "mxrp/graphics/SymbolLoader.hpp"
 
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")
 EMPTY_SLOTTABLE(TestDisplay)

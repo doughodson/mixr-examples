@@ -7,7 +7,7 @@ testalt:
     }
     components: {
         // altitude dial module, which creates the meat of our dial
-        #include "openeaagles/instruments/dials/altitudedial.epp"
+        #include "mxrp/instruments/dials/altitudedial.epp"
 
         // here is a digital readout, to compare with the analog output
         ( AsciiText

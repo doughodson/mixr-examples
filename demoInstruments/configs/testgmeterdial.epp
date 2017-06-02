@@ -19,7 +19,7 @@ testgmeterdial:
         )
         
         // include our basic g-meter module
-        #include "openeaagles/instruments/dials/gmeter.epp"
+        #include "mxrp/instruments/dials/gmeter.epp"
         
         // Label to tell us what test we are running
         ( AsciiText

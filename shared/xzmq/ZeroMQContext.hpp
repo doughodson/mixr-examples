@@ -2,7 +2,7 @@
 #ifndef __oe_xzmq_ZeroMQContext_H__
 #define __oe_xzmq_ZeroMQContext_H__
 
-#include "openeaagles/base/Component.hpp"
+#include "mxrp/base/Component.hpp"
 
 namespace oe {
 namespace base { class Boolean; class Integer; }

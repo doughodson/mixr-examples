@@ -3,25 +3,25 @@
 #include "TestStation.hpp"
 #include "MapDisplay.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/player/Player.hpp"
-#include "openeaagles/models/system/Autopilot.hpp"
-#include "openeaagles/models/navigation/Navigation.hpp"
-#include "openeaagles/models/navigation/Route.hpp"
-#include "openeaagles/models/navigation/Steerpoint.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/Player.hpp"
+#include "mxrp/models/system/Autopilot.hpp"
+#include "mxrp/models/navigation/Navigation.hpp"
+#include "mxrp/models/navigation/Route.hpp"
+#include "mxrp/models/navigation/Steerpoint.hpp"
 
-#include "openeaagles/models/WorldModel.hpp"
+#include "mxrp/models/WorldModel.hpp"
 
-#include "openeaagles/graphics/SymbolLoader.hpp"
-#include "openeaagles/graphics/Display.hpp"
-#include "openeaagles/graphics/Shapes.hpp"
+#include "mxrp/graphics/SymbolLoader.hpp"
+#include "mxrp/graphics/Display.hpp"
+#include "mxrp/graphics/Shapes.hpp"
 
-#include "openeaagles/models/dynamics/LaeroModel.hpp"
+#include "mxrp/models/dynamics/LaeroModel.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
 
-#include "openeaagles/base/units/time_utils.hpp"
+#include "mxrp/base/units/time_utils.hpp"
 
 #include <array>
 #include <GL/glut.h>

@@ -1,7 +1,7 @@
 #ifndef __Worm_H__
 #define __Worm_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 #include <array>
 
 namespace oe {

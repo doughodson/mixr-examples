@@ -2,7 +2,7 @@
 #ifndef __CrsPntr_H__
 #define __CrsPntr_H__
 
-#include "openeaagles/graphics/Rotators.hpp"
+#include "mxrp/graphics/Rotators.hpp"
 
 //------------------------------------------------------------------------------
 // Class: CrsPntr

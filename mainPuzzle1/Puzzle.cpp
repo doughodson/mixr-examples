@@ -2,7 +2,7 @@
 #include "Puzzle.hpp"
 #include "State.hpp"
 
-#include "openeaagles/base/List.hpp"
+#include "mxrp/base/List.hpp"
 #include <iostream>
 
 IMPLEMENT_SUBCLASS(Puzzle, "Puzzle")

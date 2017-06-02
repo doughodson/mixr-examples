@@ -2,7 +2,7 @@
 #ifndef __TestCas_H__
 #define __TestCas_H__
 
-#include "openeaagles/graphics/Page.hpp"
+#include "mxrp/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestCas

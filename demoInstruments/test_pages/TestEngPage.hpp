@@ -2,8 +2,8 @@
 #ifndef __TestEngPage_H__
 #define __TestEngPage_H__
 
-#include "openeaagles/graphics/Page.hpp"
-#include "openeaagles/instruments/engines/EngPage.hpp"
+#include "mxrp/graphics/Page.hpp"
+#include "mxrp/instruments/engines/EngPage.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestEngPage

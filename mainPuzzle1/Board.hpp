@@ -2,7 +2,7 @@
 #ifndef __Board_H__
 #define __Board_H__
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 #include <array>
 

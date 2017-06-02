@@ -2,7 +2,7 @@
 #ifndef __oe_xbehaviors_PriorityArbiter_H__
 #define __oe_xbehaviors_PriorityArbiter_H__
 
-#include "openeaagles/base/ubf/Arbiter.hpp"
+#include "mxrp/base/ubf/Arbiter.hpp"
 
 namespace oe {
 namespace base { class List; class AbstractAction; }

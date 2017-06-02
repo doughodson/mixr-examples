@@ -2,7 +2,7 @@
 #ifndef __oe_xbehaviors_PlaneState_H__
 #define __oe_xbehaviors_PlaneState_H__
 
-#include "openeaagles/base/ubf/AbstractState.hpp"
+#include "mxrp/base/ubf/AbstractState.hpp"
 #include <array>
 
 namespace oe {

@@ -1,18 +1,18 @@
 
 #include "TestStation.hpp"
 
-#include "openeaagles/models/system/Antenna.hpp"
-#include "openeaagles/models/player/AirVehicle.hpp"
+#include "mxrp/models/system/Antenna.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/base/Timers.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/base/Timers.hpp"
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 using namespace oe;
 

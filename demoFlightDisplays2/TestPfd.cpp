@@ -1,6 +1,6 @@
 
 #include "TestPfd.hpp"
-#include "openeaagles/base/Pair.hpp"
+#include "mxrp/base/Pair.hpp"
 #include "Pfd.hpp"
 
 using namespace oe;

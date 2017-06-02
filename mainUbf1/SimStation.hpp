@@ -3,7 +3,7 @@
 #define __SimStation_H__
 
 //#include "agent/AgentStation.h"
-#include "openeaagles/simulation/Station.hpp"
+#include "mxrp/simulation/Station.hpp"
 
 namespace oe {
 namespace base { class Table1; class PairStream; }

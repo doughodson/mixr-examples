@@ -1,16 +1,16 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 #include "Blocks.hpp"
 #include "Board.hpp"
 #include "Puzzle.hpp"
 #include "State.hpp"
 
-#include "openeaagles/base/factory.hpp"
-#include "openeaagles/graphics/factory.hpp"
-#include "openeaagles/gui/glut/factory.hpp"
+#include "mxrp/base/factory.hpp"
+#include "mxrp/graphics/factory.hpp"
+#include "mxrp/gui/glut/factory.hpp"
 
 #include <string>
 

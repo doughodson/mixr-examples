@@ -1,8 +1,8 @@
 
 #include "Blocks.hpp"
 
-#include "openeaagles/base/Integer.hpp"
-#include "openeaagles/base/List.hpp"
+#include "mxrp/base/Integer.hpp"
+#include "mxrp/base/List.hpp"
 
 IMPLEMENT_ABSTRACT_SUBCLASS(Block, "PuzzleBlock")
 EMPTY_DELETEDATA(Block)

@@ -1,16 +1,16 @@
 
 #include "NavRadios.hpp"
 
-#include "openeaagles/models/player/Player.hpp"
+#include "mxrp/models/player/Player.hpp"
 
-#include "openeaagles/dafif/AirportLoader.hpp"
-#include "openeaagles/dafif/NavaidLoader.hpp"
+#include "mxrp/dafif/AirportLoader.hpp"
+#include "mxrp/dafif/NavaidLoader.hpp"
 
 #include "WorldModel.hpp"
 
-#include "openeaagles/base/util/nav_utils.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/units/Distances.hpp"
+#include "mxrp/base/util/nav_utils.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/units/Distances.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(NavRadio, "NavRadio")
 EMPTY_SERIALIZER(NavRadio)

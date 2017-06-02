@@ -2,7 +2,7 @@
 #ifndef __oe_xzmq_ZeroMQHandler_H__
 #define __oe_xzmq_ZeroMQHandler_H__
 
-#include "openeaagles/base/network/NetHandler.hpp"
+#include "mxrp/base/network/NetHandler.hpp"
 
 #include <map>
 #include <string>

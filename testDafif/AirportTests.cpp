@@ -1,8 +1,8 @@
 
 #include "AirportTests.hpp"
 
-#include "openeaagles/dafif/AirportLoader.hpp"
-#include "openeaagles/base/util/str_utils.hpp"
+#include "mxrp/dafif/AirportLoader.hpp"
+#include "mxrp/base/util/str_utils.hpp"
 
 #include <iostream>
 

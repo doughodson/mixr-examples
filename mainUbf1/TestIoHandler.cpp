@@ -3,16 +3,16 @@
 #include "SimStation.hpp"
 #include "configs/io/f16HotasIo.hpp"
 
-#include "openeaagles/models/system/Autopilot.hpp"
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/navigation/Navigation.hpp"
-#include "openeaagles/models/navigation/Route.hpp"
+#include "mxrp/models/system/Autopilot.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/navigation/Navigation.hpp"
+#include "mxrp/models/navigation/Route.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
+#include "mxrp/simulation/Simulation.hpp"
 
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/io/IoData.hpp"
-#include "openeaagles/base/util/math_utils.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/io/IoData.hpp"
+#include "mxrp/base/util/math_utils.hpp"
 
 using namespace oe;
 

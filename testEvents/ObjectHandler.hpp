@@ -2,7 +2,7 @@
 #ifndef __ObjectHandler_H__
 #define __ObjectHandler_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 class TestObject;
 

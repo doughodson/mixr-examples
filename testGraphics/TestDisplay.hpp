@@ -2,7 +2,7 @@
 #ifndef __TestDisplay_H__
 #define __TestDisplay_H__
 
-#include "openeaagles/gui/glut/GlutDisplay.hpp"
+#include "mxrp/gui/glut/GlutDisplay.hpp"
 
 namespace oe {
    namespace graphics { class Graphic; }

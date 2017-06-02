@@ -2,7 +2,7 @@
 #ifndef __NavRadio_H__
 #define __NavRadio_H__
 
-#include "openeaagles/models/system/Radio.hpp"
+#include "mxrp/models/system/Radio.hpp"
 
 namespace oe {
 namespace dafif { class AirportLoader; class NavaidLoader; }

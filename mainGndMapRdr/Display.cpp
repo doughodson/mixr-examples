@@ -2,21 +2,21 @@
 #include "Display.hpp"
 #include "RealBeamRadar.hpp"
 
-#include "openeaagles/models/player/Player.hpp"
+#include "mxrp/models/player/Player.hpp"
 
-#include "openeaagles/simulation/Simulation.hpp"
-#include "openeaagles/simulation/Station.hpp"
+#include "mxrp/simulation/Simulation.hpp"
+#include "mxrp/simulation/Station.hpp"
 
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/Rgb.hpp"
-#include "openeaagles/base/Hsva.hpp"
-#include "openeaagles/base/Color.hpp"
-#include "openeaagles/base/Number.hpp"
-#include "openeaagles/base/String.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/base/units/Distances.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/Rgb.hpp"
+#include "mxrp/base/Hsva.hpp"
+#include "mxrp/base/Color.hpp"
+#include "mxrp/base/Number.hpp"
+#include "mxrp/base/String.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/base/units/Distances.hpp"
 
 using namespace oe;
 

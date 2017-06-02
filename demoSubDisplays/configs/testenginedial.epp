@@ -8,7 +8,7 @@ testenginedial:
  
     components: {
         // here is our base module for the engine dial
-        #include "openeaagles/instruments/dials/enginedial.epp"        
+        #include "mxrp/instruments/dials/enginedial.epp"        
         // label
         ( AsciiText
             color: white

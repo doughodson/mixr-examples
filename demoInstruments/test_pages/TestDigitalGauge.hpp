@@ -2,7 +2,7 @@
 #ifndef __TestDigitalGauge_H__
 #define __TestDigitalGauge_H__
 
-#include "openeaagles/graphics/Page.hpp"
+#include "mxrp/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestDigitalGauge

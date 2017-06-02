@@ -1,9 +1,9 @@
 
 #include "ZeroMQHandler.hpp"
 #include "ZeroMQContext.hpp"
-#include "openeaagles/base/Boolean.hpp"
-#include "openeaagles/base/Integer.hpp"
-#include "openeaagles/base/String.hpp"
+#include "mxrp/base/Boolean.hpp"
+#include "mxrp/base/Integer.hpp"
+#include "mxrp/base/String.hpp"
 
 #include <sstream>
 

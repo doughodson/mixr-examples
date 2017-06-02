@@ -2,7 +2,7 @@
 #ifndef __oe_xpanel_TdAzPtr_H__
 #define __oe_xpanel_TdAzPtr_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 
 namespace oe {
 namespace base { class Number; }

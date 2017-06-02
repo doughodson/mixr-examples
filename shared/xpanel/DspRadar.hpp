@@ -2,7 +2,7 @@
 #ifndef __oe_xpanel_DspRadar_H__
 #define __oe_xpanel_DspRadar_H__
 
-#include "openeaagles/graphics/Graphic.hpp"
+#include "mxrp/graphics/Graphic.hpp"
 #include <array>
 
 namespace oe {

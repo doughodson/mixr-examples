@@ -1,7 +1,7 @@
 
 #include "PriorityArbiter.hpp"
 
-#include "openeaagles/base/List.hpp"
+#include "mxrp/base/List.hpp"
 
 #include "PlaneAction.hpp"
 #include <iostream>

@@ -3,16 +3,16 @@
 #include "TestStation.hpp"
 #include "MapPage.hpp"
 
-#include "openeaagles/models/player/AirVehicle.hpp"
-#include "openeaagles/models/player/Player.hpp"
-#include "openeaagles/models/system/Autopilot.hpp"
-#include "openeaagles/models/dynamics/LaeroModel.hpp"
+#include "mxrp/models/player/AirVehicle.hpp"
+#include "mxrp/models/player/Player.hpp"
+#include "mxrp/models/system/Autopilot.hpp"
+#include "mxrp/models/dynamics/LaeroModel.hpp"
 
-#include "openeaagles/base/units/Angles.hpp"
-#include "openeaagles/base/units/Distances.hpp"
-#include "openeaagles/base/units/Times.hpp"
+#include "mxrp/base/units/Angles.hpp"
+#include "mxrp/base/units/Distances.hpp"
+#include "mxrp/base/units/Times.hpp"
 
-#include "openeaagles/base/util/enum_utils.hpp"
+#include "mxrp/base/util/enum_utils.hpp"
 
 #include <GL/glut.h>
 #include <iomanip>

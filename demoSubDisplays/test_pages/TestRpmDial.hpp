@@ -2,7 +2,7 @@
 #ifndef __TestRpmDial_H__
 #define __TestRpmDial_H__
 
-#include "openeaagles/graphics/Page.hpp"
+#include "mxrp/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestRpmDial

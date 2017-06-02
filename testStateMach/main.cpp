@@ -1,10 +1,10 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/edl_parser.hpp"
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/StateMachine.hpp"
-#include "openeaagles/base/Timers.hpp"
+#include "mxrp/base/edl_parser.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/StateMachine.hpp"
+#include "mxrp/base/Timers.hpp"
 
 #include <string>
 #include <cstdlib>

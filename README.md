@@ -1,9 +1,8 @@
 
-OpenEaagles Examples
-====================
+Mixed Reality Simulation Platform Examples
+==========================================
 
-The most current version of OpenEaagles can be found at
-[www.OpenEaagles.org][1].
+The most current version of the mixed reality simulation platform can be found at [www.mxrp.org][mxrp].
 
 Notes
 -----
@@ -142,4 +141,4 @@ Libraries: (the 'x' in library name indicates eXample)
 * xZeroMQHandlers -- eXample ZeroMQ network handlers
 
 
-[1]: http://www.OpenEaagles.org
+[mxrp]: http://www.mxrp.org

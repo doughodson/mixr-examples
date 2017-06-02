@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "openeaagles/base/Object.hpp"
+#include "mxrp/base/Object.hpp"
 
 #include "TestStateMachine01.hpp"
 #include "TestStateMachine02.hpp"
@@ -11,7 +11,7 @@
 #include "TestStateMachine04B.hpp"
 #include "TestStateMachine04C.hpp"
 
-#include "openeaagles/base/factory.hpp"
+#include "mxrp/base/factory.hpp"
 
 #include <string>
 

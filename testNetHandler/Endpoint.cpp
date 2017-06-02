@@ -1,8 +1,8 @@
 
 #include "Endpoint.hpp"
 
-#include "openeaagles/base/network/TcpHandler.hpp"
-#include "openeaagles/base/Number.hpp"
+#include "mxrp/base/network/TcpHandler.hpp"
+#include "mxrp/base/Number.hpp"
 #include <iostream>
 
 using namespace oe;

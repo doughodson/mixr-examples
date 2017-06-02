@@ -1,8 +1,8 @@
 
 #include "MyPager.hpp"
 
-#include "openeaagles/base/Pair.hpp"
-#include "openeaagles/base/PairStream.hpp"
+#include "mxrp/base/Pair.hpp"
+#include "mxrp/base/PairStream.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(MyPager, "MyPager")
 EMPTY_COPYDATA(MyPager)

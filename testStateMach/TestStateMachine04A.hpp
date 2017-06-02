@@ -2,7 +2,7 @@
 #ifndef __TestStateMachine04A_H__
 #define __TestStateMachine04A_H__
 
-#include "openeaagles/base/StateMachine.hpp"
+#include "mxrp/base/StateMachine.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestStateMachine04A -- (sub) State Machine test #4a

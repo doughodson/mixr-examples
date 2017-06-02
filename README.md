@@ -113,11 +113,11 @@ Test Applications
 Tutorial applications:
 --------------------------------------------------------------------------------------------
 
-* tutorial01 -- This example demonstrates a simple compile and link with the OpenEaagles basic foundation library. It was created primary as a simple demonstration of linking to a single OpenEaagles library. The intent is to show how to build your first "Hello World" OpenEaagles-based application.
+* tutorial01 -- This example demonstrates a simple compile and link with the base library. It was created primary as a simple demonstration of linking to a single MXRP library. The intent is to show how to build your first "Hello World" MXRP-based application.
 
-* tutorial02 -- This example demonstrates the creation of an OpenEaagles compliant class called Random. As with most extensible frameworks, macros are used to spell out the boilerplate code that needs to be defined in order to create a "well defined" class. The macros make it easy to develop native toolkit components quickly. This example purposely focuses on a simple class so that the developer can focus on the boilerplate aspects of OpenEaagles classes.
+* tutorial02 -- This example demonstrates the creation of an MXRP compliant class called Random. As with most extensible platforms, macros are used to spell out the boilerplate code that needs to be defined in order to create a "well defined" class. The macros make it easy to develop native toolkit components quickly. This example purposely focuses on a simple class so that the developer can focus on the boilerplate aspects of MXRP classes.
 
-* tutorial03 -- This example extends the capability of the Random class from tutorial02. The application has been enhanced so that it can read an input file and have the native toolkit parser create the Random class with attributes specified at run-time. This example is focused as a starting point for understanding how to use the OpenEaagles parser and input language.
+* tutorial03 -- This example extends the capability of the Random class from tutorial02. The application has been enhanced so that it can read an input file and have the native toolkit parser create the Random class with attributes specified at run-time. This example is focused as a starting point for understanding how to use the MXRP parser and input language.
 
 * tutorial04 -- tutorial03 has been enhanced so that the Random class can provide numbers drawn from different distributions. Two specific distributions have been added: uniform and exponential. The Random class has been redefined to be abstract.
 

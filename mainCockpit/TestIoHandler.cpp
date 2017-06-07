@@ -58,8 +58,8 @@ void TestIoHandler::inputDevices(const double dt)
    // ---
    const auto sta = static_cast<SimStation*>( findContainerByType(typeid(SimStation)) );
 
-   oe::simulation::Simulation* sim = nullptr;
-   oe::models::AirVehicle* av = nullptr;
+   oe::simulation::Simulation* sim {};
+   oe::models::AirVehicle* av {};
 
    if (sta != nullptr) {
       sim = sta->getSimulation();
@@ -83,11 +83,11 @@ void TestIoHandler::inputDevices(const double dt)
       // ------------------------------------------------------------
 
       {
-         bool enabled = false;
+         bool enabled {};
          inData->getDiscreteInput(CTL_ENABLE_SW, &enabled);
 
          {  // Toggle simulation freeze
-            bool sw = false;
+            bool sw {};
             inData->getDiscreteInput(FREEZE_SW, &sw);
             const bool frzSw = sw && enabled;
             if (frzSw && !frzSw1) {
@@ -98,7 +98,7 @@ void TestIoHandler::inputDevices(const double dt)
          }
 
          {  // Send a reset pulse to the station
-            bool sw = false;
+            bool sw {};
             inData->getDiscreteInput(RESET_SW, &sw);
             const bool rstSw = sw && enabled;
             if (rstSw && !rstSw1) {
@@ -108,7 +108,7 @@ void TestIoHandler::inputDevices(const double dt)
          }
 
          {  // Send a weapons reload pulse to the station
-            bool sw = false;
+            bool sw {};
             inData->getDiscreteInput(RELOAD_SW, &sw);
             const bool wpnReloadSw = sw && enabled;
             if (wpnReloadSw && !wpnReloadSw1) {
@@ -124,7 +124,7 @@ void TestIoHandler::inputDevices(const double dt)
       // ------------------------------------------------------------
 
       {  // Process Roll Input
-         double ai(0.0);
+         double ai {};
          inData->getAnalogInput(ROLL_AI, &ai);
          const double aiLim = oe::base::alim(ai, 1.0f);
          if (ap != nullptr)   { ap->setControlStickRollInput(aiLim);  }
@@ -132,7 +132,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       {  // Process Pitch Input
-         double ai(0.0);
+         double ai {};
          inData->getAnalogInput(PITCH_AI, &ai);
          const double aiLim = oe::base::alim(ai, 1.0f);
          if (ap != nullptr)   { ap->setControlStickPitchInput(aiLim); }
@@ -140,14 +140,14 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       {  // Process Rudder Input
-         double ai(0.0);
+         double ai {};
          inData->getAnalogInput(RUDDER_AI, &ai);
          const double aiLim = oe::base::alim(ai, 1.0f);
          av->setRudderPedalInput(aiLim);
       }
 
       {  // Process Throttle Input
-         double value(0.0);
+         double value {};
          inData->getAnalogInput(THROTTLE_AI, &value);
 
          if (value < 0.0f)         { value = 0.0f; }
@@ -158,7 +158,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Weapons Release
-         bool sw = false;
+         bool sw {};
          inData->getDiscreteInput(PICKLE_SW, &sw);
          if (sw != wpnRelSw1) {
             oe::base::Boolean sw1(sw);
@@ -168,7 +168,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Trigger switch
-         bool sw = false;
+         bool sw {};
          inData->getDiscreteInput(TRIGGER_SW2, &sw);
          if (sw != trgSw1) {
             oe::base::Boolean sw1(sw);
@@ -178,7 +178,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Target Step (reject)
-         bool sw = false;
+         bool sw {};
          inData->getDiscreteInput(TMS_RIGHT_SW, &sw);
          if (sw && !tgtStepSw1) {
             av->event(TGT_STEP_EVENT);
@@ -187,7 +187,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Target Designate
-         bool sw = false;
+         bool sw {};
          inData->getDiscreteInput(TMS_UP_SW, &sw);
          if (sw && !tgtDesSw1) {
             av->event(TGT_DESIGNATE);
@@ -196,7 +196,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Return-To-Search
-         bool sw = false;
+         bool sw {};
          inData->getDiscreteInput(TMS_DOWN_SW, &sw);
          if (sw && !rtn2SrchSw1) {
             av->event(SENSOR_RTS);
@@ -205,7 +205,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Autopilot disengage
-         bool autopilotSw = false;
+         bool autopilotSw {};
          inData->getDiscreteInput(PADDLE_SW, &autopilotSw);
          if (autopilotSw && !autopilotSw1) {
             const auto ap = dynamic_cast<oe::models::Autopilot*>(av->getPilot());
@@ -221,19 +221,19 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Speedbrake switch
-         bool sbExtSw = false;
-         bool sbRetSw = false;
+         bool sbExtSw {};
+         bool sbRetSw {};
          inData->getDiscreteInput(SB_EXT_SW, &sbExtSw);
          inData->getDiscreteInput(SB_RET_SW, &sbRetSw);
 
-         double sb(0.0);
+         double sb {};
          if(sbExtSw) sb = -1.0f;
          if(sbRetSw) sb =  1.0f;
          av->setSpeedBrakesSwitch(sb);
       }
 
       { // Steerpoint increment
-         bool incStptSw = false;
+         bool incStptSw {};
          inData->getDiscreteInput(DMS_UP_SW, &incStptSw);
          if(incStptSw && !incStptSw1) {
             // find our route and increment the steerpoint
@@ -252,7 +252,7 @@ void TestIoHandler::inputDevices(const double dt)
       }
 
       { // Steerpoint decrement
-         bool decStptSw = false;
+         bool decStptSw {};
          inData->getDiscreteInput(DMS_DOWN_SW, &decStptSw);
          if (decStptSw && !decStptSw1) {
             // find our route and increment the steerpoint

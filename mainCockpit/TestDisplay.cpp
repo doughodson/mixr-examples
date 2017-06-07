@@ -28,7 +28,6 @@ EMPTY_SLOTTABLE(TestDisplay)
 EMPTY_SERIALIZER(TestDisplay)
 EMPTY_DELETEDATA(TestDisplay)
 
-// Event() map
 BEGIN_EVENT_HANDLER(TestDisplay)
    ON_EVENT('r',onResetKey)
    ON_EVENT('R',onResetKey)
@@ -50,90 +49,15 @@ BEGIN_EVENT_HANDLER(TestDisplay)
    ON_EVENT('+',onStepOwnshipKey)
 END_EVENT_HANDLER()
 
-TestDisplay::TestDisplay() : myStation(nullptr)
+TestDisplay::TestDisplay()
 {
    STANDARD_CONSTRUCTOR()
-
-   // ---
-   // RADAR, RWR and SA stuff
-   // ---
-   rdrDisplay = nullptr;
-   rwrDisplay = nullptr;
-   for (int i = 0; i < MAX_TRACKS; i++) {
-      tracks[i] = nullptr;
-      trkIdx[i] = 0;
-   }
-   range = 40.0;
-
-   // ---
-   // PFD stuff
-   // ---
-
-   // pitch and roll
-   pitch = 0.0;
-   pitchRate = 10.0;
-   roll = 0.0;
-   rollRate = -9.0;
-
-   // heading and nav stuff
-   trueHdg = 0.0;
-   tHdgRate = 11.0;
-   cmdHdg = 0.0;
-   cmdHdgRate = 3.0;
-
-   // airspeed
-   airSpd = 0.0;
-   airSpdRate = 5.0;
-
-   // altitude
-   alt = 10000.0;
-   altRate = 80.0;
-
-   // side slip
-   slip = 0.0;
-   slipRate = 10.0;
-
-   // glideslope
-   gSlope = 0.0;
-   gSlopeRate = 0.2;
-
-   // lateral deviation
-   latDev = 0.0;
-   ldRate = 0.3;
-
-   // commanded speed
-   cmdSpd = 200.0;
-
-   // commanded alt
-   cmdAlt = 6000.0;
-
-   // vvi
-   vvi = 0.0;
-   vviRate = 500.0;
-
-   // flight director (command bars)
-   fDirBank = 0.0;
-   fDirBankRate = 4.0;
-   fDirPitch = 0.0;
-   fDirPitchRate = 7.0;
-
-   // selected barometric pressure
-   baro = 0.0;
-   baroRate = 10.0;
 }
 
 void TestDisplay::copyData(const TestDisplay& org, const bool)
 {
    BaseClass::copyData(org);
 
-   myStation = nullptr;
-   for (int i = 0; i < MAX_TRACKS; i++) {
-      tracks[i] = nullptr;
-      trkIdx[i] = 0;
-   }
-
-   rdrDisplay = nullptr;
-   rwrDisplay = nullptr;
    range = org.range;
 
    rangeSD.empty();

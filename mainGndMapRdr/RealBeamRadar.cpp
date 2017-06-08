@@ -40,20 +40,7 @@ RealBeamRadar::RealBeamRadar()
 {
    STANDARD_CONSTRUCTOR()
 
-   terrain = nullptr;
-
    altitude = 15000.0 * base::distance::FT2M;
-   antAzAngle = 0.0;
-   antElAngle = 0.0;
-   ray0 = 0;
-   beamWidth = 180.0;
-   interpolate = false;
-   fpass = true;
-
-   // the image
-   image = nullptr;
-   imgWidth = 0;
-   imgHeight = 0;
 
    // working storage
    elevations = new double[IMG_WIDTH];
@@ -70,12 +57,6 @@ void RealBeamRadar::copyData(const RealBeamRadar& org, const bool cc)
    BaseClass::copyData(org);
 
    if (cc) {
-      terrain = nullptr;
-      image = nullptr;
-      elevations = nullptr;
-      validFlgs = nullptr;
-      aacData = nullptr;
-      maskFlgs = nullptr;
       initImageMemory(IMG_WIDTH, IMG_HEIGHT);
    }
 

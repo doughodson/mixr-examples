@@ -29,7 +29,7 @@ private:
     bool setDisplay(Display* const d);
 
     oe::base::safe_ptr<Display> display;
-    bool displayInit;
+    bool displayInit {};
 };
 
 #endif

@@ -40,8 +40,8 @@ public:
 private:
    oe::base::safe_ptr<oe::simulation::Station> myStation;
 
-   bool   testTexture;      // Texture image test
-   GLuint texture;          // Texture
+   bool   testTexture {};      // Texture image test
+   GLuint texture {};          // Texture
 };
 
 #endif

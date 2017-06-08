@@ -56,28 +56,28 @@ private:
    bool copyImageMemory(const RealBeamRadar& org);
    void freeImageMemory();
 
-   const oe::terrain::Terrain* terrain;  // Terrain data
-   double            altitude;               // Ref altitude (meters)
-   double            antAzAngle;             // Antenna azimuth angle (degs)
-   double            antElAngle;             // Antenna elevation angle (degs)
-   int               ray0;                   // Last ray generated
-   double            beamWidth;              // Antenna beam width (degs)
-   bool              interpolate;            // Interpolate flag
-   bool              fpass;                  // First pass flag
+   const oe::terrain::Terrain* terrain {};  // Terrain data
+   double            altitude {};           // Ref altitude (meters)
+   double            antAzAngle {};         // Antenna azimuth angle (degs)
+   double            antElAngle {};         // Antenna elevation angle (degs)
+   int               ray0 {};               // Last ray generated
+   double            beamWidth {180.0};     // Antenna beam width (degs)
+   bool              interpolate {};        // Interpolate flag
+   bool              fpass {true};          // First pass flag
 
-   double*           elevations;       // Terrain elevations
-   bool*             validFlgs;        // Terrain elevation flag flags
-   double*           aacData;          // Aspect angle cosines
-   bool*             maskFlgs;         // Mask flags
+   double*           elevations {};         // Terrain elevations
+   bool*             validFlgs {};          // Terrain elevation flag flags
+   double*           aacData {};            // Aspect angle cosines
+   bool*             maskFlgs {};           // Mask flags
 
 //   double            antAz;                  //
    static const int MAX_IMAGE_WIDTH  = 2048; // maximum image width
    static const int MAX_IMAGE_HEIGHT = 2048; // maximum image height
    static const int PIXEL_SIZE = 3;          // pixel size in bytes { RGB }
 
-   int             imgWidth;         // Image width  (number of columns)
-   int             imgHeight;        // Image height (number of rows)
-   unsigned  char* image;            // The image pixels
+   int             imgWidth {};      // Image width  (number of columns)
+   int             imgHeight {};     // Image height (number of rows)
+   unsigned  char* image {};         // The image pixels
                                      //   -- access individual pixels by mainImage[icol*imgWidth*PIZEL_SIZE + irow*PIZEL_SIZE]
                                      //   --   irow : [ 0 ... (imgHeight-1) ]
                                      //   --   icol : [ 0 ... (imgWidth-1) ]

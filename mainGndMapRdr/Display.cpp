@@ -34,21 +34,11 @@ END_SLOT_MAP()
 Display::Display()
 {
    STANDARD_CONSTRUCTOR()
-
-   myStation = nullptr;
-   testTexture = false;
-   texture = 0;
 }
 
-void Display::copyData(const Display& org, const bool cc)
+void Display::copyData(const Display& org, const bool)
 {
    BaseClass::copyData(org);
-
-   if (cc) {
-      myStation = nullptr;
-      testTexture = false;
-      texture = 0;
-   }
 }
 
 void Display::deleteData()

@@ -10,9 +10,9 @@ class StnTimerObject;
 // Class: StnTimerObject
 // Description: create our window and startup any timers needed
 //------------------------------------------------------------
-class Station : public oe::simulation::Station
+class Station : public mxrp::simulation::Station
 {
-   DECLARE_SUBCLASS(Station, oe::simulation::Station)
+   DECLARE_SUBCLASS(Station, mxrp::simulation::Station)
 public:
    Station();
 

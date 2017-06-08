@@ -31,7 +31,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 {
    // tell our station to shutdown
    if (stn != nullptr && !stn->isShutdown()) {
-       stn->event(oe::base::Component::SHUTDOWN_EVENT);
+       stn->event(mxrp::base::Component::SHUTDOWN_EVENT);
    }
    QMainWindow::closeEvent(event);
 }
@@ -61,7 +61,7 @@ void MainWindow::play()
 {
    // get the simulation and play it!
    if (stn != nullptr) {
-      oe::simulation::Simulation* sim = stn->getSimulation();
+      mxrp::simulation::Simulation* sim = stn->getSimulation();
       if (sim != nullptr) {
          if (stn->getFastForwardRate() != 1) stn->setFastForwardRate(1);
          if (stn->isFrozen()) stn->freeze(false);
@@ -73,7 +73,7 @@ void MainWindow::play()
 void MainWindow::pause()
 {
    if (stn != nullptr) {
-      oe::simulation::Simulation* sim = stn->getSimulation();
+      mxrp::simulation::Simulation* sim = stn->getSimulation();
       if (sim != nullptr) {
          if (stn->isNotFrozen()) stn->freeze(true);
          if (sim->isNotFrozen()) sim->freeze(true);
@@ -84,7 +84,7 @@ void MainWindow::pause()
 void MainWindow::ff()
 {
    if (stn != nullptr) {
-      oe::simulation::Simulation* sim = stn->getSimulation();
+      mxrp::simulation::Simulation* sim = stn->getSimulation();
       if (sim != nullptr) {
          if (stn->isFrozen()) stn->freeze(false);
          if (sim->isFrozen()) sim->freeze(false);
@@ -101,12 +101,12 @@ void MainWindow::reset()
 {
    // also freeze and set the FF rate to 1
    if (stn != nullptr) {
-      oe::simulation::Simulation* sim = stn->getSimulation();
+      mxrp::simulation::Simulation* sim = stn->getSimulation();
       if (sim != nullptr) {
          if (stn->getFastForwardRate() != 1) stn->setFastForwardRate(1);
          if (stn->isNotFrozen()) stn->freeze(true);
          if (sim->isNotFrozen()) sim->freeze(true);
-         stn->event(oe::base::Component::RESET_EVENT);
+         stn->event(mxrp::base::Component::RESET_EVENT);
       }
    }
 }

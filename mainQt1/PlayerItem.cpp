@@ -95,7 +95,7 @@ bool PlayerItem::setDefaultImageSize(QSize x)
    return true;
 }
 
-void PlayerItem::refreshPlayer(const oe::models::Player* const ownship)
+void PlayerItem::refreshPlayer(const mxrp::models::Player* const ownship)
 {
    if (ownship != nullptr) {
       plyId = ownship->getID();

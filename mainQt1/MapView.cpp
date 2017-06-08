@@ -83,7 +83,7 @@ void MapView::refreshView()
             // init the map
             if (map != nullptr && !map->isInit()) {
                // grab our simulation, if we have one
-               auto sim = dynamic_cast<const oe::models::WorldModel*>(stn->getSimulation());
+               auto sim = dynamic_cast<const mxrp::models::WorldModel*>(stn->getSimulation());
                if (sim != nullptr) {
                   map->initialize(sim->getRefLatitude(), sim->getRefLongitude(), 100);
                }
@@ -94,16 +94,16 @@ void MapView::refreshView()
    else {
       // update the map and players
       if (map != nullptr) map->updateBG();
-      auto sim = dynamic_cast<const oe::models::WorldModel*>(stn->getSimulation());
+      auto sim = dynamic_cast<const mxrp::models::WorldModel*>(stn->getSimulation());
       if (sim != nullptr) {
-         const oe::base::PairStream* stream = sim->getPlayers();
+         const mxrp::base::PairStream* stream = sim->getPlayers();
          if (stream != nullptr) {
             // go through the players and add new or update existing players
-            const oe::base::List::Item* item = stream->getFirstItem();
+            const mxrp::base::List::Item* item = stream->getFirstItem();
             while (item != nullptr) {
-               const oe::base::Pair* pair = (const oe::base::Pair*)item->getValue();
+               const auto pair = (const mxrp::base::Pair*)item->getValue();
                if (pair != nullptr) {
-                  const oe::models::Player* ply = dynamic_cast<const oe::models::Player*>(pair->object());
+                  const auto ply = dynamic_cast<const mxrp::models::Player*>(pair->object());
                   if (ply != nullptr) {
                      // hold onto this player, just to be safe
                      ply->ref();
@@ -136,7 +136,7 @@ void MapView::refreshView()
             // our players against the sim, removing any old players
             for (int i = 0; i < players.size(); i++) {
                unsigned short id = players[i]->getPlayerId();
-               const oe::models::Player* ply = dynamic_cast<const oe::models::Player*>(sim->findPlayer(id));
+               const auto ply = dynamic_cast<const mxrp::models::Player*>(sim->findPlayer(id));
                if (ply == nullptr) {
                   // player is gone, remove
                   PlayerItem* p = players[i];

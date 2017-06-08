@@ -96,8 +96,8 @@ void MapItem::wheelEvent(QGraphicsSceneWheelEvent* event)
 // ---
 void MapItem::moveMap(const double deltaN, const double deltaE)
 {
-   double lat(0.0);
-   double lon(0.0);
+   double lat {};
+   double lon {};
    pixelsToLL(deltaE, deltaN, lon, lat);
 
    // update our lat/lon
@@ -113,11 +113,11 @@ void MapItem::moveMap(const double deltaN, const double deltaE)
 // ---
 bool MapItem::setRefLat(const double lat)
 {
-   bool ok = false;
+   bool ok {};
    // nothing more than 70 degrees north or south will suffice
    if (lat <= 90 && lat >= -90) {
       refLat = lat;
-      cosineLatReference = std::cos(oe::base::angle::D2RCC * refLat);
+      cosineLatReference = std::cos(mxrp::base::angle::D2RCC * refLat);
       ok = true;
    }
    return ok;
@@ -128,7 +128,7 @@ bool MapItem::setRefLat(const double lat)
 // ---
 bool MapItem::setRefLon(const double lon)
 {
-   bool ok = false;
+   bool ok {};
    if (lon <= 180 && lon >= -180) {
       refLon = lon;
       ok = true;
@@ -178,14 +178,14 @@ void MapItem::drawGrid(QPainter* painter)
    }
 
    // get the nearest starting lat and lon lines to draw
-   const int centerLat = oe::base::nint(refLat);
-   const int centerLon = oe::base::nint(refLon);
+   const int centerLat = mxrp::base::nint(refLat);
+   const int centerLon = mxrp::base::nint(refLon);
 
    // calculate the number of latitude lines
    const int numLinesLat = (range / 60.0) + 1;
 
    // calculate EW range
-   double rangeEW(1.0);
+   double rangeEW {1.0};
    if (northUp) {
       rangeEW = (bRect.width() * pixWERes);
    } else {
@@ -196,8 +196,8 @@ void MapItem::drawGrid(QPainter* painter)
    int startLat = centerLat - (numLinesLat / 2);
    int endLat = centerLat + (numLinesLat / 2);
    // top side (or bottom, depending on hemisphere)
-   double py = 0.0;
-   double px = 0.0;
+   double py {};
+   double px {};
    const int wid = bRect.width();
    const int hei = bRect.height();
    if (endLat >= 90)     { endLat = 90;     }
@@ -280,7 +280,7 @@ void MapItem::drawGrid(QPainter* painter)
 // ---
 void MapItem::setHeading(const double x)
 {
-   const double hdgRad = oe::base::angle::D2RCC * x;
+   const double hdgRad = mxrp::base::angle::D2RCC * x;
    heading = x;
    headingSin = std::sin(hdgRad);
    headingCos = std::cos(hdgRad);
@@ -295,8 +295,8 @@ void MapItem::pixelsToLL(const double px, const double py, double& lon, double& 
    const double acX = px * pixWERes;
    const double acY = -py * pixNSRes;
 
-   double east = 0.0;
-   double north = 0.0;
+   double east {};
+   double north {};
    if (northUp) {
       east = acX;
       north = acY;

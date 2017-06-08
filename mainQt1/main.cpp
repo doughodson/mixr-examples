@@ -83,7 +83,7 @@ int main(int argc, char* argv[])
    Station* station = builder(configFilename);
 
    // prime the station
-   station->event(oe::base::Component::RESET_EVENT);
+   station->event(mxrp::base::Component::RESET_EVENT);
 
    // create the time critical process
    station->createTimeCriticalProcess();

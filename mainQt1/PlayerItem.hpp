@@ -18,7 +18,7 @@ public:
    ~PlayerItem();
 
    // update function
-   virtual void refreshPlayer(const oe::models::Player* const ownship);
+   virtual void refreshPlayer(const mxrp::models::Player* const ownship);
 
    // we can tell our PlayerItem to use a specific image file to draw
    virtual unsigned short getPlayerId() const;

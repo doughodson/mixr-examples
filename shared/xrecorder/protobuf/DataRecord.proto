@@ -16,15 +16,15 @@
 //
 // -----------------------------------------------------------------------------
 
-import "openeaagles/recorder/protobuf/DataRecord.proto";
+import "mxrp/recorder/protobuf/DataRecord.proto";
 
-package oe.xrecorder.pb;
+package mxrp.xrecorder.pb;
 
 // =============================================================================
 // Extend the common data record
 // =============================================================================
 
-extend oe.recorder.pb.DataRecord {
+extend mxrp.recorder.pb.DataRecord {
    optional MyDataMsg my_data_msg = 1000;
 }
 
@@ -34,7 +34,7 @@ extend oe.recorder.pb.DataRecord {
 // =============================================================================
 
 // Extend the Marker message
-extend oe.recorder.pb.MarkerMsg {
+extend mxrp.recorder.pb.MarkerMsg {
    optional uint32 foo = 100;       // my own marker value
 }
 

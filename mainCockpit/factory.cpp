@@ -24,9 +24,9 @@
 
 #include <string>
 
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-    oe::base::Object* obj = nullptr;
+    mxrp::base::Object* obj = nullptr;
 
     if ( name == SimStation::getFactoryName() ) {
         obj = new SimStation();
@@ -39,21 +39,21 @@ oe::base::Object* factory(const std::string& name)
     }
 
     // example libraries
-    if (obj == nullptr) obj = oe::xpanel::factory(name);
-    if (obj == nullptr) obj = oe::xzmq::factory(name);
+    if (obj == nullptr) obj = mxrp::xpanel::factory(name);
+    if (obj == nullptr) obj = mxrp::xzmq::factory(name);
 
     // framework libraries
-    if (obj == nullptr) obj = oe::simulation::factory(name);
-    if (obj == nullptr) obj = oe::instruments::factory(name);
-    if (obj == nullptr) obj = oe::iodevice::factory(name);
-    if (obj == nullptr) obj = oe::instruments::factory(name);
-    if (obj == nullptr) obj = oe::models::factory(name);
-    if (obj == nullptr) obj = oe::terrain::factory(name);
-    if (obj == nullptr) obj = oe::otw::factory(name);
-    if (obj == nullptr) obj = oe::dis::factory(name);
-    if (obj == nullptr) obj = oe::graphics::factory(name);
-    if (obj == nullptr) obj = oe::glut::factory(name);
-    if (obj == nullptr) obj = oe::base::factory(name);
+    if (obj == nullptr) obj = mxrp::simulation::factory(name);
+    if (obj == nullptr) obj = mxrp::instruments::factory(name);
+    if (obj == nullptr) obj = mxrp::iodevice::factory(name);
+    if (obj == nullptr) obj = mxrp::instruments::factory(name);
+    if (obj == nullptr) obj = mxrp::models::factory(name);
+    if (obj == nullptr) obj = mxrp::terrain::factory(name);
+    if (obj == nullptr) obj = mxrp::otw::factory(name);
+    if (obj == nullptr) obj = mxrp::dis::factory(name);
+    if (obj == nullptr) obj = mxrp::graphics::factory(name);
+    if (obj == nullptr) obj = mxrp::glut::factory(name);
+    if (obj == nullptr) obj = mxrp::base::factory(name);
 
     return obj;
 }

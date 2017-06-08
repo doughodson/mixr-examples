@@ -3,7 +3,7 @@
 #include "mxrp/instruments/buttons/Knob.hpp"
 #include "mxrp/base/Pair.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestButtons, "TestButtons")
 EMPTY_SERIALIZER(TestButtons)

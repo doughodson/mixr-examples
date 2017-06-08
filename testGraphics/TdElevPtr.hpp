@@ -4,7 +4,7 @@
 
 #include "mxrp/graphics/Graphic.hpp"
 
-namespace oe {
+namespace mxrp {
    namespace base { class Number; }
 }
 
@@ -13,18 +13,18 @@ namespace oe {
 //
 // Description: Test Display Elevation Pointer
 //------------------------------------------------------------------------------
-class TdElevPtr : public oe::graphics::Graphic
+class TdElevPtr : public mxrp::graphics::Graphic
 {
-    DECLARE_SUBCLASS(TdElevPtr, oe::graphics::Graphic)
+    DECLARE_SUBCLASS(TdElevPtr, mxrp::graphics::Graphic)
 
 public:
     TdElevPtr();
 
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
     virtual void draw() override;
 
     //event handler macro functions
-    virtual bool onUpdateValue(const oe::base::Number* const ouvobj);
+    virtual bool onUpdateValue(const mxrp::base::Number* const ouvobj);
 
 private:
     double elev {};

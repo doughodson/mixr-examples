@@ -1,7 +1,7 @@
 
 #include "TestNozzle.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestNozzle, "TestNozzle")
 EMPTY_SERIALIZER(TestNozzle)

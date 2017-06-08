@@ -4,7 +4,7 @@
 
 #include "mxrp/graphics/Graphic.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace models { class Rwr; }
 }
 
@@ -15,23 +15,23 @@ namespace models { class Rwr; }
 //              the angle of arrival.
 // Factory name: DspRwr
 //------------------------------------------------------------------------------
-class DspRwr : public oe::graphics::Graphic
+class DspRwr : public mxrp::graphics::Graphic
 {
-    DECLARE_SUBCLASS(DspRwr, oe::graphics::Graphic)
+    DECLARE_SUBCLASS(DspRwr, mxrp::graphics::Graphic)
 
 public:
     DspRwr();
 
-    oe::models::Rwr* getRwr()               { return rwr; }
-    const oe::models::Rwr* getRwr() const   { return rwr; }
-    void setRwr(oe::models::Rwr* s)         { rwr = s; }
+    mxrp::models::Rwr* getRwr()               { return rwr; }
+    const mxrp::models::Rwr* getRwr() const   { return rwr; }
+    void setRwr(mxrp::models::Rwr* s)         { rwr = s; }
 
     virtual void drawFunc() override;
 
     virtual void updateData(const double dt = 0.0) override;
 
 private:
-    oe::models::Rwr* rwr {};     // The test RWR sensor
+    mxrp::models::Rwr* rwr {};     // The test RWR sensor
 };
 
 #endif

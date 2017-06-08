@@ -4,7 +4,7 @@
 
 #include "mxrp/simulation/Station.hpp"
 
-namespace oe {
+namespace mxrp {
    namespace glut { class GlutDisplay; }
 }
 
@@ -16,9 +16,9 @@ namespace oe {
 //      it.  This also runs the simulation, and acts as the interface between the
 //      graphics and simulation.
 // -------------------------------------------------------------------------------
-class Station : public oe::simulation::Station
+class Station : public mxrp::simulation::Station
 {
-    DECLARE_SUBCLASS(Station, oe::simulation::Station)
+    DECLARE_SUBCLASS(Station, mxrp::simulation::Station)
 
 public:
     Station();
@@ -27,10 +27,10 @@ public:
 
 protected:
     // slot methods
-    bool setSlotDisplay(oe::glut::GlutDisplay*);
+    bool setSlotDisplay(mxrp::glut::GlutDisplay*);
 
 private:
-    oe::glut::GlutDisplay* display {}; // this is our main display that
+    mxrp::glut::GlutDisplay* display {}; // this is our main display that
     bool displayInit {};               // is our display created?
 };
 

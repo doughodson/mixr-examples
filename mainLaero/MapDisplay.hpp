@@ -4,7 +4,7 @@
 
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace models { class Aircraft; }
 namespace simulation { class Station; }
 }
@@ -15,9 +15,9 @@ namespace simulation { class Station; }
 // Description:
 //      Derived MapDisplay that will simply make our map page move.
 // -------------------------------------------------------------------------------
-class MapDisplay : public oe::glut::GlutDisplay
+class MapDisplay : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(MapDisplay, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(MapDisplay, mxrp::glut::GlutDisplay)
 
 public:
    MapDisplay();
@@ -30,8 +30,8 @@ public:
    virtual void updateData(const double dt = 0.0) override;
 
 private:
-   oe::models::Aircraft* getOwnship();
-   oe::simulation::Station* getStation();
+   mxrp::models::Aircraft* getOwnship();
+   mxrp::simulation::Station* getStation();
 
    // button hit enumerations
    enum class Btn {
@@ -56,7 +56,7 @@ private:
       CHANGE_AP_MODE             // Change the autopilot mode (Nav/Loiter/FollowTheLead or None)
    };
 
-   oe::base::safe_ptr<oe::simulation::Station> myStation;
+   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
 
    int startX {};         // startX of our last mouse position
    int startY {};         // startY of our last mouse position

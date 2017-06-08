@@ -9,9 +9,9 @@
 //
 // Description: Tests another pfd page
 //------------------------------------------------------------------------------
-class TestPfd : public oe::graphics::Page
+class TestPfd : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestPfd, oe::graphics::Page )
+   DECLARE_SUBCLASS(TestPfd, mxrp::graphics::Page )
 
 public:
    TestPfd();

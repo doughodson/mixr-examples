@@ -11,9 +11,9 @@
 // This page will supply test data to the speed brake (generic)
 //
 //------------------------------------------------------------------------------
-class TestSpeedBrake : public oe::graphics::Page
+class TestSpeedBrake : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestSpeedBrake, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestSpeedBrake, mxrp::graphics::Page)
 
 public:
     TestSpeedBrake();

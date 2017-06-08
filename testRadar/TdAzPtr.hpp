@@ -4,7 +4,7 @@
 
 #include "mxrp/graphics/Graphic.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Number; }
 }
 
@@ -24,9 +24,9 @@ namespace base { class Number; }
 // Events:
 //    UPDATE_VALUE  <Number>  ! azimuth angle (degs)
 //------------------------------------------------------------------------------
-class TdAzPtr : public oe::graphics::Graphic
+class TdAzPtr : public mxrp::graphics::Graphic
 {
-   DECLARE_SUBCLASS(TdAzPtr, oe::graphics::Graphic)
+   DECLARE_SUBCLASS(TdAzPtr, mxrp::graphics::Graphic)
 
 public:
    TdAzPtr();
@@ -36,10 +36,10 @@ public:
 
    virtual void draw() override;
 
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
 private:
-   bool onUpdateValue(const oe::base::Number* const msg);
+   bool onUpdateValue(const mxrp::base::Number* const msg);
 
    double azimuth {};  // (degs)
 };

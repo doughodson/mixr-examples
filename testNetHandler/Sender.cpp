@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(Sender, "Sender")
 EMPTY_SLOTTABLE(Sender)

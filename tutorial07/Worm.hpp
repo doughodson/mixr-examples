@@ -4,7 +4,7 @@
 #include "mxrp/graphics/Graphic.hpp"
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base { class Angle; class Number; }
 }
 
@@ -16,9 +16,9 @@ namespace base { class Angle; class Number; }
 // ( Worm selectName: 111 color: green speed: 10 startAngle: ( Degrees 30 ) )
 //
 //------------------------------------------------------------------------------
-class Worm : public oe::graphics::Graphic
+class Worm : public mxrp::graphics::Graphic
 {
-   DECLARE_SUBCLASS(Worm, oe::graphics::Graphic)
+   DECLARE_SUBCLASS(Worm, mxrp::graphics::Graphic)
 
 public:
    Worm();
@@ -26,9 +26,9 @@ public:
    void getPosition(double& xx, double& yy) const      { xx = xPos; yy = yPos; }
    void setPosition(const double xx, const double yy)  { xPos = xx; yPos = yy; }
 
-   virtual bool realSpeed(const oe::base::Number* const rsobj);
-   virtual bool setAngle(const oe::base::Angle* const saobj);
-   virtual bool setAngle(const oe::base::Number* const saobj);
+   virtual bool realSpeed(const mxrp::base::Number* const rsobj);
+   virtual bool setAngle(const mxrp::base::Angle* const saobj);
+   virtual bool setAngle(const mxrp::base::Number* const saobj);
 
    double leftLimit() const                { return left; }
    void leftLimit(const double ll)         { left = ll; }
@@ -49,7 +49,7 @@ public:
 
    virtual void updateTC(const double dt = 0.0) override;
    virtual void updateData(const double dt = 0.0) override;
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
    virtual void reset() override;
 
 private:
@@ -62,10 +62,10 @@ private:
    double dx {}, dy {};                          // Delta position
    double speed {10.0};                          // Speed
    double sangle {};                             // Starting angle (radians)
-   std::array<oe::base::Vec2d, MAX_HIST> trail;  // Display trail
+   std::array<mxrp::base::Vec2d, MAX_HIST> trail;  // Display trail
    int    nTrails {};                            // Trail size
    int    index {};                              // Trail index
-   const oe::base::Angle* iangle {};             // Input angle
+   const mxrp::base::Angle* iangle {};             // Input angle
 };
 
 #endif

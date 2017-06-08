@@ -4,7 +4,7 @@
 
 #include "mxrp/graphics/Field.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Number; class PairStream; }
 }
 
@@ -18,20 +18,20 @@ namespace base { class Number; class PairStream; }
 //    spacing  <Number>     ! Spacing between rows (default: 1)
 //    columns  <PairStream> ! Column descriptions: list of items in each row
 //------------------------------------------------------------------------------
-class Table : public oe::graphics::Field
+class Table : public mxrp::graphics::Field
 {
-   DECLARE_SUBCLASS(Table, oe::graphics::Field)
+   DECLARE_SUBCLASS(Table, mxrp::graphics::Field)
 
 public:
    Table();
 
-   virtual const oe::base::PairStream* getColumns() const;
+   virtual const mxrp::base::PairStream* getColumns() const;
    virtual unsigned int getNumberOfRows() const;
 
    // Slot functions
-   virtual bool setSlotRows(oe::base::Number* const);
-   virtual bool setSlotSpacing(oe::base::Number* const);
-   virtual bool setSlotColumns(oe::base::PairStream* const);
+   virtual bool setSlotRows(mxrp::base::Number* const);
+   virtual bool setSlotSpacing(mxrp::base::Number* const);
+   virtual bool setSlotColumns(mxrp::base::PairStream* const);
 
    virtual int line() const override;
    virtual int line(const int ll) override;
@@ -49,7 +49,7 @@ private:
 
    unsigned int rows {DEFAULT_ROW};         // Number of rows in table
    unsigned int spacing {DEFAULT_SPACING};  // Spacing between rows (default: 1)
-   const oe::base::PairStream* columns {};  // columns items
+   const mxrp::base::PairStream* columns {};  // columns items
 };
 
 #endif

@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[])
 {
-   const auto str = new oe::base::String("Hello world\n");
+   const auto str = new mxrp::base::String("Hello world\n");
 
    std::cout << str->getString();
 

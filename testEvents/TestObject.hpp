@@ -12,9 +12,9 @@
 // ObjectHandler will extract the data and send it to the output.  This tests
 // the send command passing objects.
 //------------------------------------------------------------------------------
-class TestObject : public oe::base::Object
+class TestObject : public mxrp::base::Object
 {
-   DECLARE_SUBCLASS(TestObject, oe::base::Object)
+   DECLARE_SUBCLASS(TestObject, mxrp::base::Object)
 
 public:
    TestObject();

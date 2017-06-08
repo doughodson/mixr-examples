@@ -6,7 +6,7 @@
 #include "mxrp/base/Pair.hpp"
 #include "mxrp/base/PairStream.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(State, "PuzzleState")
 

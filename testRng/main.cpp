@@ -15,8 +15,8 @@
 void testValidation()
 {
   const unsigned int init[4] = {0x123, 0x234, 0x345, 0x456}, length = 4;
-  oe::base::Rng irand(init, length); // 32-bit int generator
-  oe::base::Rng drand; // double in [0, 1) generator, already init
+  mxrp::base::Rng irand(init, length); // 32-bit int generator
+  mxrp::base::Rng drand; // double in [0, 1) generator, already init
 
   std::printf("1000 32-bit integer random numbers:\n");
   for (int i = 0; i < 1000; ++i) {
@@ -34,7 +34,7 @@ void testValidation()
 //
 void testUniform()
 {
-  oe::base::Uniform rng;
+  mxrp::base::Uniform rng;
   rng.setMin(0.0);
   rng.setMax(10.0);
 
@@ -47,7 +47,7 @@ void testUniform()
 
 void testPareto()
 {
-  oe::base::Pareto rng;
+  mxrp::base::Pareto rng;
   rng.setAlpha(5.0);
   rng.setBeta(8.0);
 
@@ -60,7 +60,7 @@ void testPareto()
 
 void testLognormal()
 {
-  oe::base::Lognormal rng;
+  mxrp::base::Lognormal rng;
   rng.setSigma(1.0);
   rng.setMu(4.0);
   rng.setGamma(5.0);     // location
@@ -74,8 +74,8 @@ void testLognormal()
 
 void testExponential()
 {
-  oe::base::Exponential rng;
-  oe::base::Statistic stats;
+  mxrp::base::Exponential rng;
+  mxrp::base::Statistic stats;
 
   //rng.setMean(10);       // 1/lambda
   rng.setLambda(1);

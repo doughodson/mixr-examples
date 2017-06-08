@@ -6,7 +6,7 @@
 
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base { class PairStream; }
 namespace graphics { class Graphic; }
 }
@@ -17,9 +17,9 @@ class State;
 // Class: Board
 // Description: Puzzle board
 //------------------------------------------------------------------------------
-class Board : public oe::glut::GlutDisplay
+class Board : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Board, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Board, mxrp::glut::GlutDisplay)
 
 public:
    Board();
@@ -35,7 +35,7 @@ public:
 
 protected:
    virtual bool setSlotPuzzle(Puzzle* const s);                          // Sets the Puzzle controller
-   virtual bool setSlotTemplates(const oe::base::PairStream* const s);   // Sets a list of the graphical templates for the blocks
+   virtual bool setSlotTemplates(const mxrp::base::PairStream* const s);   // Sets a list of the graphical templates for the blocks
    virtual unsigned int setupBlockGraphics();                            // Setup the list of graphics::Graphic objects for the initial blocks
    virtual void clearGraphics();                                         // Clears the list of graphics::Graphic objects for the blocks
    virtual void updateSolutionPath(const double dt);                     // Updates the solution path graphics
@@ -43,7 +43,7 @@ protected:
    virtual void updateBlockDeltaPositions();                             // Updates the blocks' delta positions
 
 private:
-   const oe::base::PairStream* templates {};      // Graphical templates for the blocks
+   const mxrp::base::PairStream* templates {};      // Graphical templates for the blocks
    Puzzle* puzzle {};                             // the puzzle
    double  startupTimer {};                       // Movement timer
 
@@ -57,7 +57,7 @@ private:
    bool         movingFlg {};                     // Block is moving
 
    static const unsigned int MAX_BLOCKS = 30;
-   std::array<oe::graphics::Graphic*, MAX_BLOCKS> blocks {};  // Graphics for each block
+   std::array<mxrp::graphics::Graphic*, MAX_BLOCKS> blocks {};  // Graphics for each block
    std::array<unsigned int, MAX_BLOCKS> blockId {};           // Block reference IDs
    std::array<double, MAX_BLOCKS> xp {};                      // Block X positions
    std::array<double, MAX_BLOCKS> yp {};                      // Block Y positions

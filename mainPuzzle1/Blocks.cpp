@@ -13,8 +13,8 @@ BEGIN_SLOTTABLE(Block)
 END_SLOTTABLE(Block)
 
 BEGIN_SLOT_MAP(Block)
-    ON_SLOT( 1, setSlotPosition, oe::base::List)
-    ON_SLOT( 2, setSlotRefId, oe::base::Integer)
+    ON_SLOT( 1, setSlotPosition, mxrp::base::List)
+    ON_SLOT( 2, setSlotRefId, mxrp::base::Integer)
 END_SLOT_MAP()
 
 Block::Block()
@@ -150,7 +150,7 @@ bool Block::setReferenceID(const unsigned int v)
 //------------------------------------------------------------------------------
 // Slot function(s)
 //------------------------------------------------------------------------------
-bool Block::setSlotPosition(const oe::base::List* const msg)
+bool Block::setSlotPosition(const mxrp::base::List* const msg)
 {
    bool ok {};
    if (msg != nullptr) {
@@ -163,7 +163,7 @@ bool Block::setSlotPosition(const oe::base::List* const msg)
    return ok;
 }
 
-bool Block::setSlotRefId(const oe::base::Integer* const msg)
+bool Block::setSlotRefId(const mxrp::base::Integer* const msg)
 {
    bool ok {};
    if (msg != nullptr) {

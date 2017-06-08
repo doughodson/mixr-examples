@@ -4,7 +4,7 @@
 
 #include "mxrp/graphics/Graphic.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Number; }
 }
 
@@ -15,15 +15,15 @@ namespace base { class Number; }
 // Inputs:
 //      UPDATE_VALUE  -> altitude flag on or off
 //------------------------------------------------------------------------------
-class SpdLines : public oe::graphics::Graphic
+class SpdLines : public mxrp::graphics::Graphic
 {
-    DECLARE_SUBCLASS(SpdLines, oe::graphics::Graphic)
+    DECLARE_SUBCLASS(SpdLines, mxrp::graphics::Graphic)
 
 public:
     SpdLines();
 
     virtual void drawFunc() override;
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
     // set methods
     virtual bool setIsAlt(const bool newIsAlt)          { isAlt = newIsAlt; return true; }
@@ -32,11 +32,11 @@ public:
     bool isAltSelected()                                { return isAlt; }
 
 protected:
-    bool setSlotIsAlt(const oe::base::Number* newIsAlt);
+    bool setSlotIsAlt(const mxrp::base::Number* newIsAlt);
 
 private:
     // event method
-    bool onEventSetIsAltSpdLines(const oe::base::Number* const x);
+    bool onEventSetIsAltSpdLines(const mxrp::base::Number* const x);
 
     bool isAlt {};     // are we drawing the altitude lines instead?
 };

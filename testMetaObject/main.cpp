@@ -10,7 +10,7 @@
 #include "mxrp/base/Color.hpp"
 #include "mxrp/base/Matrix.hpp"
 
-void printMetadata(const oe::base::MetaObject* metaObject)
+void printMetadata(const mxrp::base::MetaObject* metaObject)
 {
    std::cout << "class name   : " << metaObject->getClassName()   << std::endl
              << "factory name : " << metaObject->getFactoryName() << std::endl
@@ -23,17 +23,17 @@ int main(int, char**)
 {
    std::cout << "Testing object metadata capabilities" << std::endl;
 
-   const auto db = new oe::base::Decibel();
-   printMetadata(oe::base::Decibel::getMetaObject());
+   const auto db = new mxrp::base::Decibel();
+   printMetadata(mxrp::base::Decibel::getMetaObject());
 
-   const auto c1 = new oe::base::Color();
-   const auto c2 = new oe::base::Color();
-   const auto c3 = new oe::base::Color();
+   const auto c1 = new mxrp::base::Color();
+   const auto c2 = new mxrp::base::Color();
+   const auto c3 = new mxrp::base::Color();
    c2->unref();
-   printMetadata(oe::base::Color::getMetaObject());
+   printMetadata(mxrp::base::Color::getMetaObject());
 
-   const auto matrix1 = new oe::base::Matrix();
-   printMetadata(oe::base::Matrix::getMetaObject());
+   const auto matrix1 = new mxrp::base::Matrix();
+   printMetadata(mxrp::base::Matrix::getMetaObject());
 
    return 0;
 }

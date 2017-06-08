@@ -33,7 +33,7 @@ void updateDataCB(int)
    glutTimerFunc(millis, updateDataCB, 1);
 
    // current time
-   const double time = oe::base::getComputerTime();
+   const double time = mxrp::base::getComputerTime();
 
    // N-1 Time
    static double time0 = time;
@@ -42,8 +42,8 @@ void updateDataCB(int)
    const auto dt = static_cast<double>(time - time0);
    time0 = time;
 
-   oe::base::Timer::updateTimers(dt);
-   oe::graphics::Graphic::flashTimer(dt);
+   mxrp::base::Timer::updateTimers(dt);
+   mxrp::graphics::Graphic::flashTimer(dt);
    testStation->updateData(dt);
 }
 
@@ -52,7 +52,7 @@ TestStation* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -65,7 +65,7 @@ TestStation* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -95,11 +95,11 @@ int main(int argc, char* argv[])
    // resetting the system will load the data files
 
    std::cout << "starting loading files --" << std::endl;
-   const double start = oe::base::getComputerTime();
+   const double start = mxrp::base::getComputerTime();
 
    testStation->reset();
 
-   const double end = oe::base::getComputerTime();
+   const double end = mxrp::base::getComputerTime();
    const double dtime = (end - start);
    std::cout << "finished loading files: time(s) = " << dtime << std::endl;
 

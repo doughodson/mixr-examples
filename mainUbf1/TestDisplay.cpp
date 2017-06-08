@@ -23,7 +23,7 @@
 #include "mxrp/graphics/SymbolLoader.hpp"
 #include <GL/glut.h>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")
 EMPTY_SLOTTABLE(TestDisplay)

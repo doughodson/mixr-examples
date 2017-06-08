@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(Echo, "Echo")
 EMPTY_SLOTTABLE(Echo)

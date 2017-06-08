@@ -10,7 +10,7 @@
 
 #include "mxrp/base/util/math_utils.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(DspRadar, "DspRadar")
 EMPTY_SLOTTABLE(DspRadar)

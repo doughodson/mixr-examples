@@ -5,7 +5,7 @@
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace models { class Missile; class Player; }
 namespace simulation { class Simulation; class Station; }
 namespace graphics { class SymbolLoader; }
@@ -35,22 +35,22 @@ class DspRwr;
 //   'd' or 'D'   -- Decrease Range
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class TestDisplay : public oe::glut::GlutDisplay
+class TestDisplay : public mxrp::glut::GlutDisplay
 {
-    DECLARE_SUBCLASS(TestDisplay, oe::glut::GlutDisplay)
+    DECLARE_SUBCLASS(TestDisplay, mxrp::glut::GlutDisplay)
 
 public:
     TestDisplay();
 
-    oe::models::Player* getOwnship();
-    oe::simulation::Simulation* getSimulation();
-    oe::simulation::Station* getStation();
+    mxrp::models::Player* getOwnship();
+    mxrp::simulation::Simulation* getSimulation();
+    mxrp::simulation::Station* getStation();
 
-    virtual void maintainAirTrackSymbols(oe::graphics::SymbolLoader* loader, const double rng);
+    virtual void maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, const double rng);
 
     virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
 
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
     virtual void updateData(const double dt = 0.0) override;
 
 private:
@@ -75,10 +75,10 @@ private:
     SendData headingSD;
     SendData rangeSD;
 
-    oe::base::safe_ptr<oe::simulation::Station> myStation;
+    mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
 
     static const unsigned int MAX_TRACKS = 200;
-    std::array<oe::models::Player*, MAX_TRACKS> tracks {};  // players that we're displaying
+    std::array<mxrp::models::Player*, MAX_TRACKS> tracks {};  // players that we're displaying
     std::array<int, MAX_TRACKS> trkIdx {};                  // Index of track symbols
 };
 

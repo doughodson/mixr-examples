@@ -40,26 +40,26 @@ void InstrumentPanel::copyData(const InstrumentPanel& org, const bool)
    myStation = nullptr;
 }
 
-oe::models::Player* InstrumentPanel::getOwnship()
+mxrp::models::Player* InstrumentPanel::getOwnship()
 {
-   oe::models::Player* p = nullptr;
-   oe::simulation::Station* sta = getStation();
-   if (sta != nullptr) p = dynamic_cast<oe::models::Player*>(sta->getOwnship());
+   mxrp::models::Player* p = nullptr;
+   mxrp::simulation::Station* sta = getStation();
+   if (sta != nullptr) p = dynamic_cast<mxrp::models::Player*>(sta->getOwnship());
    return p;
 }
 
-oe::simulation::Simulation* InstrumentPanel::getSimulation()
+mxrp::simulation::Simulation* InstrumentPanel::getSimulation()
 {
-   oe::simulation::Simulation* s = nullptr;
-   oe::simulation::Station* sta = getStation();
+   mxrp::simulation::Simulation* s = nullptr;
+   mxrp::simulation::Station* sta = getStation();
    if (sta != nullptr) s = sta->getSimulation();
    return s;
 }
 
-oe::simulation::Station* InstrumentPanel::getStation()
+mxrp::simulation::Station* InstrumentPanel::getStation()
 {
    if (myStation == nullptr) {
-      const auto s = dynamic_cast<oe::simulation::Station*>( findContainerByType(typeid(oe::simulation::Station)) );
+      const auto s = dynamic_cast<mxrp::simulation::Station*>( findContainerByType(typeid(mxrp::simulation::Station)) );
       if (s != nullptr) myStation = s;
    }
    return myStation;
@@ -73,7 +73,7 @@ void InstrumentPanel::updateData(const double dt)
    // try to get an Sim3 first.  If that doesn't work, then get a generic air vehicle
    // Get the data from our ownship, if we have a valid one.  Else everything goes to a default value
    // we need to dynamically cast to an AirVehicle* for this instrument panel
-   const auto tempOwnship = dynamic_cast<oe::models::AirVehicle*>( getOwnship() );
+   const auto tempOwnship = dynamic_cast<mxrp::models::AirVehicle*>( getOwnship() );
    if (tempOwnship != nullptr) {
       tempOwnship->ref();
 #if 0
@@ -132,15 +132,15 @@ void InstrumentPanel::updateData(const double dt)
       }
    }
 
-   oe::base::Pair* a = findSubpageByType(typeid(oe::instruments::Eadi3DPage));
+   mxrp::base::Pair* a = findSubpageByType(typeid(mxrp::instruments::Eadi3DPage));
    if (a != nullptr) {
-      const auto eadi = dynamic_cast<oe::instruments::Eadi3DPage*>(a->object());
+      const auto eadi = dynamic_cast<mxrp::instruments::Eadi3DPage*>(a->object());
       if (eadi != nullptr) {
          eadi->setAltitude(altitude);
          eadi->setAirspeed(airSpeed);
          eadi->setHeading(heading);
          eadi->setAOA(aoa);
-         eadi->setVVI(-vvi.z() * oe::base::distance::M2FT * 60.0);
+         eadi->setVVI(-vvi.z() * mxrp::base::distance::M2FT * 60.0);
          eadi->setPitch(pitch);
          eadi->setRoll(roll);
          eadi->setMach(mach);
@@ -177,7 +177,7 @@ bool InstrumentPanel::onResetKey()
 bool InstrumentPanel::onFreezeKey()
 {
    if ( getSimulation() != nullptr ) {
-      oe::base::Boolean newFrz( !getSimulation()->isFrozen() );
+      mxrp::base::Boolean newFrz( !getSimulation()->isFrozen() );
       getSimulation()->event(FREEZE_EVENT, &newFrz);
    }
    return true;

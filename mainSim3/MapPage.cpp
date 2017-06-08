@@ -107,14 +107,14 @@ void MapPage::drawFunc()
     // get our viewport
     const auto dis = static_cast<Display*>(getDisplay());
     if (dis != nullptr) {
-        int start = oe::base::nint(static_cast<double>(southernLat) - 1);
+        int start = mxrp::base::nint(static_cast<double>(southernLat) - 1);
         GLdouble l = 0, r = 0, t = 0, b = 0, n = 0, f = 0;
         dis->getOrtho(l, r, b, t, n, f);
         double inchPerDegNS = t*2 / latRange;
         glPushMatrix();
             glBegin(GL_LINES);
                 int count = 0;
-                while (start < oe::base::nint( static_cast<double>(northernLat) ) + 1) {
+                while (start < mxrp::base::nint( static_cast<double>(northernLat) ) + 1) {
                     GLfloat disFromRef = static_cast<GLfloat>(refLat - start);
                     disFromRef *= static_cast<GLfloat>(inchPerDegNS);
                     if (count < MAX_READOUTS) {
@@ -137,12 +137,12 @@ void MapPage::drawFunc()
         const double westernLon = refLon + lonRange;
 
         lonRange *= 2;
-        start = oe::base::nint( static_cast<double>(easternLon) - 1);
+        start = mxrp::base::nint( static_cast<double>(easternLon) - 1);
         const double inchPerDegEW = r*2 / lonRange;
         glPushMatrix();
             glBegin(GL_LINES);
                 count = 0;
-                while (start < oe::base::nint( static_cast<double>(westernLon) ) + 1) {
+                while (start < mxrp::base::nint( static_cast<double>(westernLon) ) + 1) {
                     GLfloat disFromRef = static_cast<GLfloat>(refLon - start);
                     if (count < MAX_READOUTS) {
                         lons[count] = start;
@@ -166,20 +166,20 @@ void MapPage::updateData(const double dt)
 
     // get our pointers
     if (loader == nullptr) {
-        oe::base::Pair* pair = findByType(typeid(oe::graphics::SymbolLoader));
+        mxrp::base::Pair* pair = findByType(typeid(mxrp::graphics::SymbolLoader));
         if (pair != nullptr) {
-            loader = dynamic_cast<oe::graphics::SymbolLoader*>(pair->object());
+            loader = dynamic_cast<mxrp::graphics::SymbolLoader*>(pair->object());
             if (loader != nullptr) loader->ref();
         }
     }
     if (stn == nullptr) {
-        oe::graphics::Display* dis = getDisplay();
+        mxrp::graphics::Display* dis = getDisplay();
         if (dis != nullptr) {
             stn = static_cast<Station*>(dis->findContainerByType(typeid(Station)));
             if (stn != nullptr) {
                 stn->ref();
                 // set our reference lat / lon initially
-                const auto sim = dynamic_cast<oe::models::WorldModel*>(stn->getSimulation());
+                const auto sim = dynamic_cast<mxrp::models::WorldModel*>(stn->getSimulation());
                 if (sim != nullptr) {
                     setReferenceLatDeg(sim->getRefLatitude());
                     setReferenceLonDeg(sim->getRefLongitude());
@@ -190,17 +190,17 @@ void MapPage::updateData(const double dt)
 
     // let's update our players
     if (loader != nullptr && stn != nullptr) {
-        oe::base::PairStream* stream = stn->getPlayers();
+        mxrp::base::PairStream* stream = stn->getPlayers();
         if (stream != nullptr) {
             // create our new player list
-            oe::models::Player* newPlayers[MAX_PLAYERS];
+            mxrp::models::Player* newPlayers[MAX_PLAYERS];
             unsigned int numNewPlayers = 0;
             // go through all of our non-ownship players and populate our new list
-            oe::base::List::Item* item = stream->getFirstItem();
+            mxrp::base::List::Item* item = stream->getFirstItem();
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
-                const auto pair = static_cast<oe::base::Pair*>(item->getValue());
+                const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
                 if (pair != nullptr) {
-                    const auto ply = dynamic_cast<oe::models::Player*>(pair->object());
+                    const auto ply = dynamic_cast<mxrp::models::Player*>(pair->object());
                     if (ply != nullptr) {
                         newPlayers[numNewPlayers] = ply;
                         newPlayers[numNewPlayers++]->ref();
@@ -246,7 +246,7 @@ void MapPage::updateData(const double dt)
                             player[j] = newPlayers[i];
                             player[j]->ref();
                             int type = 1;
-                            if (player[j]->isSide(oe::models::Player::RED)) type = 2;
+                            if (player[j]->isSide(mxrp::models::Player::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "player");
                             if (player[j]->getName() != nullptr) {
                                 loader->updateSymbolText(playerIdx[j], "name", player[j]->getName()->getString());

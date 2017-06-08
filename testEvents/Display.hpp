@@ -6,7 +6,7 @@
 #include <array>
 #include <string>
 
-namespace oe {
+namespace mxrp {
 namespace base { class Color; }
 namespace graphics { class Material; }
 }
@@ -18,9 +18,9 @@ class TestObject;
 // Description: This class will send down data to it's components in different
 // ways, showing how the SendData class works and testing our send commands.
 //------------------------------------------------------------------------------
-class Display : public oe::glut::GlutDisplay
+class Display : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
 
 public:
    Display();
@@ -52,13 +52,13 @@ private:
     std::string myChar = "ASCII";
     SendData charSD;
 
-    oe::base::Color* myColor {};
+    mxrp::base::Color* myColor {};
     SendData colorSD;
 
     static const int MAX_MATERIALS = 3;
-    std::array<oe::graphics::Material*, MAX_MATERIALS> materials {};
+    std::array<mxrp::graphics::Material*, MAX_MATERIALS> materials {};
     std::array<SendData, MAX_MATERIALS> materialSD;
-    std::array<oe::base::Vec3d, MAX_MATERIALS> diffColorRate;
+    std::array<mxrp::base::Vec3d, MAX_MATERIALS> diffColorRate;
 
     std::array<double, MAX_MATERIALS> rotations {};
     std::array<SendData, MAX_MATERIALS> rotationsSD {};

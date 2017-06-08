@@ -9,9 +9,9 @@
 //
 // Description: Another example of using an analog dial.
 //------------------------------------------------------------------------------
-class TestNozzle : public oe::graphics::Page
+class TestNozzle : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestNozzle, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestNozzle, mxrp::graphics::Page)
 
 public:
     TestNozzle();

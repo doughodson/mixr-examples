@@ -12,7 +12,7 @@ SimPlayer::SimPlayer()
 {
     STANDARD_CONSTRUCTOR()
 
-    static oe::base::String generic("Sim");
+    static mxrp::base::String generic("Sim");
     setType(&generic);
 }
 

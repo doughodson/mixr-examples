@@ -6,7 +6,7 @@
 #include "mxrp/graphics/readouts/NumericReadout.hpp"
 #include "mxrp/graphics/Display.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(RdrAlt, "RdrAlt")
 EMPTY_SERIALIZER(RdrAlt)

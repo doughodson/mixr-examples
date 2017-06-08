@@ -10,7 +10,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(Display, "TestIoDisplay")
 

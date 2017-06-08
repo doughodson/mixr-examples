@@ -4,7 +4,7 @@
 
 #include "Random.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Number; }
 }
 
@@ -24,7 +24,7 @@ public:
    virtual void setMean(const double);
 
    // slot table functions
-   virtual bool setSlotMean(const oe::base::Number* const);
+   virtual bool setSlotMean(const mxrp::base::Number* const);
 
    virtual int getNum() const override;
 

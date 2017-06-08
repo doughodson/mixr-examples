@@ -4,7 +4,7 @@
 
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Number; }
 namespace models { class Player; }
 namespace simulation { class Simulation; class Station; }
@@ -20,25 +20,25 @@ namespace simulation { class Simulation; class Station; }
 // Slots:
 //    textureTest <Boolean>   Texture test enabled
 // ----------------------------------------------------------------------------
-class Display : public oe::glut::GlutDisplay
+class Display : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
 
 public:
    Display();
 
-   oe::models::Player* getOwnship();
-   oe::simulation::Simulation* getSimulation();
-   oe::simulation::Station* getStation();
+   mxrp::models::Player* getOwnship();
+   mxrp::simulation::Simulation* getSimulation();
+   mxrp::simulation::Station* getStation();
 
    // Slot functions
-   virtual bool setSlotTextureTest(const oe::base::Number* const msg);
+   virtual bool setSlotTextureTest(const mxrp::base::Number* const msg);
 
    virtual void configure() override;
    virtual void drawFunc() override;
 
 private:
-   oe::base::safe_ptr<oe::simulation::Station> myStation;
+   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
 
    bool   testTexture {};      // Texture image test
    GLuint texture {};          // Texture

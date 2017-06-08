@@ -3,7 +3,7 @@
 #include "mxrp/base/Number.hpp"
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdAzPtr, "TdAzPtr")
 EMPTY_SERIALIZER(TdAzPtr)

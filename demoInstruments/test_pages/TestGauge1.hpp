@@ -11,9 +11,9 @@
 // This page will supply test data to a generic analog gauge
 //
 //------------------------------------------------------------------------------
-class TestGauge1 : public oe::graphics::Page
+class TestGauge1 : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestGauge1, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestGauge1, mxrp::graphics::Page)
 
 public:
     TestGauge1();

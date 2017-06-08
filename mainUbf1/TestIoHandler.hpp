@@ -10,9 +10,9 @@
 // Description:  Handles the flow of I/O data to and from the
 //               stick and throttle hardware
 //------------------------------------------------------------------------------
-class TestIoHandler : public oe::base::IoHandler
+class TestIoHandler : public mxrp::base::IoHandler
 {
-   DECLARE_SUBCLASS(TestIoHandler, oe::base::IoHandler)
+   DECLARE_SUBCLASS(TestIoHandler, mxrp::base::IoHandler)
 
 public:
    TestIoHandler();

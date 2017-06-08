@@ -13,7 +13,7 @@ BEGIN_SLOTTABLE(State)
 END_SLOTTABLE(State)
 
 BEGIN_SLOT_MAP(State)
-    ON_SLOT( 1, setSlotBlocks, oe::base::PairStream )
+    ON_SLOT( 1, setSlotBlocks, mxrp::base::PairStream )
 END_SLOT_MAP()
 
 State::State()
@@ -323,7 +323,7 @@ void State::clearBlocks()
 //------------------------------------------------------------------------------
 
 // Blocks (list of Blocks)
-bool State::setSlotBlocks(const oe::base::PairStream* const msg)
+bool State::setSlotBlocks(const mxrp::base::PairStream* const msg)
 {
    bool ok = false;
    if (msg != nullptr) {
@@ -336,9 +336,9 @@ bool State::setSlotBlocks(const oe::base::PairStream* const msg)
       ok = true;
 
       // Find all blocks (and check their type to make sure)
-      const oe::base::List::Item* item = msg->getFirstItem();
+      const mxrp::base::List::Item* item = msg->getFirstItem();
       while (item != nullptr && n < MAX_BLOCKS && ok) {
-         const auto pair = static_cast<const oe::base::Pair*>(item->getValue());
+         const auto pair = static_cast<const mxrp::base::Pair*>(item->getValue());
          const auto p = dynamic_cast<const Block*>( pair->object() );
          if (p != nullptr) {
             newBlocks[n++] = p;  // Save the point

@@ -4,7 +4,7 @@
 
 #include "Random.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base   { class Number; }
 }
 
@@ -24,8 +24,8 @@ public:
    void setMin(const int);
 
    // slot table functions
-   bool setSlotMax(const oe::base::Number* const);
-   bool setSlotMin(const oe::base::Number* const);
+   bool setSlotMax(const mxrp::base::Number* const);
+   bool setSlotMin(const mxrp::base::Number* const);
 
    virtual int getNum() const override;
 

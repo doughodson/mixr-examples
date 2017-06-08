@@ -5,7 +5,7 @@
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 #include "mxrp/base/units/distance_utils.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Angle; class Distance; class Number; }
 namespace terrain { class Terrain; }
 }
@@ -34,9 +34,9 @@ class MainWindow;
 //    textureTest    <Boolean>              ! Texture test enabled
 //
 // ----------------------------------------------------------------------------
-class Display : public oe::glut::GlutDisplay
+class Display : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
 
 public:
    enum class ColorDepth {GRAY=0, COLOR=1, GREEN=2};
@@ -44,7 +44,7 @@ public:
 public:
    Display();
 
-   const oe::terrain::Terrain* getTerrain() const              { return terrain; }
+   const mxrp::terrain::Terrain* getTerrain() const              { return terrain; }
 
    bool isMinElevValid() const { return haveMinElev; }      // Ture if the min elevation is valid
    double getMinElevation() const { return minElev; }       // Returns the min elevation (meters)
@@ -57,18 +57,18 @@ public:
    virtual bool clearMaxElevation();                        // Clears the max elevation (using datafile max elevation)
 
    // Slot functions
-   virtual bool setSlotTerrain(oe::terrain::Terrain* const msg);
-   virtual bool setSlotMinElevation(const oe::base::Distance* const msg);
-   virtual bool setSlotMaxElevation(const oe::base::Distance* const msg);
-   virtual bool setSlotAltitude(const oe::base::Distance* const msg);
-   virtual bool setSlotLookAngle(const oe::base::Angle* const msg);
-   virtual bool setSlotBeamWidth(const oe::base::Angle* const msg);
-   virtual bool setSlotColorScale(const oe::base::Number* const msg);
-   virtual bool setSlotInterpolate(const oe::base::Number* const msg);
-   virtual bool setSlotShadowsTest(const oe::base::Number* const msg);
-   virtual bool setSlotAacTest(const oe::base::Number* const msg);
-   virtual bool setSlotEarthCurvatureTest(const oe::base::Number* const msg);
-   virtual bool setSlotTextureTest(const oe::base::Number* const msg);
+   virtual bool setSlotTerrain(mxrp::terrain::Terrain* const msg);
+   virtual bool setSlotMinElevation(const mxrp::base::Distance* const msg);
+   virtual bool setSlotMaxElevation(const mxrp::base::Distance* const msg);
+   virtual bool setSlotAltitude(const mxrp::base::Distance* const msg);
+   virtual bool setSlotLookAngle(const mxrp::base::Angle* const msg);
+   virtual bool setSlotBeamWidth(const mxrp::base::Angle* const msg);
+   virtual bool setSlotColorScale(const mxrp::base::Number* const msg);
+   virtual bool setSlotInterpolate(const mxrp::base::Number* const msg);
+   virtual bool setSlotShadowsTest(const mxrp::base::Number* const msg);
+   virtual bool setSlotAacTest(const mxrp::base::Number* const msg);
+   virtual bool setSlotEarthCurvatureTest(const mxrp::base::Number* const msg);
+   virtual bool setSlotTextureTest(const mxrp::base::Number* const msg);
 
    virtual void configure() override;
    virtual void drawFunc() override;
@@ -81,11 +81,11 @@ private:
    bool copyImageMemory(const Display& org);
    void freeImageMemory();
 
-   oe::terrain::Terrain* terrain {};                      // Terrain data
+   mxrp::terrain::Terrain* terrain {};                      // Terrain data
 
-   double maxElev {15000.0 * oe::base::distance::FT2M};   // Max elevation (meters)
+   double maxElev {15000.0 * mxrp::base::distance::FT2M};   // Max elevation (meters)
    double minElev {};                                     // Min elevation (meters)
-   double altitude {15000.0 * oe::base::distance::FT2M};  // Ref altitude (meters)
+   double altitude {15000.0 * mxrp::base::distance::FT2M};  // Ref altitude (meters)
    double lookAngle {};                                   // Antenna look angle (degs)
    double beamWidth {180.0};                              // Antenna beam width (degs)
    ColorDepth colorDepth {ColorDepth::GRAY};              // Color scale index; gray, color, green

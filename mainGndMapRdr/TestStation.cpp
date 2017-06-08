@@ -13,7 +13,7 @@
 #include "mxrp/base/PairStream.hpp"
 #include "mxrp/base/units/Angles.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 EMPTY_SERIALIZER(TestStation)

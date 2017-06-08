@@ -9,9 +9,9 @@
 //
 // Description: Situational Display
 //------------------------------------------------------------------------------
-class SituationalDisplay : public oe::graphics::Page
+class SituationalDisplay : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(SituationalDisplay, oe::graphics::Page)
+   DECLARE_SUBCLASS(SituationalDisplay, mxrp::graphics::Page)
 
 public:
    SituationalDisplay();

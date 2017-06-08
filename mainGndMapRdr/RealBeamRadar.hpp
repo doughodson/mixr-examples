@@ -4,7 +4,7 @@
 
 #include "mxrp/models/system/Radar.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Angle; class Distance; class Number; }
 namespace terrain { class Terrain; }
 }
@@ -14,15 +14,15 @@ namespace terrain { class Terrain; }
 //
 // Description: Real-Beam Radar Model
 //------------------------------------------------------------------------------
-class RealBeamRadar : public oe::models::Radar
+class RealBeamRadar : public mxrp::models::Radar
 {
-    DECLARE_SUBCLASS(RealBeamRadar, oe::models::Radar)
+    DECLARE_SUBCLASS(RealBeamRadar, mxrp::models::Radar)
 
 public:
     RealBeamRadar();
 
-   const oe::terrain::Terrain* getTerrain() const                      { return terrain; }
-   virtual bool setTerrain(const oe::terrain::Terrain* const msg);
+   const mxrp::terrain::Terrain* getTerrain() const                      { return terrain; }
+   virtual bool setTerrain(const mxrp::terrain::Terrain* const msg);
 
    double getAltitude() const                     { return altitude; }    // Ref altitude (meters)
    double getAntennaAzimuthAngle() const          { return antAzAngle; }  // Antenna look angle (degs)
@@ -40,7 +40,7 @@ public:
    int getPixelSize() const   { return PIXEL_SIZE; }        // Number of components (RGBA) in each image pixel
 
    // Slot functions
-   virtual bool setSlotInterpolate(const oe::base::Number* const msg);
+   virtual bool setSlotInterpolate(const mxrp::base::Number* const msg);
 
    // Compute earth curvature effects
    static bool computeGroundRanges(double* const groundRange, const unsigned int n, const double maxRngNM);
@@ -56,7 +56,7 @@ private:
    bool copyImageMemory(const RealBeamRadar& org);
    void freeImageMemory();
 
-   const oe::terrain::Terrain* terrain {};  // Terrain data
+   const mxrp::terrain::Terrain* terrain {};  // Terrain data
    double            altitude {};           // Ref altitude (meters)
    double            antAzAngle {};         // Antenna azimuth angle (degs)
    double            antElAngle {};         // Antenna elevation angle (degs)

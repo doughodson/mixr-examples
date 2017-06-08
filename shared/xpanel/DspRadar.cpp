@@ -10,7 +10,7 @@
 
 #include "mxrp/base/util/math_utils.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xpanel {
 
 IMPLEMENT_SUBCLASS(DspRadar, "DspRadar")

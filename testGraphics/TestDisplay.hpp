@@ -4,29 +4,29 @@
 
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 
-namespace oe {
+namespace mxrp {
    namespace graphics { class Graphic; }
 }
 
 //------------------------------------------------------------------------------
 // TestDisplay
 //------------------------------------------------------------------------------
-class TestDisplay : public oe::glut::GlutDisplay
+class TestDisplay : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(TestDisplay, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(TestDisplay, mxrp::glut::GlutDisplay)
 
 public:
    TestDisplay();
 
    virtual void drawIt() override;
    virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
    bool onFrameBufferKey();
 
 private:
    // select/pick test
-   oe::graphics::Graphic* selected {};
+   mxrp::graphics::Graphic* selected {};
 };
 
 #endif

@@ -1,7 +1,7 @@
 
 #include "TestVVI.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestVVI, "TestVVI")
 EMPTY_SERIALIZER(TestVVI)

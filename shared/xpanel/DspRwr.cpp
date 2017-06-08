@@ -3,7 +3,7 @@
 
 #include "mxrp/models/system/Rwr.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xpanel {
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")

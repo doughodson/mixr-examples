@@ -9,9 +9,9 @@
 //
 // Description: Tests our altitude tape instrument
 //------------------------------------------------------------------------------
-class TestAlt : public oe::graphics::Page
+class TestAlt : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestAlt, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestAlt, mxrp::graphics::Page)
 
 public:
     TestAlt();

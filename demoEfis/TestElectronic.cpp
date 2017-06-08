@@ -9,7 +9,7 @@
 
 #include <cmath>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestElectronic, "TestElectronic")
 EMPTY_SERIALIZER(TestElectronic)
@@ -299,17 +299,17 @@ void TestElectronic::updateData(const double dt)
     // current heading / current heading bug
     {
         // max rate here is 120 degs / second
-        double delta = oe::base::alim(oe::base::angle::aepcdDeg(heading - curHdg), 120 * dt);
-        curHdg = oe::base::angle::aepcdDeg(curHdg + delta);
+        double delta = mxrp::base::alim(mxrp::base::angle::aepcdDeg(heading - curHdg), 120 * dt);
+        curHdg = mxrp::base::angle::aepcdDeg(curHdg + delta);
 
         // now figure our heading bug
-        delta = oe::base::alim(oe::base::angle::aepcdDeg(headingBug - curBug), 120 * dt);
-        curBug = oe::base::angle::aepcdDeg(curBug + delta);
+        delta = mxrp::base::alim(mxrp::base::angle::aepcdDeg(headingBug - curBug), 120 * dt);
+        curBug = mxrp::base::angle::aepcdDeg(curBug + delta);
 
         if (navMode == NavMode::ARC_MODE) {
             // we either move it to the left or right, depending on how far
             // off our slew is.
-            double diff = oe::base::angle::aepcdDeg(curHdg - curBug);
+            double diff = mxrp::base::angle::aepcdDeg(curHdg - curBug);
             double moveX = -1.8f;
             if (diff >= -36 && diff < 36) {
                 if (diff > 0) moveX = 1.53;
@@ -332,7 +332,7 @@ void TestElectronic::updateData(const double dt)
         // are we a distance type or DME type?
         bool distType = true;   // initial type is DME
         bool distVis = true;    // initial visibility is true
-        double curDist = oe::base::alim(dist, 999.9);    // current distance to DME
+        double curDist = mxrp::base::alim(dist, 999.9);    // current distance to DME
 
         if (navSource == NavSource::PRIMARY) {
             // valid DME makes our label visible
@@ -361,13 +361,13 @@ void TestElectronic::updateData(const double dt)
         double tempCourse = 0.0;
         // primary nav course
         if (navSource == NavSource::PRIMARY) {
-            curIntCourse = oe::base::nint(course);
+            curIntCourse = mxrp::base::nint(course);
             tempCDI = cdi;
             tempCourse = course;
         }
         // secondary nav course
         else {
-            curIntCourse = oe::base::nint(secCourse);
+            curIntCourse = mxrp::base::nint(secCourse);
             tempCDI = secCdi;
             tempCourse = secCourse;
         }
@@ -377,15 +377,15 @@ void TestElectronic::updateData(const double dt)
         send("course", UPDATE_VALUE, curIntCourse, courseSD);
 
         // here is the course deviation
-        double delta = oe::base::alim (oe::base::angle::aepcdDeg(tempCDI - curCdi), 4 * dt);
-        curCdi = oe::base::alim (curCdi + delta, 2.0);
+        double delta = mxrp::base::alim (mxrp::base::angle::aepcdDeg(tempCDI - curCdi), 4 * dt);
+        curCdi = mxrp::base::alim (curCdi + delta, 2.0);
 
         // now find our inches to translate the cdi
         double cdiInch = curCdi * 0.43f;
 
         // now figure our course slew
-        delta = oe::base::alim(oe::base::angle::aepcdDeg(tempCourse - curCourse), 120 * dt);
-        curCourse = (oe::base::angle::aepcdDeg(curCourse + delta));
+        delta = mxrp::base::alim(mxrp::base::angle::aepcdDeg(tempCourse - curCourse), 120 * dt);
+        curCourse = (mxrp::base::angle::aepcdDeg(curCourse + delta));
 
         // ok, do our color determination for the course pointer - primary first
         if (navSource == NavSource::PRIMARY) {
@@ -398,7 +398,7 @@ void TestElectronic::updateData(const double dt)
             send("primarycoursepointer", UPDATE_VALUE6, heading - curCourse, crsPntrSD);
 
             // course pointer color
-            const auto string = new oe::base::String("white");
+            const auto string = new mxrp::base::String("white");
             if (navType == NavType::VORTAC) {
                 if ((vhfReceive && !(vhfDIC || vhfLGS)) || (vhfLocValid && vhfLGS)) {
                     string->setStr("green");
@@ -430,7 +430,7 @@ void TestElectronic::updateData(const double dt)
             send("secondarycoursepointer", UPDATE_VALUE2, curCourse - heading, secCrsPntrSD);
 
             // course pointer color
-            const auto string = new oe::base::String("white");
+            const auto string = new mxrp::base::String("white");
             if (secNavType == NavType::VORTAC) {
                 if ((secVhfReceive && !(secVhfDIC || secVhfLGS)) || (secVhfLocValid && secVhfLGS)) string->setStr("green");
                 else string->setStr("yellow");
@@ -472,7 +472,7 @@ void TestElectronic::updateData(const double dt)
         }
         // true air speed
         else if (readoutMode == ReadoutMode::ND_TAS) {
-            int curTAS = oe::base::nintd(trueAirSpeed * oe::base::LinearVelocity::FPS2KTSCC);
+            int curTAS = mxrp::base::nintd(trueAirSpeed * mxrp::base::LinearVelocity::FPS2KTSCC);
             send("trueairspeed", UPDATE_VALUE, curTAS, trueAirSpeedSD);
         }
         // elapsed time
@@ -523,7 +523,7 @@ void TestElectronic::updateData(const double dt)
 
     // glide slope
     {
-        const auto gsDev = static_cast<double>(oe::base::alim (gsDots, 2.1f) * 0.35f);
+        const auto gsDev = static_cast<double>(mxrp::base::alim (gsDots, 2.1f) * 0.35f);
         send("glideslopedev", UPDATE_VALUE2, gsDev, glideSlopeSD);
     }
 
@@ -580,11 +580,11 @@ void TestElectronic::updateData(const double dt)
     // TO / FROM arrow - HSI mode only
     {
         double toFrom = 0;
-        if (navSource == NavSource::PRIMARY) toFrom = 1 - std::fabs(oe::base::angle::aepcdDeg(bearing - course)) / 90;
-        else toFrom = 1 - std::fabs(oe::base::angle::aepcdDeg(secBearing - secCourse)) / 90;
+        if (navSource == NavSource::PRIMARY) toFrom = 1 - std::fabs(mxrp::base::angle::aepcdDeg(bearing - course)) / 90;
+        else toFrom = 1 - std::fabs(mxrp::base::angle::aepcdDeg(secBearing - secCourse)) / 90;
 
-        double delta = oe::base::alim(toFrom - curToFrom, dt);
-        curToFrom = oe::base::alim(curToFrom + delta, 0.65);
+        double delta = mxrp::base::alim(toFrom - curToFrom, dt);
+        curToFrom = mxrp::base::alim(curToFrom + delta, 0.65);
 
         // if we are positive, we are to, negative, from
         bool whichToFrom = (curToFrom > 0);

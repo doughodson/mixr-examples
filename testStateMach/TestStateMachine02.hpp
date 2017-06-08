@@ -11,9 +11,9 @@
 //    Same as Test #1 except that we're using separate state specific functions.
 //
 //------------------------------------------------------------------------------
-class TestStateMachine02 : public oe::base::StateMachine
+class TestStateMachine02 : public mxrp::base::StateMachine
 {
-   DECLARE_SUBCLASS(TestStateMachine02, oe::base::StateMachine)
+   DECLARE_SUBCLASS(TestStateMachine02, mxrp::base::StateMachine)
 
 public:
    enum { CALL_01 = 11, CALL_02 = 22 };

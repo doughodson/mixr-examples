@@ -11,9 +11,9 @@
 // This page will supply test data to a generic analog tape gauge
 //
 //------------------------------------------------------------------------------
-class TestVVI : public oe::graphics::Page
+class TestVVI : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestVVI, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestVVI, mxrp::graphics::Page)
 
 public:
    TestVVI();

@@ -3,7 +3,7 @@
 
 #include "mxrp/models/system/Rwr.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")
 EMPTY_SLOTTABLE(DspRwr)

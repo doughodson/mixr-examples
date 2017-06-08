@@ -26,7 +26,7 @@
 #include <array>
 #include <GL/glut.h>
 
-namespace oe {
+namespace mxrp {
 namespace graphics { class OcclusionArc; }
 }
 
@@ -154,9 +154,9 @@ void MapPage::drawSemiCircle(const double startAngle, const double radius)
 void MapPage::drawHoldingPattern()
 {
    if (pStn != nullptr) {
-      const auto pPlr  = dynamic_cast<oe::models::Player*>(pStn->getOwnship());
+      const auto pPlr  = dynamic_cast<mxrp::models::Player*>(pStn->getOwnship());
       if (pPlr != nullptr) {
-         const auto pRac = static_cast<oe::models::Autopilot*>(pPlr->getPilot());
+         const auto pRac = static_cast<mxrp::models::Autopilot*>(pPlr->getPilot());
          if (pRac != nullptr) {
 
          //---------------------------------------------------------------------------
@@ -175,8 +175,8 @@ void MapPage::drawHoldingPattern()
 //            double refLon = getReferenceLonDeg();
 
             const double omegaDps = 3.0;                                     //dps
-            const double omegaRps = omegaDps * oe::base::angle::D2RCC;       //rps
-            const double rocNM = (osVel / oe::base::time::H2S) / omegaRps;   //nm
+            const double omegaRps = omegaDps * mxrp::base::angle::D2RCC;       //rps
+            const double rocNM = (osVel / mxrp::base::time::H2S) / omegaRps;   //nm
             //double obTimeMin = 2.0;                                     //min
             //double obTimeSec = obTimeMin * base::time::M2S;            //sec
 
@@ -184,7 +184,7 @@ void MapPage::drawHoldingPattern()
 
             double obDistNM = 0;
             if (pRac->isLoiterTimeBased()) {
-               obDistNM = (osVel / oe::base::time::H2S) * pRac->getLoiterTime();   //nm
+               obDistNM = (osVel / mxrp::base::time::H2S) * pRac->getLoiterTime();   //nm
             }
             else {
                obDistNM = pRac->getLoiterPatternLengthNM();
@@ -241,11 +241,11 @@ void MapPage::drawFunc()
       // get data pointers
       //-------------------------------------------------------
    if (pStn != nullptr) {
-      const auto pPlr  = dynamic_cast<oe::models::Player*>(pStn->getOwnship());
+      const auto pPlr  = dynamic_cast<mxrp::models::Player*>(pStn->getOwnship());
       if (pPlr != nullptr) {
 
          // get the autopilot
-         const auto ap = static_cast<oe::models::Autopilot*>(pPlr->getPilot());
+         const auto ap = static_cast<mxrp::models::Autopilot*>(pPlr->getPilot());
          if (ap != nullptr && ap->isLoiterModeOn()) drawHoldingPattern();
 
          //---------------------------------------------------------------------------
@@ -280,8 +280,8 @@ void MapPage::drawFunc()
             glPushMatrix();
             glBegin(GL_LINES);
                int latIdx = 0;
-               int startLat = oe::base::nint(static_cast<double>(southernLat) - 1);
-               const int endLat = oe::base::nint(static_cast<double>(northernLat) + 1);
+               int startLat = mxrp::base::nint(static_cast<double>(southernLat) - 1);
+               const int endLat = mxrp::base::nint(static_cast<double>(northernLat) + 1);
                while (startLat < endLat) {
                   GLfloat refLatDist = static_cast<GLfloat>(refLat - startLat);
                   if (latIdx < MAX_READOUTS) {
@@ -305,8 +305,8 @@ void MapPage::drawFunc()
             glPushMatrix();
             glBegin(GL_LINES);
                int lonIdx = 0;
-               int startLon = oe::base::nint(static_cast<double>(westernLon) - 1);
-               const int endLon = oe::base::nint(static_cast<double>(easternLon) + 1);
+               int startLon = mxrp::base::nint(static_cast<double>(westernLon) - 1);
+               const int endLon = mxrp::base::nint(static_cast<double>(easternLon) + 1);
                while (startLon < endLon) {
                   GLfloat refLonDist = static_cast<GLfloat>(refLon - startLon);
                   if (lonIdx < MAX_READOUTS) {
@@ -340,21 +340,21 @@ void MapPage::updateData(const double dt)
 
     // get our pointers
     if (loader == nullptr) {
-        oe::base::Pair* pair = findByName("playerLoader");
+        mxrp::base::Pair* pair = findByName("playerLoader");
         if (pair != nullptr) {
-            loader = dynamic_cast<oe::graphics::SymbolLoader*>(pair->object());
+            loader = dynamic_cast<mxrp::graphics::SymbolLoader*>(pair->object());
             if (loader != nullptr) loader->ref();
         }
     }
 
     if (pStn == nullptr) {
-        oe::graphics::Display* pDsp = getDisplay();
+        mxrp::graphics::Display* pDsp = getDisplay();
         if (pDsp != nullptr) {
             pStn = static_cast<TestStation*>(pDsp->findContainerByType(typeid(TestStation)));
             if (pStn != nullptr) {
                 pStn->ref();
                 // set our reference lat / lon initially
-                const auto sim = dynamic_cast<oe::models::WorldModel*>(pStn->getSimulation());
+                const auto sim = dynamic_cast<mxrp::models::WorldModel*>(pStn->getSimulation());
                 if (sim != nullptr) {
                     setReferenceLatDeg(sim->getRefLatitude());
                     setReferenceLonDeg(sim->getRefLongitude());
@@ -365,18 +365,18 @@ void MapPage::updateData(const double dt)
 
    // go through one time and add our symbols for the route
    if (!routeLoaded && pStn != nullptr) {
-      oe::base::Pair* pair = findByName("routeLoader");
+      mxrp::base::Pair* pair = findByName("routeLoader");
       if (pair != nullptr) {
-         const auto routeLoader = dynamic_cast<oe::graphics::SymbolLoader*>(pair->object());
+         const auto routeLoader = dynamic_cast<mxrp::graphics::SymbolLoader*>(pair->object());
          if (routeLoader != nullptr) {
             // get our player's route
-            const auto ply = dynamic_cast<oe::models::Player*>(pStn->getOwnship());
+            const auto ply = dynamic_cast<mxrp::models::Player*>(pStn->getOwnship());
             if (ply != nullptr) {
-               oe::models::Navigation* nav = ply->getNavigation();
+               mxrp::models::Navigation* nav = ply->getNavigation();
                if (nav != nullptr) {
-                  oe::models::Route* rte = nav->getPriRoute();
+                  mxrp::models::Route* rte = nav->getPriRoute();
                   if (rte != nullptr) {
-                     oe::base::safe_ptr<oe::models::Steerpoint> stpts[10];
+                     mxrp::base::safe_ptr<mxrp::models::Steerpoint> stpts[10];
                      unsigned int numStpts = rte->getAllSteerpoints(stpts, 10);
                      for (unsigned int i = 0; i < numStpts; i++) {
                         if (stpts[i] != nullptr) {
@@ -397,17 +397,17 @@ void MapPage::updateData(const double dt)
 
     // let's update our players
     if (loader != nullptr && pStn != nullptr) {
-        oe::base::PairStream* stream = pStn->getPlayers();
+        mxrp::base::PairStream* stream = pStn->getPlayers();
         if (stream != nullptr) {
             // create our new player list
-            oe::models::Player* newPlayers[MAX_PLAYERS];
+            mxrp::models::Player* newPlayers[MAX_PLAYERS];
             int numNewPlayers = 0;
             // go through all of our non-ownship players and populate our new list
-            oe::base::List::Item* item = stream->getFirstItem();
+            mxrp::base::List::Item* item = stream->getFirstItem();
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
-                const auto pair = static_cast<oe::base::Pair*>(item->getValue());
+                const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
                 if (pair != nullptr) {
-                    const auto pPlr = dynamic_cast<oe::models::Player*>(pair->object());
+                    const auto pPlr = dynamic_cast<mxrp::models::Player*>(pair->object());
                     if (pPlr != nullptr) {
                         newPlayers[numNewPlayers] = pPlr;
                         newPlayers[numNewPlayers++]->ref();
@@ -453,7 +453,7 @@ void MapPage::updateData(const double dt)
                             player[j] = newPlayers[i];
                             player[j]->ref();
                             int type = 1;
-                            if (player[j]->isSide(oe::models::Player::RED)) type = 2;
+                            if (player[j]->isSide(mxrp::models::Player::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "");              //<LDB - "player"
                             if (player[j]->getName() != nullptr) {
                                 loader->updateSymbolText(playerIdx[j], "name", player[j]->getName()->getString());

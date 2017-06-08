@@ -6,7 +6,7 @@
 
 #include <zmq.h>
 
-namespace oe {
+namespace mxrp {
 namespace xzmq {
 
 IMPLEMENT_SUBCLASS(ZeroMQContext, "ZeroMQContext")

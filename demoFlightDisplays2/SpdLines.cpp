@@ -3,7 +3,7 @@
 #include "mxrp/base/Number.hpp"
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(SpdLines, "SpdLines")
 EMPTY_SERIALIZER(SpdLines)

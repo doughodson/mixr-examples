@@ -4,7 +4,7 @@
 
 #include "mxrp/base/Component.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class NetHandler; class Number; }
 }
 
@@ -22,9 +22,9 @@ namespace base { class NetHandler; class Number; }
 //                                  halting (default: infinite)
 //
 //------------------------------------------------------------------------------
-class Endpoint : public oe::base::Component
+class Endpoint : public mxrp::base::Component
 {
-   DECLARE_SUBCLASS(Endpoint, oe::base::Component)
+   DECLARE_SUBCLASS(Endpoint, mxrp::base::Component)
 
 public:
     static const unsigned int MAX_SIZE = 1024;  // Max buffer size
@@ -46,10 +46,10 @@ public:
     virtual unsigned int recvData(char* const msg, const unsigned int maxsize);
 
     // Slot functions
-    virtual bool setSlotNetwork(oe::base::NetHandler* const msg);
-    virtual bool setSlotNetInput(oe::base::NetHandler* const msg);
-    virtual bool setSlotNoWait(oe::base::Number* const msg);
-    virtual bool setSlotLoops(oe::base::Number* const msg);
+    virtual bool setSlotNetwork(mxrp::base::NetHandler* const msg);
+    virtual bool setSlotNetInput(mxrp::base::NetHandler* const msg);
+    virtual bool setSlotNoWait(mxrp::base::Number* const msg);
+    virtual bool setSlotLoops(mxrp::base::Number* const msg);
 
     virtual void reset() override;
 
@@ -58,8 +58,8 @@ protected:
     unsigned int getLoops() const { return loops; }
 
 private:
-    oe::base::safe_ptr<oe::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
-    oe::base::safe_ptr<oe::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
+    mxrp::base::safe_ptr<mxrp::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
+    mxrp::base::safe_ptr<mxrp::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
     unsigned int loops {};                               // Number of transfer loops (zero if no limit)
     bool networkInitialized {};                          // Network has been initialized
     bool networkInitFailed {};                           // Network initialization has failed

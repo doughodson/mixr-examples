@@ -12,10 +12,10 @@ WaypointTests::WaypointTests(
                const char* path)
 {
    char fullname[512];
-   oe::base::utStrcpy(fullname,512,path);
-   oe::base::utStrcat(fullname,512,"/");
-   oe::base::utStrcat(fullname,512,file);
-   db = new oe::dafif::WaypointLoader();
+   mxrp::base::utStrcpy(fullname,512,path);
+   mxrp::base::utStrcat(fullname,512,"/");
+   mxrp::base::utStrcat(fullname,512,file);
+   db = new mxrp::dafif::WaypointLoader();
    db->setPathname(path);
    db->setFilename(file);
    std::cout << "Loading waypoint file: " << fullname << std::endl;
@@ -48,7 +48,7 @@ void WaypointTests::func31(const double acLat, const double acLon, const double 
 
    while (idx >= 0) {
 
-      oe::dafif::Waypoint* wp = db->waypoint(idx);
+      mxrp::dafif::Waypoint* wp = db->waypoint(idx);
       if (wp != 0) {
          wp->printRecord(std::cout);
 		 if (printData)
@@ -78,7 +78,7 @@ void WaypointTests::func32(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Waypoint* wp = db->getWaypoint(i);
+         mxrp::dafif::Waypoint* wp = db->getWaypoint(i);
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -112,7 +112,7 @@ void WaypointTests::func35(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Waypoint* wp = db->getWaypoint(i);
+         mxrp::dafif::Waypoint* wp = db->getWaypoint(i);
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -139,7 +139,7 @@ void WaypointTests::func36(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Waypoint* wp = db->getWaypoint(i);
+         mxrp::dafif::Waypoint* wp = db->getWaypoint(i);
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -174,7 +174,7 @@ void WaypointTests::func3B(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Waypoint* wp = db->getWaypoint(i);
+         mxrp::dafif::Waypoint* wp = db->getWaypoint(i);
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);

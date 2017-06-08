@@ -16,12 +16,12 @@ MyPager::MyPager()
 
 bool MyPager::onEntry()
 {
-   oe::base::PairStream* components = getComponents();
+   mxrp::base::PairStream* components = getComponents();
    if (components != nullptr) {
-      oe::base::List::Item* item = components->getFirstItem();
+      mxrp::base::List::Item* item = components->getFirstItem();
       while (item != nullptr) {
-         const auto pair = static_cast<oe::base::Pair*>(item->getValue());
-         const auto cp = static_cast<oe::base::Component*>(pair->object());
+         const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
+         const auto cp = static_cast<mxrp::base::Component*>(pair->object());
          if (cp != nullptr)
             cp->event(RESET_EVENT);
          item = item->getNext();

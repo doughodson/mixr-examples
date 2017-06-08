@@ -4,7 +4,7 @@
 
 #include "mxrp/base/Component.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class PairStream; }
 }
 
@@ -16,9 +16,9 @@ namespace base { class PairStream; }
 // Slots:
 //    timers   <PairStream>   ! List of timers to be tested
 //------------------------------------------------------------------------------
-class Tester : public oe::base::Component
+class Tester : public mxrp::base::Component
 {
-   DECLARE_SUBCLASS(Tester, oe::base::Component)
+   DECLARE_SUBCLASS(Tester, mxrp::base::Component)
 
 public:
    Tester();
@@ -33,10 +33,10 @@ public:
    virtual void reset() override;
 
 protected:
-   bool setSlotTimers(const oe::base::PairStream* const msg);
+   bool setSlotTimers(const mxrp::base::PairStream* const msg);
 
 private:
-   oe::base::PairStream* timers {};    // List of timers
+   mxrp::base::PairStream* timers {};    // List of timers
 };
 
 #endif

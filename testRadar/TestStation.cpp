@@ -14,7 +14,7 @@
 
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 

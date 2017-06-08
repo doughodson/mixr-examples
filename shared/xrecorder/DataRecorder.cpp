@@ -4,7 +4,7 @@
 #include "dataRecorderTokens.hpp"
 #include "mxrp/base/util/math_utils.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xrecorder {
 
 IMPLEMENT_SUBCLASS(DataRecorder, "XDataRecorder")

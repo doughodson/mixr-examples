@@ -13,9 +13,9 @@
 //      UPDATE_VALUE3  -> cdi dots
 //      UPDATE_VALUE4 -> to from
 //------------------------------------------------------------------------------
-class CrsPntr : public oe::graphics::Rotators
+class CrsPntr : public mxrp::graphics::Rotators
 {
-    DECLARE_SUBCLASS(CrsPntr, oe::graphics::Rotators)
+    DECLARE_SUBCLASS(CrsPntr, mxrp::graphics::Rotators)
 
 public:
     CrsPntr();
@@ -41,20 +41,20 @@ public:
     virtual void drawFunc() override;
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
 protected:
     // slot functions
-    bool setSlotNumCdiDots(const oe::base::Number* const newCDI);
-    bool setSlotNumInches(const oe::base::Number* const newNI);
-    bool setSlotShowCdi(const oe::base::Number* const newSCDI);
-    bool setSlotShowCrsPntr(const oe::base::Number* const newSCP);
-    bool setSlotShowToFrom(const oe::base::Number* const newTF);
+    bool setSlotNumCdiDots(const mxrp::base::Number* const newCDI);
+    bool setSlotNumInches(const mxrp::base::Number* const newNI);
+    bool setSlotShowCdi(const mxrp::base::Number* const newSCDI);
+    bool setSlotShowCrsPntr(const mxrp::base::Number* const newSCP);
+    bool setSlotShowToFrom(const mxrp::base::Number* const newTF);
 
 private:
     // event functions
-    bool onUpdateCdiDotsCrsPntr(const oe::base::Number* const x);
-    bool onUpdateToFromCrsPntr(const oe::base::Number* const x);
+    bool onUpdateCdiDotsCrsPntr(const mxrp::base::Number* const x);
+    bool onUpdateToFromCrsPntr(const mxrp::base::Number* const x);
 
     double toFrom {};          // to = 1; from = 0;  Somewhere in between is usually not visible, unless scaled to be visible
     double cdiDots {};         // course deviation dots

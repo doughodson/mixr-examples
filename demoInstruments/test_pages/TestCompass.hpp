@@ -9,15 +9,15 @@
 //
 // Description: This page will test the CompassRose
 //------------------------------------------------------------------------------
-class TestCompass : public oe::graphics::Page
+class TestCompass : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestCompass, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestCompass, mxrp::graphics::Page)
 
 public:
     TestCompass();
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
     static const int MAX_TRACKS = 8;
     static const int MAX_AIRPORTS = 8;

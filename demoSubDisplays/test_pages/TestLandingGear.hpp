@@ -9,14 +9,14 @@
 //
 // Description: Tests our generic landing gear and lights
 //------------------------------------------------------------------------------
-class TestLandingGear : public oe::graphics::Page
+class TestLandingGear : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestLandingGear, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestLandingGear, mxrp::graphics::Page)
 
 public:
    TestLandingGear();
 
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
    virtual void updateData(const double dt = 0.0) override;
 
 private:

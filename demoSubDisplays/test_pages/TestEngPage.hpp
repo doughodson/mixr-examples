@@ -10,9 +10,9 @@
 //
 // Description: Tests the engine page
 //------------------------------------------------------------------------------
-class TestEngPage : public oe::graphics::Page
+class TestEngPage : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestEngPage, oe::graphics::Page )
+   DECLARE_SUBCLASS(TestEngPage, mxrp::graphics::Page )
 
 public:
     TestEngPage();
@@ -21,20 +21,20 @@ public:
 
 private:
     // engine 1 n1
-    double n1[oe::instruments::EngPage::NUM_ENG] {};
-    double n1Rate[oe::instruments::EngPage::NUM_ENG] {};
+    double n1[mxrp::instruments::EngPage::NUM_ENG] {};
+    double n1Rate[mxrp::instruments::EngPage::NUM_ENG] {};
 
     // engine 1 n2
-    double n2[oe::instruments::EngPage::NUM_ENG] {};
-    double n2Rate[oe::instruments::EngPage::NUM_ENG] {};
+    double n2[mxrp::instruments::EngPage::NUM_ENG] {};
+    double n2Rate[mxrp::instruments::EngPage::NUM_ENG] {};
 
     // engine 1 tit
-    double tit[oe::instruments::EngPage::NUM_ENG] {};
-    double titRate[oe::instruments::EngPage::NUM_ENG] {};
+    double tit[mxrp::instruments::EngPage::NUM_ENG] {};
+    double titRate[mxrp::instruments::EngPage::NUM_ENG] {};
 
     // engin1 1 fuel flow
-    double ff[oe::instruments::EngPage::NUM_ENG] {};
-    double ffRate[oe::instruments::EngPage::NUM_ENG] {};
+    double ff[mxrp::instruments::EngPage::NUM_ENG] {};
+    double ffRate[mxrp::instruments::EngPage::NUM_ENG] {};
 };
 
 #endif

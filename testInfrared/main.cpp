@@ -27,7 +27,7 @@ TestStation* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -40,7 +40,7 @@ TestStation* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -68,7 +68,7 @@ void updateDataCB(int)
    glutTimerFunc(millis, updateDataCB, 1);
 
    // Current time
-   const double time = oe::base::getComputerTime();
+   const double time = mxrp::base::getComputerTime();
 
    // N-1 Time
    static double time0 = time;
@@ -77,8 +77,8 @@ void updateDataCB(int)
    const auto dt = static_cast<double>(time - time0);
    time0 = time;
 
-   oe::base::Timer::updateTimers(dt);
-   oe::graphics::Graphic::flashTimer(dt);
+   mxrp::base::Timer::updateTimers(dt);
+   mxrp::graphics::Graphic::flashTimer(dt);
    testStation->updateData(dt);
 }
 
@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
    testStation = builder(configFilename);
 
    // reset the Simulation
-   testStation->event(oe::base::Component::RESET_EVENT);
+   testStation->event(mxrp::base::Component::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt = 1.0 / static_cast<double>(bgRate);
@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    testStation->updateData(dt);
    testStation->updateTC(dt);
-   testStation->event(oe::base::Component::RESET_EVENT);
+   testStation->event(mxrp::base::Component::RESET_EVENT);
 
    glutTimerFunc(millis, updateDataCB, 1);
 

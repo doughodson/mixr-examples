@@ -4,7 +4,7 @@
 
 #include "mxrp/base/ubf/Arbiter.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class List; class AbstractAction; }
 namespace xbehaviors {
 

@@ -8,7 +8,7 @@
 
 #include <string>
 
-namespace oe {
+namespace mxrp {
 namespace xzmq {
 
 base::Object* factory(const std::string& name)

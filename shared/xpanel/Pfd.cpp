@@ -3,7 +3,7 @@
 #include "mxrp/base/Pair.hpp"
 #include "mxrp/base/units/distance_utils.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Pfd, "Pfd")

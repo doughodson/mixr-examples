@@ -8,9 +8,9 @@
 // Class: MyPager
 // Description: Example pager
 //------------------------------------------------------------------------------
-class MyPager : public oe::graphics::Page
+class MyPager : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(MyPager, oe::graphics::Page)
+   DECLARE_SUBCLASS(MyPager, mxrp::graphics::Page)
 
 public:
    MyPager();

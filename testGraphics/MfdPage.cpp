@@ -4,7 +4,7 @@
 #include "mxrp/graphics/Rotators.hpp"
 #include "mxrp/base/PairStream.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(MfdPage, "MfdPage")
 EMPTY_SERIALIZER(MfdPage)

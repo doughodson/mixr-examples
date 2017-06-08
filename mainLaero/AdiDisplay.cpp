@@ -42,10 +42,10 @@ void AdiDisplay::updateData(const double dt)
    // Update base classes stuff
    BaseClass::updateData(dt);
 
-   oe::base::Vec3d av;
+   mxrp::base::Vec3d av;
 
    // get access pointer to ownship
-   oe::models::Aircraft* pA = getOwnship();
+   mxrp::models::Aircraft* pA = getOwnship();
    if (pA != nullptr) {
       psiRO = pA->getHeadingD();
       thtRO = pA->getPitchD();
@@ -56,9 +56,9 @@ void AdiDisplay::updateData(const double dt)
 
       av = pA->getAngularVelocities();
 
-      pRO   = av[0] * oe::base::angle::R2DCC;
-      qRO   = av[1] * oe::base::angle::R2DCC;
-      rRO   = av[2] * oe::base::angle::R2DCC;
+      pRO   = av[0] * mxrp::base::angle::R2DCC;
+      qRO   = av[1] * mxrp::base::angle::R2DCC;
+      rRO   = av[2] * mxrp::base::angle::R2DCC;
 
       pitchADI = pA->getPitchD();
       bankADI  = pA->getRollD();
@@ -81,10 +81,10 @@ void AdiDisplay::updateData(const double dt)
    //send("pitchangle",   UPDATE_INSTRUMENTS, pitch,    pitchSD);
 }
 
-oe::simulation::Station* AdiDisplay::getStation()
+mxrp::simulation::Station* AdiDisplay::getStation()
 {
    if (myStation == nullptr) {
-      const auto s = dynamic_cast<oe::simulation::Station*>( findContainerByType(typeid(oe::simulation::Station)) );
+      const auto s = dynamic_cast<mxrp::simulation::Station*>( findContainerByType(typeid(mxrp::simulation::Station)) );
       if (s != nullptr) {
          myStation = s;
       }
@@ -92,12 +92,12 @@ oe::simulation::Station* AdiDisplay::getStation()
    return myStation;
 }
 
-oe::models::Aircraft* AdiDisplay::getOwnship()
+mxrp::models::Aircraft* AdiDisplay::getOwnship()
 {
-   oe::models::Aircraft* pA = nullptr;
-   oe::simulation::Station* sta = getStation();
+   mxrp::models::Aircraft* pA = nullptr;
+   mxrp::simulation::Station* sta = getStation();
    if (sta != nullptr) {
-      pA = dynamic_cast<oe::models::Aircraft*>(sta->getOwnship());
+      pA = dynamic_cast<mxrp::models::Aircraft*>(sta->getOwnship());
       //const unsigned int ffrate = 5;    //LDB
       //sta->setFastForwardRate(ffrate);  //LDB
    }

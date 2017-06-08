@@ -4,7 +4,7 @@
 
 #include "mxrp/base/Object.hpp"
 
-namespace oe
+namespace mxrp
 {
 namespace base
 {
@@ -20,9 +20,9 @@ class Integer;
 // Block locations (x, y): lower left is (1,1)
 // Block type IDs are unique to blocks of the same type (e.g., size and shape)
 //------------------------------------------------------------------------------
-class Block : public oe::base::Object
+class Block : public mxrp::base::Object
 {
-   DECLARE_SUBCLASS(Block, oe::base::Object)
+   DECLARE_SUBCLASS(Block, mxrp::base::Object)
 
  public:
    static const unsigned int BOARD_X_SIZE = 4;
@@ -61,8 +61,8 @@ class Block : public oe::base::Object
    virtual unsigned int computeHashValue(const unsigned int blockIndex, const unsigned int rehashCount) const;
 
    // Slot function(s)
-   virtual bool setSlotPosition(const oe::base::List *const msg);
-   virtual bool setSlotRefId(const oe::base::Integer *const msg);
+   virtual bool setSlotPosition(const mxrp::base::List *const msg);
+   virtual bool setSlotRefId(const mxrp::base::Integer *const msg);
 
  protected:
    virtual bool setInitPosition(const unsigned int x, const unsigned int y);

@@ -163,19 +163,19 @@ void Puzzle::putOpen(State* const s)
 {
    if (openStates == nullptr) {
       // create the list (as needed)
-      openStates = new oe::base::List();
+      openStates = new mxrp::base::List();
    }
 
    if (s != nullptr) {
       // Create a new list item for this state and get the state's f() value
-      const auto newItem = new oe::base::List::Item();
+      const auto newItem = new mxrp::base::List::Item();
       newItem->value = s;
       s->ref();
       int f = s->f();
 
       // Find where in the list to insert this new state (based on their f() values)
-      oe::base::List::Item* item = openStates->getFirstItem();
-      oe::base::List::Item* refItem = nullptr;
+      mxrp::base::List::Item* item = openStates->getFirstItem();
+      mxrp::base::List::Item* refItem = nullptr;
       while (item != nullptr && refItem == nullptr) {
          const auto p = static_cast<const State*>( item->getValue() );
          if (f < p->f()) {

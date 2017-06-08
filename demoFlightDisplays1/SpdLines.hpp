@@ -10,9 +10,9 @@
 // Description: Draws the lines for the airspeed graphic
 // Inputs:  Slots only
 //------------------------------------------------------------------------------
-class SpdLines : public oe::graphics::Graphic
+class SpdLines : public mxrp::graphics::Graphic
 {
-    DECLARE_SUBCLASS(SpdLines, oe::graphics::Graphic)
+    DECLARE_SUBCLASS(SpdLines, mxrp::graphics::Graphic)
 
 public:
     SpdLines();
@@ -29,8 +29,8 @@ public:
 
 protected:
     // slot functions
-    bool setSlotIsAlt(const oe::base::Number* newIsAlt);
-    bool setSlotDrawBack(const oe::base::Number* newDB);
+    bool setSlotIsAlt(const mxrp::base::Number* newIsAlt);
+    bool setSlotDrawBack(const mxrp::base::Number* newDB);
 
 private:
     bool isAlt {};     // are we drawing the altitude lines instead?

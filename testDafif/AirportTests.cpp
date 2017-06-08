@@ -12,10 +12,10 @@ AirportTests::AirportTests(
                const char* path)
 {
    char fullname[512];
-   oe::base::utStrcpy(fullname, 512, path);
-   oe::base::utStrcat(fullname, 512, "/");
-   oe::base::utStrcat(fullname, 512, file);
-   db = new oe::dafif::AirportLoader();
+   mxrp::base::utStrcpy(fullname, 512, path);
+   mxrp::base::utStrcat(fullname, 512, "/");
+   mxrp::base::utStrcat(fullname, 512, file);
+   db = new mxrp::dafif::AirportLoader();
    db->setPathname(path);
    db->setFilename(file);
    std::cout << "Loading airport file: " << fullname << std::endl;
@@ -86,7 +86,7 @@ void AirportTests::func01(const double acLat, const double acLon, const double a
 
    while (num >= 0) {
 
-      oe::dafif::Airport* p = db->airport(num);
+      mxrp::dafif::Airport* p = db->airport(num);
       if (p != 0) {
          p->printRecord(std::cout);
 		 if (printData)
@@ -103,7 +103,7 @@ void AirportTests::func01(const double acLat, const double acLon, const double a
    }
 }
 
-// func01I	-- oe::dafif::AirportLoader.queryIlsByNumber() and getIls()
+// func01I	-- mxrp::dafif::AirportLoader.queryIlsByNumber() and getIls()
 void AirportTests::func01I(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    db->setArea(acLat, acLon);
@@ -124,12 +124,12 @@ void AirportTests::func01I(const double acLat, const double acLon, const double 
          std::cout << "found = " << found << std::endl;
 
          for (int i = 0; i < found; i++) {
-            oe::dafif::Ils* p = db->getIls(i);
+            mxrp::dafif::Ils* p = db->getIls(i);
             p->printRecord(std::cout);
 			if (printData)
 			{
 		        p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		        if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+		        if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 			        p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 			}
             std::cout << std::endl;
@@ -146,7 +146,7 @@ void AirportTests::func01I(const double acLat, const double acLon, const double 
    }
 }
 
-// func01R	-- oe::dafif::AirportLoader.queryRunwayByNumber() and getRunway()
+// func01R	-- mxrp::dafif::AirportLoader.queryRunwayByNumber() and getRunway()
 void AirportTests::func01R(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    db->setArea(acLat, acLon);
@@ -167,7 +167,7 @@ void AirportTests::func01R(const double acLat, const double acLon, const double 
          std::cout << "found = " << found << std::endl;
 
          for (int i = 0; i < found; i++) {
-            oe::dafif::Runway* p = db->getRunway(i);
+            mxrp::dafif::Runway* p = db->getRunway(i);
             p->printRecord(std::cout);
 			if (printData)
     		    p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -185,7 +185,7 @@ void AirportTests::func01R(const double acLat, const double acLon, const double 
    }
 }
 
-// func02	-- oe::dafif::AirportLoader.queryByIdent()
+// func02	-- mxrp::dafif::AirportLoader.queryByIdent()
 void AirportTests::func02(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    db->setArea(acLat, acLon);
@@ -200,7 +200,7 @@ void AirportTests::func02(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -214,7 +214,7 @@ void AirportTests::func02(const double acLat, const double acLon, const double a
    }
 }
 
-// func02I	-- oe::dafif::AirportLoader.queryIlsByIdent()
+// func02I	-- mxrp::dafif::AirportLoader.queryIlsByIdent()
 void AirportTests::func02I(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    db->setArea(acLat, acLon);
@@ -229,12 +229,12 @@ void AirportTests::func02I(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Ils* p = db->getIls(i);
+         mxrp::dafif::Ils* p = db->getIls(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
 		     p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		     if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+		     if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 			     p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 		 }
          std::cout << std::endl;
@@ -247,7 +247,7 @@ void AirportTests::func02I(const double acLat, const double acLon, const double 
    }
 }
 
-// func02R	-- oe::dafif::AirportLoader.queryRunwayByIdent()
+// func02R	-- mxrp::dafif::AirportLoader.queryRunwayByIdent()
 void AirportTests::func02R(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    db->setArea(acLat, acLon);
@@ -262,7 +262,7 @@ void AirportTests::func02R(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Runway* p = db->getRunway(i);
+         mxrp::dafif::Runway* p = db->getRunway(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
@@ -298,7 +298,7 @@ void AirportTests::func04(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -331,12 +331,12 @@ void AirportTests::func04I(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Ils* p = db->getIls(i);
+         mxrp::dafif::Ils* p = db->getIls(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
 		     p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		     if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+		     if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 			     p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 		 }
          std::cout << std::endl;
@@ -368,7 +368,7 @@ void AirportTests::func04R(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Runway* p = db->getRunway(i);
+         mxrp::dafif::Runway* p = db->getRunway(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
@@ -385,7 +385,7 @@ void AirportTests::func04R(const double acLat, const double acLon, const double 
    }
 }
 
-// func05	-- oe::dafif::AirportLoader.queryByRange()
+// func05	-- mxrp::dafif::AirportLoader.queryByRange()
 void AirportTests::func05(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng;
@@ -401,7 +401,7 @@ void AirportTests::func05(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -416,7 +416,7 @@ void AirportTests::func05(const double acLat, const double acLon, const double a
 
 }
 
-// func05I	-- oe::dafif::AirportLoader.queryIlsByRange()
+// func05I	-- mxrp::dafif::AirportLoader.queryIlsByRange()
 void AirportTests::func05I(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng;
@@ -432,12 +432,12 @@ void AirportTests::func05I(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Ils* p = db->getIls(i);
+         mxrp::dafif::Ils* p = db->getIls(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		     if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+		     if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 			     p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 		 }
          std::cout << std::endl;
@@ -451,7 +451,7 @@ void AirportTests::func05I(const double acLat, const double acLon, const double 
 
 }
 
-// func05R	-- oe::dafif::AirportLoader.queryRunwayByRange()
+// func05R	-- mxrp::dafif::AirportLoader.queryRunwayByRange()
 void AirportTests::func05R(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng;
@@ -467,7 +467,7 @@ void AirportTests::func05R(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Runway* p = db->getRunway(i);
+         mxrp::dafif::Runway* p = db->getRunway(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
@@ -482,7 +482,7 @@ void AirportTests::func05R(const double acLat, const double acLon, const double 
    }
 }
 
-// func06	-- oe::dafif::AirportLoader.queryByKey()
+// func06	-- mxrp::dafif::AirportLoader.queryByKey()
 void AirportTests::func06(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    char key[16];
@@ -496,7 +496,7 @@ void AirportTests::func06(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -510,7 +510,7 @@ void AirportTests::func06(const double acLat, const double acLon, const double a
    }
 }
 
-// func06I	-- oe::dafif::AirportLoader.queryIlsBySubkey()
+// func06I	-- mxrp::dafif::AirportLoader.queryIlsBySubkey()
 void AirportTests::func06I(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    char key[34];
@@ -524,12 +524,12 @@ void AirportTests::func06I(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Ils* p = db->getIls(i);
+         mxrp::dafif::Ils* p = db->getIls(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
 		     p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		     if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+		     if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 			     p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 		 }
          std::cout << std::endl;
@@ -542,7 +542,7 @@ void AirportTests::func06I(const double acLat, const double acLon, const double 
    }
 }
 
-// func06R	-- oe::dafif::AirportLoader.queryRunwayBySubkey()
+// func06R	-- mxrp::dafif::AirportLoader.queryRunwayBySubkey()
 void AirportTests::func06R(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    char key[34];
@@ -556,7 +556,7 @@ void AirportTests::func06R(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Runway* p = db->getRunway(i);
+         mxrp::dafif::Runway* p = db->getRunway(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
@@ -573,7 +573,7 @@ void AirportTests::func06R(const double acLat, const double acLon, const double 
    }
 }
 
-// func07	-- oe::dafif::AirportLoader.queryByLength()
+// func07	-- mxrp::dafif::AirportLoader.queryByLength()
 void AirportTests::func07(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng;
@@ -593,7 +593,7 @@ void AirportTests::func07(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -608,7 +608,7 @@ void AirportTests::func07(const double acLat, const double acLon, const double a
 
 }
 
-// func07R	-- oe::dafif::AirportLoader.queryRunwayByLength()
+// func07R	-- mxrp::dafif::AirportLoader.queryRunwayByLength()
 void AirportTests::func07R(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng;
@@ -628,7 +628,7 @@ void AirportTests::func07R(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Runway* p = db->getRunway(i);
+         mxrp::dafif::Runway* p = db->getRunway(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
@@ -663,7 +663,7 @@ void AirportTests::func08(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -696,12 +696,12 @@ void AirportTests::func08I(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Ils* p = db->getIls(i);
+         mxrp::dafif::Ils* p = db->getIls(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
 		     p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		     if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+		     if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 			     p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 		 }
          std::cout << std::endl;
@@ -731,7 +731,7 @@ void AirportTests::func08R(const double acLat, const double acLon, const double 
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Runway* p = db->getRunway(i);
+         mxrp::dafif::Runway* p = db->getRunway(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -744,7 +744,7 @@ void AirportTests::func08R(const double acLat, const double acLon, const double 
 }
 
 
-// func09	-- oe::dafif::AirportLoader.queryByType()
+// func09	-- mxrp::dafif::AirportLoader.queryByType()
 void AirportTests::func09(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng;
@@ -767,24 +767,24 @@ void AirportTests::func09(const double acLat, const double acLon, const double a
       db->setArea(acLat, acLon, rng);
 
 
-      int found = db->queryByType(oe::dafif::Airport::AirportType(type));
+      int found = db->queryByType(mxrp::dafif::Airport::AirportType(type));
       std::cout << "found = " << found;
 	  
-	  if (oe::dafif::Airport::AirportType(type) == oe::dafif::Airport::ANY)
+	  if (mxrp::dafif::Airport::AirportType(type) == mxrp::dafif::Airport::ANY)
 		  std::cout << "  ANY Airports" << std::endl;
-	  else if (oe::dafif::Airport::AirportType(type) == oe::dafif::Airport::CIVIL)
+	  else if (mxrp::dafif::Airport::AirportType(type) == mxrp::dafif::Airport::CIVIL)
 		  std::cout << "  CIVIL Airports" << std::endl;
-	  else if (oe::dafif::Airport::AirportType(type) == oe::dafif::Airport::JOINT)
+	  else if (mxrp::dafif::Airport::AirportType(type) == mxrp::dafif::Airport::JOINT)
 		  std::cout << "  JOINT Airports" << std::endl;
-	  else if (oe::dafif::Airport::AirportType(type) == oe::dafif::Airport::MILITARY)
+	  else if (mxrp::dafif::Airport::AirportType(type) == mxrp::dafif::Airport::MILITARY)
 		  std::cout << "  MILITARY Airports" << std::endl;
-	  else if (oe::dafif::Airport::AirportType(type) == oe::dafif::Airport::INACTIVE)
+	  else if (mxrp::dafif::Airport::AirportType(type) == mxrp::dafif::Airport::INACTIVE)
 		  std::cout << "  INACTIVE Airports" << std::endl;
 	  else
 		  std::cout << "  UNDEFINED" << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* p = db->getAirport(i);
+         mxrp::dafif::Airport* p = db->getAirport(i);
          p->printRecord(std::cout);
 		 if (printData)
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -796,7 +796,7 @@ void AirportTests::func09(const double acLat, const double acLon, const double a
    }
 }
 
-// func09I	-- oe::dafif::AirportLoader.queryIlsByType()
+// func09I	-- mxrp::dafif::AirportLoader.queryIlsByType()
 void AirportTests::func09I(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    float rng(0.0);
@@ -823,38 +823,38 @@ void AirportTests::func09I(const double acLat, const double acLon, const double 
 
       db->setArea(acLat, acLon, rng);
 
-      int found = db->queryIlsByType(oe::dafif::Ils::IlsType(type));
+      int found = db->queryIlsByType(mxrp::dafif::Ils::IlsType(type));
       std::cout << "found = " << found;
-	  if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::ANY)
+	  if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::ANY)
 		  std::cout << "  ANY ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::LOCATOR)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::LOCATOR)
 		  std::cout << "  LOCATOR ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::DME)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::DME)
 		  std::cout << "  DME ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::LOCALIZER)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::LOCALIZER)
 		  std::cout << "  LOCALIZER ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::GLIDESLOPE)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::GLIDESLOPE)
 		  std::cout << "  GLIDESLOPE ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::BACKCOURSE_MARKER)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::BACKCOURSE_MARKER)
 		  std::cout << "  BACKCOURSE_MARKER ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::INNER_MARKER)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::INNER_MARKER)
 		  std::cout << "  INNER_MARKER ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::MIDDLE_MARKER)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::MIDDLE_MARKER)
 		  std::cout << "  MIDDLE_MARKER ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::OUTER_MARKER)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::OUTER_MARKER)
 		  std::cout << "  OUTER_MARKER ILS Aids" << std::endl;
-	  else if (oe::dafif::Ils::IlsType(type) == oe::dafif::Ils::UNKNOWN)
+	  else if (mxrp::dafif::Ils::IlsType(type) == mxrp::dafif::Ils::UNKNOWN)
 		  std::cout << "  UNKNOWN ILS Aids" << std::endl;
 	  else
 		  std::cout << "  UNDEFINE" << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Ils* p = db->getIls(i);
+         mxrp::dafif::Ils* p = db->getIls(i);
          p->printRecord(std::cout);
 		 if (printData)
 		 {
     		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-	    	 if (p->isIlsType(oe::dafif::Ils::GLIDESLOPE))
+	    	 if (p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))
 				 p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
 		 }
          std::cout << std::endl;
@@ -868,13 +868,13 @@ void AirportTests::func09I(const double acLat, const double acLon, const double 
 
 }
 
-// func0A	-- oe::dafif::AirportLoader; ICAO list sorting
+// func0A	-- mxrp::dafif::AirportLoader; ICAO list sorting
 void AirportTests::func0A()
 {
    db->printIcaoList(std::cout);
 }
 
-// func0B	-- oe::dafif::AirportLoader.queryByIcao()
+// func0B	-- mxrp::dafif::AirportLoader.queryByIcao()
 void AirportTests::func0B(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    db->setArea(acLat, acLon);
@@ -890,7 +890,7 @@ void AirportTests::func0B(const double acLat, const double acLon, const double a
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         oe::dafif::Airport* ap = db->getAirport(i);
+         mxrp::dafif::Airport* ap = db->getAirport(i);
          ap->printRecord(std::cout);
 		 if (printData)
     		 ap->printTrueBearingRange(std::cout, acLat, acLon, acElev);

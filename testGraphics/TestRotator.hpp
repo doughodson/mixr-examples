@@ -9,9 +9,9 @@
 //
 // Description: Example MFD page
 //------------------------------------------------------------------------------
-class TestRotator : public oe::graphics::Graphic
+class TestRotator : public mxrp::graphics::Graphic
 {
-   DECLARE_SUBCLASS(TestRotator, oe::graphics::Graphic)
+   DECLARE_SUBCLASS(TestRotator, mxrp::graphics::Graphic)
 
 public:
     TestRotator();

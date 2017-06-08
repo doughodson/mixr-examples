@@ -27,7 +27,7 @@
 #include "mxrp/recorder/protobuf/DataRecord.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace oe {
+namespace mxrp {
 namespace xrecorder {
 namespace pb {
 
@@ -140,11 +140,11 @@ class MyDataMsg : public ::google::protobuf::Message {
 // ===================================================================
 
 static const int kMyDataMsgFieldNumber = 1000;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::oe::recorder::pb::DataRecord,
-    ::google::protobuf::internal::MessageTypeTraits< ::oe::xrecorder::pb::MyDataMsg >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::mxrp::recorder::pb::DataRecord,
+    ::google::protobuf::internal::MessageTypeTraits< ::mxrp::xrecorder::pb::MyDataMsg >, 11, false >
   my_data_msg;
 static const int kFooFieldNumber = 100;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::oe::recorder::pb::MarkerMsg,
+extern ::google::protobuf::internal::ExtensionIdentifier< ::mxrp::recorder::pb::MarkerMsg,
     ::google::protobuf::internal::PrimitiveTypeTraits< ::google::protobuf::uint32 >, 13, false >
   foo;
 
@@ -229,7 +229,7 @@ inline void MyDataMsg::set_fo(::google::protobuf::uint32 value) {
 
 }  // namespace pb
 }  // namespace xrecorder
-}  // namespace oe
+}  // namespace mxrp
 
 #ifndef SWIG
 namespace google {

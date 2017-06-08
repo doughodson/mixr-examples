@@ -18,7 +18,7 @@
 #include <string>
 #include <cstdlib>
 
-namespace oe {
+namespace mxrp {
 namespace example {
 
 // default background frame rate
@@ -119,5 +119,5 @@ int main(int argc, char* argv[])
 //
 int main(int argc, char* argv[])
 {
-   return oe::example::main(argc, argv);
+   return mxrp::example::main(argc, argv);
 }

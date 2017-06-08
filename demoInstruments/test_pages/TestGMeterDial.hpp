@@ -10,9 +10,9 @@
 // Description: This page will test the G meter, which is a dial showing
 // the min and max Gs as well as the current Gs being pulled.
 //------------------------------------------------------------------------------
-class TestGMeterDial : public oe::graphics::Page
+class TestGMeterDial : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestGMeterDial, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestGMeterDial, mxrp::graphics::Page)
 
 public:
     TestGMeterDial();

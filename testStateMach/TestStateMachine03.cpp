@@ -4,7 +4,7 @@
 #include "mxrp/base/Integer.hpp"
 #include "mxrp/base/Boolean.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestStateMachine03, "TestStateMachine03")
 EMPTY_SLOTTABLE(TestStateMachine03)

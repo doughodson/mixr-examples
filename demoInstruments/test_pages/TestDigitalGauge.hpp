@@ -11,9 +11,9 @@
 // This page will show an analog F16-like aoa gauge beside a digital aoa gauge
 //
 //------------------------------------------------------------------------------
-class TestDigitalGauge : public oe::graphics::Page
+class TestDigitalGauge : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestDigitalGauge, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestDigitalGauge, mxrp::graphics::Page)
 
 public:
    TestDigitalGauge();

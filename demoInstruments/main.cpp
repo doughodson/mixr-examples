@@ -42,7 +42,7 @@
 const unsigned int frameRate = 20;
 
 // System descriptions
-oe::glut::GlutDisplay* glutDisplay = nullptr;
+mxrp::glut::GlutDisplay* glutDisplay = nullptr;
 
 // timerFunc() -- Time critical stuff
 void timerFunc(int)
@@ -51,15 +51,15 @@ void timerFunc(int)
     const auto millis = static_cast<unsigned int>(dt * 1000);
     glutTimerFunc(millis, timerFunc, 1);
 
-    oe::base::Timer::updateTimers(dt);
-    oe::graphics::Graphic::flashTimer(dt);
+    mxrp::base::Timer::updateTimers(dt);
+    mxrp::graphics::Graphic::flashTimer(dt);
     glutDisplay->updateTC(dt);
 }
 
 // our class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-    oe::base::Object* obj = nullptr;
+    mxrp::base::Object* obj = nullptr;
 
     // speed brake page
     if ( name == TestSpeedBrake::getFactoryName() ) {
@@ -139,21 +139,21 @@ oe::base::Object* factory(const std::string& name)
     }
 
     else {
-        if (obj == nullptr) obj = oe::instruments::factory(name);
-        if (obj == nullptr) obj = oe::graphics::factory(name);
-        if (obj == nullptr) obj = oe::glut::factory(name);
-        if (obj == nullptr) obj = oe::base::factory(name);
+        if (obj == nullptr) obj = mxrp::instruments::factory(name);
+        if (obj == nullptr) obj = mxrp::graphics::factory(name);
+        if (obj == nullptr) obj = mxrp::glut::factory(name);
+        if (obj == nullptr) obj = mxrp::base::factory(name);
     }
 
     return obj;
 }
 
 // display builder
-oe::glut::GlutDisplay* builder(const std::string& filename)
+mxrp::glut::GlutDisplay* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -166,7 +166,7 @@ oe::glut::GlutDisplay* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -174,7 +174,7 @@ oe::glut::GlutDisplay* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto glutDisplay = dynamic_cast<oe::glut::GlutDisplay*>(obj);
+   const auto glutDisplay = dynamic_cast<mxrp::glut::GlutDisplay*>(obj);
    if (glutDisplay == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

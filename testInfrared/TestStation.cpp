@@ -18,7 +18,7 @@ BEGIN_SLOTTABLE(TestStation)
 END_SLOTTABLE(TestStation)
 
 BEGIN_SLOT_MAP(TestStation)
-    ON_SLOT(1, setSlotGlutDisplay, oe::glut::GlutDisplay)
+    ON_SLOT(1, setSlotGlutDisplay, mxrp::glut::GlutDisplay)
 END_SLOT_MAP()
 
 TestStation::TestStation()
@@ -61,8 +61,8 @@ void TestStation::updateData(const double dt)
    // own displays.
 
    // manage the timers
-   oe::base::Timer::updateTimers(dt);
-   oe::graphics::Graphic::flashTimer(dt);
+   mxrp::base::Timer::updateTimers(dt);
+   mxrp::graphics::Graphic::flashTimer(dt);
 
    BaseClass::updateData(dt);
 }
@@ -89,20 +89,20 @@ void TestStation::reset()
 //------------------------------------------------------------------------------
 void TestStation::stepOwnshipPlayer()
 {
-   oe::base::PairStream* pl = getSimulation()->getPlayers();
+   mxrp::base::PairStream* pl = getSimulation()->getPlayers();
    if (pl != nullptr) {
 
-      oe::models::Player* f = nullptr;
-      oe::models::Player* n = nullptr;
+      mxrp::models::Player* f = nullptr;
+      mxrp::models::Player* n = nullptr;
       bool found = false;
 
       // Find the next player
-      oe::base::List::Item* item = pl->getFirstItem();
+      mxrp::base::List::Item* item = pl->getFirstItem();
       while (item != nullptr) {
-         const auto pair = static_cast<oe::base::Pair*>(item->getValue());
+         const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
          if (pair != nullptr) {
-            const auto ip = static_cast<oe::models::Player*>( pair->object() );
-            if ( ip->isMode(oe::models::Player::ACTIVE) &&
+            const auto ip = static_cast<mxrp::models::Player*>( pair->object() );
+            if ( ip->isMode(mxrp::models::Player::ACTIVE) &&
                ip->isLocalPlayer()
                ) {
                   if (f == nullptr) { f = ip; }  // Remember the first
@@ -119,7 +119,7 @@ void TestStation::stepOwnshipPlayer()
    }
 }
 
-bool TestStation::setSlotGlutDisplay(oe::glut::GlutDisplay* const d)
+bool TestStation::setSlotGlutDisplay(mxrp::glut::GlutDisplay* const d)
 {
     glutDisplay = d;
     glutDisplay->container(this);

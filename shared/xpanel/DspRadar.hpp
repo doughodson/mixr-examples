@@ -5,7 +5,7 @@
 #include "mxrp/graphics/Graphic.hpp"
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base   { class PairStream; }
 namespace models { class Radar; }
 namespace xpanel {

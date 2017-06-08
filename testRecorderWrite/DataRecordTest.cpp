@@ -31,7 +31,7 @@
 #include <iomanip>
 #include <cstdlib>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(DataRecordTest, "DataRecordTest")
 EMPTY_SERIALIZER(DataRecordTest)
@@ -366,7 +366,7 @@ void DataRecordTest::readSerialFromFile()
 
          if (readHandle != nullptr) {
             // Check for last message
-            const oe::recorder::pb::DataRecord* testDr = readHandle->getRecord();
+            const mxrp::recorder::pb::DataRecord* testDr = readHandle->getRecord();
             unsigned int recId = testDr->id();
             std::cout << "Data record ID: " << recId << std::endl;
             if (recId == REID_END_OF_DATA) {
@@ -449,7 +449,7 @@ bool DataRecordTest::testEvents()
 //         std::cin  >> outSelect;
 //         if (outSelect > 0) sendToFile = true;
 
-         //const oe::recorder::DataRecordHandle* handle = nullptr;
+         //const mxrp::recorder::DataRecordHandle* handle = nullptr;
 
          switch (testNumber) {
             case  1: { /* handle = */ testFileIdMsg(1); break; }
@@ -516,11 +516,11 @@ void DataRecordTest::eventTestMenu()
 // ------------------------------------------------------------------------------------------------
 // testFileIdMsg: Sets some File ID msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
+mxrp::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::FileIdMsg* msg = recordMsg->mutable_file_id_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::FileIdMsg* msg = recordMsg->mutable_file_id_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_FILE_ID);
@@ -551,15 +551,15 @@ oe::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
 // ------------------------------------------------------------------------------------------------
 // testNewPlayerEventMsg: Sets some New Player msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::NewPlayerEventMsg* msg = recordMsg->mutable_new_player_event_msg();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::NewPlayerEventMsg* msg = recordMsg->mutable_new_player_event_msg();
 
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
 
    // required
    recordMsg->set_id(REID_NEW_PLAYER);
@@ -600,13 +600,13 @@ oe::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerRemovedEventMsg: Sets some Player Removed msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::PlayerRemovedEventMsg* msg = recordMsg->mutable_player_removed_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::PlayerRemovedEventMsg* msg = recordMsg->mutable_player_removed_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
 
    // required
    recordMsg->set_id(REID_PLAYER_REMOVED);
@@ -638,13 +638,13 @@ oe::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerDataMsg: Sets some Player Data msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::PlayerDataMsg* msg = recordMsg->mutable_player_data_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::PlayerDataMsg* msg = recordMsg->mutable_player_data_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
 
    // required
    recordMsg->set_id(REID_PLAYER_DATA);
@@ -676,15 +676,15 @@ oe::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerDamagedEventMsg: Sets some Player Damaged msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::PlayerDamagedEventMsg* msg = recordMsg->mutable_player_damaged_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::PlayerDamagedEventMsg* msg = recordMsg->mutable_player_damaged_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
 
-   const auto recMsg = new oe::recorder::pb::DataRecord();
+   const auto recMsg = new mxrp::recorder::pb::DataRecord();
    const google::protobuf::Descriptor* descriptor = recMsg->GetDescriptor();
    const google::protobuf::FieldDescriptor* id_field = descriptor->FindFieldByName("id");
 
@@ -722,14 +722,14 @@ oe::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerCollisionEventMsg: Sets some Player Collision msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::PlayerCollisionEventMsg* msg = recordMsg->mutable_player_collision_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
-   /*oe::recorder::pb::PlayerId* other = */ msg->mutable_other_player_id();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::PlayerCollisionEventMsg* msg = recordMsg->mutable_player_collision_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   /*mxrp::recorder::pb::PlayerId* other = */ msg->mutable_other_player_id();
 
    // required
    recordMsg->set_id(REID_PLAYER_COLLISION);
@@ -766,13 +766,13 @@ oe::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerCrashEventMsg: Sets some Player Crash msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::PlayerCrashEventMsg* msg = recordMsg->mutable_player_crash_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::PlayerCrashEventMsg* msg = recordMsg->mutable_player_crash_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
 
    // required
    recordMsg->set_id(REID_PLAYER_CRASH);
@@ -804,13 +804,13 @@ oe::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerKilledEventMsg: Sets some Player Killed msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsigned int type)
+mxrp::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsigned int type)
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::PlayerKilledEventMsg* msg = recordMsg->mutable_player_killed_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
-   oe::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   oe::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::PlayerKilledEventMsg* msg = recordMsg->mutable_player_killed_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
+   mxrp::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
+   mxrp::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
 
    // required
    recordMsg->set_id(REID_PLAYER_KILLED);
@@ -842,11 +842,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsigne
 // ------------------------------------------------------------------------------------------------
 // testWeaponReleaseEventMsg: Sets some Weapon Released msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsigned int side)
+mxrp::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsigned int side)
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::WeaponReleaseEventMsg* msg = recordMsg->mutable_weapon_release_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::WeaponReleaseEventMsg* msg = recordMsg->mutable_weapon_release_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_WEAPON_RELEASED);
@@ -885,11 +885,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsign
 // ------------------------------------------------------------------------------------------------
 // testWeaponHungEventMsg: Sets some Weapon Hung msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::WeaponHungEventMsg* msg = recordMsg->mutable_weapon_hung_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::WeaponHungEventMsg* msg = recordMsg->mutable_weapon_hung_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_WEAPON_HUNG);
@@ -930,11 +930,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testWeaponDetonationEventMsg: Sets some Weapon Detonation msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::WeaponDetonationEventMsg* msg = recordMsg->mutable_weapon_detonation_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::WeaponDetonationEventMsg* msg = recordMsg->mutable_weapon_detonation_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_WEAPON_DETONATION);
@@ -943,7 +943,7 @@ oe::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
 
 
-   msg->set_det_type(oe::recorder::pb::WeaponDetonationEventMsg_DetonationType_DETONATE_GROUND_IMPACT);
+   msg->set_det_type(mxrp::recorder::pb::WeaponDetonationEventMsg_DetonationType_DETONATE_GROUND_IMPACT);
 
    // required PlayerId    wpn_id       = 1;
    msg->mutable_wpn_id()->set_id(531);
@@ -986,11 +986,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testGunFiredEventMsg: Sets some Gun Fired msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::GunFiredEventMsg* msg = recordMsg->mutable_gun_fired_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::GunFiredEventMsg* msg = recordMsg->mutable_gun_fired_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_GUN_FIRED);
@@ -1014,11 +1014,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testNewTrackEventMsg: Sets some New Track msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::NewTrackEventMsg* msg = recordMsg->mutable_new_track_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::NewTrackEventMsg* msg = recordMsg->mutable_new_track_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_NEW_TRACK);
@@ -1090,7 +1090,7 @@ oe::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
    msg->mutable_emission_data()->set_bandwidth(3000);
    msg->mutable_emission_data()->set_prf(4000);
    msg->mutable_emission_data()->set_power(5000);
-   msg->mutable_emission_data()->set_polarization(oe::recorder::pb::EmissionData_Polarization_NONE);
+   msg->mutable_emission_data()->set_polarization(mxrp::recorder::pb::EmissionData_Polarization_NONE);
 
    // enum Polarization {
    //   NONE        = 0;
@@ -1111,11 +1111,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testTrackRemovedEventMsg: Sets some Track Removed msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::TrackRemovedEventMsg* msg = recordMsg->mutable_track_removed_event_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::TrackRemovedEventMsg* msg = recordMsg->mutable_track_removed_event_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_TRACK_REMOVED);
@@ -1139,11 +1139,11 @@ oe::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testTrackDataMsg: Sets some Track Data msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
-   oe::recorder::pb::TrackDataMsg* msg = recordMsg->mutable_track_data_msg();
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
+   mxrp::recorder::pb::TrackDataMsg* msg = recordMsg->mutable_track_data_msg();
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_TRACK_DATA);
@@ -1216,7 +1216,7 @@ oe::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
    msg->mutable_emission_data()->set_bandwidth(3000);
    msg->mutable_emission_data()->set_prf(4000);
    msg->mutable_emission_data()->set_power(5000);
-   msg->mutable_emission_data()->set_polarization(oe::recorder::pb::EmissionData_Polarization_NONE);
+   msg->mutable_emission_data()->set_polarization(mxrp::recorder::pb::EmissionData_Polarization_NONE);
 
    size_t messageSize = recordMsg->ByteSize();
    std::cout << "Message size: " << messageSize << std::endl;
@@ -1227,12 +1227,12 @@ oe::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
 // ------------------------------------------------------------------------------------------------
 // testLastMsg: Sets some Last msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-oe::recorder::DataRecordHandle* DataRecordTest::testLastMsg()
+mxrp::recorder::DataRecordHandle* DataRecordTest::testLastMsg()
 {
-   const auto recordMsg = new oe::recorder::pb::DataRecord();
+   const auto recordMsg = new mxrp::recorder::pb::DataRecord();
    recordMsg->set_id(REID_END_OF_DATA);
 
-   const auto handle = new oe::recorder::DataRecordHandle(recordMsg);
+   const auto handle = new mxrp::recorder::DataRecordHandle(recordMsg);
 
    // Still need "required" data:
    recordMsg->mutable_time()->set_exec_time(getExecTime());
@@ -1317,16 +1317,16 @@ bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
                   unsigned int cond;
                   std::cin >>  cond;
                   if (cond == 1) {
-                     setCompareCondition(oe::recorder::PrintSelected::Condition::LT);
+                     setCompareCondition(mxrp::recorder::PrintSelected::Condition::LT);
                   }
                   else if (cond == 2) {
-                     setCompareCondition(oe::recorder::PrintSelected::Condition::GT);
+                     setCompareCondition(mxrp::recorder::PrintSelected::Condition::GT);
                   }
                   else {
-                     setCompareCondition(oe::recorder::PrintSelected::Condition::EQ);
+                     setCompareCondition(mxrp::recorder::PrintSelected::Condition::EQ);
                   }
                }
-               else setCompareCondition(oe::recorder::PrintSelected::Condition::EQ); // not needed in this case
+               else setCompareCondition(mxrp::recorder::PrintSelected::Condition::EQ); // not needed in this case
             }
             else if (select == "Q" || select == "q") {
                fieldSelected = true;  // force exit
@@ -1413,7 +1413,7 @@ bool DataRecordTest::setCompareToValue(const double dblVal )
 //------------------------------------------------------------------------------
 // setCompareCondition(): Set comparison condition
 //---------------------------------------------------------------------------
-bool DataRecordTest::setCompareCondition(const oe::recorder::PrintSelected::Condition cc )
+bool DataRecordTest::setCompareCondition(const mxrp::recorder::PrintSelected::Condition cc )
 {
    selection[selectionNum].condition = cc;
    return true;

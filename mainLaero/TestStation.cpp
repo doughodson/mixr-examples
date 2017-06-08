@@ -20,8 +20,8 @@ BEGIN_SLOTTABLE(TestStation)
 END_SLOTTABLE(TestStation)
 
 BEGIN_SLOT_MAP(TestStation)
-    ON_SLOT(1, setSlotGlutDisplay, oe::glut::GlutDisplay)
-    ON_SLOT(2, setSlotMapDisplay, oe::glut::GlutDisplay)
+    ON_SLOT(1, setSlotGlutDisplay, mxrp::glut::GlutDisplay)
+    ON_SLOT(2, setSlotMapDisplay, mxrp::glut::GlutDisplay)
 END_SLOT_MAP()
 
 TestStation::TestStation()
@@ -48,8 +48,8 @@ void TestStation::deleteData()
 void TestStation::updateTC(const double dt)
 {
    // manage the timers
-   oe::base::Timer::updateTimers(dt);
-   oe::graphics::Graphic::flashTimer(dt);
+   mxrp::base::Timer::updateTimers(dt);
+   mxrp::graphics::Graphic::flashTimer(dt);
 
    if (glutDisplay != nullptr) glutDisplay->updateTC(dt);
    if (mapDisplay != nullptr) mapDisplay->updateTC(dt);
@@ -87,14 +87,14 @@ void TestStation::reset()
    }
 }
 
-bool TestStation::setSlotGlutDisplay(oe::glut::GlutDisplay* const d)
+bool TestStation::setSlotGlutDisplay(mxrp::glut::GlutDisplay* const d)
 {
    glutDisplay = d;
    glutDisplay->container(this);
    return true;
 }
 
-bool TestStation::setSlotMapDisplay(oe::glut::GlutDisplay* const d)
+bool TestStation::setSlotMapDisplay(mxrp::glut::GlutDisplay* const d)
 {
    mapDisplay = d;
    mapDisplay->container(this);

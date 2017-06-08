@@ -3,7 +3,7 @@
 #include "mxrp/base/Pair.hpp"
 #include "mxrp/instruments/dials/GMeterDial.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestGMeterDial, "TestGMeterDial")
 EMPTY_SERIALIZER(TestGMeterDial)
@@ -44,9 +44,9 @@ void TestGMeterDial::updateData(const double dt)
         currGs = 0;
         /*
         {
-            base::Pair* p = findByType(typeid(oe::GMeterDial));
+            base::Pair* p = findByType(typeid(mxrp::GMeterDial));
             if (p != 0) {
-                    oe::GMeterDial* myDial = (oe::GMeterDial*)(p->object());
+                    mxrp::GMeterDial* myDial = (mxrp::GMeterDial*)(p->object());
                     if (myDial != 0) myDial->resetMe();
             }
         }

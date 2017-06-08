@@ -17,15 +17,15 @@
 //      UPDATE_VALUE4 -> viewable width on screen (inches
 //      The list of points is sent in as an double array
 //------------------------------------------------------------------------------
-class TerrainFollower : public oe::graphics::Graphic
+class TerrainFollower : public mxrp::graphics::Graphic
 {
-    DECLARE_SUBCLASS(TerrainFollower, oe::graphics::Graphic)
+    DECLARE_SUBCLASS(TerrainFollower, mxrp::graphics::Graphic)
 
 public:
     TerrainFollower();
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
     virtual void drawFunc() override;
 
@@ -43,10 +43,10 @@ private:
     static const int MAX_POINTS = 1000; // maximum number of terrain elevation points
 
     // event functions
-    bool onEventSetPlaneAltTerrainFollower(const oe::base::Number* const x);
-    bool onEventSetScanRangeTerrainFollower(const oe::base::Number* const x);
-    bool onEventSetViewHeightTerrainFollower(const oe::base::Number* const x);
-    bool onEventSetViewWidthTerrainFollower(const oe::base::Number* const x);
+    bool onEventSetPlaneAltTerrainFollower(const mxrp::base::Number* const x);
+    bool onEventSetScanRangeTerrainFollower(const mxrp::base::Number* const x);
+    bool onEventSetViewHeightTerrainFollower(const mxrp::base::Number* const x);
+    bool onEventSetViewWidthTerrainFollower(const mxrp::base::Number* const x);
 
     double range {10.0};            // our scan range ahead of us
     double maxAlt {1500.0};         // where do we want our max altitude (1)? (feet)

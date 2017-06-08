@@ -25,8 +25,8 @@ BEGIN_SLOTTABLE(SimStation)
 END_SLOTTABLE(SimStation)
 
 BEGIN_SLOT_MAP(SimStation)
-    ON_SLOT( 1, setSlotMainDisplay,    oe::glut::GlutDisplay)
-    ON_SLOT( 2, setSlotAutoResetTime,  oe::base::Time)
+    ON_SLOT( 1, setSlotMainDisplay,    mxrp::glut::GlutDisplay)
+    ON_SLOT( 2, setSlotAutoResetTime,  mxrp::base::Time)
 END_SLOT_MAP()
 
 SimStation::SimStation()
@@ -46,8 +46,8 @@ void SimStation::reset()
 {
     if (!displayInit && mainDisplay != nullptr) {
         mainDisplay->createWindow();
-        oe::base::Pair* p = mainDisplay->findByType(typeid(oe::graphics::Page));
-        if (p != nullptr) mainDisplay->focus(static_cast<oe::graphics::Graphic*>(p->object()));
+        mxrp::base::Pair* p = mainDisplay->findByType(typeid(mxrp::graphics::Page));
+        if (p != nullptr) mainDisplay->focus(static_cast<mxrp::graphics::Graphic*>(p->object()));
         else mainDisplay->focus(nullptr);
         displayInit = true;
     }
@@ -56,7 +56,7 @@ void SimStation::reset()
 
     // auto reset timer
     if (autoResetTimer0 != nullptr) {
-        autoResetTimer = oe::base::Seconds::convertStatic(*autoResetTimer0);
+        autoResetTimer = mxrp::base::Seconds::convertStatic(*autoResetTimer0);
     }
     else {
         autoResetTimer = 0;
@@ -71,8 +71,8 @@ void SimStation::updateTC(const double dt)
     // First update the simulation
     BaseClass::updateTC(dt);
 
-    oe::base::Timer::updateTimers(dt);
-    oe::graphics::Graphic::flashTimer(dt);
+    mxrp::base::Timer::updateTimers(dt);
+    mxrp::graphics::Graphic::flashTimer(dt);
 
     // Update any TC stuff in our main display
     if (mainDisplay != nullptr) mainDisplay->updateTC(dt);
@@ -90,7 +90,7 @@ void SimStation::updateData(const double dt)
     if ( autoResetTimer > 0 && getSimulation()->isNotFrozen() ) {
        autoResetTimer -= dt;
        if (autoResetTimer <= 0) {
-         oe::base::Boolean newFrz(true);
+         mxrp::base::Boolean newFrz(true);
          getSimulation()->event(FREEZE_EVENT, &newFrz);
          this->event(RESET_EVENT);
        }
@@ -102,22 +102,22 @@ void SimStation::updateData(const double dt)
 // step to the next local player
 void SimStation::stepOwnshipPlayer()
 {
-    oe::base::PairStream* pl = getSimulation()->getPlayers();
+    mxrp::base::PairStream* pl = getSimulation()->getPlayers();
     if (pl != nullptr) {
 
-       oe::models::Player* f = nullptr;
-       oe::models::Player* n = nullptr;
+       mxrp::models::Player* f = nullptr;
+       mxrp::models::Player* n = nullptr;
        bool found = false;
 
        // Find the next player
-       oe::base::List::Item* item = pl->getFirstItem();
+       mxrp::base::List::Item* item = pl->getFirstItem();
        while (item != nullptr) {
-           const auto pair = static_cast<oe::base::Pair*>(item->getValue());
+           const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
            if (pair != nullptr) {
-               const auto ip = static_cast<oe::models::Player*>(pair->object());
-               if ( ip->isMode(oe::models::Player::ACTIVE) &&
+               const auto ip = static_cast<mxrp::models::Player*>(pair->object());
+               if ( ip->isMode(mxrp::models::Player::ACTIVE) &&
                     ip->isLocalPlayer() &&
-                    ip->isClassType(typeid(oe::models::AirVehicle))
+                    ip->isClassType(typeid(mxrp::models::AirVehicle))
                     ) {
                    if (f == nullptr) { f = ip; }  // Remember the first
                    if (found) { n = ip; ; break; }
@@ -133,7 +133,7 @@ void SimStation::stepOwnshipPlayer()
     }
 }
 
-bool SimStation::setSlotMainDisplay(oe::glut::GlutDisplay* const d)
+bool SimStation::setSlotMainDisplay(mxrp::glut::GlutDisplay* const d)
 {
     if (mainDisplay != nullptr)   { mainDisplay->container(nullptr);  }
     mainDisplay = d;
@@ -143,7 +143,7 @@ bool SimStation::setSlotMainDisplay(oe::glut::GlutDisplay* const d)
 }
 
 // setSlotAutoResetTime() -- Sets the startup RESET pulse timer
-bool SimStation::setSlotAutoResetTime(const oe::base::Time* const num)
+bool SimStation::setSlotAutoResetTime(const mxrp::base::Time* const num)
 {
     if (autoResetTimer0 != nullptr) {
         autoResetTimer0->unref();
@@ -153,7 +153,7 @@ bool SimStation::setSlotAutoResetTime(const oe::base::Time* const num)
     autoResetTimer0 = num;
     if (autoResetTimer0 != nullptr) {
         autoResetTimer0->ref();
-        autoResetTimer = oe::base::Seconds::convertStatic(*autoResetTimer0);
+        autoResetTimer = mxrp::base::Seconds::convertStatic(*autoResetTimer0);
     }
     return true;
 }

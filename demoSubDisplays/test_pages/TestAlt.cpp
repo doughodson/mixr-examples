@@ -1,7 +1,7 @@
 
 #include "TestAlt.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestAlt, "TestAlt")
 EMPTY_SERIALIZER(TestAlt)

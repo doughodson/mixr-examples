@@ -4,7 +4,7 @@
 #include "mxrp/base/Number.hpp"
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(ServerTcpMultiple, "ServerTcpMultiple")
 EMPTY_SLOTTABLE(ServerTcpMultiple)

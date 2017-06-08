@@ -4,7 +4,7 @@
 #include "mxrp/models/player/AirVehicle.hpp"
 #include "mxrp/models/system/StoresMgr.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xbehaviors {
 
 IMPLEMENT_SUBCLASS(PlaneAction, "PlaneAction")

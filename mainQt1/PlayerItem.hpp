@@ -4,7 +4,7 @@
 
 #include <QGraphicsItem>
 
-namespace  oe {
+namespace  mxrp {
 namespace models { class Player; }
 }
 

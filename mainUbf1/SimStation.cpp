@@ -16,7 +16,7 @@
 #include "mxrp/base/units/Angles.hpp"
 #include "mxrp/base/units/Times.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
 EMPTY_SERIALIZER(SimStation)

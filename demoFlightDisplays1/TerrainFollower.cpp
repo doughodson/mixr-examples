@@ -7,7 +7,7 @@
 #include <GL/glu.h>
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TerrainFollower, "TerrainFollower")
 EMPTY_SERIALIZER(TerrainFollower)

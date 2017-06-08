@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestAdi2, "TestAdi2")
 EMPTY_SERIALIZER(TestAdi2)

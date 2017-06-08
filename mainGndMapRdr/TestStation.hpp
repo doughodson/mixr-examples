@@ -4,7 +4,7 @@
 
 #include "mxrp/simulation/Station.hpp"
 
-namespace oe {
+namespace mxrp {
    namespace graphics { class GlutDisplay; }
 }
 
@@ -15,9 +15,9 @@ class Display;
 //
 // Description: Test station for the Ground mapping radar demo
 //------------------------------------------------------------------------------
-class TestStation : public oe::simulation::Station
+class TestStation : public mxrp::simulation::Station
 {
-    DECLARE_SUBCLASS(TestStation, oe::simulation::Station)
+    DECLARE_SUBCLASS(TestStation, mxrp::simulation::Station)
 
 public:
     TestStation();
@@ -28,7 +28,7 @@ public:
 private:
     bool setDisplay(Display* const d);
 
-    oe::base::safe_ptr<Display> display;
+    mxrp::base::safe_ptr<Display> display;
     bool displayInit {};
 };
 

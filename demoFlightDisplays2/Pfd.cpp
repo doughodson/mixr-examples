@@ -3,7 +3,7 @@
 #include "mxrp/base/Pair.hpp"
 #include "mxrp/base/units/distance_utils.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Pfd, "Pfd")
 EMPTY_SERIALIZER(Pfd)

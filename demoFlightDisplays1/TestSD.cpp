@@ -8,7 +8,7 @@
 #include "SituationalDisplay.hpp"
 #include "mxrp/graphics/SymbolLoader.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 static const double refLat =   41.1f;
 static const double refLon =  111.9f;

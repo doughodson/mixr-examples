@@ -9,9 +9,9 @@
 //
 // Description: Rockwell-Collins Efis test page to stimulate arc mode.
 //------------------------------------------------------------------------------
-class TestElectronic : public oe::graphics::Page
+class TestElectronic : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestElectronic, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestElectronic, mxrp::graphics::Page)
 
 public:
     TestElectronic();

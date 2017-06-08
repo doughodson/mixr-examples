@@ -14,9 +14,9 @@
 //    select each state's specific code.
 //
 //------------------------------------------------------------------------------
-class TestStateMachine01 : public oe::base::StateMachine
+class TestStateMachine01 : public mxrp::base::StateMachine
 {
-   DECLARE_SUBCLASS(TestStateMachine01, oe::base::StateMachine)
+   DECLARE_SUBCLASS(TestStateMachine01, mxrp::base::StateMachine)
 
 public:
    enum { CALL_01 = 11, CALL_02 = 22 };

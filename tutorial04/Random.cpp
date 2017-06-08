@@ -12,7 +12,7 @@ BEGIN_SLOTTABLE(Random)
 END_SLOTTABLE(Random)
 
 BEGIN_SLOT_MAP(Random)
-   ON_SLOT(1, setSlotSeed, oe::base::Number)
+   ON_SLOT(1, setSlotSeed, mxrp::base::Number)
 END_SLOT_MAP()
 
 Random::Random()
@@ -39,7 +39,7 @@ bool Random::setSeed(const unsigned int seed)
    return true;
 }
 
-bool Random::setSlotSeed(const oe::base::Number* const seed)
+bool Random::setSlotSeed(const mxrp::base::Number* const seed)
 {
    bool ok = false;
    if (seed != nullptr)

@@ -11,9 +11,9 @@
 //    functions: nextSubstate() and goToSubstate().
 //
 //------------------------------------------------------------------------------
-class TestStateMachine03 : public oe::base::StateMachine
+class TestStateMachine03 : public mxrp::base::StateMachine
 {
-   DECLARE_SUBCLASS(TestStateMachine03, oe::base::StateMachine)
+   DECLARE_SUBCLASS(TestStateMachine03, mxrp::base::StateMachine)
 
 public:
    enum { CALL_01 = 11, CALL_02 = 22 };

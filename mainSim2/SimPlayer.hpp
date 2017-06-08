@@ -9,9 +9,9 @@
 //
 // Description: Simulation player
 //------------------------------------------------------------------------------
-class SimPlayer : public oe::models::Aircraft
+class SimPlayer : public mxrp::models::Aircraft
 {
-    DECLARE_SUBCLASS(SimPlayer, oe::models::Aircraft)
+    DECLARE_SUBCLASS(SimPlayer, mxrp::models::Aircraft)
 
 public:
     SimPlayer();

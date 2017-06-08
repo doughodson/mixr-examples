@@ -1,7 +1,7 @@
 
 #include "TestLandingGear.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestLandingGear, "TestLandingGear")
 EMPTY_SERIALIZER(TestLandingGear)

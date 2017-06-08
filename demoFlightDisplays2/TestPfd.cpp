@@ -3,7 +3,7 @@
 #include "mxrp/base/Pair.hpp"
 #include "Pfd.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestPfd, "TestPfd")
 EMPTY_SERIALIZER(TestPfd)

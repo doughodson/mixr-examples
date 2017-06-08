@@ -10,15 +10,15 @@
 //
 // Factory name: PrintMyData
 //------------------------------------------------------------------------------
-class PrintMyData : public oe::recorder::PrintHandler
+class PrintMyData : public mxrp::recorder::PrintHandler
 {
-   DECLARE_SUBCLASS(PrintMyData, oe::recorder::PrintHandler)
+   DECLARE_SUBCLASS(PrintMyData, mxrp::recorder::PrintHandler)
 
 public:
    PrintMyData();
 
 protected:
-   virtual void processRecordImp(const oe::recorder::DataRecordHandle* const handle) override;
+   virtual void processRecordImp(const mxrp::recorder::DataRecordHandle* const handle) override;
 };
 
 #endif

@@ -3,7 +3,7 @@
 
 #include "mxrp/base/Number.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Hsi, "Hsi")

@@ -19,7 +19,7 @@
 
 #include <cmath>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(Display, "TerrainDisplay")
 EMPTY_SERIALIZER(Display)

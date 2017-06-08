@@ -11,9 +11,9 @@
 // This page will supply test data to the fuel temperature internal dial
 //
 //------------------------------------------------------------------------------
-class TestFtitDial : public oe::graphics::Page
+class TestFtitDial : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestFtitDial, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestFtitDial, mxrp::graphics::Page)
 
 public:
     TestFtitDial();

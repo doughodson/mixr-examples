@@ -10,9 +10,9 @@
 //
 // Description: Tests the pfd.
 //------------------------------------------------------------------------------
-class Pfd : public oe::graphics::Page
+class Pfd : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(Pfd, oe::graphics::Page)
+   DECLARE_SUBCLASS(Pfd, mxrp::graphics::Page)
 
 public:
    Pfd();
@@ -45,9 +45,9 @@ public:
 
    // get functions
    double getPitchDeg()            { return pitch; }
-   double getPitchRad()            { return static_cast<double>(pitch * oe::base::angle::D2RCC); }
+   double getPitchRad()            { return static_cast<double>(pitch * mxrp::base::angle::D2RCC); }
    double getRollDeg()             { return roll; }
-   double getRollRad()             { return static_cast<double>(roll * oe::base::angle::D2RCC); }
+   double getRollRad()             { return static_cast<double>(roll * mxrp::base::angle::D2RCC); }
    double getTrueHdg()             { return trueHdg; }
    double getCmdHdg()              { return cmdHdg; }
    double getAirSpdKts()           { return airSpd; }
@@ -59,9 +59,9 @@ public:
    double getVVI()                 { return vvi; }
    double getSideSlip()            { return slip; }
    double getFltDirBankDeg()       { return fDirBank; }
-   double getFltDirBankRad()       { return static_cast<double>(fDirBank * oe::base::angle::R2DCC); }
+   double getFltDirBankRad()       { return static_cast<double>(fDirBank * mxrp::base::angle::R2DCC); }
    double getFltDirPitchDeg()      { return fDirPitch; }
-   double getFltDirPitchRad()      { return static_cast<double>(fDirPitch * oe::base::angle::R2DCC); }
+   double getFltDirPitchRad()      { return static_cast<double>(fDirPitch * mxrp::base::angle::R2DCC); }
    double getBaroPressure()        { return baro; }
    double getRefLat()              { return refLat; }
    double getRefLon()              { return refLon; }

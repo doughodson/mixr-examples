@@ -9,9 +9,9 @@
 //
 // Description: Tests our core ADI graphic
 //------------------------------------------------------------------------------
-class TestAdi : public oe::graphics::Page
+class TestAdi : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestAdi, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestAdi, mxrp::graphics::Page)
 
 public:
     TestAdi();

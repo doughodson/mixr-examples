@@ -9,9 +9,9 @@
 //
 // Description: Tests our core HSI graphic
 //------------------------------------------------------------------------------
-class TestHsi : public oe::graphics::Page
+class TestHsi : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestHsi, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestHsi, mxrp::graphics::Page)
 
 public:
     TestHsi();

@@ -5,7 +5,7 @@
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base { class IoHandler; class Number; class String; }
 }
 
@@ -33,9 +33,9 @@ namespace base { class IoHandler; class Number; class String; }
 //       item:  5   di: 11    // Item #4 is DI #11
 //   )
 //------------------------------------------------------------------------------
-class Display : public oe::glut::GlutDisplay
+class Display : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
 
 public:
    static const unsigned int ROWS = 20;      /* see display.epp */
@@ -51,11 +51,11 @@ public:
    virtual void updateTC(const double dt = 0.0) override;
 
 protected:
-   virtual bool setSlotIoHandler(oe::base::IoHandler* const msg);
-   virtual bool setSlotItem(const oe::base::Number* const msg);
-   virtual bool setSlotAiChannel(const oe::base::Number* const msg);
-   virtual bool setSlotDiChannel(const oe::base::Number* const msg);
-   virtual bool setSlotLabel(const oe::base::String* const msg);
+   virtual bool setSlotIoHandler(mxrp::base::IoHandler* const msg);
+   virtual bool setSlotItem(const mxrp::base::Number* const msg);
+   virtual bool setSlotAiChannel(const mxrp::base::Number* const msg);
+   virtual bool setSlotDiChannel(const mxrp::base::Number* const msg);
+   virtual bool setSlotLabel(const mxrp::base::String* const msg);
 
    virtual bool onEscKey() override;
 
@@ -66,7 +66,7 @@ private:
    void initData();
    void updateDisplay();
 
-   oe::base::safe_ptr<oe::base::IoHandler> ioHandler;   // The I/O data handler
+   mxrp::base::safe_ptr<mxrp::base::IoHandler> ioHandler;   // The I/O data handler
 
    // Item/Channel mapping
    unsigned short item {};

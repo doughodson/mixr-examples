@@ -4,7 +4,7 @@
 #include "mxrp/base/util/str_utils.hpp"
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestObject, "TestObject")
 EMPTY_SERIALIZER(TestObject)

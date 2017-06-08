@@ -4,7 +4,7 @@
 
 #include "mxrp/base/units/angle_utils.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdElevPtr, "TdElevPtr")
 EMPTY_SERIALIZER(TdElevPtr)

@@ -10,9 +10,9 @@
 // Description: Another example of using an analog dial.  This one is an F-16
 // like oil pressure gauge
 //------------------------------------------------------------------------------
-class TestOilPressure : public oe::graphics::Page
+class TestOilPressure : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestOilPressure, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestOilPressure, mxrp::graphics::Page)
 
 public:
     TestOilPressure();

@@ -8,7 +8,7 @@
 #include <string>
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base { class String; }
 namespace recorder {
 class TabPrinter;
@@ -23,22 +23,22 @@ class DataRecordHandle;
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest : public oe::recorder::OutputHandler
+class DataRecordTest : public mxrp::recorder::OutputHandler
 {
-   DECLARE_SUBCLASS(DataRecordTest, oe::recorder::OutputHandler)
+   DECLARE_SUBCLASS(DataRecordTest, mxrp::recorder::OutputHandler)
 
 public:
    DataRecordTest();
 
    // Slot functions
-   virtual bool setSlotFileName(oe::base::String* const msg);
-   virtual bool setSlotTabPrinter(oe::recorder::TabPrinter* msg);
-   virtual bool setSlotFileWriter(oe::recorder::FileWriter* msg);
-   virtual bool setSlotFileReader(oe::recorder::FileReader* msg);
-   virtual bool setSlotRecordData(oe::recorder::DataRecorder* const msg);
-   virtual bool setSlotPrintPlayer(oe::recorder::PrintPlayer* msg);
-   virtual bool setSlotPrintSelected(oe::recorder::PrintSelected* msg);
-   virtual bool setSlotPrintSelected2(oe::recorder::PrintSelected* msg);
+   virtual bool setSlotFileName(mxrp::base::String* const msg);
+   virtual bool setSlotTabPrinter(mxrp::recorder::TabPrinter* msg);
+   virtual bool setSlotFileWriter(mxrp::recorder::FileWriter* msg);
+   virtual bool setSlotFileReader(mxrp::recorder::FileReader* msg);
+   virtual bool setSlotRecordData(mxrp::recorder::DataRecorder* const msg);
+   virtual bool setSlotPrintPlayer(mxrp::recorder::PrintPlayer* msg);
+   virtual bool setSlotPrintSelected(mxrp::recorder::PrintSelected* msg);
+   virtual bool setSlotPrintSelected2(mxrp::recorder::PrintSelected* msg);
 
    // Select one of these in main.cpp
    bool testEvents();      // switch to test each possible event message
@@ -49,23 +49,23 @@ protected:
    void readSerialFromFile();
 
    // all messages:
-   oe::recorder::DataRecordHandle* testFileIdMsg(int run);
-   oe::recorder::DataRecordHandle* testNewPlayerEventMsg();
-   oe::recorder::DataRecordHandle* testPlayerRemovedEventMsg();
-   oe::recorder::DataRecordHandle* testPlayerDataMsg();
-   oe::recorder::DataRecordHandle* testPlayerDamagedEventMsg();
-   oe::recorder::DataRecordHandle* testPlayerCollisionEventMsg();
-   oe::recorder::DataRecordHandle* testPlayerCrashEventMsg();
-   oe::recorder::DataRecordHandle* testPlayerKilledEventMsg(unsigned int type);
-   oe::recorder::DataRecordHandle* testWeaponReleaseEventMsg(unsigned int side);
-   oe::recorder::DataRecordHandle* testWeaponHungEventMsg();
-   oe::recorder::DataRecordHandle* testWeaponDetonationEventMsg();
-   oe::recorder::DataRecordHandle* testGunFiredEventMsg();
-   oe::recorder::DataRecordHandle* testNewTrackEventMsg();
-   oe::recorder::DataRecordHandle* testTrackRemovedEventMsg();
-   oe::recorder::DataRecordHandle* testTrackDataMsg();
+   mxrp::recorder::DataRecordHandle* testFileIdMsg(int run);
+   mxrp::recorder::DataRecordHandle* testNewPlayerEventMsg();
+   mxrp::recorder::DataRecordHandle* testPlayerRemovedEventMsg();
+   mxrp::recorder::DataRecordHandle* testPlayerDataMsg();
+   mxrp::recorder::DataRecordHandle* testPlayerDamagedEventMsg();
+   mxrp::recorder::DataRecordHandle* testPlayerCollisionEventMsg();
+   mxrp::recorder::DataRecordHandle* testPlayerCrashEventMsg();
+   mxrp::recorder::DataRecordHandle* testPlayerKilledEventMsg(unsigned int type);
+   mxrp::recorder::DataRecordHandle* testWeaponReleaseEventMsg(unsigned int side);
+   mxrp::recorder::DataRecordHandle* testWeaponHungEventMsg();
+   mxrp::recorder::DataRecordHandle* testWeaponDetonationEventMsg();
+   mxrp::recorder::DataRecordHandle* testGunFiredEventMsg();
+   mxrp::recorder::DataRecordHandle* testNewTrackEventMsg();
+   mxrp::recorder::DataRecordHandle* testTrackRemovedEventMsg();
+   mxrp::recorder::DataRecordHandle* testTrackDataMsg();
 
-   oe::recorder::DataRecordHandle* testLastMsg();
+   mxrp::recorder::DataRecordHandle* testLastMsg();
 
    // Recursive function to look at each embedded message
    bool processMessage(const google::protobuf::Message* const msg);
@@ -76,7 +76,7 @@ protected:
    bool setCompareToValue(const std::string strVal);
    bool setCompareToValue(const int numVal );
    bool setCompareToValue(const double dblVal );
-   bool setCompareCondition(const oe::recorder::PrintSelected::Condition cc);
+   bool setCompareCondition(const mxrp::recorder::PrintSelected::Condition cc);
    bool setTimeOnly(const bool flg );
 
    double getSimTime();
@@ -85,16 +85,16 @@ protected:
 
 private:
    std::string fileName;
-   oe::base::safe_ptr<oe::recorder::PrintPlayer> myPrintPlayer;
-   oe::base::safe_ptr<oe::recorder::PrintSelected> myPrintSelected;
-   oe::base::safe_ptr<oe::recorder::PrintSelected> myPrintSelected2;
-   oe::base::safe_ptr<oe::recorder::TabPrinter> myRecPrint;
-   oe::base::safe_ptr<oe::recorder::FileWriter> myFileWrite;
-   oe::base::safe_ptr<oe::recorder::FileReader> myFileRead;
-   oe::base::safe_ptr<oe::recorder::DataRecorder> myDataRec;
+   mxrp::base::safe_ptr<mxrp::recorder::PrintPlayer> myPrintPlayer;
+   mxrp::base::safe_ptr<mxrp::recorder::PrintSelected> myPrintSelected;
+   mxrp::base::safe_ptr<mxrp::recorder::PrintSelected> myPrintSelected2;
+   mxrp::base::safe_ptr<mxrp::recorder::TabPrinter> myRecPrint;
+   mxrp::base::safe_ptr<mxrp::recorder::FileWriter> myFileWrite;
+   mxrp::base::safe_ptr<mxrp::recorder::FileReader> myFileRead;
+   mxrp::base::safe_ptr<mxrp::recorder::DataRecorder> myDataRec;
 
    std::string fieldName;
-   oe::recorder::PrintSelected::Condition condition;
+   mxrp::recorder::PrintSelected::Condition condition;
    int compareI {};
    std::string compareS;
    double compareD {};
@@ -110,7 +110,7 @@ private:
       double compareValD {};
       std::string compareValS = "";
       int compareValI {};
-      oe::recorder::PrintSelected::Condition condition {oe::recorder::PrintSelected::Condition::EQ};
+      mxrp::recorder::PrintSelected::Condition condition {mxrp::recorder::PrintSelected::Condition::EQ};
       bool timeOnly {};
    };
    std::array<SelectionCriteria, 20> selection;

@@ -9,9 +9,9 @@
 //
 // Description: Simulates a rockwell collins type EFIS Mechanical ADI graphic
 //------------------------------------------------------------------------------
-class TestMechanical : public oe::graphics::Page
+class TestMechanical : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestMechanical, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestMechanical, mxrp::graphics::Page)
 
 public:
     TestMechanical();

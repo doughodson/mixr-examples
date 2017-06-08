@@ -8,9 +8,9 @@
 // Class: TestStateMachine04B
 //
 //------------------------------------------------------------------------------
-class TestStateMachine04B : public oe::base::StateMachine
+class TestStateMachine04B : public mxrp::base::StateMachine
 {
-   DECLARE_SUBCLASS(TestStateMachine04B, oe::base::StateMachine)
+   DECLARE_SUBCLASS(TestStateMachine04B, mxrp::base::StateMachine)
 
 public:
    TestStateMachine04B();

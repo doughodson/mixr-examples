@@ -16,21 +16,21 @@
 const unsigned int frameRate = 50;
 
 // class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-   oe::base::Object* obj = oe::simulation::factory(name);
-   if (obj == nullptr) obj = oe::models::factory(name);
-   if (obj == nullptr) obj = oe::terrain::factory(name);
-   if (obj == nullptr) obj = oe::base::factory(name);
+   mxrp::base::Object* obj = mxrp::simulation::factory(name);
+   if (obj == nullptr) obj = mxrp::models::factory(name);
+   if (obj == nullptr) obj = mxrp::terrain::factory(name);
+   if (obj == nullptr) obj = mxrp::base::factory(name);
    return obj;
 }
 
 // simulation builder
-oe::simulation::Simulation* builder(const std::string& filename)
+mxrp::simulation::Simulation* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -43,7 +43,7 @@ oe::simulation::Simulation* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -51,7 +51,7 @@ oe::simulation::Simulation* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto simulation = dynamic_cast<oe::simulation::Simulation*>(obj);
+   const auto simulation = dynamic_cast<mxrp::simulation::Simulation*>(obj);
    if (simulation == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
    }
 
    // build simulation
-   oe::simulation::Simulation* simulation = builder(configFilename);
+   mxrp::simulation::Simulation* simulation = builder(configFilename);
 
    // reset component tree
    simulation->reset();

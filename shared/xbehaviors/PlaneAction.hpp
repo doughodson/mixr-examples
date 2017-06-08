@@ -4,7 +4,7 @@
 
 #include "mxrp/base/ubf/AbstractAction.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace simulation { class Player; }
 namespace xbehaviors {
 

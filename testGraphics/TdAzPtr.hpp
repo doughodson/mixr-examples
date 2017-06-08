@@ -9,14 +9,14 @@
 //
 // Description: Test Display Azimuth Pointer
 //------------------------------------------------------------------------------
-class TdAzPtr : public oe::graphics::Graphic
+class TdAzPtr : public mxrp::graphics::Graphic
 {
-    DECLARE_SUBCLASS(TdAzPtr, oe::graphics::Graphic)
+    DECLARE_SUBCLASS(TdAzPtr, mxrp::graphics::Graphic)
 
 public:
     TdAzPtr();
 
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
     virtual void draw() override;
 
 private:

@@ -12,9 +12,9 @@
 #include "Random.hpp"
 
 // our class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-   oe::base::Object* obj = nullptr;
+   mxrp::base::Object* obj = nullptr;
 
    // look in application's classes
    if ( name == Random::getFactoryName() ) {
@@ -22,7 +22,7 @@ oe::base::Object* factory(const std::string& name)
    }
 
    // look in base classes
-   if (obj == nullptr) obj = oe::base::factory(name);
+   if (obj == nullptr) obj = mxrp::base::factory(name);
    return obj;
 }
 
@@ -31,7 +31,7 @@ Random* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -44,7 +44,7 @@ Random* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();

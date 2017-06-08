@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestOne,"TestOne")
 EMPTY_DELETEDATA(TestOne)

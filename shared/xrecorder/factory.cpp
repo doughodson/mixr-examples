@@ -7,7 +7,7 @@
 
 #include <string>
 
-namespace oe {
+namespace mxrp {
 namespace xrecorder {
 
 base::Object* factory(const std::string& name)

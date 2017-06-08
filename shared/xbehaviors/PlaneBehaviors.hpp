@@ -17,7 +17,7 @@
 
 #include "mxrp/base/ubf/AbstractBehavior.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Distance; class State; }
 namespace base {
 namespace ubf { class AbstractState; class AbstractAction; }

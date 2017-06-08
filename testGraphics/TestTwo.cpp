@@ -2,7 +2,7 @@
 #include "TestTwo.hpp"
 #include "mxrp/base/units/Angles.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestTwo, "TestTwo")
 EMPTY_DELETEDATA(TestTwo)

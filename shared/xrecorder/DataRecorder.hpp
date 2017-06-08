@@ -4,7 +4,7 @@
 
 #include "mxrp/recorder/DataRecorder.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xrecorder {
 
 //------------------------------------------------------------------------------

@@ -12,9 +12,9 @@
 //              -- All it really does for this example is accept the ESC event.
 //
 //------------------------------------------------------------------------------
-class MfdDisplay : public oe::graphics::Display
+class MfdDisplay : public mxrp::graphics::Display
 {
-   DECLARE_SUBCLASS(MfdDisplay, oe::graphics::Display)
+   DECLARE_SUBCLASS(MfdDisplay, mxrp::graphics::Display)
 
 public:
    MfdDisplay();

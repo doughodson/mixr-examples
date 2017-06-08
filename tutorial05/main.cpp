@@ -15,16 +15,16 @@
 #include "MyObj.hpp"
 
 // our class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-   oe::base::Object* obj = nullptr;
+   mxrp::base::Object* obj = nullptr;
 
    // look in application's classes
    if ( name == MyObj::getFactoryName() ) {
       obj = new MyObj;
    }
    // look in base classes
-   if (obj == nullptr) obj = oe::base::factory(name);
+   if (obj == nullptr) obj = mxrp::base::factory(name);
    return obj;
 }
 
@@ -33,7 +33,7 @@ MyObj* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -46,7 +46,7 @@ MyObj* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -71,15 +71,15 @@ int main(int argc, char* argv[])
    MyObj* myObj = builder(configFilename);
 
    // print out some color information
-   const oe::base::PairStream* colorTable = myObj->getColorTable();
+   const mxrp::base::PairStream* colorTable = myObj->getColorTable();
    if (colorTable != nullptr) {
 //    Pair* p = colorTable->findByName("green");
-      const oe::base::Identifier* id = myObj->getTextColor();
+      const mxrp::base::Identifier* id = myObj->getTextColor();
       if (id != nullptr) {
-         const oe::base::Pair* p = colorTable->findByName(id->getString());
+         const mxrp::base::Pair* p = colorTable->findByName(id->getString());
          if (p != nullptr) {
             std::cout << "Text color: " << id->getString();
-            const auto color = dynamic_cast<const oe::base::Color*>(p->object());
+            const auto color = dynamic_cast<const mxrp::base::Color*>(p->object());
             if (color != nullptr) {
                std::cout << " Red: "   << color->red();
                std::cout << " Green: " << color->green();
@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
    }
 
    // print out vector information
-   const oe::base::List* vector = myObj->getVector();
+   const mxrp::base::List* vector = myObj->getVector();
    if (vector != nullptr) {
       int numValues = vector->entries();
       const auto values = new int[numValues];
@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 
    // print out visible and message info
    std::cout << "Visible: " << myObj->getVisible() << "\n";
-   const oe::base::String* message = myObj->getMessage();
+   const mxrp::base::String* message = myObj->getMessage();
    std::cout << "Message: " << message->getString() << "\n";
 
    myObj->unref();

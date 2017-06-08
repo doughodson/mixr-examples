@@ -4,7 +4,7 @@
 
 #include "mxrp/simulation/Station.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Table1; }
 namespace glut  { class GlutDisplay; }
 }
@@ -22,9 +22,9 @@ namespace glut  { class GlutDisplay; }
 //      display                 <graphics::GlutDisplay> ! Main graphics display
 //      autoResetTimer          <Time>               ! Auto RESET timer value (base::Time); default: 0
 //------------------------------------------------------------------------------
-class SimStation : public oe::simulation::Station
+class SimStation : public mxrp::simulation::Station
 {
-    DECLARE_SUBCLASS(SimStation, oe::simulation::Station)
+    DECLARE_SUBCLASS(SimStation, mxrp::simulation::Station)
 
 public:
     SimStation();
@@ -33,8 +33,8 @@ public:
    void stepOwnshipPlayer();
 
    // Slot functions
-   virtual bool setSlotMainDisplay(oe::glut::GlutDisplay* const d);
-   virtual bool setSlotAutoResetTime(const oe::base::Time* const num);     // Sets the auto RESET timer
+   virtual bool setSlotMainDisplay(mxrp::glut::GlutDisplay* const d);
+   virtual bool setSlotAutoResetTime(const mxrp::base::Time* const num);     // Sets the auto RESET timer
 
    virtual void updateTC(const double dt = 0.0) override;
    virtual void updateData(const double dt = 0.0) override;
@@ -42,12 +42,12 @@ public:
 
 private:
     // Main Display
-    oe::base::safe_ptr<oe::glut::GlutDisplay> mainDisplay;
+    mxrp::base::safe_ptr<mxrp::glut::GlutDisplay> mainDisplay;
     bool displayInit {};
 
     // Auto reset timer
     double autoResetTimer {};                   // Auto RESET timer (sends a RESET_EVENT after timeout)
-    const oe::base::Time* autoResetTimer0 {};   // Init value of the Auto RESET timer
+    const mxrp::base::Time* autoResetTimer0 {};   // Init value of the Auto RESET timer
 };
 
 #endif

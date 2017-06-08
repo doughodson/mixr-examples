@@ -1,7 +1,7 @@
 
 #include "TestAdi.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestAdi, "TestAdi")
 EMPTY_SERIALIZER(TestAdi)

@@ -5,7 +5,7 @@
 #include <GL/glut.h>
 #include <cmath>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestRotator, "TestRotator")
 EMPTY_SERIALIZER(TestRotator)

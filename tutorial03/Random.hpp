@@ -4,7 +4,7 @@
 
 #include "mxrp/base/Object.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace base { class Number; }
 }
 
@@ -12,9 +12,9 @@ namespace base { class Number; }
 // Class: Random
 // Description: Generates random numbers
 //------------------------------------------------------------------------------
-class Random : public oe::base::Object
+class Random : public mxrp::base::Object
 {
-   DECLARE_SUBCLASS(Random, oe::base::Object)
+   DECLARE_SUBCLASS(Random, mxrp::base::Object)
 
 public:
    Random();
@@ -23,7 +23,7 @@ public:
    bool setSeed(const unsigned int);
 
    // slot table functions
-   bool setSlotSeed(const oe::base::Number* const);
+   bool setSlotSeed(const mxrp::base::Number* const);
 };
 
 #endif

@@ -9,9 +9,9 @@
 //
 // Description: Tests an MFD version of the ADI
 //------------------------------------------------------------------------------
-class TestAdi2 : public oe::graphics::Page
+class TestAdi2 : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestAdi2, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestAdi2, mxrp::graphics::Page)
 
 public:
     TestAdi2();

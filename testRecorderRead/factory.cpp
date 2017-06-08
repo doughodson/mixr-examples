@@ -13,9 +13,9 @@
 
 #include <string>
 
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-    oe::base::Object* obj = nullptr;
+    mxrp::base::Object* obj = nullptr;
 
     if ( name == DataRecordTest::getFactoryName() ) {
         obj = new DataRecordTest();
@@ -24,10 +24,10 @@ oe::base::Object* factory(const std::string& name)
         obj = new PrintMyData();
     }
     else {
-        if (obj == nullptr) obj = oe::simulation::factory(name);
-        if (obj == nullptr) obj = oe::models::factory(name);
-        if (obj == nullptr) obj = oe::base::factory(name);
-        if (obj == nullptr) obj = oe::recorder::factory(name);
+        if (obj == nullptr) obj = mxrp::simulation::factory(name);
+        if (obj == nullptr) obj = mxrp::models::factory(name);
+        if (obj == nullptr) obj = mxrp::base::factory(name);
+        if (obj == nullptr) obj = mxrp::recorder::factory(name);
     }
 
     return obj;

@@ -1,7 +1,7 @@
 
 #include "TestEngineDial.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestEngineDial, "TestEngineDial")
 EMPTY_SERIALIZER(TestEngineDial)

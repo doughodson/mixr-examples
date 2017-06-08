@@ -20,9 +20,9 @@
 const unsigned int UPDATE_RATE = 10;  // main loop update rate (Hz)
 
 // our class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-   oe::base::Object* obj = nullptr;
+   mxrp::base::Object* obj = nullptr;
 
    if ( name == Sender::getFactoryName() ) {
       obj = new Sender();
@@ -32,9 +32,9 @@ oe::base::Object* factory(const std::string& name)
    }
 
    // example libraries
-   if (obj == nullptr) obj = oe::xzmq::factory(name);
+   if (obj == nullptr) obj = mxrp::xzmq::factory(name);
    // framework libraries
-   if (obj == nullptr) obj = oe::base::factory(name);
+   if (obj == nullptr) obj = mxrp::base::factory(name);
 
    return obj;
 }
@@ -44,7 +44,7 @@ Endpoint* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -57,7 +57,7 @@ Endpoint* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -90,12 +90,12 @@ int main(int argc, char* argv[])
 
    // send a reset event
    std::cout << "Reset event: which will establish the networks." << std::endl;
-   endpoint->event(oe::base::Component::RESET_EVENT);
+   endpoint->event(mxrp::base::Component::RESET_EVENT);
 
    // system time of day
    const double dt = 1.0 / static_cast<double>(UPDATE_RATE);   // Delta time
    double simTime = 0.0;                         // Simulator time reference
-   double startTime = oe::base::getComputerTime();   // Time of day (sec) run started
+   double startTime = mxrp::base::getComputerTime();   // Time of day (sec) run started
 
    // main loop
    std::cout << "Starting main loop ..." << std::endl;
@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
       endpoint->updateData( static_cast<double>(dt) );
 
       simTime += dt;                             // time of next frame
-      double timeNow = oe::base::getComputerTime();  // time now
+      double timeNow = mxrp::base::getComputerTime();  // time now
 
       double elapsedTime = timeNow - startTime;
       double nextFrameStart = simTime - elapsedTime;
@@ -113,7 +113,7 @@ int main(int argc, char* argv[])
 
       // wait for the next frame
       if (sleepTime > 0)
-         oe::base::msleep(sleepTime);
+         mxrp::base::msleep(sleepTime);
    }
 
    return EXIT_SUCCESS;

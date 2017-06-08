@@ -4,7 +4,7 @@
 
 #include "mxrp/simulation/Station.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace glut  { class GlutDisplay; }
 }
 
@@ -19,9 +19,9 @@ namespace glut  { class GlutDisplay; }
 // Slots:
 //   glutDisplay  <graphics::GlutDisplay>  ! All of our display components
 //------------------------------------------------------------------------------
-class TestStation : public oe::simulation::Station
+class TestStation : public mxrp::simulation::Station
 {
-   DECLARE_SUBCLASS(TestStation, oe::simulation::Station)
+   DECLARE_SUBCLASS(TestStation, mxrp::simulation::Station)
 
 public:
    TestStation();
@@ -34,9 +34,9 @@ public:
    virtual void reset() override;
 
 private:
-   bool setSlotGlutDisplay(oe::glut::GlutDisplay* const msg);
+   bool setSlotGlutDisplay(mxrp::glut::GlutDisplay* const msg);
 
-   oe::base::safe_ptr<oe::glut::GlutDisplay> glutDisplay;
+   mxrp::base::safe_ptr<mxrp::glut::GlutDisplay> glutDisplay;
    bool glutDisplayInit {};
 };
 

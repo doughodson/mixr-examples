@@ -10,9 +10,9 @@
 // Description:
 //      Derived Display that will make our map page move.
 // -------------------------------------------------------------------------------
-class Display : public oe::glut::GlutDisplay
+class Display : public mxrp::glut::GlutDisplay
 {
-    DECLARE_SUBCLASS(Display, oe::glut::GlutDisplay)
+    DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
 
 public:
     Display();

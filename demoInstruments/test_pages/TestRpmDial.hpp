@@ -9,9 +9,9 @@
 //
 // Description: Another example of using an analog dial.
 //------------------------------------------------------------------------------
-class TestRpmDial : public oe::graphics::Page
+class TestRpmDial : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestRpmDial, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestRpmDial, mxrp::graphics::Page)
 
 public:
     TestRpmDial();

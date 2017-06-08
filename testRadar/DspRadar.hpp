@@ -5,7 +5,7 @@
 #include "mxrp/graphics/Graphic.hpp"
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base { class PairStream; }
 namespace models { class Radar; }
 }
@@ -16,16 +16,16 @@ namespace models { class Radar; }
 //              with color coded doppler shift, and overlayed with tracks.
 // Factory name: DspRadar
 //------------------------------------------------------------------------------
-class DspRadar : public oe::graphics::Graphic
+class DspRadar : public mxrp::graphics::Graphic
 {
-   DECLARE_SUBCLASS(DspRadar, oe::graphics::Graphic)
+   DECLARE_SUBCLASS(DspRadar, mxrp::graphics::Graphic)
 
 public:
    DspRadar();
 
-   const oe::models::Radar* getRadar()             { return radar; }
-   const oe::models::Radar* getRadar() const       { return radar; }
-   bool setRadar(oe::models::Radar* const s)       { radar = s; return true; }
+   const mxrp::models::Radar* getRadar()             { return radar; }
+   const mxrp::models::Radar* getRadar() const       { return radar; }
+   bool setRadar(mxrp::models::Radar* const s)       { radar = s; return true; }
 
    virtual void drawFunc() override;
 
@@ -34,7 +34,7 @@ public:
 private:
     static const int MAX_TRKS = 50;
 
-    const oe::models::Radar* radar {};  // The test RADAR sensor
+    const mxrp::models::Radar* radar {};  // The test RADAR sensor
     SendData azSD;
     SendData elSD;
 

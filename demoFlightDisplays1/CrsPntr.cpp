@@ -8,8 +8,8 @@ EMPTY_SERIALIZER(CrsPntr)
 EMPTY_DELETEDATA(CrsPntr)
 
 BEGIN_EVENT_HANDLER(CrsPntr)
-    ON_EVENT_OBJ(UPDATE_VALUE7, onUpdateCdiDotsCrsPntr, oe::base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE8, onUpdateToFromCrsPntr, oe::base::Number)
+    ON_EVENT_OBJ(UPDATE_VALUE7, onUpdateCdiDotsCrsPntr, mxrp::base::Number)
+    ON_EVENT_OBJ(UPDATE_VALUE8, onUpdateToFromCrsPntr, mxrp::base::Number)
 END_EVENT_HANDLER()
 
 BEGIN_SLOTTABLE(CrsPntr)
@@ -21,11 +21,11 @@ BEGIN_SLOTTABLE(CrsPntr)
 END_SLOTTABLE(CrsPntr)
 
 BEGIN_SLOT_MAP(CrsPntr)
-    ON_SLOT(1, setSlotNumCdiDots, oe::base::Number)
-    ON_SLOT(2, setSlotNumInches, oe::base::Number)
-    ON_SLOT(3, setSlotShowCdi, oe::base::Number)
-    ON_SLOT(4, setSlotShowCrsPntr, oe::base::Number)
-    ON_SLOT(5, setSlotShowToFrom, oe::base::Number)
+    ON_SLOT(1, setSlotNumCdiDots, mxrp::base::Number)
+    ON_SLOT(2, setSlotNumInches, mxrp::base::Number)
+    ON_SLOT(3, setSlotShowCdi, mxrp::base::Number)
+    ON_SLOT(4, setSlotShowCrsPntr, mxrp::base::Number)
+    ON_SLOT(5, setSlotShowToFrom, mxrp::base::Number)
 END_SLOT_MAP()
 
 CrsPntr::CrsPntr()
@@ -91,13 +91,13 @@ bool CrsPntr::setShowToFrom(const bool newTF)
 }
 
 // Event functions
-bool CrsPntr::onUpdateCdiDotsCrsPntr(const oe::base::Number* const x)
+bool CrsPntr::onUpdateCdiDotsCrsPntr(const mxrp::base::Number* const x)
 {
     bool ok = false;
     if (x != nullptr) ok = setCdiDots(x->getReal());
     return ok;
 }
-bool CrsPntr::onUpdateToFromCrsPntr(const oe::base::Number* const x)
+bool CrsPntr::onUpdateToFromCrsPntr(const mxrp::base::Number* const x)
 {
     bool ok = false;
     if (x != nullptr) ok = setToFrom(x->getReal());
@@ -196,7 +196,7 @@ void CrsPntr::updateData(const double dt)
 //------------------------------------------------------------------------------
 // setSlotNumCdiDots() - set the number of cdi dots we are using
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotNumCdiDots(const oe::base::Number* const newCDI)
+bool CrsPntr::setSlotNumCdiDots(const mxrp::base::Number* const newCDI)
 {
     bool ok = false;
     if (newCDI != nullptr) ok = setNumCdiDots(newCDI->getInt());
@@ -205,7 +205,7 @@ bool CrsPntr::setSlotNumCdiDots(const oe::base::Number* const newCDI)
 //------------------------------------------------------------------------------
 // setSlotNumInches() - set the number of inches we are scaling across the dots
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotNumInches(const oe::base::Number* const newNI)
+bool CrsPntr::setSlotNumInches(const mxrp::base::Number* const newNI)
 {
     bool ok = false;
     if (newNI != nullptr) ok = setNumInches(newNI->getReal());
@@ -214,7 +214,7 @@ bool CrsPntr::setSlotNumInches(const oe::base::Number* const newNI)
 //------------------------------------------------------------------------------
 // setSlotShowCdi() - display the cdi?
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotShowCdi(const oe::base::Number* const newSCDI)
+bool CrsPntr::setSlotShowCdi(const mxrp::base::Number* const newSCDI)
 {
     bool ok = false;
     if (newSCDI != nullptr) ok = setShowCdi(newSCDI->getBoolean());
@@ -223,7 +223,7 @@ bool CrsPntr::setSlotShowCdi(const oe::base::Number* const newSCDI)
 //------------------------------------------------------------------------------
 // setSlotShowCrsPntr() - display the course pointer?
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotShowCrsPntr(const oe::base::Number* const newSCP)
+bool CrsPntr::setSlotShowCrsPntr(const mxrp::base::Number* const newSCP)
 {
     bool ok = false;
     if (newSCP != nullptr) ok = setShowCrsPntr(newSCP->getBoolean());
@@ -232,7 +232,7 @@ bool CrsPntr::setSlotShowCrsPntr(const oe::base::Number* const newSCP)
 //------------------------------------------------------------------------------
 // setSlotShowToFrom() - display the to from arrow?
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotShowToFrom(const oe::base::Number* const newTF)
+bool CrsPntr::setSlotShowToFrom(const mxrp::base::Number* const newTF)
 {
     bool ok = false;
     if (newTF != nullptr) ok = setShowToFrom(newTF->getBoolean());

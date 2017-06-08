@@ -8,9 +8,9 @@
 // Class: Random
 // Description: Generates random numbers
 //------------------------------------------------------------------------------
-class Random : public oe::base::Object
+class Random : public mxrp::base::Object
 {
-   DECLARE_SUBCLASS(Random, oe::base::Object)
+   DECLARE_SUBCLASS(Random, mxrp::base::Object)
 
 public:
    Random();

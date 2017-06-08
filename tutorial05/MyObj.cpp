@@ -20,12 +20,12 @@ BEGIN_SLOTTABLE(MyObj)
 END_SLOTTABLE(MyObj)
 
 BEGIN_SLOT_MAP(MyObj)
-   ON_SLOT(1, setSlotColorTable, oe::base::PairStream)
-   ON_SLOT(2, setSlotTextColor,  oe::base::Identifier)
-   ON_SLOT(3, setSlotBackColor,  oe::base::Identifier)
-   ON_SLOT(4, setSlotVector,     oe::base::List)
-   ON_SLOT(5, setSlotVisible,    oe::base::Number)
-   ON_SLOT(6, setSlotMessage,    oe::base::String)
+   ON_SLOT(1, setSlotColorTable, mxrp::base::PairStream)
+   ON_SLOT(2, setSlotTextColor,  mxrp::base::Identifier)
+   ON_SLOT(3, setSlotBackColor,  mxrp::base::Identifier)
+   ON_SLOT(4, setSlotVector,     mxrp::base::List)
+   ON_SLOT(5, setSlotVisible,    mxrp::base::Number)
+   ON_SLOT(6, setSlotMessage,    mxrp::base::String)
 END_SLOT_MAP()
 
 EMPTY_SERIALIZER(MyObj)
@@ -66,7 +66,7 @@ void MyObj::deleteData()
    setMessage(nullptr);
 }
 
-bool MyObj::setColorTable(const oe::base::PairStream* const x)
+bool MyObj::setColorTable(const mxrp::base::PairStream* const x)
 {
    if (colorTable != nullptr) colorTable->unref();
    colorTable = x;
@@ -74,12 +74,12 @@ bool MyObj::setColorTable(const oe::base::PairStream* const x)
    return true;
 }
 
-const oe::base::PairStream* MyObj::getColorTable() const
+const mxrp::base::PairStream* MyObj::getColorTable() const
 {
    return colorTable;
 }
 
-bool MyObj::setTextColor(const oe::base::Identifier* const x)
+bool MyObj::setTextColor(const mxrp::base::Identifier* const x)
 {
    if (textColor != nullptr) textColor->unref();
    textColor = x;
@@ -87,12 +87,12 @@ bool MyObj::setTextColor(const oe::base::Identifier* const x)
    return true;
 }
 
-const oe::base::Identifier* MyObj::getTextColor() const
+const mxrp::base::Identifier* MyObj::getTextColor() const
 {
    return textColor;
 }
 
-bool MyObj::setBackColor(const oe::base::Identifier* const x)
+bool MyObj::setBackColor(const mxrp::base::Identifier* const x)
 {
    if (backColor != nullptr) backColor->unref();
    backColor = x;
@@ -100,12 +100,12 @@ bool MyObj::setBackColor(const oe::base::Identifier* const x)
    return true;
 }
 
-const oe::base::Identifier* MyObj::getBackColor() const
+const mxrp::base::Identifier* MyObj::getBackColor() const
 {
    return backColor;
 }
 
-bool MyObj::setVector(const oe::base::List* const x)
+bool MyObj::setVector(const mxrp::base::List* const x)
 {
    if (vector != nullptr) vector->unref();
    vector = x;
@@ -113,7 +113,7 @@ bool MyObj::setVector(const oe::base::List* const x)
    return true;
 }
 
-const oe::base::List* MyObj::getVector() const
+const mxrp::base::List* MyObj::getVector() const
 {
    return vector;
 }
@@ -129,7 +129,7 @@ bool MyObj::getVisible() const
    return visible;
 }
 
-bool MyObj::setMessage(const oe::base::String* const x)
+bool MyObj::setMessage(const mxrp::base::String* const x)
 {
    if (message != nullptr) message->unref();
    message = x;
@@ -137,12 +137,12 @@ bool MyObj::setMessage(const oe::base::String* const x)
    return true;
 }
 
-const oe::base::String* MyObj::getMessage() const
+const mxrp::base::String* MyObj::getMessage() const
 {
    return message;
 }
 
-bool MyObj::setSlotColorTable(const oe::base::PairStream* const x)
+bool MyObj::setSlotColorTable(const mxrp::base::PairStream* const x)
 {
    bool ok = false;
    if (x != nullptr) {
@@ -151,7 +151,7 @@ bool MyObj::setSlotColorTable(const oe::base::PairStream* const x)
    return ok;
 }
 
-bool MyObj::setSlotTextColor(const oe::base::Identifier* const x)
+bool MyObj::setSlotTextColor(const mxrp::base::Identifier* const x)
 {
    bool ok = false;
    if (x != nullptr) {
@@ -160,7 +160,7 @@ bool MyObj::setSlotTextColor(const oe::base::Identifier* const x)
    return ok;
 }
 
-bool MyObj::setSlotBackColor(const oe::base::Identifier* const x)
+bool MyObj::setSlotBackColor(const mxrp::base::Identifier* const x)
 {
    bool ok = false;
    if (x != nullptr) {
@@ -169,7 +169,7 @@ bool MyObj::setSlotBackColor(const oe::base::Identifier* const x)
    return ok;
 }
 
-bool MyObj::setSlotVector(const oe::base::List* const x)
+bool MyObj::setSlotVector(const mxrp::base::List* const x)
 {
    bool ok = false;
    if (x != nullptr) {
@@ -178,7 +178,7 @@ bool MyObj::setSlotVector(const oe::base::List* const x)
    return ok;
 }
 
-bool MyObj::setSlotVisible(const oe::base::Number* const x)
+bool MyObj::setSlotVisible(const mxrp::base::Number* const x)
 {
    bool ok = false;
    if (x != nullptr) {
@@ -187,7 +187,7 @@ bool MyObj::setSlotVisible(const oe::base::Number* const x)
    return ok;
 }
 
-bool MyObj::setSlotMessage(const oe::base::String* const x)
+bool MyObj::setSlotMessage(const mxrp::base::String* const x)
 {
    bool ok = false;
    if (x != nullptr) {

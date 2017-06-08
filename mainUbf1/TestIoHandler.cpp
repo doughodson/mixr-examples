@@ -14,7 +14,7 @@
 #include "mxrp/base/io/IoData.hpp"
 #include "mxrp/base/util/math_utils.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(TestIoHandler, "TestIoHandler")
 EMPTY_SLOTTABLE(TestIoHandler)

@@ -20,7 +20,7 @@
 
 #include <cmath>
 
-using namespace oe;
+using namespace mxrp;
 
 const int IMG_WIDTH = 1024;
 const int IMG_HEIGHT = 1024;
@@ -105,7 +105,7 @@ void RealBeamRadar::transmit(const double dt)
 
          const models::WorldModel* sim = own->getWorldModel();
          if (sim != nullptr) {
-            setTerrain( dynamic_cast<const oe::terrain::Terrain*>(sim->getTerrain()) );    // ddh
+            setTerrain( dynamic_cast<const mxrp::terrain::Terrain*>(sim->getTerrain()) );    // ddh
          }
       }
    }

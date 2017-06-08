@@ -10,9 +10,9 @@
 // Description: Example Analog Dial Page
 // This page will supply test data to the engine dial
 //------------------------------------------------------------------------------
-class TestEngineDial : public oe::graphics::Page
+class TestEngineDial : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestEngineDial, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestEngineDial, mxrp::graphics::Page)
 
 public:
     TestEngineDial();

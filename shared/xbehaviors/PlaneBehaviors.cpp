@@ -21,7 +21,7 @@
 #include "mxrp/base/ubf/AbstractState.hpp"
 #include "mxrp/base/util/constants.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xbehaviors {
 
 IMPLEMENT_ABSTRACT_SUBCLASS(PlaneBehaviorBase, "PlaneBehaviorBase")

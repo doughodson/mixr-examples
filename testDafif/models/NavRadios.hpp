@@ -4,7 +4,7 @@
 
 #include "mxrp/models/system/Radio.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace dafif { class AirportLoader; class NavaidLoader; }
 }
 
@@ -14,9 +14,9 @@ namespace dafif { class AirportLoader; class NavaidLoader; }
 // The NAV radios are being updated and are not current fully functional!!!
 // Factory name: NavRadio
 //------------------------------------------------------------------------------
-class NavRadio : public oe::models::Radio
+class NavRadio : public mxrp::models::Radio
 {
-   DECLARE_SUBCLASS(NavRadio, oe::models::Radio)
+   DECLARE_SUBCLASS(NavRadio, mxrp::models::Radio)
 
 public:
    NavRadio();
@@ -26,8 +26,8 @@ protected:
    double getLongitude() const;
    double getAltitude() const;
 
-   oe::dafif::NavaidLoader* getNavaidLoader();
-   oe::dafif::AirportLoader* getAirportLoader();
+   mxrp::dafif::NavaidLoader* getNavaidLoader();
+   mxrp::dafif::AirportLoader* getAirportLoader();
 
    // Slave our position to our ownship
    virtual bool setPosition();
@@ -35,8 +35,8 @@ protected:
    virtual bool shutdownNotification() override;
 
 private:
-   oe::base::safe_ptr<oe::dafif::AirportLoader> apdb; // Pointer to Airport loader
-   oe::base::safe_ptr<oe::dafif::NavaidLoader> nvdb;  // Pointer to Navaid loader
+   mxrp::base::safe_ptr<mxrp::dafif::AirportLoader> apdb; // Pointer to Airport loader
+   mxrp::base::safe_ptr<mxrp::dafif::NavaidLoader> nvdb;  // Pointer to Navaid loader
 
    double latitude {};           // Ownship Latitude
    double longitude {};          // Ownship Longitude

@@ -10,15 +10,15 @@
 //
 // Description: Sends test data down to the situational display
 //------------------------------------------------------------------------------
-class TestSD : public oe::graphics::Page
+class TestSD : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestSD, oe::graphics::Page )
+   DECLARE_SUBCLASS(TestSD, mxrp::graphics::Page )
 
 public:
     TestSD();
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
     static const int MAX_TRACKS = 8;
     static const int MAX_AIRPORTS = 8;
@@ -29,10 +29,10 @@ private:
 
     double heading {};            // our heading
     // rate which are going (up or down)
-    double headingRate {0.2 * oe::base::angle::R2DCC};
+    double headingRate {0.2 * mxrp::base::angle::R2DCC};
 
     double bearing {};            // goes to our bearing pointer
-    double bearingRate {0.4 * oe::base::angle::R2DCC};
+    double bearingRate {0.4 * mxrp::base::angle::R2DCC};
 
     double range {80.0};          // our range
 

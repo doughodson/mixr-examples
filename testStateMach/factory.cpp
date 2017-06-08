@@ -15,7 +15,7 @@
 
 #include <string>
 
-using namespace oe;
+using namespace mxrp;
 
 base::Object* factory(const std::string& name)
 {

@@ -4,7 +4,7 @@
 
 #include "mxrp/graphics/Rotators.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xpanel {
 
 //------------------------------------------------------------------------------

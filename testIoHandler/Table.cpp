@@ -7,7 +7,7 @@
 
 #include <cstdio>
 
-using namespace oe;
+using namespace mxrp;
 
 //==============================================================================
 // class TableRow -- One row of in the table (used by Table only)

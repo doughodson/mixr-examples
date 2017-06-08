@@ -1,7 +1,7 @@
 
 #include "TestDigitalGauge.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestDigitalGauge, "TestDigitalGauge")
 EMPTY_SERIALIZER(TestDigitalGauge)

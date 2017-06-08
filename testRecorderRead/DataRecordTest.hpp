@@ -4,16 +4,16 @@
 
 #include "mxrp/base/Component.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace recorder { class InputHandler; class OutputHandler; }
 }
 
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest : public oe::base::Component
+class DataRecordTest : public mxrp::base::Component
 {
-   DECLARE_SUBCLASS(DataRecordTest, oe::base::Component)
+   DECLARE_SUBCLASS(DataRecordTest, mxrp::base::Component)
 
 public:
    DataRecordTest();
@@ -23,14 +23,14 @@ public:
 
 protected:
    // Slot functions
-   virtual bool setSlotInputHandler(oe::recorder::InputHandler* const msg);
-   virtual bool setSlotOutputHandler(oe::recorder::OutputHandler* const msg);
+   virtual bool setSlotInputHandler(mxrp::recorder::InputHandler* const msg);
+   virtual bool setSlotOutputHandler(mxrp::recorder::OutputHandler* const msg);
 
 private:
    void initData();
 
-   oe::base::safe_ptr<oe::recorder::InputHandler> inputHandler;
-   oe::base::safe_ptr<oe::recorder::OutputHandler> outputHandler;
+   mxrp::base::safe_ptr<mxrp::recorder::InputHandler> inputHandler;
+   mxrp::base::safe_ptr<mxrp::recorder::OutputHandler> outputHandler;
 };
 
 #endif

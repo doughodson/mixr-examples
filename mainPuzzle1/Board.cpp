@@ -16,7 +16,7 @@ END_SLOTTABLE(Board)
 
 BEGIN_SLOT_MAP(Board)
     ON_SLOT( 1, setSlotPuzzle,    Puzzle )
-    ON_SLOT( 2, setSlotTemplates, oe::base::PairStream )
+    ON_SLOT( 2, setSlotTemplates, mxrp::base::PairStream )
 END_SLOT_MAP()
 
 Board::Board()
@@ -131,9 +131,9 @@ unsigned int Board::setupBlockGraphics()
             const Block* b = s->getBlock(i+1);
             if (b != nullptr) {
                unsigned int typeId = b->getTypeId();
-               const oe::base::Pair* pair = templates->getPosition(typeId);
+               const mxrp::base::Pair* pair = templates->getPosition(typeId);
                if (pair != nullptr) {
-                  const auto g = dynamic_cast<const oe::graphics::Graphic*>( pair->object() );
+                  const auto g = dynamic_cast<const mxrp::graphics::Graphic*>( pair->object() );
                   if (g != nullptr) {
                      // Ok, we've found a graphics::Graphic to draw this block!
                      blocks[nblocks] = g->clone();
@@ -267,7 +267,7 @@ bool Board::setSlotPuzzle(Puzzle* const p)
 //------------------------------------------------------------------------------
 // Sets a list of the graphical templates for the blocks
 //------------------------------------------------------------------------------
-bool Board::setSlotTemplates(const oe::base::PairStream* const p)
+bool Board::setSlotTemplates(const mxrp::base::PairStream* const p)
 {
    if (templates != nullptr) templates->unref();
    templates = p;

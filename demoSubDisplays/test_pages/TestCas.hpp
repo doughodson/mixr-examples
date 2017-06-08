@@ -10,9 +10,9 @@
 // Description: Example Analog Dial Page
 // This page will supply test data to a generic calibrated air speed
 //------------------------------------------------------------------------------
-class TestCas : public oe::graphics::Page
+class TestCas : public mxrp::graphics::Page
 {
-   DECLARE_SUBCLASS(TestCas, oe::graphics::Page)
+   DECLARE_SUBCLASS(TestCas, mxrp::graphics::Page)
 
 public:
     TestCas();

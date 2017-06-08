@@ -59,14 +59,14 @@ void TestComputer::updateTC(const double dt0)
    // ---
    // Four phases per frame
    // ---
-   oe::simulation::Simulation* sim = getOwnship()->getWorldModel();
+   mxrp::simulation::Simulation* sim = getOwnship()->getWorldModel();
    if (sim == nullptr) return;
 
    // ---
    // bypass System:: version, forward call to Component directly,
    // and use 'dt' because if we're frozen then so are our subcomponents.
    // ---
-   oe::base::Component::updateTC(dt);
+   mxrp::base::Component::updateTC(dt);
 
    switch (sim->phase()) {
 
@@ -96,7 +96,7 @@ void TestComputer::process(const double dt)
 {
    BaseClass::process(dt);
 
-   const auto irSeeker = dynamic_cast<oe::models::IrSeeker*>(getOwnship()->getGimbal());
+   const auto irSeeker = dynamic_cast<mxrp::models::IrSeeker*>(getOwnship()->getGimbal());
    if (irSeeker) {
       haveTarget = processIr();
    }
@@ -110,18 +110,18 @@ void TestComputer::process(const double dt)
 bool TestComputer::processIr()
 {
    // set the seeker/gimbal free to track target if just launched
-   if (uncaged==false && getOwnship()->isMode(oe::models::Player::ACTIVE))
+   if (uncaged==false && getOwnship()->isMode(mxrp::models::Player::ACTIVE))
       uncaged = true;
 
    // waiting on getnexttarget may mean missing one or two updates
    // because we have to wait for obc::updateShootList which is an updateData task
-   oe::models::Track* irTrk = getNextTarget();
+   mxrp::models::Track* irTrk = getNextTarget();
    if (irTrk && uncaged) {
       // we have a target and our gimbal must be updated
       double pt_az = irTrk->getPredictedAzimuth();
       double pt_el = irTrk->getPredictedElevation();
 
-      const auto irSeeker = dynamic_cast<oe::models::IrSeeker*>(getOwnship()->getGimbal());
+      const auto irSeeker = dynamic_cast<mxrp::models::IrSeeker*>(getOwnship()->getGimbal());
 
       // reposition seeker/gimbal to follow IR target
       if (irSeeker) {
@@ -132,13 +132,13 @@ bool TestComputer::processIr()
       }
    }
 
-   const auto ourWeapon = dynamic_cast<oe::models::AbstractWeapon*>(getOwnship());
+   const auto ourWeapon = dynamic_cast<mxrp::models::AbstractWeapon*>(getOwnship());
 
    // update the weapon's tracking if the target changed (includes loss of target)
    // weapon::targetPlayer tells the dynamics model where the target is -
    // if the seeker has no track, then the targetPlayer must be cleared
 
-   oe::models::Player* irTarget = nullptr;
+   mxrp::models::Player* irTarget = nullptr;
    if (irTrk)
       irTarget = irTrk->getTarget();
    // tell the missile what to track
@@ -161,16 +161,16 @@ void TestComputer::updateShootList(const bool step)
 
    // First, let's get the active track list
    const unsigned int MAX_TRKS = 20;
-   oe::base::safe_ptr<oe::models::Track> trackList[MAX_TRKS];
+   mxrp::base::safe_ptr<mxrp::models::Track> trackList[MAX_TRKS];
 
    int n = 0;
-   oe::models::TrackManager* tm = getTrackManagerByType(typeid(oe::models::AngleOnlyTrackManager));
+   mxrp::models::TrackManager* tm = getTrackManagerByType(typeid(mxrp::models::AngleOnlyTrackManager));
    if (tm != nullptr) n = tm->getTrackList(trackList, MAX_TRKS);
 
    if (isMessageEnabled(MSG_DEBUG)) {
       for (int i = 0; i < n; i++) {
-         oe::models::Track* trk = trackList[i];
-         const auto irTrk = dynamic_cast<oe::models::IrTrack*>(trk);
+         mxrp::models::Track* trk = trackList[i];
+         const auto irTrk = dynamic_cast<mxrp::models::IrTrack*>(trk);
          std::cout << irTrk->getTarget()->getID() << " avg " << irTrk->getAvgSignal() << " max " << irTrk->getMaxSignal() << std::endl;
       }
    }
@@ -186,11 +186,11 @@ void TestComputer::updateShootList(const bool step)
             //if (trackList[i]->getGroundSpeed() >= 1.0f) {
                if (nNTS >= 0) {
                   // is this one closer?
-                  oe::models::Track* trk = trackList[i];
-                  const auto irTrk = dynamic_cast<oe::models::IrTrack*>(trk);
+                  mxrp::models::Track* trk = trackList[i];
+                  const auto irTrk = dynamic_cast<mxrp::models::IrTrack*>(trk);
 
                   trk = trackList[nNTS];
-                  const auto irTrknNTS = dynamic_cast<oe::models::IrTrack*>(trk);
+                  const auto irTrknNTS = dynamic_cast<mxrp::models::IrTrack*>(trk);
 
                   if (irTrk->getAvgSignal() > irTrknNTS->getAvgSignal()) {
                      nNTS = i;

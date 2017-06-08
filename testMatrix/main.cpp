@@ -8,7 +8,7 @@
 #include <iostream>
 #include <iomanip>
 
-using namespace oe::base;
+using namespace mxrp::base;
 
 namespace d {   // constants that define matrix dimensions
 const unsigned int rows = 4;

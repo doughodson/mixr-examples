@@ -5,7 +5,7 @@
 #include "mxrp/base/ubf/AbstractState.hpp"
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace xbehaviors {
 
 //------------------------------------------------------------------------------

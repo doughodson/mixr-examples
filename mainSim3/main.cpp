@@ -39,7 +39,7 @@ void timerFunc(int)
     glutTimerFunc(millis, timerFunc, 1);
 
     // Current time
-    const double time = oe::base::getComputerTime();
+    const double time = mxrp::base::getComputerTime();
 
     // N-1 Time
     static double time0 = time;
@@ -48,33 +48,33 @@ void timerFunc(int)
     const double dt = static_cast<double>(time - time0);
     time0 = time;
 
-    oe::base::Timer::updateTimers(dt);
-    oe::graphics::Graphic::flashTimer(dt);
+    mxrp::base::Timer::updateTimers(dt);
+    mxrp::graphics::Graphic::flashTimer(dt);
     station->updateData(dt);
 }
 
 // our class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-    oe::base::Object* obj = nullptr;
+    mxrp::base::Object* obj = nullptr;
 
     if ( name == MapPage::getFactoryName() )       { obj = new MapPage(); }
     else if ( name == Station::getFactoryName() )  { obj = new Station(); }
     else if ( name == Display::getFactoryName() )  { obj = new Display(); }
 
     // example libraries
-    if (obj == nullptr)  { obj = oe::xzmq::factory(name);         }
+    if (obj == nullptr)  { obj = mxrp::xzmq::factory(name);         }
 
     // framework libraries
-    if (obj == nullptr)  { obj = oe::otw::factory(name);          }
-    if (obj == nullptr)  { obj = oe::instruments::factory(name);  }
-    if (obj == nullptr)  { obj = oe::simulation::factory(name);   }
-    if (obj == nullptr)  { obj = oe::models::factory(name);       }
-    if (obj == nullptr)  { obj = oe::terrain::factory(name);      }
-    if (obj == nullptr)  { obj = oe::dis::factory(name);          }
-    if (obj == nullptr)  { obj = oe::graphics::factory(name);     }
-    if (obj == nullptr)  { obj = oe::glut::factory(name);         }
-    if (obj == nullptr)  { obj = oe::base::factory(name);         }
+    if (obj == nullptr)  { obj = mxrp::otw::factory(name);          }
+    if (obj == nullptr)  { obj = mxrp::instruments::factory(name);  }
+    if (obj == nullptr)  { obj = mxrp::simulation::factory(name);   }
+    if (obj == nullptr)  { obj = mxrp::models::factory(name);       }
+    if (obj == nullptr)  { obj = mxrp::terrain::factory(name);      }
+    if (obj == nullptr)  { obj = mxrp::dis::factory(name);          }
+    if (obj == nullptr)  { obj = mxrp::graphics::factory(name);     }
+    if (obj == nullptr)  { obj = mxrp::glut::factory(name);         }
+    if (obj == nullptr)  { obj = mxrp::base::factory(name);         }
 
     return obj;
 }
@@ -84,7 +84,7 @@ Station* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -97,7 +97,7 @@ Station* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
    station = builder(configFilename);
 
    // reset the Simulation
-   station->event(oe::base::Component::RESET_EVENT);
+   station->event(mxrp::base::Component::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt = 1.0 / static_cast<double>(frameRate);
@@ -134,7 +134,7 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    station->updateData(dt);
    station->updateTC(dt);
-   station->event(oe::base::Component::RESET_EVENT);
+   station->event(mxrp::base::Component::RESET_EVENT);
 
    glutTimerFunc(millis, timerFunc, 1);
 

@@ -4,7 +4,7 @@
 
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace models { class Aircraft; }
 namespace simulation { class Station; }
 }
@@ -12,9 +12,9 @@ namespace simulation { class Station; }
 //------------------------------------------------------------------------------
 // Class: AdiDisplay
 //------------------------------------------------------------------------------
-class AdiDisplay : public oe::glut::GlutDisplay
+class AdiDisplay : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(AdiDisplay, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(AdiDisplay, mxrp::glut::GlutDisplay)
 
 public:
    AdiDisplay();
@@ -22,10 +22,10 @@ public:
    virtual void updateData(const double dt = 0.0) override;
 
 private:
-   oe::models::Aircraft* getOwnship();
-   oe::simulation::Station* getStation();
+   mxrp::models::Aircraft* getOwnship();
+   mxrp::simulation::Station* getStation();
 
-   oe::base::safe_ptr<oe::simulation::Station> myStation;
+   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
 
    //-----------------------------
    double psiRO {};     // [deg]

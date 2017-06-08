@@ -12,7 +12,7 @@
 #include <cstring>
 #include <array>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Display, "SendDataDisplay")
 EMPTY_SERIALIZER(Display)

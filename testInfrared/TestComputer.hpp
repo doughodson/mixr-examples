@@ -15,9 +15,9 @@
 //       haveTgt()   true if computer/seeker currently tracking a target
 //
 //------------------------------------------------------------------------------
-class TestComputer : public oe::models::OnboardComputer
+class TestComputer : public mxrp::models::OnboardComputer
 {
-    DECLARE_SUBCLASS(TestComputer, oe::models::OnboardComputer)
+    DECLARE_SUBCLASS(TestComputer, mxrp::models::OnboardComputer)
 
 public:
    TestComputer();

@@ -51,19 +51,19 @@ void TestIoHandler::inputDevices(const double dt)
    // ---
    // get the Input data buffer
    // ---
-   const oe::base::IoData* const inData = getInputData();
+   const mxrp::base::IoData* const inData = getInputData();
 
    // ---
    // get the Station, Simulation and our ownship player
    // ---
    const auto sta = static_cast<SimStation*>( findContainerByType(typeid(SimStation)) );
 
-   oe::simulation::Simulation* sim {};
-   oe::models::AirVehicle* av {};
+   mxrp::simulation::Simulation* sim {};
+   mxrp::models::AirVehicle* av {};
 
    if (sta != nullptr) {
       sim = sta->getSimulation();
-      av = dynamic_cast<oe::models::AirVehicle*>(sta->getOwnship());
+      av = dynamic_cast<mxrp::models::AirVehicle*>(sta->getOwnship());
    }
 
    // ---
@@ -72,10 +72,10 @@ void TestIoHandler::inputDevices(const double dt)
    if (av != nullptr && sim != nullptr && inData != nullptr) {
 
       // find the (optional) autopilot
-      oe::models::Autopilot* ap = nullptr;
+      mxrp::models::Autopilot* ap = nullptr;
       {
-         oe::base::Pair* p = av->getPilotByType( typeid(oe::models::Autopilot) );
-         if (p != nullptr) ap = static_cast<oe::models::Autopilot*>( p->object() );
+         mxrp::base::Pair* p = av->getPilotByType( typeid(mxrp::models::Autopilot) );
+         if (p != nullptr) ap = static_cast<mxrp::models::Autopilot*>( p->object() );
       }
 
       // ------------------------------------------------------------
@@ -91,7 +91,7 @@ void TestIoHandler::inputDevices(const double dt)
             inData->getDiscreteInput(FREEZE_SW, &sw);
             const bool frzSw = sw && enabled;
             if (frzSw && !frzSw1) {
-               oe::base::Boolean newFrz( !sim->isFrozen() );
+               mxrp::base::Boolean newFrz( !sim->isFrozen() );
                sim->event(FREEZE_EVENT, &newFrz);
             }
             frzSw1 = frzSw;
@@ -126,7 +126,7 @@ void TestIoHandler::inputDevices(const double dt)
       {  // Process Roll Input
          double ai {};
          inData->getAnalogInput(ROLL_AI, &ai);
-         const double aiLim = oe::base::alim(ai, 1.0f);
+         const double aiLim = mxrp::base::alim(ai, 1.0f);
          if (ap != nullptr)   { ap->setControlStickRollInput(aiLim);  }
          else                 { av->setControlStickRollInput(aiLim);  }
       }
@@ -134,7 +134,7 @@ void TestIoHandler::inputDevices(const double dt)
       {  // Process Pitch Input
          double ai {};
          inData->getAnalogInput(PITCH_AI, &ai);
-         const double aiLim = oe::base::alim(ai, 1.0f);
+         const double aiLim = mxrp::base::alim(ai, 1.0f);
          if (ap != nullptr)   { ap->setControlStickPitchInput(aiLim); }
          else                 { av->setControlStickPitchInput(aiLim); }
       }
@@ -142,7 +142,7 @@ void TestIoHandler::inputDevices(const double dt)
       {  // Process Rudder Input
          double ai {};
          inData->getAnalogInput(RUDDER_AI, &ai);
-         const double aiLim = oe::base::alim(ai, 1.0f);
+         const double aiLim = mxrp::base::alim(ai, 1.0f);
          av->setRudderPedalInput(aiLim);
       }
 
@@ -161,7 +161,7 @@ void TestIoHandler::inputDevices(const double dt)
          bool sw {};
          inData->getDiscreteInput(PICKLE_SW, &sw);
          if (sw != wpnRelSw1) {
-            oe::base::Boolean sw1(sw);
+            mxrp::base::Boolean sw1(sw);
             av->event(WPN_REL_EVENT, &sw1);
          }
          wpnRelSw1 = sw;
@@ -171,7 +171,7 @@ void TestIoHandler::inputDevices(const double dt)
          bool sw {};
          inData->getDiscreteInput(TRIGGER_SW2, &sw);
          if (sw != trgSw1) {
-            oe::base::Boolean sw1(sw);
+            mxrp::base::Boolean sw1(sw);
             av->event(TRIGGER_SW_EVENT, &sw1);
          }
          trgSw1 = sw;
@@ -208,7 +208,7 @@ void TestIoHandler::inputDevices(const double dt)
          bool autopilotSw {};
          inData->getDiscreteInput(PADDLE_SW, &autopilotSw);
          if (autopilotSw && !autopilotSw1) {
-            const auto ap = dynamic_cast<oe::models::Autopilot*>(av->getPilot());
+            const auto ap = dynamic_cast<mxrp::models::Autopilot*>(av->getPilot());
             if (ap != nullptr) {
                ap->setHeadingHoldMode(false);
                ap->setAltitudeHoldMode(false);
@@ -237,10 +237,10 @@ void TestIoHandler::inputDevices(const double dt)
          inData->getDiscreteInput(DMS_UP_SW, &incStptSw);
          if(incStptSw && !incStptSw1) {
             // find our route and increment the steerpoint
-            oe::models::Navigation* myNav = av->getNavigation();
+            mxrp::models::Navigation* myNav = av->getNavigation();
             if (myNav != nullptr) {
                myNav->ref();
-               oe::models::Route* myRoute = myNav->getPriRoute();
+               mxrp::models::Route* myRoute = myNav->getPriRoute();
                if (myRoute != nullptr) {
                   myRoute->ref();
                   myRoute->incStpt();
@@ -256,10 +256,10 @@ void TestIoHandler::inputDevices(const double dt)
          inData->getDiscreteInput(DMS_DOWN_SW, &decStptSw);
          if (decStptSw && !decStptSw1) {
             // find our route and increment the steerpoint
-            oe::models::Navigation* myNav = av->getNavigation();
+            mxrp::models::Navigation* myNav = av->getNavigation();
             if (myNav != nullptr) {
                myNav->ref();
-               oe::models::Route* myRoute = myNav->getPriRoute();
+               mxrp::models::Route* myRoute = myNav->getPriRoute();
                if (myRoute != nullptr) {
                   myRoute->ref();
                   myRoute->decStpt();

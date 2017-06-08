@@ -5,7 +5,7 @@
 #include "mxrp/base/List.hpp"
 #include <iostream>
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_SUBCLASS(Puzzle, "Puzzle")
 

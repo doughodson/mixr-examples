@@ -11,7 +11,7 @@ BEGIN_SLOTTABLE(MyComp)
 END_SLOTTABLE(MyComp)
 
 BEGIN_SLOT_MAP(MyComp)
-  ON_SLOT(1, setSlotStr, oe::base::String)
+  ON_SLOT(1, setSlotStr, mxrp::base::String)
 END_SLOT_MAP()
 
 MyComp::MyComp()
@@ -37,7 +37,7 @@ void MyComp::deleteData()
    std::cout << "MyComp::deleteData() called\n";
 }
 
-bool MyComp::setStr(const oe::base::String* const x)
+bool MyComp::setStr(const mxrp::base::String* const x)
 {
    if (str != nullptr) str->unref();
    str = x;
@@ -45,12 +45,12 @@ bool MyComp::setStr(const oe::base::String* const x)
    return true;
 }
 
-const oe::base::String* MyComp::getStr() const
+const mxrp::base::String* MyComp::getStr() const
 {
    return str;
 }
 
-bool MyComp::setSlotStr(const oe::base::String* const x)
+bool MyComp::setSlotStr(const mxrp::base::String* const x)
 {
    bool ok = false;
    if(x != nullptr) {

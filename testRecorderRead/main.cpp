@@ -7,7 +7,7 @@
 
 #include <string>
 
-namespace oe {
+namespace mxrp {
 namespace test {
 
 // DataRecordTest builder
@@ -72,5 +72,5 @@ int main(int argc, char* argv[])
 //
 int main(int argc, char* argv[])
 {
-    oe::test::main(argc, argv);
+    mxrp::test::main(argc, argv);
 }

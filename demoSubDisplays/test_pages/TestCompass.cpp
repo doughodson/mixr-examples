@@ -6,7 +6,7 @@
 #include "mxrp/graphics/SymbolLoader.hpp"
 #include "mxrp/base/Rgb.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestCompass, "TestCompass")
 EMPTY_SERIALIZER(TestCompass)

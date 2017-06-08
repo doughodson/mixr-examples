@@ -19,13 +19,13 @@
 // Events:
 //    UPDATE_VALUE  <Number>  ! elevation angle (degs)
 //------------------------------------------------------------------------------
-namespace oe {
+namespace mxrp {
 namespace base { class Number; }
 }
 
-class TdElevPtr : public oe::graphics::Graphic
+class TdElevPtr : public mxrp::graphics::Graphic
 {
-   DECLARE_SUBCLASS(TdElevPtr, oe::graphics::Graphic)
+   DECLARE_SUBCLASS(TdElevPtr, mxrp::graphics::Graphic)
 
 public:
    TdElevPtr();
@@ -35,10 +35,10 @@ public:
 
    virtual void draw() override;
 
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
 private:
-   bool onUpdateValue(const oe::base::Number* const);
+   bool onUpdateValue(const mxrp::base::Number* const);
 
    double elev {};  // (degs)
 };

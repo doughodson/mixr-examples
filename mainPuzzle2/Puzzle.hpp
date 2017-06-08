@@ -6,7 +6,7 @@
 
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace base { class List; }
 }
 class State;
@@ -16,9 +16,9 @@ class State;
 //
 // Description:  Puzzle engine
 //------------------------------------------------------------------------------
-class Puzzle : public oe::base::Component
+class Puzzle : public mxrp::base::Component
 {
-    DECLARE_SUBCLASS(Puzzle, oe::base::Component)
+    DECLARE_SUBCLASS(Puzzle, mxrp::base::Component)
 
 public:
    static const unsigned int BOARD_X_SIZE = 4;
@@ -65,7 +65,7 @@ private:
    State* goalState {};           // Goal (ending) state
 
    // Open list
-   oe::base::List* openStates {};   // List of 'open' states (still need to be expanded)
+   mxrp::base::List* openStates {};   // List of 'open' states (still need to be expanded)
                                   // (list is ordered by the state's f() values)
 
    // HashTable

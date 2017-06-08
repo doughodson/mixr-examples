@@ -12,14 +12,14 @@ class TestObject;
 // command from it's parent as an object, and will then fill it's own
 // private data from that object.
 //------------------------------------------------------------------------------
-class ObjectHandler : public oe::graphics::Graphic
+class ObjectHandler : public mxrp::graphics::Graphic
 {
-   DECLARE_SUBCLASS(ObjectHandler, oe::graphics::Graphic)
+   DECLARE_SUBCLASS(ObjectHandler, mxrp::graphics::Graphic)
 
 public:
    ObjectHandler();
 
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
 
 private:
    bool onUpdateObject(const TestObject* const x);

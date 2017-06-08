@@ -14,7 +14,7 @@
 
 #include "mxrp/models/WorldModel.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xbehaviors {
 
 IMPLEMENT_SUBCLASS(PlaneState, "PlaneState")

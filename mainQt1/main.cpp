@@ -18,19 +18,19 @@
 #include <string>
 
 // class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-   oe::base::Object* obj = nullptr;
+   mxrp::base::Object* obj = nullptr;
 
    if ( name == Station::getFactoryName() ) {
       obj = new Station;
    }
 
-   if (obj == nullptr)  { obj = oe::otw::factory(name);         }
-   if (obj == nullptr)  { obj = oe::dis::factory(name);         }
-   if (obj == nullptr)  { obj = oe::simulation::factory(name);  }
-   if (obj == nullptr)  { obj = oe::models::factory(name);  }
-   if (obj == nullptr)  { obj = oe::base::factory(name);        }
+   if (obj == nullptr)  { obj = mxrp::otw::factory(name);         }
+   if (obj == nullptr)  { obj = mxrp::dis::factory(name);         }
+   if (obj == nullptr)  { obj = mxrp::simulation::factory(name);  }
+   if (obj == nullptr)  { obj = mxrp::models::factory(name);  }
+   if (obj == nullptr)  { obj = mxrp::base::factory(name);        }
    
    return obj;
 }
@@ -40,7 +40,7 @@ Station* builder(const std::string& filename)
 {
    // Read the description file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -53,7 +53,7 @@ Station* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   oe::base::Pair* pair = dynamic_cast<oe::base::Pair*>(obj);
+   mxrp::base::Pair* pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();

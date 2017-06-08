@@ -4,7 +4,7 @@
 
 #include "mxrp/gui/glut/GlutDisplay.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace models { class Player; }
 namespace simulation { class Simulation; class Station; }
 }
@@ -21,18 +21,18 @@ class MfdDisplay;
 //   'f' or 'F'   -- Toggle simulation freeze
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class InstrumentPanel : public oe::glut::GlutDisplay
+class InstrumentPanel : public mxrp::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(InstrumentPanel, oe::glut::GlutDisplay)
+   DECLARE_SUBCLASS(InstrumentPanel, mxrp::glut::GlutDisplay)
 
 public:
    InstrumentPanel();
 
-   oe::models::Player* getOwnship();
-   oe::simulation::Simulation* getSimulation();
-   oe::simulation::Station* getStation();
+   mxrp::models::Player* getOwnship();
+   mxrp::simulation::Simulation* getSimulation();
+   mxrp::simulation::Station* getStation();
 
-   virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
    virtual void updateData(const double dt = 0.0) override;
 
 protected:
@@ -42,14 +42,14 @@ protected:
    bool onStepOwnshipKey();
 
 private:
-   oe::base::safe_ptr<oe::simulation::Station> myStation;
+   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
 
    // ALT Stuff
    double altitude {};         // our current altitude
    SendData altitudeSD;
 
    // VVI Stuff
-   oe::base::Vec3d vvi;        // velocity vector
+   mxrp::base::Vec3d vvi;        // velocity vector
    SendData vviSD;
    double pastVvi {};          // our past vvi value (to create a linear filter)
 

@@ -5,7 +5,7 @@
 #include "mxrp/base/Integer.hpp"
 #include "mxrp/base/List.hpp"
 
-using namespace oe;
+using namespace mxrp;
 
 //==============================================================================
 // Class: Block

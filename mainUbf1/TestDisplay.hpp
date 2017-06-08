@@ -6,7 +6,7 @@
 
 #include <array>
 
-namespace oe {
+namespace mxrp {
 namespace models { class Missile; class Player; }
 namespace simulation { class Simulation; class Station; }
 namespace graphics { class SymbolLoader; }
@@ -35,9 +35,9 @@ namespace xpanel { class DspRadar; class DspRwr; }
 //   'd' or 'D'   -- Decrease Range
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class TestDisplay : public oe::glut::GlutDisplay
+class TestDisplay : public mxrp::glut::GlutDisplay
 {
-    DECLARE_SUBCLASS(TestDisplay, oe::glut::GlutDisplay)
+    DECLARE_SUBCLASS(TestDisplay, mxrp::glut::GlutDisplay)
 
 public:
     static const int MAX_TRACKS = 60;
@@ -47,15 +47,15 @@ public:
 public:
     TestDisplay();
 
-    oe::models::Player* getOwnship();
-    oe::simulation::Simulation* getSimulation();
-    oe::simulation::Station* getStation();
+    mxrp::models::Player* getOwnship();
+    mxrp::simulation::Simulation* getSimulation();
+    mxrp::simulation::Station* getStation();
 
-    void maintainAirTrackSymbols(oe::graphics::SymbolLoader* loader, const double rng);
+    void maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, const double rng);
 
     virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
 
-    virtual bool event(const int event, oe::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
     virtual void updateData(const double dt = 0.0) override;
 
 private:
@@ -76,16 +76,16 @@ private:
     // ---
     // RADAR, RWR and SA stuff
     // ---
-    oe::xpanel::DspRadar* rdrDisplay {};     // Test RADAR display
-    oe::xpanel::DspRwr*   rwrDisplay {};     // Test RWR display
+    mxrp::xpanel::DspRadar* rdrDisplay {};     // Test RADAR display
+    mxrp::xpanel::DspRwr*   rwrDisplay {};     // Test RWR display
     double range {40.0};                     // SD range
 
     SendData headingSD;
     SendData rangeSD;
 
-    oe::base::safe_ptr<oe::simulation::Station> myStation;
+    mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
 
-    std::array<oe::models::Player*, MAX_TRACKS> tracks {};    // players that we're displaying
+    std::array<mxrp::models::Player*, MAX_TRACKS> tracks {};    // players that we're displaying
     std::array<int, MAX_TRACKS> trkIdx {};                    // Index of track symbols
 
     // ---

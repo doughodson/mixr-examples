@@ -7,7 +7,7 @@
 #include <map>
 #include <string>
 
-namespace oe {
+namespace mxrp {
 namespace base { class Boolean; class Integer; class String; }
 namespace xzmq {
 class ZeroMQContext;

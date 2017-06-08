@@ -12,18 +12,18 @@
 #include <string>
 #include <cstdlib>
 
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
-   oe::base::Object* obj = nullptr;
+   mxrp::base::Object* obj = nullptr;
 
    if ( name == DataRecordTest::getFactoryName() ) {
       obj = new DataRecordTest();
    }
    else {
-      if (obj == nullptr) obj = oe::simulation::factory(name);
-      if (obj == nullptr) obj = oe::models::factory(name);
-      if (obj == nullptr) obj = oe::base::factory(name);
-      if (obj == nullptr) obj = oe::recorder::factory(name);
+      if (obj == nullptr) obj = mxrp::simulation::factory(name);
+      if (obj == nullptr) obj = mxrp::models::factory(name);
+      if (obj == nullptr) obj = mxrp::base::factory(name);
+      if (obj == nullptr) obj = mxrp::recorder::factory(name);
    }
 
    return obj;
@@ -33,7 +33,7 @@ DataRecordTest* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -45,8 +45,8 @@ DataRecordTest* builder(const std::string& filename)
       std::exit(EXIT_FAILURE);
    }
 
-   // do we have a oe::base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   // do we have a mxrp::base::Pair, if so, point to object in Pair, not Pair itself
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();

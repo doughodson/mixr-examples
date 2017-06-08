@@ -22,27 +22,27 @@
 const unsigned int bgRate = 10;
 
 // class factory
-oe::base::Object* factory(const std::string& name)
+mxrp::base::Object* factory(const std::string& name)
 {
    // example libraries
-   oe::base::Object* obj = oe::xzmq::factory(name);
+   mxrp::base::Object* obj = mxrp::xzmq::factory(name);
 
    // framework libraries
-   if (obj == nullptr) obj = oe::otw::factory(name);
-   if (obj == nullptr) obj = oe::simulation::factory(name);
-   if (obj == nullptr) obj = oe::models::factory(name);
-   if (obj == nullptr) obj = oe::terrain::factory(name);
-   if (obj == nullptr) obj = oe::dis::factory(name);
-   if (obj == nullptr) obj = oe::base::factory(name);
+   if (obj == nullptr) obj = mxrp::otw::factory(name);
+   if (obj == nullptr) obj = mxrp::simulation::factory(name);
+   if (obj == nullptr) obj = mxrp::models::factory(name);
+   if (obj == nullptr) obj = mxrp::terrain::factory(name);
+   if (obj == nullptr) obj = mxrp::dis::factory(name);
+   if (obj == nullptr) obj = mxrp::base::factory(name);
    return obj;
 }
 
 // station builder
-oe::simulation::Station* builder(const std::string& filename)
+mxrp::simulation::Station* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   oe::base::Object* obj = oe::base::edl_parser(filename, factory, &num_errors);
+   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -55,7 +55,7 @@ oe::simulation::Station* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<oe::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -63,7 +63,7 @@ oe::simulation::Station* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<oe::simulation::Station*>(obj);
+   const auto station = dynamic_cast<mxrp::simulation::Station*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -83,23 +83,23 @@ int main(int argc, char* argv[])
    }
 
    // build Station
-   oe::simulation::Station* station = builder(configFilename);
+   mxrp::simulation::Station* station = builder(configFilename);
 
    // send a reset event and frame sim once
-   station->event(oe::base::Component::RESET_EVENT);
+   station->event(mxrp::base::Component::RESET_EVENT);
    station->tcFrame( static_cast<double>(1.0/static_cast<double>(station->getTimeCriticalRate())) );
 
    // create time critical thread
    station->createTimeCriticalProcess();
    // short pause to allow os to startup thread
-   oe::base::msleep(2000);
+   mxrp::base::msleep(2000);
 
    // calc delta time for background thread
    const double dt = 1.0/static_cast<double>(bgRate);
 
    // system Time of Day
    double simTime = 0.0;                                   // Simulator time reference
-   const double startTime = oe::base::getComputerTime();   // Time of day (sec) run started
+   const double startTime = mxrp::base::getComputerTime();   // Time of day (sec) run started
 
    int k = 0;
    std::cout << "Starting background main loop ..." << std::endl;
@@ -109,14 +109,14 @@ int main(int argc, char* argv[])
       station->updateData( static_cast<double>(dt) );
 
       simTime += dt;                                       // time of next frame
-      const double timeNow = oe::base::getComputerTime();  // time now
+      const double timeNow = mxrp::base::getComputerTime();  // time now
       const double elapsedTime = timeNow - startTime;
       const double nextFrameStart = simTime - elapsedTime;
       const auto sleepTime = static_cast<int>(nextFrameStart*1000.0);
 
       // wait for the next frame
       if (sleepTime > 0)
-         oe::base::msleep(sleepTime);
+         mxrp::base::msleep(sleepTime);
 
       std::cout << ".";
       k += 1;

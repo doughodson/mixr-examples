@@ -3,7 +3,7 @@
 #include "mxrp/base/Number.hpp"
 #include "mxrp/base/units/angle_utils.hpp"
 
-namespace oe {
+namespace mxrp {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdElevPtr, "TdElevPtr")

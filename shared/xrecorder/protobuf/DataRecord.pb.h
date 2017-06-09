@@ -114,7 +114,7 @@ class MyDataMsg : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 fo() const;
   inline void set_fo(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:oe.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(class_scope:mxrp.xrecorder.pb.MyDataMsg)
  private:
   inline void set_has_fee();
   inline void clear_has_fee();
@@ -167,13 +167,13 @@ inline void MyDataMsg::clear_fee() {
   clear_has_fee();
 }
 inline ::google::protobuf::uint32 MyDataMsg::fee() const {
-  // @@protoc_insertion_point(field_get:oe.xrecorder.pb.MyDataMsg.fee)
+  // @@protoc_insertion_point(field_get:mxrp.xrecorder.pb.MyDataMsg.fee)
   return fee_;
 }
 inline void MyDataMsg::set_fee(::google::protobuf::uint32 value) {
   set_has_fee();
   fee_ = value;
-  // @@protoc_insertion_point(field_set:oe.xrecorder.pb.MyDataMsg.fee)
+  // @@protoc_insertion_point(field_set:mxrp.xrecorder.pb.MyDataMsg.fee)
 }
 
 // required uint32 fi = 2;
@@ -191,13 +191,13 @@ inline void MyDataMsg::clear_fi() {
   clear_has_fi();
 }
 inline ::google::protobuf::uint32 MyDataMsg::fi() const {
-  // @@protoc_insertion_point(field_get:oe.xrecorder.pb.MyDataMsg.fi)
+  // @@protoc_insertion_point(field_get:mxrp.xrecorder.pb.MyDataMsg.fi)
   return fi_;
 }
 inline void MyDataMsg::set_fi(::google::protobuf::uint32 value) {
   set_has_fi();
   fi_ = value;
-  // @@protoc_insertion_point(field_set:oe.xrecorder.pb.MyDataMsg.fi)
+  // @@protoc_insertion_point(field_set:mxrp.xrecorder.pb.MyDataMsg.fi)
 }
 
 // required uint32 fo = 3;
@@ -215,13 +215,13 @@ inline void MyDataMsg::clear_fo() {
   clear_has_fo();
 }
 inline ::google::protobuf::uint32 MyDataMsg::fo() const {
-  // @@protoc_insertion_point(field_get:oe.xrecorder.pb.MyDataMsg.fo)
+  // @@protoc_insertion_point(field_get:mxrp.xrecorder.pb.MyDataMsg.fo)
   return fo_;
 }
 inline void MyDataMsg::set_fo(::google::protobuf::uint32 value) {
   set_has_fo();
   fo_ = value;
-  // @@protoc_insertion_point(field_set:oe.xrecorder.pb.MyDataMsg.fo)
+  // @@protoc_insertion_point(field_set:mxrp.xrecorder.pb.MyDataMsg.fo)
 }
 
 

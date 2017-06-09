@@ -9,10 +9,10 @@
 //    2) Compile with the 'protoc' compiler using the following commands
 //
 //       For Windows ...
-//          protoc -I%OE_EXAMPLES_ROOT%\shared -I%OE_ROOT%\include --cpp_out=%OE_EXAMPLES_ROOT%\shared %OE_EXAMPLES_ROOT%\shared\xrecorder\protobuf\DataRecord.proto
+//          protoc -I%MXRP_EXAMPLES_ROOT%\shared -I%MXRP_ROOT%\include --cpp_out=%MXRP_EXAMPLES_ROOT%\shared %MXRP_EXAMPLES_ROOT%\shared\xrecorder\protobuf\DataRecord.proto
 //
 //       For Linux ...
-//          protoc -I$OE_EXAMPLES_ROOT/shared -I$OE_ROOT/include --cpp_out=$OE_EXAMPLES_ROOT/shared $OE_EXAMPLES_ROOT/shared/xrecorder/protobuf/DataRecord.proto
+//          protoc -I$MXRP_EXAMPLES_ROOT/shared -I$MXRP_ROOT/include --cpp_out=$MXRP_EXAMPLES_ROOT/shared $MXRP_EXAMPLES_ROOT/shared/xrecorder/protobuf/DataRecord.proto
 //
 // -----------------------------------------------------------------------------
 

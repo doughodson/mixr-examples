@@ -14,7 +14,7 @@ OBJS = \
 	factory.o \
 	main.o
 
-LDFLAGS += -lmxrp_base -lpthread -lrt
+LDFLAGS += -lmixr_base -lpthread -lrt
 
 all: $(PGM)
 

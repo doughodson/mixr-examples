@@ -2,23 +2,23 @@
 #include "Display.hpp"
 #include "RealBeamRadar.hpp"
 
-#include "mxrp/models/player/Player.hpp"
+#include "mixr/models/player/Player.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/Station.hpp"
 
-#include "mxrp/base/Color.hpp"
-#include "mxrp/base/Rgb.hpp"
-#include "mxrp/base/Hsva.hpp"
-#include "mxrp/base/Color.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/String.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/base/units/Angles.hpp"
-#include "mxrp/base/units/Distances.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/base/Rgb.hpp"
+#include "mixr/base/Hsva.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/String.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/Distances.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Display, "RbrDisplay")
 EMPTY_SERIALIZER(Display)

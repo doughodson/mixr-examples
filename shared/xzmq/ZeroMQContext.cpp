@@ -1,12 +1,12 @@
 
 #include "ZeroMQContext.hpp"
 
-#include "mxrp/base/Boolean.hpp"
-#include "mxrp/base/Integer.hpp"
+#include "mixr/base/Boolean.hpp"
+#include "mixr/base/Integer.hpp"
 
 #include <zmq.h>
 
-namespace mxrp {
+namespace mixr {
 namespace xzmq {
 
 IMPLEMENT_SUBCLASS(ZeroMQContext, "ZeroMQContext")

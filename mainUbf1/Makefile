@@ -8,17 +8,17 @@ OBJS = main.o
 OBJS += SimStation.o TestDisplay.o
 OBJS += TestIoHandler.o factory.o
 
-LDFLAGS += -lmxrp_models -lJSBSim
+LDFLAGS += -lmixr_models -lJSBSim
 LDFLAGS += -lxbehaviors -lxpanel
-LDFLAGS += -lmxrp_interop_dis -lmxrp_interop -lmxrp_graphics -lmxrp_gui_glut -lmxrp_instruments -lmxrp_simulation
-LDFLAGS += -lmxrp_iodevice -lmxrp_otw -lmxrp_terrain
-LDFLAGS += -lJSBSim -lmxrp_base
+LDFLAGS += -lmixr_interop_dis -lmixr_interop -lmixr_graphics -lmixr_gui_glut -lmixr_instruments -lmixr_simulation
+LDFLAGS += -lmixr_iodevice -lmixr_otw -lmixr_terrain
+LDFLAGS += -lJSBSim -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11
 LDFLAGS += -lcigicl
 LDFLAGS += -lpthread -lrt
 
 CPPFLAGS += -I../
-LDFLAGS  += -L$(MXRP_LIB_DIR)
+LDFLAGS  += -L$(MIXR_LIB_DIR)
 
 EPPFLAGS += -I.
 

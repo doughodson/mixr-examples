@@ -1,10 +1,10 @@
 
 #include "SpdLines.hpp"
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <GL/glu.h>
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(SpdLines, "SpdLines")
 EMPTY_SERIALIZER(SpdLines)

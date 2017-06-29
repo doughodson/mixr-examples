@@ -14,7 +14,7 @@ testadi:
         )
 
         // module with our adi
-        #include "mxrp/instruments/adi/adi.epp"
+        #include "mixr/instruments/adi/adi.epp"
     }
 )
 

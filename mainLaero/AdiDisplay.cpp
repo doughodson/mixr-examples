@@ -3,12 +3,12 @@
 
 #include "TestStation.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
 
-#include "mxrp/base/osg/Vec3d"
+#include "mixr/base/osg/Vec3d"
 
-#include "mxrp/base/units/Distances.hpp"
-#include "mxrp/base/units/Times.hpp"
+#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/units/Times.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(AdiDisplay, "AdiDisplay")
 EMPTY_SERIALIZER(AdiDisplay)
@@ -42,10 +42,10 @@ void AdiDisplay::updateData(const double dt)
    // Update base classes stuff
    BaseClass::updateData(dt);
 
-   mxrp::base::Vec3d av;
+   mixr::base::Vec3d av;
 
    // get access pointer to ownship
-   mxrp::models::Aircraft* pA = getOwnship();
+   mixr::models::Aircraft* pA = getOwnship();
    if (pA != nullptr) {
       psiRO = pA->getHeadingD();
       thtRO = pA->getPitchD();
@@ -56,9 +56,9 @@ void AdiDisplay::updateData(const double dt)
 
       av = pA->getAngularVelocities();
 
-      pRO   = av[0] * mxrp::base::angle::R2DCC;
-      qRO   = av[1] * mxrp::base::angle::R2DCC;
-      rRO   = av[2] * mxrp::base::angle::R2DCC;
+      pRO   = av[0] * mixr::base::angle::R2DCC;
+      qRO   = av[1] * mixr::base::angle::R2DCC;
+      rRO   = av[2] * mixr::base::angle::R2DCC;
 
       pitchADI = pA->getPitchD();
       bankADI  = pA->getRollD();
@@ -81,10 +81,10 @@ void AdiDisplay::updateData(const double dt)
    //send("pitchangle",   UPDATE_INSTRUMENTS, pitch,    pitchSD);
 }
 
-mxrp::simulation::Station* AdiDisplay::getStation()
+mixr::simulation::Station* AdiDisplay::getStation()
 {
    if (myStation == nullptr) {
-      const auto s = dynamic_cast<mxrp::simulation::Station*>( findContainerByType(typeid(mxrp::simulation::Station)) );
+      const auto s = dynamic_cast<mixr::simulation::Station*>( findContainerByType(typeid(mixr::simulation::Station)) );
       if (s != nullptr) {
          myStation = s;
       }
@@ -92,12 +92,12 @@ mxrp::simulation::Station* AdiDisplay::getStation()
    return myStation;
 }
 
-mxrp::models::Aircraft* AdiDisplay::getOwnship()
+mixr::models::Aircraft* AdiDisplay::getOwnship()
 {
-   mxrp::models::Aircraft* pA = nullptr;
-   mxrp::simulation::Station* sta = getStation();
+   mixr::models::Aircraft* pA = nullptr;
+   mixr::simulation::Station* sta = getStation();
    if (sta != nullptr) {
-      pA = dynamic_cast<mxrp::models::Aircraft*>(sta->getOwnship());
+      pA = dynamic_cast<mixr::models::Aircraft*>(sta->getOwnship());
       //const unsigned int ffrate = 5;    //LDB
       //sta->setFastForwardRate(ffrate);  //LDB
    }

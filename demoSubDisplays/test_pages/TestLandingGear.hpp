@@ -2,21 +2,21 @@
 #ifndef __TestLandingGear_H__
 #define __TestLandingGear_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestLandingGear
 //
 // Description: Tests our generic landing gear and lights
 //------------------------------------------------------------------------------
-class TestLandingGear : public mxrp::graphics::Page
+class TestLandingGear : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestLandingGear, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestLandingGear, mixr::graphics::Page)
 
 public:
    TestLandingGear();
 
-   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
    virtual void updateData(const double dt = 0.0) override;
 
 private:

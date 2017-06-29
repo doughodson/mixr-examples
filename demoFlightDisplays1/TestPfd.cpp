@@ -2,11 +2,11 @@
 #define TEST_PFD
 
 #include "TestPfd.hpp"
-#include "mxrp/base/Pair.hpp"
+#include "mixr/base/Pair.hpp"
 #include "Pfd.hpp"
-#include "mxrp/graphics/Display.hpp"
+#include "mixr/graphics/Display.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestPfd, "TestPfd")
 EMPTY_SERIALIZER(TestPfd)

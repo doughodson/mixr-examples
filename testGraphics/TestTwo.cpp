@@ -1,8 +1,8 @@
 
 #include "TestTwo.hpp"
-#include "mxrp/base/units/Angles.hpp"
+#include "mixr/base/units/Angles.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestTwo, "TestTwo")
 EMPTY_DELETEDATA(TestTwo)

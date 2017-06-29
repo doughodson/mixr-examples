@@ -2,9 +2,9 @@
 #ifndef __TestStation_H__
 #define __TestStation_H__
 
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Station.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace glut  { class GlutDisplay; }
 }
 
@@ -19,9 +19,9 @@ namespace glut  { class GlutDisplay; }
 // Slots:
 //   glutDisplay  <graphics::GlutDisplay>  ! All of our display components
 //------------------------------------------------------------------------------
-class TestStation : public mxrp::simulation::Station
+class TestStation : public mixr::simulation::Station
 {
-   DECLARE_SUBCLASS(TestStation, mxrp::simulation::Station)
+   DECLARE_SUBCLASS(TestStation, mixr::simulation::Station)
 
 public:
    TestStation();
@@ -34,9 +34,9 @@ public:
    virtual void reset() override;
 
 private:
-   bool setSlotGlutDisplay(mxrp::glut::GlutDisplay* const msg);
+   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const msg);
 
-   mxrp::base::safe_ptr<mxrp::glut::GlutDisplay> glutDisplay;
+   mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
    bool glutDisplayInit {};
 };
 

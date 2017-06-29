@@ -1,16 +1,16 @@
 
 #include "DspRadar.hpp"
 
-#include "mxrp/models/system/Antenna.hpp"
-#include "mxrp/models/system/Radar.hpp"
-#include "mxrp/models/Track.hpp"
-#include "mxrp/models/system/TrackManager.hpp"
+#include "mixr/models/system/Antenna.hpp"
+#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/Track.hpp"
+#include "mixr/models/system/TrackManager.hpp"
 
-#include "mxrp/base/Hsv.hpp"
+#include "mixr/base/Hsv.hpp"
 
-#include "mxrp/base/util/math_utils.hpp"
+#include "mixr/base/util/math_utils.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(DspRadar, "DspRadar")
 EMPTY_SLOTTABLE(DspRadar)

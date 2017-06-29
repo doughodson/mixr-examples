@@ -2,18 +2,18 @@
 #include "TestStation.hpp"
 #include "Display.hpp"
 
-#include "mxrp/models/player/Player.hpp"
-#include "mxrp/models/system/Gimbal.hpp"
+#include "mixr/models/player/Player.hpp"
+#include "mixr/models/system/Gimbal.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
+#include "mixr/simulation/Simulation.hpp"
 
-#include "mxrp/base/Identifier.hpp"
-#include "mxrp/base/Boolean.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/base/units/Angles.hpp"
+#include "mixr/base/Identifier.hpp"
+#include "mixr/base/Boolean.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/base/units/Angles.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 EMPTY_SERIALIZER(TestStation)

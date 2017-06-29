@@ -1,20 +1,20 @@
 
 #include "PlaneState.hpp"
 
-#include "mxrp/base/List.hpp"
-#include "mxrp/base/PairStream.hpp"
+#include "mixr/base/List.hpp"
+#include "mixr/base/PairStream.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
-#include "mxrp/models/player/Missile.hpp"
-#include "mxrp/models/system/Radar.hpp"
-#include "mxrp/models/system/TrackManager.hpp"
-#include "mxrp/models/Track.hpp"
-#include "mxrp/models/system/OnboardComputer.hpp"
-#include "mxrp/models/system/StoresMgr.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/Missile.hpp"
+#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/TrackManager.hpp"
+#include "mixr/models/Track.hpp"
+#include "mixr/models/system/OnboardComputer.hpp"
+#include "mixr/models/system/StoresMgr.hpp"
 
-#include "mxrp/models/WorldModel.hpp"
+#include "mixr/models/WorldModel.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xbehaviors {
 
 IMPLEMENT_SUBCLASS(PlaneState, "PlaneState")

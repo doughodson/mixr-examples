@@ -1,9 +1,9 @@
 
 #include "TdAzPtr.hpp"
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdAzPtr, "TdAzPtr")
 EMPTY_SERIALIZER(TdAzPtr)

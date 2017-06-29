@@ -1,9 +1,9 @@
 
 #include "DspRwr.hpp"
 
-#include "mxrp/models/system/Rwr.hpp"
+#include "mixr/models/system/Rwr.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")
 EMPTY_SLOTTABLE(DspRwr)

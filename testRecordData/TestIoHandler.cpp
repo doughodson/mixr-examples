@@ -3,18 +3,18 @@
 #include "SimStation.hpp"
 #include "configs/f16HotasIo.hpp"
 
-#include "mxrp/models/system/Autopilot.hpp"
-#include "mxrp/models/player/AirVehicle.hpp"
-#include "mxrp/models/navigation/Navigation.hpp"
-#include "mxrp/models/navigation/Route.hpp"
+#include "mixr/models/system/Autopilot.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/navigation/Navigation.hpp"
+#include "mixr/models/navigation/Route.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
+#include "mixr/simulation/Simulation.hpp"
 
-#include "mxrp/base/Boolean.hpp"
-#include "mxrp/base/io/IoData.hpp"
-#include "mxrp/base/util/math_utils.hpp"
+#include "mixr/base/Boolean.hpp"
+#include "mixr/base/io/IoData.hpp"
+#include "mixr/base/util/math_utils.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestIoHandler, "TestIoHandler")
 EMPTY_SLOTTABLE(TestIoHandler)

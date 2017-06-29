@@ -1,6 +1,6 @@
 
 #include "MyComp.hpp"
-#include "mxrp/base/String.hpp"
+#include "mixr/base/String.hpp"
 #include <cstdlib>
 
 IMPLEMENT_SUBCLASS(MyComp, "MyComp")
@@ -11,7 +11,7 @@ BEGIN_SLOTTABLE(MyComp)
 END_SLOTTABLE(MyComp)
 
 BEGIN_SLOT_MAP(MyComp)
-  ON_SLOT(1, setSlotStr, mxrp::base::String)
+  ON_SLOT(1, setSlotStr, mixr::base::String)
 END_SLOT_MAP()
 
 MyComp::MyComp()
@@ -37,7 +37,7 @@ void MyComp::deleteData()
    std::cout << "MyComp::deleteData() called\n";
 }
 
-bool MyComp::setStr(const mxrp::base::String* const x)
+bool MyComp::setStr(const mixr::base::String* const x)
 {
    if (str != nullptr) str->unref();
    str = x;
@@ -45,12 +45,12 @@ bool MyComp::setStr(const mxrp::base::String* const x)
    return true;
 }
 
-const mxrp::base::String* MyComp::getStr() const
+const mixr::base::String* MyComp::getStr() const
 {
    return str;
 }
 
-bool MyComp::setSlotStr(const mxrp::base::String* const x)
+bool MyComp::setSlotStr(const mixr::base::String* const x)
 {
    bool ok = false;
    if(x != nullptr) {

@@ -1,8 +1,8 @@
 
 #include "TestEngPage.hpp"
-#include "mxrp/base/Pair.hpp"
+#include "mixr/base/Pair.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestEngPage, "TestEngPage")
 EMPTY_SERIALIZER(TestEngPage)
@@ -12,12 +12,12 @@ TestEngPage::TestEngPage()
 {
     STANDARD_CONSTRUCTOR()
 
-    const double n1rates[mxrp::instruments::EngPage::NUM_ENG]  = {    5,   10,   2,   15 };
-    const double n2rates[mxrp::instruments::EngPage::NUM_ENG]  = {    2,    6,   8,   14 };
-    const double titrates[mxrp::instruments::EngPage::NUM_ENG] = {   50,   30,  12,   23 };
-    const double ffrates[mxrp::instruments::EngPage::NUM_ENG]  = { 1000, 5000, 500, 2000 };
+    const double n1rates[mixr::instruments::EngPage::NUM_ENG]  = {    5,   10,   2,   15 };
+    const double n2rates[mixr::instruments::EngPage::NUM_ENG]  = {    2,    6,   8,   14 };
+    const double titrates[mixr::instruments::EngPage::NUM_ENG] = {   50,   30,  12,   23 };
+    const double ffrates[mixr::instruments::EngPage::NUM_ENG]  = { 1000, 5000, 500, 2000 };
 
-    for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+    for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
         n1[i] = 0.0;
         n1Rate[i] = n1rates[i];
 
@@ -36,7 +36,7 @@ void TestEngPage::copyData(const TestEngPage& org, const bool)
 {
     BaseClass::copyData(org);
 
-    for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+    for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
         n1[i] = org.n1[i];
         n1Rate[i] = org.n1Rate[i];
 
@@ -57,7 +57,7 @@ void TestEngPage::updateData(const double dt)
     BaseClass::updateData(dt);
 
     // engine N1
-    for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+    for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
         n1[i] += n1Rate[i] * dt;
         if (n1[i] > 115) {
             n1[i] = 115;
@@ -70,7 +70,7 @@ void TestEngPage::updateData(const double dt)
     }
 
     // engine N2
-    for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+    for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
         n2[i] += n2Rate[i] * dt;
         if (n2[i] > 115) {
             n2[i] = 115;
@@ -83,7 +83,7 @@ void TestEngPage::updateData(const double dt)
     }
 
     // engine TIT
-    for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+    for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
         tit[i] += titRate[i] * dt;
         if (tit[i] > 1005) {
             tit[i] = 1005;
@@ -97,7 +97,7 @@ void TestEngPage::updateData(const double dt)
 
 
     // engine fuel flow (pph)
-    for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+    for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
         ff[i] += ffRate[i] * dt;
         if (ff[i] > 16000) {
             ff[i] = 16000;
@@ -111,11 +111,11 @@ void TestEngPage::updateData(const double dt)
 
     {
         // Set to the engine display
-        base::Pair* pair = findByType(typeid(mxrp::instruments::EngPage));
+        base::Pair* pair = findByType(typeid(mixr::instruments::EngPage));
         if (pair != nullptr) {
-            const auto p = static_cast<mxrp::instruments::EngPage*>(pair->object());
+            const auto p = static_cast<mixr::instruments::EngPage*>(pair->object());
             if (p != nullptr) {
-                for (int i = 0; i < mxrp::instruments::EngPage::NUM_ENG; i++) {
+                for (int i = 0; i < mixr::instruments::EngPage::NUM_ENG; i++) {
                     int idx = (i + 1);
                     p->setEngN1(idx, n1[i]);
                     p->setEngN2(idx, n2[i]);

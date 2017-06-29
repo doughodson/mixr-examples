@@ -1,10 +1,10 @@
 
 #include "PlaneAction.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
-#include "mxrp/models/system/StoresMgr.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/system/StoresMgr.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xbehaviors {
 
 IMPLEMENT_SUBCLASS(PlaneAction, "PlaneAction")

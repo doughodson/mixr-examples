@@ -1,10 +1,10 @@
 
 #include "NavaidTests.hpp"
 
-#include "mxrp/dafif/NavaidLoader.hpp"
-#include "mxrp/base/units/Angles.hpp"
-#include "mxrp/base/units/Distances.hpp"
-#include "mxrp/base/util/str_utils.hpp"
+#include "mixr/dafif/NavaidLoader.hpp"
+#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/util/str_utils.hpp"
 
 #include <iostream>
 
@@ -14,10 +14,10 @@ NavaidTests::NavaidTests(
                const char* path)
 {
    char fullname[512];
-   mxrp::base::utStrcpy(fullname,512,path);
-   mxrp::base::utStrcat(fullname,512,"/");
-   mxrp::base::utStrcat(fullname,512,file);
-   db = new mxrp::dafif::NavaidLoader();
+   mixr::base::utStrcpy(fullname,512,path);
+   mixr::base::utStrcat(fullname,512,"/");
+   mixr::base::utStrcat(fullname,512,file);
+   db = new mixr::dafif::NavaidLoader();
    db->setPathname(path);
    db->setFilename(file);
    std::cout << "Loading navaid file: " << fullname << std::endl;
@@ -53,7 +53,7 @@ void NavaidTests::func21(const double acLat, const double acLon, const double ac
 
    while (idx >= 0) {
 
-      mxrp::dafif::Navaid* nav = db->navaid(idx);
+      mixr::dafif::Navaid* nav = db->navaid(idx);
       if (nav != 0) {
          nav->printRecord(std::cout);
 		 if (printData)
@@ -84,7 +84,7 @@ void NavaidTests::func22(const double acLat, const double acLon, const double ac
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -124,7 +124,7 @@ void NavaidTests::func24(const double acLat, const double acLon, const double ac
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -154,7 +154,7 @@ void NavaidTests::func25(const double acLat, const double acLon, const double ac
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -182,7 +182,7 @@ void NavaidTests::func26(const double acLat, const double acLon, const double ac
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -223,7 +223,7 @@ void NavaidTests::func28(const double acLat, const double acLon, const double ac
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -262,29 +262,29 @@ void NavaidTests::func29(const double acLat, const double acLon, const double ac
 
       db->setArea(acLat, acLon, rng);
 
-      int found = db->queryByType(mxrp::dafif::Navaid::NavaidType(type));
+      int found = db->queryByType(mixr::dafif::Navaid::NavaidType(type));
       std::cout << "found = " << found;
-      if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::ANY)
+      if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::ANY)
 		 std::cout << "  any" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::VOR)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::VOR)
 		 std::cout << "  VOR" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::VORTAC)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::VORTAC)
 		 std::cout << "  VORTAC" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::TACAN)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::TACAN)
 		 std::cout << "  TACAN" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::VOR_DME)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::VOR_DME)
 		 std::cout << "  VOR_DME" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::NDB)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::NDB)
 		 std::cout << "  NDB" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::NDB_DME)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::NDB_DME)
 		 std::cout << "  NDB_DME" << std::endl;
-      else if (mxrp::dafif::Navaid::NavaidType(type) == mxrp::dafif::Navaid::DME)
+      else if (mixr::dafif::Navaid::NavaidType(type) == mixr::dafif::Navaid::DME)
 		 std::cout << "  DME" << std::endl;
       else
 		 std::cout << "  ---" << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -319,7 +319,7 @@ void NavaidTests::func2B(const double acLat, const double acLon, const double ac
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mxrp::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav = db->getNavaid(i);
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);

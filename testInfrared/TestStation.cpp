@@ -1,15 +1,15 @@
 
 #include "TestStation.hpp"
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/base/Timers.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/base/Timers.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
+#include "mixr/simulation/Simulation.hpp"
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 
@@ -18,7 +18,7 @@ BEGIN_SLOTTABLE(TestStation)
 END_SLOTTABLE(TestStation)
 
 BEGIN_SLOT_MAP(TestStation)
-    ON_SLOT(1, setSlotGlutDisplay, mxrp::glut::GlutDisplay)
+    ON_SLOT(1, setSlotGlutDisplay, mixr::glut::GlutDisplay)
 END_SLOT_MAP()
 
 TestStation::TestStation()
@@ -61,8 +61,8 @@ void TestStation::updateData(const double dt)
    // own displays.
 
    // manage the timers
-   mxrp::base::Timer::updateTimers(dt);
-   mxrp::graphics::Graphic::flashTimer(dt);
+   mixr::base::Timer::updateTimers(dt);
+   mixr::graphics::Graphic::flashTimer(dt);
 
    BaseClass::updateData(dt);
 }
@@ -89,20 +89,20 @@ void TestStation::reset()
 //------------------------------------------------------------------------------
 void TestStation::stepOwnshipPlayer()
 {
-   mxrp::base::PairStream* pl = getSimulation()->getPlayers();
+   mixr::base::PairStream* pl = getSimulation()->getPlayers();
    if (pl != nullptr) {
 
-      mxrp::models::Player* f = nullptr;
-      mxrp::models::Player* n = nullptr;
+      mixr::models::Player* f = nullptr;
+      mixr::models::Player* n = nullptr;
       bool found = false;
 
       // Find the next player
-      mxrp::base::List::Item* item = pl->getFirstItem();
+      mixr::base::List::Item* item = pl->getFirstItem();
       while (item != nullptr) {
-         const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
+         const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          if (pair != nullptr) {
-            const auto ip = static_cast<mxrp::models::Player*>( pair->object() );
-            if ( ip->isMode(mxrp::models::Player::ACTIVE) &&
+            const auto ip = static_cast<mixr::models::Player*>( pair->object() );
+            if ( ip->isMode(mixr::models::Player::ACTIVE) &&
                ip->isLocalPlayer()
                ) {
                   if (f == nullptr) { f = ip; }  // Remember the first
@@ -119,7 +119,7 @@ void TestStation::stepOwnshipPlayer()
    }
 }
 
-bool TestStation::setSlotGlutDisplay(mxrp::glut::GlutDisplay* const d)
+bool TestStation::setSlotGlutDisplay(mixr::glut::GlutDisplay* const d)
 {
     glutDisplay = d;
     glutDisplay->container(this);

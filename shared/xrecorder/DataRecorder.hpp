@@ -1,10 +1,10 @@
 
-#ifndef __oe_xrecorder_DataRecorder_H__
-#define __oe_xrecorder_DataRecorder_H__
+#ifndef __mixr_xrecorder_DataRecorder_H__
+#define __mixr_xrecorder_DataRecorder_H__
 
-#include "mxrp/recorder/DataRecorder.hpp"
+#include "mixr/recorder/DataRecorder.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xrecorder {
 
 //------------------------------------------------------------------------------

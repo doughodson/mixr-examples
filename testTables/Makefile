@@ -4,7 +4,7 @@ include ../makedefs
 PGM = testTables
 OBJS = main.o
 
-LDFLAGS += -lmxrp_base -lpthread -lrt
+LDFLAGS += -lmixr_base -lpthread -lrt
 
 all: $(PGM)
 

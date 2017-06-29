@@ -4,9 +4,9 @@
 #include "Display.hpp"
 #include "factory.hpp"
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/Timers.hpp"
-#include "mxrp/base/edl_parser.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/Timers.hpp"
+#include "mixr/base/edl_parser.hpp"
 
 #include <GL/glut.h>
 
@@ -25,8 +25,8 @@ void timerFunc(int)
    const auto millis = static_cast<unsigned int>(dt * 1000);
    glutTimerFunc(millis, timerFunc, 1);
 
-   mxrp::base::Timer::updateTimers(dt);
-   mxrp::graphics::Graphic::flashTimer(dt);
+   mixr::base::Timer::updateTimers(dt);
+   mixr::graphics::Graphic::flashTimer(dt);
    display->updateTC(dt);
 }
 
@@ -35,7 +35,7 @@ Display* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -48,7 +48,7 @@ Display* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();

@@ -2,15 +2,15 @@
 #ifndef __Random_H__
 #define __Random_H__
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
 //------------------------------------------------------------------------------
 // Class: Random
 // Description: Generates random numbers
 //------------------------------------------------------------------------------
-class Random : public mxrp::base::Object
+class Random : public mixr::base::Object
 {
-   DECLARE_SUBCLASS(Random, mxrp::base::Object)
+   DECLARE_SUBCLASS(Random, mixr::base::Object)
 
 public:
    Random();

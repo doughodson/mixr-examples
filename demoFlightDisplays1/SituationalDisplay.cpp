@@ -2,7 +2,7 @@
 #include "SituationalDisplay.hpp"
 #include <cstring>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(SituationalDisplay, "SituationalDisplay")
 EMPTY_SERIALIZER(SituationalDisplay)

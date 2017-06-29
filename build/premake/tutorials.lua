@@ -11,14 +11,14 @@ project "tutorial01"
       "../../tutorial01/**.h*",
       "../../tutorial01/**.cpp",
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- tutorial02
@@ -30,14 +30,14 @@ project "tutorial02"
       "../../tutorial02/**.h*",
       "../../tutorial02/**.cpp",
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- tutorial03
@@ -51,14 +51,14 @@ project "tutorial03"
       "../../tutorial03/**.epp",
       "../../tutorial03/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- tutorial04
@@ -72,14 +72,14 @@ project "tutorial04"
       "../../tutorial04/**.epp",
       "../../tutorial04/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- tutorial05
@@ -93,14 +93,14 @@ project "tutorial05"
       "../../tutorial05/**.epp",
       "../../tutorial05/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- tutorial06
@@ -114,14 +114,14 @@ project "tutorial06"
       "../../tutorial06/**.epp",
       "../../tutorial06/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- tutorial07
@@ -135,15 +135,15 @@ project "tutorial07"
       "../../tutorial07/**.epp",
       "../../tutorial07/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}
       links {LibWindows}
@@ -159,15 +159,15 @@ project "tutorial08"
       "../../tutorial08/**.epp",
       "../../tutorial08/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}
       links {LibWindows}

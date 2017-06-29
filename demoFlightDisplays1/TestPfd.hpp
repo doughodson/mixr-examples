@@ -2,16 +2,16 @@
 #ifndef __TestPfd_H__
 #define __TestPfd_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestPfd
 //
 // Description: Basic Pfd test page, stimulates the Pfd
 //------------------------------------------------------------------------------
-class TestPfd : public mxrp::graphics::Page
+class TestPfd : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestPfd, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestPfd, mixr::graphics::Page)
 
 public:
    TestPfd();

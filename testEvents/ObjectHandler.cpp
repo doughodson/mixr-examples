@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(ObjectHandler, "ObjectHandler")
 EMPTY_SERIALIZER(ObjectHandler)

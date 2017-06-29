@@ -1,10 +1,10 @@
 
-#ifndef __oe_xbehaviors_PlaneAction_H__
-#define __oe_xbehaviors_PlaneAction_H__
+#ifndef __mixr_xbehaviors_PlaneAction_H__
+#define __mixr_xbehaviors_PlaneAction_H__
 
-#include "mxrp/base/ubf/AbstractAction.hpp"
+#include "mixr/base/ubf/AbstractAction.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace simulation { class Player; }
 namespace xbehaviors {
 

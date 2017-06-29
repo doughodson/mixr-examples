@@ -2,16 +2,16 @@
 #ifndef __TestHsi_H__
 #define __TestHsi_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestHsi
 //
 // Description: Tests our core HSI graphic
 //------------------------------------------------------------------------------
-class TestHsi : public mxrp::graphics::Page
+class TestHsi : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestHsi, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestHsi, mixr::graphics::Page)
 
 public:
     TestHsi();

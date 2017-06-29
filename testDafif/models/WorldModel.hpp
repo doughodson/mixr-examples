@@ -2,9 +2,9 @@
 #ifndef __WorldModel_H__
 #define __WOrldModel_H__
 
-#include "mxrp/models/WorldModel.hpp"
+#include "mixr/models/WorldModel.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace dafif { class AirportLoader; class NavaidLoader; class WaypointLoader; }
 }
 
@@ -35,27 +35,27 @@ namespace dafif { class AirportLoader; class NavaidLoader; class WaypointLoader;
 //
 // Factory name: Simulation
 //------------------------------------------------------------------------------
-class WorldModel : public mxrp::models::WorldModel
+class WorldModel : public mixr::models::WorldModel
 {
-    DECLARE_SUBCLASS(WorldModel, mxrp::models::WorldModel)
+    DECLARE_SUBCLASS(WorldModel, mixr::models::WorldModel)
 
 public:
     WorldModel();
 
-    mxrp::dafif::AirportLoader* getAirports();           // Returns the airport loader
-    mxrp::dafif::NavaidLoader* getNavaids();             // Returns the NAVAID loader
-    mxrp::dafif::WaypointLoader* getWaypoints();         // Returns the waypoint loader
+    mixr::dafif::AirportLoader* getAirports();           // Returns the airport loader
+    mixr::dafif::NavaidLoader* getNavaids();             // Returns the NAVAID loader
+    mixr::dafif::WaypointLoader* getWaypoints();         // Returns the waypoint loader
 
-    virtual bool setAirports(mxrp::dafif::AirportLoader* const p);   // Sets the airport loader
-    virtual bool setNavaids(mxrp::dafif::NavaidLoader* const p);     // Sets the NAVAID loader
-    virtual bool setWaypoints(mxrp::dafif::WaypointLoader* const p); // Sets the waypoint loader
+    virtual bool setAirports(mixr::dafif::AirportLoader* const p);   // Sets the airport loader
+    virtual bool setNavaids(mixr::dafif::NavaidLoader* const p);     // Sets the NAVAID loader
+    virtual bool setWaypoints(mixr::dafif::WaypointLoader* const p); // Sets the waypoint loader
 
     virtual void updateData(const double dt = 0.0) override;
 
 private:
-   mxrp::dafif::AirportLoader*  airports {};   // Airport loader
-   mxrp::dafif::NavaidLoader*   navaids {};    // NAVAID loader
-   mxrp::dafif::WaypointLoader* waypoints {};  // Waypoint loader
+   mixr::dafif::AirportLoader*  airports {};   // Airport loader
+   mixr::dafif::NavaidLoader*   navaids {};    // NAVAID loader
+   mixr::dafif::WaypointLoader* waypoints {};  // Waypoint loader
 
 };
 

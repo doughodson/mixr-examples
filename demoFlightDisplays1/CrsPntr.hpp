@@ -2,7 +2,7 @@
 #ifndef __CrsPntr_H__
 #define __CrsPntr_H__
 
-#include "mxrp/graphics/Rotators.hpp"
+#include "mixr/graphics/Rotators.hpp"
 
 //------------------------------------------------------------------------------
 // Class: CrsPntr
@@ -13,9 +13,9 @@
 //      UPDATE_VALUE3  -> cdi dots
 //      UPDATE_VALUE4 -> to from
 //------------------------------------------------------------------------------
-class CrsPntr : public mxrp::graphics::Rotators
+class CrsPntr : public mixr::graphics::Rotators
 {
-    DECLARE_SUBCLASS(CrsPntr, mxrp::graphics::Rotators)
+    DECLARE_SUBCLASS(CrsPntr, mixr::graphics::Rotators)
 
 public:
     CrsPntr();
@@ -41,20 +41,20 @@ public:
     virtual void drawFunc() override;
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
 protected:
     // slot functions
-    bool setSlotNumCdiDots(const mxrp::base::Number* const newCDI);
-    bool setSlotNumInches(const mxrp::base::Number* const newNI);
-    bool setSlotShowCdi(const mxrp::base::Number* const newSCDI);
-    bool setSlotShowCrsPntr(const mxrp::base::Number* const newSCP);
-    bool setSlotShowToFrom(const mxrp::base::Number* const newTF);
+    bool setSlotNumCdiDots(const mixr::base::Number* const newCDI);
+    bool setSlotNumInches(const mixr::base::Number* const newNI);
+    bool setSlotShowCdi(const mixr::base::Number* const newSCDI);
+    bool setSlotShowCrsPntr(const mixr::base::Number* const newSCP);
+    bool setSlotShowToFrom(const mixr::base::Number* const newTF);
 
 private:
     // event functions
-    bool onUpdateCdiDotsCrsPntr(const mxrp::base::Number* const x);
-    bool onUpdateToFromCrsPntr(const mxrp::base::Number* const x);
+    bool onUpdateCdiDotsCrsPntr(const mixr::base::Number* const x);
+    bool onUpdateToFromCrsPntr(const mixr::base::Number* const x);
 
     double toFrom {};          // to = 1; from = 0;  Somewhere in between is usually not visible, unless scaled to be visible
     double cdiDots {};         // course deviation dots

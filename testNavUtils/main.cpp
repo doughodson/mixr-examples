@@ -2,16 +2,16 @@
 // Tests navigation routines
 //-----------------------------------------------------------------------------
 
-#include "mxrp/base/EarthModel.hpp"
-#include "mxrp/base/units/Distances.hpp"
-#include "mxrp/base/util/nav_utils.hpp"
+#include "mixr/base/EarthModel.hpp"
+#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/util/nav_utils.hpp"
 
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
 #include <string>
 
-using namespace mxrp;
+using namespace mixr;
 
 // -----------------------------------------------------------------------------
 // Global Variables (and Constants)

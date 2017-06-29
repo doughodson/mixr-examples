@@ -1,10 +1,10 @@
 
-#ifndef __oe_xpanel_Hsi_H__
-#define __oe_xpanel_Hsi_H__
+#ifndef __mixr_xpanel_Hsi_H__
+#define __mixr_xpanel_Hsi_H__
 
-#include "mxrp/graphics/Rotators.hpp"
+#include "mixr/graphics/Rotators.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xpanel {
 
 //------------------------------------------------------------------------------

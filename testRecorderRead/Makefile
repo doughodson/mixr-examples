@@ -4,10 +4,10 @@ PGM = testRecorderRead
 
 OBJS = main.o DataRecordTest.o factory.o PrintMyData.o
 
-LDFLAGS += -lmxrp_models -lJSBSim
+LDFLAGS += -lmixr_models -lJSBSim
 LDFLAGS += -lxrecorder
-LDFLAGS += -lmxrp_recorder -lmxrp_simulation
-LDFLAGS += -lmxrp_terrain -lmxrp_base
+LDFLAGS += -lmixr_recorder -lmixr_simulation
+LDFLAGS += -lmixr_terrain -lmixr_base
 LDFLAGS += -lprotobuf
 LDFLAGS += -lrt -lpthread
 

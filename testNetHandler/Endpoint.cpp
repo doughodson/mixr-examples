@@ -1,11 +1,11 @@
 
 #include "Endpoint.hpp"
 
-#include "mxrp/base/network/TcpHandler.hpp"
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/network/TcpHandler.hpp"
+#include "mixr/base/Number.hpp"
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Endpoint, "Endpoint")
 EMPTY_SERIALIZER(Endpoint)
@@ -20,11 +20,11 @@ BEGIN_SLOTTABLE(Endpoint)
 END_SLOTTABLE(Endpoint)
 
 BEGIN_SLOT_MAP(Endpoint)
-    ON_SLOT(1, setSlotNetwork,   mxrp::base::NetHandler)
-    ON_SLOT(2, setSlotNetInput,  mxrp::base::NetHandler)
-    ON_SLOT(3, setSlotNetwork,   mxrp::base::NetHandler)
-    ON_SLOT(4, setSlotNoWait,    mxrp::base::Number)
-    ON_SLOT(5, setSlotLoops,     mxrp::base::Number)
+    ON_SLOT(1, setSlotNetwork,   mixr::base::NetHandler)
+    ON_SLOT(2, setSlotNetInput,  mixr::base::NetHandler)
+    ON_SLOT(3, setSlotNetwork,   mixr::base::NetHandler)
+    ON_SLOT(4, setSlotNoWait,    mixr::base::Number)
+    ON_SLOT(5, setSlotLoops,     mixr::base::Number)
 END_SLOT_MAP()
 
 Endpoint::Endpoint()
@@ -149,21 +149,21 @@ void Endpoint::closeConnections()
 }
 
 // Network Handler
-bool Endpoint::setSlotNetwork(mxrp::base::NetHandler* const msg)
+bool Endpoint::setSlotNetwork(mixr::base::NetHandler* const msg)
 {
     netHandler = msg;
     return true;
 }
 
 // Input Handler
-bool Endpoint::setSlotNetInput(mxrp::base::NetHandler* const msg)
+bool Endpoint::setSlotNetInput(mixr::base::NetHandler* const msg)
 {
     netInput = msg;
     return true;
 }
 
 // No wait (unblocked) I/O flag
-bool Endpoint::setSlotNoWait(mxrp::base::Number* const msg)
+bool Endpoint::setSlotNoWait(mixr::base::Number* const msg)
 {
     bool ok = false;
     if (msg != nullptr) {
@@ -174,7 +174,7 @@ bool Endpoint::setSlotNoWait(mxrp::base::Number* const msg)
 }
 
 // Number of message loops
-bool Endpoint::setSlotLoops(mxrp::base::Number* const msg)
+bool Endpoint::setSlotLoops(mixr::base::Number* const msg)
 {
     bool ok = false;
     if (msg != nullptr) {

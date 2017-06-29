@@ -4,21 +4,21 @@
 
 #include "factory.hpp"
 
-#include "mxrp/base/Timers.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/units/Angles.hpp"
-#include "mxrp/graphics/Graphic.hpp"
-#include "mxrp/graphics/Texture.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/Timers.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/units/Angles.hpp"
+#include "mixr/graphics/Graphic.hpp"
+#include "mixr/graphics/Texture.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 #include <string>
 #include <cstdlib>
 
-namespace mxrp {
+namespace mixr {
 namespace example {
 
 // default background frame rate
@@ -119,5 +119,5 @@ int main(int argc, char* argv[])
 //
 int main(int argc, char* argv[])
 {
-   return mxrp::example::main(argc, argv);
+   return mixr::example::main(argc, argv);
 }

@@ -1,9 +1,9 @@
 
 #include "TestButtons.hpp"
-#include "mxrp/instruments/buttons/Knob.hpp"
-#include "mxrp/base/Pair.hpp"
+#include "mixr/instruments/buttons/Knob.hpp"
+#include "mixr/base/Pair.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestButtons, "TestButtons")
 EMPTY_SERIALIZER(TestButtons)

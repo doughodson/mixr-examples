@@ -2,12 +2,12 @@
 #include "DataRecordTest.hpp"
 #include "factory.hpp"
 
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/Pair.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/Pair.hpp"
 
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace test {
 
 // DataRecordTest builder
@@ -72,5 +72,5 @@ int main(int argc, char* argv[])
 //
 int main(int argc, char* argv[])
 {
-    mxrp::test::main(argc, argv);
+    mixr::test::main(argc, argv);
 }

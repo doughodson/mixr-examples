@@ -3,19 +3,19 @@
 #include <string>
 #include <cstdlib>
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/edl_parser.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/edl_parser.hpp"
 
 // factories
-#include "mxrp/base/factory.hpp"
+#include "mixr/base/factory.hpp"
 
 #include "Uniform.hpp"
 #include "Exp.hpp"
 
 // class factory
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-   mxrp::base::Object* obj = nullptr;
+   mixr::base::Object* obj = nullptr;
 
    // look in application's classes
    if ( name == Uniform::getFactoryName() ) {
@@ -26,7 +26,7 @@ mxrp::base::Object* factory(const std::string& name)
    }
 
    // look in base classes
-   if (obj == nullptr) obj = mxrp::base::factory(name);
+   if (obj == nullptr) obj = mixr::base::factory(name);
 
    return obj;
 }
@@ -36,7 +36,7 @@ Random* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -49,7 +49,7 @@ Random* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();

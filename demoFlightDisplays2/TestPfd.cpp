@@ -1,9 +1,9 @@
 
 #include "TestPfd.hpp"
-#include "mxrp/base/Pair.hpp"
+#include "mixr/base/Pair.hpp"
 #include "Pfd.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestPfd, "TestPfd")
 EMPTY_SERIALIZER(TestPfd)

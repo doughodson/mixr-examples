@@ -1,7 +1,7 @@
 
 #include "TestSpeedBrake.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestSpeedBrake, "TestSpeedBrake")
 EMPTY_SERIALIZER(TestSpeedBrake)

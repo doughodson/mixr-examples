@@ -2,17 +2,17 @@
 #include "Display.hpp"
 #include "TestObject.hpp"
 
-#include "mxrp/base/Color.hpp"
-#include "mxrp/graphics/Material.hpp"
-#include "mxrp/base/Rng.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/util/math_utils.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/graphics/Material.hpp"
+#include "mixr/base/Rng.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/util/math_utils.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 #include <cstring>
 #include <array>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Display, "SendDataDisplay")
 EMPTY_SERIALIZER(Display)

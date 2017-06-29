@@ -1,7 +1,7 @@
 
 #include "MfdDisplay.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(MfdDisplay, "MfdDisplay")
 EMPTY_SERIALIZER(MfdDisplay)

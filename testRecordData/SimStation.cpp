@@ -1,22 +1,22 @@
 
 #include "SimStation.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
+#include "mixr/simulation/Simulation.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
-#include "mxrp/base/Identifier.hpp"
-#include "mxrp/base/Boolean.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/base/functors/Tables.hpp"
-#include "mxrp/base/Timers.hpp"
-#include "mxrp/base/units/Angles.hpp"
-#include "mxrp/base/units/Times.hpp"
+#include "mixr/base/Identifier.hpp"
+#include "mixr/base/Boolean.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/base/functors/Tables.hpp"
+#include "mixr/base/Timers.hpp"
+#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/Times.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
 EMPTY_SERIALIZER(SimStation)

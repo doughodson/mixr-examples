@@ -1,8 +1,8 @@
 
-Mixed Reality Simulation Platform Examples
-==========================================
+Mixed Reality Simulation Platform (MIXR) Examples
+=================================================
 
-The most current version of the mixed reality simulation platform can be found at [www.mxrp.org][mxrp].
+The most current version of the mixed reality simulation platform can be found at [www.mixr-platform.org][mixr].
 
 Notes
 -----
@@ -44,9 +44,7 @@ Example Applications
 
 * mainPuzzle2 -- puzzle problem solver (15 block puzzle)
 
-* mainQt1 -- illustrates how to interface Qt graphics with an oe simulation
-
-* mainSim1 -- presents the simpest full-featured simulation that can be built with and only with oe classes.
+* mainSim1 -- presents the simpest full-featured simulation that can be built with and only with MIXR classes.
 
 * mainSim2 -- same as mainSim1 except the vehicle can be flown with a joystick and supports the JSBSim model
 
@@ -113,11 +111,11 @@ Test Applications
 Tutorial applications:
 --------------------------------------------------------------------------------------------
 
-* tutorial01 -- This example demonstrates a simple compile and link with the base library. It was created primary as a simple demonstration of linking to a single MXRP library. The intent is to show how to build your first "Hello World" MXRP-based application.
+* tutorial01 -- This example demonstrates a simple compile and link with the base library. It was created primary as a simple demonstration of linking to a single MIXR library. The intent is to show how to build your first "Hello World" MIXR-based application.
 
-* tutorial02 -- This example demonstrates the creation of an MXRP compliant class called Random. As with most extensible platforms, macros are used to spell out the boilerplate code that needs to be defined in order to create a "well defined" class. The macros make it easy to develop native toolkit components quickly. This example purposely focuses on a simple class so that the developer can focus on the boilerplate aspects of MXRP classes.
+* tutorial02 -- This example demonstrates the creation of an MIXR compliant class called Random. As with most extensible platforms, macros are used to spell out the boilerplate code that needs to be defined in order to create a "well defined" class. The macros make it easy to develop native toolkit components quickly. This example purposely focuses on a simple class so that the developer can focus on the boilerplate aspects of MIXR classes.
 
-* tutorial03 -- This example extends the capability of the Random class from tutorial02. The application has been enhanced so that it can read an input file and have the native toolkit parser create the Random class with attributes specified at run-time. This example is focused as a starting point for understanding how to use the MXRP parser and input language.
+* tutorial03 -- This example extends the capability of the Random class from tutorial02. The application has been enhanced so that it can read an input file and have the native toolkit parser create the Random class with attributes specified at run-time. This example is focused as a starting point for understanding how to use the MIXR parser and input language.
 
 * tutorial04 -- tutorial03 has been enhanced so that the Random class can provide numbers drawn from different distributions. Two specific distributions have been added: uniform and exponential. The Random class has been redefined to be abstract.
 
@@ -141,4 +139,4 @@ Libraries: (the 'x' in library name indicates eXample)
 * xZeroMQHandlers -- eXample ZeroMQ network handlers
 
 
-[mxrp]: http://www.mxrp.org
+[mixr]: http://www.mixr-platform.org

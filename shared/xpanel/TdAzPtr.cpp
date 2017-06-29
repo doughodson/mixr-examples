@@ -1,9 +1,9 @@
 
 #include "TdAzPtr.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdAzPtr,"TdAzPtr")

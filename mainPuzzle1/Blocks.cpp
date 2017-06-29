@@ -1,8 +1,8 @@
 
 #include "Blocks.hpp"
 
-#include "mxrp/base/Integer.hpp"
-#include "mxrp/base/List.hpp"
+#include "mixr/base/Integer.hpp"
+#include "mixr/base/List.hpp"
 
 IMPLEMENT_ABSTRACT_SUBCLASS(Block, "PuzzleBlock")
 EMPTY_DELETEDATA(Block)
@@ -13,8 +13,8 @@ BEGIN_SLOTTABLE(Block)
 END_SLOTTABLE(Block)
 
 BEGIN_SLOT_MAP(Block)
-    ON_SLOT( 1, setSlotPosition, mxrp::base::List)
-    ON_SLOT( 2, setSlotRefId, mxrp::base::Integer)
+    ON_SLOT( 1, setSlotPosition, mixr::base::List)
+    ON_SLOT( 2, setSlotRefId, mixr::base::Integer)
 END_SLOT_MAP()
 
 Block::Block()
@@ -150,7 +150,7 @@ bool Block::setReferenceID(const unsigned int v)
 //------------------------------------------------------------------------------
 // Slot function(s)
 //------------------------------------------------------------------------------
-bool Block::setSlotPosition(const mxrp::base::List* const msg)
+bool Block::setSlotPosition(const mixr::base::List* const msg)
 {
    bool ok {};
    if (msg != nullptr) {
@@ -163,7 +163,7 @@ bool Block::setSlotPosition(const mxrp::base::List* const msg)
    return ok;
 }
 
-bool Block::setSlotRefId(const mxrp::base::Integer* const msg)
+bool Block::setSlotRefId(const mixr::base::Integer* const msg)
 {
    bool ok {};
    if (msg != nullptr) {

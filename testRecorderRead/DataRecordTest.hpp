@@ -2,18 +2,18 @@
 #ifndef __DataRecordTest_H__
 #define __DataRecordTest_H__
 
-#include "mxrp/base/Component.hpp"
+#include "mixr/base/Component.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace recorder { class InputHandler; class OutputHandler; }
 }
 
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest : public mxrp::base::Component
+class DataRecordTest : public mixr::base::Component
 {
-   DECLARE_SUBCLASS(DataRecordTest, mxrp::base::Component)
+   DECLARE_SUBCLASS(DataRecordTest, mixr::base::Component)
 
 public:
    DataRecordTest();
@@ -23,14 +23,14 @@ public:
 
 protected:
    // Slot functions
-   virtual bool setSlotInputHandler(mxrp::recorder::InputHandler* const msg);
-   virtual bool setSlotOutputHandler(mxrp::recorder::OutputHandler* const msg);
+   virtual bool setSlotInputHandler(mixr::recorder::InputHandler* const msg);
+   virtual bool setSlotOutputHandler(mixr::recorder::OutputHandler* const msg);
 
 private:
    void initData();
 
-   mxrp::base::safe_ptr<mxrp::recorder::InputHandler> inputHandler;
-   mxrp::base::safe_ptr<mxrp::recorder::OutputHandler> outputHandler;
+   mixr::base::safe_ptr<mixr::recorder::InputHandler> inputHandler;
+   mixr::base::safe_ptr<mixr::recorder::OutputHandler> outputHandler;
 };
 
 #endif

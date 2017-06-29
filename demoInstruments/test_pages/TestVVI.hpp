@@ -2,7 +2,7 @@
 #ifndef __TestVVI_H__
 #define __TestVVI_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestVVI
@@ -11,9 +11,9 @@
 // This page will supply test data to a generic analog tape gauge
 //
 //------------------------------------------------------------------------------
-class TestVVI : public mxrp::graphics::Page
+class TestVVI : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestVVI, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestVVI, mixr::graphics::Page)
 
 public:
    TestVVI();

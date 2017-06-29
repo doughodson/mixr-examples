@@ -2,7 +2,7 @@
 #ifndef __TestOilPressure_H__
 #define __TestOilPressure_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestOilPressure
@@ -10,9 +10,9 @@
 // Description: Another example of using an analog dial.  This one is an F-16
 // like oil pressure gauge
 //------------------------------------------------------------------------------
-class TestOilPressure : public mxrp::graphics::Page
+class TestOilPressure : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestOilPressure, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestOilPressure, mixr::graphics::Page)
 
 public:
     TestOilPressure();

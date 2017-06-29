@@ -8,7 +8,7 @@ testbuttons:
     }
     components: {
         // include our basic VVI module, which utitilizes our clipping method
-        #include "mxrp/instruments/buttons/buttons.epp"
+        #include "mixr/instruments/buttons/buttons.epp"
         
         // Label to tell us what test we are running
         ( AsciiText

@@ -2,7 +2,7 @@
 #include "Puzzle.hpp"
 #include "State.hpp"
 
-#include "mxrp/base/List.hpp"
+#include "mixr/base/List.hpp"
 #include <iostream>
 
 IMPLEMENT_SUBCLASS(Puzzle, "Puzzle")
@@ -163,19 +163,19 @@ void Puzzle::putOpen(State* const s)
 {
    if (openStates == nullptr) {
       // create the list (as needed)
-      openStates = new mxrp::base::List();
+      openStates = new mixr::base::List();
    }
 
    if (s != nullptr) {
       // Create a new list item for this state and get the state's f() value
-      const auto newItem = new mxrp::base::List::Item();
+      const auto newItem = new mixr::base::List::Item();
       newItem->value = s;
       s->ref();
       int f = s->f();
 
       // Find where in the list to insert this new state (based on their f() values)
-      mxrp::base::List::Item* item = openStates->getFirstItem();
-      mxrp::base::List::Item* refItem = nullptr;
+      mixr::base::List::Item* item = openStates->getFirstItem();
+      mixr::base::List::Item* refItem = nullptr;
       while (item != nullptr && refItem == nullptr) {
          const auto p = static_cast<const State*>( item->getValue() );
          if (f < p->f()) {

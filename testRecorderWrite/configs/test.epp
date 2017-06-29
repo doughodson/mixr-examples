@@ -2,8 +2,8 @@
 // test.epp file for testRecorder
 // ---
 //    enum MsgHdrOptions { NO_HDR, ALL_MSGS, NEW_MSG, ON_CHANGE };
-//#include "mxrp/recorder/recorderTokens.h"
-#include "mxrp/simulation/dataRecorderTokens.hpp"
+//#include "mixr/recorder/recorderTokens.h"
+#include "mixr/simulation/dataRecorderTokens.hpp"
 
 ( DataRecordTest
    // Tab Printer

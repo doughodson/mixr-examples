@@ -2,7 +2,7 @@
 #ifndef __TestIoHandler_H__
 #define __TestIoHandler_H__
 
-#include "mxrp/base/io/IoHandler.hpp"
+#include "mixr/base/io/IoHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestIoHandler
@@ -10,9 +10,9 @@
 // Description:  Handles the flow of I/O data to and from the
 //               stick and throttle hardware
 //------------------------------------------------------------------------------
-class TestIoHandler : public mxrp::base::IoHandler
+class TestIoHandler : public mixr::base::IoHandler
 {
-   DECLARE_SUBCLASS(TestIoHandler, mxrp::base::IoHandler)
+   DECLARE_SUBCLASS(TestIoHandler, mixr::base::IoHandler)
 
 public:
    TestIoHandler();

@@ -1,10 +1,10 @@
 
 #include "TestOne.hpp"
-#include "mxrp/base/units/Angles.hpp"
+#include "mixr/base/units/Angles.hpp"
 
 #include <cmath>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestOne,"TestOne")
 EMPTY_DELETEDATA(TestOne)

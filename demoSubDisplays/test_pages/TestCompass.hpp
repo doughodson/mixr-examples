@@ -2,22 +2,22 @@
 #ifndef __TestCompass_H__
 #define __TestCompass_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestCompass
 //
 // Description: This page will test the CompassRose
 //------------------------------------------------------------------------------
-class TestCompass : public mxrp::graphics::Page
+class TestCompass : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestCompass, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestCompass, mixr::graphics::Page)
 
 public:
     TestCompass();
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
     static const int MAX_TRACKS = 8;
     static const int MAX_AIRPORTS = 8;

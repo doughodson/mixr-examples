@@ -2,9 +2,9 @@
 #ifndef __Table_H__
 #define __Table_H__
 
-#include "mxrp/graphics/Field.hpp"
+#include "mixr/graphics/Field.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Number; class PairStream; }
 }
 
@@ -18,20 +18,20 @@ namespace base { class Number; class PairStream; }
 //    spacing  <Number>     ! Spacing between rows (default: 1)
 //    columns  <PairStream> ! Column descriptions: list of items in each row
 //------------------------------------------------------------------------------
-class Table : public mxrp::graphics::Field
+class Table : public mixr::graphics::Field
 {
-   DECLARE_SUBCLASS(Table, mxrp::graphics::Field)
+   DECLARE_SUBCLASS(Table, mixr::graphics::Field)
 
 public:
    Table();
 
-   virtual const mxrp::base::PairStream* getColumns() const;
+   virtual const mixr::base::PairStream* getColumns() const;
    virtual unsigned int getNumberOfRows() const;
 
    // Slot functions
-   virtual bool setSlotRows(mxrp::base::Number* const);
-   virtual bool setSlotSpacing(mxrp::base::Number* const);
-   virtual bool setSlotColumns(mxrp::base::PairStream* const);
+   virtual bool setSlotRows(mixr::base::Number* const);
+   virtual bool setSlotSpacing(mixr::base::Number* const);
+   virtual bool setSlotColumns(mixr::base::PairStream* const);
 
    virtual int line() const override;
    virtual int line(const int ll) override;
@@ -49,7 +49,7 @@ private:
 
    unsigned int rows {DEFAULT_ROW};         // Number of rows in table
    unsigned int spacing {DEFAULT_SPACING};  // Spacing between rows (default: 1)
-   const mxrp::base::PairStream* columns {};  // columns items
+   const mixr::base::PairStream* columns {};  // columns items
 };
 
 #endif

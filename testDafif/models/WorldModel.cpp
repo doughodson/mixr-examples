@@ -1,9 +1,9 @@
 
 #include "WorldModel.hpp"
 
-#include "mxrp/dafif/AirportLoader.hpp"
-#include "mxrp/dafif/NavaidLoader.hpp"
-#include "mxrp/dafif/WaypointLoader.hpp"
+#include "mixr/dafif/AirportLoader.hpp"
+#include "mixr/dafif/NavaidLoader.hpp"
+#include "mixr/dafif/WaypointLoader.hpp"
 
 IMPLEMENT_SUBCLASS(WorldModel, "WorldModel")
 
@@ -14,9 +14,9 @@ BEGIN_SLOTTABLE(WorldModel)
 END_SLOTTABLE(WorldModel)
 
 BEGIN_SLOT_MAP(WorldModel)
-    ON_SLOT( 1, setAirports,    mxrp::dafif::AirportLoader)
-    ON_SLOT( 2, setNavaids,     mxrp::dafif::NavaidLoader)
-    ON_SLOT( 3, setWaypoints,   mxrp::dafif::WaypointLoader)
+    ON_SLOT( 1, setAirports,    mixr::dafif::AirportLoader)
+    ON_SLOT( 2, setNavaids,     mixr::dafif::NavaidLoader)
+    ON_SLOT( 3, setWaypoints,   mixr::dafif::WaypointLoader)
 END_SLOT_MAP()
 
 EMPTY_SERIALIZER(WorldModel)
@@ -30,14 +30,14 @@ void WorldModel::copyData(const WorldModel& org, const bool)
 {
    BaseClass::copyData(org);
 
-   const mxrp::dafif::AirportLoader* apLoader = org.airports;
-   setAirports( const_cast<mxrp::dafif::AirportLoader*>(static_cast<const mxrp::dafif::AirportLoader*>(apLoader)) );
+   const mixr::dafif::AirportLoader* apLoader = org.airports;
+   setAirports( const_cast<mixr::dafif::AirportLoader*>(static_cast<const mixr::dafif::AirportLoader*>(apLoader)) );
 
-   const mxrp::dafif::NavaidLoader* naLoader = org.navaids;
-   setNavaids( const_cast<mxrp::dafif::NavaidLoader*>(static_cast<const mxrp::dafif::NavaidLoader*>(naLoader)) );
+   const mixr::dafif::NavaidLoader* naLoader = org.navaids;
+   setNavaids( const_cast<mixr::dafif::NavaidLoader*>(static_cast<const mixr::dafif::NavaidLoader*>(naLoader)) );
 
-   const mxrp::dafif::WaypointLoader* wpLoader = org.waypoints;
-   setWaypoints( const_cast<mxrp::dafif::WaypointLoader*>(static_cast<const mxrp::dafif::WaypointLoader*>(wpLoader)) );
+   const mixr::dafif::WaypointLoader* wpLoader = org.waypoints;
+   setWaypoints( const_cast<mixr::dafif::WaypointLoader*>(static_cast<const mixr::dafif::WaypointLoader*>(wpLoader)) );
 }
 
 void WorldModel::deleteData()
@@ -69,19 +69,19 @@ void WorldModel::updateData(const double dt)
 }
 
 // Returns the airport loader
-mxrp::dafif::AirportLoader* WorldModel::getAirports()
+mixr::dafif::AirportLoader* WorldModel::getAirports()
 {
    return airports;
 }
 
 // Returns the NAVAID loader
-mxrp::dafif::NavaidLoader* WorldModel::getNavaids()
+mixr::dafif::NavaidLoader* WorldModel::getNavaids()
 {
    return navaids;
 }
 
 // Returns the waypoint loader
-mxrp::dafif::WaypointLoader* WorldModel::getWaypoints()
+mixr::dafif::WaypointLoader* WorldModel::getWaypoints()
 {
    return waypoints;
 }
@@ -89,7 +89,7 @@ mxrp::dafif::WaypointLoader* WorldModel::getWaypoints()
 //------------------------------------------------------------------------------
 // Sets the airport loader
 //------------------------------------------------------------------------------
-bool WorldModel::setAirports(mxrp::dafif::AirportLoader* const p)
+bool WorldModel::setAirports(mixr::dafif::AirportLoader* const p)
 {
    if (airports != nullptr) {
       airports->unref();
@@ -104,7 +104,7 @@ bool WorldModel::setAirports(mxrp::dafif::AirportLoader* const p)
 //------------------------------------------------------------------------------
 // Sets the navaid loader
 //------------------------------------------------------------------------------
-bool WorldModel::setNavaids(mxrp::dafif::NavaidLoader* const p)
+bool WorldModel::setNavaids(mixr::dafif::NavaidLoader* const p)
 {
    if (navaids != nullptr) {
       navaids->unref();
@@ -119,7 +119,7 @@ bool WorldModel::setNavaids(mxrp::dafif::NavaidLoader* const p)
 //------------------------------------------------------------------------------
 // Sets the waypoint loader
 //------------------------------------------------------------------------------
-bool WorldModel::setWaypoints(mxrp::dafif::WaypointLoader* const p)
+bool WorldModel::setWaypoints(mixr::dafif::WaypointLoader* const p)
 {
    if (waypoints != nullptr) {
       waypoints->unref();

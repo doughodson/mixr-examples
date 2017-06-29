@@ -2,9 +2,9 @@
 #ifndef __RdrAlt_H__
 #define __RdrAlt_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Number; }
 }
 
@@ -18,9 +18,9 @@ namespace base { class Number; }
 //      UPDATE_VALUE  -> actual radar alt
 //      UPDATE_VALUE2 -> minimum radar alt
 //------------------------------------------------------------------------------
-class RdrAlt : public mxrp::graphics::Graphic
+class RdrAlt : public mixr::graphics::Graphic
 {
-    DECLARE_SUBCLASS(RdrAlt, mxrp::graphics::Graphic)
+    DECLARE_SUBCLASS(RdrAlt, mixr::graphics::Graphic)
 
 public:
     RdrAlt();
@@ -34,12 +34,12 @@ public:
     double getRdrMinAltFt() { return rAltMin; }
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
 private:
     // event functions
-    bool onEventSetRAltRdrAlt(const mxrp::base::Number* const x);
-    bool onEventSetRAltMinRdrAlt(const mxrp::base::Number* const x);
+    bool onEventSetRAltRdrAlt(const mixr::base::Number* const x);
+    bool onEventSetRAltMinRdrAlt(const mixr::base::Number* const x);
 
     double rAlt {};        // ft -- our actual radar alt
     SendData rAltSD;

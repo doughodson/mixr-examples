@@ -2,9 +2,9 @@
 #ifndef __TdAzPtr_H__
 #define __TdAzPtr_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Number; }
 }
 
@@ -24,9 +24,9 @@ namespace base { class Number; }
 // Events:
 //    UPDATE_VALUE  <Number>  ! azimuth angle (degs)
 //------------------------------------------------------------------------------
-class TdAzPtr : public mxrp::graphics::Graphic
+class TdAzPtr : public mixr::graphics::Graphic
 {
-   DECLARE_SUBCLASS(TdAzPtr, mxrp::graphics::Graphic)
+   DECLARE_SUBCLASS(TdAzPtr, mixr::graphics::Graphic)
 
 public:
    TdAzPtr();
@@ -36,10 +36,10 @@ public:
 
    virtual void draw() override;
 
-   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
 private:
-   bool onUpdateValue(const mxrp::base::Number* const msg);
+   bool onUpdateValue(const mixr::base::Number* const msg);
 
    double azimuth {};  // (degs)
 };

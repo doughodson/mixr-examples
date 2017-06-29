@@ -4,10 +4,10 @@ include ../makedefs
 PGM = mainGndMapRdr
 OBJS = Display.o factory.o main.o RealBeamRadar.o TestStation.o
 
-LDFLAGS += -lmxrp_models -lJSBSim
-LDFLAGS += -lmxrp_terrain -lmxrp_simulation
-LDFLAGS += -lmxrp_gui_glut -lmxrp_graphics
-LDFLAGS += -lmxrp_base
+LDFLAGS += -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_terrain -lmixr_simulation
+LDFLAGS += -lmixr_gui_glut -lmixr_graphics
+LDFLAGS += -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

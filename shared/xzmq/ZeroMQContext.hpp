@@ -2,9 +2,9 @@
 #ifndef __oe_xzmq_ZeroMQContext_H__
 #define __oe_xzmq_ZeroMQContext_H__
 
-#include "mxrp/base/Component.hpp"
+#include "mixr/base/Component.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Boolean; class Integer; }
 namespace xzmq {
 

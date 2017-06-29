@@ -2,16 +2,16 @@
 #ifndef __TestButtons_H__
 #define __TestButtons_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestButtons
 //
 // Description: Simply tests our buttons and prints out which one we hit
 //------------------------------------------------------------------------------
-class TestButtons : public mxrp::graphics::Page
+class TestButtons : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestButtons, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestButtons, mixr::graphics::Page)
 
 public:
    TestButtons();
@@ -19,7 +19,7 @@ public:
    enum { REGULAR = 0, PUSH_MAINTAINED, PUSH_MOMENTARY, ROTARY, KNOB, SOLENOID };
 
    virtual void updateData(const double dt = 0.0) override;
-   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
 private:
     bool regularButton();

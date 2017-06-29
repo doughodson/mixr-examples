@@ -24,10 +24,10 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "mxrp/recorder/protobuf/DataRecord.pb.h"
+#include "mixr/recorder/protobuf/DataRecord.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace mxrp {
+namespace mixr {
 namespace xrecorder {
 namespace pb {
 
@@ -114,7 +114,7 @@ class MyDataMsg : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 fo() const;
   inline void set_fo(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(class_scope:mixr.xrecorder.pb.MyDataMsg)
  private:
   inline void set_has_fee();
   inline void clear_has_fee();
@@ -140,11 +140,11 @@ class MyDataMsg : public ::google::protobuf::Message {
 // ===================================================================
 
 static const int kMyDataMsgFieldNumber = 1000;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::mxrp::recorder::pb::DataRecord,
-    ::google::protobuf::internal::MessageTypeTraits< ::mxrp::xrecorder::pb::MyDataMsg >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::mixr::recorder::pb::DataRecord,
+    ::google::protobuf::internal::MessageTypeTraits< ::mixr::xrecorder::pb::MyDataMsg >, 11, false >
   my_data_msg;
 static const int kFooFieldNumber = 100;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::mxrp::recorder::pb::MarkerMsg,
+extern ::google::protobuf::internal::ExtensionIdentifier< ::mixr::recorder::pb::MarkerMsg,
     ::google::protobuf::internal::PrimitiveTypeTraits< ::google::protobuf::uint32 >, 13, false >
   foo;
 
@@ -167,13 +167,13 @@ inline void MyDataMsg::clear_fee() {
   clear_has_fee();
 }
 inline ::google::protobuf::uint32 MyDataMsg::fee() const {
-  // @@protoc_insertion_point(field_get:mxrp.xrecorder.pb.MyDataMsg.fee)
+  // @@protoc_insertion_point(field_get:mixr.xrecorder.pb.MyDataMsg.fee)
   return fee_;
 }
 inline void MyDataMsg::set_fee(::google::protobuf::uint32 value) {
   set_has_fee();
   fee_ = value;
-  // @@protoc_insertion_point(field_set:mxrp.xrecorder.pb.MyDataMsg.fee)
+  // @@protoc_insertion_point(field_set:mixr.xrecorder.pb.MyDataMsg.fee)
 }
 
 // required uint32 fi = 2;
@@ -191,13 +191,13 @@ inline void MyDataMsg::clear_fi() {
   clear_has_fi();
 }
 inline ::google::protobuf::uint32 MyDataMsg::fi() const {
-  // @@protoc_insertion_point(field_get:mxrp.xrecorder.pb.MyDataMsg.fi)
+  // @@protoc_insertion_point(field_get:mixr.xrecorder.pb.MyDataMsg.fi)
   return fi_;
 }
 inline void MyDataMsg::set_fi(::google::protobuf::uint32 value) {
   set_has_fi();
   fi_ = value;
-  // @@protoc_insertion_point(field_set:mxrp.xrecorder.pb.MyDataMsg.fi)
+  // @@protoc_insertion_point(field_set:mixr.xrecorder.pb.MyDataMsg.fi)
 }
 
 // required uint32 fo = 3;
@@ -215,13 +215,13 @@ inline void MyDataMsg::clear_fo() {
   clear_has_fo();
 }
 inline ::google::protobuf::uint32 MyDataMsg::fo() const {
-  // @@protoc_insertion_point(field_get:mxrp.xrecorder.pb.MyDataMsg.fo)
+  // @@protoc_insertion_point(field_get:mixr.xrecorder.pb.MyDataMsg.fo)
   return fo_;
 }
 inline void MyDataMsg::set_fo(::google::protobuf::uint32 value) {
   set_has_fo();
   fo_ = value;
-  // @@protoc_insertion_point(field_set:mxrp.xrecorder.pb.MyDataMsg.fo)
+  // @@protoc_insertion_point(field_set:mixr.xrecorder.pb.MyDataMsg.fo)
 }
 
 
@@ -229,7 +229,7 @@ inline void MyDataMsg::set_fo(::google::protobuf::uint32 value) {
 
 }  // namespace pb
 }  // namespace xrecorder
-}  // namespace mxrp
+}  // namespace mixr
 
 #ifndef SWIG
 namespace google {

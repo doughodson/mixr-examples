@@ -1,11 +1,11 @@
 
-#ifndef __oe_xbehaviors_PlaneState_H__
-#define __oe_xbehaviors_PlaneState_H__
+#ifndef __mixr_xbehaviors_PlaneState_H__
+#define __mixr_xbehaviors_PlaneState_H__
 
-#include "mxrp/base/ubf/AbstractState.hpp"
+#include "mixr/base/ubf/AbstractState.hpp"
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace xbehaviors {
 
 //------------------------------------------------------------------------------

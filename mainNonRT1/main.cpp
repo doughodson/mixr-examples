@@ -1,13 +1,13 @@
 
-#include "mxrp/simulation/Simulation.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/Pair.hpp"
+#include "mixr/simulation/Simulation.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/Pair.hpp"
 
 // factories
-#include "mxrp/simulation/factory.hpp"
-#include "mxrp/models/factory.hpp"
-#include "mxrp/terrain/factory.hpp"
-#include "mxrp/base/factory.hpp"
+#include "mixr/simulation/factory.hpp"
+#include "mixr/models/factory.hpp"
+#include "mixr/terrain/factory.hpp"
+#include "mixr/base/factory.hpp"
 
 #include <string>
 #include <cstdlib>
@@ -16,21 +16,21 @@
 const unsigned int frameRate = 50;
 
 // class factory
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-   mxrp::base::Object* obj = mxrp::simulation::factory(name);
-   if (obj == nullptr) obj = mxrp::models::factory(name);
-   if (obj == nullptr) obj = mxrp::terrain::factory(name);
-   if (obj == nullptr) obj = mxrp::base::factory(name);
+   mixr::base::Object* obj = mixr::simulation::factory(name);
+   if (obj == nullptr) obj = mixr::models::factory(name);
+   if (obj == nullptr) obj = mixr::terrain::factory(name);
+   if (obj == nullptr) obj = mixr::base::factory(name);
    return obj;
 }
 
 // simulation builder
-mxrp::simulation::Simulation* builder(const std::string& filename)
+mixr::simulation::Simulation* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -43,7 +43,7 @@ mxrp::simulation::Simulation* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -51,7 +51,7 @@ mxrp::simulation::Simulation* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto simulation = dynamic_cast<mxrp::simulation::Simulation*>(obj);
+   const auto simulation = dynamic_cast<mixr::simulation::Simulation*>(obj);
    if (simulation == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
    }
 
    // build simulation
-   mxrp::simulation::Simulation* simulation = builder(configFilename);
+   mixr::simulation::Simulation* simulation = builder(configFilename);
 
    // reset component tree
    simulation->reset();

@@ -2,16 +2,16 @@
 #ifndef __TestAlt_H__
 #define __TestAlt_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestAlt
 //
 // Description: Tests our altitude tape instrument
 //------------------------------------------------------------------------------
-class TestAlt : public mxrp::graphics::Page
+class TestAlt : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestAlt, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestAlt, mixr::graphics::Page)
 
 public:
     TestAlt();

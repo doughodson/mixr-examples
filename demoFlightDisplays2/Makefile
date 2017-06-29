@@ -9,7 +9,7 @@ OBJS =  \
 	SpdLines.o \
 	TestPfd.o
 
-LDFLAGS += -lmxrp_gui_glut -lmxrp_instruments -lmxrp_graphics -lmxrp_base
+LDFLAGS += -lmixr_gui_glut -lmixr_instruments -lmixr_graphics -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

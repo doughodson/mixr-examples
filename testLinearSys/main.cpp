@@ -1,5 +1,5 @@
 
-#include "mxrp/linearsystem/Sz1.hpp"
+#include "mixr/linearsystem/Sz1.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -11,7 +11,7 @@ int main(int, char**)
    const unsigned int RATE {100};
    const double A {10.0};
 
-   mxrp::linearsystem::Sz1 filter;
+   mixr::linearsystem::Sz1 filter;
 
    filter.setN1(0.0);
    filter.setN2(1.0);

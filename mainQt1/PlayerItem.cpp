@@ -1,7 +1,7 @@
 
 #include "PlayerItem.hpp"
 #include "MapItem.hpp"
-#include "mxrp/models/player/Player.hpp"
+#include "mixr/models/player/Player.hpp"
 
 #include <QPainter>
 #include <sstream>
@@ -95,7 +95,7 @@ bool PlayerItem::setDefaultImageSize(QSize x)
    return true;
 }
 
-void PlayerItem::refreshPlayer(const mxrp::models::Player* const ownship)
+void PlayerItem::refreshPlayer(const mixr::models::Player* const ownship)
 {
    if (ownship != nullptr) {
       plyId = ownship->getID();

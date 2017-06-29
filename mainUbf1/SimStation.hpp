@@ -3,9 +3,9 @@
 #define __SimStation_H__
 
 //#include "agent/AgentStation.h"
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Station.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Table1; class PairStream; }
 namespace glut { class GlutDisplay; }
 }
@@ -23,9 +23,9 @@ namespace glut { class GlutDisplay; }
 //      display       <graphics::GlutDisplay>  ! Main graphics display
 //
 //------------------------------------------------------------------------------
-class SimStation : public mxrp::simulation::Station
+class SimStation : public mixr::simulation::Station
 {
-   DECLARE_SUBCLASS(SimStation, mxrp::simulation::Station)
+   DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
 
 public:
     SimStation();
@@ -34,7 +34,7 @@ public:
    void stepOwnshipPlayer();
 
    // Slot functions
-   virtual bool setSlotMainDisplay(mxrp::glut::GlutDisplay* const d);
+   virtual bool setSlotMainDisplay(mixr::glut::GlutDisplay* const d);
 
    virtual void updateTC(const double dt = 0.0) override;
    virtual void reset() override;
@@ -42,7 +42,7 @@ public:
 private:
 
     // Main Display
-    mxrp::base::safe_ptr<mxrp::glut::GlutDisplay> mainDisplay;
+    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
     bool displayInit {};
 
 };

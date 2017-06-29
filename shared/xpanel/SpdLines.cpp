@@ -1,9 +1,9 @@
 
 #include "SpdLines.hpp"
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <iostream>
 
-namespace mxrp {
+namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_SUBCLASS(SpdLines, "SpdLines")

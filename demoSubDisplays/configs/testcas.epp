@@ -11,7 +11,7 @@ testcas:
     }
     
     components: {
-        #include "mxrp/instruments/dials/cas.epp"
+        #include "mixr/instruments/dials/cas.epp"
     
         // true air speed readout - these are just for testing the readout
         ( AsciiText

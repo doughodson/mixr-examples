@@ -15,28 +15,27 @@ end
 --
 -- directory locations for framework and 3rd party dependencies
 --
-MXRP_ROOT           = "../../../mxrp"
-MXRP_3RD_PARTY_ROOT = "../../../mxrp-3rdparty"
+MIXR_ROOT           = "../../../mixr"
+MIXR_3RD_PARTY_ROOT = "../../../mixr-3rdparty"
 
 --
 -- set include and library paths
 --
-MXRP_IncPath         = MXRP_ROOT.."/include"
-MXRP_LibPath         = MXRP_ROOT.."/lib/"
-MXRP_3rdPartyIncPath = MXRP_3RD_PARTY_ROOT.."/include"
-MXRP_3rdPartyLibPath = MXRP_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
-MXRP_ExamplesIncPath = "../../shared"
-MXRP_ExamplesLibPath = "../../lib/"
-print ("MXRP Paths:")
-print ("  Include   : "..MXRP_IncPath)
-print ("  Libraries : "..MXRP_LibPath)
-print ("MXRP 3rdParty Paths:")
-print ("  Include   :"..MXRP_3rdPartyIncPath)
-print ("  Libraries :"..MXRP_3rdPartyLibPath)
-print ("MXRP Examples Paths:")
-print ("  Include   :"..MXRP_ExamplesIncPath)
-print ("  Libraries :"..MXRP_ExamplesLibPath)
-
+MIXR_IncPath         = MIXR_ROOT.."/include"
+MIXR_LibPath         = MIXR_ROOT.."/lib/"
+MIXR_3rdPartyIncPath = MIXR_3RD_PARTY_ROOT.."/include"
+MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
+MIXR_ExamplesIncPath = "../../shared"
+MIXR_ExamplesLibPath = "../../lib/"
+print ("MIXR Paths:")
+print ("  Include   : "..MIXR_IncPath)
+print ("  Libraries : "..MIXR_LibPath)
+print ("MIXR 3rdParty Paths:")
+print ("  Include   :"..MIXR_3rdPartyIncPath)
+print ("  Libraries :"..MIXR_3rdPartyLibPath)
+print ("MIXR Examples Paths:")
+print ("  Include   :"..MIXR_ExamplesIncPath)
+print ("  Libraries :"..MIXR_ExamplesLibPath)
 
 --
 -- directory location for HLA include and library paths
@@ -46,7 +45,7 @@ HLAIncPath = HLA_ROOT.."/include"
 HLALibPath = HLA_ROOT.."/lib"
 print ("HLA Paths:")
 print ("  Include   : "..HLALibPath)
---print ("  Libraries : "..MXRP_LibPath)
+--print ("  Libraries : "..MIXR_LibPath)
 
 --
 -- 3rd party library names

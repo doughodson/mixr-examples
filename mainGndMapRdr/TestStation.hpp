@@ -2,9 +2,9 @@
 #ifndef __TestStation_H__
 #define __TestStation_H__
 
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Station.hpp"
 
-namespace mxrp {
+namespace mixr {
    namespace graphics { class GlutDisplay; }
 }
 
@@ -15,9 +15,9 @@ class Display;
 //
 // Description: Test station for the Ground mapping radar demo
 //------------------------------------------------------------------------------
-class TestStation : public mxrp::simulation::Station
+class TestStation : public mixr::simulation::Station
 {
-    DECLARE_SUBCLASS(TestStation, mxrp::simulation::Station)
+    DECLARE_SUBCLASS(TestStation, mixr::simulation::Station)
 
 public:
     TestStation();
@@ -28,7 +28,7 @@ public:
 private:
     bool setDisplay(Display* const d);
 
-    mxrp::base::safe_ptr<Display> display;
+    mixr::base::safe_ptr<Display> display;
     bool displayInit {};
 };
 

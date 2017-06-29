@@ -1,13 +1,13 @@
 
 #include "Echo.hpp"
 
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 #include <cstdlib>
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Echo, "Echo")
 EMPTY_SLOTTABLE(Echo)

@@ -2,10 +2,10 @@
 #include "Blocks.hpp"
 #include "Puzzle.hpp"
 
-#include "mxrp/base/Integer.hpp"
-#include "mxrp/base/List.hpp"
+#include "mixr/base/Integer.hpp"
+#include "mixr/base/List.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 //==============================================================================
 // Class: Block

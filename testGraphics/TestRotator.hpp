@@ -2,16 +2,16 @@
 #ifndef __TestRotator_H__
 #define __TestRotator_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestRotator
 //
 // Description: Example MFD page
 //------------------------------------------------------------------------------
-class TestRotator : public mxrp::graphics::Graphic
+class TestRotator : public mixr::graphics::Graphic
 {
-   DECLARE_SUBCLASS(TestRotator, mxrp::graphics::Graphic)
+   DECLARE_SUBCLASS(TestRotator, mixr::graphics::Graphic)
 
 public:
     TestRotator();

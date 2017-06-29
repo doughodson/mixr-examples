@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
 #include "TestStateMachine01.hpp"
 #include "TestStateMachine02.hpp"
@@ -11,11 +11,11 @@
 #include "TestStateMachine04B.hpp"
 #include "TestStateMachine04C.hpp"
 
-#include "mxrp/base/factory.hpp"
+#include "mixr/base/factory.hpp"
 
 #include <string>
 
-using namespace mxrp;
+using namespace mixr;
 
 base::Object* factory(const std::string& name)
 {

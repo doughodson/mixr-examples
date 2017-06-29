@@ -2,9 +2,9 @@
 #ifndef __AdiDisplay_H__
 #define __AdiDisplay_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Aircraft; }
 namespace simulation { class Station; }
 }
@@ -12,9 +12,9 @@ namespace simulation { class Station; }
 //------------------------------------------------------------------------------
 // Class: AdiDisplay
 //------------------------------------------------------------------------------
-class AdiDisplay : public mxrp::glut::GlutDisplay
+class AdiDisplay : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(AdiDisplay, mxrp::glut::GlutDisplay)
+   DECLARE_SUBCLASS(AdiDisplay, mixr::glut::GlutDisplay)
 
 public:
    AdiDisplay();
@@ -22,10 +22,10 @@ public:
    virtual void updateData(const double dt = 0.0) override;
 
 private:
-   mxrp::models::Aircraft* getOwnship();
-   mxrp::simulation::Station* getStation();
+   mixr::models::Aircraft* getOwnship();
+   mixr::simulation::Station* getStation();
 
-   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
    //-----------------------------
    double psiRO {};     // [deg]

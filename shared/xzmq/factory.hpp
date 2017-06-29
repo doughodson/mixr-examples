@@ -4,7 +4,7 @@
 
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Object; }
 namespace xzmq {
 

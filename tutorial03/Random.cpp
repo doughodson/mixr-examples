@@ -1,7 +1,7 @@
 
 #include "Random.hpp"
 
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -14,7 +14,7 @@ BEGIN_SLOTTABLE(Random)
 END_SLOTTABLE(Random)
 
 BEGIN_SLOT_MAP(Random)
-   ON_SLOT(1, setSlotSeed, mxrp::base::Number)
+   ON_SLOT(1, setSlotSeed, mixr::base::Number)
 END_SLOT_MAP()
 
 Random::Random()
@@ -39,7 +39,7 @@ int Random::getNum() const
   return std::rand();
 }
 
-bool Random::setSlotSeed(const mxrp::base::Number* const seed)
+bool Random::setSlotSeed(const mixr::base::Number* const seed)
 {
   bool ok = false;
   if (seed != nullptr)

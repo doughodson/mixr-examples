@@ -1,4 +1,4 @@
 @rem
 @rem Set path for C-preprocessor
 @rem
-@set mcpp=..\..\mxrp-3rdparty\bin\mcpp.exe
+@set mcpp=..\..\mixr-3rdparty\bin\mcpp.exe

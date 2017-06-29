@@ -1,25 +1,25 @@
 
 #include "Display.hpp"
 
-#include "mxrp/terrain/Terrain.hpp"
+#include "mixr/terrain/Terrain.hpp"
 
-#include "mxrp/base/Color.hpp"
-#include "mxrp/base/Rgb.hpp"
-#include "mxrp/base/Hsva.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/String.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/base/Rgb.hpp"
+#include "mixr/base/Hsva.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/String.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
 
-#include "mxrp/base/units/Angles.hpp"
-#include "mxrp/base/units/Distances.hpp"
+#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/Distances.hpp"
 
-#include "mxrp/base/util/nav_utils.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/util/nav_utils.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 #include <cmath>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Display, "TerrainDisplay")
 EMPTY_SERIALIZER(Display)

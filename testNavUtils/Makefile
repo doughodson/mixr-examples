@@ -4,7 +4,7 @@ include ../makedefs
 PGM = testNavUtils
 OBJS =  main.o
 
-LDFLAGS += -lmxrp_base
+LDFLAGS += -lmixr_base
 
 all: $(PGM)
 

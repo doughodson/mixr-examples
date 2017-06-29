@@ -2,11 +2,11 @@
 #ifndef __Display_H__
 #define __Display_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 #include <array>
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Color; }
 namespace graphics { class Material; }
 }
@@ -18,9 +18,9 @@ class TestObject;
 // Description: This class will send down data to it's components in different
 // ways, showing how the SendData class works and testing our send commands.
 //------------------------------------------------------------------------------
-class Display : public mxrp::glut::GlutDisplay
+class Display : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
 
 public:
    Display();
@@ -52,13 +52,13 @@ private:
     std::string myChar = "ASCII";
     SendData charSD;
 
-    mxrp::base::Color* myColor {};
+    mixr::base::Color* myColor {};
     SendData colorSD;
 
     static const int MAX_MATERIALS = 3;
-    std::array<mxrp::graphics::Material*, MAX_MATERIALS> materials {};
+    std::array<mixr::graphics::Material*, MAX_MATERIALS> materials {};
     std::array<SendData, MAX_MATERIALS> materialSD;
-    std::array<mxrp::base::Vec3d, MAX_MATERIALS> diffColorRate;
+    std::array<mixr::base::Vec3d, MAX_MATERIALS> diffColorRate;
 
     std::array<double, MAX_MATERIALS> rotations {};
     std::array<SendData, MAX_MATERIALS> rotationsSD {};

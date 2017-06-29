@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace mxrp {
+namespace mixr {
 namespace xrecorder {
 namespace pb {
 
@@ -81,24 +81,24 @@ void protobuf_AddDesc_xrecorder_2fprotobuf_2fDataRecord_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::mxrp::recorder::pb::protobuf_AddDesc_mxrp_2frecorder_2fprotobuf_2fDataRecord_2eproto();
+  ::mixr::recorder::pb::protobuf_AddDesc_mixr_2frecorder_2fprotobuf_2fDataRecord_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n#xrecorder/protobuf/DataRecord.proto\022\021m"
-    "xrp.xrecorder.pb\032\'mxrp/recorder/protobuf"
+    "ixr.xrecorder.pb\032\'mixr/recorder/protobuf"
     "/DataRecord.proto\"0\n\tMyDataMsg\022\013\n\003fee\030\001 "
     "\002(\r\022\n\n\002fi\030\002 \002(\r\022\n\n\002fo\030\003 \002(\r:P\n\013my_data_m"
-    "sg\022\034.mxrp.recorder.pb.DataRecord\030\350\007 \001(\0132"
-    "\034.mxrp.xrecorder.pb.MyDataMsg:(\n\003foo\022\033.m"
-    "xrp.recorder.pb.MarkerMsg\030d \001(\r", 271);
+    "sg\022\034.mixr.recorder.pb.DataRecord\030\350\007 \001(\0132"
+    "\034.mixr.xrecorder.pb.MyDataMsg:(\n\003foo\022\033.m"
+    "ixr.recorder.pb.MarkerMsg\030d \001(\r", 271);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "xrecorder/protobuf/DataRecord.proto", &protobuf_RegisterTypes);
   MyDataMsg::default_instance_ = new MyDataMsg();
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::mxrp::recorder::pb::DataRecord::default_instance(),
+    &::mixr::recorder::pb::DataRecord::default_instance(),
     1000, 11, false, false,
-    &::mxrp::xrecorder::pb::MyDataMsg::default_instance());
+    &::mixr::xrecorder::pb::MyDataMsg::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterExtension(
-    &::mxrp::recorder::pb::MarkerMsg::default_instance(),
+    &::mixr::recorder::pb::MarkerMsg::default_instance(),
     100, 13, false, false);
   MyDataMsg::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_xrecorder_2fprotobuf_2fDataRecord_2eproto);
@@ -122,7 +122,7 @@ const int MyDataMsg::kFoFieldNumber;
 MyDataMsg::MyDataMsg()
   : ::google::protobuf::Message() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(constructor:mixr.xrecorder.pb.MyDataMsg)
 }
 
 void MyDataMsg::InitAsDefaultInstance() {
@@ -132,7 +132,7 @@ MyDataMsg::MyDataMsg(const MyDataMsg& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(copy_constructor:mixr.xrecorder.pb.MyDataMsg)
 }
 
 void MyDataMsg::SharedCtor() {
@@ -144,7 +144,7 @@ void MyDataMsg::SharedCtor() {
 }
 
 MyDataMsg::~MyDataMsg() {
-  // @@protoc_insertion_point(destructor:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(destructor:mixr.xrecorder.pb.MyDataMsg)
   SharedDtor();
 }
 
@@ -198,7 +198,7 @@ bool MyDataMsg::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(parse_start:mixr.xrecorder.pb.MyDataMsg)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -262,17 +262,17 @@ bool MyDataMsg::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(parse_success:mixr.xrecorder.pb.MyDataMsg)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(parse_failure:mixr.xrecorder.pb.MyDataMsg)
   return false;
 #undef DO_
 }
 
 void MyDataMsg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(serialize_start:mixr.xrecorder.pb.MyDataMsg)
   // required uint32 fee = 1;
   if (has_fee()) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->fee(), output);
@@ -292,12 +292,12 @@ void MyDataMsg::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(serialize_end:mixr.xrecorder.pb.MyDataMsg)
 }
 
 ::google::protobuf::uint8* MyDataMsg::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(serialize_to_array_start:mixr.xrecorder.pb.MyDataMsg)
   // required uint32 fee = 1;
   if (has_fee()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->fee(), target);
@@ -317,7 +317,7 @@ void MyDataMsg::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mxrp.xrecorder.pb.MyDataMsg)
+  // @@protoc_insertion_point(serialize_to_array_end:mixr.xrecorder.pb.MyDataMsg)
   return target;
 }
 
@@ -423,10 +423,10 @@ void MyDataMsg::Swap(MyDataMsg* other) {
   return metadata;
 }
 
-::google::protobuf::internal::ExtensionIdentifier< ::mxrp::recorder::pb::DataRecord,
-    ::google::protobuf::internal::MessageTypeTraits< ::mxrp::xrecorder::pb::MyDataMsg >, 11, false >
-  my_data_msg(kMyDataMsgFieldNumber, ::mxrp::xrecorder::pb::MyDataMsg::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::mxrp::recorder::pb::MarkerMsg,
+::google::protobuf::internal::ExtensionIdentifier< ::mixr::recorder::pb::DataRecord,
+    ::google::protobuf::internal::MessageTypeTraits< ::mixr::xrecorder::pb::MyDataMsg >, 11, false >
+  my_data_msg(kMyDataMsgFieldNumber, ::mixr::xrecorder::pb::MyDataMsg::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::mixr::recorder::pb::MarkerMsg,
     ::google::protobuf::internal::PrimitiveTypeTraits< ::google::protobuf::uint32 >, 13, false >
   foo(kFooFieldNumber, 0u);
 
@@ -434,6 +434,6 @@ void MyDataMsg::Swap(MyDataMsg* other) {
 
 }  // namespace pb
 }  // namespace xrecorder
-}  // namespace mxrp
+}  // namespace mixr
 
 // @@protoc_insertion_point(global_scope)

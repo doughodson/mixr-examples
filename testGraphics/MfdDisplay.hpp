@@ -2,7 +2,7 @@
 #ifndef __MfdDisplay_H__
 #define __MfdDisplay_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
 //------------------------------------------------------------------------------
 // Class: MfdDisplay
@@ -12,9 +12,9 @@
 //              -- All it really does for this example is accept the ESC event.
 //
 //------------------------------------------------------------------------------
-class MfdDisplay : public mxrp::graphics::Display
+class MfdDisplay : public mixr::graphics::Display
 {
-   DECLARE_SUBCLASS(MfdDisplay, mxrp::graphics::Display)
+   DECLARE_SUBCLASS(MfdDisplay, mixr::graphics::Display)
 
 public:
    MfdDisplay();

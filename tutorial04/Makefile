@@ -5,7 +5,7 @@ PGM = tutorial04
 
 OBJS = main.o Random.o Exp.o Uniform.o
 
-LDFLAGS += -lmxrp_base -lpthread -lrt
+LDFLAGS += -lmixr_base -lpthread -lrt
 
 all: $(PGM)
 

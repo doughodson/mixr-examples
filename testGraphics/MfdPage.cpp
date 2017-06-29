@@ -1,10 +1,10 @@
 
 #include "MfdPage.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/graphics/Rotators.hpp"
-#include "mxrp/base/PairStream.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/graphics/Rotators.hpp"
+#include "mixr/base/PairStream.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(MfdPage, "MfdPage")
 EMPTY_SERIALIZER(MfdPage)

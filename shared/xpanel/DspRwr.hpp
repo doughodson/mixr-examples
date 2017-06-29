@@ -1,10 +1,10 @@
 
-#ifndef __oe_xpanel_DspRwr_H__
-#define __oe_xpanel_DspRwr_H__
+#ifndef __mixr_xpanel_DspRwr_H__
+#define __mixr_xpanel_DspRwr_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Rwr; }
 namespace xpanel {
 

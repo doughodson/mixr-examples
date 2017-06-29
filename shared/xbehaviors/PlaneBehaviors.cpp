@@ -16,12 +16,12 @@
 #include "PlaneAction.hpp"
 #include "PlaneState.hpp"
 
-#include "mxrp/base/units/Distances.hpp"
-#include "mxrp/base/ubf/AbstractAction.hpp"
-#include "mxrp/base/ubf/AbstractState.hpp"
-#include "mxrp/base/util/constants.hpp"
+#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/ubf/AbstractAction.hpp"
+#include "mixr/base/ubf/AbstractState.hpp"
+#include "mixr/base/util/constants.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xbehaviors {
 
 IMPLEMENT_ABSTRACT_SUBCLASS(PlaneBehaviorBase, "PlaneBehaviorBase")

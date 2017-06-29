@@ -2,9 +2,9 @@
 #ifndef __MapDisplay_H__
 #define __MapDisplay_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Aircraft; }
 namespace simulation { class Station; }
 }
@@ -15,9 +15,9 @@ namespace simulation { class Station; }
 // Description:
 //      Derived MapDisplay that will simply make our map page move.
 // -------------------------------------------------------------------------------
-class MapDisplay : public mxrp::glut::GlutDisplay
+class MapDisplay : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(MapDisplay, mxrp::glut::GlutDisplay)
+   DECLARE_SUBCLASS(MapDisplay, mixr::glut::GlutDisplay)
 
 public:
    MapDisplay();
@@ -30,8 +30,8 @@ public:
    virtual void updateData(const double dt = 0.0) override;
 
 private:
-   mxrp::models::Aircraft* getOwnship();
-   mxrp::simulation::Station* getStation();
+   mixr::models::Aircraft* getOwnship();
+   mixr::simulation::Station* getStation();
 
    // button hit enumerations
    enum class Btn {
@@ -56,7 +56,7 @@ private:
       CHANGE_AP_MODE             // Change the autopilot mode (Nav/Loiter/FollowTheLead or None)
    };
 
-   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
    int startX {};         // startX of our last mouse position
    int startY {};         // startY of our last mouse position

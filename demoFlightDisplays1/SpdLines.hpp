@@ -2,7 +2,7 @@
 #ifndef __SpdLines_H__
 #define __SpdLines_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: SpdLines
@@ -10,9 +10,9 @@
 // Description: Draws the lines for the airspeed graphic
 // Inputs:  Slots only
 //------------------------------------------------------------------------------
-class SpdLines : public mxrp::graphics::Graphic
+class SpdLines : public mixr::graphics::Graphic
 {
-    DECLARE_SUBCLASS(SpdLines, mxrp::graphics::Graphic)
+    DECLARE_SUBCLASS(SpdLines, mixr::graphics::Graphic)
 
 public:
     SpdLines();
@@ -29,8 +29,8 @@ public:
 
 protected:
     // slot functions
-    bool setSlotIsAlt(const mxrp::base::Number* newIsAlt);
-    bool setSlotDrawBack(const mxrp::base::Number* newDB);
+    bool setSlotIsAlt(const mixr::base::Number* newIsAlt);
+    bool setSlotDrawBack(const mixr::base::Number* newDB);
 
 private:
     bool isAlt {};     // are we drawing the altitude lines instead?

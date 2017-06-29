@@ -1,12 +1,12 @@
 
 #include "TestCompass.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/graphics/MapPage.hpp"
-#include "mxrp/graphics/SymbolLoader.hpp"
-#include "mxrp/base/Rgb.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/graphics/MapPage.hpp"
+#include "mixr/graphics/SymbolLoader.hpp"
+#include "mixr/base/Rgb.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestCompass, "TestCompass")
 EMPTY_SERIALIZER(TestCompass)

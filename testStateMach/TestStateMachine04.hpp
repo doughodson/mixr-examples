@@ -2,7 +2,7 @@
 #ifndef __TestStateMachine04_H__
 #define __TestStateMachine04_H__
 
-#include "mxrp/base/StateMachine.hpp"
+#include "mixr/base/StateMachine.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestStateMachine04
@@ -11,9 +11,9 @@
 //    functions: nextSubstate() and goToSubstate().
 //
 //------------------------------------------------------------------------------
-class TestStateMachine04 : public mxrp::base::StateMachine
+class TestStateMachine04 : public mixr::base::StateMachine
 {
-   DECLARE_SUBCLASS(TestStateMachine04, mxrp::base::StateMachine)
+   DECLARE_SUBCLASS(TestStateMachine04, mixr::base::StateMachine)
 
 public:
    enum { CALL_01 = 11, CALL_02 = 22 };

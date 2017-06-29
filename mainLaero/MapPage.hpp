@@ -2,11 +2,11 @@
 #ifndef __MapPage_H__
 #define __MapPage_H__
 
-#include "mxrp/graphics/MapPage.hpp"
+#include "mixr/graphics/MapPage.hpp"
 
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Player; }
 namespace graphics { class SymbolLoader; }
 }
@@ -19,9 +19,9 @@ class TestStation;
 //      Derived MapPage that will show how to add, remove, and update symbols with the
 //      SymbolLoader class.
 // -------------------------------------------------------------------------------
-class MapPage : public mxrp::graphics::MapPage
+class MapPage : public mixr::graphics::MapPage
 {
-   DECLARE_SUBCLASS(MapPage, mxrp::graphics::MapPage)
+   DECLARE_SUBCLASS(MapPage, mixr::graphics::MapPage)
 
 public:
    MapPage();
@@ -40,10 +40,10 @@ private:
    static const int MAX_PLAYERS = 200;
    static const int MAX_READOUTS = 20;
 
-   std::array<mxrp::models::Player*, MAX_PLAYERS> player {};   // player pointer
+   std::array<mixr::models::Player*, MAX_PLAYERS> player {};   // player pointer
    std::array<int, MAX_PLAYERS> playerIdx {};                // index of our symbol for the given player
    // player symbol loader
-   mxrp::graphics::SymbolLoader* loader {};    // holds our loader for quick reference
+   mixr::graphics::SymbolLoader* loader {};    // holds our loader for quick reference
    TestStation* pStn {};                     // holds our station (to get the player list quickly)
 
    // is our route loaded?

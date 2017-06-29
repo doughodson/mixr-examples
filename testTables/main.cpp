@@ -13,25 +13,25 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "mxrp/base/functors/Tables.hpp"
+#include "mixr/base/functors/Tables.hpp"
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 // class factory
-#include "mxrp/base/factory.hpp"
+#include "mixr/base/factory.hpp"
 
 #include <string>
 
 const unsigned int TIMING_LOOPS = 10000;
 
 // table builder
-mxrp::base::Table* builder(const std::string& filename)
+mixr::base::Table* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, mxrp::base::factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, mixr::base::factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -44,7 +44,7 @@ mxrp::base::Table* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -52,7 +52,7 @@ mxrp::base::Table* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto table = dynamic_cast<mxrp::base::Table*>(obj);
+   const auto table = dynamic_cast<mixr::base::Table*>(obj);
    if (table == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -63,11 +63,11 @@ mxrp::base::Table* builder(const std::string& filename)
 //-----------------------------------------------------------------------------
 // Test 1D LFI tables
 //-----------------------------------------------------------------------------
-unsigned int testIt(const mxrp::base::Table1* const tbl, const bool tflg, const bool sflg, const bool rflg)
+unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
    unsigned int cnt = 0;
 
-   mxrp::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
 
    const double maxX = tbl->getMaxX();
@@ -101,11 +101,11 @@ unsigned int testIt(const mxrp::base::Table1* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 // Test 2D LFI tables
 //-----------------------------------------------------------------------------
-unsigned int testIt(const mxrp::base::Table2* const tbl, const bool tflg, const bool sflg, const bool rflg)
+unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
    unsigned int cnt = 0;
 
-   mxrp::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
 
    double maxY = tbl->getMaxY();
@@ -150,11 +150,11 @@ unsigned int testIt(const mxrp::base::Table2* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 // Test 3D LFI tables
 //-----------------------------------------------------------------------------
-unsigned int testIt(const mxrp::base::Table3* const tbl, const bool tflg, const bool sflg, const bool rflg)
+unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
    unsigned int cnt = 0;
 
-   mxrp::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
 
    // Setup Z
@@ -214,11 +214,11 @@ unsigned int testIt(const mxrp::base::Table3* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 // Test 4D LFI tables
 //-----------------------------------------------------------------------------
-unsigned int testIt(const mxrp::base::Table4* const tbl, const bool tflg, const bool sflg, const bool rflg)
+unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
    unsigned int cnt = 0;
 
-   mxrp::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
 
    // Setup W
@@ -324,7 +324,7 @@ int main(int argc, char* argv[])
    }
 
    // build table
-   const mxrp::base::Table* table = builder(configFilename);
+   const mixr::base::Table* table = builder(configFilename);
 
    // ---
    // Serialize the table to the output stream
@@ -334,15 +334,15 @@ int main(int argc, char* argv[])
    // ---
    // Cast table pointers
    // ---
-   const auto t1 = dynamic_cast<const mxrp::base::Table1*>(table);
-   const auto t2 = dynamic_cast<const mxrp::base::Table2*>(table);
-   const auto t3 = dynamic_cast<const mxrp::base::Table3*>(table);
-   const auto t4 = dynamic_cast<const mxrp::base::Table4*>(table);
+   const auto t1 = dynamic_cast<const mixr::base::Table1*>(table);
+   const auto t2 = dynamic_cast<const mixr::base::Table2*>(table);
+   const auto t3 = dynamic_cast<const mixr::base::Table3*>(table);
+   const auto t4 = dynamic_cast<const mixr::base::Table4*>(table);
 
    // ---
    // Call the test function for this LFI table type
    // ---
-   double startTime = mxrp::base::getComputerTime();
+   double startTime = mixr::base::getComputerTime();
    unsigned int cnt = 0;
    unsigned int n = 1;
    if (tflg) n = TIMING_LOOPS;
@@ -365,7 +365,7 @@ int main(int argc, char* argv[])
    // Timing data
    // ---
    if (tflg) {
-      double endTime = mxrp::base::getComputerTime();
+      double endTime = mixr::base::getComputerTime();
       double deltaTime = endTime - startTime;
       double perFrameTime = deltaTime/static_cast<double>(TIMING_LOOPS);
       std::cout << "Total Time = " << deltaTime << " for " << TIMING_LOOPS << " frames." << std::endl;

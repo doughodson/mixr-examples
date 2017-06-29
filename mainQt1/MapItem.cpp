@@ -1,8 +1,8 @@
 
 #include "MapItem.hpp"
 
-#include "mxrp/base/util/math_utils.hpp"
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/base/util/math_utils.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 
 #include <QPainter>
 #include <QGraphicsSceneMouseEvent>
@@ -117,7 +117,7 @@ bool MapItem::setRefLat(const double lat)
    // nothing more than 70 degrees north or south will suffice
    if (lat <= 90 && lat >= -90) {
       refLat = lat;
-      cosineLatReference = std::cos(mxrp::base::angle::D2RCC * refLat);
+      cosineLatReference = std::cos(mixr::base::angle::D2RCC * refLat);
       ok = true;
    }
    return ok;
@@ -178,8 +178,8 @@ void MapItem::drawGrid(QPainter* painter)
    }
 
    // get the nearest starting lat and lon lines to draw
-   const int centerLat = mxrp::base::nint(refLat);
-   const int centerLon = mxrp::base::nint(refLon);
+   const int centerLat = mixr::base::nint(refLat);
+   const int centerLon = mixr::base::nint(refLon);
 
    // calculate the number of latitude lines
    const int numLinesLat = (range / 60.0) + 1;
@@ -280,7 +280,7 @@ void MapItem::drawGrid(QPainter* painter)
 // ---
 void MapItem::setHeading(const double x)
 {
-   const double hdgRad = mxrp::base::angle::D2RCC * x;
+   const double hdgRad = mixr::base::angle::D2RCC * x;
    heading = x;
    headingSin = std::sin(hdgRad);
    headingCos = std::cos(hdgRad);

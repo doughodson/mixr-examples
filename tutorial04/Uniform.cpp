@@ -1,7 +1,7 @@
 
 #include "Uniform.hpp"
 
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <cstdlib>
 #include <iostream>
 
@@ -14,8 +14,8 @@ BEGIN_SLOTTABLE(Uniform)
 END_SLOTTABLE(Uniform)
 
 BEGIN_SLOT_MAP(Uniform)
-  ON_SLOT(1, setSlotMin, mxrp::base::Number)
-  ON_SLOT(2, setSlotMax, mxrp::base::Number)
+  ON_SLOT(1, setSlotMin, mixr::base::Number)
+  ON_SLOT(2, setSlotMax, mixr::base::Number)
 END_SLOT_MAP()
 
 Uniform::Uniform()
@@ -53,14 +53,14 @@ int Uniform::getNum() const
    return static_cast<int>((min+(max-min)*(std::rand()/(RAND_MAX+1.0))));
 }
 
-bool Uniform::setSlotMin(const mxrp::base::Number* const x)
+bool Uniform::setSlotMin(const mixr::base::Number* const x)
 {
    if (x != nullptr)
       setMin(x->getInt());
    return true;
 }
 
-bool Uniform::setSlotMax(const mxrp::base::Number* const x)
+bool Uniform::setSlotMax(const mixr::base::Number* const x)
 {
    if (x != nullptr)
       setMax(x->getInt());

@@ -1,10 +1,10 @@
 
 #include "TdElevPtr.hpp"
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdElevPtr, "TdElevPtr")
 EMPTY_SERIALIZER(TdElevPtr)

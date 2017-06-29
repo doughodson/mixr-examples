@@ -2,9 +2,9 @@
 #ifndef __Endpoint_H__
 #define __Endpoint_H__
 
-#include "mxrp/base/Component.hpp"
+#include "mixr/base/Component.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class NetHandler; class Number; }
 }
 
@@ -22,9 +22,9 @@ namespace base { class NetHandler; class Number; }
 //                                  halting (default: infinite)
 //
 //------------------------------------------------------------------------------
-class Endpoint : public mxrp::base::Component
+class Endpoint : public mixr::base::Component
 {
-   DECLARE_SUBCLASS(Endpoint, mxrp::base::Component)
+   DECLARE_SUBCLASS(Endpoint, mixr::base::Component)
 
 public:
     static const unsigned int MAX_SIZE = 1024;  // Max buffer size
@@ -46,10 +46,10 @@ public:
     virtual unsigned int recvData(char* const msg, const unsigned int maxsize);
 
     // Slot functions
-    virtual bool setSlotNetwork(mxrp::base::NetHandler* const msg);
-    virtual bool setSlotNetInput(mxrp::base::NetHandler* const msg);
-    virtual bool setSlotNoWait(mxrp::base::Number* const msg);
-    virtual bool setSlotLoops(mxrp::base::Number* const msg);
+    virtual bool setSlotNetwork(mixr::base::NetHandler* const msg);
+    virtual bool setSlotNetInput(mixr::base::NetHandler* const msg);
+    virtual bool setSlotNoWait(mixr::base::Number* const msg);
+    virtual bool setSlotLoops(mixr::base::Number* const msg);
 
     virtual void reset() override;
 
@@ -58,8 +58,8 @@ protected:
     unsigned int getLoops() const { return loops; }
 
 private:
-    mxrp::base::safe_ptr<mxrp::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
-    mxrp::base::safe_ptr<mxrp::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
+    mixr::base::safe_ptr<mixr::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
+    mixr::base::safe_ptr<mixr::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
     unsigned int loops {};                               // Number of transfer loops (zero if no limit)
     bool networkInitialized {};                          // Network has been initialized
     bool networkInitFailed {};                           // Network initialization has failed

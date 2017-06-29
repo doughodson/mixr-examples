@@ -7,7 +7,7 @@ testlandinggear:
         p: testAoAIndexer
     }
     components: {
-        #include "mxrp/instruments/landinggear/landinggear.epp"
+        #include "mixr/instruments/landinggear/landinggear.epp"
         
         // this is our readout
         ( AsciiText 

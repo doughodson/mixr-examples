@@ -11,7 +11,7 @@ testrpmdial:
     
     components: {
         // include our rpm basic module
-        #include "mxrp/instruments/dials/rpm.epp"
+        #include "mixr/instruments/dials/rpm.epp"
         
         // here is our digital readout
         ( AsciiText

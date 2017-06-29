@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
 #include "DspRadar.hpp"
 #include "DspRwr.hpp"
@@ -12,7 +12,7 @@
 #include "SpdLines.hpp"
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace xpanel {
 
 base::Object* factory(const std::string& name)

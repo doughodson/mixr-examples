@@ -5,7 +5,7 @@ PGM = testTimer
 
 OBJS = main.o Tester.o
 
-LDFLAGS += -lmxrp_base
+LDFLAGS += -lmixr_base
 LDFLAGS += -lpthread -lrt
 
 all: $(PGM)

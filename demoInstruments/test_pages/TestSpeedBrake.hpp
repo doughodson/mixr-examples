@@ -2,7 +2,7 @@
 #ifndef __TestSpeedBrake_H__
 #define __TestSpeedBrake_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestSpeedBrake
@@ -11,9 +11,9 @@
 // This page will supply test data to the speed brake (generic)
 //
 //------------------------------------------------------------------------------
-class TestSpeedBrake : public mxrp::graphics::Page
+class TestSpeedBrake : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestSpeedBrake, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestSpeedBrake, mixr::graphics::Page)
 
 public:
     TestSpeedBrake();

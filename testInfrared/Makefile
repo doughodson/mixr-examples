@@ -5,10 +5,10 @@ PGM = testInfrared
 
 OBJS =	factory.o TestComputer.o TestDisplay.o TestStation.o main.o
 
-LDFLAGS += -lmxrp_interop_dis -lmxrp_interop
-LDFLAGS += -lmxrp_models -lmxrp_simulation -lmxrp_instruments -lJSBSim
-LDFLAGS += -lmxrp_iodevice -lmxrp_otw -lmxrp_terrain
-LDFLAGS += -lmxrp_gui_glut -lmxrp_graphics -lmxrp_base -lftgl -lfreetype -lcigicl
+LDFLAGS += -lmixr_interop_dis -lmixr_interop
+LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_instruments -lJSBSim
+LDFLAGS += -lmixr_iodevice -lmixr_otw -lmixr_terrain
+LDFLAGS += -lmixr_gui_glut -lmixr_graphics -lmixr_base -lftgl -lfreetype -lcigicl
 LDFLAGS += -lglut -lGLU -lGL -lX11
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lpthread -lrt

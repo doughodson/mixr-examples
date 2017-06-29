@@ -12,7 +12,7 @@ testadi2:
             color: white
             text: "testadi2.epp"
         ) 
-        #include "mxrp/instruments/adi/adi2.epp"
+        #include "mixr/instruments/adi/adi2.epp"
     }
 )
 

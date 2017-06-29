@@ -9,22 +9,22 @@
 //    2) Compile with the 'protoc' compiler using the following commands
 //
 //       For Windows ...
-//          protoc -I%MXRP_EXAMPLES_ROOT%\shared -I%MXRP_ROOT%\include --cpp_out=%MXRP_EXAMPLES_ROOT%\shared %MXRP_EXAMPLES_ROOT%\shared\xrecorder\protobuf\DataRecord.proto
+//          protoc -I%MIXR_EXAMPLES_ROOT%\shared -I%MIXR_ROOT%\include --cpp_out=%MIXR_EXAMPLES_ROOT%\shared %MIXR_EXAMPLES_ROOT%\shared\xrecorder\protobuf\DataRecord.proto
 //
 //       For Linux ...
-//          protoc -I$MXRP_EXAMPLES_ROOT/shared -I$MXRP_ROOT/include --cpp_out=$MXRP_EXAMPLES_ROOT/shared $MXRP_EXAMPLES_ROOT/shared/xrecorder/protobuf/DataRecord.proto
+//          protoc -I$MIXR_EXAMPLES_ROOT/shared -I$MIXR_ROOT/include --cpp_out=$MIXR_EXAMPLES_ROOT/shared $MIXR_EXAMPLES_ROOT/shared/xrecorder/protobuf/DataRecord.proto
 //
 // -----------------------------------------------------------------------------
 
-import "mxrp/recorder/protobuf/DataRecord.proto";
+import "mixr/recorder/protobuf/DataRecord.proto";
 
-package mxrp.xrecorder.pb;
+package mixr.xrecorder.pb;
 
 // =============================================================================
 // Extend the common data record
 // =============================================================================
 
-extend mxrp.recorder.pb.DataRecord {
+extend mixr.recorder.pb.DataRecord {
    optional MyDataMsg my_data_msg = 1000;
 }
 
@@ -34,7 +34,7 @@ extend mxrp.recorder.pb.DataRecord {
 // =============================================================================
 
 // Extend the Marker message
-extend mxrp.recorder.pb.MarkerMsg {
+extend mixr.recorder.pb.MarkerMsg {
    optional uint32 foo = 100;       // my own marker value
 }
 

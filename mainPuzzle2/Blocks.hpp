@@ -2,9 +2,9 @@
 #ifndef __Blocks_H__
 #define __Blocks_H__
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class List; class Integer; }
 }
 
@@ -18,9 +18,9 @@ class Puzzle;
 // Block locations (x, y): lower left is (1,1)
 // Block type IDs are unique to blocks of the same type (e.g., size and shape)
 //------------------------------------------------------------------------------
-class Block : public mxrp::base::Object
+class Block : public mixr::base::Object
 {
-    DECLARE_SUBCLASS(Block, mxrp::base::Object)
+    DECLARE_SUBCLASS(Block, mixr::base::Object)
 
 public:
    Block();
@@ -50,8 +50,8 @@ public:
    virtual unsigned int computeHashValue(const unsigned int blockIndex, const unsigned int rehashCount) const;
 
    // Slot function(s)
-   virtual bool setSlotPosition(const mxrp::base::List* const msg);
-   virtual bool setSlotRefId(const mxrp::base::Integer* const msg);
+   virtual bool setSlotPosition(const mixr::base::List* const msg);
+   virtual bool setSlotRefId(const mixr::base::Integer* const msg);
 
 protected:
    virtual bool setInitPosition(const unsigned int x, const unsigned int y);

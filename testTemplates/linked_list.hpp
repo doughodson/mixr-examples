@@ -2,9 +2,9 @@
 #ifndef __oe_base_LinkedList_H__
 #define __oe_base_LinkedList_H__
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base {
 
 //------------------------------------------------------------------------------
@@ -129,13 +129,13 @@ class LinkedList : public Object
     protected: void copyData(const LinkedList& org, const bool cc = false);                                                       
     protected: void deleteData();                                                                                               
     public: virtual bool isClassType(const std::type_info& type) const override;                                                
-    private: static ::mxrp::base::MetaObject metaObject;                                                                                     
-    protected: static const ::mxrp::base::MetaObject* getMetaObject();                                                                                
+    private: static ::mixr::base::MetaObject metaObject;                                                                                     
+    protected: static const ::mixr::base::MetaObject* getMetaObject();                                                                                
     public: static const char* getFactoryName();                                                                                
     public: virtual bool isFactoryName(const char name[]) const override;                                                       
-    protected: virtual bool setSlotByIndex(const int slotindex, ::mxrp::base::Object* const obj) override;                        
-    public: static const ::mxrp::base::SlotTable& getSlotTable();                                                                 
-    protected: static const ::mxrp::base::SlotTable slottable;                                                                    
+    protected: virtual bool setSlotByIndex(const int slotindex, ::mixr::base::Object* const obj) override;                        
+    public: static const ::mixr::base::SlotTable& getSlotTable();                                                                 
+    protected: static const ::mixr::base::SlotTable slottable;                                                                    
     private: static const char* slotnames[];                                                                                    
     private: static const int nslots;                                                                                           
     public: virtual std::ostream& serialize(std::ostream& sout, const int i = 0, const bool slotsOnly = false) const override;  
@@ -215,14 +215,14 @@ private:
 
                                     
 template <class T>
-    ::mxrp::base::MetaObject LinkedList<T>::metaObject(                                               
+    ::mixr::base::MetaObject LinkedList<T>::metaObject(                                               
       typeid(LinkedList).name(), "LinkedList",                   
         &LinkedList::slottable, Object::getMetaObject()                                   
     );                                                                                 
 
 
 template <class T>
-    const ::mxrp::base::MetaObject* LinkedList<T>::getMetaObject() { return &metaObject; }                
+    const ::mixr::base::MetaObject* LinkedList<T>::getMetaObject() { return &metaObject; }                
 
 
 template <class T>
@@ -237,7 +237,7 @@ template <class T>
     }                                                                                  
 
 template <class T>
-    const ::mxrp::base::SlotTable& LinkedList<T>::getSlotTable()  { return slottable; }       
+    const ::mixr::base::SlotTable& LinkedList<T>::getSlotTable()  { return slottable; }       
 
 template <class T>
     bool LinkedList<T>::isClassType(const std::type_info& type) const                       
@@ -280,10 +280,10 @@ template <class T>
     const int LinkedList<T>::nslots = 0;                                                        
 
 template <class T>
-    const ::mxrp::base::SlotTable LinkedList<T>::slottable(0, 0, Object::getSlotTable());      
+    const ::mixr::base::SlotTable LinkedList<T>::slottable(0, 0, Object::getSlotTable());      
 
 template <class T>
-    bool LinkedList<T>::setSlotByIndex(const int si, ::mxrp::base::Object* const obj)             
+    bool LinkedList<T>::setSlotByIndex(const int si, ::mixr::base::Object* const obj)             
     {                                                                                      
         return Object::setSlotByIndex(si,obj);                                          
     }

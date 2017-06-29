@@ -2,9 +2,9 @@
 #ifndef __Tester_H__
 #define __Tester_H__
 
-#include "mxrp/base/Component.hpp"
+#include "mixr/base/Component.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class PairStream; }
 }
 
@@ -16,9 +16,9 @@ namespace base { class PairStream; }
 // Slots:
 //    timers   <PairStream>   ! List of timers to be tested
 //------------------------------------------------------------------------------
-class Tester : public mxrp::base::Component
+class Tester : public mixr::base::Component
 {
-   DECLARE_SUBCLASS(Tester, mxrp::base::Component)
+   DECLARE_SUBCLASS(Tester, mixr::base::Component)
 
 public:
    Tester();
@@ -33,10 +33,10 @@ public:
    virtual void reset() override;
 
 protected:
-   bool setSlotTimers(const mxrp::base::PairStream* const msg);
+   bool setSlotTimers(const mixr::base::PairStream* const msg);
 
 private:
-   mxrp::base::PairStream* timers {};    // List of timers
+   mixr::base::PairStream* timers {};    // List of timers
 };
 
 #endif

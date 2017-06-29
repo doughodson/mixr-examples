@@ -2,7 +2,7 @@
 #ifndef __PrintMyData_H__
 #define __PrintMyData_H__
 
-#include "mxrp/recorder/PrintHandler.hpp"
+#include "mixr/recorder/PrintHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class: PrintMyData
@@ -10,15 +10,15 @@
 //
 // Factory name: PrintMyData
 //------------------------------------------------------------------------------
-class PrintMyData : public mxrp::recorder::PrintHandler
+class PrintMyData : public mixr::recorder::PrintHandler
 {
-   DECLARE_SUBCLASS(PrintMyData, mxrp::recorder::PrintHandler)
+   DECLARE_SUBCLASS(PrintMyData, mixr::recorder::PrintHandler)
 
 public:
    PrintMyData();
 
 protected:
-   virtual void processRecordImp(const mxrp::recorder::DataRecordHandle* const handle) override;
+   virtual void processRecordImp(const mixr::recorder::DataRecordHandle* const handle) override;
 };
 
 #endif

@@ -1,12 +1,12 @@
 
 #include "RdrAlt.hpp"
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/graphics/readouts/NumericReadout.hpp"
-#include "mxrp/graphics/Display.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/graphics/readouts/NumericReadout.hpp"
+#include "mixr/graphics/Display.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(RdrAlt, "RdrAlt")
 EMPTY_SERIALIZER(RdrAlt)

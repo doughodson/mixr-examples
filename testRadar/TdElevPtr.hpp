@@ -2,7 +2,7 @@
 #ifndef __TdElevPtr_H__
 #define __TdElevPtr_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TdElevPtr
@@ -19,13 +19,13 @@
 // Events:
 //    UPDATE_VALUE  <Number>  ! elevation angle (degs)
 //------------------------------------------------------------------------------
-namespace mxrp {
+namespace mixr {
 namespace base { class Number; }
 }
 
-class TdElevPtr : public mxrp::graphics::Graphic
+class TdElevPtr : public mixr::graphics::Graphic
 {
-   DECLARE_SUBCLASS(TdElevPtr, mxrp::graphics::Graphic)
+   DECLARE_SUBCLASS(TdElevPtr, mixr::graphics::Graphic)
 
 public:
    TdElevPtr();
@@ -35,10 +35,10 @@ public:
 
    virtual void draw() override;
 
-   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
 private:
-   bool onUpdateValue(const mxrp::base::Number* const);
+   bool onUpdateValue(const mixr::base::Number* const);
 
    double elev {};  // (degs)
 };

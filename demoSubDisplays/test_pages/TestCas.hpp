@@ -2,7 +2,7 @@
 #ifndef __TestCas_H__
 #define __TestCas_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestCas
@@ -10,9 +10,9 @@
 // Description: Example Analog Dial Page
 // This page will supply test data to a generic calibrated air speed
 //------------------------------------------------------------------------------
-class TestCas : public mxrp::graphics::Page
+class TestCas : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestCas, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestCas, mixr::graphics::Page)
 
 public:
     TestCas();

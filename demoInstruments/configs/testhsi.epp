@@ -7,7 +7,7 @@ testhsi:
     }
     components: {
         // include our basic hsi module
-        #include "mxrp/instruments/dials/hsi.epp"
+        #include "mixr/instruments/dials/hsi.epp"
         // Label to tell us what test we are running
         ( AsciiText
             position: [ 26 2 ]

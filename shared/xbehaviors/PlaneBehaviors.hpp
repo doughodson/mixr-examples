@@ -12,12 +12,12 @@
 //          PlaneBehaviorBase -> PlaneBarrelRoll
 //          PlaneBehaviorBase -> PlaneLoop
 //------------------------------------------------------------------------------
-#ifndef __oe_xbehaviors_PlaneBehaviors_H__
-#define __oe_xbehaviors_PlaneBehaviors_H__
+#ifndef __mixr_xbehaviors_PlaneBehaviors_H__
+#define __mixr_xbehaviors_PlaneBehaviors_H__
 
-#include "mxrp/base/ubf/AbstractBehavior.hpp"
+#include "mixr/base/ubf/AbstractBehavior.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Distance; class State; }
 namespace base {
 namespace ubf { class AbstractState; class AbstractAction; }

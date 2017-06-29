@@ -2,11 +2,11 @@
 #ifndef __Puzzle_H__
 #define __Puzzle_H__
 
-#include "mxrp/base/Component.hpp"
+#include "mixr/base/Component.hpp"
 
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class List; }
 }
 class State;
@@ -16,9 +16,9 @@ class State;
 //
 // Description:  Puzzle engine
 //------------------------------------------------------------------------------
-class Puzzle : public mxrp::base::Component
+class Puzzle : public mixr::base::Component
 {
-    DECLARE_SUBCLASS(Puzzle, mxrp::base::Component)
+    DECLARE_SUBCLASS(Puzzle, mixr::base::Component)
 
 public:
    static const unsigned int MAX_STATES = 1000000;    // Max number of states
@@ -60,7 +60,7 @@ private:
    const State* goalState {};       // Goal (ending) state
 
    // Open list
-   mxrp::base::List* openStates {};   // List of 'open' states (still need to be expanded)
+   mixr::base::List* openStates {};   // List of 'open' states (still need to be expanded)
                                     // (list is ordered by the state's f() values)
 
    // HashTable

@@ -1,10 +1,10 @@
 
-#ifndef __oe_xbehaviors_PriorityArbiter_H__
-#define __oe_xbehaviors_PriorityArbiter_H__
+#ifndef __mixr_xbehaviors_PriorityArbiter_H__
+#define __mixr_xbehaviors_PriorityArbiter_H__
 
-#include "mxrp/base/ubf/Arbiter.hpp"
+#include "mixr/base/ubf/Arbiter.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class List; class AbstractAction; }
 namespace xbehaviors {
 

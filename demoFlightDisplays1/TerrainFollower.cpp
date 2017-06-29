@@ -3,11 +3,11 @@
 //#define TEST_ALT
 
 #include "TerrainFollower.hpp"
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <GL/glu.h>
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TerrainFollower, "TerrainFollower")
 EMPTY_SERIALIZER(TerrainFollower)

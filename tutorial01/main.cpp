@@ -1,11 +1,11 @@
 
 #include <iostream>
 
-#include "mxrp/base/String.hpp"
+#include "mixr/base/String.hpp"
 
 int main(int argc, char* argv[])
 {
-   const auto str = new mxrp::base::String("Hello world\n");
+   const auto str = new mixr::base::String("Hello world\n");
 
    std::cout << str->getString();
 

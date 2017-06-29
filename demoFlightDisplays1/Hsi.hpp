@@ -2,7 +2,7 @@
 #ifndef __Hsi_H__
 #define __Hsi_H__
 
-#include "mxrp/graphics/Rotators.hpp"
+#include "mixr/graphics/Rotators.hpp"
 
 //------------------------------------------------------------------------------
 // Class: Hsi
@@ -17,9 +17,9 @@
 //      UPDATE_VALUE7 -> cdi dots
 //      UPDATE_VALUE8 -> to from
 //------------------------------------------------------------------------------
-class Hsi : public mxrp::graphics::Rotators
+class Hsi : public mixr::graphics::Rotators
 {
-    DECLARE_SUBCLASS(Hsi, mxrp::graphics::Rotators)
+    DECLARE_SUBCLASS(Hsi, mixr::graphics::Rotators)
 
 public:
     Hsi();
@@ -41,16 +41,16 @@ public:
     double getToFrom()  { return toFrom; }
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
 private:
     // event functions
-    bool onUpdateSelHdgHsi(const mxrp::base::Number* const x);
-    bool onUpdateSelCrsHsi(const mxrp::base::Number* const x);
-    bool onUpdateNav1BrgHsi(const mxrp::base::Number* const x);
-    bool onUpdateNav2BrgHsi(const mxrp::base::Number* const x);
-    bool onUpdateCdiDotsHsi(const mxrp::base::Number* const x);
-    bool onUpdateToFromHsi(const mxrp::base::Number* const x);
+    bool onUpdateSelHdgHsi(const mixr::base::Number* const x);
+    bool onUpdateSelCrsHsi(const mixr::base::Number* const x);
+    bool onUpdateNav1BrgHsi(const mixr::base::Number* const x);
+    bool onUpdateNav2BrgHsi(const mixr::base::Number* const x);
+    bool onUpdateCdiDotsHsi(const mixr::base::Number* const x);
+    bool onUpdateToFromHsi(const mixr::base::Number* const x);
 
     double selHdg {};      // selected heading (degs)
     SendData selHdgSD;

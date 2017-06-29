@@ -2,7 +2,7 @@
 #ifndef __TestComputer_H__
 #define __TestComputer_H__
 
-#include "mxrp/models/system/OnboardComputer.hpp"
+#include "mixr/models/system/OnboardComputer.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestComputer
@@ -15,9 +15,9 @@
 //       haveTgt()   true if computer/seeker currently tracking a target
 //
 //------------------------------------------------------------------------------
-class TestComputer : public mxrp::models::OnboardComputer
+class TestComputer : public mixr::models::OnboardComputer
 {
-    DECLARE_SUBCLASS(TestComputer, mxrp::models::OnboardComputer)
+    DECLARE_SUBCLASS(TestComputer, mixr::models::OnboardComputer)
 
 public:
    TestComputer();

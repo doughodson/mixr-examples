@@ -7,7 +7,7 @@ testcompass:
     }
     components: {
         // here is the map page moudule
-        #include "mxrp/instruments/maps/mappage.epp"
+        #include "mixr/instruments/maps/mappage.epp"
 
         // These are readouts to test the data
         ( AsciiText

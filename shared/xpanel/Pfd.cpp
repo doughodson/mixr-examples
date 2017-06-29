@@ -1,9 +1,9 @@
 
 #include "Pfd.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/units/distance_utils.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/units/distance_utils.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Pfd, "Pfd")

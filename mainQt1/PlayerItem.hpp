@@ -4,7 +4,7 @@
 
 #include <QGraphicsItem>
 
-namespace  mxrp {
+namespace  mixr {
 namespace models { class Player; }
 }
 
@@ -18,7 +18,7 @@ public:
    ~PlayerItem();
 
    // update function
-   virtual void refreshPlayer(const mxrp::models::Player* const ownship);
+   virtual void refreshPlayer(const mixr::models::Player* const ownship);
 
    // we can tell our PlayerItem to use a specific image file to draw
    virtual unsigned short getPlayerId() const;

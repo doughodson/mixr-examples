@@ -1,11 +1,11 @@
 
-#ifndef __oe_xpanel_DspRadar_H__
-#define __oe_xpanel_DspRadar_H__
+#ifndef __mixr_xpanel_DspRadar_H__
+#define __mixr_xpanel_DspRadar_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace base   { class PairStream; }
 namespace models { class Radar; }
 namespace xpanel {

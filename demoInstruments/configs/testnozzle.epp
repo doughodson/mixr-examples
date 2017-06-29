@@ -11,7 +11,7 @@ testnozzle:
     
     components: {
         // include our nozzle module
-        #include "mxrp/instruments/dials/nozzle.epp"
+        #include "mixr/instruments/dials/nozzle.epp"
         
         // here is our digital readout
         ( AsciiText

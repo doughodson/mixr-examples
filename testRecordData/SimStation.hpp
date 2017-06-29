@@ -2,9 +2,9 @@
 #ifndef __SimStation_H__
 #define __SimStation_H__
 
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Station.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Table1; }
 namespace glut  { class GlutDisplay; }
 }
@@ -22,9 +22,9 @@ namespace glut  { class GlutDisplay; }
 //      display                 <graphics::GlutDisplay> ! Main graphics display
 //      autoResetTimer          <Time>               ! Auto RESET timer value (base::Time); default: 0
 //------------------------------------------------------------------------------
-class SimStation : public mxrp::simulation::Station
+class SimStation : public mixr::simulation::Station
 {
-    DECLARE_SUBCLASS(SimStation, mxrp::simulation::Station)
+    DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
 
 public:
     SimStation();
@@ -33,8 +33,8 @@ public:
    void stepOwnshipPlayer();
 
    // Slot functions
-   virtual bool setSlotMainDisplay(mxrp::glut::GlutDisplay* const d);
-   virtual bool setSlotAutoResetTime(const mxrp::base::Time* const num);     // Sets the auto RESET timer
+   virtual bool setSlotMainDisplay(mixr::glut::GlutDisplay* const d);
+   virtual bool setSlotAutoResetTime(const mixr::base::Time* const num);     // Sets the auto RESET timer
 
    virtual void updateTC(const double dt = 0.0) override;
    virtual void updateData(const double dt = 0.0) override;
@@ -42,12 +42,12 @@ public:
 
 private:
     // Main Display
-    mxrp::base::safe_ptr<mxrp::glut::GlutDisplay> mainDisplay;
+    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
     bool displayInit {};
 
     // Auto reset timer
     double autoResetTimer {};                   // Auto RESET timer (sends a RESET_EVENT after timeout)
-    const mxrp::base::Time* autoResetTimer0 {};   // Init value of the Auto RESET timer
+    const mixr::base::Time* autoResetTimer0 {};   // Init value of the Auto RESET timer
 };
 
 #endif

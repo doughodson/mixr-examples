@@ -2,9 +2,9 @@
 #ifndef __InstrumentPanel_H__
 #define __InstrumentPanel_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Player; }
 namespace simulation { class Simulation; class Station; }
 }
@@ -21,18 +21,18 @@ class MfdDisplay;
 //   'f' or 'F'   -- Toggle simulation freeze
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class InstrumentPanel : public mxrp::glut::GlutDisplay
+class InstrumentPanel : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(InstrumentPanel, mxrp::glut::GlutDisplay)
+   DECLARE_SUBCLASS(InstrumentPanel, mixr::glut::GlutDisplay)
 
 public:
    InstrumentPanel();
 
-   mxrp::models::Player* getOwnship();
-   mxrp::simulation::Simulation* getSimulation();
-   mxrp::simulation::Station* getStation();
+   mixr::models::Player* getOwnship();
+   mixr::simulation::Simulation* getSimulation();
+   mixr::simulation::Station* getStation();
 
-   virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
    virtual void updateData(const double dt = 0.0) override;
 
 protected:
@@ -42,14 +42,14 @@ protected:
    bool onStepOwnshipKey();
 
 private:
-   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
    // ALT Stuff
    double altitude {};         // our current altitude
    SendData altitudeSD;
 
    // VVI Stuff
-   mxrp::base::Vec3d vvi;        // velocity vector
+   mixr::base::Vec3d vvi;        // velocity vector
    SendData vviSD;
    double pastVvi {};          // our past vvi value (to create a linear filter)
 

@@ -2,9 +2,9 @@
 #ifndef __DspRwr_H__
 #define __DspRwr_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Rwr; }
 }
 
@@ -15,23 +15,23 @@ namespace models { class Rwr; }
 //              the angle of arrival.
 // Factory name: DspRwr
 //------------------------------------------------------------------------------
-class DspRwr : public mxrp::graphics::Graphic
+class DspRwr : public mixr::graphics::Graphic
 {
-    DECLARE_SUBCLASS(DspRwr, mxrp::graphics::Graphic)
+    DECLARE_SUBCLASS(DspRwr, mixr::graphics::Graphic)
 
 public:
     DspRwr();
 
-    mxrp::models::Rwr* getRwr()               { return rwr; }
-    const mxrp::models::Rwr* getRwr() const   { return rwr; }
-    void setRwr(mxrp::models::Rwr* s)         { rwr = s; }
+    mixr::models::Rwr* getRwr()               { return rwr; }
+    const mixr::models::Rwr* getRwr() const   { return rwr; }
+    void setRwr(mixr::models::Rwr* s)         { rwr = s; }
 
     virtual void drawFunc() override;
 
     virtual void updateData(const double dt = 0.0) override;
 
 private:
-    mxrp::models::Rwr* rwr {};     // The test RWR sensor
+    mixr::models::Rwr* rwr {};     // The test RWR sensor
 };
 
 #endif

@@ -1,14 +1,14 @@
 
 #include "factory.hpp"
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
 #include "ZeroMQContext.hpp"
 #include "ZeroMQHandler.hpp"
 
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace xzmq {
 
 base::Object* factory(const std::string& name)

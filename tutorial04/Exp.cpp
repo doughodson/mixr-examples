@@ -1,7 +1,7 @@
 
 #include "Exp.hpp"
 
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <cstdlib>
 #include <cmath>
 #include <iostream>
@@ -14,7 +14,7 @@ BEGIN_SLOTTABLE(Exp)
 END_SLOTTABLE(Exp)
 
 BEGIN_SLOT_MAP(Exp)
-  ON_SLOT(1, setSlotMean, mxrp::base::Number)
+  ON_SLOT(1, setSlotMean, mixr::base::Number)
 END_SLOT_MAP()
 
 Exp::Exp()
@@ -47,7 +47,7 @@ int Exp::getNum() const
   return v;
 }
 
-bool Exp::setSlotMean(const mxrp::base::Number* const mean)
+bool Exp::setSlotMean(const mixr::base::Number* const mean)
 {
   if (mean != nullptr)
     setMean(mean->getDouble());

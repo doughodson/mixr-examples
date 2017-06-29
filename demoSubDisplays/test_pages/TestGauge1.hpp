@@ -2,7 +2,7 @@
 #ifndef __TestGauge1_H__
 #define __TestGauge1_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestGauge1
@@ -11,9 +11,9 @@
 // This page will supply test data to a generic analog gauge
 //
 //------------------------------------------------------------------------------
-class TestGauge1 : public mxrp::graphics::Page
+class TestGauge1 : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestGauge1, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestGauge1, mixr::graphics::Page)
 
 public:
     TestGauge1();

@@ -1,16 +1,16 @@
 
 #include "NavRadios.hpp"
 
-#include "mxrp/models/player/Player.hpp"
+#include "mixr/models/player/Player.hpp"
 
-#include "mxrp/dafif/AirportLoader.hpp"
-#include "mxrp/dafif/NavaidLoader.hpp"
+#include "mixr/dafif/AirportLoader.hpp"
+#include "mixr/dafif/NavaidLoader.hpp"
 
 #include "WorldModel.hpp"
 
-#include "mxrp/base/util/nav_utils.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/units/Distances.hpp"
+#include "mixr/base/util/nav_utils.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/units/Distances.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(NavRadio, "NavRadio")
 EMPTY_SERIALIZER(NavRadio)
@@ -63,13 +63,13 @@ double NavRadio::getAltitude() const
    return altitude;
 }
 
-mxrp::dafif::NavaidLoader* NavRadio::getNavaidLoader()
+mixr::dafif::NavaidLoader* NavRadio::getNavaidLoader()
 {
    // If we don't have a NAVAID loader, try to get one from our simulation
    if (nvdb == nullptr) {
       WorldModel* sim = dynamic_cast<WorldModel*>(getWorldModel());
       if (sim != nullptr) {
-         mxrp::dafif::NavaidLoader* p = sim->getNavaids();
+         mixr::dafif::NavaidLoader* p = sim->getNavaids();
          if (p != nullptr && p->isDbLoader()) {
             nvdb = p;
          }
@@ -78,13 +78,13 @@ mxrp::dafif::NavaidLoader* NavRadio::getNavaidLoader()
    return nvdb;
 }
 
-mxrp::dafif::AirportLoader* NavRadio::getAirportLoader()
+mixr::dafif::AirportLoader* NavRadio::getAirportLoader()
 {
    // If we don't have an airport loader, try to get one from our simulation
    if (apdb == nullptr) {
       WorldModel* sim = dynamic_cast<WorldModel*>(getWorldModel());
       if (sim != nullptr) {
-         mxrp::dafif::AirportLoader* p = sim->getAirports();
+         mixr::dafif::AirportLoader* p = sim->getAirports();
          if (p != nullptr && p->isDbLoader()) {
             apdb = p;
          }
@@ -100,7 +100,7 @@ bool NavRadio::setPosition()
 {
    bool ok = false;
 
-   const mxrp::models::Player* p = getOwnship();
+   const mixr::models::Player* p = getOwnship();
    if (p != nullptr) {
       latitude = p->getLatitude();
       longitude = p->getLongitude();
@@ -319,7 +319,7 @@ void IlsRadio::updateData(const double dt)
         localizerValid = findLocalizerByFreq(getFrequency());
 
         //Get test results - make sure dest LL do not change as plane flies
-        mxrp::base::nav::gbd2ll(getLatitude(),getLongitude(),bearing,grdrange,&destLatitude,&destLongitude);
+        mixr::base::nav::gbd2ll(getLatitude(),getLongitude(),bearing,grdrange,&destLatitude,&destLongitude);
         //Test for bad result...
         if ((glideSlopeValid == false)|(localizerValid == false)) {
             //std::cerr << "No ILS In Range..." << std::endl;
@@ -374,11 +374,11 @@ bool IlsRadio::findILSGlideslopeByFreq(double freq)
          //Sort through the results and check the type - assume the closest ones are correct
          //"found" list is already sorted from closest to farthest away:
          for (int i = 0; i < found; i++) {
-            mxrp::dafif::Ils* p = getAirportLoader()->getIls(i);
+            mixr::dafif::Ils* p = getAirportLoader()->getIls(i);
             //Debug Prints:
             //p->printRecord(std::cout);
             //Get Glideslope data here:
-            if((!glideSlopeValid)&&(p->isIlsType(mxrp::dafif::Ils::GLIDESLOPE))){
+            if((!glideSlopeValid)&&(p->isIlsType(mixr::dafif::Ils::GLIDESLOPE))){
                //Glideslope should not affect the bearing data from the localizer
                currentMagVar = p->magVariance();
                float ilsGS(0), acGS(0), delGS(0);

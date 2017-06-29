@@ -3,20 +3,20 @@
 #include <iostream>
 #include <cstdio>
 
-#include "mxrp/base/Statistic.hpp"
+#include "mixr/base/Statistic.hpp"
 
-#include "mxrp/base/Rng.hpp"
-#include "mxrp/base/distributions/Uniform.hpp"
-#include "mxrp/base/distributions/Pareto.hpp"
-#include "mxrp/base/distributions/Lognormal.hpp"
-#include "mxrp/base/distributions/Exponential.hpp"
+#include "mixr/base/Rng.hpp"
+#include "mixr/base/distributions/Uniform.hpp"
+#include "mixr/base/distributions/Pareto.hpp"
+#include "mixr/base/distributions/Lognormal.hpp"
+#include "mixr/base/distributions/Exponential.hpp"
 
 // this test is to match original Mersenne Twister output
 void testValidation()
 {
   const unsigned int init[4] = {0x123, 0x234, 0x345, 0x456}, length = 4;
-  mxrp::base::Rng irand(init, length); // 32-bit int generator
-  mxrp::base::Rng drand; // double in [0, 1) generator, already init
+  mixr::base::Rng irand(init, length); // 32-bit int generator
+  mixr::base::Rng drand; // double in [0, 1) generator, already init
 
   std::printf("1000 32-bit integer random numbers:\n");
   for (int i = 0; i < 1000; ++i) {
@@ -34,7 +34,7 @@ void testValidation()
 //
 void testUniform()
 {
-  mxrp::base::Uniform rng;
+  mixr::base::Uniform rng;
   rng.setMin(0.0);
   rng.setMax(10.0);
 
@@ -47,7 +47,7 @@ void testUniform()
 
 void testPareto()
 {
-  mxrp::base::Pareto rng;
+  mixr::base::Pareto rng;
   rng.setAlpha(5.0);
   rng.setBeta(8.0);
 
@@ -60,7 +60,7 @@ void testPareto()
 
 void testLognormal()
 {
-  mxrp::base::Lognormal rng;
+  mixr::base::Lognormal rng;
   rng.setSigma(1.0);
   rng.setMu(4.0);
   rng.setGamma(5.0);     // location
@@ -74,8 +74,8 @@ void testLognormal()
 
 void testExponential()
 {
-  mxrp::base::Exponential rng;
-  mxrp::base::Statistic stats;
+  mixr::base::Exponential rng;
+  mixr::base::Statistic stats;
 
   //rng.setMean(10);       // 1/lambda
   rng.setLambda(1);

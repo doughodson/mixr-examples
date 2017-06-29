@@ -2,13 +2,13 @@
 // Test Matrix class functions
 //------------------------------------------------------------------------------
 
-#include "mxrp/base/Matrix.hpp"
-#include "mxrp/base/Vectors.hpp"
-#include "mxrp/base/units/Angles.hpp"
+#include "mixr/base/Matrix.hpp"
+#include "mixr/base/Vectors.hpp"
+#include "mixr/base/units/Angles.hpp"
 #include <iostream>
 #include <iomanip>
 
-using namespace mxrp::base;
+using namespace mixr::base;
 
 namespace d {   // constants that define matrix dimensions
 const unsigned int rows = 4;

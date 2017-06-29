@@ -2,9 +2,9 @@
 #ifndef __Display_H__
 #define __Display_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Number; }
 namespace models { class Player; }
 namespace simulation { class Simulation; class Station; }
@@ -20,25 +20,25 @@ namespace simulation { class Simulation; class Station; }
 // Slots:
 //    textureTest <Boolean>   Texture test enabled
 // ----------------------------------------------------------------------------
-class Display : public mxrp::glut::GlutDisplay
+class Display : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, mxrp::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
 
 public:
    Display();
 
-   mxrp::models::Player* getOwnship();
-   mxrp::simulation::Simulation* getSimulation();
-   mxrp::simulation::Station* getStation();
+   mixr::models::Player* getOwnship();
+   mixr::simulation::Simulation* getSimulation();
+   mixr::simulation::Station* getStation();
 
    // Slot functions
-   virtual bool setSlotTextureTest(const mxrp::base::Number* const msg);
+   virtual bool setSlotTextureTest(const mixr::base::Number* const msg);
 
    virtual void configure() override;
    virtual void drawFunc() override;
 
 private:
-   mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
    bool   testTexture {};      // Texture image test
    GLuint texture {};          // Texture

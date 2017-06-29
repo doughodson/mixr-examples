@@ -1,7 +1,7 @@
 
 #include "TestFtitDial.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestFtitDial, "TestFtitDial")
 EMPTY_SERIALIZER(TestFtitDial)

@@ -6,24 +6,24 @@
 #include "xpanel/DspRwr.hpp"
 #include "xpanel/Pfd.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
-#include "mxrp/models/player/Missile.hpp"
-#include "mxrp/models/system/Jammer.hpp"
-#include "mxrp/models/system/Radar.hpp"
-#include "mxrp/models/system/Rwr.hpp"
-#include "mxrp/models/system/StoresMgr.hpp"
-#include "mxrp/models/sensor/Gmti.hpp"
-#include "mxrp/models/sensor/Tws.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/Missile.hpp"
+#include "mixr/models/system/Jammer.hpp"
+#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/Rwr.hpp"
+#include "mixr/models/system/StoresMgr.hpp"
+#include "mixr/models/sensor/Gmti.hpp"
+#include "mixr/models/sensor/Tws.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
+#include "mixr/simulation/Simulation.hpp"
 
-#include "mxrp/base/Boolean.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/graphics/SymbolLoader.hpp"
+#include "mixr/base/Boolean.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/graphics/SymbolLoader.hpp"
 #include <GL/glut.h>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")
 EMPTY_SLOTTABLE(TestDisplay)

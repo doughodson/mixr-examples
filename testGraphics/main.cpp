@@ -1,21 +1,21 @@
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/Timers.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/functors/Tables.hpp"
-#include "mxrp/base/units/Angles.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/Timers.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/functors/Tables.hpp"
+#include "mixr/base/units/Angles.hpp"
 
-#include "mxrp/graphics/Graphic.hpp"
-#include "mxrp/graphics/Image.hpp"
+#include "mixr/graphics/Graphic.hpp"
+#include "mixr/graphics/Image.hpp"
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
 #include "TestDisplay.hpp"
 
 // factories
-#include "mxrp/base/factory.hpp"
-#include "mxrp/graphics/factory.hpp"
-#include "mxrp/gui/glut/factory.hpp"
+#include "mixr/base/factory.hpp"
+#include "mixr/graphics/factory.hpp"
+#include "mixr/gui/glut/factory.hpp"
 
 #include <GL/glut.h>
 
@@ -42,15 +42,15 @@ void timerFunc(int)
 {
    glutTimerFunc(dt_msecs, timerFunc, 1);
 
-   mxrp::base::Timer::updateTimers(dt_secs);
-   mxrp::graphics::Graphic::flashTimer(dt_secs);
+   mixr::base::Timer::updateTimers(dt_secs);
+   mixr::graphics::Graphic::flashTimer(dt_secs);
    testDisplay->tcFrame(dt_secs);
 }
 
 // our class factory
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-   mxrp::base::Object* obj = nullptr;
+   mixr::base::Object* obj = nullptr;
 
    //
    if ( name == TestDisplay::getFactoryName() ) {
@@ -80,9 +80,9 @@ mxrp::base::Object* factory(const std::string& name)
    }
 
    else {
-      if (obj == nullptr) obj = mxrp::graphics::factory(name);
-      if (obj == nullptr) obj = mxrp::glut::factory(name);
-      if (obj == nullptr) obj = mxrp::base::factory(name);
+      if (obj == nullptr) obj = mixr::graphics::factory(name);
+      if (obj == nullptr) obj = mixr::glut::factory(name);
+      if (obj == nullptr) obj = mixr::base::factory(name);
    }
    return obj;
 }
@@ -92,7 +92,7 @@ TestDisplay* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -105,7 +105,7 @@ TestDisplay* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();

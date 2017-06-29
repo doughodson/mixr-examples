@@ -4,7 +4,7 @@ include ../makedefs
 PGM = testMatrix
 OBJS =  main.o
 
-LDFLAGS += -lmxrp_base
+LDFLAGS += -lmixr_base
 
 all: $(PGM)
 

@@ -2,13 +2,13 @@
 #define TEST_ND
 
 #include "TestSD.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 #include "SituationalDisplay.hpp"
-#include "mxrp/graphics/SymbolLoader.hpp"
+#include "mixr/graphics/SymbolLoader.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 static const double refLat =   41.1f;
 static const double refLon =  111.9f;

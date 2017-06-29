@@ -1,7 +1,7 @@
 
 #include "SimPlayer.hpp"
-#include "mxrp/base/List.hpp"
-#include "mxrp/base/units/Angles.hpp"
+#include "mixr/base/List.hpp"
+#include "mixr/base/units/Angles.hpp"
 
 IMPLEMENT_SUBCLASS(SimPlayer, "SimPlayer")
 EMPTY_DELETEDATA(SimPlayer)
@@ -12,7 +12,7 @@ SimPlayer::SimPlayer()
 {
     STANDARD_CONSTRUCTOR()
 
-    static mxrp::base::String generic("Sim");
+    static mixr::base::String generic("Sim");
     setType(&generic);
 }
 

@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
 #include "PlaneState.hpp"
 #include "PlaneBehaviors.hpp"
@@ -9,7 +9,7 @@
 
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace xbehaviors {
 
 base::Object* factory(const std::string& name)

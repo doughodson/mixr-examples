@@ -2,11 +2,11 @@
 #ifndef __Board_H__
 #define __Board_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
 #include <array>
 
-namespace mxrp {
+namespace mixr {
    namespace base { class PairStream; }
    namespace graphics { class Graphic; }
 }
@@ -18,9 +18,9 @@ class State;
 // Class: Board
 // Description: Puzzle board
 //------------------------------------------------------------------------------
-class Board : public mxrp::glut::GlutDisplay
+class Board : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Board, mxrp::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Board, mixr::glut::GlutDisplay)
 
 public:
    Board();
@@ -36,7 +36,7 @@ public:
 
 protected:
    virtual bool setSlotPuzzle(Puzzle* const s);                          // Sets the Puzzle controller
-   virtual bool setSlotTemplates(const mxrp::base::PairStream* const s);   // Sets a list of the graphical templates for the blocks
+   virtual bool setSlotTemplates(const mixr::base::PairStream* const s);   // Sets a list of the graphical templates for the blocks
    virtual unsigned int setupBlockGraphics();                            // Setup the list of graphics::Graphic objects for the initial blocks
    virtual void clearGraphics();                                         // Clears the list of graphics::Graphic objects for the blocks
    virtual void updateSolutionPath(const double dt);                     // Updates the solution path graphics
@@ -44,7 +44,7 @@ protected:
    virtual void updateBlockDeltaPositions();                             // Updates the blocks' delta positions
 
 private:
-   const mxrp::base::PairStream* templates;  // Graphical templates for the blocks
+   const mixr::base::PairStream* templates;  // Graphical templates for the blocks
    Puzzle* puzzle {};                      // the puzzle
    double startupTimer {};                 // Movement timer
 
@@ -58,7 +58,7 @@ private:
    bool         movingFlg {};                    // Block is moving
 
    static const unsigned int MAX_BLOCKS = 30;
-   std::array<mxrp::graphics::Graphic*, MAX_BLOCKS> blocks {};   // Graphics for each block
+   std::array<mixr::graphics::Graphic*, MAX_BLOCKS> blocks {};   // Graphics for each block
    std::array<unsigned int, MAX_BLOCKS> blockId {};            // Block reference IDs
    std::array<double, MAX_BLOCKS> xp {};                       // Block X positions
    std::array<double, MAX_BLOCKS> yp {};                       // Block Y positions

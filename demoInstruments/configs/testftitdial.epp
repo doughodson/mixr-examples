@@ -8,7 +8,7 @@ testftitdial:
     }
     components: {
         // include our simple ftit base module
-        #include "mxrp/instruments/dials/ftitdial.epp"
+        #include "mixr/instruments/dials/ftitdial.epp"
         
         // simpl readouts
         ( AsciiText

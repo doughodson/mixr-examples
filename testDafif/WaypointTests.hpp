@@ -2,7 +2,7 @@
 #ifndef __WaypointTests_H__
 #define __WaypointTests_H__
 
-namespace mxrp {
+namespace mixr {
 namespace dafif { class WaypointLoader; }
 }
  
@@ -26,7 +26,7 @@ public:
    void func3B(const double acLat, const double acLon, const double acElev, const bool printData);    // test queryByIcao()
 
 private:
-   mxrp::dafif::WaypointLoader* db {};
+   mixr::dafif::WaypointLoader* db {};
 };
 
 #endif

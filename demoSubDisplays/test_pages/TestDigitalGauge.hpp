@@ -2,7 +2,7 @@
 #ifndef __TestDigitalGauge_H__
 #define __TestDigitalGauge_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestDigitalGauge
@@ -11,9 +11,9 @@
 // This page will show an analog F16-like aoa gauge beside a digital aoa gauge
 //
 //------------------------------------------------------------------------------
-class TestDigitalGauge : public mxrp::graphics::Page
+class TestDigitalGauge : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestDigitalGauge, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestDigitalGauge, mixr::graphics::Page)
 
 public:
    TestDigitalGauge();

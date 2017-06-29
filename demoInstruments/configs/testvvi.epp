@@ -8,7 +8,7 @@ testvvi:
     }
     components: {
         // include our basic VVI module, which utitilizes our clipping method
-        #include "mxrp/instruments/gauges/vvi.epp"
+        #include "mixr/instruments/gauges/vvi.epp"
         
         // Here is our VVI readout
         ( AsciiText

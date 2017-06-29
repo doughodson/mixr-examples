@@ -1,12 +1,12 @@
 
 #include "PriorityArbiter.hpp"
 
-#include "mxrp/base/List.hpp"
+#include "mixr/base/List.hpp"
 
 #include "PlaneAction.hpp"
 #include <iostream>
 
-namespace mxrp {
+namespace mixr {
 namespace xbehaviors {
 
 IMPLEMENT_SUBCLASS(PriorityArbiter, "PriorityArbiter")

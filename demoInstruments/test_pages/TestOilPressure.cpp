@@ -1,7 +1,7 @@
 
 #include "TestOilPressure.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestOilPressure, "TestOilPressure")
 EMPTY_SERIALIZER(TestOilPressure)

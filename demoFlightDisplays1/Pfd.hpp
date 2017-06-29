@@ -2,8 +2,8 @@
 #ifndef __Pfd_H__
 #define __Pfd_H__
 
-#include "mxrp/graphics/Page.hpp"
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/graphics/Page.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 
 //------------------------------------------------------------------------------
 // Class: Pfd
@@ -11,9 +11,9 @@
 // Description: Sends data down to the Pfd
 // Inputs: Use public member functions instead of send commands here
 //------------------------------------------------------------------------------
-class Pfd : public mxrp::graphics::Page
+class Pfd : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(Pfd, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(Pfd, mixr::graphics::Page)
 
 public:
    Pfd();
@@ -61,9 +61,9 @@ public:
 
    // get functions
    double getPitchDeg()            { return pitch; }
-   double getPitchRad()            { return static_cast<double>(pitch * mxrp::base::angle::D2RCC); }
+   double getPitchRad()            { return static_cast<double>(pitch * mixr::base::angle::D2RCC); }
    double getRollDeg()             { return roll; }
-   double getRollRad()             { return static_cast<double>(roll * mxrp::base::angle::D2RCC); }
+   double getRollRad()             { return static_cast<double>(roll * mixr::base::angle::D2RCC); }
    double getTrueHdg()             { return trueHdg; }
    double getCmdCourse()           { return cmdCrs; }
    double getCmdHdg()              { return cmdHdg; }
@@ -81,9 +81,9 @@ public:
    double getSideSlip()            { return slip; }
    double getGndSpdKts()           { return gSpd; }
    double getFltDirBankDeg()       { return fDirBank; }
-   double getFltDirBankRad()       { return static_cast<double>(fDirBank * mxrp::base::angle::R2DCC); }
+   double getFltDirBankRad()       { return static_cast<double>(fDirBank * mixr::base::angle::R2DCC); }
    double getFltDirPitchDeg()      { return fDirPitch; }
-   double getFltDirPitchRad()      { return static_cast<double>(fDirPitch * mxrp::base::angle::R2DCC); }
+   double getFltDirPitchRad()      { return static_cast<double>(fDirPitch * mixr::base::angle::R2DCC); }
    double getBaroPressure()        { return baro; }
    double getRdrAltFt()            { return rAlt; }
    double getNav1Brg()             { return nav1Brg; }

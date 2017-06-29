@@ -4,10 +4,10 @@
 
 #include <string>
 
-namespace mxrp {
+namespace mixr {
    namespace base { class Object; }
 }
 
-mxrp::base::Object* factory(const std::string& name);
+mixr::base::Object* factory(const std::string& name);
 
 #endif

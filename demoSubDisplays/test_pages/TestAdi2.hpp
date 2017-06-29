@@ -2,16 +2,16 @@
 #ifndef __TestAdi2_H__
 #define __TestAdi2_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestAdi2
 //
 // Description: Tests an MFD version of the ADI
 //------------------------------------------------------------------------------
-class TestAdi2 : public mxrp::graphics::Page
+class TestAdi2 : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestAdi2, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestAdi2, mixr::graphics::Page)
 
 public:
     TestAdi2();

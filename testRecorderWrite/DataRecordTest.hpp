@@ -2,13 +2,13 @@
 #ifndef __DataRecordTest_H__
 #define __DataRecordTest_H__
 
-#include "mxrp/recorder/OutputHandler.hpp"
+#include "mixr/recorder/OutputHandler.hpp"
 
-#include "mxrp/recorder/PrintSelected.hpp"
+#include "mixr/recorder/PrintSelected.hpp"
 #include <string>
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class String; }
 namespace recorder {
 class TabPrinter;
@@ -23,22 +23,22 @@ class DataRecordHandle;
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest : public mxrp::recorder::OutputHandler
+class DataRecordTest : public mixr::recorder::OutputHandler
 {
-   DECLARE_SUBCLASS(DataRecordTest, mxrp::recorder::OutputHandler)
+   DECLARE_SUBCLASS(DataRecordTest, mixr::recorder::OutputHandler)
 
 public:
    DataRecordTest();
 
    // Slot functions
-   virtual bool setSlotFileName(mxrp::base::String* const msg);
-   virtual bool setSlotTabPrinter(mxrp::recorder::TabPrinter* msg);
-   virtual bool setSlotFileWriter(mxrp::recorder::FileWriter* msg);
-   virtual bool setSlotFileReader(mxrp::recorder::FileReader* msg);
-   virtual bool setSlotRecordData(mxrp::recorder::DataRecorder* const msg);
-   virtual bool setSlotPrintPlayer(mxrp::recorder::PrintPlayer* msg);
-   virtual bool setSlotPrintSelected(mxrp::recorder::PrintSelected* msg);
-   virtual bool setSlotPrintSelected2(mxrp::recorder::PrintSelected* msg);
+   virtual bool setSlotFileName(mixr::base::String* const msg);
+   virtual bool setSlotTabPrinter(mixr::recorder::TabPrinter* msg);
+   virtual bool setSlotFileWriter(mixr::recorder::FileWriter* msg);
+   virtual bool setSlotFileReader(mixr::recorder::FileReader* msg);
+   virtual bool setSlotRecordData(mixr::recorder::DataRecorder* const msg);
+   virtual bool setSlotPrintPlayer(mixr::recorder::PrintPlayer* msg);
+   virtual bool setSlotPrintSelected(mixr::recorder::PrintSelected* msg);
+   virtual bool setSlotPrintSelected2(mixr::recorder::PrintSelected* msg);
 
    // Select one of these in main.cpp
    bool testEvents();      // switch to test each possible event message
@@ -49,23 +49,23 @@ protected:
    void readSerialFromFile();
 
    // all messages:
-   mxrp::recorder::DataRecordHandle* testFileIdMsg(int run);
-   mxrp::recorder::DataRecordHandle* testNewPlayerEventMsg();
-   mxrp::recorder::DataRecordHandle* testPlayerRemovedEventMsg();
-   mxrp::recorder::DataRecordHandle* testPlayerDataMsg();
-   mxrp::recorder::DataRecordHandle* testPlayerDamagedEventMsg();
-   mxrp::recorder::DataRecordHandle* testPlayerCollisionEventMsg();
-   mxrp::recorder::DataRecordHandle* testPlayerCrashEventMsg();
-   mxrp::recorder::DataRecordHandle* testPlayerKilledEventMsg(unsigned int type);
-   mxrp::recorder::DataRecordHandle* testWeaponReleaseEventMsg(unsigned int side);
-   mxrp::recorder::DataRecordHandle* testWeaponHungEventMsg();
-   mxrp::recorder::DataRecordHandle* testWeaponDetonationEventMsg();
-   mxrp::recorder::DataRecordHandle* testGunFiredEventMsg();
-   mxrp::recorder::DataRecordHandle* testNewTrackEventMsg();
-   mxrp::recorder::DataRecordHandle* testTrackRemovedEventMsg();
-   mxrp::recorder::DataRecordHandle* testTrackDataMsg();
+   mixr::recorder::DataRecordHandle* testFileIdMsg(int run);
+   mixr::recorder::DataRecordHandle* testNewPlayerEventMsg();
+   mixr::recorder::DataRecordHandle* testPlayerRemovedEventMsg();
+   mixr::recorder::DataRecordHandle* testPlayerDataMsg();
+   mixr::recorder::DataRecordHandle* testPlayerDamagedEventMsg();
+   mixr::recorder::DataRecordHandle* testPlayerCollisionEventMsg();
+   mixr::recorder::DataRecordHandle* testPlayerCrashEventMsg();
+   mixr::recorder::DataRecordHandle* testPlayerKilledEventMsg(unsigned int type);
+   mixr::recorder::DataRecordHandle* testWeaponReleaseEventMsg(unsigned int side);
+   mixr::recorder::DataRecordHandle* testWeaponHungEventMsg();
+   mixr::recorder::DataRecordHandle* testWeaponDetonationEventMsg();
+   mixr::recorder::DataRecordHandle* testGunFiredEventMsg();
+   mixr::recorder::DataRecordHandle* testNewTrackEventMsg();
+   mixr::recorder::DataRecordHandle* testTrackRemovedEventMsg();
+   mixr::recorder::DataRecordHandle* testTrackDataMsg();
 
-   mxrp::recorder::DataRecordHandle* testLastMsg();
+   mixr::recorder::DataRecordHandle* testLastMsg();
 
    // Recursive function to look at each embedded message
    bool processMessage(const google::protobuf::Message* const msg);
@@ -76,7 +76,7 @@ protected:
    bool setCompareToValue(const std::string strVal);
    bool setCompareToValue(const int numVal );
    bool setCompareToValue(const double dblVal );
-   bool setCompareCondition(const mxrp::recorder::PrintSelected::Condition cc);
+   bool setCompareCondition(const mixr::recorder::PrintSelected::Condition cc);
    bool setTimeOnly(const bool flg );
 
    double getSimTime();
@@ -85,16 +85,16 @@ protected:
 
 private:
    std::string fileName;
-   mxrp::base::safe_ptr<mxrp::recorder::PrintPlayer> myPrintPlayer;
-   mxrp::base::safe_ptr<mxrp::recorder::PrintSelected> myPrintSelected;
-   mxrp::base::safe_ptr<mxrp::recorder::PrintSelected> myPrintSelected2;
-   mxrp::base::safe_ptr<mxrp::recorder::TabPrinter> myRecPrint;
-   mxrp::base::safe_ptr<mxrp::recorder::FileWriter> myFileWrite;
-   mxrp::base::safe_ptr<mxrp::recorder::FileReader> myFileRead;
-   mxrp::base::safe_ptr<mxrp::recorder::DataRecorder> myDataRec;
+   mixr::base::safe_ptr<mixr::recorder::PrintPlayer> myPrintPlayer;
+   mixr::base::safe_ptr<mixr::recorder::PrintSelected> myPrintSelected;
+   mixr::base::safe_ptr<mixr::recorder::PrintSelected> myPrintSelected2;
+   mixr::base::safe_ptr<mixr::recorder::TabPrinter> myRecPrint;
+   mixr::base::safe_ptr<mixr::recorder::FileWriter> myFileWrite;
+   mixr::base::safe_ptr<mixr::recorder::FileReader> myFileRead;
+   mixr::base::safe_ptr<mixr::recorder::DataRecorder> myDataRec;
 
    std::string fieldName;
-   mxrp::recorder::PrintSelected::Condition condition;
+   mixr::recorder::PrintSelected::Condition condition;
    int compareI {};
    std::string compareS;
    double compareD {};
@@ -110,7 +110,7 @@ private:
       double compareValD {};
       std::string compareValS = "";
       int compareValI {};
-      mxrp::recorder::PrintSelected::Condition condition {mxrp::recorder::PrintSelected::Condition::EQ};
+      mixr::recorder::PrintSelected::Condition condition {mixr::recorder::PrintSelected::Condition::EQ};
       bool timeOnly {};
    };
    std::array<SelectionCriteria, 20> selection;

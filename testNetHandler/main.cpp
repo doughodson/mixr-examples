@@ -6,12 +6,12 @@
 #include "Sender.hpp"
 #include "Echo.hpp"
 
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 // factories
-#include "mxrp/base/factory.hpp"
+#include "mixr/base/factory.hpp"
 #include "../shared/xzmq/factory.hpp"
 
 #include <string>
@@ -20,9 +20,9 @@
 const unsigned int UPDATE_RATE = 10;  // main loop update rate (Hz)
 
 // our class factory
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-   mxrp::base::Object* obj = nullptr;
+   mixr::base::Object* obj = nullptr;
 
    if ( name == Sender::getFactoryName() ) {
       obj = new Sender();
@@ -32,9 +32,9 @@ mxrp::base::Object* factory(const std::string& name)
    }
 
    // example libraries
-   if (obj == nullptr) obj = mxrp::xzmq::factory(name);
+   if (obj == nullptr) obj = mixr::xzmq::factory(name);
    // framework libraries
-   if (obj == nullptr) obj = mxrp::base::factory(name);
+   if (obj == nullptr) obj = mixr::base::factory(name);
 
    return obj;
 }
@@ -44,7 +44,7 @@ Endpoint* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -57,7 +57,7 @@ Endpoint* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -90,12 +90,12 @@ int main(int argc, char* argv[])
 
    // send a reset event
    std::cout << "Reset event: which will establish the networks." << std::endl;
-   endpoint->event(mxrp::base::Component::RESET_EVENT);
+   endpoint->event(mixr::base::Component::RESET_EVENT);
 
    // system time of day
    const double dt = 1.0 / static_cast<double>(UPDATE_RATE);   // Delta time
    double simTime = 0.0;                         // Simulator time reference
-   double startTime = mxrp::base::getComputerTime();   // Time of day (sec) run started
+   double startTime = mixr::base::getComputerTime();   // Time of day (sec) run started
 
    // main loop
    std::cout << "Starting main loop ..." << std::endl;
@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
       endpoint->updateData( static_cast<double>(dt) );
 
       simTime += dt;                             // time of next frame
-      double timeNow = mxrp::base::getComputerTime();  // time now
+      double timeNow = mixr::base::getComputerTime();  // time now
 
       double elapsedTime = timeNow - startTime;
       double nextFrameStart = simTime - elapsedTime;
@@ -113,7 +113,7 @@ int main(int argc, char* argv[])
 
       // wait for the next frame
       if (sleepTime > 0)
-         mxrp::base::msleep(sleepTime);
+         mixr::base::msleep(sleepTime);
    }
 
    return EXIT_SUCCESS;

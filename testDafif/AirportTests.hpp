@@ -6,7 +6,7 @@
 // AirportLoader test subroutines
 //------------------------------------------------
 
-namespace mxrp {
+namespace mixr {
 namespace dafif { class AirportLoader; } 
 }
 
@@ -61,7 +61,7 @@ public:
    void func0B(const double acLat, const double acLon, const double acElev, const bool printData);
 
 private:
-   mxrp::dafif::AirportLoader* db {};
+   mixr::dafif::AirportLoader* db {};
 };
 
 #endif

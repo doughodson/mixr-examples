@@ -6,8 +6,8 @@ PGM = mainSim1
 OBJS = main.o
 
 LDFLAGS += -lxzmq -l:libzmq.a
-LDFLAGS += -lmxrp_interop_dis -lmxrp_interop -lmxrp_otw -lmxrp_models -lmxrp_simulation
-LDFLAGS += -lmxrp_terrain -lmxrp_base
+LDFLAGS += -lmixr_interop_dis -lmixr_interop -lmixr_otw -lmixr_models -lmixr_simulation
+LDFLAGS += -lmixr_terrain -lmixr_base
 LDFLAGS += -lcigicl -lJSBSim
 LDFLAGS += -lrt -lpthread
 

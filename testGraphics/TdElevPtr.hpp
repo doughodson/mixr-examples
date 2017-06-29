@@ -2,9 +2,9 @@
 #ifndef __TdElevPtr_H__
 #define __TdElevPtr_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
-namespace mxrp {
+namespace mixr {
    namespace base { class Number; }
 }
 
@@ -13,18 +13,18 @@ namespace mxrp {
 //
 // Description: Test Display Elevation Pointer
 //------------------------------------------------------------------------------
-class TdElevPtr : public mxrp::graphics::Graphic
+class TdElevPtr : public mixr::graphics::Graphic
 {
-    DECLARE_SUBCLASS(TdElevPtr, mxrp::graphics::Graphic)
+    DECLARE_SUBCLASS(TdElevPtr, mixr::graphics::Graphic)
 
 public:
     TdElevPtr();
 
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
     virtual void draw() override;
 
     //event handler macro functions
-    virtual bool onUpdateValue(const mxrp::base::Number* const ouvobj);
+    virtual bool onUpdateValue(const mixr::base::Number* const ouvobj);
 
 private:
     double elev {};

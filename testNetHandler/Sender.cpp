@@ -1,14 +1,14 @@
 
 #include "Sender.hpp"
 
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Sender, "Sender")
 EMPTY_SLOTTABLE(Sender)

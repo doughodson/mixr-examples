@@ -2,16 +2,16 @@
 #ifndef __SituationalDisplay_H__
 #define __SituationalDisplay_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: SituationalDisplay
 //
 // Description: Situational Display
 //------------------------------------------------------------------------------
-class SituationalDisplay : public mxrp::graphics::Page
+class SituationalDisplay : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(SituationalDisplay, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(SituationalDisplay, mixr::graphics::Page)
 
 public:
    SituationalDisplay();

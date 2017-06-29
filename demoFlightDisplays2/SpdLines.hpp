@@ -2,9 +2,9 @@
 #ifndef __SpdLines_H__
 #define __SpdLines_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Number; }
 }
 
@@ -15,15 +15,15 @@ namespace base { class Number; }
 // Inputs:
 //      UPDATE_VALUE  -> altitude flag on or off
 //------------------------------------------------------------------------------
-class SpdLines : public mxrp::graphics::Graphic
+class SpdLines : public mixr::graphics::Graphic
 {
-    DECLARE_SUBCLASS(SpdLines, mxrp::graphics::Graphic)
+    DECLARE_SUBCLASS(SpdLines, mixr::graphics::Graphic)
 
 public:
     SpdLines();
 
     virtual void drawFunc() override;
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
     // set methods
     virtual bool setIsAlt(const bool newIsAlt)          { isAlt = newIsAlt; return true; }
@@ -32,11 +32,11 @@ public:
     bool isAltSelected()                                { return isAlt; }
 
 protected:
-    bool setSlotIsAlt(const mxrp::base::Number* newIsAlt);
+    bool setSlotIsAlt(const mixr::base::Number* newIsAlt);
 
 private:
     // event method
-    bool onEventSetIsAltSpdLines(const mxrp::base::Number* const x);
+    bool onEventSetIsAltSpdLines(const mixr::base::Number* const x);
 
     bool isAlt {};     // are we drawing the altitude lines instead?
 };

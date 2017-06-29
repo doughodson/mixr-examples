@@ -2,10 +2,10 @@
 #include "Puzzle.hpp"
 #include "State.hpp"
 
-#include "mxrp/base/List.hpp"
+#include "mixr/base/List.hpp"
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Puzzle, "Puzzle")
 

@@ -1,9 +1,9 @@
 
 #include "DspRwr.hpp"
 
-#include "mxrp/models/system/Rwr.hpp"
+#include "mixr/models/system/Rwr.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")

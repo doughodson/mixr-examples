@@ -2,16 +2,16 @@
 #ifndef __TestMechanical_H__
 #define __TestMechanical_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestMechanical
 //
 // Description: Simulates a rockwell collins type EFIS Mechanical ADI graphic
 //------------------------------------------------------------------------------
-class TestMechanical : public mxrp::graphics::Page
+class TestMechanical : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestMechanical, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestMechanical, mixr::graphics::Page)
 
 public:
     TestMechanical();

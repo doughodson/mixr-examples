@@ -5,7 +5,7 @@ PGM = testEvents
 
 OBJS = Display.o ObjectHandler.o TestObject.o main.o
 
-LDFLAGS += -lmxrp_instruments -lmxrp_gui_glut -lmxrp_graphics -lmxrp_base
+LDFLAGS += -lmixr_instruments -lmixr_gui_glut -lmixr_graphics -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

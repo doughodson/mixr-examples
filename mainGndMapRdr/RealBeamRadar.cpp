@@ -1,26 +1,26 @@
 
 #include "RealBeamRadar.hpp"
 
-#include "mxrp/models/player/Player.hpp"
-#include "mxrp/models/system/Antenna.hpp"
-#include "mxrp/models/WorldModel.hpp"
+#include "mixr/models/player/Player.hpp"
+#include "mixr/models/system/Antenna.hpp"
+#include "mixr/models/WorldModel.hpp"
 
-#include "mxrp/terrain/Terrain.hpp"
+#include "mixr/terrain/Terrain.hpp"
 
-#include "mxrp/base/Color.hpp"
-#include "mxrp/base/Rgb.hpp"
-#include "mxrp/base/Hsva.hpp"
-#include "mxrp/base/Color.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/String.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/base/Rgb.hpp"
+#include "mixr/base/Hsva.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/String.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
 
-#include "mxrp/base/util/nav_utils.hpp"
+#include "mixr/base/util/nav_utils.hpp"
 
 #include <cmath>
 
-using namespace mxrp;
+using namespace mixr;
 
 const int IMG_WIDTH = 1024;
 const int IMG_HEIGHT = 1024;
@@ -105,7 +105,7 @@ void RealBeamRadar::transmit(const double dt)
 
          const models::WorldModel* sim = own->getWorldModel();
          if (sim != nullptr) {
-            setTerrain( dynamic_cast<const mxrp::terrain::Terrain*>(sim->getTerrain()) );    // ddh
+            setTerrain( dynamic_cast<const mixr::terrain::Terrain*>(sim->getTerrain()) );    // ddh
          }
       }
    }

@@ -5,22 +5,22 @@
 #include "xpanel/DspRwr.hpp"
 #include "xpanel/Pfd.hpp"
 
-#include "mxrp/models/player/AirVehicle.hpp"
-#include "mxrp/models/player/Missile.hpp"
+#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/Missile.hpp"
 
-#include "mxrp/models/system/Jammer.hpp"
-#include "mxrp/models/system/Radar.hpp"
-#include "mxrp/models/system/Rwr.hpp"
-#include "mxrp/models/system/StoresMgr.hpp"
-#include "mxrp/models/sensor/Gmti.hpp"
-#include "mxrp/models/sensor/Tws.hpp"
+#include "mixr/models/system/Jammer.hpp"
+#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/Rwr.hpp"
+#include "mixr/models/system/StoresMgr.hpp"
+#include "mixr/models/sensor/Gmti.hpp"
+#include "mixr/models/sensor/Tws.hpp"
 
-#include "mxrp/simulation/Simulation.hpp"
+#include "mixr/simulation/Simulation.hpp"
 
-#include "mxrp/base/Boolean.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/graphics/SymbolLoader.hpp"
+#include "mixr/base/Boolean.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/graphics/SymbolLoader.hpp"
 #include <GL/glut.h>
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")
@@ -131,7 +131,7 @@ bool TestDisplay::onResetKey()
 bool TestDisplay::onFreezeKey()
 {
    if ( getSimulation() != nullptr ) {
-      mxrp::base::Boolean newFrz( !getSimulation()->isFrozen() );
+      mixr::base::Boolean newFrz( !getSimulation()->isFrozen() );
       getSimulation()->event(FREEZE_EVENT, &newFrz);
    }
    return true;
@@ -168,9 +168,9 @@ bool TestDisplay::onRtn2SearchKey()
 bool TestDisplay::onAir2AirKey()
 {
    if (getOwnship() != nullptr) {
-      mxrp::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
       if (sms != nullptr) {
-         sms->setWeaponDeliveryMode(mxrp::models::StoresMgr::A2A);
+         sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2A);
          std::cout << "Set A/A Weapon Mode!" << std::endl;
       }
    }
@@ -181,9 +181,9 @@ bool TestDisplay::onAir2AirKey()
 bool TestDisplay::onAir2GndKey()
 {
    if (getOwnship() != nullptr) {
-      mxrp::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
       if (sms != nullptr) {
-         sms->setWeaponDeliveryMode(mxrp::models::StoresMgr::A2G);
+         sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2G);
          std::cout << "Set A/G Weapon Mode!" << std::endl;
       }
    }
@@ -194,17 +194,17 @@ bool TestDisplay::onAir2GndKey()
 bool TestDisplay::onIncRngKey()
 {
    if (getOwnship() != nullptr) {
-      mxrp::models::Radar* rdr = nullptr;
+      mixr::models::Radar* rdr = nullptr;
       {
-         mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Tws));
-         if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>( pair->object() );
+         mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Tws));
+         if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>( pair->object() );
       }
-      mxrp::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
       if (sms != nullptr) {
          // But could be GMTI ...
-         if (sms->isWeaponDeliveryMode(mxrp::models::StoresMgr::A2G)) {
-            mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Gmti));
-            if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+         if (sms->isWeaponDeliveryMode(mixr::models::StoresMgr::A2G)) {
+            mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Gmti));
+            if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
          }
       }
       if (rdr != nullptr) {
@@ -221,17 +221,17 @@ bool TestDisplay::onIncRngKey()
 bool TestDisplay::onDecRngKey()
 {
    if (getOwnship() != nullptr) {
-      mxrp::models::Radar* rdr = nullptr;
+      mixr::models::Radar* rdr = nullptr;
       {
-         mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Tws));
-         if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+         mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Tws));
+         if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
       }
-      mxrp::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
       if (sms != nullptr) {
          // But could be GMTI ...
-         if (sms->isWeaponDeliveryMode(mxrp::models::StoresMgr::A2G)) {
-            mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Gmti));
-            if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+         if (sms->isWeaponDeliveryMode(mixr::models::StoresMgr::A2G)) {
+            mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Gmti));
+            if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
          }
       }
       if (rdr != nullptr) {
@@ -256,7 +256,7 @@ bool TestDisplay::onStepOwnshipKey()
 
 bool TestDisplay::shutdownNotification()
 {
-   mxrp::base::Component* parent = container();
+   mixr::base::Component* parent = container();
    if (parent != nullptr) parent->event(SHUTDOWN_EVENT);
 
    return BaseClass::shutdownNotification();
@@ -271,22 +271,22 @@ void TestDisplay::updateData(const double dt)
    // Find and update the test RADAR display
    {
       rdrDisplay = nullptr;
-      mxrp::base::Pair* p = findByType(typeid(mxrp::xpanel::DspRadar));
-      if (p != nullptr) rdrDisplay = dynamic_cast<mxrp::xpanel::DspRadar*>( p->object() );
+      mixr::base::Pair* p = findByType(typeid(mixr::xpanel::DspRadar));
+      if (p != nullptr) rdrDisplay = dynamic_cast<mixr::xpanel::DspRadar*>( p->object() );
    }
    if (rdrDisplay != nullptr && getOwnship() != nullptr) {
       // Default is TWS
-      mxrp::models::Radar* rdr = nullptr;
+      mixr::models::Radar* rdr = nullptr;
       {
-         mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Tws));
-         if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+         mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Tws));
+         if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
       }
-      mxrp::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
       if (sms != nullptr) {
          // But could be GMTI ...
-         if (sms->isWeaponDeliveryMode(mxrp::models::StoresMgr::A2G)) {
-            mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Gmti));
-            if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+         if (sms->isWeaponDeliveryMode(mixr::models::StoresMgr::A2G)) {
+            mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Gmti));
+            if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
          }
       }
       rdrDisplay->setRadar(rdr);
@@ -295,30 +295,30 @@ void TestDisplay::updateData(const double dt)
    // Find and update the test RWR display
    {
       rwrDisplay = nullptr;
-      mxrp::base::Pair* p = findByType(typeid(mxrp::xpanel::DspRwr));
-      if (p != nullptr) rwrDisplay = dynamic_cast<mxrp::xpanel::DspRwr*>( p->object() );
+      mixr::base::Pair* p = findByType(typeid(mixr::xpanel::DspRwr));
+      if (p != nullptr) rwrDisplay = dynamic_cast<mixr::xpanel::DspRwr*>( p->object() );
    }
    if (rwrDisplay != nullptr && getOwnship() != nullptr) {
-      mxrp::models::Rwr* rwr = nullptr;
-      mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Rwr));
-      if (pair != nullptr) rwr = static_cast<mxrp::models::Rwr*>(pair->object());
+      mixr::models::Rwr* rwr = nullptr;
+      mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Rwr));
+      if (pair != nullptr) rwr = static_cast<mixr::models::Rwr*>(pair->object());
       rwrDisplay->setRwr(rwr);
    }
 
    // Send flight data to readouts
    if (getOwnship() != nullptr) {
       {
-         mxrp::models::Radar* rdr = nullptr;
+         mixr::models::Radar* rdr = nullptr;
          {
-            mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Tws));
-            if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+            mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Tws));
+            if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
          }
-         mxrp::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+         mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
          if (sms != nullptr) {
             // But could be GMTI ...
-            if (sms->isWeaponDeliveryMode(mxrp::models::StoresMgr::A2G)) {
-               mxrp::base::Pair* pair = getOwnship()->getSensorByType(typeid(mxrp::models::Gmti));
-               if (pair != nullptr) rdr = static_cast<mxrp::models::Radar*>(pair->object());
+            if (sms->isWeaponDeliveryMode(mixr::models::StoresMgr::A2G)) {
+               mixr::base::Pair* pair = getOwnship()->getSensorByType(typeid(mixr::models::Gmti));
+               if (pair != nullptr) rdr = static_cast<mixr::models::Radar*>(pair->object());
             }
          }
          if (rdr != nullptr) range = rdr->getRange();
@@ -328,9 +328,9 @@ void TestDisplay::updateData(const double dt)
       send("rangeRO", UPDATE_VALUE, range, rangeSD);
 
       // Maintain Air Tracks
-      mxrp::base::Pair* pair = findByName("airTracks1");
+      mixr::base::Pair* pair = findByName("airTracks1");
       if (pair != nullptr) {
-         const auto myLoader = dynamic_cast<mxrp::graphics::SymbolLoader*>(pair->object());
+         const auto myLoader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
          if (myLoader != nullptr) {
             myLoader->setRange(range);
             myLoader->setHeadingDeg(getOwnship()->getHeadingD());
@@ -349,11 +349,11 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
    setMouse(x,y);
 
    if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
-      mxrp::base::Pair* pair = findByName("airTracks1");
+      mixr::base::Pair* pair = findByName("airTracks1");
       if (pair != nullptr) {
-         const auto myLoader = dynamic_cast<mxrp::graphics::SymbolLoader*>(pair->object());
+         const auto myLoader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
          if (myLoader != nullptr) {
-            mxrp::graphics::Graphic* selected = pick(0);
+            mixr::graphics::Graphic* selected = pick(0);
             if (selected != nullptr) {
                int idx = myLoader->getSymbolIndex(selected);
                if (idx > 0) {
@@ -374,12 +374,12 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
 //------------------------------------------------------------------------------
 // maintainAirTrackSymbols() -- maintain the air track symbology
 //------------------------------------------------------------------------------
-void TestDisplay::maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, const double rng)
+void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng)
 {
     int codes[MAX_TRACKS];              // Work codes: empty(0), matched(1), unmatched(-1)
     double rng2 = (rng * rng);          // Range squared (KM * KM)
 
-    mxrp::models::Player* newTracks[MAX_TRACKS];  // New tracks to add
+    mixr::models::Player* newTracks[MAX_TRACKS];  // New tracks to add
     int nNewTracks = 0;                         // Number of new tracks
 
     // The real maximum number of tracks is the smaller of MAX_TRACKS and the loader's maximum
@@ -395,24 +395,24 @@ void TestDisplay::maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, 
     // find all air vehicles within range
     {
         // get the player list
-        mxrp::simulation::Simulation* sim = getSimulation();
-        mxrp::base::PairStream* plist = sim->getPlayers();
+        mixr::simulation::Simulation* sim = getSimulation();
+        mixr::base::PairStream* plist = sim->getPlayers();
 
         // search for air vehicles or missiles within range
-        mxrp::base::List::Item* item = plist->getFirstItem();
+        mixr::base::List::Item* item = plist->getFirstItem();
         while (item != nullptr && nNewTracks < maxTracks) {
 
-            const auto pair = static_cast<mxrp::base::Pair*>(item->getValue());
-            const auto p = static_cast<mxrp::models::Player*>(pair->object());
-            mxrp::base::Vec3d rpos = p->getPosition() - getOwnship()->getPosition();
-            double x = rpos[0] * mxrp::base::distance::M2NM;
-            double y = rpos[1] * mxrp::base::distance::M2NM;
+            const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
+            const auto p = static_cast<mixr::models::Player*>(pair->object());
+            mixr::base::Vec3d rpos = p->getPosition() - getOwnship()->getPosition();
+            double x = rpos[0] * mixr::base::distance::M2NM;
+            double y = rpos[1] * mixr::base::distance::M2NM;
 
             if (
                p != getOwnship() &&
                p->isActive() &&
                ((x*x + y*y) < rng2) &&
-               (p->isClassType(typeid(mxrp::models::AirVehicle)) || p->isClassType(typeid(mxrp::models::Missile))) ) {
+               (p->isClassType(typeid(mixr::models::AirVehicle)) || p->isClassType(typeid(mixr::models::Missile))) ) {
                 // Ok, it's an active air vehicle or missile that's within range, and it's not us.
 
                 // Are we already in the track list?
@@ -461,15 +461,15 @@ void TestDisplay::maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, 
                 // We have an empty slot, so add the symbol
 
                 int type = 4;                                       // unknown
-                if (newTracks[inew]->isClassType(typeid(mxrp::models::AirVehicle))) {
-                  if (newTracks[inew]->getSensorByType(typeid(mxrp::models::Jammer)) == nullptr) {
+                if (newTracks[inew]->isClassType(typeid(mixr::models::AirVehicle))) {
+                  if (newTracks[inew]->getSensorByType(typeid(mixr::models::Jammer)) == nullptr) {
                      // non-jammers
-                     if (newTracks[inew]->isSide(mxrp::models::Player::BLUE)) type = 1;      // friend
-                     else if (newTracks[inew]->isSide(mxrp::models::Player::RED)) type = 2; // foe
+                     if (newTracks[inew]->isSide(mixr::models::Player::BLUE)) type = 1;      // friend
+                     else if (newTracks[inew]->isSide(mixr::models::Player::RED)) type = 2; // foe
                      else type = 3; // neutral/commercial
                   }
                 }
-                else if (newTracks[inew]->isClassType(typeid(mxrp::models::Missile))) {
+                else if (newTracks[inew]->isClassType(typeid(mixr::models::Missile))) {
                    type = 5; // Missile
                 }
 
@@ -499,7 +499,7 @@ void TestDisplay::maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, 
         if (tracks[i] != nullptr && trkIdx[i] != 0) {
             double xp = tracks[i]->getXPosition() - osX;
             double yp = tracks[i]->getYPosition() - osY;
-            loader->updateSymbolPositionXY( trkIdx[i], (xp * mxrp::base::distance::M2NM), (yp * mxrp::base::distance::M2NM) );
+            loader->updateSymbolPositionXY( trkIdx[i], (xp * mixr::base::distance::M2NM), (yp * mixr::base::distance::M2NM) );
             loader->updateSymbolHeading( trkIdx[i], tracks[i]->getHeadingD() );
         }
     }
@@ -508,28 +508,28 @@ void TestDisplay::maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, 
 //------------------------------------------------------------------------------
 // Simulation access functions
 //------------------------------------------------------------------------------
-mxrp::models::Player* TestDisplay::getOwnship()
+mixr::models::Player* TestDisplay::getOwnship()
 {
-   mxrp::models::Player* p = nullptr;
-   mxrp::simulation::Station* sta = getStation();
+   mixr::models::Player* p = nullptr;
+   mixr::simulation::Station* sta = getStation();
    if (sta != nullptr) {
-      p = dynamic_cast<mxrp::models::Player*>(sta->getOwnship());  // DDH
+      p = dynamic_cast<mixr::models::Player*>(sta->getOwnship());  // DDH
    }
    return p;
 }
 
-mxrp::simulation::Simulation* TestDisplay::getSimulation()
+mixr::simulation::Simulation* TestDisplay::getSimulation()
 {
-   mxrp::simulation::Simulation* s = nullptr;
-   mxrp::simulation::Station* sta = getStation();
+   mixr::simulation::Simulation* s = nullptr;
+   mixr::simulation::Station* sta = getStation();
    if (sta != nullptr) s = sta->getSimulation();
    return s;
 }
 
-mxrp::simulation::Station* TestDisplay::getStation()
+mixr::simulation::Station* TestDisplay::getStation()
 {
    if (myStation == nullptr) {
-      const auto s = dynamic_cast<mxrp::simulation::Station*>( findContainerByType(typeid(mxrp::simulation::Station)) );
+      const auto s = dynamic_cast<mixr::simulation::Station*>( findContainerByType(typeid(mixr::simulation::Station)) );
       if (s != nullptr) myStation = s;
    }
    return myStation;
@@ -540,7 +540,7 @@ mxrp::simulation::Station* TestDisplay::getStation()
 //------------------------------------------------------------------------------
 void TestDisplay::updatePfd(const double)
 {
-    const auto av = static_cast<mxrp::models::AirVehicle*>(getOwnship());
+    const auto av = static_cast<mixr::models::AirVehicle*>(getOwnship());
 
     // pitch
     pitch = av->getPitchD();
@@ -583,9 +583,9 @@ void TestDisplay::updatePfd(const double)
     latDev = 0;
 
     // vvi tape gauge test
-    const mxrp::base::Vec3d vel = av->getVelocity();
+    const mixr::base::Vec3d vel = av->getVelocity();
     const double vvMps = -vel[2];
-    vvi = vvMps * 60.0f * mxrp::base::distance::M2FT;
+    vvi = vvMps * 60.0f * mixr::base::distance::M2FT;
 
     // flight director stuff
     // flight diretor bank angle
@@ -597,9 +597,9 @@ void TestDisplay::updatePfd(const double)
     // barometric pressure (selected)
     baro = 29.92;
 
-    mxrp::base::Pair* pair = findByType(typeid(mxrp::xpanel::Pfd));
+    mixr::base::Pair* pair = findByType(typeid(mixr::xpanel::Pfd));
     if (pair != nullptr) {
-        const auto p = static_cast<mxrp::xpanel::Pfd*>(pair->object());
+        const auto p = static_cast<mixr::xpanel::Pfd*>(pair->object());
         if (p != nullptr) {
             p->setPitchDeg(pitch);
             p->setRollDeg(roll);

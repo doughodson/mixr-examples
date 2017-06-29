@@ -1,7 +1,7 @@
 
 #include "TestMechanical.hpp"
 
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 
 // static slew rates
 const double TestMechanical::T1 = 120;
@@ -288,7 +288,7 @@ void TestMechanical::updateData(const double dt)
 
     // Roll indicator
     // we have to roll negative in order to keep with the adi
-    send("rollind", UPDATE_VALUE, -static_cast<float>(roll * mxrp::base::angle::D2RCC), rollIndSD);
+    send("rollind", UPDATE_VALUE, -static_cast<float>(roll * mixr::base::angle::D2RCC), rollIndSD);
 
     // send our visibility data down (for failure flags)
     send("rtfail", SET_VISIBILITY, rtFail, rtFailSD);

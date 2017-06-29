@@ -2,16 +2,16 @@
 #ifndef __TestElectronic_H__
 #define __TestElectronic_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestElectronic
 //
 // Description: Rockwell-Collins Efis test page to stimulate arc mode.
 //------------------------------------------------------------------------------
-class TestElectronic : public mxrp::graphics::Page
+class TestElectronic : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestElectronic, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestElectronic, mixr::graphics::Page)
 
 public:
     TestElectronic();

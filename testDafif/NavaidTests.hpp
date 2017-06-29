@@ -2,7 +2,7 @@
 #ifndef __NavaidTests_H__
 #define __NavaidTests_H__
 
-namespace mxrp {
+namespace mixr {
 namespace dafif { class NavaidLoader; } 
 }
 
@@ -31,7 +31,7 @@ public:
    void func2B(const double acLat, const double acLon, const double acElev, const bool printData);    // test queryByIcao()
 
 private:
-   mxrp::dafif::NavaidLoader* db {};
+   mixr::dafif::NavaidLoader* db {};
 };
 
 #endif

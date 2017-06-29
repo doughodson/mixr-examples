@@ -1,17 +1,17 @@
 
 # path to framework
-MXRP_ROOT = $$(MXRP_ROOT)
-isEmpty(MXRP_ROOT) MXRP_ROOT = $$PWD/../../mxrp
-message(MXRP_ROOT = $${MXRP_ROOT})
+MIXR_ROOT = $$(MIXR_ROOT)
+isEmpty(MIXR_ROOT) MIXR_ROOT = $$PWD/../../mixr
+message(MIXR_ROOT = $${MIXR_ROOT})
 
 # version of Visual Studio, if applicable
 MS_VER = vs2013-32
 #MS_VER = vs2015-32
 
 # path to 3rd party libraries
-MXRP_3RD_PARTY_ROOT = $$(MXRP_3RD_PARTY_ROOT)
-isEmpty(MXRP_3RD_PARTY_ROOT) MXRP_3RD_PARTY_ROOT = $$PWD/../../mxrp-3rdparty
-message(MXRP_3RD_PARTY_ROOT = $${MXRP_3RD_PARTY_ROOT})
+MIXR_3RD_PARTY_ROOT = $$(MIXR_3RD_PARTY_ROOT)
+isEmpty(MIXR_3RD_PARTY_ROOT) MIXR_3RD_PARTY_ROOT = $$PWD/../../mixr-3rdparty
+message(MIXR_3RD_PARTY_ROOT = $${MIXR_3RD_PARTY_ROOT})
 
 QT += core widgets
 
@@ -32,7 +32,7 @@ OTHER_FILES += configs/*.epp
 
 # include paths
 INCLUDEPATH += \
-   $${MXRP_ROOT}/include
+   $${MIXR_ROOT}/include
 
 # default location for intermediate files
 UI_DIR = ./tmp/ui
@@ -43,16 +43,16 @@ RCC_DIR = ./tmp/rcc
 # libraries
 # Windows release libraries
 win32:CONFIG(release, debug|release): LIBS +=        \
-    # mxrp
-    -L$${MXRP_ROOT}/lib/                             \
-    -L$${MXRP_3RD_PARTY_ROOT}/lib/$${MS_VER}         \
-    -lmxrp_interop_dis                               \
-    -lmxrp_interop                                   \
-    -lmxrp_simulation                                \
-    -lmxrp_models                                    \
-    -lmxrp_terrain                                   \
-    -lmxrp_otw                                       \
-    -lmxrp_base                                      \
+    # mixr
+    -L$${MIXR_ROOT}/lib/                             \
+    -L$${MIXR_3RD_PARTY_ROOT}/lib/$${MS_VER}         \
+    -lmixr_interop_dis                               \
+    -lmixr_interop                                   \
+    -lmixr_simulation                                \
+    -lmixr_models                                    \
+    -lmixr_terrain                                   \
+    -lmixr_otw                                       \
+    -lmixr_base                                      \
     -lccl_lib                                        \
     -ljsbsim                                         \
     # system
@@ -61,16 +61,16 @@ win32:CONFIG(release, debug|release): LIBS +=        \
 
 # Windows debug libraries
 else:win32:CONFIG(debug, debug|release): LIBS +=        \
-    # mxrp
-    -L$${MXRP_ROOT}/lib/                                \
-    -L$${MXRP_3RD_PARTY_ROOT}/lib/$${MS_VER}            \
-    -lmxrp_interop_dis_d                                \
-    -lmxrp_interop_d                                    \
-    -lmxrp_simulation_d                                 \
-    -lmxrp_models_d                                     \
-    -lmxrp_terrain_d                                    \
-    -lmxrp_otw_d                                        \
-    -lmxrp_base_d                                       \
+    # mixr
+    -L$${MIXR_ROOT}/lib/                                \
+    -L$${MIXR_3RD_PARTY_ROOT}/lib/$${MS_VER}            \
+    -lmixr_interop_dis_d                                \
+    -lmixr_interop_d                                    \
+    -lmixr_simulation_d                                 \
+    -lmixr_models_d                                     \
+    -lmixr_terrain_d                                    \
+    -lmixr_otw_d                                        \
+    -lmixr_base_d                                       \
     -lccl_lib_d                                         \
     -ljsbsim_d                                          \
     # system
@@ -79,21 +79,20 @@ else:win32:CONFIG(debug, debug|release): LIBS +=        \
 
 # Linux libraries
 else:unix:!macx:!symbian: LIBS +=       \
-    # mxrp
-    -L$${MXRP_ROOT}/lib/                \
-    -L$${MXRP_3RD_PARTY_ROOT}/lib/      \
-    -lmxrp_interop_dis                  \
-    -lmxrp_interop                      \
-    -lmxrp_otw                          \
-    -lmxrp_simulation                   \
-    -lmxrp_models                       \
-    -lmxrp_terrain                      \
-    -lmxrp_base                         \
+    # mixr
+    -L$${MIXR_ROOT}/lib/                \
+    -L$${MIXR_3RD_PARTY_ROOT}/lib/      \
+    -lmixr_interop_dis                  \
+    -lmixr_interop                      \
+    -lmixr_otw                          \
+    -lmixr_simulation                   \
+    -lmixr_models                       \
+    -lmixr_terrain                      \
+    -lmixr_base                         \
     -lcigicl                            \
     -lJSBSim                            \
     # system
     -lX11 -lpthread -lrt
-
 
 RESOURCES += \
     configs/data/icons.qrc

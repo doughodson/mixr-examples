@@ -2,11 +2,11 @@
 #ifndef __State_H__
 #define __State_H__
 
-#include "mxrp/base/Component.hpp"
+#include "mixr/base/Component.hpp"
 
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class PairStream; }
 }
 class Block;
@@ -17,9 +17,9 @@ class Puzzle;
 //
 // Description:  Puzzle state vector
 //------------------------------------------------------------------------------
-class State : public mxrp::base::Component
+class State : public mixr::base::Component
 {
-    DECLARE_SUBCLASS(State, mxrp::base::Component)
+    DECLARE_SUBCLASS(State, mixr::base::Component)
 
 public:
    static const unsigned int MAX_BLOCKS = 30;         // Max number of blocks in each state
@@ -54,7 +54,7 @@ public:
    friend bool operator!=(const State& s1, const State& s2);
 
    // Slot function(s)
-   virtual bool setSlotBlocks(const mxrp::base::PairStream* const msg);
+   virtual bool setSlotBlocks(const mixr::base::PairStream* const msg);
 
 protected:
    //  create a new state (based on this one) and replace the block

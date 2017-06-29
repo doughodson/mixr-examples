@@ -12,14 +12,14 @@
 
 #include "Tester.hpp"
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/Timers.hpp"
-#include "mxrp/base/concurrent/PeriodicTask.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/Timers.hpp"
+#include "mixr/base/concurrent/PeriodicTask.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 // class factory
-#include "mxrp/base/factory.hpp"
+#include "mixr/base/factory.hpp"
 
 #include <cstdio>
 #include <string>
@@ -34,10 +34,10 @@ const double TIMERS_PRINT_RATE = 5;   // Hz
 const double THREAD_RATE = 20.0;      // hz
 const double THREAD_PRI  =  0.5;      // Pri (0 .. 1)
 
-class TimerThread : public mxrp::base::PeriodicTask
+class TimerThread : public mixr::base::PeriodicTask
 {
-   DECLARE_SUBCLASS(TimerThread, mxrp::base::PeriodicTask)
-   public: TimerThread(mxrp::base::Component* const parent, const double priority, const double rate);
+   DECLARE_SUBCLASS(TimerThread, mixr::base::PeriodicTask)
+   public: TimerThread(mixr::base::Component* const parent, const double priority, const double rate);
    private: virtual unsigned long userFunc(const double dt) override;
 };
 
@@ -47,7 +47,7 @@ EMPTY_COPYDATA(TimerThread)
 EMPTY_DELETEDATA(TimerThread)
 EMPTY_SERIALIZER(TimerThread)
 
-TimerThread::TimerThread(mxrp::base::Component* const parent, const double priority, const double rate)
+TimerThread::TimerThread(mixr::base::Component* const parent, const double priority, const double rate)
       : PeriodicTask(parent, priority, rate)
 {
    STANDARD_CONSTRUCTOR()
@@ -55,7 +55,7 @@ TimerThread::TimerThread(mxrp::base::Component* const parent, const double prior
 
 unsigned long TimerThread::userFunc(const double dt)
 {
-   mxrp::base::Timer::updateTimers(dt);
+   mixr::base::Timer::updateTimers(dt);
    return 0;
 }
 
@@ -76,16 +76,16 @@ TimerThread* createTheThread(Tester* const tester)
 }
 
 // class factory
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-  mxrp::base::Object* obj = nullptr;
+  mixr::base::Object* obj = nullptr;
 
   if ( name == Tester::getFactoryName() ) {
     obj = new Tester;
   }
 
   // Default to base classes
-  if (obj == nullptr) obj = mxrp::base::factory(name);
+  if (obj == nullptr) obj = mixr::base::factory(name);
   return obj;
 }
 
@@ -94,7 +94,7 @@ Tester* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -107,7 +107,7 @@ Tester* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -129,13 +129,13 @@ Tester* builder(const std::string& filename)
 void run(Tester* const tester)
 {
    if (tester != nullptr) {
-      mxrp::base::Timer::freeze(true);
+      mixr::base::Timer::freeze(true);
 
       // Time between printing the timer data
       double dt = 1.0 / static_cast<double>(TIMERS_PRINT_RATE);
 
       // Our main test control timer
-      const auto mainTimer = new mxrp::base::UpTimer();
+      const auto mainTimer = new mixr::base::UpTimer();
       mainTimer->setAlarmTime(MAIN_TIMER_VALUE);
       mainTimer->start();
 
@@ -144,9 +144,9 @@ void run(Tester* const tester)
       // ---
       std::cout << "#### First Test ####" << std::endl;
 
-      mxrp::base::Timer::freeze(false);
+      mixr::base::Timer::freeze(false);
       while ( !mainTimer->alarm()) {
-         mxrp::base::msleep( static_cast<unsigned int>(dt * 1000.0 + 0.5) );
+         mixr::base::msleep( static_cast<unsigned int>(dt * 1000.0 + 0.5) );
          std::printf("time(%4.1f)\n", mainTimer->getCurrentTime());
          tester->printTimers();
       }
@@ -154,7 +154,7 @@ void run(Tester* const tester)
       // ---
       // Restart the timers
       // ---
-      mxrp::base::Timer::freeze(true);
+      mixr::base::Timer::freeze(true);
 
       std::cout << std::endl;
       std::cout << "#### Restarting Timers (all active) ####" << std::endl;
@@ -167,9 +167,9 @@ void run(Tester* const tester)
       std::cout << std::endl;
       std::cout << "#### Second Test ####" << std::endl;
 
-      mxrp::base::Timer::freeze(false);
+      mixr::base::Timer::freeze(false);
       while ( !mainTimer->alarm()) {
-         mxrp::base::msleep( static_cast<unsigned int>(dt * 1000.0 + 0.5) );
+         mixr::base::msleep( static_cast<unsigned int>(dt * 1000.0 + 0.5) );
          std::printf("time(%4.1f)\n", mainTimer->getCurrentTime());
          tester->printTimers();
       }
@@ -199,7 +199,7 @@ int main(int argc, char* argv[])
       // run the test
       run(tester);
 
-      tester->event(mxrp::base::Component::SHUTDOWN_EVENT);
+      tester->event(mixr::base::Component::SHUTDOWN_EVENT);
       tester->unref();
       tester = nullptr;
 

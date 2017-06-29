@@ -1,10 +1,10 @@
 
 #include "ServerTcpMultiple.hpp"
 
-#include "mxrp/base/Number.hpp"
+#include "mixr/base/Number.hpp"
 #include <iostream>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(ServerTcpMultiple, "ServerTcpMultiple")
 EMPTY_SLOTTABLE(ServerTcpMultiple)

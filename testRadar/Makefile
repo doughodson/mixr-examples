@@ -6,12 +6,12 @@ PGM = testRadar
 OBJS =	DspRadar.o DspRwr.o TdAzPtr.o TdElevPtr.o \
 	TestDisplay.o TestStation.o factory.o main.o
 
-LDFLAGS += -lmxrp_interop_dis -lmxrp_interop
-LDFLAGS += -lmxrp_models -lJSBSim
-LDFLAGS += -lmxrp_simulation
-LDFLAGS += -lmxrp_gui_glut -lmxrp_instruments -lmxrp_graphics
-LDFLAGS += -lmxrp_iodevice -lmxrp_terrain
-LDFLAGS += -lmxrp_base
+LDFLAGS += -lmixr_interop_dis -lmixr_interop
+LDFLAGS += -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_simulation
+LDFLAGS += -lmixr_gui_glut -lmixr_instruments -lmixr_graphics
+LDFLAGS += -lmixr_iodevice -lmixr_terrain
+LDFLAGS += -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lpthread -lrt

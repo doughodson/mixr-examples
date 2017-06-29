@@ -2,16 +2,16 @@
 #ifndef __TestRpmDial_H__
 #define __TestRpmDial_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestRpmDial
 //
 // Description: Another example of using an analog dial.
 //------------------------------------------------------------------------------
-class TestRpmDial : public mxrp::graphics::Page
+class TestRpmDial : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestRpmDial, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestRpmDial, mixr::graphics::Page)
 
 public:
     TestRpmDial();

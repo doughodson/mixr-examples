@@ -1,10 +1,10 @@
 
-#ifndef __oe_xrecorder_factory_H__
-#define __oe_xrecorder_factory_H__
+#ifndef __mixr_xrecorder_factory_H__
+#define __mixr_xrecorder_factory_H__
 
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Object; }
 namespace xrecorder {
 

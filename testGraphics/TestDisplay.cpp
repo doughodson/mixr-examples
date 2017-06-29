@@ -1,12 +1,12 @@
 
 #include "TestDisplay.hpp"
 
-#include "mxrp/graphics/Graphic.hpp"
-#include "mxrp/graphics/Image.hpp"
+#include "mixr/graphics/Graphic.hpp"
+#include "mixr/graphics/Image.hpp"
 
 #include <GL/glut.h>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestDisplay, "TestDisplay")
 EMPTY_SERIALIZER(TestDisplay)

@@ -1,21 +1,21 @@
 
 #include "factory.hpp"
 
-#include "mxrp/base/Object.hpp"
+#include "mixr/base/Object.hpp"
 
 #include "DataRecordTest.hpp"
 #include "PrintMyData.hpp"
 
-#include "mxrp/base/factory.hpp"
-#include "mxrp/recorder/factory.hpp"
-#include "mxrp/simulation/factory.hpp"
-#include "mxrp/models/factory.hpp"
+#include "mixr/base/factory.hpp"
+#include "mixr/recorder/factory.hpp"
+#include "mixr/simulation/factory.hpp"
+#include "mixr/models/factory.hpp"
 
 #include <string>
 
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-    mxrp::base::Object* obj = nullptr;
+    mixr::base::Object* obj = nullptr;
 
     if ( name == DataRecordTest::getFactoryName() ) {
         obj = new DataRecordTest();
@@ -24,10 +24,10 @@ mxrp::base::Object* factory(const std::string& name)
         obj = new PrintMyData();
     }
     else {
-        if (obj == nullptr) obj = mxrp::simulation::factory(name);
-        if (obj == nullptr) obj = mxrp::models::factory(name);
-        if (obj == nullptr) obj = mxrp::base::factory(name);
-        if (obj == nullptr) obj = mxrp::recorder::factory(name);
+        if (obj == nullptr) obj = mixr::simulation::factory(name);
+        if (obj == nullptr) obj = mixr::models::factory(name);
+        if (obj == nullptr) obj = mixr::base::factory(name);
+        if (obj == nullptr) obj = mixr::recorder::factory(name);
     }
 
     return obj;

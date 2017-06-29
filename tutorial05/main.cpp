@@ -3,28 +3,28 @@
 #include <string>
 #include <cstdlib>
 
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/PairStream.hpp"
-#include "mxrp/base/Color.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/String.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/PairStream.hpp"
+#include "mixr/base/Color.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/String.hpp"
 
 // factories
-#include "mxrp/base/factory.hpp"
+#include "mixr/base/factory.hpp"
 
 #include "MyObj.hpp"
 
 // our class factory
-mxrp::base::Object* factory(const std::string& name)
+mixr::base::Object* factory(const std::string& name)
 {
-   mxrp::base::Object* obj = nullptr;
+   mixr::base::Object* obj = nullptr;
 
    // look in application's classes
    if ( name == MyObj::getFactoryName() ) {
       obj = new MyObj;
    }
    // look in base classes
-   if (obj == nullptr) obj = mxrp::base::factory(name);
+   if (obj == nullptr) obj = mixr::base::factory(name);
    return obj;
 }
 
@@ -33,7 +33,7 @@ MyObj* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -46,7 +46,7 @@ MyObj* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -71,15 +71,15 @@ int main(int argc, char* argv[])
    MyObj* myObj = builder(configFilename);
 
    // print out some color information
-   const mxrp::base::PairStream* colorTable = myObj->getColorTable();
+   const mixr::base::PairStream* colorTable = myObj->getColorTable();
    if (colorTable != nullptr) {
 //    Pair* p = colorTable->findByName("green");
-      const mxrp::base::Identifier* id = myObj->getTextColor();
+      const mixr::base::Identifier* id = myObj->getTextColor();
       if (id != nullptr) {
-         const mxrp::base::Pair* p = colorTable->findByName(id->getString());
+         const mixr::base::Pair* p = colorTable->findByName(id->getString());
          if (p != nullptr) {
             std::cout << "Text color: " << id->getString();
-            const auto color = dynamic_cast<const mxrp::base::Color*>(p->object());
+            const auto color = dynamic_cast<const mixr::base::Color*>(p->object());
             if (color != nullptr) {
                std::cout << " Red: "   << color->red();
                std::cout << " Green: " << color->green();
@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
    }
 
    // print out vector information
-   const mxrp::base::List* vector = myObj->getVector();
+   const mixr::base::List* vector = myObj->getVector();
    if (vector != nullptr) {
       int numValues = vector->entries();
       const auto values = new int[numValues];
@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 
    // print out visible and message info
    std::cout << "Visible: " << myObj->getVisible() << "\n";
-   const mxrp::base::String* message = myObj->getMessage();
+   const mixr::base::String* message = myObj->getMessage();
    std::cout << "Message: " << message->getString() << "\n";
 
    myObj->unref();

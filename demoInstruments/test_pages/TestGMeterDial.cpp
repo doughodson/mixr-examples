@@ -1,9 +1,9 @@
 
 #include "TestGMeterDial.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/instruments/dials/GMeterDial.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/instruments/dials/GMeterDial.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestGMeterDial, "TestGMeterDial")
 EMPTY_SERIALIZER(TestGMeterDial)
@@ -44,9 +44,9 @@ void TestGMeterDial::updateData(const double dt)
         currGs = 0;
         /*
         {
-            base::Pair* p = findByType(typeid(mxrp::GMeterDial));
+            base::Pair* p = findByType(typeid(mixr::GMeterDial));
             if (p != 0) {
-                    mxrp::GMeterDial* myDial = (mxrp::GMeterDial*)(p->object());
+                    mixr::GMeterDial* myDial = (mixr::GMeterDial*)(p->object());
                     if (myDial != 0) myDial->resetMe();
             }
         }

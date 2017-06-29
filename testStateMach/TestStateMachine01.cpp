@@ -1,10 +1,10 @@
 
 #include "TestStateMachine01.hpp"
 
-#include "mxrp/base/Integer.hpp"
-#include "mxrp/base/Boolean.hpp"
+#include "mixr/base/Integer.hpp"
+#include "mixr/base/Boolean.hpp"
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestStateMachine01, "TestStateMachine01")
 EMPTY_SLOTTABLE(TestStateMachine01)

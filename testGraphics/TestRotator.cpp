@@ -1,11 +1,11 @@
 
 #include "TestRotator.hpp"
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <cmath>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestRotator, "TestRotator")
 EMPTY_SERIALIZER(TestRotator)

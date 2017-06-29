@@ -1,16 +1,16 @@
 
 #include "Display.hpp"
 
-#include "mxrp/base/io/IoData.hpp"
-#include "mxrp/base/io/IoHandler.hpp"
-#include "mxrp/base/Number.hpp"
-#include "mxrp/base/String.hpp"
-#include "mxrp/base/util/str_utils.hpp"
+#include "mixr/base/io/IoData.hpp"
+#include "mixr/base/io/IoHandler.hpp"
+#include "mixr/base/Number.hpp"
+#include "mixr/base/String.hpp"
+#include "mixr/base/util/str_utils.hpp"
 
 #include <cstdio>
 #include <cstdlib>
 
-using namespace mxrp;
+using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Display, "TestIoDisplay")
 

@@ -1,12 +1,12 @@
 
 #include "factory.hpp"
 
-#include "mxrp/simulation/Station.hpp"
-#include "mxrp/graphics/Graphic.hpp"
-#include "mxrp/base/edl_parser.hpp"
-#include "mxrp/base/Pair.hpp"
-#include "mxrp/base/Timers.hpp"
-#include "mxrp/base/util/system_utils.hpp"
+#include "mixr/simulation/Station.hpp"
+#include "mixr/graphics/Graphic.hpp"
+#include "mixr/base/edl_parser.hpp"
+#include "mixr/base/Pair.hpp"
+#include "mixr/base/Timers.hpp"
+#include "mixr/base/util/system_utils.hpp"
 
 #include <GL/glut.h>
 
@@ -16,14 +16,14 @@
 // default background frame rate
 const unsigned int BG_RATE = 10;
 
-mxrp::simulation::Station* station = nullptr;
+mixr::simulation::Station* station = nullptr;
 
 // station builder
-mxrp::simulation::Station* builder(const std::string& filename)
+mixr::simulation::Station* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
-   mxrp::base::Object* obj = mxrp::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -36,7 +36,7 @@ mxrp::simulation::Station* builder(const std::string& filename)
    }
 
    // do we have a base::Pair, if so, point to object in Pair, not Pair itself
-   const auto pair = dynamic_cast<mxrp::base::Pair*>(obj);
+   const auto pair = dynamic_cast<mixr::base::Pair*>(obj);
    if (pair != nullptr) {
       obj = pair->object();
       obj->ref();
@@ -44,7 +44,7 @@ mxrp::simulation::Station* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<mxrp::simulation::Station*>(obj);
+   const auto station = dynamic_cast<mixr::simulation::Station*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -62,7 +62,7 @@ void updateDataCB(int msecs)
    glutTimerFunc(msecs, updateDataCB, msecs);
 
    // Current time
-   const double time = mxrp::base::getComputerTime();
+   const double time = mixr::base::getComputerTime();
 
    // Compute delta time
    static double time0 = time;   // N-1 Time
@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
    station = builder(configFilename);
 
    // reset the Simulation
-   station->event(mxrp::base::Component::RESET_EVENT);
+   station->event(mixr::base::Component::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt = 1.0 / static_cast<double>(BG_RATE);
@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    station->updateData(dt);
    station->updateTC(dt);
-   station->event(mxrp::base::Component::RESET_EVENT);
+   station->event(mixr::base::Component::RESET_EVENT);
 
    glutTimerFunc(msecs, updateDataCB, msecs);
 

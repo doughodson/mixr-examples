@@ -1,7 +1,7 @@
 
 #include "Station.hpp"
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(Station, "MapTestStation")
 EMPTY_SERIALIZER(Station)
@@ -11,7 +11,7 @@ BEGIN_SLOTTABLE(Station)
 END_SLOTTABLE(Station)
 
 BEGIN_SLOT_MAP(Station)
-    ON_SLOT(1, setSlotDisplay, mxrp::glut::GlutDisplay)
+    ON_SLOT(1, setSlotDisplay, mixr::glut::GlutDisplay)
 END_SLOT_MAP()
 
 Station::Station()
@@ -68,7 +68,7 @@ void Station::reset()
 //------------------------------------------------------------------------------
 // setSlotDisplay() - sets our display
 //------------------------------------------------------------------------------
-bool Station::setSlotDisplay(mxrp::glut::GlutDisplay* dis)
+bool Station::setSlotDisplay(mixr::glut::GlutDisplay* dis)
 {
     bool ok = false;
     // clear out our old display first

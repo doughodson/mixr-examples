@@ -2,12 +2,12 @@
 #ifndef __oe_xzmq_ZeroMQHandler_H__
 #define __oe_xzmq_ZeroMQHandler_H__
 
-#include "mxrp/base/network/NetHandler.hpp"
+#include "mixr/base/network/NetHandler.hpp"
 
 #include <map>
 #include <string>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class Boolean; class Integer; class String; }
 namespace xzmq {
 class ZeroMQContext;

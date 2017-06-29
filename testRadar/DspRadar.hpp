@@ -2,10 +2,10 @@
 #ifndef __DspRadar_H__
 #define __DspRadar_H__
 
-#include "mxrp/graphics/Graphic.hpp"
+#include "mixr/graphics/Graphic.hpp"
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace base { class PairStream; }
 namespace models { class Radar; }
 }
@@ -16,16 +16,16 @@ namespace models { class Radar; }
 //              with color coded doppler shift, and overlayed with tracks.
 // Factory name: DspRadar
 //------------------------------------------------------------------------------
-class DspRadar : public mxrp::graphics::Graphic
+class DspRadar : public mixr::graphics::Graphic
 {
-   DECLARE_SUBCLASS(DspRadar, mxrp::graphics::Graphic)
+   DECLARE_SUBCLASS(DspRadar, mixr::graphics::Graphic)
 
 public:
    DspRadar();
 
-   const mxrp::models::Radar* getRadar()             { return radar; }
-   const mxrp::models::Radar* getRadar() const       { return radar; }
-   bool setRadar(mxrp::models::Radar* const s)       { radar = s; return true; }
+   const mixr::models::Radar* getRadar()             { return radar; }
+   const mixr::models::Radar* getRadar() const       { return radar; }
+   bool setRadar(mixr::models::Radar* const s)       { radar = s; return true; }
 
    virtual void drawFunc() override;
 
@@ -34,7 +34,7 @@ public:
 private:
     static const int MAX_TRKS = 50;
 
-    const mxrp::models::Radar* radar {};  // The test RADAR sensor
+    const mixr::models::Radar* radar {};  // The test RADAR sensor
     SendData azSD;
     SendData elSD;
 

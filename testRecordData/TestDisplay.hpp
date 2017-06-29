@@ -2,10 +2,10 @@
 #ifndef __TestDisplay_H__
 #define __TestDisplay_H__
 
-#include "mxrp/gui/glut/GlutDisplay.hpp"
+#include "mixr/gui/glut/GlutDisplay.hpp"
 #include <array>
 
-namespace mxrp {
+namespace mixr {
 namespace models { class Missile; class Player; }
 namespace simulation { class Simulation; class Station; }
 namespace graphics { class SymbolLoader; }
@@ -33,9 +33,9 @@ namespace xpanel { class DspRadar; class DspRwr; }
 //   'd' or 'D'   -- Decrease Range
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class TestDisplay : public mxrp::glut::GlutDisplay
+class TestDisplay : public mixr::glut::GlutDisplay
 {
-    DECLARE_SUBCLASS(TestDisplay, mxrp::glut::GlutDisplay)
+    DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
 public:
     static const int MAX_TRACKS = 60;
@@ -45,15 +45,15 @@ public:
 public:
     TestDisplay();
 
-    mxrp::models::Player* getOwnship();
-    mxrp::simulation::Simulation* getSimulation();
-    mxrp::simulation::Station* getStation();
+    mixr::models::Player* getOwnship();
+    mixr::simulation::Simulation* getSimulation();
+    mixr::simulation::Station* getStation();
 
-    void maintainAirTrackSymbols(mxrp::graphics::SymbolLoader* loader, const double rng);
+    void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
 
     virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
 
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
     virtual void updateData(const double dt = 0.0) override;
 
 protected:
@@ -82,16 +82,16 @@ private:
     // ---
     // RADAR, RWR and SA variables
     // ---
-    mxrp::xpanel::DspRadar* rdrDisplay {};         // Test RADAR display
-    mxrp::xpanel::DspRwr*   rwrDisplay {};         // Test RWR display
-    std::array<mxrp::models::Player*, MAX_TRACKS> tracks {}; // players that we're displaying
+    mixr::xpanel::DspRadar* rdrDisplay {};         // Test RADAR display
+    mixr::xpanel::DspRwr*   rwrDisplay {};         // Test RWR display
+    std::array<mixr::models::Player*, MAX_TRACKS> tracks {}; // players that we're displaying
     std::array<int, MAX_TRACKS> trkIdx {};                 // Index of track symbols
     double range {40.0};                         // SD range
 
     SendData headingSD;
     SendData rangeSD;
 
-    mxrp::base::safe_ptr<mxrp::simulation::Station> myStation;
+    mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
     // ---
     // PFD variables

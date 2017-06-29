@@ -15,14 +15,14 @@ project "testDafif"
       "../../testDafif/**.epp",
       "../../testDafif/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "mxrp_simulation", "mxrp_terrain", "mxrp_dafif", "mxrp_base"}
+      links {"mixr_models", "mixr_simulation", "mixr_terrain", "mixr_dafif", "mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "mxrp_simulation_d", "mxrp_terrain_d", "mxrp_dafif_d", "mxrp_base_d"}
+      links {"mixr_models_d", "mixr_simulation_d", "mixr_terrain_d", "mixr_dafif_d", "mixr_base_d"}
       links {LibWindows}
 
 -- testEvents: test of event passing
@@ -37,15 +37,15 @@ project "testEvents"
       "../../testEvents/**.epp",
       "../../testEvents/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -61,15 +61,15 @@ project "testGraphics"
       "../../testGraphics/**.epp",
       "../../testGraphics/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -85,23 +85,23 @@ project "testInfrared"
       "../../testInfrared/**.epp",
       "../../testInfrared/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim"}
-      links {"mxrp_otw", LibCigi}
-      links {"mxrp_interop_dis", "mxrp_interop" }
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim"}
+      links {"mixr_otw", LibCigi}
+      links {"mixr_interop_dis", "mixr_interop" }
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d"}
-      links {"mxrp_otw_d", LibCigi_d}
-      links {"mxrp_interop_dis_d", "mxrp_interop_d" }
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d"}
+      links {"mixr_otw_d", LibCigi_d}
+      links {"mixr_interop_dis_d", "mixr_interop_d" }
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -117,15 +117,15 @@ project "testIoHandler"
       "../../testIoHandler/**.epp",
       "../../testIoHandler/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_iodevice", "mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_iodevice", "mixr_gui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_iodevice_d", "mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_iodevice_d", "mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -140,14 +140,14 @@ project "testLinearSys"
       "../../testLinearSys/**.epp",
       "../../testLinearSys/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_linearsystem", "mxrp_base"}
+      links {"mixr_linearsystem", "mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_linearsystem_d", "mxrp_base_d"}
+      links {"mixr_linearsystem_d", "mixr_base_d"}
       links {LibWindows}
 
 -- testMatrix
@@ -161,14 +161,14 @@ project "testMatrix"
       "../../testMatrix/**.epp",
       "../../testMatrix/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testMetaObject
@@ -182,14 +182,14 @@ project "testMetaObject"
       "../../testMetaObject/**.epp",
       "../../testMetaObject/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- test navigation utility functions
@@ -203,14 +203,14 @@ project "testNavUtils"
       "../../testNavUtils/**.epp",
       "../../testNavUtils/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testNetHandler
@@ -224,17 +224,17 @@ project "testNetHandler"
       "../../testNetHandler/**.epp",
       "../../testNetHandler/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base", "libzmq" }
+      links {"mixr_base", "libzmq" }
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d", "libzmq_d" }
+      links {"mixr_base_d", "libzmq_d" }
       links {LibWindows}
 
 -- testRadar
@@ -248,23 +248,23 @@ project "testRadar"
       "../../testRadar/**.epp",
       "../../testRadar/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim"}
-      links {"mxrp_otw", LibCigi}
-      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice"}
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim"}
+      links {"mixr_otw", LibCigi}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d"}
-      links {"mxrp_otw_d", LibCigi_d}
-      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d"}
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d"}
+      links {"mixr_otw_d", LibCigi_d}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -279,25 +279,25 @@ project "testRecordData"
       "../../testRecordData/**.epp",
       "../../testRecordData/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder", "libxpanel" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim" }
-      links {"mxrp_otw", LibCigi }
-      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_recorder", "mxrp_iodevice" }
-      links {"mxrp_simulation", "mxrp_terrain" }
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base" }
+      links {"mixr_models", "JSBSim" }
+      links {"mixr_otw", LibCigi }
+      links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iodevice" }
+      links {"mixr_simulation", "mixr_terrain" }
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {"libprotobuf" }
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d" }
-      links {"mxrp_otw_d",  LibCigi_d }
-      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_recorder_d", "mxrp_iodevice_d" }
-      links {"mxrp_simulation_d", "mxrp_terrain_d" }
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d" }
+      links {"mixr_models_d", "JSBSim_d" }
+      links {"mixr_otw_d",  LibCigi_d }
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iodevice_d" }
+      links {"mixr_simulation_d", "mixr_terrain_d" }
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"libprotobuf_d" }
       links {LibWindows}
@@ -313,17 +313,17 @@ project "testRecorderRead"
       "../../testRecorderRead/**.epp",
       "../../testRecorderRead/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim" }
-      links {"mxrp_recorder", "mxrp_simulation", "mxrp_base", "libprotobuf"}
+      links {"mixr_models", "JSBSim" }
+      links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d" }
-      links {"mxrp_recorder_d", "mxrp_simulation_d", "mxrp_base_d", "libprotobuf_d" }
+      links {"mixr_models_d", "JSBSim_d" }
+      links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
 
 -- testRecorderWrite
@@ -337,17 +337,17 @@ project "testRecorderWrite"
       "../../testRecorderWrite/**.epp",
       "../../testRecorderWrite/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim" }
-      links {"mxrp_recorder", "mxrp_simulation", "mxrp_base", "libprotobuf"}
+      links {"mixr_models", "JSBSim" }
+      links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d" }
-      links {"mxrp_recorder_d", "mxrp_simulation_d", "mxrp_base_d", "libprotobuf_d" }
+      links {"mixr_models_d", "JSBSim_d" }
+      links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
 
 -- testRng
@@ -361,14 +361,14 @@ project "testRng"
       "../../testRng/**.epp",
       "../../testRng/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testStateMach
@@ -382,14 +382,14 @@ project "testStateMach"
       "../../testStateMach/**.epp",
       "../../testStateMach/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testTables
@@ -403,14 +403,14 @@ project "testTables"
       "../../testTables/**.epp",
       "../../testTables/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testTemplates
@@ -424,14 +424,14 @@ project "testTemplates"
       "../../testTemplates/**.epp",
       "../../testTemplates/**.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testTimer
@@ -444,13 +444,13 @@ project "testTimer"
       "../../testTimer/*.cpp",
       "../../testTimer/*.edl"
    }
-   includedirs { MXRP_IncPath }
-   libdirs     { MXRP_LibPath }
+   includedirs { MIXR_IncPath }
+   libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 

@@ -2,9 +2,9 @@
 #include "DataRecorder.hpp"
 #include "protobuf/DataRecord.pb.h"
 #include "dataRecorderTokens.hpp"
-#include "mxrp/base/util/math_utils.hpp"
+#include "mixr/base/util/math_utils.hpp"
 
-namespace mxrp {
+namespace mixr {
 namespace xrecorder {
 
 IMPLEMENT_SUBCLASS(DataRecorder, "XDataRecorder")

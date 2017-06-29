@@ -2,7 +2,7 @@
 #ifndef __TestEngineDial_H__
 #define __TestEngineDial_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestEngineDial
@@ -10,9 +10,9 @@
 // Description: Example Analog Dial Page
 // This page will supply test data to the engine dial
 //------------------------------------------------------------------------------
-class TestEngineDial : public mxrp::graphics::Page
+class TestEngineDial : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestEngineDial, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestEngineDial, mixr::graphics::Page)
 
 public:
     TestEngineDial();

@@ -2,7 +2,7 @@
 #ifndef __TestFtitDial_H__
 #define __TestFtitDial_H__
 
-#include "mxrp/graphics/Page.hpp"
+#include "mixr/graphics/Page.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestFtitDial
@@ -11,9 +11,9 @@
 // This page will supply test data to the fuel temperature internal dial
 //
 //------------------------------------------------------------------------------
-class TestFtitDial : public mxrp::graphics::Page
+class TestFtitDial : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestFtitDial, mxrp::graphics::Page)
+   DECLARE_SUBCLASS(TestFtitDial, mixr::graphics::Page)
 
 public:
     TestFtitDial();

@@ -2,7 +2,7 @@
 #ifndef __Station_H__
 #define __Station_H__
 
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Station.hpp"
 
 class StnTimerObject;
 
@@ -10,9 +10,9 @@ class StnTimerObject;
 // Class: StnTimerObject
 // Description: create our window and startup any timers needed
 //------------------------------------------------------------
-class Station : public mxrp::simulation::Station
+class Station : public mixr::simulation::Station
 {
-   DECLARE_SUBCLASS(Station, mxrp::simulation::Station)
+   DECLARE_SUBCLASS(Station, mixr::simulation::Station)
 public:
    Station();
 

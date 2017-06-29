@@ -14,28 +14,28 @@ project "mainCockpit"
       "../../mainCockpit/**.epp",
       "../../mainCockpit/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxPanel" }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim", "libzmq"}
-      links {"mxrp_otw", LibCigi}
-      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_recorder", "mxrp_iodevice"}
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim", "libzmq"}
+      links {"mixr_otw", LibCigi}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iodevice"}
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {"libprotobuf"}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d", "libzmq_d"}
-      links {"mxrp_otw_d",  LibCigi_d}
-      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_recorder_d", "mxrp_iodevice_d"}
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
+      links {"mixr_otw_d",  LibCigi_d}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iodevice_d"}
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"libprotobuf_d" }
       links {LibWindows}
@@ -52,17 +52,17 @@ project "mainGndMapRdr"
       "../../mainGndMapRdr/**.epp",
       "../../mainGndMapRdr/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "mxrp_simulation", "JSBSim", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "mxrp_simulation_d", "JSBSim_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "mixr_simulation_d", "JSBSim_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -78,24 +78,24 @@ project "mainLaero"
       "../../mainLaero/**.epp",
       "../../mainLaero/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim", "libzmq" }
-      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice"}
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim", "libzmq" }
+      links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d", "libzmq_d" }
-      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d"}
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d", "libzmq_d" }
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -111,21 +111,21 @@ project "mainNonRT1"
       "../../mainNonRT1/**.epp",
       "../../mainNonRT1/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim"}
-      links {"mxrp_otw", LibCigi}
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim"}
+      links {"mixr_otw", LibCigi}
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d"}
-      links {"mxrp_otw_d", LibCigi_d}
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d"}
+      links {"mixr_otw_d", LibCigi_d}
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -140,15 +140,15 @@ project "mainPuzzle1"
       "../../mainPuzzle1/**.epp",
       "../../mainPuzzle1/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -163,15 +163,15 @@ project "mainPuzzle2"
       "../../mainPuzzle2/**.epp",
       "../../mainPuzzle2/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -186,26 +186,26 @@ project "mainSim1"
       "../../mainSim1/**.epp",
       "../../mainSim1/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim", "libzmq"}
-      links {"mxrp_otw", LibCigi}
-      links {"mxrp_interop_dis", "mxrp_interop"}
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim", "libzmq"}
+      links {"mixr_otw", LibCigi}
+      links {"mixr_interop_dis", "mixr_interop"}
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d", "libzmq_d"}
-      links {"mxrp_otw_d", LibCigi_d}
-      links {"mxrp_interop_dis_d", "mxrp_interop_d"}
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
+      links {"mixr_otw_d", LibCigi_d}
+      links {"mixr_interop_dis_d", "mixr_interop_d"}
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -220,26 +220,26 @@ project "mainSim2"
       "../../mainSim2/**.epp",
       "../../mainSim2/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_models", "JSBSim", "libzmq"}
-      links {"mxrp_otw", LibCigi}
-      links {"mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice"}
-      links {"mxrp_simulation", "mxrp_terrain"}
-      links {"mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_models", "JSBSim", "libzmq"}
+      links {"mixr_otw", LibCigi}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
+      links {"mixr_simulation", "mixr_terrain"}
+      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_models_d", "JSBSim_d", "libzmq_d"}
-      links {"mxrp_otw_d", LibCigi_d}
-      links {"mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d"}
-      links {"mxrp_simulation_d", "mxrp_terrain_d"}
-      links {"mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
+      links {"mixr_otw_d", LibCigi_d}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
+      links {"mixr_simulation_d", "mixr_terrain_d"}
+      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -254,26 +254,26 @@ project "mainSim3"
       "../../mainSim3/**.epp",
       "../../mainSim3/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links { "mxrp_models", "JSBSim", "libzmq" }
-      links { "mxrp_otw", LibCigi }
-      links { "mxrp_interop_dis", "mxrp_interop", LibCigi }
-      links { "mxrp_simulation", "mxrp_terrain" }
-      links { "mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base" }
+      links { "mixr_models", "JSBSim", "libzmq" }
+      links { "mixr_otw", LibCigi }
+      links { "mixr_interop_dis", "mixr_interop", LibCigi }
+      links { "mixr_simulation", "mixr_terrain" }
+      links { "mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
    filter "configurations:Debug*"
-      links { "mxrp_models_d", "JSBSim_d", "libzmq_d" }
-      links { "mxrp_otw_d", LibCigi_d }
-      links { "mxrp_interop_dis_d", "mxrp_interop_d" }
-      links { "mxrp_simulation_d", "mxrp_terrain_d" }
-      links { "mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d" }
+      links { "mixr_models_d", "JSBSim_d", "libzmq_d" }
+      links { "mixr_otw_d", LibCigi_d }
+      links { "mixr_interop_dis_d", "mixr_interop_d" }
+      links { "mixr_simulation_d", "mixr_terrain_d" }
+      links { "mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }
       links { LibWindows }
 
@@ -288,17 +288,17 @@ project "mainTerrain"
       "../../mainTerrain/**.epp",
       "../../mainTerrain/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mxrp_terrain", "mxrp_simulation"}
-      links {"mxrp_gui_glut", "mxrp_graphics", "mxrp_base"}
+      links {"mixr_terrain", "mixr_simulation"}
+      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mxrp_terrain_d", "mxrp_simulation_d"}
-      links {"mxrp_gui_glut_d", "mxrp_graphics_d", "mxrp_base_d"}
+      links {"mixr_terrain_d", "mixr_simulation_d"}
+      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -313,23 +313,23 @@ project "mainUbf1"
       "../../mainUbf1/**.epp",
       "../../mainUbf1/**.edl"
    }
-   includedirs { MXRP_IncPath, MXRP_3rdPartyIncPath, MXRP_ExamplesIncPath }
-   libdirs     { MXRP_LibPath, MXRP_3rdPartyLibPath, MXRP_ExamplesLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links { "libxbehaviors",  "libxpanel" }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links { "mxrp_models", "JSBSim" }
-      links { "mxrp_otw", LibCigi }
-      links { "mxrp_interop_dis", "mxrp_interop", "mxrp_iodevice" }
-      links { "mxrp_simulation", "mxrp_terrain" }
-      links { "mxrp_gui_glut", "mxrp_instruments", "mxrp_graphics", "mxrp_base" }
+      links { "mixr_models", "JSBSim" }
+      links { "mixr_otw", LibCigi }
+      links { "mixr_interop_dis", "mixr_interop", "mixr_iodevice" }
+      links { "mixr_simulation", "mixr_terrain" }
+      links { "mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
    filter "configurations:Debug*"
-      links { "mxrp_models_d", "JSBSim_d" }
-      links { "mxrp_otw_d", LibCigi_d }
-      links { "mxrp_interop_dis_d", "mxrp_interop_d", "mxrp_iodevice_d" }
-      links { "mxrp_simulation_d", "mxrp_terrain_d" }
-      links { "mxrp_gui_glut_d", "mxrp_instruments_d", "mxrp_graphics_d", "mxrp_base_d" }
+      links { "mixr_models_d", "JSBSim_d" }
+      links { "mixr_otw_d", LibCigi_d }
+      links { "mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d" }
+      links { "mixr_simulation_d", "mixr_terrain_d" }
+      links { "mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }
       links { LibWindows }

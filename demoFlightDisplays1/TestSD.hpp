@@ -2,23 +2,23 @@
 #ifndef __TestSD_H__
 #define __TestSD_H__
 
-#include "mxrp/graphics/Page.hpp"
-#include "mxrp/base/units/angle_utils.hpp"
+#include "mixr/graphics/Page.hpp"
+#include "mixr/base/units/angle_utils.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestSD
 //
 // Description: Sends test data down to the situational display
 //------------------------------------------------------------------------------
-class TestSD : public mxrp::graphics::Page
+class TestSD : public mixr::graphics::Page
 {
-   DECLARE_SUBCLASS(TestSD, mxrp::graphics::Page )
+   DECLARE_SUBCLASS(TestSD, mixr::graphics::Page )
 
 public:
     TestSD();
 
     virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mxrp::base::Object* const obj = nullptr) override;
+    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
 
     static const int MAX_TRACKS = 8;
     static const int MAX_AIRPORTS = 8;
@@ -29,10 +29,10 @@ private:
 
     double heading {};            // our heading
     // rate which are going (up or down)
-    double headingRate {0.2 * mxrp::base::angle::R2DCC};
+    double headingRate {0.2 * mixr::base::angle::R2DCC};
 
     double bearing {};            // goes to our bearing pointer
-    double bearingRate {0.4 * mxrp::base::angle::R2DCC};
+    double bearingRate {0.4 * mixr::base::angle::R2DCC};
 
     double range {80.0};          // our range
 

@@ -2,9 +2,9 @@
 #ifndef __Station_H__
 #define __Station_H__
 
-#include "mxrp/simulation/Station.hpp"
+#include "mixr/simulation/Station.hpp"
 
-namespace mxrp {
+namespace mixr {
    namespace glut { class GlutDisplay; }
 }
 
@@ -16,9 +16,9 @@ namespace mxrp {
 //      it.  This also runs the simulation, and acts as the interface between the
 //      graphics and simulation.
 // -------------------------------------------------------------------------------
-class Station : public mxrp::simulation::Station
+class Station : public mixr::simulation::Station
 {
-    DECLARE_SUBCLASS(Station, mxrp::simulation::Station)
+    DECLARE_SUBCLASS(Station, mixr::simulation::Station)
 
 public:
     Station();
@@ -27,10 +27,10 @@ public:
 
 protected:
     // slot methods
-    bool setSlotDisplay(mxrp::glut::GlutDisplay*);
+    bool setSlotDisplay(mixr::glut::GlutDisplay*);
 
 private:
-    mxrp::glut::GlutDisplay* display {}; // this is our main display that
+    mixr::glut::GlutDisplay* display {}; // this is our main display that
     bool displayInit {};               // is our display created?
 };
 

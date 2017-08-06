@@ -1,10 +1,13 @@
 
 #include "TestCompass.hpp"
+
+#include "mixr/base/colors/Rgb.hpp"
+
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
+
 #include "mixr/graphics/MapPage.hpp"
 #include "mixr/graphics/SymbolLoader.hpp"
-#include "mixr/base/Rgb.hpp"
 
 using namespace mixr;
 

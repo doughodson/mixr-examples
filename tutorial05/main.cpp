@@ -3,9 +3,10 @@
 #include <string>
 #include <cstdlib>
 
+#include "mixr/base/colors/Color.hpp"
+
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
-#include "mixr/base/Color.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/String.hpp"
 

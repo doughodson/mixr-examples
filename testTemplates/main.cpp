@@ -5,7 +5,7 @@
 #include <iostream>
 
 #include "linked_list.hpp"
-#include "mixr/base/Color.hpp"
+#include "mixr/base/colors/Color.hpp"
 
 //using namespace mixr::base;
 

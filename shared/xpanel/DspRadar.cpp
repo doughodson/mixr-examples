@@ -6,7 +6,7 @@
 #include "mixr/models/Track.hpp"
 #include "mixr/models/system/TrackManager.hpp"
 
-#include "mixr/base/Hsv.hpp"
+#include "mixr/base/colors/Hsv.hpp"
 
 #include "mixr/base/util/math_utils.hpp"
 

@@ -7,7 +7,7 @@
 #include "mixr/base/MetaObject.hpp"
 
 #include "mixr/base/units/Decibel.hpp"
-#include "mixr/base/Color.hpp"
+#include "mixr/base/colors/Color.hpp"
 #include "mixr/base/Matrix.hpp"
 
 void printMetadata(const mixr::base::MetaObject* metaObject)

@@ -5,9 +5,10 @@
 
 #include "mixr/base/numbers/Number.hpp"
 
-#include "mixr/base/Color.hpp"
-#include "mixr/base/Rgb.hpp"
-#include "mixr/base/Hsva.hpp"
+#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/Rgb.hpp"
+#include "mixr/base/colors/Hsva.hpp"
+
 #include "mixr/base/String.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"

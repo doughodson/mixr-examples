@@ -10,7 +10,8 @@
 
 #include "mixr/graphics/SymbolLoader.hpp"
 
-#include "mixr/base/Boolean.hpp"
+#include "mixr/base/numbers/Boolean.hpp"
+
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 

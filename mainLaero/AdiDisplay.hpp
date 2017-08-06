@@ -2,7 +2,7 @@
 #ifndef __AdiDisplay_H__
 #define __AdiDisplay_H__
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 
 namespace mixr {
 namespace models { class Aircraft; }

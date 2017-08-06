@@ -11,12 +11,12 @@
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/instruments/factory.hpp"
-#include "mixr/gui/glut/factory.hpp"
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/otw/factory.hpp"
+#include "mixr/ui/glut/factory.hpp"
 
 #include <string>
 

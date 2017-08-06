@@ -5,7 +5,7 @@ PGM = mainGlut
 
 OBJS = main.o
 
-LDFLAGS += -lmixr_gui_glut -lmixr_graphics -lmixr_base
+LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

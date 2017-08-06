@@ -10,7 +10,7 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/base/Boolean.hpp"
+#include "mixr/base/numbers/Boolean.hpp"
 #include "mixr/base/io/IoData.hpp"
 #include "mixr/base/util/math_utils.hpp"
 

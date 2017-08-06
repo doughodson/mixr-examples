@@ -1,11 +1,14 @@
 
 #include "MyObj.hpp"
+
+#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numbers/Boolean.hpp"
+
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/List.hpp"
-#include "mixr/base/Boolean.hpp"
 #include "mixr/base/String.hpp"
-#include "mixr/base/Number.hpp"
 #include "mixr/base/Identifier.hpp"
+
 #include <cstdlib>
 
 IMPLEMENT_SUBCLASS(MyObj, "MyObj")

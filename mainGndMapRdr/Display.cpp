@@ -7,11 +7,12 @@
 #include "mixr/simulation/Simulation.hpp"
 #include "mixr/simulation/Station.hpp"
 
+#include "mixr/base/numbers/Number.hpp"
+
 #include "mixr/base/Color.hpp"
 #include "mixr/base/Rgb.hpp"
 #include "mixr/base/Hsva.hpp"
 #include "mixr/base/Color.hpp"
-#include "mixr/base/Number.hpp"
 #include "mixr/base/String.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"

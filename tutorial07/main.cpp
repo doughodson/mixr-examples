@@ -6,13 +6,13 @@
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/edl_parser.hpp"
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 // factories
 #include "mixr/graphics/factory.hpp"
 #include "mixr/base/factory.hpp"
-#include "mixr/gui/glut/factory.hpp"
+#include "mixr/ui/glut/factory.hpp"
 
 #include "Worm.hpp"
 

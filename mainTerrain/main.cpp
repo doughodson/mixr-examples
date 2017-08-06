@@ -14,7 +14,7 @@
 #include "mixr/base/units/Angles.hpp"
 #include "mixr/graphics/Graphic.hpp"
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 #include <string>

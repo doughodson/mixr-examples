@@ -8,9 +8,9 @@
 
 // factories
 #include "mixr/iodevice/factory.hpp"
-#include "mixr/gui/glut/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/base/factory.hpp"
+#include "mixr/ui/glut/factory.hpp"
 
 #include <string>
 

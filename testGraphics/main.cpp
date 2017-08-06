@@ -8,14 +8,14 @@
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/graphics/Image.hpp"
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 
 #include "TestDisplay.hpp"
 
 // factories
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
-#include "mixr/gui/glut/factory.hpp"
+#include "mixr/ui/glut/factory.hpp"
 
 #include <GL/glut.h>
 

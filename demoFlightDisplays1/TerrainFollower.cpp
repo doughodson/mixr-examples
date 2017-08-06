@@ -3,7 +3,7 @@
 //#define TEST_ALT
 
 #include "TerrainFollower.hpp"
-#include "mixr/base/Number.hpp"
+#include "mixr/base/numbers/Number.hpp"
 #include <GL/glu.h>
 #include <iostream>
 

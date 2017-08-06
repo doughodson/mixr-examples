@@ -5,14 +5,14 @@
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/graphics/Graphic.hpp"
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 // factories
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/instruments/factory.hpp"
-#include "mixr/gui/glut/factory.hpp"
+#include "mixr/ui/glut/factory.hpp"
 
 // test pages
 #include "TestPfd.hpp"

@@ -1,8 +1,8 @@
 
 #include "ZeroMQContext.hpp"
 
-#include "mixr/base/Boolean.hpp"
-#include "mixr/base/Integer.hpp"
+#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numbers/Integer.hpp"
 
 #include <zmq.h>
 

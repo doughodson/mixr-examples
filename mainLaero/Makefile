@@ -15,7 +15,7 @@ LDFLAGS += -lmixr_interop_dis -lmixr_interop
 LDFLAGS += -lmixr_models -lJSBSim
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lmixr_simulation -lmixr_models -lmixr_terrain
-LDFLAGS += -lmixr_gui_glut -lmixr_instruments -lmixr_graphics -lmixr_base
+LDFLAGS += -lmixr_ui_glut -lmixr_instruments -lmixr_graphics -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 LDFLAGS += -lrt
 

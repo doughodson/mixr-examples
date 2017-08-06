@@ -6,7 +6,7 @@
 
 #include "mixr/base/MetaObject.hpp"
 
-#include "mixr/base/Decibel.hpp"
+#include "mixr/base/units/Decibel.hpp"
 #include "mixr/base/Color.hpp"
 #include "mixr/base/Matrix.hpp"
 

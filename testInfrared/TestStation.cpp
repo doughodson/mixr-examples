@@ -9,7 +9,7 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 

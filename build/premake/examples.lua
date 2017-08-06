@@ -26,7 +26,7 @@ project "mainCockpit"
       links {"mixr_otw", LibCigi}
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iodevice"}
       links {"mixr_simulation", "mixr_terrain"}
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {"libprotobuf"}
       links {LibWindows}
@@ -35,7 +35,7 @@ project "mainCockpit"
       links {"mixr_otw_d",  LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iodevice_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {"libprotobuf_d" }
       links {LibWindows}
@@ -57,12 +57,12 @@ project "mainGndMapRdr"
    defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
       links {"mixr_models_d", "mixr_simulation_d", "JSBSim_d", "mixr_terrain_d"}
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -88,14 +88,14 @@ project "mainLaero"
       links {"mixr_models", "JSBSim", "libzmq" }
       links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
       links {"mixr_simulation", "mixr_terrain"}
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d" }
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -118,14 +118,14 @@ project "mainNonRT1"
       links {"mixr_models", "JSBSim"}
       links {"mixr_otw", LibCigi}
       links {"mixr_simulation", "mixr_terrain"}
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
       links {"mixr_models_d", "JSBSim_d"}
       links {"mixr_otw_d", LibCigi_d}
       links {"mixr_simulation_d", "mixr_terrain_d"}
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -144,11 +144,11 @@ project "mainPuzzle1"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -167,11 +167,11 @@ project "mainPuzzle2"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -197,7 +197,7 @@ project "mainSim1"
       links {"mixr_otw", LibCigi}
       links {"mixr_interop_dis", "mixr_interop"}
       links {"mixr_simulation", "mixr_terrain"}
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
@@ -205,7 +205,7 @@ project "mainSim1"
       links {"mixr_otw_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -231,7 +231,7 @@ project "mainSim2"
       links {"mixr_otw", LibCigi}
       links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
       links {"mixr_simulation", "mixr_terrain"}
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
@@ -239,7 +239,7 @@ project "mainSim2"
       links {"mixr_otw_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -265,7 +265,7 @@ project "mainSim3"
       links { "mixr_otw", LibCigi }
       links { "mixr_interop_dis", "mixr_interop", LibCigi }
       links { "mixr_simulation", "mixr_terrain" }
-      links { "mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
+      links { "mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
    filter "configurations:Debug*"
@@ -273,7 +273,7 @@ project "mainSim3"
       links { "mixr_otw_d", LibCigi_d }
       links { "mixr_interop_dis_d", "mixr_interop_d" }
       links { "mixr_simulation_d", "mixr_terrain_d" }
-      links { "mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
+      links { "mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }
       links { LibWindows }
 
@@ -293,12 +293,12 @@ project "mainTerrain"
    defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_terrain", "mixr_simulation"}
-      links {"mixr_gui_glut", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
       links {"mixr_terrain_d", "mixr_simulation_d"}
-      links {"mixr_gui_glut_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -322,7 +322,7 @@ project "mainUbf1"
       links { "mixr_otw", LibCigi }
       links { "mixr_interop_dis", "mixr_interop", "mixr_iodevice" }
       links { "mixr_simulation", "mixr_terrain" }
-      links { "mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
+      links { "mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
    filter "configurations:Debug*"
@@ -330,6 +330,6 @@ project "mainUbf1"
       links { "mixr_otw_d", LibCigi_d }
       links { "mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d" }
       links { "mixr_simulation_d", "mixr_terrain_d" }
-      links { "mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
+      links { "mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }
       links { LibWindows }

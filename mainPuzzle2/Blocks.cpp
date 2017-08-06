@@ -2,7 +2,7 @@
 #include "Blocks.hpp"
 #include "Puzzle.hpp"
 
-#include "mixr/base/Integer.hpp"
+#include "mixr/base/numbers/Integer.hpp"
 #include "mixr/base/List.hpp"
 
 using namespace mixr;

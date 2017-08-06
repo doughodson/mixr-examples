@@ -10,7 +10,7 @@ OBJS += TestIoHandler.o factory.o
 
 LDFLAGS += -lmixr_models -lJSBSim
 LDFLAGS += -lxbehaviors -lxpanel
-LDFLAGS += -lmixr_interop_dis -lmixr_interop -lmixr_graphics -lmixr_gui_glut -lmixr_instruments -lmixr_simulation
+LDFLAGS += -lmixr_interop_dis -lmixr_interop -lmixr_graphics -lmixr_ui_glut -lmixr_instruments -lmixr_simulation
 LDFLAGS += -lmixr_iodevice -lmixr_otw -lmixr_terrain
 LDFLAGS += -lJSBSim -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11

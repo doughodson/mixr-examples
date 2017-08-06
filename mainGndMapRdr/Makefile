@@ -6,7 +6,7 @@ OBJS = Display.o factory.o main.o RealBeamRadar.o TestStation.o
 
 LDFLAGS += -lmixr_models -lJSBSim
 LDFLAGS += -lmixr_terrain -lmixr_simulation
-LDFLAGS += -lmixr_gui_glut -lmixr_graphics
+LDFLAGS += -lmixr_ui_glut -lmixr_graphics
 LDFLAGS += -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu

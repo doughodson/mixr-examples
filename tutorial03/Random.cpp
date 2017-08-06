@@ -1,7 +1,7 @@
 
 #include "Random.hpp"
 
-#include "mixr/base/Number.hpp"
+#include "mixr/base/numbers/Number.hpp"
 #include <cstdlib>
 #include <iostream>
 

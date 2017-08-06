@@ -5,7 +5,7 @@ PGM = tutorial07
 
 OBJS = main.o Worm.o
 
-LDFLAGS += -lmixr_gui_glut -lmixr_graphics -lmixr_base
+LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base
 LDFLAGS += -lpthread -lftgl -lfreetype -lglut -lGLU -lGL -lrt
 
 all: $(PGM)

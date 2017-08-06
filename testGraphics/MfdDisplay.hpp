@@ -2,7 +2,7 @@
 #ifndef __MfdDisplay_H__
 #define __MfdDisplay_H__
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 
 //------------------------------------------------------------------------------
 // Class: MfdDisplay

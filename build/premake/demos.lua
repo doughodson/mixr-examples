@@ -18,11 +18,11 @@ project "demoEfis"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -42,11 +42,11 @@ project "demoFlightDisplays1"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -66,11 +66,11 @@ project "demoFlightDisplays2"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -90,11 +90,11 @@ project "demoInstruments"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -114,11 +114,11 @@ project "demoSubDisplays"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_gui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
+      links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_gui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 

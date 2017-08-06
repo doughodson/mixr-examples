@@ -3,13 +3,12 @@
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/edl_parser.hpp"
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 #include "mixr/base/util/system_utils.hpp"
 
 // factories
 #include "../shared/xzmq/factory.hpp"
-#include "mixr/gui/glut/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/instruments/factory.hpp"
@@ -18,6 +17,7 @@
 #include "mixr/terrain/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/otw/factory.hpp"
+#include "mixr/ui/glut/factory.hpp"
 
 #include "MapPage.hpp"
 #include "Station.hpp"

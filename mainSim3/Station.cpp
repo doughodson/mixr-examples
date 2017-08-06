@@ -1,7 +1,7 @@
 
 #include "Station.hpp"
 
-#include "mixr/gui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/GlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(Station, "MapTestStation")
 EMPTY_SERIALIZER(Station)

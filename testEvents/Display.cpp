@@ -9,10 +9,9 @@
 #include "mixr/base/util/math_utils.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
-#include "mixr/base/Rng.hpp"
-
 #include "mixr/graphics/Material.hpp"
 
+#include <random>
 #include <cstring>
 #include <array>
 
@@ -31,26 +30,18 @@ Display::Display()
     myColor->setBlue(0.0);
     myColor->setGreen(0.0);
 
-    // setup a random number generator to start our colors
-    base::Rng rng;
     std::array<base::Vec4d, MAX_MATERIALS> diffColor;
-    // this will get our computer time, and take the result, giving us
-    // a random seed to start our generator
-    double x = base::getComputerTime();
-    x -= static_cast<int>(x);
-    x *= 10;
-    const unsigned int seed = static_cast<unsigned int>(base::nint(static_cast<double>(x)));
 
-    // go through x amount of numbers before we get our next random number
-    // this will allow for some pseudo-randomness.
-    for (unsigned int i = 0; i < seed; i++) rng.drawClosed();
+    std::random_device rd;                       // used to generate random seed for generator
+    std::mt19937 gen(rd());                      // mersenne_twister_engine
+    std::uniform_real_distribution<> dis(0, 1);  // generates uniform random numbers in distribution from [0, 1)
 
     for (unsigned int i = 0; i < MAX_MATERIALS; i++) {
         materials[i] = new graphics::Material();
         materialSD[i].empty();
-        diffColor[i].set(static_cast<double>(rng.drawClosed()),
-                         static_cast<double>(rng.drawClosed()),
-                         static_cast<double>(rng.drawClosed()), 1);
+        diffColor[i].set(static_cast<double>(dis(gen)),
+                         static_cast<double>(dis(gen)),
+                         static_cast<double>(dis(gen)), 1);
         //std::cout << "DIFF COLOR = " << diffColor[i].x() << ", " << diffColor[i].y() << ", " << diffColor[i].z() << std::endl;
         materials[i]->setDiffuseColor(diffColor[i]);
         // set up initial different colors

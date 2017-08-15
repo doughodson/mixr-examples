@@ -350,27 +350,6 @@ project "testRecorderWrite"
       links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
 
--- testRng
-project "testRng"
-   targetname "testRng"
-   targetdir "../../testRng"
-   debugdir "../../testRng"
-   files {
-      "../../testRng/**.h*",
-      "../../testRng/**.cpp",
-      "../../testRng/**.epp",
-      "../../testRng/**.edl"
-   }
-   includedirs { MIXR_IncPath }
-   libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
-   filter "configurations:Release*"
-      links {"mixr_base"}
-      links {LibWindows}
-   filter "configurations:Debug*"
-      links {"mixr_base_d"}
-      links {LibWindows}
-
 -- testStateMach
 project "testStateMach"
    targetname "testStateMach"

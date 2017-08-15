@@ -58,9 +58,6 @@ APPLICATIONS += testIoHandler
 # matrix test program
 APPLICATIONS += testMatrix
 
-# random distributions tests
-APPLICATIONS += testRng
-
 # navigation tests
 APPLICATIONS += testNavUtils
 

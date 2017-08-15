@@ -105,7 +105,6 @@ testRadar/testRadar
 testRecordData/testRecordData
 testRecorderRead/testRecorderRead
 testRecorderWrite/testRecorderWrite
-testRng/testRng
 testStateMach/testStateMach
 testTables/testTables
 testTemplates/testTemplates

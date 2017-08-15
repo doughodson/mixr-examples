@@ -72,6 +72,9 @@ project "tutorial04"
       "../../tutorial04/**.epp",
       "../../tutorial04/**.edl"
    }
+   excludes {
+      "../../tutorial04/old-code/**.*"
+   }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
    defines { "_CONSOLE" }

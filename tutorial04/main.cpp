@@ -9,6 +9,7 @@
 // factories
 #include "mixr/base/factory.hpp"
 
+#include "AbstractRng.hpp"
 #include "Uniform.hpp"
 #include "Exp.hpp"
 
@@ -32,7 +33,7 @@ mixr::base::Object* factory(const std::string& name)
 }
 
 // random builder
-RandomValue* builder(const std::string& filename)
+AbstractRng* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
@@ -57,7 +58,7 @@ RandomValue* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto random = dynamic_cast<RandomValue*>(obj);
+   const auto random = dynamic_cast<AbstractRng*>(obj);
    if (random == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -71,13 +72,13 @@ int main(int argc, char* argv[])
    std::string configFilename = "file0.edl";
 
    // build random
-   RandomValue* randomValue = builder(configFilename);
+   AbstractRng* rng = builder(configFilename);
 
    for (unsigned int i=0; i<10; i++) {
-      std::cout << randomValue->getNum() << std::endl;
+      std::cout << rng->getNum() << std::endl;
    }
 
-   randomValue->unref();
+   rng->unref();
 
    return 0;
 }

@@ -2,19 +2,19 @@
 #ifndef __Uniform_H__
 #define __Uniform_H__
 
-#include "RandomValue.hpp"
+#include "AbstractRng.hpp"
 
 namespace mixr {
-namespace base   { class Number; }
+namespace base { class Number; }
 }
 
 //------------------------------------------------------------------------------
 // Class: Uniform
 // Description: Generates Random Numbers
 //------------------------------------------------------------------------------
-class Uniform : public RandomValue
+class Uniform : public AbstractRng
 {
-   DECLARE_SUBCLASS(Uniform, RandomValue)
+   DECLARE_SUBCLASS(Uniform, AbstractRng)
 
 public:
    Uniform();

@@ -3,7 +3,7 @@ include ../makedefs
 
 PGM = tutorial04
 
-OBJS = main.o RandomValue.o Exp.o Uniform.o
+OBJS = main.o AbstractRng.o Exp.o Uniform.o
 
 LDFLAGS += -lmixr_base -lpthread -lrt
 

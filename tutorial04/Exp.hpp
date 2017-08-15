@@ -2,7 +2,7 @@
 #ifndef __Exp_H__
 #define __Exp_H__
 
-#include "Random.hpp"
+#include "RandomValue.hpp"
 
 namespace mixr {
 namespace base { class Number; }
@@ -12,9 +12,9 @@ namespace base { class Number; }
 // Class: Exponential
 // Description: Generates Random Numbers
 //------------------------------------------------------------------------------
-class Exp : public Random
+class Exp : public RandomValue
 {
-   DECLARE_SUBCLASS(Exp, Random)
+   DECLARE_SUBCLASS(Exp, RandomValue)
 
 public:
 

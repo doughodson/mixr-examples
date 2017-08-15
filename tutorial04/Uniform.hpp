@@ -2,7 +2,7 @@
 #ifndef __Uniform_H__
 #define __Uniform_H__
 
-#include "Random.hpp"
+#include "RandomValue.hpp"
 
 namespace mixr {
 namespace base   { class Number; }
@@ -12,9 +12,9 @@ namespace base   { class Number; }
 // Class: Uniform
 // Description: Generates Random Numbers
 //------------------------------------------------------------------------------
-class Uniform : public Random
+class Uniform : public RandomValue
 {
-   DECLARE_SUBCLASS(Uniform, Random)
+   DECLARE_SUBCLASS(Uniform, RandomValue)
 
 public:
    Uniform();

@@ -2,6 +2,7 @@
 #include "Uniform.hpp"
 
 #include "mixr/base/numbers/Number.hpp"
+
 #include <cstdlib>
 #include <iostream>
 

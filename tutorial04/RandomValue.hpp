@@ -1,6 +1,6 @@
 
-#ifndef __Random_H__
-#define __Random_H__
+#ifndef __RandomValue_H__
+#define __RandomValue_H__
 
 #include "mixr/base/Object.hpp"
 
@@ -9,15 +9,15 @@ namespace base { class Number; }
 }
 
 //------------------------------------------------------------------------------
-// Class: Random
-// Description: Generates Random Numbers
+// Class: RandomValue
+// Description: Generates random values to feed to a particular distribution
 //------------------------------------------------------------------------------
-class Random : public mixr::base::Object
+class RandomValue : public mixr::base::Object
 {
-   DECLARE_SUBCLASS(Random, mixr::base::Object)
+   DECLARE_SUBCLASS(RandomValue, mixr::base::Object)
 
 public:
-   Random();
+   RandomValue();
 
    // data access functions
    virtual int getNum() const = 0;

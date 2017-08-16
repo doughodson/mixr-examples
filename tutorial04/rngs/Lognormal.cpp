@@ -9,6 +9,7 @@ using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Lognormal, "Lognormal")
 EMPTY_DELETEDATA(Lognormal)
+EMPTY_SERIALIZER(Lognormal)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Lognormal)
@@ -38,8 +39,9 @@ void Lognormal::copyData(const Lognormal& org, const bool)
 
 unsigned Lognormal::num()
 {
-   return 0;
-
+   std::lognormal_distribution<double> dist(0.0, 1.0);
+   const unsigned val = static_cast<unsigned>(dist(engine) * 1000);
+   return val;
 }
 
 /*
@@ -83,32 +85,5 @@ bool Lognormal::setSlotGamma(const Number* const x)
   if(x != nullptr)
     ok = setGamma(x->getDouble());
   return ok;
-}
-
-std::ostream& Lognormal::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-  int j = 0;
-  if ( !slotsOnly ) {
-//    indent(sout,i);
-    sout << "( " << getFactoryName() << std::endl;
-    j = 4;
-  }
-
-  // serialize base class
-  BaseClass::serialize(sout,i+j,true);
-
-  indent(sout,i+j);
-  sout << "sigma: " << sigma << std::endl;
-  indent(sout,i+j);
-  sout << "mu: " << mu << std::endl;
-  indent(sout,i+j);
-  sout << "gamma: " << gamma << std::endl;
-
-  if ( !slotsOnly ) {
-    indent(sout,i);
-    sout << ")" << std::endl;
-  }
-
-  return sout;
 }
 

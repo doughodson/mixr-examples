@@ -7,7 +7,6 @@ OBJS =	\
 	rngs/AbstractRng.o \
 	rngs/Exponential.o \
 	rngs/Lognormal.o \
-	rngs/Pareto.o \
 	rngs/Uniform.o \
 	main.o
 

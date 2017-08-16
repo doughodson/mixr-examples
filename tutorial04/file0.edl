@@ -1,9 +1,21 @@
 //
-// Uniform distribution settings
+// Distribution settings
 //
 
-( Uniform
+//( Uniform
+//   min: 0
+//   max: 100
+//)
+
+//( Exponential
+//    seed: 12
+//    mean: 50
+//)
+
+( Lognormal
     seed: 12
-    min: 0 
-    max: 20
+    sigma: 5
+    mu: 10
+    gamma: 20
 )
+

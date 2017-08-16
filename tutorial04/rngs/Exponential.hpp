@@ -9,36 +9,25 @@ namespace base { class Number; }
 }
 
 //------------------------------------------------------------------------------
-// Exponential
-// Input parameters:
-//    lambda = continuous inverse scale parameter
-//    gamma  = continuous location parameter
-//    mean   = 1/lambda + gamma
-//
+// Class: Exponential
 //------------------------------------------------------------------------------
 class Exponential: public AbstractRng
 {
   DECLARE_SUBCLASS(Exponential, AbstractRng)
 
 public:
-
   Exponential();
 
   virtual unsigned num() override;
 
-  bool setLambda(const double x)            { lambda = x; return true; }
-  double getLambda() const                  { return lambda; }
-
-  bool setGamma(const double x)             { gamma = x; return true; }
-  double getGamma() const                   { return gamma; }
+  bool setMean(const double x)            { mean = x; return true; }
+  double getMean() const                  { return mean; }
 
 private:
 
-  double lambda {1.0}; // continuous inverse scale parameter
-  double gamma {};     // continuous location parameter
+  double mean {1.0};  // mean of distribution
 
-  bool setSlotLambda(const mixr::base::Number* const);
-  bool setSlotGamma(const mixr::base::Number* const);
+  bool setSlotMean(const mixr::base::Number* const);
 };
 
 #endif

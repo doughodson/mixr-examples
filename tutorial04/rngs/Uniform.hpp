@@ -17,15 +17,15 @@ public:
 
   virtual unsigned num() override;
   
-  bool setMin(const double x)       { min = x; return true; }
-  double getMin() const             { return min; }
+  bool setMin(const int x)     { min = x; return true; }
+  int getMin() const           { return min; }
 
-  bool setMax(const double x)       { max = x; return true; }
-  double getMax() const             { return max; }
+  bool setMax(const int x)     { max = x; return true; }
+  int getMax() const           { return max; }
 
 private:
-  double min {};
-  double max {};
+  int min {};
+  int max {};
 
   bool setSlotMin(const mixr::base::Number* const);
   bool setSlotMax(const mixr::base::Number* const);

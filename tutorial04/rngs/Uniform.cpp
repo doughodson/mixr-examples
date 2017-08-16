@@ -8,6 +8,7 @@ using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Uniform,"Uniform")
 EMPTY_DELETEDATA(Uniform)
+EMPTY_SERIALIZER(Uniform)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Uniform)
@@ -44,7 +45,7 @@ bool Uniform::setSlotMin(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMin(x->getDouble());
+      ok = setMin(x->getInt());
    return ok;
 }
 
@@ -52,32 +53,7 @@ bool Uniform::setSlotMax(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMax(x->getDouble());
+      ok = setMax(x->getInt());
    return ok;
-}
-
-std::ostream& Uniform::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j = 0;
-   if ( !slotsOnly ) {
-//    indent(sout,i);
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   // serialize base class
-   BaseClass::serialize(sout,i+j,true);
-
-   indent(sout,i+j);
-   sout << "min: " << min << std::endl;
-   indent(sout,i+j);
-   sout << "max: " << max << std::endl;
-
-   if ( !slotsOnly ) {
-      indent(sout,i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
 }
 

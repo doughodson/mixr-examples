@@ -20,18 +20,18 @@ AbstractRng::AbstractRng()
 {
    STANDARD_CONSTRUCTOR()
 
-   std::cout << "RandomValue::RandomValue() called\n";
+   std::cout << "AbstractRng::AbstractRng() called\n";
 }
 
 void AbstractRng::copyData(const AbstractRng& org, const bool)
 {
    BaseClass::copyData(org);
-   std::cout << "RandomValue::copyData() called\n";
+   std::cout << "AbstractRng::copyData() called\n";
 }
 
 void AbstractRng::deleteData()
 {
-   std::cout << "RandomValue::deleteData() called\n";
+   std::cout << "AbstractRng::deleteData() called\n";
 }
 
 bool AbstractRng::setSeed(const unsigned int seed)

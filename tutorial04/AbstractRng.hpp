@@ -26,7 +26,6 @@ public:
 
    // slot table functions
    bool setSlotSeed(const mixr::base::Number* const);
-
 };
 
 #endif

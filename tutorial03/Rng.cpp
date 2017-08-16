@@ -1,45 +1,45 @@
 
-#include "Random.hpp"
+#include "Rng.hpp"
 
 #include "mixr/base/numbers/Number.hpp"
 #include <cstdlib>
 #include <iostream>
 
-IMPLEMENT_SUBCLASS(Random, "Random")
-EMPTY_DELETEDATA(Random)
-EMPTY_SERIALIZER(Random)
+IMPLEMENT_SUBCLASS(Rng, "Rng")
+EMPTY_DELETEDATA(Rng)
+EMPTY_SERIALIZER(Rng)
 
-BEGIN_SLOTTABLE(Random)
+BEGIN_SLOTTABLE(Rng)
    "seed",
-END_SLOTTABLE(Random)
+END_SLOTTABLE(Rng)
 
-BEGIN_SLOT_MAP(Random)
+BEGIN_SLOT_MAP(Rng)
    ON_SLOT(1, setSlotSeed, mixr::base::Number)
 END_SLOT_MAP()
 
-Random::Random()
+Rng::Rng()
 {
   STANDARD_CONSTRUCTOR()
   setSeed(50);  // default random number generator seed
 }
 
-void Random::copyData(const Random& org, const bool)
+void Rng::copyData(const Rng& org, const bool)
 {
   BaseClass::copyData(org);
 }
 
-bool Random::setSeed(const unsigned int seed)
+bool Rng::setSeed(const unsigned int seed)
 {
   std::srand(seed);
   return true;
 }
 
-int Random::getNum() const
+int Rng::getNum() const
 {
   return std::rand();
 }
 
-bool Random::setSlotSeed(const mixr::base::Number* const seed)
+bool Rng::setSlotSeed(const mixr::base::Number* const seed)
 {
   bool ok = false;
   if (seed != nullptr)

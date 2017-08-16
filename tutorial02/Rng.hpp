@@ -1,19 +1,19 @@
 
-#ifndef __Random_H__
-#define __Random_H__
+#ifndef __Rng_H__
+#define __Rng_H__
 
 #include "mixr/base/Object.hpp"
 
 //------------------------------------------------------------------------------
-// Class: Random
+// Class: Rng
 // Description: Generates random numbers
 //------------------------------------------------------------------------------
-class Random : public mixr::base::Object
+class Rng : public mixr::base::Object
 {
-   DECLARE_SUBCLASS(Random, mixr::base::Object)
+   DECLARE_SUBCLASS(Rng, mixr::base::Object)
 
 public:
-   Random();
+   Rng();
 
    int getNum() const;
    void setSeed(const unsigned int);

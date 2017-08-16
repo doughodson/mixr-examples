@@ -9,7 +9,7 @@
 // factories
 #include "mixr/base/factory.hpp"
 
-#include "Random.hpp"
+#include "Rng.hpp"
 
 // our class factory
 mixr::base::Object* factory(const std::string& name)
@@ -17,8 +17,8 @@ mixr::base::Object* factory(const std::string& name)
    mixr::base::Object* obj = nullptr;
 
    // look in application's classes
-   if ( name == Random::getFactoryName() ) {
-      obj = new Random;
+   if ( name == Rng::getFactoryName() ) {
+      obj = new Rng;
    }
 
    // look in base classes
@@ -27,7 +27,7 @@ mixr::base::Object* factory(const std::string& name)
 }
 
 // random builder
-Random* builder(const std::string& filename)
+Rng* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
@@ -52,7 +52,7 @@ Random* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto random = dynamic_cast<Random*>(obj);
+   const auto random = dynamic_cast<Rng*>(obj);
    if (random == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -66,13 +66,13 @@ int main(int argc, char* argv[])
    std::string configFilename = "file0.edl";
 
    // build random
-   Random* random = builder(configFilename);
+   Rng* rng = builder(configFilename);
 
    for (unsigned int i=0; i<10; i++) {
-      std::cout << random->getNum() << std::endl;
+      std::cout << rng->getNum() << std::endl;
    }
 
-   random->unref();
+   rng->unref();
 
    return 0;
 }

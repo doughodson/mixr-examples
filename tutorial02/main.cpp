@@ -5,18 +5,20 @@
 
 int main(int argc, char* argv[])
 {
-   std::cout << "Creating Rng object\n";
+   std::cout << "Creating Rng object" << std::endl;
    const auto rng = new Rng();
-   std::cout << "Rng object created\n";
+   std::cout << "Rng object created" << std::endl;
+
+   std::cout << "Rng min: " << rng->min() << " max: " << rng->max() << std::endl;
 
    rng->setSeed(25);
 
    for (unsigned int i=0; i<10; i++)
-      std::cout << rng->getNum() << std::endl;
+      std::cout << rng->num() << std::endl;
 
    std::cout << "Unref'ing rng object\n";
    rng->unref();
-   std::cout << "Rng object unrefed\n";
+   std::cout << "Rng object unref'd\n";
 
    return 0;
 }

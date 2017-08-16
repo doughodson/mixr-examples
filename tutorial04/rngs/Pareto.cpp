@@ -1,13 +1,13 @@
 
 #include <iostream>
 
-#include "mixr/base/distributions/Pareto.hpp"
+#include "Pareto.hpp"
 #include "mixr/base/numbers/Number.hpp"
 
-namespace mixr {
-namespace base {
+using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Pareto, "Pareto")
+EMPTY_DELETEDATA(Pareto)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Pareto)
@@ -19,8 +19,6 @@ BEGIN_SLOT_MAP(Pareto)
   ON_SLOT(1, setSlotAlpha, Number)
   ON_SLOT(2, setSlotBeta, Number)
 END_SLOT_MAP()
-
-EMPTY_DELETEDATA(Pareto)
 
 Pareto::Pareto()
 {
@@ -34,6 +32,13 @@ void Pareto::copyData(const Pareto& org, const bool cc)
   beta = org.beta;
 }
 
+unsigned Pareto::num()
+{
+   return 0;
+
+}
+
+/*
 double Pareto::draw()
 {
   // draw a random value in the open interval (0,1)
@@ -41,6 +46,7 @@ double Pareto::draw()
   const double z = std::pow (x, -1.0 / alpha);
   return beta * z;
 }
+*/
 
 bool Pareto::setSlotAlpha(const Number* const x)
 {
@@ -83,5 +89,3 @@ std::ostream& Pareto::serialize(std::ostream& sout, const int i, const bool slot
   return sout;
 }
 
-}
-}

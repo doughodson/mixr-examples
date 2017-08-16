@@ -1,13 +1,13 @@
 
 #include <iostream>
 
-#include "mixr/base/distributions/Exponential.hpp"
+#include "Exponential.hpp"
 #include "mixr/base/numbers/Number.hpp"
 
-namespace mixr {
-namespace base {
+using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Exponential,"Exponential")
+EMPTY_DELETEDATA(Exponential)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Exponential)
@@ -19,8 +19,6 @@ BEGIN_SLOT_MAP(Exponential)
   ON_SLOT(1, setSlotLambda, Number)
   ON_SLOT(2, setSlotGamma, Number)
 END_SLOT_MAP()
-
-EMPTY_DELETEDATA(Exponential)
 
 Exponential::Exponential()
 {
@@ -34,6 +32,17 @@ void Exponential::copyData(const Exponential& org, const bool)
   gamma = org.gamma;
 }
 
+unsigned Exponential::num()
+{
+//  const auto r = static_cast<double>(std::rand()/(RAND_MAX+1.0));
+//  const auto v = -static_cast<int>(mean * std::log(r));
+//  return v;
+
+   return 0;
+}
+
+
+/*
 double Exponential::draw()
 {
   // draw a random value in the open interval (0,1)
@@ -41,21 +50,22 @@ double Exponential::draw()
   const double z = (-1/lambda) * std::log(x);
   return gamma + z;
 }
+*/
 
 bool Exponential::setSlotLambda(const Number* const x)
 {
-  bool ok = false;
-  if(x != nullptr)
-    ok = setLambda(x->getDouble());
-  return ok;
+   bool ok = false;
+   if (x != nullptr)
+      ok = setLambda(x->getDouble());
+   return ok;
 }
 
 bool Exponential::setSlotGamma(const Number* const x)
 {
-  bool ok = false;
-  if(x != nullptr)
-    ok = setGamma(x->getDouble());
-  return ok;
+   bool ok = false;
+   if (x != nullptr)
+      ok = setGamma(x->getDouble());
+   return ok;
 }
 
 std::ostream& Exponential::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
@@ -83,5 +93,3 @@ std::ostream& Exponential::serialize(std::ostream& sout, const int i, const bool
   return sout;
 }
 
-}
-}

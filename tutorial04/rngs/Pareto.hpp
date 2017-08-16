@@ -1,11 +1,12 @@
 
-#ifndef __mixr_base_Pareto_H__
-#define __mixr_base_Pareto_H__
+#ifndef __Pareto_H__
+#define __Pareto_H__
 
-#include "../Rng.hpp"
+#include "AbstractRng.hpp"
 
 namespace mixr {
-namespace base {
+namespace base { class Number; }
+}
 
 //------------------------------------------------------------------------------
 // Pareto
@@ -13,34 +14,29 @@ namespace base {
 //     alpha = order, this controls how sharp the drop-off is
 //     beta = min value
 //------------------------------------------------------------------------------
-
-class Number;
-
-class Pareto: public Rng
+class Pareto: public AbstractRng
 {
-  DECLARE_SUBCLASS(Pareto, Rng)
+  DECLARE_SUBCLASS(Pareto, AbstractRng)
 
 public:
 
   Pareto();
 
-  virtual double draw() override;
-
+  virtual unsigned num() override;
+  
   bool setAlpha(const double x)                      { alpha = x; return true; }
   double getAlpha() const                            { return alpha; }
-  bool setSlotAlpha(const Number* const);
 
   bool setBeta(const double x)                       { beta = x; return true; }
   double getBeta() const                             { return beta; }
-  bool setSlotBeta(const Number* const);
 
-protected:
+private:
   double alpha {0.03};
   double beta {1.0};
-};
 
-}
-}
+  bool setSlotAlpha(const mixr::base::Number* const);
+  bool setSlotBeta(const mixr::base::Number* const);
+};
 
 #endif
 

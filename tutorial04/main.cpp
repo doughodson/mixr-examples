@@ -9,9 +9,11 @@
 // factories
 #include "mixr/base/factory.hpp"
 
-#include "AbstractRng.hpp"
-#include "Uniform.hpp"
-#include "Exp.hpp"
+#include "rngs/AbstractRng.hpp"
+#include "rngs/Exponential.hpp"
+#include "rngs/Lognormal.hpp"
+#include "rngs/Pareto.hpp"
+#include "rngs/Uniform.hpp"
 
 // class factory
 mixr::base::Object* factory(const std::string& name)
@@ -19,11 +21,14 @@ mixr::base::Object* factory(const std::string& name)
    mixr::base::Object* obj = nullptr;
 
    // look in application's classes
-   if ( name == Uniform::getFactoryName() ) {
-      obj = new Uniform();
+   if ( name == Exponential::getFactoryName() ) {
+      obj = new Exponential();
    }
-   else if ( name == Exp::getFactoryName() ) {
-      obj = new Exp();
+   else if ( name == Lognormal::getFactoryName() ) {
+      obj = new Lognormal();
+   }
+   else if ( name == Uniform::getFactoryName() ) {
+      obj = new Uniform();
    }
 
    // look in base classes
@@ -74,8 +79,8 @@ int main(int argc, char* argv[])
    // build random
    AbstractRng* rng = builder(configFilename);
 
-   for (unsigned int i=0; i<10; i++) {
-      std::cout << rng->getNum() << std::endl;
+   for (unsigned int i=0; i<100; i++) {
+      std::cout << rng->num() << std::endl;
    }
 
    rng->unref();

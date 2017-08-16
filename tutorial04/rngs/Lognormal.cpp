@@ -1,13 +1,14 @@
 
 #include <iostream>
 
-#include "mixr/base/distributions/Lognormal.hpp"
+#include "Lognormal.hpp"
+
 #include "mixr/base/numbers/Number.hpp"
 
-namespace mixr {
-namespace base {
+using mixr::base::Number;
 
-IMPLEMENT_SUBCLASS(Lognormal,"Lognormal")
+IMPLEMENT_SUBCLASS(Lognormal, "Lognormal")
+EMPTY_DELETEDATA(Lognormal)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Lognormal)
@@ -22,8 +23,6 @@ BEGIN_SLOT_MAP(Lognormal)
   ON_SLOT(3, setSlotGamma, Number)
 END_SLOT_MAP()
 
-EMPTY_DELETEDATA(Lognormal)
-
 Lognormal::Lognormal()
 {
   STANDARD_CONSTRUCTOR()
@@ -37,6 +36,13 @@ void Lognormal::copyData(const Lognormal& org, const bool)
   gamma = org.gamma;
 }
 
+unsigned Lognormal::num()
+{
+   return 0;
+
+}
+
+/*
 double Lognormal::draw()
 {
   double u(0.0), r2(0.0);
@@ -53,6 +59,7 @@ double Lognormal::draw()
   z += gamma;
   return z;
 }
+*/
 
 bool Lognormal::setSlotSigma(const Number* const x)
 {
@@ -105,5 +112,3 @@ std::ostream& Lognormal::serialize(std::ostream& sout, const int i, const bool s
   return sout;
 }
 
-}
-}

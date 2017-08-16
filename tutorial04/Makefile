@@ -3,7 +3,13 @@ include ../makedefs
 
 PGM = tutorial04
 
-OBJS = main.o AbstractRng.o Exp.o Uniform.o
+OBJS =	\
+	rngs/AbstractRng.o \
+	rngs/Exponential.o \
+	rngs/Lognormal.o \
+	rngs/Pareto.o \
+	rngs/Uniform.o \
+	main.o
 
 LDFLAGS += -lmixr_base -lpthread -lrt
 
@@ -16,5 +22,6 @@ edl:
 	@echo "No input files to process"
 
 clean:
+	-rm -f rngs/*.o
 	-rm -f *.o
 	-rm -f $(PGM)

@@ -12,7 +12,6 @@
 #include "rngs/AbstractRng.hpp"
 #include "rngs/Exponential.hpp"
 #include "rngs/Lognormal.hpp"
-#include "rngs/Pareto.hpp"
 #include "rngs/Uniform.hpp"
 
 // class factory

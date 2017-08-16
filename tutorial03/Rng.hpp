@@ -4,8 +4,10 @@
 
 #include "mixr/base/Object.hpp"
 
+#include <random>
+
 namespace mixr {
-namespace base { class Number; }
+   namespace base { class Number; }
 }
 
 //------------------------------------------------------------------------------
@@ -19,10 +21,19 @@ class Rng : public mixr::base::Object
 public:
    Rng();
 
-   int getNum() const;
-   bool setSeed(const unsigned int);
+   unsigned num();
+   unsigned min() const   { return engine.min(); }
+   unsigned max() const   { return engine.max(); }
 
-   // slot table functions
+   void setSeed(const unsigned int);
+
+private:
+   // mersenne twister algoithm used to produce random integer
+   // values, uniformly distributed from [min(), max()] 
+   std::mt19937 engine;
+   std::uniform_int_distribution<> dist;
+
+   // slot table helper functions
    bool setSlotSeed(const mixr::base::Number* const);
 };
 

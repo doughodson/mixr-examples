@@ -2,8 +2,9 @@
 #include "Rng.hpp"
 
 #include "mixr/base/numbers/Number.hpp"
-#include <cstdlib>
+
 #include <iostream>
+#include <random>
 
 IMPLEMENT_SUBCLASS(Rng, "Rng")
 EMPTY_DELETEDATA(Rng)
@@ -19,30 +20,33 @@ END_SLOT_MAP()
 
 Rng::Rng()
 {
-  STANDARD_CONSTRUCTOR()
-  setSeed(50);  // default random number generator seed
+   STANDARD_CONSTRUCTOR()
+   std::cout << "Rng::Rng() called\n";
 }
 
 void Rng::copyData(const Rng& org, const bool)
 {
-  BaseClass::copyData(org);
+   BaseClass::copyData(org);
+   std::cout << "Rng::copyData() called\n";
 }
 
-bool Rng::setSeed(const unsigned int seed)
+unsigned Rng::num()
 {
-  std::srand(seed);
-  return true;
+   return dist(engine);
 }
 
-int Rng::getNum() const
+void Rng::setSeed(const unsigned int seed)
 {
-  return std::rand();
+   engine.seed(seed);
 }
 
 bool Rng::setSlotSeed(const mixr::base::Number* const seed)
 {
-  bool ok = false;
-  if (seed != nullptr)
-    ok = setSeed(seed->getInt());
-  return ok;
+   bool ok = false;
+   if (seed != nullptr) {
+      setSeed(seed->getInt());
+      ok = true;
+   }
+   return ok;
 }
+

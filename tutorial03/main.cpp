@@ -1,7 +1,6 @@
 
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"
@@ -69,7 +68,7 @@ int main(int argc, char* argv[])
    Rng* rng = builder(configFilename);
 
    for (unsigned int i=0; i<10; i++) {
-      std::cout << rng->getNum() << std::endl;
+      std::cout << rng->num() << std::endl;
    }
 
    rng->unref();

@@ -18,13 +18,12 @@ class Exponential: public AbstractRng
 public:
   Exponential();
 
-  virtual unsigned num() override;
+  virtual double num() override;
 
   bool setMean(const double x)            { mean = x; return true; }
   double getMean() const                  { return mean; }
 
 private:
-
   double mean {1.0};  // mean of distribution
 
   bool setSlotMean(const mixr::base::Number* const);

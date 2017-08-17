@@ -30,7 +30,7 @@ void Rng::copyData(const Rng& org, const bool)
    std::cout << "Rng::copyData() called\n";
 }
 
-unsigned Rng::num()
+double Rng::num()
 {
    return dist(engine);
 }

@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
    // build random
    AbstractRng* rng = builder(configFilename);
 
-   for (unsigned int i=0; i<100; i++) {
+   for (unsigned int i=0; i<10; i++) {
       std::cout << rng->num() << std::endl;
    }
 

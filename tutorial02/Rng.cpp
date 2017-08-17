@@ -25,7 +25,7 @@ void Rng::deleteData()
    std::cout << "Rng::deleteData() called\n";
 }
 
-unsigned Rng::num()
+double Rng::num()
 {
    return dist(engine);
 }

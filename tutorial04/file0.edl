@@ -14,8 +14,7 @@
 
 ( Lognormal
     seed: 12
-    sigma: 5
-    mu: 10
-    gamma: 20
+    mean: 10
+    stddev: 2
 )
 

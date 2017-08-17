@@ -34,18 +34,17 @@ void Uniform::copyData(const Uniform& org, const bool cc)
    max = org.max;
 }
 
-unsigned Uniform::num()
+double Uniform::num()
 {
-   std::uniform_int_distribution<> dist(min, max);
-   const unsigned val = dist(engine);
-   return val;
+   std::uniform_real_distribution<double> dist(min, max);
+   return dist(engine);
 }
 
 bool Uniform::setSlotMin(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMin(x->getInt());
+      ok = setMin(x->getDouble());
    return ok;
 }
 
@@ -53,7 +52,7 @@ bool Uniform::setSlotMax(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMax(x->getInt());
+      ok = setMax(x->getDouble());
    return ok;
 }
 

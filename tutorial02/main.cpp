@@ -9,8 +9,6 @@ int main(int argc, char* argv[])
    const auto rng = new Rng();
    std::cout << "Rng object created" << std::endl;
 
-   std::cout << "Rng min: " << rng->min() << " max: " << rng->max() << std::endl;
-
    rng->setSeed(25);
 
    for (unsigned int i=0; i<10; i++)

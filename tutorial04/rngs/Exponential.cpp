@@ -30,11 +30,10 @@ void Exponential::copyData(const Exponential& org, const bool)
    mean = org.mean;
 }
 
-unsigned Exponential::num()
+double Exponential::num()
 {
    std::exponential_distribution<double> dist(mean);
-   const unsigned val = static_cast<unsigned>(dist(engine) * 1000);
-   return val;
+   return dist(engine);
 }
 
 bool Exponential::setSlotMean(const Number* const x)

@@ -10,25 +10,25 @@ namespace base { class Number; }
 
 class Uniform: public AbstractRng
 {
-  DECLARE_SUBCLASS(Uniform, AbstractRng)
+   DECLARE_SUBCLASS(Uniform, AbstractRng)
 
 public:
-  Uniform();
+   Uniform();
 
-  virtual unsigned num() override;
+   virtual double num() override;
   
-  bool setMin(const int x)     { min = x; return true; }
-  int getMin() const           { return min; }
+   bool setMin(const double x)  { min = x; return true; }
+   double getMin() const        { return min; }
 
-  bool setMax(const int x)     { max = x; return true; }
-  int getMax() const           { return max; }
+   bool setMax(const double x)  { max = x; return true; }
+   double getMax() const        { return max; }
 
 private:
-  int min {};
-  int max {};
+   double min {};
+   double max {};
 
-  bool setSlotMin(const mixr::base::Number* const);
-  bool setSlotMax(const mixr::base::Number* const);
+   bool setSlotMin(const mixr::base::Number* const);
+   bool setSlotMax(const mixr::base::Number* const);
 };
 
 #endif

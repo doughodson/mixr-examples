@@ -22,25 +22,20 @@ class Lognormal: public AbstractRng
 public:
   Lognormal();
 
-  virtual unsigned num() override;
+  virtual double num() override;
   
-  bool setSigma(const double x)            { sigma = x; return true; }
-  double getSigma() const                  { return sigma; }
+  bool setMean(const double x)       { mean = x; return true; }
+  double getMean() const             { return mean; }
 
-  bool setMu(const double x)               { mu = x; return true; }
-  double getMu() const                     { return mu; }
-
-  bool setGamma(const double x)            { gamma = x; return true; }
-  double getGamma() const                  { return gamma; }
+  bool setStdDev(const double x)     { stddev = x; return true; }
+  double getStdDev() const           { return stddev; }
 
 private:
-  double sigma {};
-  double mu {};
-  double gamma {};
+  double mean {};
+  double stddev {};
 
-  bool setSlotSigma(const mixr::base::Number* const);
-  bool setSlotMu(const mixr::base::Number* const);
-  bool setSlotGamma(const mixr::base::Number* const);
+  bool setSlotMean(const mixr::base::Number* const);
+  bool setSlotStdDev(const mixr::base::Number* const);
 };
 
 #endif

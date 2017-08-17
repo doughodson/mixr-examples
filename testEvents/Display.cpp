@@ -34,19 +34,17 @@ Display::Display()
 
     std::random_device rd;                       // used to generate random seed for generator
     std::mt19937 gen(rd());                      // mersenne_twister_engine
-    std::uniform_real_distribution<> dis(0, 1);  // generates uniform random numbers in distribution from [0, 1)
+    std::uniform_real_distribution<double> dis(0, 1);  // uniform distribution from [0, 1)
 
     for (unsigned int i = 0; i < MAX_MATERIALS; i++) {
         materials[i] = new graphics::Material();
         materialSD[i].empty();
-        diffColor[i].set(static_cast<double>(dis(gen)),
-                         static_cast<double>(dis(gen)),
-                         static_cast<double>(dis(gen)), 1);
+        diffColor[i].set(dis(gen), dis(gen), dis(gen), 1);
         //std::cout << "DIFF COLOR = " << diffColor[i].x() << ", " << diffColor[i].y() << ", " << diffColor[i].z() << std::endl;
         materials[i]->setDiffuseColor(diffColor[i]);
         // set up initial different colors
         diffColorRate[i].set(1,1,1);
-        rotations[i] = 0;
+        rotations[i] = 0.0;
         rotationsSD[i].empty();
     }
 }

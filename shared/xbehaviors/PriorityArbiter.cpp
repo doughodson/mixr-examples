@@ -13,7 +13,6 @@ IMPLEMENT_SUBCLASS(PriorityArbiter, "PriorityArbiter")
 EMPTY_SLOTTABLE(PriorityArbiter)
 EMPTY_CONSTRUCTOR(PriorityArbiter)
 EMPTY_COPYDATA(PriorityArbiter)
-EMPTY_SERIALIZER(PriorityArbiter)
 EMPTY_DELETEDATA(PriorityArbiter)
 
 base::ubf::AbstractAction* PriorityArbiter::genComplexAction(base::List* const actionSet)

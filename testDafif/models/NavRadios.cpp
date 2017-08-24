@@ -13,7 +13,6 @@
 #include "mixr/base/units/Distances.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(NavRadio, "NavRadio")
-EMPTY_SERIALIZER(NavRadio)
 EMPTY_DELETEDATA(NavRadio)
 
 NavRadio::NavRadio()
@@ -115,7 +114,6 @@ bool NavRadio::setPosition()
 // Class: TacanRadio
 //==============================================================================
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TacanRadio, "TacanRadio")
-EMPTY_SERIALIZER(TacanRadio)
 
 TacanRadio::TacanRadio()
 {
@@ -271,7 +269,6 @@ bool TacanRadio::computeRangeBearing(bool* rngIsValid, double* range, double* gr
 // Class: IlsRadio
 //==============================================================================
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(IlsRadio, "IlsRadio")
-EMPTY_SERIALIZER(IlsRadio)
 EMPTY_DELETEDATA(IlsRadio)
 
 const double IlsRadio::GS_DEG_PER_DOT = 0.25;

@@ -7,7 +7,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(ObjectHandler, "ObjectHandler")
-EMPTY_SERIALIZER(ObjectHandler)
 EMPTY_DELETEDATA(ObjectHandler)
 
 BEGIN_EVENT_HANDLER(ObjectHandler)

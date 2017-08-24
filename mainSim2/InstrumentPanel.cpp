@@ -18,7 +18,6 @@
 #include <GL/glut.h>
 
 IMPLEMENT_SUBCLASS(InstrumentPanel, "InstrumentPanel")
-EMPTY_SERIALIZER(InstrumentPanel)
 EMPTY_SLOTTABLE(InstrumentPanel)
 EMPTY_DELETEDATA(InstrumentPanel)
 

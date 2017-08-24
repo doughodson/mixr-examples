@@ -15,7 +15,6 @@
 
 IMPLEMENT_SUBCLASS(MapPage, "MapTestMapPage")
 EMPTY_SLOTTABLE(MapPage)
-EMPTY_SERIALIZER(MapPage)
 
 MapPage::MapPage()
 {

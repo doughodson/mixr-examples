@@ -6,7 +6,6 @@
 
 IMPLEMENT_SUBCLASS(Rng, "Rng")
 EMPTY_SLOTTABLE(Rng)
-EMPTY_SERIALIZER(Rng)
 
 Rng::Rng()
 {

@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestDigitalGauge, "TestDigitalGauge")
-EMPTY_SERIALIZER(TestDigitalGauge)
 EMPTY_DELETEDATA(TestDigitalGauge)
 
 TestDigitalGauge::TestDigitalGauge()

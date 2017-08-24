@@ -5,7 +5,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestEngPage, "TestEngPage")
-EMPTY_SERIALIZER(TestEngPage)
 EMPTY_DELETEDATA(TestEngPage)
 
 TestEngPage::TestEngPage()

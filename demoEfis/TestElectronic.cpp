@@ -12,7 +12,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestElectronic, "TestElectronic")
-EMPTY_SERIALIZER(TestElectronic)
 EMPTY_DELETEDATA(TestElectronic)
 
 TestElectronic::TestElectronic()

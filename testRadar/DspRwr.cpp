@@ -7,7 +7,6 @@ using namespace mixr;
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")
 EMPTY_SLOTTABLE(DspRwr)
-EMPTY_SERIALIZER(DspRwr)
 EMPTY_DELETEDATA(DspRwr)
 
 DspRwr::DspRwr()

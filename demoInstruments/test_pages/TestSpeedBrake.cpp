@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestSpeedBrake, "TestSpeedBrake")
-EMPTY_SERIALIZER(TestSpeedBrake)
 EMPTY_DELETEDATA(TestSpeedBrake)
 
 TestSpeedBrake::TestSpeedBrake()

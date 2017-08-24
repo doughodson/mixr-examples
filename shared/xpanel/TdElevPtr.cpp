@@ -7,7 +7,6 @@ namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdElevPtr, "TdElevPtr")
-EMPTY_SERIALIZER(TdElevPtr)
 EMPTY_DELETEDATA(TdElevPtr)
 
 BEGIN_EVENT_HANDLER(TdElevPtr)

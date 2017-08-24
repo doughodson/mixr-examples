@@ -29,7 +29,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestDisplay, "TestDisplay")
-EMPTY_SERIALIZER(TestDisplay)
 EMPTY_DELETEDATA(TestDisplay)
 
 BEGIN_EVENT_HANDLER(TestDisplay)

@@ -176,34 +176,12 @@ bool Block::setSlotRefId(const mixr::base::Integer* const msg)
    return ok;
 }
 
-std::ostream& Block::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j {};
-   if ( !slotsOnly ) {
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   indent(sout, i+j);
-   sout << "position: [ " << x << " " << y << " ]" << std::endl;
-
-   BaseClass::serialize(sout,i+j,true);
-
-   if ( !slotsOnly ) {
-      indent(sout,i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
-}
-
 //==============================================================================
 // Class: Block1x1
 //==============================================================================
 
 IMPLEMENT_SUBCLASS(Block1x1, "Block1x1")
 EMPTY_SLOTTABLE(Block1x1)
-EMPTY_SERIALIZER(Block1x1)
 
 EMPTY_COPYDATA(Block1x1)
 EMPTY_DELETEDATA(Block1x1)
@@ -227,7 +205,6 @@ unsigned int Block1x1::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block1x2,"Block1x2")
 EMPTY_SLOTTABLE(Block1x2)
-EMPTY_SERIALIZER(Block1x2)
 
 EMPTY_COPYDATA(Block1x2)
 EMPTY_DELETEDATA(Block1x2)
@@ -252,7 +229,6 @@ unsigned int Block1x2::getSizeY() const      { return 2; }
 
 IMPLEMENT_SUBCLASS(Block2x1,"Block2x1")
 EMPTY_SLOTTABLE(Block2x1)
-EMPTY_SERIALIZER(Block2x1)
 
 EMPTY_COPYDATA(Block2x1)
 EMPTY_DELETEDATA(Block2x1)
@@ -276,7 +252,6 @@ unsigned int Block2x1::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block2x2,"Block2x2")
 EMPTY_SLOTTABLE(Block2x2)
-EMPTY_SERIALIZER(Block2x2)
 
 EMPTY_COPYDATA(Block2x2)
 EMPTY_DELETEDATA(Block2x2)

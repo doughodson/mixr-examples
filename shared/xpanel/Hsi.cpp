@@ -7,7 +7,6 @@ namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Hsi, "Hsi")
-EMPTY_SERIALIZER(Hsi)
 EMPTY_DELETEDATA(Hsi)
 
 BEGIN_EVENT_HANDLER(Hsi)

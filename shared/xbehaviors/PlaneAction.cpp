@@ -10,7 +10,6 @@ namespace xbehaviors {
 IMPLEMENT_SUBCLASS(PlaneAction, "PlaneAction")
 EMPTY_SLOTTABLE(PlaneAction)
 EMPTY_DELETEDATA(PlaneAction)
-EMPTY_SERIALIZER(PlaneAction)
 
 PlaneAction::PlaneAction()
 {

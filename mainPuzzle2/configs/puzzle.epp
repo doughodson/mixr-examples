@@ -62,7 +62,7 @@
     //---
     // The puzzle
     // ---
-    puzzle: ( Puzzle
+    puzzle: ( Controller
         initState: ( PuzzleState
             blocks: {  // 14
                 ( Block1   P01   id:  1 )

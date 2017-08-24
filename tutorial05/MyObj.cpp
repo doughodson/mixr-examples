@@ -31,8 +31,6 @@ BEGIN_SLOT_MAP(MyObj)
    ON_SLOT(6, setSlotMessage,    mixr::base::String)
 END_SLOT_MAP()
 
-EMPTY_SERIALIZER(MyObj)
-
 MyObj::MyObj()
 {
    STANDARD_CONSTRUCTOR()

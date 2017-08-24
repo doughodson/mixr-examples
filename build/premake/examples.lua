@@ -292,12 +292,12 @@ project "mainTerrain"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    defines { "_CONSOLE" }
    filter "configurations:Release*"
-      links {"mixr_terrain", "mixr_simulation"}
+      links {"mixr_terrain"}
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug*"
-      links {"mixr_terrain_d", "mixr_simulation_d"}
+      links {"mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}

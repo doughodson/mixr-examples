@@ -11,7 +11,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(DataRecordTest, "DataRecordTest")
-EMPTY_SERIALIZER(DataRecordTest)
 
 BEGIN_SLOTTABLE(DataRecordTest)
    "inputHandler",

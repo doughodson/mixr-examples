@@ -8,7 +8,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Endpoint, "Endpoint")
-EMPTY_SERIALIZER(Endpoint)
 EMPTY_DELETEDATA(Endpoint)
 
 BEGIN_SLOTTABLE(Endpoint)

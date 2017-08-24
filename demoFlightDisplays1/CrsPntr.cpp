@@ -4,7 +4,6 @@
 #include "mixr/base/units/Angles.hpp"
 
 IMPLEMENT_SUBCLASS(CrsPntr, "CrsPntr")
-EMPTY_SERIALIZER(CrsPntr)
 EMPTY_DELETEDATA(CrsPntr)
 
 BEGIN_EVENT_HANDLER(CrsPntr)

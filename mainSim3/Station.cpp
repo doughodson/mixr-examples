@@ -4,7 +4,6 @@
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(Station, "MapTestStation")
-EMPTY_SERIALIZER(Station)
 
 BEGIN_SLOTTABLE(Station)
     "display",          // 1) sets our display

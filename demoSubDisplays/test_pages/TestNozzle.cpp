@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestNozzle, "TestNozzle")
-EMPTY_SERIALIZER(TestNozzle)
 EMPTY_DELETEDATA(TestNozzle)
 
 TestNozzle::TestNozzle()

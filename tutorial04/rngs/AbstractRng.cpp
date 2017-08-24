@@ -8,7 +8,6 @@
 
 IMPLEMENT_ABSTRACT_SUBCLASS(AbstractRng, "AbstractRng")
 EMPTY_DELETEDATA(AbstractRng)
-EMPTY_SERIALIZER(AbstractRng)
 EMPTY_COPYDATA(AbstractRng)
 
 BEGIN_SLOTTABLE(AbstractRng)

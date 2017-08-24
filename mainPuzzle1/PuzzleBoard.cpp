@@ -1,38 +1,36 @@
 
-#include "Board.hpp"
-#include "Puzzle.hpp"
+#include "PuzzleBoard.hpp"
+#include "Controller.hpp"
 #include "State.hpp"
 #include "Blocks.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
-using namespace mixr;
+IMPLEMENT_SUBCLASS(PuzzleBoard, "PuzzleBoard")
 
-IMPLEMENT_SUBCLASS(Board, "PuzzleBoard")
-
-BEGIN_SLOTTABLE(Board)
-    "puzzle",      //  1: Our puzzle controller
+BEGIN_SLOTTABLE(PuzzleBoard)
+    "engine",      //  1: Our puzzle engine
     "templates",   //  2: List of block templates (slot numbers MUST match block type IDs)
-END_SLOTTABLE(Board)
+END_SLOTTABLE(PuzzleBoard)
 
-BEGIN_SLOT_MAP(Board)
-    ON_SLOT( 1, setSlotPuzzle,    Puzzle )
-    ON_SLOT( 2, setSlotTemplates, base::PairStream )
+BEGIN_SLOT_MAP(PuzzleBoard)
+    ON_SLOT( 1, setSlotController, Controller)
+    ON_SLOT( 2, setSlotTemplates, mixr::base::PairStream )
 END_SLOT_MAP()
 
-Board::Board()
+PuzzleBoard::PuzzleBoard()
 {
    STANDARD_CONSTRUCTOR()
 }
 
-void Board::copyData(const Board& org, const bool)
+void PuzzleBoard::copyData(const PuzzleBoard& org, const bool)
 {
    BaseClass::copyData(org);
 
-   setSlotPuzzle(nullptr);
-   if (org.puzzle != nullptr) {
-      setSlotPuzzle( org.puzzle->clone() );
+   setSlotController(nullptr);
+   if (org.controller != nullptr) {
+      setSlotController( org.controller->clone() );
    }
 
    setSlotTemplates(nullptr);
@@ -63,14 +61,14 @@ void Board::copyData(const Board& org, const bool)
    startupTimer = 0;
 }
 
-void Board::deleteData()
+void PuzzleBoard::deleteData()
 {
-   setSlotPuzzle(nullptr);
+   setSlotController(nullptr);
    setSlotTemplates(nullptr);
    clearGraphics();
 }
 
-void Board::updateData(const double dt)
+void PuzzleBoard::updateData(const double dt)
 {
    BaseClass::updateData(dt);
 
@@ -86,9 +84,9 @@ void Board::updateData(const double dt)
    // ---
    // Try to solve the puzzle
    // ---
-   if (puzzle != nullptr && finalState == nullptr && startupTimer > 1.0) {
+   if (controller != nullptr && finalState == nullptr && startupTimer > 1.0) {
       std::cout << "Starting to solve!" << std::endl;
-      finalState = puzzle->solve();
+      finalState = controller->solve();
 
       // ---
       // Get the path if we have a solution.
@@ -101,7 +99,7 @@ void Board::updateData(const double dt)
             s = static_cast<const State*>( s->container() );
          }
          resetSolutionPath();
-         std::cout << "Board::updateData() Number moves : " << nstates << std::endl;
+         std::cout << "PuzzleBoard::updateData() Number moves : " << nstates << std::endl;
       }
       else {
          std::cout << "No solution as found!" << std::endl;
@@ -121,21 +119,21 @@ void Board::updateData(const double dt)
 // Setup the list of graphics::Graphic objects for the initial blocks
 // Returns the number of blocks
 //------------------------------------------------------------------------------
-unsigned int Board::setupBlockGraphics()
+unsigned int PuzzleBoard::setupBlockGraphics()
 {
    clearGraphics();
 
-   if (puzzle != nullptr && templates != nullptr) {
-      const State* s = puzzle->getInitState();
+   if (controller != nullptr && templates != nullptr) {
+      const State* s = controller->getInitState();
       if (s != nullptr) {
          bool finished = false;
          for (unsigned int i = 0; i < MAX_BLOCKS && !finished; i++) {
             const Block* b = s->getBlock(i+1);
             if (b != nullptr) {
                unsigned int typeId = b->getTypeId();
-               const base::Pair* pair = templates->getPosition(typeId);
+               const mixr::base::Pair* pair = templates->getPosition(typeId);
                if (pair != nullptr) {
-                  const auto g = dynamic_cast<const graphics::Graphic*>( pair->object() );
+                  const auto g = dynamic_cast<const mixr::graphics::Graphic*>( pair->object() );
                   if (g != nullptr) {
                      // Ok, we've found a graphics::Graphic to draw this block!
                      blocks[nblocks] = g->clone();
@@ -157,7 +155,7 @@ unsigned int Board::setupBlockGraphics()
 }
 
 // Clears the list of graphics::Graphic objects for the blocks
-void Board::clearGraphics()
+void PuzzleBoard::clearGraphics()
 {
    while (nblocks > 0) {
       nblocks--;
@@ -176,7 +174,7 @@ void Board::clearGraphics()
 //------------------------------------------------------------------------------
 // Updates the solution path graphics
 //------------------------------------------------------------------------------
-void Board::updateSolutionPath(const double dt)
+void PuzzleBoard::updateSolutionPath(const double dt)
 {
    if (movingFlg) {
       // Wait while we move between states
@@ -205,7 +203,7 @@ void Board::updateSolutionPath(const double dt)
 }
 
 // Updates the solution path graphics
-void Board::resetSolutionPath()
+void PuzzleBoard::resetSolutionPath()
 {
    curPathState = (nstates-1);
    updateBlockDeltaPositions();
@@ -216,7 +214,7 @@ void Board::resetSolutionPath()
 //------------------------------------------------------------------------------
 // Updates the blocks' delta positions
 //------------------------------------------------------------------------------
-void Board::updateBlockDeltaPositions()
+void PuzzleBoard::updateBlockDeltaPositions()
 {
    if (curPathState < nstates) {
       const State* s = path[curPathState];
@@ -240,7 +238,10 @@ void Board::updateBlockDeltaPositions()
    }
 }
 
-void Board::drawFunc()
+//------------------------------------------------------------------------------
+// drawFunc()
+//------------------------------------------------------------------------------
+void PuzzleBoard::drawFunc()
 {
    for (unsigned int i = 0; i < nblocks; i++) {
       if (blocks[i] != nullptr) {
@@ -255,18 +256,18 @@ void Board::drawFunc()
 //------------------------------------------------------------------------------
 // Sets the Puzzle controller
 //------------------------------------------------------------------------------
-bool Board::setSlotPuzzle(Puzzle* const p)
+bool PuzzleBoard::setSlotController(Controller* const p)
 {
-   if (puzzle != nullptr) puzzle->unref();
-   puzzle = p;
-   if (puzzle != nullptr) puzzle->ref();
+   if (controller != nullptr) controller->unref();
+   controller = p;
+   if (controller != nullptr) controller->ref();
    return true;
 }
 
 //------------------------------------------------------------------------------
 // Sets a list of the graphical templates for the blocks
 //------------------------------------------------------------------------------
-bool Board::setSlotTemplates(const base::PairStream* const p)
+bool PuzzleBoard::setSlotTemplates(const mixr::base::PairStream* const p)
 {
    if (templates != nullptr) templates->unref();
    templates = p;
@@ -274,38 +275,3 @@ bool Board::setSlotTemplates(const base::PairStream* const p)
    return true;
 }
 
-std::ostream& Board::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j = 0;
-   if ( !slotsOnly ) {
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   // Puzzle controller
-   if (puzzle != nullptr) {
-      indent(sout,i+j);
-      sout << "puzzle: {" << std::endl;
-      puzzle->serialize(sout,i+j+4,slotsOnly);
-      indent(sout,i+j);
-      sout << "}" << std::endl;
-   }
-
-   // Puzzle controller
-   if (puzzle != nullptr) {
-      indent(sout,i+j);
-      sout << "puzzle: {" << std::endl;
-      puzzle->serialize(sout,i+j+4,slotsOnly);
-      indent(sout,i+j);
-      sout << "}" << std::endl;
-   }
-
-   BaseClass::serialize(sout,i+j,true);
-
-   if ( !slotsOnly ) {
-      indent(sout,i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
-}

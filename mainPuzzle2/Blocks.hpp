@@ -8,7 +8,7 @@ namespace mixr {
 namespace base { class List; class Integer; }
 }
 
-class Puzzle;
+class Controller;
 
 //------------------------------------------------------------------------------
 // Class:  Block
@@ -35,10 +35,10 @@ public:
    virtual unsigned int getSizeY() const = 0;                  // Block's Y size
 
    // Tests to see if we can move dx, dy; returns true if we can
-   virtual bool testMove(const int dx, const int dy, const Puzzle* const puz) const;
+   virtual bool testMove(const int dx, const int dy, const Controller* const puz) const;
 
    // Tries to move block by dx and dy; returns true if successful
-   virtual bool move(const int dx, const int dy, const Puzzle* const puz);
+   virtual bool move(const int dx, const int dy, const Controller* const puz);
 
    // True if we collide with the test block
    virtual bool collisionCheck(const Block* const b2) const;

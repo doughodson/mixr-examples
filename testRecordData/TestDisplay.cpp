@@ -32,7 +32,6 @@ using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")
 EMPTY_SLOTTABLE(TestDisplay)
-EMPTY_SERIALIZER(TestDisplay)
 EMPTY_DELETEDATA(TestDisplay)
 
 BEGIN_EVENT_HANDLER(TestDisplay)

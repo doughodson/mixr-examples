@@ -9,7 +9,6 @@ using namespace mixr;
 
 IMPLEMENT_SUBCLASS(PrintMyData, "PrintMyData")
 EMPTY_SLOTTABLE(PrintMyData)
-EMPTY_SERIALIZER(PrintMyData)
 EMPTY_CONSTRUCTOR(PrintMyData)
 EMPTY_COPYDATA(PrintMyData)
 EMPTY_DELETEDATA(PrintMyData)

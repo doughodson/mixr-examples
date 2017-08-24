@@ -9,7 +9,6 @@ using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Lognormal, "Lognormal")
 EMPTY_DELETEDATA(Lognormal)
-EMPTY_SERIALIZER(Lognormal)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Lognormal)

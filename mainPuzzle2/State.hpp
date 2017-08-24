@@ -10,7 +10,7 @@ namespace mixr {
 namespace base { class PairStream; }
 }
 class Block;
-class Puzzle;
+class Controller;
 
 //------------------------------------------------------------------------------
 // Class:  State
@@ -40,13 +40,13 @@ public:
 
    // Expand the state, s, and
    //  returns the state that matches the 'goal' state, if found, else zero
-   virtual const State* expand(const State* const goal, Puzzle* const puz);
+   virtual const State* expand(const State* const goal, Controller* const puz);
 
    // State's hash index; 'rh' is rehash count; 'max' is the maximum index
    virtual unsigned int hash(unsigned int rh, unsigned int max) const;
 
    // Define block IDs for the board
-   virtual bool defineBoard(const Puzzle* const puz);
+   virtual bool defineBoard(const Controller* const puz);
 
    virtual int gFunc();                                                       // g() function
    virtual int hFunc(const State* const goal);                                // h() function
@@ -59,7 +59,7 @@ public:
 protected:
    //  create a new state (based on this one) and replace the block
    // at index, idx, with the new block, nb.
-   const State* stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Puzzle* const puz);
+   const State* stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Controller* const puz);
 
    // Check to see if we've reached the goal state
    bool reachedGoal(const State* const goalState) const;

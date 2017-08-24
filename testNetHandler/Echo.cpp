@@ -11,7 +11,6 @@ using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Echo, "Echo")
 EMPTY_SLOTTABLE(Echo)
-EMPTY_SERIALIZER(Echo)
 EMPTY_DELETEDATA(Echo)
 
 Echo::Echo()

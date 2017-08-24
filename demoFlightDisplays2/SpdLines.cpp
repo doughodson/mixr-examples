@@ -6,7 +6,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(SpdLines, "SpdLines")
-EMPTY_SERIALIZER(SpdLines)
 EMPTY_DELETEDATA(SpdLines)
 
 BEGIN_EVENT_HANDLER(SpdLines)

@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestAlt, "TestAlt")
-EMPTY_SERIALIZER(TestAlt)
 EMPTY_DELETEDATA(TestAlt)
 
 TestAlt::TestAlt()

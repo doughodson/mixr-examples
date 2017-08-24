@@ -45,7 +45,6 @@ IMPLEMENT_SUBCLASS(TimerThread, "TimerThread")
 EMPTY_SLOTTABLE(TimerThread)
 EMPTY_COPYDATA(TimerThread)
 EMPTY_DELETEDATA(TimerThread)
-EMPTY_SERIALIZER(TimerThread)
 
 TimerThread::TimerThread(mixr::base::Component* const parent, const double priority, const double rate)
       : PeriodicTask(parent, priority, rate)

@@ -34,7 +34,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(DataRecordTest, "DataRecordTest")
-EMPTY_SERIALIZER(DataRecordTest)
 
 BEGIN_SLOTTABLE(DataRecordTest)
    "tabPrinter",         // 1) Pb buffer data record tab printer

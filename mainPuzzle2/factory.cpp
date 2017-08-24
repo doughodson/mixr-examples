@@ -4,8 +4,8 @@
 #include "mixr/base/Object.hpp"
 
 #include "Blocks.hpp"
-#include "Board.hpp"
-#include "Puzzle.hpp"
+#include "PuzzleBoard.hpp"
+#include "Controller.hpp"
 #include "State.hpp"
 
 #include "mixr/base/factory.hpp"
@@ -19,13 +19,13 @@ mixr::base::Object* factory(const std::string& name)
     mixr::base::Object* obj = nullptr;
 
     // Main board
-    if ( name == Board::getFactoryName() ) {
-        obj = new Board;
+    if ( name == PuzzleBoard::getFactoryName() ) {
+        obj = new PuzzleBoard;
     }
 
     // Puzzle controller
-    else if ( name == Puzzle::getFactoryName() ) {
-        obj = new Puzzle();
+    else if ( name == Controller::getFactoryName() ) {
+        obj = new Controller();
     }
 
     // Puzzle state

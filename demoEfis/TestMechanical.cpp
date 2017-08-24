@@ -8,7 +8,6 @@ const double TestMechanical::T1 = 120;
 const double TestMechanical::T2 = 0.40f;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestMechanical, "TestMechanical")
-EMPTY_SERIALIZER(TestMechanical)
 EMPTY_DELETEDATA(TestMechanical)
 
 TestMechanical::TestMechanical()

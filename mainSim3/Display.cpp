@@ -4,7 +4,6 @@
 #include <GL/glut.h>
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Display, "MapTestDisplay")
-EMPTY_SERIALIZER(Display)
 EMPTY_DELETEDATA(Display)
 
 Display::Display()

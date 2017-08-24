@@ -8,7 +8,6 @@ using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Exponential,"Exponential")
 EMPTY_DELETEDATA(Exponential)
-EMPTY_SERIALIZER(Exponential)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Exponential)

@@ -10,7 +10,6 @@
 #include "mixr/models/WorldModel.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestComputer, "TestComputer")
-EMPTY_SERIALIZER(TestComputer)
 EMPTY_DELETEDATA(TestComputer)
 
 TestComputer::TestComputer()

@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestOilPressure, "TestOilPressure")
-EMPTY_SERIALIZER(TestOilPressure)
 EMPTY_DELETEDATA(TestOilPressure)
 
 TestOilPressure::TestOilPressure()

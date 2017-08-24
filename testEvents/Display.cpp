@@ -18,7 +18,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Display, "SendDataDisplay")
-EMPTY_SERIALIZER(Display)
 
 Display::Display()
 {

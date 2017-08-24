@@ -15,7 +15,6 @@ namespace xpanel {
 
 IMPLEMENT_SUBCLASS(DspRadar, "DspRadar")
 EMPTY_SLOTTABLE(DspRadar)
-EMPTY_SERIALIZER(DspRadar)
 EMPTY_DELETEDATA(DspRadar)
 
 DspRadar::DspRadar()

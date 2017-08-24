@@ -21,7 +21,6 @@ IMPLEMENT_SUBCLASS(PlaneState, "PlaneState")
 EMPTY_SLOTTABLE(PlaneState)
 EMPTY_DELETEDATA(PlaneState)
 EMPTY_COPYDATA(PlaneState)
-EMPTY_SERIALIZER(PlaneState)
 
 PlaneState::PlaneState()
 {

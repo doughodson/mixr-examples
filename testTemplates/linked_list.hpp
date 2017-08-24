@@ -138,7 +138,6 @@ class LinkedList : public Object
     protected: static const ::mixr::base::SlotTable slottable;                                                                    
     private: static const char* slotnames[];                                                                                    
     private: static const int nslots;                                                                                           
-    public: virtual std::ostream& serialize(std::ostream& sout, const int i = 0, const bool slotsOnly = false) const override;  
 
 //-------------------------------------------------------------------------------------
 
@@ -591,18 +590,6 @@ const T* LinkedList<T>::getPosition1(const unsigned int n) const
         return p->getValue();
     else
         return nullptr;
-}
-
-template <class T>
-std::ostream& LinkedList<T>::serialize(std::ostream& sout, const int, const bool) const
-{
-    std::cout << "{" << std::endl;
-    for (const Item* p = getFirstItem(); p != nullptr; p = p->getNext() ) {
-        if (p->getValue() != nullptr) p->getValue()->serialize(sout,4);
-        else std::cout << "<BAD VALUE>" << std::endl;
-    }
-    std::cout << "}" << std::endl;
-    return sout;
 }
 
 }

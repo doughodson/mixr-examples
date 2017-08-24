@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestEngineDial, "TestEngineDial")
-EMPTY_SERIALIZER(TestEngineDial)
 EMPTY_DELETEDATA(TestEngineDial)
 
 TestEngineDial::TestEngineDial()

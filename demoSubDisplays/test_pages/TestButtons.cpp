@@ -6,7 +6,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestButtons, "TestButtons")
-EMPTY_SERIALIZER(TestButtons)
 EMPTY_DELETEDATA(TestButtons)
 
 BEGIN_EVENT_HANDLER(TestButtons)

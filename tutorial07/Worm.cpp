@@ -6,7 +6,6 @@
 
 IMPLEMENT_SUBCLASS(Worm, "Worm")
 EMPTY_DELETEDATA(Worm)
-EMPTY_SERIALIZER(Worm)
 
 BEGIN_SLOTTABLE(Worm)
    "speed",            // 1: speed

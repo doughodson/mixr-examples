@@ -16,7 +16,6 @@
 
 IMPLEMENT_SUBCLASS(TestIoHandler, "TestIoHandler")
 EMPTY_SLOTTABLE(TestIoHandler)
-EMPTY_SERIALIZER(TestIoHandler)
 EMPTY_DELETEDATA(TestIoHandler)
 
 TestIoHandler::TestIoHandler()

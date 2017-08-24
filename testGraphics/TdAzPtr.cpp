@@ -6,7 +6,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdAzPtr, "TdAzPtr")
-EMPTY_SERIALIZER(TdAzPtr)
 EMPTY_DELETEDATA(TdAzPtr)
 
 TdAzPtr::TdAzPtr()

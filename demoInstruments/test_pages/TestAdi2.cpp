@@ -7,7 +7,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestAdi2, "TestAdi2")
-EMPTY_SERIALIZER(TestAdi2)
 EMPTY_DELETEDATA(TestAdi2)
 
 TestAdi2::TestAdi2()

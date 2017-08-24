@@ -1,6 +1,6 @@
 
 #include "Blocks.hpp"
-#include "Puzzle.hpp"
+#include "Controller.hpp"
 
 #include "mixr/base/numbers/Integer.hpp"
 #include "mixr/base/List.hpp"
@@ -85,7 +85,7 @@ int comparePosition(const Block& b1, const Block& b2)
 //------------------------------------------------------------------------------
 
 // Move block by dx and dy; returns true if successful
-bool Block::move(const int dx, const int dy, const Puzzle* const puz)
+bool Block::move(const int dx, const int dy, const Controller* const puz)
 {
    bool ok = testMove(dx,dy,puz);
    if ( ok ) {
@@ -96,7 +96,7 @@ bool Block::move(const int dx, const int dy, const Puzzle* const puz)
 }
 
 // Tests to see if we can move dx, dy; returns true if we can
-bool Block::testMove(const int dx, const int dy, const Puzzle* const puz) const
+bool Block::testMove(const int dx, const int dy, const Controller* const puz) const
 {
    bool ok = false;
    if (puz != nullptr) {
@@ -209,35 +209,12 @@ bool Block::setSlotRefId(const base::Integer* const msg)
    return ok;
 }
 
-std::ostream& Block::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j = 0;
-   if ( !slotsOnly ) {
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   indent(sout, i+j);
-   sout << "position: [ " << x << " " << y << " ]" << std::endl;
-
-   BaseClass::serialize(sout,i+j,true);
-
-   if ( !slotsOnly ) {
-      indent(sout,i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
-}
-
-
 //==============================================================================
 // Class: Block1
 //==============================================================================
 
 IMPLEMENT_SUBCLASS(Block1,"Block1")
 EMPTY_SLOTTABLE(Block1)
-EMPTY_SERIALIZER(Block1)
 
 EMPTY_COPYDATA(Block1)
 EMPTY_DELETEDATA(Block1)
@@ -263,8 +240,6 @@ unsigned int Block1::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block2,"Block2")
 EMPTY_SLOTTABLE(Block2)
-EMPTY_SERIALIZER(Block2)
-
 EMPTY_COPYDATA(Block2)
 EMPTY_DELETEDATA(Block2)
 
@@ -290,8 +265,6 @@ unsigned int Block2::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block3,"Block3")
 EMPTY_SLOTTABLE(Block3)
-EMPTY_SERIALIZER(Block3)
-
 EMPTY_COPYDATA(Block3)
 EMPTY_DELETEDATA(Block3)
 
@@ -317,8 +290,6 @@ unsigned int Block3::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block4,"Block4")
 EMPTY_SLOTTABLE(Block4)
-EMPTY_SERIALIZER(Block4)
-
 EMPTY_COPYDATA(Block4)
 EMPTY_DELETEDATA(Block4)
 
@@ -344,8 +315,6 @@ unsigned int Block4::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block5,"Block5")
 EMPTY_SLOTTABLE(Block5)
-EMPTY_SERIALIZER(Block5)
-
 EMPTY_COPYDATA(Block5)
 EMPTY_DELETEDATA(Block5)
 
@@ -371,8 +340,6 @@ unsigned int Block5::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block6,"Block6")
 EMPTY_SLOTTABLE(Block6)
-EMPTY_SERIALIZER(Block6)
-
 EMPTY_COPYDATA(Block6)
 EMPTY_DELETEDATA(Block6)
 
@@ -398,8 +365,6 @@ unsigned int Block6::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block7,"Block7")
 EMPTY_SLOTTABLE(Block7)
-EMPTY_SERIALIZER(Block7)
-
 EMPTY_COPYDATA(Block7)
 EMPTY_DELETEDATA(Block7)
 
@@ -425,8 +390,6 @@ unsigned int Block7::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block8,"Block8")
 EMPTY_SLOTTABLE(Block8)
-EMPTY_SERIALIZER(Block8)
-
 EMPTY_COPYDATA(Block8)
 EMPTY_DELETEDATA(Block8)
 
@@ -452,8 +415,6 @@ unsigned int Block8::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block9,"Block9")
 EMPTY_SLOTTABLE(Block9)
-EMPTY_SERIALIZER(Block9)
-
 EMPTY_COPYDATA(Block9)
 EMPTY_DELETEDATA(Block9)
 
@@ -479,8 +440,6 @@ unsigned int Block9::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block10,"Block10")
 EMPTY_SLOTTABLE(Block10)
-EMPTY_SERIALIZER(Block10)
-
 EMPTY_COPYDATA(Block10)
 EMPTY_DELETEDATA(Block10)
 
@@ -506,8 +465,6 @@ unsigned int Block10::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block11,"Block11")
 EMPTY_SLOTTABLE(Block11)
-EMPTY_SERIALIZER(Block11)
-
 EMPTY_COPYDATA(Block11)
 EMPTY_DELETEDATA(Block11)
 
@@ -533,8 +490,6 @@ unsigned int Block11::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block12,"Block12")
 EMPTY_SLOTTABLE(Block12)
-EMPTY_SERIALIZER(Block12)
-
 EMPTY_COPYDATA(Block12)
 EMPTY_DELETEDATA(Block12)
 
@@ -560,8 +515,6 @@ unsigned int Block12::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block13,"Block13")
 EMPTY_SLOTTABLE(Block13)
-EMPTY_SERIALIZER(Block13)
-
 EMPTY_COPYDATA(Block13)
 EMPTY_DELETEDATA(Block13)
 
@@ -587,8 +540,6 @@ unsigned int Block13::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block14,"Block14")
 EMPTY_SLOTTABLE(Block14)
-EMPTY_SERIALIZER(Block14)
-
 EMPTY_COPYDATA(Block14)
 EMPTY_DELETEDATA(Block14)
 
@@ -614,8 +565,6 @@ unsigned int Block14::getSizeY() const      { return 1; }
 
 IMPLEMENT_SUBCLASS(Block15,"Block15")
 EMPTY_SLOTTABLE(Block15)
-EMPTY_SERIALIZER(Block15)
-
 EMPTY_COPYDATA(Block15)
 EMPTY_DELETEDATA(Block15)
 

@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestCas, "TestCas")
-EMPTY_SERIALIZER(TestCas)
 EMPTY_DELETEDATA(TestCas)
 
 TestCas::TestCas()

@@ -6,7 +6,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdElevPtr, "TdElevPtr")
-EMPTY_SERIALIZER(TdElevPtr)
 EMPTY_DELETEDATA(TdElevPtr)
 
 TdElevPtr::TdElevPtr()

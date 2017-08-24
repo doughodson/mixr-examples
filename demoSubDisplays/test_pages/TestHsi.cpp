@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestHsi, "TestHsi")
-EMPTY_SERIALIZER(TestHsi)
 EMPTY_DELETEDATA(TestHsi)
 
 TestHsi::TestHsi()

@@ -8,7 +8,6 @@
 #include <cstdio>
 
 IMPLEMENT_SUBCLASS(Tester, "Tester")
-EMPTY_SERIALIZER(Tester)
 
 BEGIN_SLOTTABLE(Tester)
    "timers"            // 1: List of up/down timers to be tested

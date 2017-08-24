@@ -268,46 +268,12 @@ bool Table::setSlotColumns(base::PairStream* const msg)
    return true;
 }
 
-std::ostream& Table::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-    int j = 0;
-    if ( !slotsOnly ) {
-        //indent(sout,i);
-        sout << "( " << getFactoryName() << std::endl;
-        j = 4;
-    }
-
-   indent(sout,i+j);
-   sout << "rows: " << rows << std::endl;
-
-   indent(sout,i+j);
-   sout << "spacing: " << spacing << std::endl;
-
-   indent(sout,i+j);
-   sout << "columns: {" << std::endl;
-    if (columns != nullptr) {
-        columns->serialize(sout,i+j+4,slotsOnly);
-    }
-   indent(sout,i+j);
-   sout << "}" << std::endl;
-
-    BaseClass::serialize(sout,i+j,true);
-
-    if ( !slotsOnly ) {
-        indent(sout,i);
-        sout << ")" << std::endl;
-    }
-
-    return sout;
-}
-
 //==============================================================================
 // class TableRow -- One row of in the table (used by Table only)
 //==============================================================================
 
 IMPLEMENT_SUBCLASS(TableRow,"TableRow")
 EMPTY_SLOTTABLE(TableRow)
-EMPTY_SERIALIZER(TableRow)
 
 TableRow::TableRow()
 {

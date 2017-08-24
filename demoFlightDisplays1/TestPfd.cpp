@@ -9,7 +9,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestPfd, "TestPfd")
-EMPTY_SERIALIZER(TestPfd)
 EMPTY_DELETEDATA(TestPfd)
 
 TestPfd::TestPfd()

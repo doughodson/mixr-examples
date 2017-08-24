@@ -8,7 +8,6 @@ using mixr::base::Number;
 
 IMPLEMENT_SUBCLASS(Uniform,"Uniform")
 EMPTY_DELETEDATA(Uniform)
-EMPTY_SERIALIZER(Uniform)
 
 // slot table for this class type
 BEGIN_SLOTTABLE(Uniform)

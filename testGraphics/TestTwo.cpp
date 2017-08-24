@@ -112,47 +112,6 @@ void TestTwo::updateData(const double dt)
     send( "v2Title", SELECT, i, v2TitleSD);
 }
 
-std::ostream& TestTwo::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-    int j = 0;
-    if ( !slotsOnly ) {
-        sout << "( " << getFactoryName() << std::endl;
-        j = 4;
-    }
-
-    indent(sout,i+j);
-    sout << "v1: " << iv1 << std::endl;
-
-    indent(sout,i+j);
-    sout << "v1Rate: " << iv1Rate << std::endl;
-
-    indent(sout,i+j);
-    sout << "v1Max: " << v1Max << std::endl;
-
-    indent(sout,i+j);
-    sout << "v1Min: " << v1Min << std::endl;
-
-    indent(sout,i+j);
-    sout << "v2: " << iv2 << std::endl;
-
-    indent(sout,i+j);
-    sout << "v2Rate: " << iv2Rate << std::endl;
-
-    indent(sout,i+j);
-    sout << "v2Max: " << v2Max << std::endl;
-
-    indent(sout,i+j);
-    sout << "v2Min: " << v2Min << std::endl;
-
-    BaseClass::serialize(sout,i+j,true);
-
-    if ( !slotsOnly ) {
-        indent(sout,i);
-        sout << ")" << std::endl;
-    }
-    return sout;
-}
-
 //------------------------------------------------------------------------------
 // setV1() --
 //------------------------------------------------------------------------------

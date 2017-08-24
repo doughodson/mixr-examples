@@ -5,7 +5,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(SituationalDisplay, "SituationalDisplay")
-EMPTY_SERIALIZER(SituationalDisplay)
 EMPTY_DELETEDATA(SituationalDisplay)
 
 SituationalDisplay::SituationalDisplay()

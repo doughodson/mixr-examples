@@ -12,7 +12,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestCompass, "TestCompass")
-EMPTY_SERIALIZER(TestCompass)
 EMPTY_DELETEDATA(TestCompass)
 
 BEGIN_EVENT_HANDLER(TestCompass)

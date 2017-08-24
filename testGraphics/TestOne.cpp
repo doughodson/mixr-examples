@@ -154,31 +154,6 @@ void TestOne::drawFunc()
     glEnd();
 }
 
-std::ostream& TestOne::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-    int j = 0;
-    if ( !slotsOnly ) {
-        sout << "( " << getFactoryName() << std::endl;
-        j = 4;
-    }
-
-    indent(sout,i+j);
-    sout << "speed: " << speed << std::endl;
-
-    if (iangle != nullptr) {
-        indent(sout,i+j);
-        sout << "startAngle: " << *iangle << std::endl;
-    }
-
-    BaseClass::serialize(sout,i+j,true);
-
-    if ( !slotsOnly ) {
-        indent(sout,i);
-        sout << ")" << std::endl;
-    }
-    return sout;
-}
-
 //------------------------------------------------------------------------------
 // realSpeed() -- sets the starting real speed
 //------------------------------------------------------------------------------

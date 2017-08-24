@@ -20,7 +20,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
-EMPTY_SERIALIZER(SimStation)
 EMPTY_COPYDATA(SimStation)
 EMPTY_DELETEDATA(SimStation)
 

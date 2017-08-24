@@ -23,7 +23,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Display, "RbrDisplay")
-EMPTY_SERIALIZER(Display)
 
 BEGIN_SLOTTABLE(Display)
    "textureTest",    //  1: Texture test enabled

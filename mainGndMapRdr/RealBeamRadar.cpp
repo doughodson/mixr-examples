@@ -28,7 +28,6 @@ const int IMG_WIDTH = 1024;
 const int IMG_HEIGHT = 1024;
 
 IMPLEMENT_SUBCLASS(RealBeamRadar, "RealBeamRadar")
-EMPTY_SERIALIZER(RealBeamRadar)
 
 BEGIN_SLOTTABLE(RealBeamRadar)
    "interpolate",    //  1: Interpolate flag (default: false)

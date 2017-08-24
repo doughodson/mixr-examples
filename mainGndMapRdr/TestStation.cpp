@@ -18,7 +18,6 @@
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
-EMPTY_SERIALIZER(TestStation)
 EMPTY_DELETEDATA(TestStation)
 
 BEGIN_SLOTTABLE(TestStation)

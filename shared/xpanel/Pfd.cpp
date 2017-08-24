@@ -7,7 +7,6 @@ namespace mixr {
 namespace xpanel {
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Pfd, "Pfd")
-EMPTY_SERIALIZER(Pfd)
 EMPTY_DELETEDATA(Pfd)
 
 Pfd::Pfd()

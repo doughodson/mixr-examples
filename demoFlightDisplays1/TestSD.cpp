@@ -14,7 +14,6 @@ static const double refLat =   41.1f;
 static const double refLon =  111.9f;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestSD, "TestSD")
-EMPTY_SERIALIZER(TestSD)
 EMPTY_DELETEDATA(TestSD)
 
 BEGIN_EVENT_HANDLER(TestSD)

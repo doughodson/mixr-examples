@@ -11,7 +11,6 @@ EMPTY_SLOTTABLE(TestStateMachine03)
 EMPTY_CONSTRUCTOR(TestStateMachine03)
 EMPTY_COPYDATA(TestStateMachine03)
 EMPTY_DELETEDATA(TestStateMachine03)
-EMPTY_SERIALIZER(TestStateMachine03)
 
 // State dispatch table
 BEGIN_STATE_TABLE(TestStateMachine03)

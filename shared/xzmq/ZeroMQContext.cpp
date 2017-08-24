@@ -141,43 +141,5 @@ bool ZeroMQContext::setSlotEnableIPV6(const base::Boolean* const msg)
    return ok;
 }
 
-std::ostream& ZeroMQContext::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j = 0;
-   if (!slotsOnly) {
-      indent(sout, i);
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   // Output the I/O thread count
-   if (threadCount != -1) {
-      indent(sout, i+j);
-      sout << "threadCount: " << threadCount << std::endl;
-   }
-
-   // Output the max socket count
-   if (maxSockets != -1) {
-      indent(sout, i+j);
-      sout << "maxSockets: " << maxSockets << std::endl;
-   }
-
-   // Output IPV6 enabled
-   if (enableIPV6 != -1) {
-      indent(sout, i+j);
-      if (enableIPV6 == 1) sout << "enableIP6: true" << std::endl;
-      else sout << "enableIP6: false" << std::endl;
-   }
-
-   BaseClass::serialize (sout, i+j, true);
-
-   if (!slotsOnly) {
-      indent(sout, i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
-}
-
 }
 }

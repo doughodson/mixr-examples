@@ -8,7 +8,6 @@ namespace mixr {
 namespace xrecorder {
 
 IMPLEMENT_SUBCLASS(DataRecorder, "XDataRecorder")
-EMPTY_SERIALIZER(DataRecorder)
 EMPTY_SLOTTABLE(DataRecorder)
 EMPTY_DELETEDATA(DataRecorder)
 

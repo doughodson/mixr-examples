@@ -48,7 +48,7 @@
     //---
     // The puzzle
     // ---
-    puzzle: ( Puzzle
+    engine: ( Controller
         initState: ( PuzzleState
         #if 1
             blocks: {

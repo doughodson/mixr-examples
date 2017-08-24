@@ -8,7 +8,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestRotator, "TestRotator")
-EMPTY_SERIALIZER(TestRotator)
 EMPTY_DELETEDATA(TestRotator)
 
 TestRotator::TestRotator()

@@ -4,7 +4,6 @@
 #include <cstdlib>
 
 IMPLEMENT_SUBCLASS(MyComp, "MyComp")
-EMPTY_SERIALIZER(MyComp)
 
 BEGIN_SLOTTABLE(MyComp)
   "str"

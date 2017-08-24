@@ -1,7 +1,5 @@
 
-#include "Board.hpp"
-#include "Puzzle.hpp"
-#include "State.hpp"
+#include "PuzzleBoard.hpp"
 #include "factory.hpp"
 
 #include "mixr/base/edl_parser.hpp"
@@ -18,7 +16,7 @@
 // frame rate
 const unsigned int frameRate = 20;
 
-Board* board = nullptr;
+PuzzleBoard* board = nullptr;
 
 //
 void timerCB(int)
@@ -43,7 +41,7 @@ void timerCB(int)
 }
 
 // board builder
-Board* builder(const std::string& filename)
+PuzzleBoard* builder(const std::string& filename)
 {
    // read configuration file
    unsigned int num_errors = 0;
@@ -68,7 +66,7 @@ Board* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto board = dynamic_cast<Board*>(obj);
+   const auto board = dynamic_cast<PuzzleBoard*>(obj);
    if (board == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

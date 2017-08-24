@@ -11,7 +11,6 @@
 #include "mixr/base/units/Times.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(AdiDisplay, "AdiDisplay")
-EMPTY_SERIALIZER(AdiDisplay)
 EMPTY_DELETEDATA(AdiDisplay)
 
 AdiDisplay::AdiDisplay()

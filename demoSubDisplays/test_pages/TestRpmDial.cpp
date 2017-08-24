@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestRpmDial, "TestRpmDial")
-EMPTY_SERIALIZER(TestRpmDial)
 EMPTY_DELETEDATA(TestRpmDial)
 
 TestRpmDial::TestRpmDial()

@@ -10,7 +10,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TerrainFollower, "TerrainFollower")
-EMPTY_SERIALIZER(TerrainFollower)
 EMPTY_DELETEDATA(TerrainFollower)
 
 BEGIN_EVENT_HANDLER(TerrainFollower)

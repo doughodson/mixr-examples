@@ -32,7 +32,6 @@ namespace graphics { class OcclusionArc; }
 
 IMPLEMENT_SUBCLASS(MapPage, "TestMapPage")
 EMPTY_SLOTTABLE(MapPage)
-EMPTY_SERIALIZER(MapPage)
 
 MapPage::MapPage()
 {

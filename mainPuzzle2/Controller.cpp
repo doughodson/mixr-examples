@@ -1,5 +1,5 @@
 
-#include "Puzzle.hpp"
+#include "Controller.hpp"
 #include "State.hpp"
 
 #include "mixr/base/List.hpp"
@@ -7,24 +7,24 @@
 
 using namespace mixr;
 
-IMPLEMENT_SUBCLASS(Puzzle, "Puzzle")
+IMPLEMENT_SUBCLASS(Controller, "Controller")
 
-BEGIN_SLOTTABLE(Puzzle)
+BEGIN_SLOTTABLE(Controller)
     "initState",      //  1: Our initial state
     "goalState",      //  2: Our goal state
-END_SLOTTABLE(Puzzle)
+END_SLOTTABLE(Controller)
 
-BEGIN_SLOT_MAP(Puzzle)
+BEGIN_SLOT_MAP(Controller)
     ON_SLOT( 1, setInitState, State )
     ON_SLOT( 2, setGoalState, State )
 END_SLOT_MAP()
 
-Puzzle::Puzzle()
+Controller::Controller()
 {
    STANDARD_CONSTRUCTOR()
 }
 
-void Puzzle::copyData(const Puzzle& org, const bool)
+void Controller::copyData(const Controller& org, const bool)
 {
    BaseClass::copyData(org);
 
@@ -43,7 +43,7 @@ void Puzzle::copyData(const Puzzle& org, const bool)
    clearOpenList();
 }
 
-void Puzzle::deleteData()
+void Controller::deleteData()
 {
    setInitState(nullptr);
    setGoalState(nullptr);
@@ -54,7 +54,7 @@ void Puzzle::deleteData()
 //------------------------------------------------------------------------------
 // solve() -- try to solve the puzzle
 //------------------------------------------------------------------------------
-const State* Puzzle::solve()
+const State* Controller::solve()
 {
    // ---
    // Until we found the goal or we're out of states to check,
@@ -94,28 +94,10 @@ const State* Puzzle::solve()
 }
 
 //------------------------------------------------------------------------------
-// Print the states from a terminal state, tstate, back to the initial state
-//------------------------------------------------------------------------------
-void Puzzle::printPath(const State* tstate) const
-{
-   if ( tstate != nullptr ) {
-      std::cout << std::endl;
-      const State* s = tstate;
-      while (s->getGeneration() > 0) {
-         std::cout << std::endl;
-         s->serialize(std::cout);
-         s = static_cast<const State*>( s->container() );
-      }
-      std::cout << std::endl;
-      s->serialize(std::cout);
-   }
-}
-
-//------------------------------------------------------------------------------
 // Set functions
 //------------------------------------------------------------------------------
 
-bool Puzzle::setInitState(State* const s)
+bool Controller::setInitState(State* const s)
 {
    if (initState != nullptr) initState->unref();
    initState = s;
@@ -128,7 +110,7 @@ bool Puzzle::setInitState(State* const s)
    return true;
 }
 
-bool Puzzle::setGoalState(State* const g)
+bool Controller::setGoalState(State* const g)
 {
    if (goalState != nullptr) goalState->unref();
    goalState = g;
@@ -144,7 +126,7 @@ bool Puzzle::setGoalState(State* const g)
 //------------------------------------------------------------------------------
 
 // Returns the number of 'open' states
-unsigned int Puzzle::getOpenEntries() const
+unsigned int Controller::getOpenEntries() const
 {
    unsigned int n = 0;
    if (openStates != nullptr) {
@@ -154,7 +136,7 @@ unsigned int Puzzle::getOpenEntries() const
 }
 
 // Returns the next state from the 'open' list
-State* Puzzle::getOpen()
+State* Controller::getOpen()
 {
    State* p = nullptr;
    if (openStates != nullptr) {
@@ -164,7 +146,7 @@ State* Puzzle::getOpen()
 }
 
 // Puts a state on to the 'open' list
-void Puzzle::putOpen(State* const s)
+void Controller::putOpen(State* const s)
 {
    if (openStates == nullptr) {
       // create the list (as needed)
@@ -195,7 +177,7 @@ void Puzzle::putOpen(State* const s)
 }
 
 // Removes this state from the 'open' list
-void Puzzle::removeOpen(const State* const s)
+void Controller::removeOpen(const State* const s)
 {
    if (s != nullptr && openStates != nullptr) {
       openStates->remove(s);
@@ -203,7 +185,7 @@ void Puzzle::removeOpen(const State* const s)
 }
 
 // Clears the open states list
-void Puzzle::clearOpenList()
+void Controller::clearOpenList()
 {
    if (openStates != nullptr) {
       openStates->clear();
@@ -217,7 +199,7 @@ void Puzzle::clearOpenList()
 //------------------------------------------------------------------------------
 
 // Adds a state to the hash table; returns true if successful
-bool Puzzle::putHash(const State* const s)
+bool Controller::putHash(const State* const s)
 {
    bool added = false;
 
@@ -278,7 +260,7 @@ bool Puzzle::putHash(const State* const s)
 }
 
 // Clears the hash table
-void Puzzle::clearHashTable()
+void Controller::clearHashTable()
 {
    for (unsigned int i = 0; i < MAX_STATES; i++) {
       if (hashTable[i] != nullptr) {
@@ -289,38 +271,3 @@ void Puzzle::clearHashTable()
    nhe = 0;
 }
 
-std::ostream& Puzzle::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j = 0;
-   if ( !slotsOnly ) {
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   // Initial state
-   if (initState != nullptr) {
-      indent(sout,i+j);
-      sout << "initState: {" << std::endl;
-      initState->serialize(sout,i+j+4,slotsOnly);
-      indent(sout,i+j);
-      sout << "}" << std::endl;
-   }
-
-   // Goal state
-   if (goalState != nullptr) {
-      indent(sout,i+j);
-      sout << "goalState: {" << std::endl;
-      goalState->serialize(sout,i+j+4,slotsOnly);
-      indent(sout,i+j);
-      sout << "}" << std::endl;
-   }
-
-   BaseClass::serialize(sout,i+j,true);
-
-   if ( !slotsOnly ) {
-      indent(sout,i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
-}

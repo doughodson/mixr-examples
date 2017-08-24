@@ -19,8 +19,6 @@ BEGIN_SLOT_MAP(WorldModel)
     ON_SLOT( 3, setWaypoints,   mixr::dafif::WaypointLoader)
 END_SLOT_MAP()
 
-EMPTY_SERIALIZER(WorldModel)
-
 WorldModel::WorldModel()
 {
    STANDARD_CONSTRUCTOR()

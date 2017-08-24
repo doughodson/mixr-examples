@@ -6,7 +6,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestGMeterDial, "TestGMeterDial")
-EMPTY_SERIALIZER(TestGMeterDial)
 EMPTY_DELETEDATA(TestGMeterDial)
 
 TestGMeterDial::TestGMeterDial()

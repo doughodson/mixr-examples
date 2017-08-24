@@ -1,6 +1,6 @@
 
-#ifndef __Puzzle_H__
-#define __Puzzle_H__
+#ifndef __Controller_H__
+#define __Controller_H__
 
 #include "mixr/base/Component.hpp"
 
@@ -12,31 +12,26 @@ namespace base { class List; }
 class State;
 
 //------------------------------------------------------------------------------
-// Class:  Puzzle
+// Class: Controller
 //
-// Description:  Puzzle engine
+// Description: Puzzle controller
 //------------------------------------------------------------------------------
-class Puzzle : public mixr::base::Component
+class Controller : public mixr::base::Component
 {
-    DECLARE_SUBCLASS(Puzzle, mixr::base::Component)
+    DECLARE_SUBCLASS(Controller, mixr::base::Component)
 
 public:
-   static const unsigned int BOARD_X_SIZE = 4;
-   static const unsigned int BOARD_Y_SIZE = 4;
    static const unsigned int MAX_STATES = 1000000;    // Max number of states
    static const unsigned int MAX_REHASH = 20;         // Max number of rehash tries
 
 public:
-   Puzzle();
+   Controller();
 
    unsigned int getHashEntries() const    { return nhe; }         // Returns the number of entries in the hash table
    unsigned int getOpenEntries() const;                           // Returns the number of 'open' states
 
    const State* getInitState() const      { return initState; }   // Returns our 'initial' or starting state
    const State* getGoalState() const      { return goalState; }   // Returns the 'goal' state
-
-   unsigned int getBoardSizeX() const     { return BOARD_X_SIZE; }
-   unsigned int getBoardSizeY() const     { return BOARD_Y_SIZE; }
 
    // Solve (or try) the puzzle
    virtual const State* solve();
@@ -56,21 +51,21 @@ protected:
    virtual void clearOpenList();                      // Clears the open states list
 
    virtual bool setInitState(State* const s);         // Sets the initial (starting) state
-   virtual bool setGoalState(State* const g);         // Sets the goal (ending) state
+   virtual bool setGoalState(const State* const g);   // Sets the goal (ending) state
 
    virtual void clearHashTable();                     // Clears the hash table
 
 private:
-   State* initState {};           // Initial (starting) state
-   State* goalState {};           // Goal (ending) state
+   State*       initState {};       // Initial (starting) state
+   const State* goalState {};       // Goal (ending) state
 
    // Open list
    mixr::base::List* openStates {};   // List of 'open' states (still need to be expanded)
-                                  // (list is ordered by the state's f() values)
+                                    // (list is ordered by the state's f() values)
 
    // HashTable
-   std::array<const State*, MAX_STATES> hashTable {}; // Hash table (for quick lookup of states)
-   unsigned int nhe {};                               // Number of entries in hash table
+   std::array<const State*, MAX_STATES> hashTable {};  // Hash table (for quick lookup of states)
+   unsigned int nhe {};                                // Number of entries in hash table
 };
 
 #endif

@@ -1,7 +1,6 @@
 
 #include "ServerTcpMultiple.hpp"
 
-
 #include "mixr/base/numbers/Number.hpp"
 
 #include <iostream>
@@ -10,7 +9,6 @@ using namespace mixr;
 
 IMPLEMENT_SUBCLASS(ServerTcpMultiple, "ServerTcpMultiple")
 EMPTY_SLOTTABLE(ServerTcpMultiple)
-EMPTY_SERIALIZER(ServerTcpMultiple)
 
 ServerTcpMultiple::ServerTcpMultiple()
 {

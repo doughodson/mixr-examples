@@ -4,7 +4,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestLandingGear, "TestLandingGear")
-EMPTY_SERIALIZER(TestLandingGear)
 EMPTY_DELETEDATA(TestLandingGear)
 
 BEGIN_EVENT_HANDLER(TestLandingGear)

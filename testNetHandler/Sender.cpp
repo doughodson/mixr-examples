@@ -12,7 +12,6 @@ using namespace mixr;
 
 IMPLEMENT_SUBCLASS(Sender, "Sender")
 EMPTY_SLOTTABLE(Sender)
-EMPTY_SERIALIZER(Sender)
 EMPTY_DELETEDATA(Sender)
 
 Sender::Sender()

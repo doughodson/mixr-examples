@@ -16,7 +16,6 @@
 #include "mixr/base/units/Times.hpp"
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
-EMPTY_SERIALIZER(SimStation)
 EMPTY_DELETEDATA(SimStation)
 
 BEGIN_SLOTTABLE(SimStation)

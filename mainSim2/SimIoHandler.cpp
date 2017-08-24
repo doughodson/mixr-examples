@@ -16,7 +16,6 @@
 
 IMPLEMENT_SUBCLASS(SimIoHandler, "SimIoHandler")
 EMPTY_SLOTTABLE(SimIoHandler)
-EMPTY_SERIALIZER(SimIoHandler)
 EMPTY_DELETEDATA(SimIoHandler)
 
 SimIoHandler::SimIoHandler()

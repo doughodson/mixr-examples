@@ -7,7 +7,6 @@
 using namespace mixr;
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestObject, "TestObject")
-EMPTY_SERIALIZER(TestObject)
 EMPTY_DELETEDATA(TestObject)
 
 TestObject::TestObject()

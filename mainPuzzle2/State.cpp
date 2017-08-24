@@ -1,7 +1,7 @@
 
 #include "State.hpp"
 #include "Blocks.hpp"
-#include "Puzzle.hpp"
+#include "Controller.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
@@ -141,7 +141,7 @@ const Block* State::getBlockByRefNum(const unsigned int refId) const
 // Expand the state, s, and
 //  returns the state that matches the 'goal' state, if found, else zero
 //------------------------------------------------------------------------------
-const State* State::expand(const State* const goal, Puzzle* const puz)
+const State* State::expand(const State* const goal, Controller* const puz)
 {
    const State* endState = nullptr;
    expanded = true;
@@ -232,7 +232,7 @@ const State* State::expand(const State* const goal, Puzzle* const puz)
 // stateFactory -- create a new state (based on this one) and replace the block
 // at index, idx, with the new block, nb.
 //------------------------------------------------------------------------------
-const State* State::stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Puzzle* const puz)
+const State* State::stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Controller* const puz)
 {
    const State* endState = nullptr;
    if (nb != nullptr && idx < nblocks && goal != nullptr) {
@@ -281,7 +281,7 @@ bool State::reachedGoal(const State* const goalState) const
 //------------------------------------------------------------------------------
 // Define block IDs for the board
 //------------------------------------------------------------------------------
-bool State::defineBoard(const Puzzle* const puz)
+bool State::defineBoard(const Controller* const puz)
 {
 
    // Remove the old board IDs
@@ -455,32 +455,3 @@ bool State::setSlotBlocks(const base::PairStream* const msg)
    return ok;
 }
 
-std::ostream& State::serialize(std::ostream& sout, const int i, const bool slotsOnly) const
-{
-   int j = 0;
-   if ( !slotsOnly ) {
-      sout << "( " << getFactoryName() << std::endl;
-      j = 4;
-   }
-
-   indent(sout, i+j);
-   sout << "blocks: {" << std::endl;
-
-   for (unsigned int ii = 0; ii < nblocks; ii++) {
-      indent(sout, i+j+4);
-      sout << (ii+1) << ": ";
-      blocks[ii]->serialize(sout,(i+j+8));
-   }
-
-   indent(sout, i+j);
-   sout << "}" << std::endl;
-
-   BaseClass::serialize(sout,i+j,true);
-
-   if ( !slotsOnly ) {
-      indent(sout,i);
-      sout << ")" << std::endl;
-   }
-
-   return sout;
-}

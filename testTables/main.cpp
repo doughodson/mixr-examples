@@ -329,7 +329,7 @@ int main(int argc, char* argv[])
    // ---
    // Serialize the table to the output stream
    // ---
-   if (!tflg) table->serialize(std::cout);
+   //if (!tflg) table->serialize(std::cout);
 
    // ---
    // Cast table pointers

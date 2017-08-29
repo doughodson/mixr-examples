@@ -44,6 +44,7 @@ APPLICATIONS += testDafif
 APPLICATIONS += testEvents
 APPLICATIONS += testMetaObject
 APPLICATIONS += testTables
+APPLICATIONS += testSlots
 APPLICATIONS += testStateMach
 APPLICATIONS += testTemplates
 APPLICATIONS += testTimer

@@ -23,7 +23,7 @@ Derived::Derived()
    std::cout << "Derived::Derived() called\n";
 }
 
-bool Derived::setSlotSeed(const mixr::base::Number* const seed)
+bool Derived::setSlotSeed(const mixr::base::Number* const)
 {
    std::cout << "Derived seed being set\n";
    return true;

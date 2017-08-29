@@ -28,4 +28,3 @@ bool Base::setSlotSeed(const mixr::base::Number* const)
    std::cout << "Base seed being set\n";
    return true;
 }
-

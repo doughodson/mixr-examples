@@ -67,6 +67,7 @@ mainQt1/qtMakefile
 
 # preprocessed input (scenario) files
 *.edl
+!testSlots/file0.edl
 
 # protocol buffers test apps
 testRecordData/*.csv

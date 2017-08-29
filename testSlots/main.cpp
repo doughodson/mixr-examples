@@ -11,12 +11,12 @@
 #include "Base.hpp"
 #include "Derived.hpp"
 
-// our class factory
+// class factory
 mixr::base::Object* factory(const std::string& name)
 {
-   mixr::base::Object* obj = nullptr;
+   mixr::base::Object* obj {};
 
-   // look in application's classes
+   // application classes
    if ( name == Base::getFactoryName() ) {
       obj = new Base;
    }
@@ -24,12 +24,12 @@ mixr::base::Object* factory(const std::string& name)
       obj = new Derived;
    }
 
-   // look in base classes
+   // platform classes
    if (obj == nullptr) obj = mixr::base::factory(name);
    return obj;
 }
 
-// random builder
+// builder
 Base* builder(const std::string& filename)
 {
    // read configuration file

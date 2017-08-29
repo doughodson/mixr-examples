@@ -27,6 +27,8 @@ private:
    double min {};
    double max {};
 
+private:
+   // slot table helper methods
    bool setSlotMin(const mixr::base::Number* const);
    bool setSlotMax(const mixr::base::Number* const);
 };

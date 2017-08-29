@@ -2,7 +2,7 @@
 #include "RdrAlt.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 #include "mixr/graphics/readouts/NumericReadout.hpp"
 #include "mixr/graphics/Display.hpp"
 

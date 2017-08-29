@@ -27,14 +27,14 @@ public:
     bool isAltOn()          { return isAlt; }
     bool isBackgroundOn()   { return drawBack; }
 
-protected:
-    // slot functions
-    bool setSlotIsAlt(const mixr::base::Number* newIsAlt);
-    bool setSlotDrawBack(const mixr::base::Number* newDB);
-
 private:
     bool isAlt {};     // are we drawing the altitude lines instead?
     bool drawBack {};  // draw the background (for transparency purposes)
+
+private:
+    // slot table helper methods
+    bool setSlotIsAlt(const mixr::base::Number*);
+    bool setSlotDrawBack(const mixr::base::Number*);
 };
 
 #endif

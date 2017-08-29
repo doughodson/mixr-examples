@@ -45,12 +45,6 @@ public:
     // 'maxsize' just be less than MAX_SIZE.
     virtual unsigned int recvData(char* const msg, const unsigned int maxsize);
 
-    // Slot functions
-    virtual bool setSlotNetwork(mixr::base::NetHandler* const msg);
-    virtual bool setSlotNetInput(mixr::base::NetHandler* const msg);
-    virtual bool setSlotNoWait(mixr::base::Number* const msg);
-    virtual bool setSlotLoops(mixr::base::Number* const msg);
-
     virtual void reset() override;
 
 protected:
@@ -60,10 +54,17 @@ protected:
 private:
     mixr::base::safe_ptr<mixr::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
     mixr::base::safe_ptr<mixr::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
-    unsigned int loops {};                               // Number of transfer loops (zero if no limit)
-    bool networkInitialized {};                          // Network has been initialized
-    bool networkInitFailed {};                           // Network initialization has failed
-    bool noWaitFlag {};                                  // No wait (unblocked) I/O flag
+    unsigned int loops {};                                   // Number of transfer loops (zero if no limit)
+    bool networkInitialized {};                              // Network has been initialized
+    bool networkInitFailed {};                               // Network initialization has failed
+    bool noWaitFlag {};                                      // No wait (unblocked) I/O flag
+
+private:
+    // slot table helper methods
+    bool setSlotNetwork(mixr::base::NetHandler* const);
+    bool setSlotNetInput(mixr::base::NetHandler* const);
+    bool setSlotNoWait(mixr::base::Number* const);
+    bool setSlotLoops(mixr::base::Number* const);
 };
 
 #endif

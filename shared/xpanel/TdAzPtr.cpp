@@ -1,6 +1,6 @@
 
 #include "TdAzPtr.hpp"
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/angle_utils.hpp"
 
 namespace mixr {

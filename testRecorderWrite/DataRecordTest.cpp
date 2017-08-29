@@ -537,7 +537,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
    msg->set_year(2012);
    msg->set_subject_num(6);
 
-   size_t messageSize = recordMsg->ByteSize();
+   std::size_t messageSize = recordMsg->ByteSize();
    std::cout << "Message size: " << messageSize << std::endl;
 
    // if (serializing) {
@@ -588,7 +588,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    pIdMsg->set_side(1);
@@ -628,7 +628,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -666,7 +666,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -712,7 +712,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -756,7 +756,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
    msg->mutable_other_player_id()->set_id(975);
    msg->mutable_other_player_id()->set_name("OtherPly");
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -794,7 +794,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -832,7 +832,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsig
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -876,7 +876,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsi
    msg->mutable_tgt_id()->set_fed_name("tgtFed");
    msg->mutable_tgt_id()->set_name("tgtName");
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
    return handle;
 }
@@ -920,7 +920,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
    msg->mutable_tgt_id()->set_name("tgtName");
 
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -976,7 +976,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
    // missile distance:
    msg->set_miss_dist(123.4);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
    return handle;
 
@@ -1003,7 +1003,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
    msg->set_rounds(25);
 
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -1100,7 +1100,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
    //   LHC         = 5;
    //};
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -1129,7 +1129,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 
    msg->set_track_id("track1");
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -1217,7 +1217,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
    msg->mutable_emission_data()->set_power(5000);
    msg->mutable_emission_data()->set_polarization(mixr::recorder::pb::EmissionData_Polarization_NONE);
 
-   size_t messageSize = recordMsg->ByteSize();
+   const int messageSize {recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;

@@ -32,11 +32,12 @@ public:
 
    virtual void reset() override;
 
-protected:
-   bool setSlotTimers(const mixr::base::PairStream* const msg);
-
 private:
    mixr::base::PairStream* timers {};    // List of timers
+
+private:
+   // slot table helper methods
+   bool setSlotTimers(const mixr::base::PairStream* const);
 };
 
 #endif

@@ -2,7 +2,7 @@
 #include "mixr/simulation/Station.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/numbers/Integer.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/units/Angles.hpp"
 #include "mixr/base/util/system_utils.hpp"
 

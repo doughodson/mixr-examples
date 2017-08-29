@@ -35,8 +35,6 @@ public:
    virtual void updateData(const double dt = 0.0) override;
 
 protected:
-   virtual bool setSlotController(Controller* const s);                    // Sets the puzzle controller
-   virtual bool setSlotTemplates(const mixr::base::PairStream* const s);   // Sets a list of the graphical templates for the blocks
    virtual unsigned int setupBlockGraphics();                              // Setup the list of graphics::Graphic objects for the initial blocks
    virtual void clearGraphics();                                           // Clears the list of graphics::Graphic objects for the blocks
    virtual void updateSolutionPath(const double dt);                       // Updates the solution path graphics
@@ -58,13 +56,18 @@ private:
    bool         movingFlg {};                    // Block is moving
 
    static const unsigned int MAX_BLOCKS = 30;
-   std::array<mixr::graphics::Graphic*, MAX_BLOCKS> blocks {};   // Graphics for each block
+   std::array<mixr::graphics::Graphic*, MAX_BLOCKS> blocks {}; // Graphics for each block
    std::array<unsigned int, MAX_BLOCKS> blockId {};            // Block reference IDs
    std::array<double, MAX_BLOCKS> xp {};                       // Block X positions
    std::array<double, MAX_BLOCKS> yp {};                       // Block Y positions
    std::array<double, MAX_BLOCKS> xd {};                       // Block delta X positions
    std::array<double, MAX_BLOCKS> yd {};                       // Block delta Y positions
    unsigned int nblocks {};                                    // number of blocks
+
+private:
+   // slot table helper methods
+   bool setSlotController(Controller* const);                    // Sets the puzzle controller
+   bool setSlotTemplates(const mixr::base::PairStream* const);   // Sets a list of the graphical templates for the blocks
 };
 
 #endif

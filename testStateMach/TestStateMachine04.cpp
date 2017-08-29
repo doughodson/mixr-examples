@@ -1,8 +1,8 @@
 
 #include "TestStateMachine04.hpp"
 
-#include "mixr/base/numbers/Integer.hpp"
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Integer.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 using namespace mixr;
 

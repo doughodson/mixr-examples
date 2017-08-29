@@ -7,7 +7,7 @@
 
 #include "mixr/terrain/Terrain.hpp"
 
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 
 #include "mixr/base/colors/Color.hpp"
 #include "mixr/base/colors/Rgb.hpp"

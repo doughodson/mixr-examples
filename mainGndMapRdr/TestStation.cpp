@@ -7,7 +7,7 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/Pair.hpp"
@@ -25,7 +25,7 @@ BEGIN_SLOTTABLE(TestStation)
 END_SLOTTABLE(TestStation)
 
 BEGIN_SLOT_MAP(TestStation)
-   ON_SLOT(1, setDisplay, Display)
+   ON_SLOT(1, setSlotDisplay, Display)
 END_SLOT_MAP()
 
 TestStation::TestStation()
@@ -58,10 +58,7 @@ void TestStation::reset()
     }
 }
 
-//------------------------------------------------------------------------------
-// setDisplay() -- Set the Display
-//------------------------------------------------------------------------------
-bool TestStation::setDisplay(Display* const d)
+bool TestStation::setSlotDisplay(Display* const d)
 {
     display = d;
     display->container(this);

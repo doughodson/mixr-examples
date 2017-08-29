@@ -31,9 +31,6 @@ public:
    mixr::simulation::Simulation* getSimulation();
    mixr::simulation::Station* getStation();
 
-   // Slot functions
-   virtual bool setSlotTextureTest(const mixr::base::Number* const msg);
-
    virtual void configure() override;
    virtual void drawFunc() override;
 
@@ -42,6 +39,10 @@ private:
 
    bool   testTexture {};      // Texture image test
    GLuint texture {};          // Texture
+
+private:
+   // slot table helper methods
+   virtual bool setSlotTextureTest(const mixr::base::Number* const);
 };
 
 #endif

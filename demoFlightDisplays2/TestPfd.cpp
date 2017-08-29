@@ -15,7 +15,6 @@ TestPfd::TestPfd()
 
 void TestPfd::copyData(const TestPfd& org, const bool)
 {
-    // Always copy base class stuff first
     BaseClass::copyData(org);
 
     // pitch and roll

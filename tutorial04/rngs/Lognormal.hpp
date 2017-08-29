@@ -17,25 +17,27 @@ namespace mixr {
 //------------------------------------------------------------------------------
 class Lognormal: public AbstractRng
 {
-  DECLARE_SUBCLASS(Lognormal, AbstractRng)
+   DECLARE_SUBCLASS(Lognormal, AbstractRng)
 
 public:
-  Lognormal();
+   Lognormal();
 
-  virtual double num() override;
+   virtual double num() override;
   
-  bool setMean(const double x)       { mean = x; return true; }
-  double getMean() const             { return mean; }
+   bool setMean(const double x)       { mean = x; return true; }
+   double getMean() const             { return mean; }
 
-  bool setStdDev(const double x)     { stddev = x; return true; }
-  double getStdDev() const           { return stddev; }
+   bool setStdDev(const double x)     { stddev = x; return true; }
+   double getStdDev() const           { return stddev; }
 
 private:
-  double mean {};
-  double stddev {};
+   double mean {};
+   double stddev {};
 
-  bool setSlotMean(const mixr::base::Number* const);
-  bool setSlotStdDev(const mixr::base::Number* const);
+private:
+   // slot table helper methods
+   bool setSlotMean(const mixr::base::Number* const);
+   bool setSlotStdDev(const mixr::base::Number* const);
 };
 
 #endif

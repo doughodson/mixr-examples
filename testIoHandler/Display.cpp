@@ -3,7 +3,7 @@
 
 #include "mixr/base/io/IoData.hpp"
 #include "mixr/base/io/IoHandler.hpp"
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/util/str_utils.hpp"
 #include "mixr/base/String.hpp"
 

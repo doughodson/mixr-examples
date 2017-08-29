@@ -25,13 +25,13 @@ public:
 
     virtual void reset() override;
 
-protected:
-    // slot methods
-    bool setSlotDisplay(mixr::glut::GlutDisplay*);
-
 private:
     mixr::glut::GlutDisplay* display {}; // this is our main display that
     bool displayInit {};               // is our display created?
+
+private:
+    // slot table helper methods
+    bool setSlotDisplay(mixr::glut::GlutDisplay*);
 };
 
 #endif

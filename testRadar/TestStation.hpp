@@ -35,8 +35,6 @@ public:
    virtual void reset() override;
 
 private:
-   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const msg);
-
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
    bool glutDisplayInit {};
 
@@ -47,6 +45,10 @@ private:
    bool wpnRelSw1 {};
    bool incTagPlayerSw1 {};
    double bgAntenna {};
+
+private:
+   // slot table helper methods
+   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const);
 };
 
 #endif

@@ -21,7 +21,7 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"

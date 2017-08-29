@@ -7,7 +7,7 @@
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/Pair.hpp"

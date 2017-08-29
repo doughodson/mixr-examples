@@ -1,7 +1,7 @@
 
 #include "Rng.hpp"
 
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 
 #include <iostream>
 #include <random>

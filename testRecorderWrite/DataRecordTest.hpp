@@ -30,16 +30,6 @@ class DataRecordTest : public mixr::recorder::OutputHandler
 public:
    DataRecordTest();
 
-   // Slot functions
-   virtual bool setSlotFileName(mixr::base::String* const msg);
-   virtual bool setSlotTabPrinter(mixr::recorder::TabPrinter* msg);
-   virtual bool setSlotFileWriter(mixr::recorder::FileWriter* msg);
-   virtual bool setSlotFileReader(mixr::recorder::FileReader* msg);
-   virtual bool setSlotRecordData(mixr::recorder::DataRecorder* const msg);
-   virtual bool setSlotPrintPlayer(mixr::recorder::PrintPlayer* msg);
-   virtual bool setSlotPrintSelected(mixr::recorder::PrintSelected* msg);
-   virtual bool setSlotPrintSelected2(mixr::recorder::PrintSelected* msg);
-
    // Select one of these in main.cpp
    bool testEvents();      // switch to test each possible event message
    bool testSerialize();   // Test to serialize and parse a set of messages
@@ -114,6 +104,17 @@ private:
       bool timeOnly {};
    };
    std::array<SelectionCriteria, 20> selection;
+
+private:
+   // slot table helper methods
+   bool setSlotFileName(mixr::base::String* const);
+   bool setSlotTabPrinter(mixr::recorder::TabPrinter*);
+   bool setSlotFileWriter(mixr::recorder::FileWriter*);
+   bool setSlotFileReader(mixr::recorder::FileReader*);
+   bool setSlotRecordData(mixr::recorder::DataRecorder* const);
+   bool setSlotPrintPlayer(mixr::recorder::PrintPlayer*);
+   bool setSlotPrintSelected(mixr::recorder::PrintSelected*);
+   bool setSlotPrintSelected2(mixr::recorder::PrintSelected*);
 };
 
 #endif

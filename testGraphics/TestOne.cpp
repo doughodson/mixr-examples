@@ -6,7 +6,7 @@
 
 using namespace mixr;
 
-IMPLEMENT_SUBCLASS(TestOne,"TestOne")
+IMPLEMENT_SUBCLASS(TestOne, "TestOne")
 EMPTY_DELETEDATA(TestOne)
 
 BEGIN_SLOTTABLE(TestOne)

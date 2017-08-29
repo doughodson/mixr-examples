@@ -32,13 +32,15 @@ public:
    virtual void reset() override;
 
 private:
-   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const msg);
-   bool setSlotMapDisplay(mixr::glut::GlutDisplay* const msg);
-
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mapDisplay;
    bool glutDisplayInit {};
    bool mapDisplayInit {};
+
+private:
+   // slot table helper methods
+   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const);
+   bool setSlotMapDisplay(mixr::glut::GlutDisplay* const);
 };
 
 #endif

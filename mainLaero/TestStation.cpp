@@ -4,7 +4,7 @@
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/player/AirVehicle.hpp"
 
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"

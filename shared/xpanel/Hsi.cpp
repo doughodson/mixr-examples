@@ -1,7 +1,7 @@
 
 #include "Hsi.hpp"
 
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 
 namespace mixr {
 namespace xpanel {

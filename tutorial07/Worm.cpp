@@ -13,9 +13,9 @@ BEGIN_SLOTTABLE(Worm)
 END_SLOTTABLE(Worm)
 
 BEGIN_SLOT_MAP(Worm)
-   ON_SLOT(1, realSpeed, mixr::base::Number)
-   ON_SLOT(2, setAngle, mixr::base::Angle)
-   ON_SLOT(2, setAngle, mixr::base::Number)
+   ON_SLOT(1, setSlotSpeed, mixr::base::Number)
+   ON_SLOT(2, setSlotAngle, mixr::base::Angle)
+   ON_SLOT(2, setSlotAngle, mixr::base::Number)
 END_SLOT_MAP()
 
 BEGIN_EVENT_HANDLER(Worm)
@@ -139,7 +139,7 @@ void Worm::drawFunc()
    glEnd();
 }
 
-bool Worm::realSpeed(const mixr::base::Number* const rsobj)
+bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
 {
    bool ok = false;
    if (rsobj != nullptr) {
@@ -149,7 +149,7 @@ bool Worm::realSpeed(const mixr::base::Number* const rsobj)
    return ok;
 }
 
-bool Worm::setAngle(const mixr::base::Angle* const saobj)
+bool Worm::setSlotAngle(const mixr::base::Angle* const saobj)
 {
    bool ok = false;
    if (saobj != nullptr) {
@@ -162,7 +162,7 @@ bool Worm::setAngle(const mixr::base::Angle* const saobj)
    return ok;
 }
 
-bool Worm::setAngle(const mixr::base::Number* const saobj)
+bool Worm::setSlotAngle(const mixr::base::Number* const saobj)
 {
    bool ok = false;
    if (saobj != nullptr) {

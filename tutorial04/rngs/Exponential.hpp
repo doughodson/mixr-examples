@@ -13,21 +13,22 @@ namespace base { class Number; }
 //------------------------------------------------------------------------------
 class Exponential: public AbstractRng
 {
-  DECLARE_SUBCLASS(Exponential, AbstractRng)
+   DECLARE_SUBCLASS(Exponential, AbstractRng)
 
 public:
-  Exponential();
+   Exponential();
 
-  virtual double num() override;
+   virtual double num() override;
 
-  bool setMean(const double x)            { mean = x; return true; }
-  double getMean() const                  { return mean; }
+   bool setMean(const double x)            { mean = x; return true; }
+   double getMean() const                  { return mean; }
 
 private:
-  double mean {1.0};  // mean of distribution
+   double mean {1.0};  // mean of distribution
 
-  bool setSlotMean(const mixr::base::Number* const);
+private:
+   // slot table helper methods
+   bool setSlotMean(const mixr::base::Number* const);
 };
 
 #endif
-

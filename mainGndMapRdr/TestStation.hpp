@@ -26,10 +26,12 @@ public:
     virtual void reset() override;
 
 private:
-    bool setDisplay(Display* const d);
-
     mixr::base::safe_ptr<Display> display;
     bool displayInit {};
+
+private:
+    // slot table helper methods
+    bool setSlotDisplay(Display* const);
 };
 
 #endif

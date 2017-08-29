@@ -39,9 +39,6 @@ public:
    int getImageHeight() const { return imgHeight; }         // RADAR Image height (number of rows)
    int getPixelSize() const   { return PIXEL_SIZE; }        // Number of components (RGBA) in each image pixel
 
-   // Slot functions
-   virtual bool setSlotInterpolate(const mixr::base::Number* const msg);
-
    // Compute earth curvature effects
    static bool computeGroundRanges(double* const groundRange, const unsigned int n, const double maxRngNM);
    static bool computeSlantRanges2(double* const slantRange2, const unsigned int n, const double* const gndRng, const double altitude);
@@ -81,6 +78,11 @@ private:
                                      //   -- access individual pixels by mainImage[icol*imgWidth*PIZEL_SIZE + irow*PIZEL_SIZE]
                                      //   --   irow : [ 0 ... (imgHeight-1) ]
                                      //   --   icol : [ 0 ... (imgWidth-1) ]
+
+private:
+   // slot table helper methods
+   virtual bool setSlotInterpolate(const mixr::base::Number* const);
+   
 };
 
 #endif

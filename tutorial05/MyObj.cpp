@@ -1,8 +1,8 @@
 
 #include "MyObj.hpp"
 
-#include "mixr/base/numbers/Number.hpp"
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/List.hpp"

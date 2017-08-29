@@ -32,10 +32,6 @@ public:
    // Step our "ownship" to the next local air vehicle
    void stepOwnshipPlayer();
 
-   // Slot functions
-   virtual bool setSlotMainDisplay(mixr::glut::GlutDisplay* const);
-   virtual bool setSlotAutoResetTime(const mixr::base::Time* const num);     // Sets the auto RESET timer
-
    virtual void updateTC(const double dt = 0.0) override;
    virtual void updateData(const double dt = 0.0) override;
    virtual void reset() override;
@@ -48,6 +44,11 @@ private:
     // Auto reset timer
     double autoResetTimer {};                   // Auto RESET timer (sends a RESET_EVENT after timeout)
     const mixr::base::Time* autoResetTimer0 {};   // Init value of the Auto RESET timer
+
+private:
+    // slot table helper methods
+    bool setSlotMainDisplay(mixr::glut::GlutDisplay* const);
+    bool setSlotAutoResetTime(const mixr::base::Time* const);     // Sets the auto RESET timer
 };
 
 #endif

@@ -37,11 +37,11 @@ public:
 
    virtual unsigned int getNumberOfBlocks() const { return nblocks; }   // Number of blocks
    virtual const Block* getBlock(const unsigned int n) const;           // Returns the n'th block (range: 1 .. getNumberOfBlocks())
-   virtual const Block* getBlockByRefNum(const unsigned int refId) const;  // Returns the block with ref ID
+   virtual const Block* getBlockByRefNum(const unsigned int) const;     // Returns the block with ref ID
 
    // Expand the state, s, and
    //  returns the state that matches the 'goal' state, if found, else zero
-   virtual const State* expand(const State* const goal, Controller* const puz);
+   virtual const State* expand(const State* const goal, Controller* const);
 
    // State's hash index; 'rh' is rehash count; 'max' is the maximum index
    virtual unsigned int hash(unsigned int rh, unsigned int max) const;
@@ -49,13 +49,10 @@ public:
    friend bool operator==(const State& s1, const State& s2);
    friend bool operator!=(const State& s1, const State& s2);
 
-   // Slot function(s)
-   virtual bool setSlotBlocks(const mixr::base::PairStream* const msg);
-
 protected:
    //  create a new state (based on this one) and replace the block
    // at index, idx, with the new block, nb.
-   const State* stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Controller* const puz);
+   const State* stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Controller* const);
 
    // Sets the state's array of blocks
    virtual unsigned int setBlocks(const Block* const newBlocks[], const unsigned int numNewBlocks);
@@ -67,6 +64,10 @@ private:
    unsigned int nblocks {};                           // Number of blocks
    bool expanded {};             // True if we've been expanded
    int  generation {};           // Generation index
+
+private:
+   // slot table helper methods
+   virtual bool setSlotBlocks(const mixr::base::PairStream* const);
 };
 
 #endif

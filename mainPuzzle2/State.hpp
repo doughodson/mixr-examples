@@ -53,9 +53,6 @@ public:
    friend bool operator==(const State& s1, const State& s2);
    friend bool operator!=(const State& s1, const State& s2);
 
-   // Slot function(s)
-   virtual bool setSlotBlocks(const mixr::base::PairStream* const msg);
-
 protected:
    //  create a new state (based on this one) and replace the block
    // at index, idx, with the new block, nb.
@@ -78,6 +75,10 @@ private:
    int  generation {};                // Generation index
    int  gValue {};                    // g() value
    int  hValue {};                    // h() value
+
+private:
+   // slot table helper methods
+   bool setSlotBlocks(const mixr::base::PairStream* const);
 };
 
 #endif

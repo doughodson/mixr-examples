@@ -21,16 +21,16 @@ public:
    // Main test
    void runTest();
 
-protected:
-   // Slot functions
-   virtual bool setSlotInputHandler(mixr::recorder::InputHandler* const msg);
-   virtual bool setSlotOutputHandler(mixr::recorder::OutputHandler* const msg);
-
 private:
    void initData();
 
    mixr::base::safe_ptr<mixr::recorder::InputHandler> inputHandler;
    mixr::base::safe_ptr<mixr::recorder::OutputHandler> outputHandler;
+
+private:
+   // slot table helper methods
+   bool setSlotInputHandler(mixr::recorder::InputHandler* const);
+   bool setSlotOutputHandler(mixr::recorder::OutputHandler* const);
 };
 
 #endif

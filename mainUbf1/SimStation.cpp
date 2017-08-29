@@ -7,7 +7,7 @@
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/functors/Tables.hpp"
 #include "mixr/base/units/Angles.hpp"
 #include "mixr/base/units/Times.hpp"

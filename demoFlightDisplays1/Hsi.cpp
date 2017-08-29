@@ -1,7 +1,7 @@
 
 #include "Hsi.hpp"
 
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Hsi, "Hsi")
 EMPTY_DELETEDATA(Hsi)

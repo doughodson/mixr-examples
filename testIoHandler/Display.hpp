@@ -50,13 +50,6 @@ public:
    virtual void updateData(const double dt = 0.0) override;
    virtual void updateTC(const double dt = 0.0) override;
 
-protected:
-   virtual bool setSlotIoHandler(mixr::base::IoHandler* const msg);
-   virtual bool setSlotItem(const mixr::base::Number* const msg);
-   virtual bool setSlotAiChannel(const mixr::base::Number* const msg);
-   virtual bool setSlotDiChannel(const mixr::base::Number* const msg);
-   virtual bool setSlotLabel(const mixr::base::String* const msg);
-
    virtual bool onEscKey() override;
 
 private:
@@ -83,6 +76,14 @@ private:
    std::array<SendData, TBL_SIZE> table_LabelSD;
    std::array<SendData, TBL_SIZE> table_typeRoSD;
    std::array<SendData, TBL_SIZE> table_aiSD;
+
+private:
+   // slot table helper methods
+   bool setSlotIoHandler(mixr::base::IoHandler* const);
+   bool setSlotItem(const mixr::base::Number* const);
+   bool setSlotAiChannel(const mixr::base::Number* const);
+   bool setSlotDiChannel(const mixr::base::Number* const);
+   bool setSlotLabel(const mixr::base::String* const);
 };
 
 #endif

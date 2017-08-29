@@ -50,22 +50,24 @@ protected:
    virtual void removeOpen(const State* const s);     // Removes this state from the 'open' list
    virtual void clearOpenList();                      // Clears the open states list
 
-   virtual bool setInitState(State* const s);         // Sets the initial (starting) state
-   virtual bool setGoalState(const State* const g);   // Sets the goal (ending) state
-
    virtual void clearHashTable();                     // Clears the hash table
 
 private:
-   State*       initState {};       // Initial (starting) state
-   const State* goalState {};       // Goal (ending) state
+   State*       initState {};   // Initial (starting) state
+   const State* goalState {};   // Goal (ending) state
 
-   // Open list
+   // open list
    mixr::base::List* openStates {};   // List of 'open' states (still need to be expanded)
-                                    // (list is ordered by the state's f() values)
+                                      // (list is ordered by the state's f() values)
 
-   // HashTable
+   // hash table
    std::array<const State*, MAX_STATES> hashTable {};  // Hash table (for quick lookup of states)
    unsigned int nhe {};                                // Number of entries in hash table
+
+private:
+   // slot table helper methods
+   bool setInitState(State* const);         // Sets the initial (starting) state
+   bool setGoalState(const State* const);   // Sets the goal (ending) state
 };
 
 #endif

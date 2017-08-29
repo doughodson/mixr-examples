@@ -31,14 +31,16 @@ public:
     // get methods
     bool isAltSelected()                                { return isAlt; }
 
-protected:
-    bool setSlotIsAlt(const mixr::base::Number* newIsAlt);
-
 private:
     // event method
     bool onEventSetIsAltSpdLines(const mixr::base::Number* const x);
 
     bool isAlt {};     // are we drawing the altitude lines instead?
+
+private:
+    // slot table helper methods
+    bool setSlotIsAlt(const mixr::base::Number*);
+
 };
 
 #endif

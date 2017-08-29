@@ -28,23 +28,22 @@ class SimStation : public mixr::simulation::Station
    DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
 
 public:
-    SimStation();
+   SimStation();
 
    // Step our "ownship" to the next local air vehicle
    void stepOwnshipPlayer();
-
-   // Slot functions
-   virtual bool setSlotMainDisplay(mixr::glut::GlutDisplay* const d);
 
    virtual void updateTC(const double dt = 0.0) override;
    virtual void reset() override;
 
 private:
+   // Main Display
+   mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
+   bool displayInit {};
 
-    // Main Display
-    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
-    bool displayInit {};
-
+private:
+   // slot table helper methods
+   bool setSlotMainDisplay(mixr::glut::GlutDisplay* const);
 };
 
 #endif

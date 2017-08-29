@@ -26,10 +26,6 @@ public:
    void getPosition(double& xx, double& yy) const      { xx = xPos; yy = yPos; }
    void setPosition(const double xx, const double yy)  { xPos = xx; yPos = yy; }
 
-   virtual bool realSpeed(const mixr::base::Number* const rsobj);
-   virtual bool setAngle(const mixr::base::Angle* const saobj);
-   virtual bool setAngle(const mixr::base::Number* const saobj);
-
    double leftLimit() const                { return left; }
    void leftLimit(const double ll)         { left = ll; }
 
@@ -66,6 +62,12 @@ private:
    int    nTrails {};                            // Trail size
    int    index {};                              // Trail index
    const mixr::base::Angle* iangle {};             // Input angle
+
+private:
+   // slot table helper methods
+   bool setSlotSpeed(const mixr::base::Number* const);
+   bool setSlotAngle(const mixr::base::Angle* const);
+   bool setSlotAngle(const mixr::base::Number* const);
 };
 
 #endif

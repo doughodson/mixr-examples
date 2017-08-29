@@ -28,11 +28,6 @@ public:
    virtual const mixr::base::PairStream* getColumns() const;
    virtual unsigned int getNumberOfRows() const;
 
-   // Slot functions
-   virtual bool setSlotRows(mixr::base::Number* const);
-   virtual bool setSlotSpacing(mixr::base::Number* const);
-   virtual bool setSlotColumns(mixr::base::PairStream* const);
-
    virtual int line() const override;
    virtual int line(const int ll) override;
    virtual int column() const override;
@@ -50,6 +45,12 @@ private:
    unsigned int rows {DEFAULT_ROW};         // Number of rows in table
    unsigned int spacing {DEFAULT_SPACING};  // Spacing between rows (default: 1)
    const mixr::base::PairStream* columns {};  // columns items
+
+private:
+   // slot table helper methods
+   bool setSlotRows(mixr::base::Number* const);
+   bool setSlotSpacing(mixr::base::Number* const);
+   bool setSlotColumns(mixr::base::PairStream* const);
 };
 
 #endif

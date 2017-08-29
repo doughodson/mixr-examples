@@ -17,7 +17,7 @@ namespace glut  { class GlutDisplay; }
 //
 // Factory name: TestStation
 // Slots:
-//   glutDisplay  <graphics::GlutDisplay>  ! All of our display components
+//   glutDisplay  <glut::GlutDisplay>  ! All of our display components
 //------------------------------------------------------------------------------
 class TestStation : public mixr::simulation::Station
 {
@@ -34,10 +34,12 @@ public:
    virtual void reset() override;
 
 private:
-   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const msg);
-
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
    bool glutDisplayInit {};
+
+private:
+   // slot table helper methods
+   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const);
 };
 
 #endif

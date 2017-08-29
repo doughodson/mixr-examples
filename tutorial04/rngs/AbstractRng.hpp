@@ -30,7 +30,8 @@ protected:
    // mersenne twister algoithm
    std::mt19937 engine;
 
-   // slot table functions
+private:
+   // slot table helper methods
    bool setSlotSeed(const mixr::base::Number* const);
 };
 

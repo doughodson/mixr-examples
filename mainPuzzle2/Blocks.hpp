@@ -49,10 +49,6 @@ public:
    // Compute a hash value for this block
    virtual unsigned int computeHashValue(const unsigned int blockIndex, const unsigned int rehashCount) const;
 
-   // Slot function(s)
-   virtual bool setSlotPosition(const mixr::base::List* const msg);
-   virtual bool setSlotRefId(const mixr::base::Integer* const msg);
-
 protected:
    virtual bool setInitPosition(const unsigned int x, const unsigned int y);
    virtual bool setReferenceID(const unsigned int v);          // Sets the block's reference ID number
@@ -60,6 +56,12 @@ protected:
 private:
    unsigned int x {}, y {};  // Location
    unsigned int refId {};    // Block's ref ID number
+
+private:
+   // slot table helper methods
+   bool setSlotPosition(const mixr::base::List* const);
+   bool setSlotRefId(const mixr::base::Integer* const);
+
 };
 
 //------------------------------------------------------------------------------

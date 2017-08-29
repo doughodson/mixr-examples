@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include "Exponential.hpp"
-#include "mixr/base/numbers/Number.hpp"
+#include "mixr/base/numeric/Number.hpp"
 
 using mixr::base::Number;
 

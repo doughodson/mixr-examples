@@ -1,7 +1,7 @@
 
 #include "Blocks.hpp"
 
-#include "mixr/base/numbers/Integer.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/List.hpp"
 
 IMPLEMENT_ABSTRACT_SUBCLASS(Block, "PuzzleBlock")

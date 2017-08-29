@@ -10,7 +10,7 @@
 
 #include "mixr/instruments/eadi3d/Eadi3DPage.hpp"
 
-#include "mixr/base/numbers/Boolean.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/Pair.hpp"

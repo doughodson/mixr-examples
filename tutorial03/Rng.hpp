@@ -31,7 +31,8 @@ private:
    std::mt19937 engine;
    std::uniform_real_distribution<> dist;
 
-   // slot table helper functions
+private:
+   // slot table helper methods
    bool setSlotSeed(const mixr::base::Number* const);
 };
 

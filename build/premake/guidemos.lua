@@ -4,7 +4,6 @@
 
 -- GLUT-based GUI example
 project "mainGlut"
-   kind "ConsoleApp"
    targetname "mainGlut"
    targetdir "../../mainGlut"
    debugdir "../../mainGlut"
@@ -16,7 +15,6 @@ project "mainGlut"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}

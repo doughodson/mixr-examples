@@ -93,7 +93,7 @@ workspace "examples"
 
    -- common release configuration flags, symbols and libraries
    filter { "Release" }
-      flags { "Optimize" }
+		optimize "On"
       -- favor speed over size
       buildoptions { "/Ot" }
       defines { "WIN32", "NDEBUG" }

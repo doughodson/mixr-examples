@@ -4,7 +4,6 @@
 
 -- test dafif library functionality
 project "testDafif"
-   kind "ConsoleApp"
    targetname "testDafif"
    targetdir "../../testDafif"
    debugdir "../../testDafif"
@@ -17,7 +16,6 @@ project "testDafif"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "mixr_simulation", "mixr_terrain", "mixr_dafif", "mixr_base"}
       links {LibWindows}
@@ -27,7 +25,6 @@ project "testDafif"
 
 -- testEvents: test of event passing
 project "testEvents"
-   kind "WindowedApp"
    targetname "testEvents"
    targetdir "../../testEvents"
    debugdir "../../testEvents"
@@ -39,7 +36,6 @@ project "testEvents"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -51,7 +47,6 @@ project "testEvents"
 
 -- testGraphics : test of basic graphics
 project "testGraphics"
-   kind "WindowedApp"
    targetname "testGraphics"
    targetdir "../../testGraphics"
    debugdir "../../testGraphics"
@@ -63,7 +58,6 @@ project "testGraphics"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -75,7 +69,6 @@ project "testGraphics"
 
 -- testInfrared: IR test
 project "testInfrared"
-   kind "ConsoleApp"
    targetname "testInfrared"
    targetdir "../../testInfrared"
    debugdir "../../testInfrared"
@@ -87,7 +80,6 @@ project "testInfrared"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim"}
       links {"mixr_otw", LibCigi}
@@ -107,7 +99,6 @@ project "testInfrared"
 
 -- testIoHandler: I/O handler test
 project "testIoHandler"
-   kind "WindowedApp"
    targetname "testIoHandler"
    targetdir "../../testIoHandler"
    debugdir "../../testIoHandler"
@@ -119,7 +110,6 @@ project "testIoHandler"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_iodevice", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -142,7 +132,6 @@ project "testLinearSys"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_linearsystem", "mixr_base"}
       links {LibWindows}
@@ -163,7 +152,6 @@ project "testMatrix"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -184,7 +172,6 @@ project "testMetaObject"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -205,7 +192,6 @@ project "testNavUtils"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -229,7 +215,6 @@ project "testNetHandler"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base", "libzmq" }
       links {LibWindows}
@@ -250,7 +235,6 @@ project "testRadar"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim"}
       links {"mixr_otw", LibCigi}
@@ -282,7 +266,6 @@ project "testRecordData"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder", "libxpanel" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim" }
       links {"mixr_otw", LibCigi }
@@ -316,7 +299,6 @@ project "testRecorderRead"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim" }
       links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
@@ -340,7 +322,6 @@ project "testRecorderWrite"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim" }
       links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
@@ -363,7 +344,6 @@ project "testSlots"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -384,7 +364,6 @@ project "testStateMach"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -405,7 +384,6 @@ project "testTables"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -426,7 +404,6 @@ project "testTemplates"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -446,7 +423,6 @@ project "testTimer"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}

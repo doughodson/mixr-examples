@@ -4,7 +4,6 @@
 
 -- demoEfis: demo of EFIS
 project "demoEfis"
-   kind "WindowedApp"
    targetname "demoEfis"
    targetdir "../../demoEfis"
    debugdir "../../demoEfis"
@@ -16,7 +15,6 @@ project "demoEfis"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -28,7 +26,6 @@ project "demoEfis"
 
 -- Flight Display 1 demo
 project "demoFlightDisplays1"
-   kind "WindowedApp"
    targetname "demoFlightDisplays1"
    targetdir "../../demoFlightDisplays1"
    debugdir "../../demoFlightDisplays1"
@@ -40,7 +37,6 @@ project "demoFlightDisplays1"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -52,7 +48,6 @@ project "demoFlightDisplays1"
 
 -- Flight Display 2 demo
 project "demoFlightDisplays2"
-   kind "WindowedApp"
    targetname "demoFlightDisplays2"
    targetdir "../../demoFlightDisplays2"
    debugdir "../../demoFlightDisplays2"
@@ -64,7 +59,6 @@ project "demoFlightDisplays2"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -76,7 +70,6 @@ project "demoFlightDisplays2"
 
 -- demoInstruments
 project "demoInstruments"
-   kind "WindowedApp"
    targetname "demoInstruments"
    targetdir "../../demoInstruments"
    debugdir "../../demoInstruments"
@@ -88,7 +81,6 @@ project "demoInstruments"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -100,7 +92,6 @@ project "demoInstruments"
 
 -- demoSubDisplays
 project "demoSubDisplays"
-   kind "WindowedApp"
    targetname "demoSubDisplays"
    targetdir "../../demoSubDisplays"
    debugdir "../../demoSubDisplays"
@@ -112,7 +103,6 @@ project "demoSubDisplays"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}

@@ -55,11 +55,12 @@ mainQt1/qtMakefile
 # gcc compiled object files
 *.[oa]
 
-# windows executables
+# ignore windows executables and libraries
 *.exe
-!premake*.exe
-# windows libraries
 *.lib
+
+# keep premake
+!premake*.*
 
 # backup files
 *.bak

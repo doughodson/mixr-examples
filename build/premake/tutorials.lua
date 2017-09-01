@@ -13,7 +13,6 @@ project "tutorial01"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -32,7 +31,6 @@ project "tutorial02"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -53,7 +51,6 @@ project "tutorial03"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -74,7 +71,6 @@ project "tutorial04"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -95,7 +91,6 @@ project "tutorial05"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -116,7 +111,6 @@ project "tutorial06"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_base"}
       links {LibWindows}
@@ -137,7 +131,6 @@ project "tutorial07"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
@@ -161,7 +154,6 @@ project "tutorial08"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}

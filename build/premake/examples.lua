@@ -4,7 +4,6 @@
 
 -- Simple cockpit
 project "mainCockpit"
-   kind "ConsoleApp"
    targetname "mainCockpit"
    targetdir "../../mainCockpit"
    debugdir "../../mainCockpit"
@@ -42,7 +41,6 @@ project "mainCockpit"
 
 -- Ground Mapping Radar example
 project "mainGndMapRdr"
-   kind "ConsoleApp"
    targetname "mainGndMapRdr"
    targetdir "../../mainGndMapRdr"
    debugdir "../../mainGndMapRdr"
@@ -54,7 +52,6 @@ project "mainGndMapRdr"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
@@ -68,7 +65,6 @@ project "mainGndMapRdr"
 
 -- mainLaero example
 project "mainLaero"
-   kind "ConsoleApp"
    targetname "mainLaero"
    targetdir "../../mainLaero"
    debugdir "../../mainLaero"
@@ -83,7 +79,6 @@ project "mainLaero"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim", "libzmq" }
       links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
@@ -101,7 +96,6 @@ project "mainLaero"
 
 -- Non-RealTime 1 example
 project "mainNonRT1"
-   kind "ConsoleApp"
    targetname "mainNonRT1"
    targetdir "../../mainNonRT1"
    debugdir "../../mainNonRT1"
@@ -113,7 +107,6 @@ project "mainNonRT1"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim"}
       links {"mixr_otw", LibCigi}
@@ -142,7 +135,6 @@ project "mainPuzzle1"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -165,7 +157,6 @@ project "mainPuzzle2"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -191,7 +182,6 @@ project "mainSim1"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_otw", LibCigi}
@@ -225,7 +215,6 @@ project "mainSim2"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_otw", LibCigi}
@@ -259,7 +248,6 @@ project "mainSim3"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links { "mixr_models", "JSBSim", "libzmq" }
       links { "mixr_otw", LibCigi }
@@ -290,7 +278,6 @@ project "mainTerrain"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links {"mixr_terrain"}
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
@@ -316,7 +303,6 @@ project "mainUbf1"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links { "libxbehaviors",  "libxpanel" }
-   defines { "_CONSOLE" }
    filter "configurations:Release*"
       links { "mixr_models", "JSBSim" }
       links { "mixr_otw", LibCigi }

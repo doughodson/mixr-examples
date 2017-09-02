@@ -61,7 +61,7 @@ components: {
 
          label: ( AsciiText text: "12345678:" width: 11  justification: right )
          
-         ( AsciiText text: " " )   /* Seperator */
+         ( AsciiText text: " " )   /* Separator */
 
          typeRo: ( Rotary
             width: 6
@@ -86,7 +86,7 @@ components: {
 
          label: ( AsciiText text: "12345678:" width: 11  justification: right )
          
-         ( AsciiText text: " " )   /* Seperator */
+         ( AsciiText text: " " )   /* Separator */
 
          typeRo: ( Rotary
             width: 6

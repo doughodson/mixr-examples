@@ -92,7 +92,7 @@ Tester* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -130,7 +130,7 @@ void run(Tester* const tester)
       mixr::base::Timer::freeze(true);
 
       // Time between printing the timer data
-      double dt = 1.0 / static_cast<double>(TIMERS_PRINT_RATE);
+      const double dt {1.0 / static_cast<double>(TIMERS_PRINT_RATE)};
 
       // Our main test control timer
       const auto mainTimer = new mixr::base::UpTimer();
@@ -188,7 +188,7 @@ int main(int argc, char* argv[])
    }
 
    // build tester
-   Tester* tester = builder(configFilename);
+   Tester* tester {builder(configFilename)};
 
    // create the thread
    TimerThread* thread = createTheThread(tester);

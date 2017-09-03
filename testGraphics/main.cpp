@@ -33,7 +33,7 @@
 const int frame_rate {10};
 // derived delta times
 const double dt_secs {1.0 / static_cast<double>(frame_rate)};
-const auto dt_msecs {static_cast<unsigned int>(dt_secs * 1000.0)};
+const int dt_msecs {static_cast<int>(dt_secs * 1000.0)};
 
 TestDisplay* testDisplay {};
 
@@ -92,7 +92,7 @@ TestDisplay* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);

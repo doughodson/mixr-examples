@@ -14,7 +14,7 @@ mixr::base::StateMachine* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
    // ---
    // Read in the description files
    // ---
-   mixr::base::StateMachine* stateMachine = builder(configFilename);
+   mixr::base::StateMachine* stateMachine {builder(configFilename)};
 
    //stateMachine->serialize(std::cout);
 

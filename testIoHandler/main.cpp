@@ -19,8 +19,8 @@ Display* display {};
 // timerFunc() -- Time critical stuff)
 void timerFunc(int)
 {
-   const double dt = 1.0 / static_cast<double>(frameRate);
-   const auto millis = static_cast<unsigned int>(dt * 1000);
+   const double dt {1.0 / static_cast<double>(frameRate)};
+   const int millis {static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
    mixr::base::Timer::updateTimers(dt);
@@ -33,7 +33,7 @@ Display* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -86,8 +86,8 @@ int main(int argc, char* argv[])
    display->reset();
 
    // set timer
-   const double dt = 1.0 / static_cast<double>(frameRate);
-   const auto millis = static_cast<unsigned int>(dt * 1000);
+   const double dt {1.0 / static_cast<double>(frameRate)};
+   const int millis {static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
    // main loop

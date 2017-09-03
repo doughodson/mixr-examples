@@ -13,26 +13,23 @@
 #include <string>
 #include <cstdlib>
 
-// frame rate
 const int frameRate {20};
-
 PuzzleBoard* board {};
 
-//
 void timerCB(int)
 {
-   const double dt0 = 1.0 / static_cast<double>(frameRate);
-   const auto millis = static_cast<unsigned int>(dt0 * 1000);
+   const double dt0 {1.0 / static_cast<double>(frameRate)};
+   const int millis {static_cast<int>(dt0 * 1000)};
    glutTimerFunc(millis, timerCB, 1);
 
    // current time
-   const double time = mixr::base::getComputerTime();
+   const double time {mixr::base::getComputerTime()};
 
    // N-1 Time
-   static double time0 = time;
+   static double time0 {time};
 
    // Compute delta time
-   const double dt = (time - time0);
+   const double dt {time - time0};
    time0 = time;
 
    mixr::base::Timer::updateTimers(static_cast<double>(dt));
@@ -87,8 +84,8 @@ int main(int argc, char* argv[])
    board->createWindow();
 
    // set timer
-   const double dt = 1.0 / static_cast<double>(frameRate);
-   const auto millis = static_cast<unsigned int>(dt * 1000);
+   const double dt {1.0 / static_cast<double>(frameRate)};
+   const int millis {static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerCB, 1);
 
    glutMainLoop();

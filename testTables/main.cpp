@@ -31,7 +31,7 @@ mixr::base::Table* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, mixr::base::factory, &num_errors);
+   mixr::base::Object* obj {mixr::base::edl_parser(filename, mixr::base::factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -67,12 +67,12 @@ unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const 
 {
    int cnt {};
 
-   mixr::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s {};
    if (sflg) s = tbl->storageFactory();
 
-   const double maxX = tbl->getMaxX();
-   const double minX = tbl->getMinX();
-   const double dx = (maxX - minX) / static_cast<double>(20);
+   const double maxX {tbl->getMaxX()};
+   const double minX {tbl->getMinX()};
+   const double dx {(maxX - minX) / static_cast<double>(20)};
 
    if (!tflg) {
       std::cout << std::endl;
@@ -82,7 +82,7 @@ unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const 
       std::cout << "x, value" << std::endl;
    }
 
-   double x = minX - 2*dx;
+   double x {minX - 2*dx};
    while ( x <= (maxX + 2*dx) ) {
       double x1 = x;
       if (rflg) x1 = (minX + (maxX - minX) * static_cast<double>(rand()) / static_cast<double>(RAND_MAX));
@@ -324,7 +324,7 @@ int main(int argc, char* argv[])
    }
 
    // build table
-   const mixr::base::Table* table = builder(configFilename);
+   const mixr::base::Table* table {builder(configFilename)};
 
    // ---
    // Serialize the table to the output stream

@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 
    rng->setSeed(25);
 
-   for (unsigned int i=0; i<10; i++)
+   for (int i=0; i<10; i++)
       std::cout << rng->num() << std::endl;
 
    std::cout << "Unref'ing rng object\n";

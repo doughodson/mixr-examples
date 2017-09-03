@@ -19,8 +19,7 @@
 
 // background frame rate
 const int bgRate {10};
-
-TestStation* testStation = nullptr;
+TestStation* testStation {};
 
 // test station builder
 TestStation* builder(const std::string& filename)
@@ -63,18 +62,18 @@ TestStation* builder(const std::string& filename)
 //-----------------------------------------------------------------------------
 void updateDataCB(int)
 {
-   const double dt0 = 1.0 / static_cast<double>(bgRate);
-   const auto millis = static_cast<unsigned int>(dt0 * 1000);
+   const double dt0 {1.0 / static_cast<double>(bgRate)};
+   const int millis {static_cast<int>(dt0 * 1000)};
    glutTimerFunc(millis, updateDataCB, 1);
 
    // Current time
-   const double time = mixr::base::getComputerTime();
+   const double time {mixr::base::getComputerTime()};
 
    // N-1 Time
-   static double time0 = time;
+   static double time0 {time};
 
    // Compute delta time
-   const auto dt = static_cast<double>(time - time0);
+   const double dt {static_cast<double>(time - time0)};
    time0 = time;
 
    mixr::base::Timer::updateTimers(dt);
@@ -103,8 +102,8 @@ int main(int argc, char* argv[])
    testStation->event(mixr::base::Component::RESET_EVENT);
 
    // set timer for the background tasks
-   const double dt = 1.0 / static_cast<double>(bgRate);
-   const auto millis = static_cast<unsigned int>(dt * 1000);
+   const double dt {1.0 / static_cast<double>(bgRate)};
+   const int millis {static_cast<int>(dt * 1000)};
 
    // ensure everything is reset
    testStation->updateData(dt);

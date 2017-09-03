@@ -44,8 +44,8 @@ int main(int, char**)
       else if (inputType == InputType::RAMP) {
          input = time;
       }
-      const double out = filter.g(input);
-      const double ee = std::exp( -time * A );
+      const double out {filter.g(input)};
+      const double ee {std::exp( -time * A )};
       std::cout << time << ", " << input << ", " << (1.0 - ee) << ", " << out << std::endl;
    }
 

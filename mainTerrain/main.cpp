@@ -21,14 +21,13 @@
 #include <cstdlib>
 
 const int frameRate {10};
-
 Display* display {};
 
 // timerFunc() -- time critical stuff
 void timerFunc(int)
 {
-   const double dt = 1.0 / static_cast<double>(frameRate);
-   const auto millis = static_cast<unsigned int>(dt * 1000);
+   const double dt {1.0 / static_cast<double>(frameRate)};
+   const int millis {static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
    mixr::base::Timer::updateTimers(static_cast<double>(dt));
@@ -41,7 +40,7 @@ Display* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
+   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -70,7 +69,6 @@ Display* builder(const std::string& filename)
    return display;
 }
 
-//
 int main(int argc, char* argv[])
 {
     glutInit(&argc, argv);
@@ -83,20 +81,20 @@ int main(int argc, char* argv[])
 
    // resetting the system will load the data files
    std::cout << "starting loading files --" << std::endl;
-   const double start = mixr::base::getComputerTime();
+   const double start {mixr::base::getComputerTime()};
 
    display->reset();
 
-   const double end = mixr::base::getComputerTime();
-   const double dtime = (end - start);
+   const double end {mixr::base::getComputerTime()};
+   const double dtime {end - start};
    std::cout << "finished loading files: time(s) = " << dtime << std::endl;
 
    // create a display window
    display->createWindow();
 
    // set timer
-   const double dt = 1.0 / static_cast<double>(frameRate);
-   const auto millis = static_cast<unsigned int>(dt * 1000);
+   const double dt {1.0 / static_cast<double>(frameRate)};
+   const int millis {static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
    glutMainLoop();

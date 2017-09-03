@@ -26,7 +26,7 @@ void MapPage::copyData(const MapPage& org, const bool)
     BaseClass::copyData(org);
 
     // regardless of copy, we will create all new symbols
-    for (unsigned int i = 0; i < MAX_PLAYERS; i++) {
+    for (int i = 0; i < MAX_PLAYERS; i++) {
         if (player[i] != nullptr) {
             player[i]->unref();
             player[i] = nullptr;
@@ -56,7 +56,7 @@ void MapPage::copyData(const MapPage& org, const bool)
         stn->ref();
     }
 
-    for (unsigned int i = 0; i < MAX_READOUTS; i++) {
+    for (int i = 0; i < MAX_READOUTS; i++) {
         latsSD[i].empty();
         lats[i] = org.lats[i];
         latReadoutXPosSD[i].empty();
@@ -74,7 +74,7 @@ void MapPage::copyData(const MapPage& org, const bool)
 
 void MapPage::deleteData()
 {
-    for (unsigned int i = 0; i < MAX_PLAYERS; i++) {
+    for (int i = 0; i < MAX_PLAYERS; i++) {
         if (player[i] != nullptr) {
             player[i]->unref();
             player[i] = nullptr;
@@ -94,25 +94,25 @@ void MapPage::drawFunc()
 {
     // we are going to draw lat / lon lines
     // now let's draw our map lines
-    const double refLat = getReferenceLatDeg();
-    const double refLon = getReferenceLonDeg();
+    const double refLat {getReferenceLatDeg()};
+    const double refLon {getReferenceLonDeg()};
     // now get our range
-    double latRange = getRange() / 60.0;
-    const double southernLat = refLat - latRange;
-    const double northernLat = refLat + latRange;
+    double latRange {getRange() / 60.0};
+    const double southernLat {refLat - latRange};
+    const double northernLat {refLat + latRange};
     // after calcs, double our lat range to encompass the whole screen
     latRange *= 2;
 
     // get our viewport
     const auto dis = static_cast<Display*>(getDisplay());
     if (dis != nullptr) {
-        int start = mixr::base::nint(static_cast<double>(southernLat) - 1);
-        GLdouble l = 0, r = 0, t = 0, b = 0, n = 0, f = 0;
+        int start {mixr::base::nint(static_cast<double>(southernLat) - 1)};
+        GLdouble l {}, r {}, t {}, b {}, n {}, f {};
         dis->getOrtho(l, r, b, t, n, f);
-        double inchPerDegNS = t*2 / latRange;
+        const double inchPerDegNS {t*2 / latRange};
         glPushMatrix();
             glBegin(GL_LINES);
-                int count = 0;
+                int count {};
                 while (start < mixr::base::nint( static_cast<double>(northernLat) ) + 1) {
                     GLfloat disFromRef = static_cast<GLfloat>(refLat - start);
                     disFromRef *= static_cast<GLfloat>(inchPerDegNS);
@@ -131,18 +131,18 @@ void MapPage::drawFunc()
         glPopMatrix();
 
         // now for the longitude lines
-        double lonRange = getRange() / (60 * getCosRefLat());
-        const double easternLon = refLon - lonRange;
-        const double westernLon = refLon + lonRange;
+        double lonRange {getRange() / (60 * getCosRefLat())};
+        const double easternLon {refLon - lonRange};
+        const double westernLon {refLon + lonRange};
 
         lonRange *= 2;
-        start = mixr::base::nint( static_cast<double>(easternLon) - 1);
-        const double inchPerDegEW = r*2 / lonRange;
+        start = mixr::base::nint(static_cast<double>(easternLon) - 1);
+        const double inchPerDegEW {r*2 / lonRange};
         glPushMatrix();
             glBegin(GL_LINES);
                 count = 0;
                 while (start < mixr::base::nint( static_cast<double>(westernLon) ) + 1) {
-                    GLfloat disFromRef = static_cast<GLfloat>(refLon - start);
+                    GLfloat disFromRef {static_cast<GLfloat>(refLon - start)};
                     if (count < MAX_READOUTS) {
                         lons[count] = start;
                         disFromRef *= static_cast<GLfloat>(inchPerDegEW);
@@ -165,14 +165,14 @@ void MapPage::updateData(const double dt)
 
     // get our pointers
     if (loader == nullptr) {
-        mixr::base::Pair* pair = findByType(typeid(mixr::graphics::SymbolLoader));
+        mixr::base::Pair* pair {findByType(typeid(mixr::graphics::SymbolLoader))};
         if (pair != nullptr) {
             loader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
             if (loader != nullptr) loader->ref();
         }
     }
     if (stn == nullptr) {
-        mixr::graphics::Display* dis = getDisplay();
+        mixr::graphics::Display* dis {getDisplay()};
         if (dis != nullptr) {
             stn = static_cast<Station*>(dis->findContainerByType(typeid(Station)));
             if (stn != nullptr) {

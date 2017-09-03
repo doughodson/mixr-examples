@@ -32,8 +32,8 @@ public:
 
 private:
     // holds our players
-    static const int MAX_PLAYERS = 200;
-    static const int MAX_READOUTS = 20;
+    static const int MAX_PLAYERS {200};
+    static const int MAX_READOUTS {20};
     std::array<mixr::models::Player*, MAX_PLAYERS> player {};  // player pointer
     std::array<int, MAX_PLAYERS> playerIdx {};               // index of our symbol for the given player
     mixr::graphics::SymbolLoader* loader {};          // holds our loader for quick reference

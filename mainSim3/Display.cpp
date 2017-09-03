@@ -3,7 +3,8 @@
 #include "MapPage.hpp"
 #include <GL/glut.h>
 
-IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Display, "MapTestDisplay")
+IMPLEMENT_SUBCLASS(Display, "MapTestDisplay")
+EMPTY_SLOTTABLE(Display)
 EMPTY_DELETEDATA(Display)
 
 Display::Display()
@@ -48,7 +49,7 @@ void Display::mouseMotionEvent(const int x, const int y)
         const auto page = static_cast<MapPage*>(subpage());
         if (page != nullptr) {
             // get our ref lat, because we won't go passed 70 degrees lat (either way);
-            const double lat = page->getReferenceLatDeg();
+            const double lat {page->getReferenceLatDeg()};
             if (lat < 70 && lat > -70) {
                 page->moveMap(startX, startY, x, y);
             } else {

@@ -2,7 +2,7 @@
 #ifndef __Table_H__
 #define __Table_H__
 
-#include "mixr/graphics/Field.hpp"
+#include "mixr/graphics/readouts/AbstractField.hpp"
 
 namespace mixr {
 namespace base { class Number; class PairStream; }
@@ -18,9 +18,9 @@ namespace base { class Number; class PairStream; }
 //    spacing  <Number>     ! Spacing between rows (default: 1)
 //    columns  <PairStream> ! Column descriptions: list of items in each row
 //------------------------------------------------------------------------------
-class Table : public mixr::graphics::Field
+class Table : public mixr::graphics::AbstractField
 {
-   DECLARE_SUBCLASS(Table, mixr::graphics::Field)
+   DECLARE_SUBCLASS(Table, mixr::graphics::AbstractField)
 
 public:
    Table();

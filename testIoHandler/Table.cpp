@@ -14,9 +14,9 @@ using namespace mixr;
 // class TableRow -- One row of in the table (used by Table only)
 //          (The implementation is at the bottom of the file after the Table class)
 //==============================================================================
-class TableRow : public graphics::Field
+class TableRow : public graphics::AbstractField
 {
-   DECLARE_SUBCLASS(TableRow,graphics::Field)
+   DECLARE_SUBCLASS(TableRow, graphics::AbstractField)
 
 public:
    TableRow();
@@ -255,7 +255,7 @@ bool Table::setSlotColumns(base::PairStream* const msg)
       base::List::Item* item = msg->getFirstItem();
       while (item != nullptr) {
           const auto pair = static_cast<base::Pair*>(item->getValue());
-          const auto g = dynamic_cast<graphics::Field*>(pair->object());
+          const auto g = dynamic_cast<graphics::AbstractField*>(pair->object());
           if (g != nullptr) {
               // We have a Field object, so add it to the new columns list
               newColumns->put(pair);
@@ -272,7 +272,7 @@ bool Table::setSlotColumns(base::PairStream* const msg)
 // class TableRow -- One row of in the table (used by Table only)
 //==============================================================================
 
-IMPLEMENT_SUBCLASS(TableRow,"TableRow")
+IMPLEMENT_SUBCLASS(TableRow, "TableRow")
 EMPTY_SLOTTABLE(TableRow)
 
 TableRow::TableRow()
@@ -316,7 +316,7 @@ int TableRow::column(const int cc)
 void  TableRow::put(base::Pair* pp)
 {
    base::PairStream* subcomponents = getComponents();
-   BaseClass::processComponents(subcomponents, typeid(graphics::Field), pp);
+   BaseClass::processComponents(subcomponents, typeid(graphics::AbstractField), pp);
    if (subcomponents != nullptr) subcomponents->unref();
 }
 
@@ -332,7 +332,7 @@ void TableRow::position()
       base::List::Item* item = subcomponents->getFirstItem();
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
-         const auto ti = static_cast<graphics::Field*>(pair->object());
+         const auto ti = static_cast<graphics::AbstractField*>(pair->object());
 
          ti->line(ln);
          ti->column(cp);

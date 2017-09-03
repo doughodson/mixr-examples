@@ -189,13 +189,13 @@ void MapPage::updateData(const double dt)
 
     // let's update our players
     if (loader != nullptr && stn != nullptr) {
-        mixr::base::PairStream* stream = stn->getPlayers();
+        mixr::base::PairStream* stream {stn->getPlayers()};
         if (stream != nullptr) {
             // create our new player list
-            mixr::models::Player* newPlayers[MAX_PLAYERS];
-            unsigned int numNewPlayers = 0;
+            mixr::models::Player* newPlayers[MAX_PLAYERS] {};
+            int numNewPlayers {};
             // go through all of our non-ownship players and populate our new list
-            mixr::base::List::Item* item = stream->getFirstItem();
+            mixr::base::List::Item* item {stream->getFirstItem()};
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
                 const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
                 if (pair != nullptr) {
@@ -211,10 +211,10 @@ void MapPage::updateData(const double dt)
             // ok, go through our new list and match it with our old, and throw
             // away any old players that aren't in the new list, and add any new
             // players that aren't in the old list
-            for (unsigned int i = 0; i < MAX_PLAYERS; i++) {
+            for (int i = 0; i < MAX_PLAYERS; i++) {
                 if (player[i] != nullptr) {
-                    bool match = false;
-                    for (unsigned int j = 0; j < numNewPlayers && !match; j++) {
+                    bool match {};
+                    for (int j = 0; j < numNewPlayers && !match; j++) {
                         if (player[i] == newPlayers[j]) {
                             // if they do match, get rid of our new player, so we don't re-add it
                             // later accidentally
@@ -234,17 +234,17 @@ void MapPage::updateData(const double dt)
             }
 
             // ok, now we have removed our old players (and our matched ones), let's add our new ones!
-            for (unsigned int i = 0; i < numNewPlayers; i++) {
+            for (int i = 0; i < numNewPlayers; i++) {
                 // make sure this player wasn't deleted earlier
                 if (newPlayers[i] != nullptr) {
-                    bool found = false;
-                    for (unsigned int j = 0; j < MAX_PLAYERS && !found; j++) {
+                    bool found {};
+                    for (int j = 0; j < MAX_PLAYERS && !found; j++) {
                         if (player[j] == nullptr) {
                             found = true;
                             // found an empty player, let's set him!
                             player[j] = newPlayers[i];
                             player[j]->ref();
-                            int type = 1;
+                            int type {1};
                             if (player[j]->isSide(mixr::models::Player::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "player");
                             if (player[j]->getName() != nullptr) {

@@ -69,7 +69,7 @@ void Station::reset()
 //------------------------------------------------------------------------------
 bool Station::setSlotDisplay(mixr::glut::GlutDisplay* dis)
 {
-    bool ok = false;
+    bool ok {};
     // clear out our old display first
     if (display != nullptr) {
         display->unref();

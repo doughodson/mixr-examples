@@ -37,7 +37,7 @@ void updateDataCB(int)
    static double time0 {time};
 
    // compute delta time
-   const auto dt {static_cast<double>(time - time0)};
+   const double dt {static_cast<double>(time - time0)};
    time0 = time;
 
    mixr::base::Timer::updateTimers(dt);

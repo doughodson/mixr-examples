@@ -67,7 +67,7 @@ void updateDataCB(int msecs)
 
    // compute delta time
    static double time0 {time};   // N-1 Time
-   const auto dt {static_cast<double>(time - time0)};
+   const double dt {static_cast<double>(time - time0)};
    time0 = time;
 
    station->updateData(dt);

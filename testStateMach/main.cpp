@@ -13,7 +13,7 @@
 mixr::base::StateMachine* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
@@ -46,7 +46,7 @@ mixr::base::StateMachine* builder(const std::string& filename)
 // main test loop
 void theTest(mixr::base::StateMachine* stateMachine)
 {
-   const double dt = 0.05;  // Fake delta time
+   const double dt {0.05};  // Fake delta time
 
    while (stateMachine->getState() != 99) {
       mixr::base::Timer::updateTimers(static_cast<double>(dt));
@@ -55,7 +55,6 @@ void theTest(mixr::base::StateMachine* stateMachine)
    }
 }
 
-//
 int main(int argc, char* argv[])
 {
    // default configuration filename

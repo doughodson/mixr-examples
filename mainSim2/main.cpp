@@ -22,15 +22,15 @@ namespace mixr {
 namespace example {
 
 // default background frame rate
-const unsigned int BG_RATE = 10;
+const int BG_RATE {10};
 
-SimStation* simStation = nullptr;
+SimStation* simStation {};
 
 // SimStation builder
 SimStation* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    base::Object* obj = base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;

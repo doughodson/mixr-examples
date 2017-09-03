@@ -14,15 +14,15 @@
 #include <GL/glut.h>
 
 // default background frame rate
-const unsigned int BG_RATE = 10;
+const int BG_RATE {10};
 
-mixr::simulation::Station* station = nullptr;
+mixr::simulation::Station* station {};
 
 // station builder
 mixr::simulation::Station* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;

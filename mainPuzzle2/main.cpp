@@ -14,9 +14,9 @@
 #include <cstdlib>
 
 // frame rate
-const unsigned int frameRate = 20;
+const int frameRate {20};
 
-PuzzleBoard* board = nullptr;
+PuzzleBoard* board {};
 
 //
 void timerCB(int)
@@ -44,7 +44,7 @@ void timerCB(int)
 PuzzleBoard* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;

@@ -20,11 +20,11 @@ using namespace mixr;
 //static double slon = 0.0;
 //static double tlat = 1.0;
 //static double tlon = 1.0;
-static double brng = 45.0;
+static double brng {45.0};
 //static double dist = 100.0;
-static const base::EarthModel* pEM = &base::EarthModel::wgs84;
+static const base::EarthModel* pEM {&base::EarthModel::wgs84};
 
-static int testNumber = 0;
+static int testNumber {};
 static char ynCont = 'y';
 //static char ynMenu = 'y';
 static const char* enterYourOwnData = "Enter your own data? (y/n) : ";

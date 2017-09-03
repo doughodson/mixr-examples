@@ -17,12 +17,12 @@
 #include <string>
 #include <cstdlib>
 
-const unsigned int UPDATE_RATE = 10;  // main loop update rate (Hz)
+const int UPDATE_RATE {10};  // main loop update rate (Hz)
 
 // our class factory
 mixr::base::Object* factory(const std::string& name)
 {
-   mixr::base::Object* obj = nullptr;
+   mixr::base::Object* obj {};
 
    if ( name == Sender::getFactoryName() ) {
       obj = new Sender();
@@ -43,7 +43,7 @@ mixr::base::Object* factory(const std::string& name)
 Endpoint* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;

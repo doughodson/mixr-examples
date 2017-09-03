@@ -24,13 +24,13 @@
 
 #include <string>
 
-const unsigned int TIMING_LOOPS = 10000;
+const int TIMING_LOOPS {10000};
 
 // table builder
 mixr::base::Table* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, mixr::base::factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
@@ -65,7 +65,7 @@ mixr::base::Table* builder(const std::string& filename)
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   unsigned int cnt = 0;
+   int cnt {};
 
    mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
@@ -103,7 +103,7 @@ unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   unsigned int cnt = 0;
+   int cnt {};
 
    mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
@@ -152,7 +152,7 @@ unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   unsigned int cnt = 0;
+   int cnt {};
 
    mixr::base::FStorage* s = nullptr;
    if (sflg) s = tbl->storageFactory();
@@ -216,9 +216,9 @@ unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   unsigned int cnt = 0;
+   int cnt {};
 
-   mixr::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s {};
    if (sflg) s = tbl->storageFactory();
 
    // Setup W
@@ -296,10 +296,10 @@ unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const 
 
 int main(int argc, char* argv[])
 {
-   bool aflg = false;   // All base classes flag
-   bool rflg = false;   // Random flag
-   bool sflg = false;   // TableStoreage flag
-   bool tflg = false;   // Timing flag
+   bool aflg {};   // All base classes flag
+   bool rflg {};   // Random flag
+   bool sflg {};   // TableStoreage flag
+   bool tflg {};   // Timing flag
 
    // default configuration filename
    std::string configFilename = "test1.edl";

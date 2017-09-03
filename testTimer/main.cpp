@@ -25,14 +25,14 @@
 #include <string>
 #include <cstdlib>
 
-const double MAIN_TIMER_VALUE = 10.0; // Sec
-const double TIMERS_PRINT_RATE = 5;   // Hz
+const double MAIN_TIMER_VALUE {10.0};   // Sec
+const double TIMERS_PRINT_RATE {5.0};   // Hz
 
 //------------------------------------------------------------------------------
 // Timer thread
 //------------------------------------------------------------------------------
-const double THREAD_RATE = 20.0;      // hz
-const double THREAD_PRI  =  0.5;      // Pri (0 .. 1)
+const double THREAD_RATE {20.0};      // hz
+const double THREAD_PRI  {0.5};       // Pri (0 .. 1)
 
 class TimerThread : public mixr::base::PeriodicTask
 {
@@ -65,7 +65,7 @@ TimerThread* createTheThread(Tester* const tester)
 {
    auto thread = new TimerThread(tester, THREAD_PRI, THREAD_RATE);
 
-   bool ok = thread->create();
+   bool ok {thread->create()};
    if (!ok) {
       thread = nullptr;
       std::cerr << "createTheThread(): ERROR, failed to create the thread!" << std::endl;
@@ -74,10 +74,9 @@ TimerThread* createTheThread(Tester* const tester)
    return thread;
 }
 
-// class factory
 mixr::base::Object* factory(const std::string& name)
 {
-  mixr::base::Object* obj = nullptr;
+  mixr::base::Object* obj {};
 
   if ( name == Tester::getFactoryName() ) {
     obj = new Tester;
@@ -92,7 +91,7 @@ mixr::base::Object* factory(const std::string& name)
 Tester* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;

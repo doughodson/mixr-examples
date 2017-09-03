@@ -14,7 +14,7 @@
 #include <cstdlib>
 
 // default background frame rate
-const unsigned int BG_RATE = 10;
+const int BG_RATE {10};
 
 mixr::simulation::Station* station = nullptr;
 
@@ -22,7 +22,7 @@ mixr::simulation::Station* station = nullptr;
 mixr::simulation::Station* builder(const std::string& filename)
 {
    // read configuration file
-   unsigned int num_errors = 0;
+   int num_errors {};
    mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
@@ -62,7 +62,7 @@ void updateDataCB(int msecs)
    glutTimerFunc(msecs, updateDataCB, msecs);
 
    // Current time
-   const double time = mixr::base::getComputerTime();
+   const double time {mixr::base::getComputerTime()};
 
    // Compute delta time
    static double time0 = time;   // N-1 Time

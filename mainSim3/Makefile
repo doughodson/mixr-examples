@@ -11,7 +11,9 @@ OBJS = \
 
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lmixr_interop_dis -lmixr_interop -lmixr_models -lmixr_simulation -lJSBSim
-LDFLAGS += -lmixr_instruments -lmixr_iodevice -lmixr_otw -lmixr_terrain
+LDFLAGS += -lmixr_instruments -lmixr_iodevice
+LDFLAGS += -lmixr_ig_cigi -lmixr_ig_viewpoint -lmixr_ig
+LDFLAGS += -lmixr_terrain
 LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base -lrt -lcigicl
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11
 #LDFLAGS += -lXi -lXmu

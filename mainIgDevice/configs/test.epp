@@ -1,0 +1,27 @@
+( SimStation
+	tcPriority: 1
+	  
+	display:
+	( SimpleIGen
+		left:       -5.0
+		right:       5.0
+		bottom:     -3.0
+		top:         3.0
+		near:       -2.0
+		far:         2.0
+		vpX: 					 0
+		vpY: 					 0
+		vpWidth:     800
+		vpHeight:    600
+		
+    netInput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost port: 4950)
+    databasePath: "portland/"
+    
+		//Since this display will be drawn by OpenSceneGraph, no graphical components are placed here.
+		//For the Page component is the same situation.
+		
+		components: {}	
+	)
+)
+
+

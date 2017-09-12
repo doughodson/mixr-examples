@@ -17,7 +17,7 @@ namespace xpanel {
 
 base::Object* factory(const std::string& name)
 {
-    base::Object* obj = nullptr;
+    base::Object* obj {};
 
     if ( name == DspRadar::getFactoryName() ) {
         obj = new DspRadar();

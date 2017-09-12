@@ -7,8 +7,8 @@
 
   tcPriority: 0.5
 
-//#include "io/otwSetupPC.epp"
-#include "io/networkSetup.epp"
+#include "io/otwSetupPC.epp"
+//#include "io/networkSetup.epp"
 
   // Simulation scenario
   ownship: xper

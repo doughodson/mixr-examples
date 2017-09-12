@@ -19,7 +19,7 @@ using namespace mixr;
 
 base::Object* factory(const std::string& name)
 {
-    base::Object* obj = nullptr;
+    base::Object* obj {};
 
     // Test #1
     if ( name == TestStateMachine01::getFactoryName() ) {

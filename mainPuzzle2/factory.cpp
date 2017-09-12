@@ -16,7 +16,7 @@
 
 mixr::base::Object* factory(const std::string& name)
 {
-    mixr::base::Object* obj = nullptr;
+    mixr::base::Object* obj {};
 
     // Main board
     if ( name == PuzzleBoard::getFactoryName() ) {

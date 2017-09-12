@@ -36,6 +36,8 @@ Example Applications
 
 * mainGndMapRdr -- ground mapping radar example
 
+* mainIGen -- simple image generator
+
 * mainLaero -- demostrates flight navigation
 
 * mainNonRT1 -- executes a simulation as fast as possible (not real-time, no concern about wall clock)

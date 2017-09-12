@@ -15,7 +15,7 @@
 
 mixr::base::Object* factory(const std::string& name)
 {
-    mixr::base::Object* obj = nullptr;
+    mixr::base::Object* obj {};
 
     if ( name == DataRecordTest::getFactoryName() ) {
         obj = new DataRecordTest();

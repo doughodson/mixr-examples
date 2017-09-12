@@ -17,7 +17,8 @@
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/instruments/factory.hpp"
 #include "mixr/iodevice/factory.hpp"
-#include "mixr/otw/factory.hpp"
+#include "mixr/ig/cigi/factory.hpp"
+#include "mixr/ig/viewpoint/factory.hpp"
 #include "mixr/models/factory.hpp"
 #include "mixr/simulation/factory.hpp"
 #include "mixr/terrain/factory.hpp"
@@ -26,7 +27,7 @@
 
 mixr::base::Object* factory(const std::string& name)
 {
-    mixr::base::Object* obj = nullptr;
+    mixr::base::Object* obj {};
 
     if ( name == SimStation::getFactoryName() ) {
         obj = new SimStation();
@@ -49,7 +50,8 @@ mixr::base::Object* factory(const std::string& name)
     if (obj == nullptr) obj = mixr::instruments::factory(name);
     if (obj == nullptr) obj = mixr::models::factory(name);
     if (obj == nullptr) obj = mixr::terrain::factory(name);
-    if (obj == nullptr) obj = mixr::otw::factory(name);
+    if (obj == nullptr) obj = mixr::cigi::factory(name);
+    if (obj == nullptr) obj = mixr::viewpoint::factory(name);
     if (obj == nullptr) obj = mixr::dis::factory(name);
     if (obj == nullptr) obj = mixr::graphics::factory(name);
     if (obj == nullptr) obj = mixr::glut::factory(name);

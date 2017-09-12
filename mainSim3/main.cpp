@@ -16,7 +16,8 @@
 #include "mixr/models/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
-#include "mixr/otw/factory.hpp"
+#include "mixr/ig/cigi/factory.hpp"
+#include "mixr/ig/viewpoint/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 
 #include "MapPage.hpp"
@@ -63,7 +64,8 @@ mixr::base::Object* factory(const std::string& name)
     if (obj == nullptr)  { obj = mixr::xzmq::factory(name);         }
 
     // platform libraries
-    if (obj == nullptr)  { obj = mixr::otw::factory(name);          }
+    if (obj == nullptr)  { obj = mixr::cigi::factory(name);         }
+    if (obj == nullptr)  { obj = mixr::viewpoint::factory(name);    }
     if (obj == nullptr)  { obj = mixr::instruments::factory(name);  }
     if (obj == nullptr)  { obj = mixr::simulation::factory(name);   }
     if (obj == nullptr)  { obj = mixr::models::factory(name);       }

@@ -125,7 +125,7 @@ void TestStateMachine04::stateFunc23(const double)
 
 void TestStateMachine04::stateFunc99(const double)
 {
-   if (getMode() == NEW_STATE) {
+   if (getMode() == Mode::NEW_STATE) {
       std::cout << "Finished;";
    }
 }

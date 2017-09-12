@@ -70,7 +70,7 @@ void Tester::printTimers() const
          std::printf("  timer(%s)", pair->slot()->getString());
          std::printf(" = %4.1f", timer->getCurrentTime());
 
-         if (timer->getType() == mixr::base::Timer::UP) std::printf(", up");
+         if (timer->getType() == mixr::base::Timer::Type::UP) std::printf(", up");
          else std::printf(", down");
 
          if (timer->isRunning()) std::printf(", active");

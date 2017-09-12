@@ -65,7 +65,7 @@ void TestStateMachine01::anyStateFunc(const double)
       }
 
       case 4 : {
-         if (getMode() != RTN_STATE) {
+         if (getMode() != Mode::RTN_STATE) {
             std::cout << "call(CALL_01)";
             call(CALL_01);
          }
@@ -95,7 +95,7 @@ void TestStateMachine01::anyStateFunc(const double)
       }
 
       case 13 : {
-         if (getMode() != RTN_STATE) {
+         if (getMode() != Mode::RTN_STATE) {
             std::cout << "call(CALL_02,arg=13)";
             const auto arg = new base::Integer(13);
             call(CALL_02, arg);
@@ -151,7 +151,7 @@ void TestStateMachine01::anyStateFunc(const double)
       }
 
       case 99 : {
-         if (getMode() == NEW_STATE) {
+         if (getMode() == Mode::NEW_STATE) {
             std::cout << "Finished;";
          }
          break;

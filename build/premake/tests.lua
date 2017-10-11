@@ -16,10 +16,10 @@ project "testDafif"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "mixr_simulation", "mixr_terrain", "mixr_dafif", "mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "mixr_simulation_d", "mixr_terrain_d", "mixr_dafif_d", "mixr_base_d"}
       links {LibWindows}
 
@@ -36,11 +36,11 @@ project "testEvents"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
@@ -58,11 +58,11 @@ project "testGraphics"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
@@ -80,7 +80,7 @@ project "testInfrared"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_interop_dis", "mixr_interop" }
@@ -88,7 +88,7 @@ project "testInfrared"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d" }
@@ -110,11 +110,11 @@ project "testIoHandler"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_iodevice", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_iodevice_d", "mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
@@ -132,10 +132,10 @@ project "testLinearSys"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_linearsystem", "mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_linearsystem_d", "mixr_base_d"}
       links {LibWindows}
 
@@ -152,10 +152,10 @@ project "testMatrix"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -172,10 +172,10 @@ project "testMetaObject"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -192,10 +192,10 @@ project "testNavUtils"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -215,10 +215,10 @@ project "testNetHandler"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base", "libzmq" }
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d", "libzmq_d" }
       links {LibWindows}
 
@@ -235,7 +235,7 @@ project "testRadar"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
@@ -243,7 +243,7 @@ project "testRadar"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
@@ -266,7 +266,7 @@ project "testRecordData"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder", "libxpanel" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim" }
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi }
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iodevice" }
@@ -275,7 +275,7 @@ project "testRecordData"
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {"libprotobuf" }
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d" }
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d",  LibCigi_d }
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iodevice_d" }
@@ -299,11 +299,11 @@ project "testRecorderRead"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim" }
       links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d" }
       links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
@@ -322,11 +322,11 @@ project "testRecorderWrite"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim" }
       links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d" }
       links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
@@ -344,10 +344,10 @@ project "testSlots"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -364,10 +364,10 @@ project "testStateMach"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -384,10 +384,10 @@ project "testTables"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -404,10 +404,10 @@ project "testTemplates"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -423,10 +423,10 @@ project "testTimer"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -442,11 +442,11 @@ project "testVmap"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_map_vpf", "mixr_instruments", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_map_vpf_d", "mixr_instruments_d", "mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}

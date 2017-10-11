@@ -20,7 +20,7 @@ project "mainCockpit"
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
    defines { "_CONSOLE" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iodevice"}
@@ -29,7 +29,7 @@ project "mainCockpit"
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {"libprotobuf"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d",  LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iodevice_d"}
@@ -52,44 +52,44 @@ project "mainGndMapRdr"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "mixr_simulation_d", "JSBSim_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
---[[
 -- Image generator example
-project "mainIGen"
-   targetname "mainIGen"
-   targetdir "../../mainIGen"
-   debugdir "../../mainIGen"
+project "mainIgDevice"
+   targetname "mainIgDevice"
+   targetdir "../../mainIgDevice"
+   debugdir "../../mainIgDevice"
+   defines { "OSG_LIBRARY_STATIC" }
+   linkoptions { "/ignore:4099" }
    files {
-      "../../mainIGen/**.h*",
-      "../../mainIGen/**.cpp",
-      "../../mainIGen/**.epp",
-      "../../mainIGen/**.edl"
+      "../../mainIgDevice/**.h*",
+      "../../mainIgDevice/**.cpp",
+      "../../mainIgDevice/**.epp",
+      "../../mainIgDevice/**.edl"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_3rdPartyLibPath.."/osgPlugins-3.4.1" }
+   filter "configurations:Release"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
-      links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
+      links {LibOsg, LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "mixr_simulation_d", "JSBSim_d", "mixr_terrain_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
-      links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
+      links {LibOsg_d, LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
-]]--
 
 -- mainLaero example
 project "mainLaero"
@@ -107,14 +107,14 @@ project "mainLaero"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq" }
       links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d" }
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
@@ -135,14 +135,14 @@ project "mainNonRT1"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
       links {"mixr_simulation_d", "mixr_terrain_d"}
@@ -163,11 +163,11 @@ project "mainPuzzle1"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
@@ -185,11 +185,11 @@ project "mainPuzzle2"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
@@ -210,7 +210,7 @@ project "mainSim1"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_interop_dis", "mixr_interop"}
@@ -218,7 +218,7 @@ project "mainSim1"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d"}
@@ -243,7 +243,7 @@ project "mainSim2"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
@@ -251,7 +251,7 @@ project "mainSim2"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
@@ -276,7 +276,7 @@ project "mainSim3"
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links { "mixr_models", "JSBSim", "libzmq" }
       links { "mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi }
       links { "mixr_interop_dis", "mixr_interop", LibCigi }
@@ -284,7 +284,7 @@ project "mainSim3"
       links { "mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links { "mixr_models_d", "JSBSim_d", "libzmq_d" }
       links { "mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d }
       links { "mixr_interop_dis_d", "mixr_interop_d" }
@@ -306,12 +306,12 @@ project "mainTerrain"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_terrain"}
       links {"mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
@@ -331,7 +331,7 @@ project "mainUbf1"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links { "libxbehaviors",  "libxpanel" }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links { "mixr_models", "JSBSim" }
       links { "mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi }
       links { "mixr_interop_dis", "mixr_interop", "mixr_iodevice" }
@@ -339,7 +339,7 @@ project "mainUbf1"
       links { "mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
       links { LibWindows }
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links { "mixr_models_d", "JSBSim_d" }
       links { "mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d }
       links { "mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d" }

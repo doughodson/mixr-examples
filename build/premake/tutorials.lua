@@ -13,10 +13,10 @@ project "tutorial01"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -31,10 +31,10 @@ project "tutorial02"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -51,10 +51,10 @@ project "tutorial03"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -71,10 +71,10 @@ project "tutorial04"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -91,10 +91,10 @@ project "tutorial05"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -111,10 +111,10 @@ project "tutorial06"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_base"}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_base_d"}
       links {LibWindows}
 
@@ -131,11 +131,11 @@ project "tutorial07"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}
@@ -154,11 +154,11 @@ project "tutorial08"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release*"
+   filter "configurations:Release"
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {"ftgl", LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
-   filter "configurations:Debug*"
+   filter "configurations:Debug"
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}

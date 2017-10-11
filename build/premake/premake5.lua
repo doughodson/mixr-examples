@@ -65,6 +65,20 @@ LibGL         = "opengl32"
 
 LibWindows    = {"Ws2_32", "Winmm", "comctl32", "gdi32", "iphlpapi"}
 
+LibOsg        = {"osgdb_txp",
+                 "osg131-osg", "osg131-osgAnimation", "osg131-osgDB", "osg131-osgFX", "osg131-osgGA",
+                 "osg131-osgManipulator", "osg131-osgParticle", "osg131-osgPresentation",
+                 "osg131-osgShadow", "osg131-osgSim", "osg131-osgTerrain", "osg131-osgText",
+                 "osg131-osgUI", "osg131-osgUtil", "osg131-osgViewer", "osg131-osgVolume", "osg131-osgWidget",
+                 "ot20-OpenThreads"}
+
+LibOsg_d      = {"osgdb_txpd",
+                 "osg131-osgd", "osg131-osgAnimationd", "osg131-osgDBd", "osg131-osgFXd", "osg131-osgGAd",
+                 "osg131-osgManipulatord", "osg131-osgParticled", "osg131-osgPresentationd",
+                 "osg131-osgShadowd", "osg131-osgSimd", "osg131-osgTerraind", "osg131-osgTextd",
+                 "osg131-osgUId", "osg131-osgUtild", "osg131-osgViewerd", "osg131-osgVolumed", "osg131-osgWidgetd",
+                 "ot20-OpenThreadsd"}
+
 workspace "examples"
 
    -- destination directory for generated solution/project files
@@ -89,17 +103,18 @@ workspace "examples"
    -- /wd4005 (C4005 warning) - disable macro redefinition
    -- /wd4100 (C4100 warning) - disable unreferenced formal parameter
    -- /Oi - generate intrinsic functions
-   buildoptions( { "/wd4351", "/wd4996", "/wd4005", "/wd4100", "/Oi" } )
+   disablewarnings { "4351",  "4996", "4005", "4100" }
+   buildoptions { "/Oi" }
 
    -- common release configuration flags, symbols and libraries
-   filter { "Release" }
-		optimize "On"
+   filter { "configurations:Release" }
+      optimize "On"
       -- favor speed over size
       buildoptions { "/Ot" }
       defines { "WIN32", "NDEBUG" }
 
    -- common debug configuration flags, symbols and libraries
-   filter { "Debug" }
+   filter { "configurations:Debug" }
       symbols "On"
       targetsuffix "_d"
       defines { "WIN32", "_DEBUG" }

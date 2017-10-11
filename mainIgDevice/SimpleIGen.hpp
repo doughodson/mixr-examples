@@ -2,18 +2,12 @@
 #ifndef __SimpleIGen_H__
 #define __SimpleIGen_H__
 
-#include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
-#include "mixr/base/network/NetHandler.hpp"
-#include "mixr/graphics/Graphic.hpp"
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 #include "mixr/ig/viewpoint/EntityState.hpp"
 
 #include <osgViewer/Viewer>
 #include <osgDB/ReadFile>
-
-#include <GL/glut.h>
 
 namespace mixr {
 namespace base { class NetHandler; class String; }
@@ -43,7 +37,7 @@ public:
    // initialize the network
    bool initNetwork();      
    // receive a buffer from the network
-   int recv(char* buffer); 
+   int recv(char* buffer);
 
 private:
    ::osg::ref_ptr<osgViewer::Viewer> viewer;

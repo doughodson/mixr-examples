@@ -8,8 +8,6 @@
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/Timers.hpp"
 
-#include "mixr/base/network/NetHandler.hpp"
-
 #include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/osg/Vec4d"
@@ -117,14 +115,14 @@ void SimStation::updateData(const double dt)
 //------------------------------------------------------------------------------
 void SimStation::stepOwnshipPlayer()
 {
-   base::PairStream* pl = getSimulation()->getPlayers();
+   base::PairStream* pl {getSimulation()->getPlayers()};
    if (pl != nullptr) {
       models::Player* f {};
       models::Player* n {};
       bool found {};
 
       // Find the next player
-      base::List::Item* item = pl->getFirstItem();
+      base::List::Item* item {pl->getFirstItem()};
       while (item != nullptr) {
          base::Pair* pair {static_cast<base::Pair*>(item->getValue())};
          if (pair != nullptr) {

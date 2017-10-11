@@ -5,30 +5,22 @@
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
-#include "mixr/graphics/Graphic.hpp"
-
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 #include "mixr/simulation/Station.hpp"
 
 #include <GL/glut.h>
 
-// class factories
-#include "mixr/base/factory.hpp"
-#include "mixr/graphics/factory.hpp"
-#include "mixr/ui/glut/factory.hpp"
-#include "mixr/interop/dis/factory.hpp"
-#include "mixr/instruments/factory.hpp"
-#include "mixr/iodevice/factory.hpp"
-#include "mixr/ig/viewpoint/factory.hpp"
-#include "mixr/simulation/factory.hpp"
-#include "mixr/models/factory.hpp"
-
 #include "events.hpp"
 #include "factory.hpp"
 #include "SimStation.hpp"
 
 #include <string>
+
+#include "osgDB/Registry"
+#ifdef OSG_LIBRARY_STATIC
+USE_OSGPLUGIN(txp)
+#endif
 
 using namespace mixr;
 
@@ -41,7 +33,7 @@ simulation::Station* builder(const std::string& fileName)
    simulation::Station* p {};
    // Read the description file
    int errors {};
-   base::Object* obj = base::edl_parser(fileName, factory, &errors);
+   base::Object* obj {base::edl_parser(fileName, factory, &errors)};
    if (errors > 0) {
       std::cerr << "File: " << fileName << ", errors: " << errors << std::endl;
       std::exit(EXIT_FAILURE);

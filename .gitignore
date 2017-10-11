@@ -9,6 +9,11 @@ build/obj/
 # vs code
 .vscode
 
+# visual database files
+*.txp
+*.txf
+*.tpf
+
 # lib directory
 lib/
 
@@ -84,7 +89,7 @@ demoSubDisplays/demoSubDisplays
 mainCockpit/mainCockpit
 mainGlut/mainGlut
 mainGndMapRdr/mainGndMapRdr
-mainIGen/mainIGen
+mainIgDevice/mainIgDevice
 mainLaero/mainLaero
 mainNonRT1/mainNonRT1
 mainPuzzle1/mainPuzzle1
@@ -114,6 +119,7 @@ testStateMach/testStateMach
 testTables/testTables
 testTemplates/testTemplates
 testTimer/testTimer
+testVmap/testVmap
 tutorial01/tutorial01
 tutorial02/tutorial02
 tutorial03/tutorial03

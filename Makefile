@@ -73,6 +73,9 @@ APPLICATIONS += testRecordData
 APPLICATIONS += testRecorderRead
 APPLICATIONS += testRecorderWrite
 
+# test VMAP0 loader library
+APPLICATIONS += testVmap
+
 # tutorial examples
 APPLICATIONS += tutorial01
 APPLICATIONS += tutorial02

@@ -10,7 +10,8 @@ include ${MIXR_ROOT}/src/makedefs
 #   -- Default: the data directory is located under the MIXR Examples root
 #      directory, which by default is located next to the MIXR directory
 # ---
-DATA_DIR = ${MIXR_ROOT}/../mixr-examples/shared/data
+#DATA_DIR = ${MIXR_ROOT}/../mixr-examples/shared/data
+DATA_DIR = $(MIXR_DATA_ROOT)
 
 # ---
 # Library path
@@ -28,6 +29,8 @@ LDFLAGS += -L../lib
 # ---
 ifdef MIXR_3RD_PARTY_ROOT
    LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib
+   LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib64
+   LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib64/osgPlugins-3.4.1
 endif
 
 # ---
@@ -41,7 +44,7 @@ CPPFLAGS += -I${MIXR_EXAMPLES_ROOT}/shared
 # ---
 EPPFLAGS = \
 	-I$(DATA_DIR) \
-        -I${MIXR_ROOT}/../mixr-examples/shared \
+   -I$(MIXR_ROOT)/../mixr-examples/shared \
 	-I$(MIXR_ROOT)/include \
 	-DDATA_PATH=\"$(DATA_DIR)\" \
 	-DFONT_PATH=\"$(DATA_DIR)/fonts/\" \

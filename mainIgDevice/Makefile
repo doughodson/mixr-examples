@@ -10,20 +10,14 @@ OBJS = \
 	factory.o
 
 
-LDFLAGS += -lmixr_interop_dis -lmixr_interop
-LDFLAGS += -lmixr_models -lJSBSim
-LDFLAGS += -lxzmq -l:libzmq.a
-LDFLAGS += -lxpanel
-LDFLAGS += -lmixr_recorder -lmixr_models
-LDFLAGS += -lmixr_simulation -lmixr_instruments
-LDFLAGS += -lmixr_iodevice
-LDFLAGS += -lmixr_terrain
+CPPFLAGS += -DOSG_LIBRARY_STATIC
+
+LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_terrain
 LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base
 
-LDFLAGS += -losgViewer -losgDB -losgGA -losg
+LDFLAGS += -losgdb_txp -losgText -losgSim
+LDFLAGS += -losgViewer -losgUtil -losgDB -losgGA -losg -lOpenThreads -ldl
 
-LDFLAGS += -lmixr_ig_viewpoint -lmixr_ig
-LDFLAGS += -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt

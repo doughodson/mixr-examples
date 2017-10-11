@@ -6,6 +6,8 @@
 #include "mixr/base/units/Distances.hpp"
 #include "mixr/base/units/distance_utils.hpp"
 
+#include "mixr/base/network/NetHandler.hpp"
+
 #include <iostream>
 
 #define SYNC2HOST

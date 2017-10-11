@@ -5,16 +5,28 @@
 # ---------------------------------------------------------------------
 
 # ---
-# MIXR Examples root
+# MIXR root
+# ---
+MIXR_ROOT=$PWD/../mixr
+export MIXR_ROOT
+
+# ---
+# MIXR examples root
 # ---
 MIXR_EXAMPLES_ROOT=$PWD
 export MIXR_EXAMPLES_ROOT
 
 # ---
-# MIXR root
+# MIXR examples library path
 # ---
-MIXR_ROOT=$PWD/../mixr
-export MIXR_ROOT
+MIXR_EXAMPLES_LIB_PATH=$PWD/lib
+export MIXR_EXAMPLES_LIB_PATH
+
+# ---
+# MIXR data
+# ---
+MIXR_DATA_ROOT=$PWD/../mixr-data
+export MIXR_DATA_ROOT
 
 # ---
 # MIXR 3rd party (e.g. cigi, JSBSim) root

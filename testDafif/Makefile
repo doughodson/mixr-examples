@@ -9,7 +9,7 @@ OBJS =  \
 	AirportTests.o \
 	NavaidTests.o \
 	WaypointTests.o \
-	testDafif.o
+	main.o
     
 LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_dafif -lmixr_terrain -lmixr_base 
 LDFLAGS += -lpthread -lrt
@@ -22,4 +22,5 @@ $(PGM): $(OBJS)
 clean:
 	-rm models/*.o
 	-rm -f *.o
+	-rm -f *.edl
 	-rm -f $(PGM)

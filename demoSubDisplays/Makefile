@@ -42,4 +42,5 @@ edl:
 clean:
 	-rm -f test_pages/*.o
 	-rm -f *.o
+	-rm -f *.edl
 	-rm -f $(PGM)

@@ -55,28 +55,28 @@ display:
    clearDepth: 1.0
 
     textures: {
-        t1:  ( BitmapTexture width: 128 height: 128 path: TEXTURES_PATH  file: "Mesh.bmp" )
-        t2: ( BitmapTexture width: 128 height: 128 path: TEXTURES_PATH  file: "Green_Veined_Marble.bmp" )
+        t1: ( BitmapTexture width: 128 height: 128 path: MIXR_DATA_TEXTURES_PATH  file: "Mesh.bmp" )
+        t2: ( BitmapTexture width: 128 height: 128 path: MIXR_DATA_TEXTURES_PATH  file: "Green_Veined_Marble.bmp" )
     }
     
     // materials
     materials: {
         m1: ( Material diffuseColor: { 0 0.5 1 } emissiveColor: { 0.25 0 0 } specularColor: { 1 1 1 } shininess: 128 )
-        m2: ( Material diffuseColor: { 1 0.5 0.2 } specularColor: { 0.4 0.3 0.4 } shininess: 50 ) 
-        m3: ( Material diffuseColor: { 0.2 0.6 0.1 } specularColor: { 0.2 0.4 0.4 } shininess: 50 ) 
-        m4: ( Material diffuseColor: { 1 1 1 } specularColor: { 1 1 1 } emissiveColor: { 0.1 0 0 } shininess: 50 ) 
-        m5: ( Material ambientColor: { 0 0 0 } diffuseColor: { 0.7 0.29 0.8 } specularColor: { 0.5 0.5 0.5 } shininess: 128 ) 
-        m6: ( Material diffuseColor: { 0.2 0.2 0.2 } specularColor: { 0.5 0.5 0.5 } shininess: 50 ) 
-        m7: ( Material diffuseColor: { 0.1 0.5 1 } specularColor: { 0.8 0.8 0.8 } shininess: 50 ) 
-        m8: ( Material diffuseColor: { 0.8 0.9 0.3 } specularColor: { 1 1 1 } shininess: 128 ) 
-        m9: ( Material diffuseColor: { 1 0.5 1 } emissiveColor: { 0 0.75 0 } specularColor: { 0.5 1 1 } shininess: 25 ) 
+        m2: ( Material diffuseColor: { 1 0.5 0.2 } specularColor: { 0.4 0.3 0.4 } shininess: 50 )
+        m3: ( Material diffuseColor: { 0.2 0.6 0.1 } specularColor: { 0.2 0.4 0.4 } shininess: 50 )
+        m4: ( Material diffuseColor: { 1 1 1 } specularColor: { 1 1 1 } emissiveColor: { 0.1 0 0 } shininess: 50 )
+        m5: ( Material ambientColor: { 0 0 0 } diffuseColor: { 0.7 0.29 0.8 } specularColor: { 0.5 0.5 0.5 } shininess: 128 )
+        m6: ( Material diffuseColor: { 0.2 0.2 0.2 } specularColor: { 0.5 0.5 0.5 } shininess: 50 )
+        m7: ( Material diffuseColor: { 0.1 0.5 1 } specularColor: { 0.8 0.8 0.8 } shininess: 50 )
+        m8: ( Material diffuseColor: { 0.8 0.9 0.3 } specularColor: { 1 1 1 } shininess: 128 )
+        m9: ( Material diffuseColor: { 1 0.5 1 } emissiveColor: { 0 0.75 0 } specularColor: { 0.5 1 1 } shininess: 25 )
     }
 
    fonts: {
 
       font1: ( FTGLPolygonFonts 
          fontPosition: [ -2.7 2.0 ]
-         path: FONT_PATH
+         path: MIXR_DATA_FONT_PATH
          file: "arialn.ttf"
          fontWidth: 0.2
          fontHeight: 0.2
@@ -86,7 +86,7 @@ display:
       )
 
       font2: ( FTGLPolygonFonts 
-         path: FONT_PATH
+         path: MIXR_DATA_FONT_PATH
          file: "arialn.ttf"
          fontWidth: 1
          fontHeight: 1
@@ -107,7 +107,7 @@ display:
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
 
@@ -119,7 +119,7 @@ display:
             fontHeight: 1
             characterSpacing: 0.5
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
 
@@ -129,17 +129,17 @@ display:
             fontPosition: [ -10.5 10.5 ]
             fontWidth: 1          // Font width scaling 
             fontHeight: 1         // Font height scaling 
-            characterSpacing: 1   // This font is 2:1 (height:widht) or (lineSpaceing:charSpacing)
+            characterSpacing: 1   // This font is 2:1 (height:width) or (lineSpaceing:charSpacing)
             lineSpacing: 1
-            path: FONT_PATH
-            file: "arialn.ttf"      
+            path: MIXR_DATA_FONT_PATH
+            file: "arialn.ttf"
         )
 
         // normal font
         pfdnormfont: 
         ( FTGLPolygonFonts 
             fontPosition: [ -3.1 4.15 ]
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
             // facesize is default to 1 inch, so you can maninpulate the norm with font width and height
             fontWidth: 0.189
@@ -152,7 +152,7 @@ display:
         // special font 
         pfdspecfont: 
         ( FTGLPolygonFonts 
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
             // facesize is default to 1 inch, so you can maninpulate the norm with font width and height
             fontWidth: 0.189

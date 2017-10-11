@@ -29,13 +29,11 @@
     // Test terrain data
     terrain:
     ( QuadMap
-        path: DATA_PATH
+        path: MIXR_DATA_PATH
         components: {
             
             ( QuadMap
                 components: {
-//                    ( DedFile file: "ded/W119_N37.ded" )
-//                    ( DedFile file: "ded/W118_N37.ded" )
                       ( SrtmHgtFile file: "srtm3/N38W115.hgt" ) 
                       ( SrtmHgtFile file: "srtm3/N38W114.hgt" )
               }
@@ -43,8 +41,6 @@
 
             ( QuadMap
                 components: {
-//                    ( DedFile file: "ded/W119_N36.ded" )
-//                    ( DedFile file: "ded/W118_N36.ded" )
                       ( SrtmHgtFile file: "srtm3/N39W115.hgt" ) 
                       ( SrtmHgtFile file: "srtm3/N39W114.hgt" )
                 }

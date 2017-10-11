@@ -58,7 +58,7 @@
             // space between each character, usually 1/2 the width
             characterSpacing: 0.5
             lineSpacing: 1
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         // small font for the instruments
@@ -73,7 +73,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         
@@ -89,7 +89,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         
@@ -105,7 +105,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
 

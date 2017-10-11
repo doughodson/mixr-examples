@@ -23,7 +23,6 @@ LDFLAGS += -lglut -lGLU -lGL -lX11
 LDFLAGS += -lpthread -lrt
 
 CPPFLAGS += -I/usr/local/include
-LDFLAGS  += -L../lib/linux -L$(MIXR_LIB_DIR)
 
 EPPFLAGS += -I.
 
@@ -33,8 +32,9 @@ $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 
 edl:
-	cpp configs/test1.epp >test1.edl   $(EPPFLAGS)
+	cpp configs/test1.epp >test1.edl $(EPPFLAGS)
 
 clean:
 	-rm -f *.o
+	-rm -f *.edl
 	-rm -f $(PGM)

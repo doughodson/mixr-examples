@@ -12,7 +12,7 @@
             characterSpacing: 1     // This font is 2:1 (height:widht) or (lineSpaceing:charSpacing)
             lineSpacing: 2
             faceSize: 1
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
     }
@@ -31,12 +31,11 @@
     vpWidth:    1000
     vpHeight:   1000
 
-    vpfdirectory: 
+    vpfdirectory:
     ( VMap0MainDirectory
         // note - in order to make this work you have to download the Vmap level 0 directory!
         // put the directory path in here, for example - 
-        // path: "SOMEWHERE/data/v0noa/vmaplv0/"
-        path: "c:/mixr-platform/mixr-data/vmap0/v0noa_5/vmaplv0/"
+        path: MIXR_DATA_VMAP0_PATH
     )
 
     page: test

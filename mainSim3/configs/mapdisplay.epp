@@ -24,7 +24,7 @@ display: ( MapTestDisplay
         normal:
         ( FTGLHaloFont
             fontPosition: [ -10 10 ]
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
             // facesize is default to 1 inch, so you can maninpulate the norm with font width and height
             linewidth: 3

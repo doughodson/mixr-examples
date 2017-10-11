@@ -18,3 +18,5 @@ clean:
 	-rm -f $(PGM)
 	-rm -f qtMakefile
 	-rm -rf tmp
+	-rm -f *.edl
+

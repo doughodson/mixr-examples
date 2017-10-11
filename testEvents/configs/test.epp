@@ -21,15 +21,15 @@
     normalFont: default
     
     fonts: {
-        default:  
-        ( FTGLPolygonFonts 
+        default:
+        ( FTGLPolygonFonts
             fontPosition: [ -10 10 ]
-            fontWidth: 1.0       
-            fontHeight: 1.0         
-            characterSpacing: 0.5   
+            fontWidth: 1.0
+            fontHeight: 1.0
+            characterSpacing: 0.5
             lineSpacing: 1
-            path: FONT_PATH
-            file: "arialn.ttf"        
+            path: MIXR_DATA_FONT_PATH
+            file: "arialn.ttf"
         )   
     }
     

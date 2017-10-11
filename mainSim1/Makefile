@@ -31,4 +31,5 @@ $(PGM): $(OBJS)
 
 clean:
 	-rm -f *.o
+	-rm -f *.edl
 	-rm -f $(PGM)

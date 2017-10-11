@@ -1,5 +1,5 @@
 
-# path to framework
+# platform path
 MIXR_ROOT = $$(MIXR_ROOT)
 isEmpty(MIXR_ROOT) MIXR_ROOT = $$PWD/../../mixr
 message(MIXR_ROOT = $${MIXR_ROOT})
@@ -51,9 +51,7 @@ win32:CONFIG(release, debug|release): LIBS +=        \
     -lmixr_simulation                                \
     -lmixr_models                                    \
     -lmixr_terrain                                   \
-    -lmixr_otw                                       \
     -lmixr_base                                      \
-    -lccl_lib                                        \
     -ljsbsim                                         \
     # system
     -lwinmm                                          \
@@ -69,9 +67,7 @@ else:win32:CONFIG(debug, debug|release): LIBS +=        \
     -lmixr_simulation_d                                 \
     -lmixr_models_d                                     \
     -lmixr_terrain_d                                    \
-    -lmixr_otw_d                                        \
     -lmixr_base_d                                       \
-    -lccl_lib_d                                         \
     -ljsbsim_d                                          \
     # system
     -lwinmm                                             \
@@ -84,12 +80,10 @@ else:unix:!macx:!symbian: LIBS +=       \
     -L$${MIXR_3RD_PARTY_ROOT}/lib/      \
     -lmixr_interop_dis                  \
     -lmixr_interop                      \
-    -lmixr_otw                          \
     -lmixr_simulation                   \
     -lmixr_models                       \
     -lmixr_terrain                      \
     -lmixr_base                         \
-    -lcigicl                            \
     -lJSBSim                            \
     # system
     -lX11 -lpthread -lrt

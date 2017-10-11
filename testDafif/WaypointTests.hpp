@@ -12,7 +12,7 @@ public:
    WaypointTests(
       const char* country,
       const char* file = "FILE3",
-      const char* path = "../shared/data/DAFIF/FULLALL/"
+      const char* path = "../../mixr-data/DAFIF/FULLALL/"
    );
    ~WaypointTests();
 

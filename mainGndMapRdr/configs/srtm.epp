@@ -5,7 +5,7 @@
 terrain:
 ( QuadMap
 
-    path: DATA_PATH
+    path: MIXR_DATA_PATH
 
     components: {
         ( QuadMap

@@ -12,7 +12,7 @@ public:
    NavaidTests(
       const char* country,
       const char* file = "FILE2",
-      const char* path = "../shared/data/DAFIF/FULLALL/"
+      const char* path = "../../mixr-data/DAFIF/FULLALL/"
    );
    ~NavaidTests();
 

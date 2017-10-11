@@ -36,8 +36,8 @@
 
       font1: ( FTGLPolygonFonts 
          fontPosition: [ -2.7 2.0 ]
-         path: FONT_PATH
-         file: "arialn.ttf"        
+         path: MIXR_DATA_FONT_PATH
+         file: "arialn.ttf"
          fontWidth: 0.2
          fontHeight: 0.2
          faceSize: 1
@@ -46,7 +46,7 @@
       )
 
       font2: ( FTGLPolygonFonts 
-         path: FONT_PATH
+         path: MIXR_DATA_FONT_PATH
          file: "arialn.ttf"
          fontWidth: 1
          fontHeight: 1

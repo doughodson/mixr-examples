@@ -12,7 +12,6 @@
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
-#include "mixr/otw/factory.hpp"
 
 #include <cstdlib>
 #include <string>
@@ -25,7 +24,6 @@ mixr::base::Object* factory(const std::string& name)
       obj = new Station;
    }
 
-   if (obj == nullptr)  { obj = mixr::otw::factory(name);         }
    if (obj == nullptr)  { obj = mixr::dis::factory(name);         }
    if (obj == nullptr)  { obj = mixr::simulation::factory(name);  }
    if (obj == nullptr)  { obj = mixr::models::factory(name);  }

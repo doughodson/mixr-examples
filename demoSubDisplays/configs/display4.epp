@@ -54,7 +54,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 1
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
 
@@ -70,7 +70,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         
@@ -86,7 +86,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         
@@ -101,7 +101,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
              

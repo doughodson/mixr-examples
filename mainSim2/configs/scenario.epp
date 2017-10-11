@@ -39,7 +39,7 @@ simulation: ( WorldModel
             // ---
             // Aero/engine dynamics model
             // ---
-            dynamicsModel: ( JSBSimModel
+            dynamicsModel: ( MIXR_DATA_JSBSimModel
                rootDir: JSBSIM_PATH
                model: "f16"
             )
@@ -76,7 +76,7 @@ simulation: ( WorldModel
             // Aero/engine dynamics model
             // ---
             dynamicsModel: ( JSBSimModel
-               rootDir: JSBSIM_PATH
+               rootDir: MIXR_DATA_JSBSIM_PATH
                model: "f16"
             )
            
@@ -112,7 +112,7 @@ simulation: ( WorldModel
             // Aero/engine dynamics model
             // ---
             dynamicsModel: ( JSBSimModel
-               rootDir: JSBSIM_PATH
+               rootDir: MIXR_DATA_JSBSIM_PATH
                model: "f16"
             )
            

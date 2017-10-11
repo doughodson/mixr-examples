@@ -3,10 +3,10 @@
 // -----------------------------------------------------------------------------
 terrain:
 ( QuadMap
-    path: DATA_PATH
+    path: MIXR_DATA_PATH
     components: {
         ( QuadMap
-            components: {            
+            components: {
                 ( QuadMap
                     components: {
                         ( DtedFile file: "dted/W119/N37.DT1" ) 

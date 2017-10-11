@@ -11,7 +11,7 @@
     clearDepth: 1.0
     clearColor: (rgb 0 0 0)
     fullScreen: 0
-        
+
     colorTable: {
         black:      ( rgba 0 0 0 )
         red:        ( rgb 1 0 0 )
@@ -47,7 +47,7 @@
             characterSpacing: 0.5
             // space between each line
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         
@@ -59,7 +59,7 @@
             fontHeight: 1
             characterSpacing: 0.5
             lineSpacing: 0.75
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
         
@@ -71,7 +71,7 @@
             fontHeight: 1         // Font height scaling 
             characterSpacing: 1   // This font is 2:1 (height:widht) or (lineSpaceing:charSpacing)
             lineSpacing: 1
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
      
@@ -79,7 +79,7 @@
         pfdnormfont: 
         ( FTGLPolygonFonts 
             fontPosition: [ -3.1 4.15 ]
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
             // facesize is default to 1 inch, so you can maninpulate the norm with font width and height
             fontWidth: 0.189
@@ -92,7 +92,7 @@
         // special font 
         pfdspecfont: 
         ( FTGLPolygonFonts 
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
             // facesize is default to 1 inch, so you can maninpulate the norm with font width and height
             fontWidth: 0.189

@@ -43,7 +43,7 @@ glutdisplay: ( GlutDisplay
             // space between each line
             //lineSpacing: 0.21
             lineSpacing: 0.8
-            path: FONT_PATH
+            path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
     } // end of font list

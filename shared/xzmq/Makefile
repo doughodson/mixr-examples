@@ -1,7 +1,7 @@
 #
 include ../../makedefs
 
-LIB = $(MIXR_EXAMPLES_LIB_DIR)/libxzmq.a
+LIB = $(MIXR_EXAMPLES_LIB_PATH)/libxzmq.a
 
 OBJS += \
 	factory.o \

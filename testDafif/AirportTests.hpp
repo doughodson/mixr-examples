@@ -16,7 +16,7 @@ public:
    AirportTests(
       const char* country,
       const char* file = "FILE0",
-      const char* path = "../shared/data/DAFIF/FULLALL/"
+      const char* path = "../../mixr-data/DAFIF/FULLALL/"
    );
 
    ~AirportTests();

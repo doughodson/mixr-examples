@@ -112,8 +112,10 @@ testNavUtils/testNavUtils
 testNetHandler/testNetHandler
 testRadar/testRadar
 testRecordData/testRecordData
+testRecordData/*_v*
 testRecorderRead/testRecorderRead
 testRecorderWrite/testRecorderWrite
+testRecorderWrite/*.bin
 testSlots/testSlots
 testStateMach/testStateMach
 testTables/testTables

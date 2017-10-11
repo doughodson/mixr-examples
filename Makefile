@@ -39,6 +39,9 @@ APPLICATIONS += mainLaero
 # simple cockpit
 APPLICATIONS += mainCockpit
 
+# simple image generator
+APPLICATIONS += mainIgDevice
+
 # test table, state machines, events and timer
 APPLICATIONS += testDafif
 APPLICATIONS += testEvents

@@ -39,4 +39,6 @@ EPPFLAGS = \
 	-DMIXR_DATA_TEXTURES_PATH=\"$(MIXR_DATA_ROOT)/textures/\" \
 	-DMIXR_DATA_JSBSIM_PATH=\"$(MIXR_DATA_ROOT)/JSBSim/\" \
 	-DMIXR_DATA_VMAP0_PATH=\"$(MIXR_DATA_ROOT)/vmap0/v0noa_5/vmaplv0/\" \
-	-DMIXR_DATA_VISUALDB_PATH=\"$(MIXR_DATA_ROOT)/visualdb/portland/\"
+	-DMIXR_DATA_VISUALDB_PATH=\"$(MIXR_DATA_ROOT)/visualdb/portland/\" \
+	-DMIXR_DATA_RECORDER_FILE=\"$(MIXR_DATA_ROOT)/recorder/zFileWriter.ebd\"
+

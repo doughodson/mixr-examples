@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
    // create time critical thread
    station->createTimeCriticalProcess();
    // short pause to allow os to startup thread
-   mixr::base::msleep(2000);
+   mixr::base::msleep(1000);
 
    // calc delta time for background thread
    const double dt {1.0/static_cast<double>(bgRate)};
@@ -119,7 +119,7 @@ int main(int argc, char* argv[])
       if (sleepTime > 0)
          mixr::base::msleep(sleepTime);
 
-      std::cout << ".";
+      std::cout << "." << std::flush;
       k += 1;
       if ( k == 40 ) {
          std::cout << "\n";

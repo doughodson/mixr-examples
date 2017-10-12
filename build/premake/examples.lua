@@ -69,7 +69,6 @@ project "mainIgDevice"
    targetdir "../../mainIgDevice"
    debugdir "../../mainIgDevice"
    defines { "OSG_LIBRARY_STATIC" }
-   linkoptions { "/ignore:4099" }
    files {
       "../../mainIgDevice/**.h*",
       "../../mainIgDevice/**.cpp",

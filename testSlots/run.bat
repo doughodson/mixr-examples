@@ -1,3 +1,0 @@
-
-testSlots.exe
-pause

@@ -26,8 +26,8 @@ networks: {
     }
 
     // DIS entity type files
-    #include "../data/DisIncomingEntityTypes.epp"
-    #include "../data/DisOutgoingEntityTypes.epp"
+    #include "DisIncomingEntityTypes.epp"
+    #include "DisOutgoingEntityTypes.epp"
 
   ) // DisIO
 }

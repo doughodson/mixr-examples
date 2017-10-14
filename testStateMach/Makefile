@@ -22,6 +22,7 @@ $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 
 edl:
+	@echo "No input files to process"
 
 clean:
 	-rm -f *.o

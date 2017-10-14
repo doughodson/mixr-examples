@@ -19,6 +19,9 @@ all: $(PGM)
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 
+edl:
+	@echo "No input files to process"
+
 clean:
 	-rm models/*.o
 	-rm -f *.o

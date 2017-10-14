@@ -12,8 +12,6 @@
 
 #include "mixr/base/osg/Vec4d"
 
-#include "mixr/base/functors/Tables.hpp"
-
 #include "mixr/base/units/Angles.hpp"
 #include "mixr/base/units/Times.hpp"
 

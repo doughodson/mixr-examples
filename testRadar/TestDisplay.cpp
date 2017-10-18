@@ -5,8 +5,8 @@
 #include "DspRwr.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/player/Missile.hpp"
-#include "mixr/models/player/AbstractWeapon.hpp"
+#include "mixr/models/player/weapon/Missile.hpp"
+#include "mixr/models/player/weapon/AbstractWeapon.hpp"
 
 #include "mixr/models/system/Jammer.hpp"
 #include "mixr/models/system/Radar.hpp"

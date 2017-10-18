@@ -2,7 +2,7 @@
 #include "TestDisplay.hpp"
 #include "TestStation.hpp"
 
-#include "mixr/models/player/Aam.hpp"
+#include "mixr/models/player/weapon/Aam.hpp"
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/system/StoresMgr.hpp"
 

@@ -7,7 +7,7 @@
 #include "xpanel/Pfd.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/player/Missile.hpp"
+#include "mixr/models/player/weapon/Missile.hpp"
 #include "mixr/models/system/Jammer.hpp"
 #include "mixr/models/system/Radar.hpp"
 #include "mixr/models/system/Rwr.hpp"

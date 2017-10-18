@@ -3,7 +3,7 @@
 
 #include "mixr/models/Track.hpp"
 #include "mixr/models/system/AngleOnlyTrackManager.hpp"
-#include "mixr/models/player/AbstractWeapon.hpp"
+#include "mixr/models/player/weapon/AbstractWeapon.hpp"
 #include "mixr/models/system/IrSeeker.hpp"
 #include "mixr/models/system/IrSensor.hpp"
 

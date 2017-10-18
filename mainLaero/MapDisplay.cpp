@@ -3,7 +3,7 @@
 #include "TestStation.hpp"
 #include "MapPage.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/Aircraft.hpp"
 #include "mixr/models/player/Player.hpp"
 #include "mixr/models/system/Autopilot.hpp"
 #include "mixr/models/dynamics/LaeroModel.hpp"

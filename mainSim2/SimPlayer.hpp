@@ -2,7 +2,7 @@
 #ifndef __SimPlayer_H__
 #define __SimPlayer_H__
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/Aircraft.hpp"
 
 //------------------------------------------------------------------------------
 // Class: SimPlayer

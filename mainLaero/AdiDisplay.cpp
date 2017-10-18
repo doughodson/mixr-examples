@@ -4,6 +4,7 @@
 #include "TestStation.hpp"
 
 #include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/Aircraft.hpp"
 
 #include "mixr/base/osg/Vec3d"
 

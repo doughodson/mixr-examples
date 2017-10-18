@@ -5,7 +5,7 @@
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/Timers.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 
 #include "mixr/simulation/Simulation.hpp"
 

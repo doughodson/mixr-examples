@@ -3,8 +3,8 @@
 
 #include "TestStation.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
-#include "mixr/models/player/Aircraft.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/Aircraft.hpp"
 
 #include "mixr/base/osg/Vec3d"
 

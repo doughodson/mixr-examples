@@ -4,7 +4,7 @@
 #include "configs/f16HotasIo.hpp"
 
 #include "mixr/models/system/Autopilot.hpp"
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/navigation/Navigation.hpp"
 #include "mixr/models/navigation/Route.hpp"
 

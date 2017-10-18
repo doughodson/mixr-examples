@@ -2,7 +2,7 @@
 #include "TestStation.hpp"
 
 #include "mixr/models/system/Antenna.hpp"
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 

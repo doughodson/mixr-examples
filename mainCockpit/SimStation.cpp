@@ -3,7 +3,7 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 #include "mixr/base/Identifier.hpp"

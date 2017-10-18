@@ -3,7 +3,7 @@
 #include "TestStation.hpp"
 
 #include "mixr/models/player/Aam.hpp"
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/system/StoresMgr.hpp"
 
 #include "mixr/simulation/Simulation.hpp"

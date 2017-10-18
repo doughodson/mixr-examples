@@ -4,7 +4,7 @@
 #include "mixr/base/List.hpp"
 #include "mixr/base/PairStream.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/Missile.hpp"
 #include "mixr/models/system/Radar.hpp"
 #include "mixr/models/system/TrackManager.hpp"

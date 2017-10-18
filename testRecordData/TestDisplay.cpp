@@ -9,7 +9,7 @@
 #include "xrecorder/DataRecorder.hpp"
 #include "xrecorder/dataRecorderTokens.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/Missile.hpp"
 
 #include "mixr/models/system/Jammer.hpp"

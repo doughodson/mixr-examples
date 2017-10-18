@@ -4,7 +4,7 @@
 #include "DspRadar.hpp"
 #include "DspRwr.hpp"
 
-#include "mixr/models/player/AirVehicle.hpp"
+#include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/Missile.hpp"
 #include "mixr/models/player/AbstractWeapon.hpp"
 

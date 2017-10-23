@@ -4,7 +4,7 @@
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/system/Radar.hpp"
 #include "mixr/models/Track.hpp"
-#include "mixr/models/system/TrackManager.hpp"
+#include "mixr/models/system/trackmanager/TrackManager.hpp"
 
 #include "mixr/base/colors/Hsv.hpp"
 

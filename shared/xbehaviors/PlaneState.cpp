@@ -7,7 +7,7 @@
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/weapon/Missile.hpp"
 #include "mixr/models/system/Radar.hpp"
-#include "mixr/models/system/trackmanager/TrackManager.hpp"
+#include "mixr/models/system/trackmanager/RwrTrkMgr.hpp"
 #include "mixr/models/Track.hpp"
 #include "mixr/models/system/OnboardComputer.hpp"
 #include "mixr/models/system/StoresMgr.hpp"

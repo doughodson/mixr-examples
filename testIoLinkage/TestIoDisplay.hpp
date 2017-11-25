@@ -1,17 +1,19 @@
 
-#ifndef __Display_H__
-#define __Display_H__
+#ifndef __TestIoDisplay_H__
+#define __TestIoDisplay_H__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
+
 #include <array>
+#include <string>
 
 namespace mixr {
-namespace base { class IoHandler; class Number; class String; }
+namespace base { class AbstractIoHandler; class Number; class String; }
 }
 
 //------------------------------------------------------------------------------
-// Class Display
-// Description: Display class for the I/O devices test program (see display.epp)
+// Class TestIoDisplay
+// Description: Display class for the I/O devices test program (see testdisplay.epp)
 //
 // Factory name: TestIoDisplay
 // Slots --
@@ -33,24 +35,23 @@ namespace base { class IoHandler; class Number; class String; }
 //       item:  5   di: 11    // Item #4 is DI #11
 //   )
 //------------------------------------------------------------------------------
-class Display : public mixr::glut::GlutDisplay
+class TestIoDisplay : public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(TestIoDisplay, mixr::glut::GlutDisplay)
 
 public:
-   static const unsigned int ROWS = 20;      /* see display.epp */
-   static const unsigned int COLUMNS = 3;    /* see display.epp */
-   static const unsigned int TBL_SIZE = (ROWS*COLUMNS);
-   static const unsigned int LABEL_SIZE = 10;
+   static const int ROWS{20};            // see display.epp/
+   static const int COLUMNS{3};          // see display.epp
+   static const int TBL_SIZE{ROWS*COLUMNS};
 
 public:
-   Display();
+   TestIoDisplay();
 
-   virtual void reset() override;
-   virtual void updateData(const double dt = 0.0) override;
-   virtual void updateTC(const double dt = 0.0) override;
+   void reset() override;
+   void updateData(const double dt = 0.0) override;
+   void updateTC(const double dt = 0.0) override;
 
-   virtual bool onEscKey() override;
+   bool onEscKey() override;
 
 private:
    enum class Type { NONE, AI, DI };
@@ -59,18 +60,19 @@ private:
    void initData();
    void updateDisplay();
 
-   mixr::base::safe_ptr<mixr::base::IoHandler> ioHandler;   // The I/O data handler
+   mixr::base::safe_ptr<mixr::base::AbstractIoHandler> ioHandler;   // The I/O data handler
 
    // Item/Channel mapping
-   unsigned short item {};
-   std::array<Type, TBL_SIZE> types;
-   std::array<unsigned short, TBL_SIZE> channels {};
+   int item {};
+   std::array<Type, TBL_SIZE> types{{Type::NONE}};
+   std::array<int, TBL_SIZE> channels {};
    std::array<bool, TBL_SIZE> labelFlags {};
-   char labels[TBL_SIZE][LABEL_SIZE+1] {};
-   char labelBuffs[TBL_SIZE][LABEL_SIZE+1+1] {}; // Labels with a ':' and a null char
+
+   std::array<std::string, TBL_SIZE> labels;
+   std::array<std::string, TBL_SIZE> labelBuffs;
 
    // Table data
-   std::array<char*, TBL_SIZE> table_Label {};
+   std::array<const char*, TBL_SIZE> table_Label {};
    std::array<int, TBL_SIZE> table_typeRo {};
    std::array<double, TBL_SIZE> table_ai {};
    std::array<SendData, TBL_SIZE> table_LabelSD;
@@ -79,7 +81,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotIoHandler(mixr::base::IoHandler* const);
+   bool setSlotIoHandler(mixr::base::AbstractIoHandler* const);
    bool setSlotItem(const mixr::base::Number* const);
    bool setSlotAiChannel(const mixr::base::Number* const);
    bool setSlotDiChannel(const mixr::base::Number* const);

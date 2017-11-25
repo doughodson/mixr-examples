@@ -97,7 +97,6 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    station->updateData(dt);
    station->updateTC(dt);
-   station->event(mixr::base::Component::RESET_EVENT);
 
    glutTimerFunc(msecs, updateDataCB, msecs);
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// I/O Device mapping for the Saitek EVO device 
+// I/O Device mapping for the Saitek ST290 device 
 //   -- UsbJoystick (e.g., the saitek) channels are zero(0) based.
 // =============================================================================
 //

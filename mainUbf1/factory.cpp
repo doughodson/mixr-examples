@@ -4,7 +4,6 @@
 #include "mixr/base/Object.hpp"
 
 #include "TestDisplay.hpp"
-#include "TestIoHandler.hpp"
 #include "SimStation.hpp"
 
 // factories
@@ -16,7 +15,6 @@
 #include "mixr/ui/glut/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/instruments/factory.hpp"
-#include "mixr/iodevice/factory.hpp"
 #include "mixr/ig/cigi/factory.hpp"
 #include "mixr/ig/viewpoint/factory.hpp"
 #include "mixr/models/factory.hpp"
@@ -35,9 +33,6 @@ mixr::base::Object* factory(const std::string& name)
     else if ( name == TestDisplay::getFactoryName() ) {
         obj = new TestDisplay();
     }
-    else if ( name == TestIoHandler::getFactoryName() ) {
-        obj = new TestIoHandler();
-    }
 
     // Example library packages
     if (obj == nullptr) obj = mixr::xbehaviors::factory(name);
@@ -46,7 +41,6 @@ mixr::base::Object* factory(const std::string& name)
     // MIXR packages
     if (obj == nullptr) obj = mixr::simulation::factory(name);
     if (obj == nullptr) obj = mixr::instruments::factory(name);
-    if (obj == nullptr) obj = mixr::iodevice::factory(name);
     if (obj == nullptr) obj = mixr::instruments::factory(name);
     if (obj == nullptr) obj = mixr::models::factory(name);
     if (obj == nullptr) obj = mixr::terrain::factory(name);

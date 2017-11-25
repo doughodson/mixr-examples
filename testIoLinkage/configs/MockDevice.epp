@@ -1,0 +1,27 @@
+
+
+( MockDevice
+   generators: {
+
+      // ---
+      // signal generators 
+      // ---
+      ( AnalogInputFixed ai: 11     value: -1.0 )
+      ( AnalogInputFixed ai: 12     value: -0.5 )
+      ( AnalogInputFixed ai: 13     value:  0.0 )
+      ( AnalogInputFixed ai: 14     value:  0.5 )
+      ( AnalogInputFixed ai: 15     value:  1.0 )
+      ( AnalogSignalGen  ai: 16     signal: "SINE"     frequency: (Hertz 0.1) )
+      ( AnalogSignalGen  ai: 17     signal: "COSINE"   frequency: (Hertz 0.1) )
+      ( AnalogSignalGen  ai: 18     signal: "SQUARE"   frequency: (Hertz 1.0) )
+      ( AnalogSignalGen  ai: 19     signal: "SAW"      frequency: (Hertz 0.2) )
+
+      ( DiscreteInputFixed di: 31   signal: "ON" )
+      ( DiscreteInputFixed di: 32   signal: "OFF" )
+      ( DiscreteInputFixed di: 33   signal: "ON" )
+      ( DiscreteInputFixed di: 34   signal: "OFF" )
+      ( DiscreteInputFixed di: 35   signal: "ON" )
+
+   }
+)
+

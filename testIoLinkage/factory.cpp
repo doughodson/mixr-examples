@@ -3,11 +3,12 @@
 
 #include "mixr/base/Object.hpp"
 
-#include "Display.hpp"
+#include "TestIoDisplay.hpp"
 #include "Table.hpp"
+#include "TestIoHandler.hpp"
 
 // factories
-#include "mixr/iodevice/factory.hpp"
+#include "mixr/iolinkage/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
@@ -18,14 +19,17 @@ mixr::base::Object* factory(const std::string& name)
 {
    mixr::base::Object* obj {};
 
-   if ( name == Display::getFactoryName() ) {
-      obj = new Display();
+   if ( name == TestIoDisplay::getFactoryName() ) {
+      obj = new TestIoDisplay();
    }
    else if ( name == Table::getFactoryName() ) {
       obj = new Table();
    }
+   else if ( name == TestIoHandler::getFactoryName() ) {
+      obj = new TestIoHandler();
+   }
 
-   if (obj == nullptr) obj = mixr::iodevice::factory(name);
+   if (obj == nullptr) obj = mixr::iolinkage::factory(name);
    if (obj == nullptr) obj = mixr::glut::factory(name);
    if (obj == nullptr) obj = mixr::graphics::factory(name);
    if (obj == nullptr) obj = mixr::base::factory(name);

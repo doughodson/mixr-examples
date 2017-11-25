@@ -2,7 +2,7 @@
 #ifndef __TestIoHandler_H___
 #define __TestIoHandler_H___
 
-#include "mixr/base/io/IoHandler.hpp"
+#include "mixr/iolinkage/IoHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestIoHandler
@@ -10,17 +10,16 @@
 // Description:  Handles the flow of I/O data to and from the
 //               stick and throttle hardware.
 //------------------------------------------------------------------------------
-class TestIoHandler : public mixr::base::IoHandler
+class TestIoHandler : public mixr::iolinkage::IoHandler
 {
-   DECLARE_SUBCLASS(TestIoHandler, mixr::base::IoHandler)
+   DECLARE_SUBCLASS(TestIoHandler, mixr::iolinkage::IoHandler)
 
 public:
    TestIoHandler();
 
-   virtual void inputDevices(const double dt) override;
-
-protected:
-   virtual void clear() override;
+private:
+   void inputDevicesImpl(const double dt) override;
+   void outputDevicesImpl(const double dt) override    { writeDeviceOutputs(dt); }
 
 private:
    bool rstSw1 {};

@@ -104,7 +104,7 @@ testDafif/testDafif
 testEvents/testEvents
 testGraphics/testGraphics
 testInfrared/testInfrared
-testIoHandler/testIoHandler
+testIoLinkage/testIoLinkage
 testLinearSys/testLinearSys
 testMatrix/testMatrix
 testMetaObject/testMetaObject

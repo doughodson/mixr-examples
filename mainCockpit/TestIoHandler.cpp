@@ -10,8 +10,8 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
+#include "mixr/base/concepts/io/AbstractIoData.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/io/IoData.hpp"
 #include "mixr/base/util/math_utils.hpp"
 
 IMPLEMENT_SUBCLASS(TestIoHandler, "TestIoHandler")
@@ -43,14 +43,14 @@ void TestIoHandler::copyData(const TestIoHandler& org, const bool)
 }
 
 // handle input devices
-void TestIoHandler::inputDevices(const double dt)
+void TestIoHandler::inputDevicesImpl(const double dt)
 {
-   BaseClass::inputDevices(dt);
+   readDeviceInputs(dt);
 
    // ---
    // get the Input data buffer
    // ---
-   const mixr::base::IoData* const inData = getInputData();
+   const mixr::base::AbstractIoData* const inData = getInputData();
 
    // ---
    // get the Station, Simulation and our ownship player
@@ -272,10 +272,3 @@ void TestIoHandler::inputDevices(const double dt)
 
 }
 
-// -----------------------------------------------------------------------------
-// Clear our data
-// (called from base::TestIoHandler::reset())
-// -----------------------------------------------------------------------------
-void TestIoHandler::clear()
-{
-}

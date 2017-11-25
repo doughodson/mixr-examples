@@ -1,11 +1,11 @@
 #
 include ../makedefs
 
-PGM = testIoHandler
+PGM = testIoLinkage
 
-OBJS = Display.o Table.o factory.o main.o
+OBJS = Table.o TableRow.o TestIoDisplay.o TestIoHandler.o factory.o main.o
 
-LDFLAGS += -lmixr_iodevice -lmixr_ui_glut -lmixr_graphics -lmixr_base
+LDFLAGS += -lmixr_iolinkage -lmixr_ui_glut -lmixr_graphics -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt
@@ -17,7 +17,6 @@ $(PGM): $(OBJS)
 
 edl:
 	cpp configs/test1.epp >test1.edl $(EPPFLAGS)
-	cpp configs/test2.epp >test2.edl $(EPPFLAGS)
 
 clean:
 	-rm -f *.o

@@ -27,7 +27,7 @@ class Endpoint : public mixr::base::Component
    DECLARE_SUBCLASS(Endpoint, mixr::base::Component)
 
 public:
-    static const unsigned int MAX_SIZE = 1024;  // Max buffer size
+    static const unsigned int MAX_SIZE{1024};  // Max buffer size
 
 public:
     Endpoint();
@@ -45,7 +45,7 @@ public:
     // 'maxsize' just be less than MAX_SIZE.
     virtual unsigned int recvData(char* const msg, const unsigned int maxsize);
 
-    virtual void reset() override;
+    void reset() override;
 
 protected:
     void closeConnections();

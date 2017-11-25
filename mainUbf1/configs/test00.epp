@@ -8,8 +8,8 @@
 
    tcPriority: 1
    
-   //#include "common/networkSetup.epp"
-   //#include "common/otwSetup.epp"
+   //#include "io/networkSetup.epp"
+   //#include "io/otwSetup.epp"
 
    // ---
    // Simulation scenario

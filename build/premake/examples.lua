@@ -23,7 +23,7 @@ project "mainCockpit"
    filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
-      links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iodevice"}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iolinkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -32,7 +32,7 @@ project "mainCockpit"
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d",  LibCigi_d}
-      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iodevice_d"}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iolinkage_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
@@ -108,14 +108,14 @@ project "mainLaero"
    links { "libxzmq" }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq" }
-      links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
+      links {"mixr_interop_dis", "mixr_interop"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d" }
-      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
+      links {"mixr_interop_dis_d", "mixr_interop_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
@@ -245,7 +245,7 @@ project "mainSim2"
    filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
       links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
-      links {"mixr_interop_dis", "mixr_interop", "mixr_iodevice"}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_iolinkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -253,7 +253,7 @@ project "mainSim2"
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
       links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
-      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d"}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iolinkage_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
@@ -333,7 +333,7 @@ project "mainUbf1"
    filter "configurations:Release"
       links { "mixr_models", "JSBSim" }
       links { "mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi }
-      links { "mixr_interop_dis", "mixr_interop", "mixr_iodevice" }
+      links { "mixr_interop_dis", "mixr_interop" }
       links { "mixr_simulation", "mixr_terrain" }
       links { "mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links { LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL }
@@ -341,7 +341,7 @@ project "mainUbf1"
    filter "configurations:Debug"
       links { "mixr_models_d", "JSBSim_d" }
       links { "mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d }
-      links { "mixr_interop_dis_d", "mixr_interop_d", "mixr_iodevice_d" }
+      links { "mixr_interop_dis_d", "mixr_interop_d" }
       links { "mixr_simulation_d", "mixr_terrain_d" }
       links { "mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links { LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL }

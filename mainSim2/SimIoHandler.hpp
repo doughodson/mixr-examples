@@ -2,7 +2,7 @@
 #ifndef __SimIoHandler_H__
 #define __SimIoHandler_H__
 
-#include "mixr/base/io/IoHandler.hpp"
+#include "mixr/iolinkage/IoHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class:  SimIoHandler
@@ -10,17 +10,16 @@
 // Description:  Handles the flow of I/O data to and from the
 //               stick and throttle hardware.
 //------------------------------------------------------------------------------
-class SimIoHandler : public mixr::base::IoHandler
+class SimIoHandler : public mixr::iolinkage::IoHandler
 {
-   DECLARE_SUBCLASS(SimIoHandler, mixr::base::IoHandler)
+   DECLARE_SUBCLASS(SimIoHandler, mixr::iolinkage::IoHandler)
 
 public:
    SimIoHandler();
 
-   virtual void inputDevices(const double dt) override;
-
-protected:
-   virtual void clear() override;
+private:
+   void inputDevicesImpl(const double dt) override;
+   void outputDevicesImpl(const double dt) override   { writeDeviceOutputs(dt); }
 
 private:
    bool rstSw1 {};

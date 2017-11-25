@@ -1,7 +1,7 @@
 //----------------------------------------------------------------
 // I/O device test program
 //----------------------------------------------------------------
-#include "Display.hpp"
+#include "TestIoDisplay.hpp"
 #include "factory.hpp"
 
 #include "mixr/base/Pair.hpp"
@@ -14,7 +14,7 @@
 #include <cstdlib>
 
 const int frameRate {20};
-Display* display {};
+TestIoDisplay* display {};
 
 // timerFunc() -- Time critical stuff)
 void timerFunc(int)
@@ -29,7 +29,7 @@ void timerFunc(int)
 }
 
 // display builder
-Display* builder(const std::string& filename)
+TestIoDisplay* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors {};
@@ -54,7 +54,7 @@ Display* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto display = dynamic_cast<Display*>(obj);
+   const auto display = dynamic_cast<TestIoDisplay*>(obj);
    if (display == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

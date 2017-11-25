@@ -7,7 +7,7 @@ OBJS =	factory.o TestComputer.o TestDisplay.o TestStation.o main.o
 
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
 LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_instruments -lJSBSim
-LDFLAGS += -lmixr_iodevice
+LDFLAGS += -lmixr_iolinkage
 LDFLAGS += -lmixr_ig_cigi -lmixr_ig_viewpoint -lmixr_ig
 LDFLAGS += -lmixr_terrain
 LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base -lftgl -lfreetype -lcigicl

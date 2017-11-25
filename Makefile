@@ -56,8 +56,8 @@ APPLICATIONS += testTimer
 APPLICATIONS += testRadar
 APPLICATIONS += testInfrared
 
-# device I/O test program
-APPLICATIONS += testIoHandler
+# I/O linkage test program
+APPLICATIONS += testIoLinkage
 
 # matrix test program
 APPLICATIONS += testMatrix

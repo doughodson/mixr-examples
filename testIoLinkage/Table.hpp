@@ -26,24 +26,26 @@ public:
    Table();
 
    virtual const mixr::base::PairStream* getColumns() const;
-   virtual unsigned int getNumberOfRows() const;
+   virtual int getNumberOfRows() const;
 
-   virtual int line() const override;
-   virtual int line(const int ll) override;
-   virtual int column() const override;
-   virtual int column(const int cc) override;
+   // graphics::AbstractField interface
+   int line() const override;
+   int line(const int ll) override;
+   int column() const override;
+   int column(const int cc) override;
 
-   virtual void reset() override;
+   // base::Component interface
+   void reset() override;
 
 private:
-   static const unsigned int DEFAULT_ROW     = 1;
-   static const unsigned int DEFAULT_SPACING = 1;
+   static const int DEFAULT_ROW     {1};
+   static const int DEFAULT_SPACING {1};
 
    void build();        // Builds the table into our components
    void position();     // Positions the table
 
-   unsigned int rows {DEFAULT_ROW};         // Number of rows in table
-   unsigned int spacing {DEFAULT_SPACING};  // Spacing between rows (default: 1)
+   int rows {DEFAULT_ROW};                    // Number of rows in table
+   int spacing {DEFAULT_SPACING};             // Spacing between rows (default: 1)
    const mixr::base::PairStream* columns {};  // columns items
 
 private:

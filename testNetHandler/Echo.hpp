@@ -16,8 +16,8 @@ class Echo : public Endpoint
 public:
    Echo();
 
-   virtual void updateData(const double dt = 0.0) override;
-   virtual void reset() override;
+   void updateData(const double dt = 0.0) override;
+   void reset() override;
 
 private:
    unsigned int loopCounter {};

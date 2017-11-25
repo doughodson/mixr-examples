@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // Maps AI/DI channels to table itmes
 //   1) simple, one-to-one mapping of DIs and AIs
-//   2) using standard iodevice::IoData, so its channels are one(1) based.
+//   2) using standard iolinkage::IoData, so its channels are one(1) based.
 //------------------------------------------------------------------------------
 
 // analog input channels
@@ -14,7 +14,17 @@ item:  6   ai: 6
 item:  7   ai: 7
 item:  8   ai: 8
 item:  9   ai: 9
-item:  10   ai: 10
+item: 10   ai: 10
+item: 11   ai: 11
+item: 12   ai: 12
+item: 13   ai: 13
+item: 14   ai: 14
+item: 15   ai: 15
+item: 16   ai: 16
+item: 17   ai: 17
+item: 18   ai: 18
+item: 19   ai: 19
+item: 20   ai: 20
 
 // input bit channels
 item: 21   di: 1

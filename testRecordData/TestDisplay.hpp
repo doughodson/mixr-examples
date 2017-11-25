@@ -38,9 +38,9 @@ class TestDisplay : public mixr::glut::GlutDisplay
     DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
 public:
-    static const int MAX_TRACKS = 60;
-    static const int NCHAR_NAV1_ID = 3;
-    static const int NCHAR_NAV2_ID = 5;
+    static const int MAX_TRACKS{60};
+    static const int NCHAR_NAV1_ID{3};
+    static const int NCHAR_NAV2_ID{5};
 
 public:
     TestDisplay();
@@ -51,13 +51,13 @@ public:
 
     void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
 
-    virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
+    void mouseEvent(const int button, const int state, const int x, const int y) override;
 
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    virtual void updateData(const double dt = 0.0) override;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+    void updateData(const double dt = 0.0) override;
 
 protected:
-    virtual bool shutdownNotification() override;
+    bool shutdownNotification() override;
 
 private:
     // Key event handlers

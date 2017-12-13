@@ -78,7 +78,7 @@ Test Applications
 
 * testInfrared -- general IR test program
 
-* testLinkage -- exercises linkage architecture to interface an application to physical i/o devices
+* testLinkage -- exercises linkage architecture that interfaces applications to physical I/O devices
 
 * testLinearSys
 

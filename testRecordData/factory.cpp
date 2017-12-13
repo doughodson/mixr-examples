@@ -14,7 +14,7 @@
 #include "mixr/graphics/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/instruments/factory.hpp"
-#include "mixr/iolinkage/factory.hpp"
+#include "mixr/linkage/factory.hpp"
 #include "mixr/ighost/cigi/factory.hpp"
 #include "mixr/ighost/viewpoint/factory.hpp"
 #include "mixr/recorder/factory.hpp"
@@ -45,7 +45,7 @@ mixr::base::Object* factory(const std::string& name)
     // MIXR packages
     if (obj == nullptr) obj = mixr::simulation::factory(name);
     if (obj == nullptr) obj = mixr::instruments::factory(name);
-    if (obj == nullptr) obj = mixr::iolinkage::factory(name);
+    if (obj == nullptr) obj = mixr::linkage::factory(name);
     if (obj == nullptr) obj = mixr::instruments::factory(name);
     if (obj == nullptr) obj = mixr::recorder::factory(name);
     if (obj == nullptr) obj = mixr::models::factory(name);

@@ -8,7 +8,7 @@
 #include "TestIoHandler.hpp"
 
 // factories
-#include "mixr/iolinkage/factory.hpp"
+#include "mixr/linkage/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
@@ -29,7 +29,7 @@ mixr::base::Object* factory(const std::string& name)
       obj = new TestIoHandler();
    }
 
-   if (obj == nullptr) obj = mixr::iolinkage::factory(name);
+   if (obj == nullptr) obj = mixr::linkage::factory(name);
    if (obj == nullptr) obj = mixr::glut::factory(name);
    if (obj == nullptr) obj = mixr::graphics::factory(name);
    if (obj == nullptr) obj = mixr::base::factory(name);

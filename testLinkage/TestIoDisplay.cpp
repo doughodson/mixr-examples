@@ -1,8 +1,8 @@
 
 #include "TestIoDisplay.hpp"
 
-#include "mixr/base/concepts/io/AbstractIoData.hpp"
-#include "mixr/base/concepts/io/AbstractIoHandler.hpp"
+#include "mixr/base/concepts/linkage/AbstractIoData.hpp"
+#include "mixr/base/concepts/linkage/AbstractIoHandler.hpp"
 #include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/String.hpp"
 

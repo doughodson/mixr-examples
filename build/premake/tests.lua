@@ -131,11 +131,11 @@ project "testLinkage"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
-      links {"mixr_iolinkage", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
+      links {"mixr_linkage", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_iolinkage_d", "mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
+      links {"mixr_linkage_d", "mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -237,14 +237,14 @@ project "testRadar"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim"}
-      links {"mixr_interop_dis", "mixr_interop", "mixr_iolinkage"}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_linkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d"}
-      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iolinkage_d"}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_linkage_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
@@ -267,7 +267,7 @@ project "testRecordData"
    filter "configurations:Release"
       links {"mixr_models", "JSBSim" }
       links {"mixr_ighost_cigi", "mixr_ighost_viewpoint", LibCigi }
-      links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iolinkage" }
+      links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_linkage" }
       links {"mixr_simulation", "mixr_terrain" }
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
@@ -276,7 +276,7 @@ project "testRecordData"
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d" }
       links {"mixr_ighost_cigi_d", "mixr_ighost_viewpoint_d", LibCigi_d }
-      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iolinkage_d" }
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_linkage_d" }
       links {"mixr_simulation_d", "mixr_terrain_d" }
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}

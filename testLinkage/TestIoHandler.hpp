@@ -2,16 +2,16 @@
 #ifndef __TestIoHandler_H__
 #define __TestIoHandler_H__
 
-#include "mixr/iolinkage/IoHandler.hpp"
+#include "mixr/linkage/IoHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class:  TestIoHandler
 //
 // Description: Handles the flow of I/O data to and from devices
 //------------------------------------------------------------------------------
-class TestIoHandler : public mixr::iolinkage::IoHandler
+class TestIoHandler : public mixr::linkage::IoHandler
 {
-   DECLARE_SUBCLASS(TestIoHandler, mixr::iolinkage::IoHandler)
+   DECLARE_SUBCLASS(TestIoHandler, mixr::linkage::IoHandler)
 
 public:
    TestIoHandler();

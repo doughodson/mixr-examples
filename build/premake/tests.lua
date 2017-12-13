@@ -82,7 +82,7 @@ project "testInfrared"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim"}
-      links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
+      links {"mixr_ighost_cigi", "mixr_ighost_viewpoint", LibCigi}
       links {"mixr_interop_dis", "mixr_interop" }
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
@@ -90,32 +90,10 @@ project "testInfrared"
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d"}
-      links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
+      links {"mixr_ighost_cigi_d", "mixr_ighost_viewpoint_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d" }
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
-      links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
-      links {LibWindows}
-
--- testIoLinkage: I/O linkage test
-project "testIoLinkage"
-   targetname "testIoLinkage"
-   targetdir "../../testIoLinkage"
-   debugdir "../../testIoLinkage"
-   files {
-      "../../testIoLinkage/**.h*",
-      "../../testIoLinkage/**.cpp",
-      "../../testIoLinkage/**.epp",
-      "../../testIoLinkage/**.edl"
-   }
-   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
-   filter "configurations:Release"
-      links {"mixr_iolinkage", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
-      links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
-      links {LibWindows}
-   filter "configurations:Debug"
-      links {"mixr_iolinkage_d", "mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
@@ -137,6 +115,28 @@ project "testLinearSys"
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_linearsystem_d", "mixr_base_d"}
+      links {LibWindows}
+
+-- testLinkage: linkage test
+project "testLinkage"
+   targetname "testLinkage"
+   targetdir "../../testLinkage"
+   debugdir "../../testLinkage"
+   files {
+      "../../testLinkage/**.h*",
+      "../../testLinkage/**.cpp",
+      "../../testLinkage/**.epp",
+      "../../testLinkage/**.edl"
+   }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   filter "configurations:Release"
+      links {"mixr_iolinkage", "mixr_ui_glut", "mixr_graphics", "mixr_base"}
+      links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
+      links {LibWindows}
+   filter "configurations:Debug"
+      links {"mixr_iolinkage_d", "mixr_ui_glut_d", "mixr_graphics_d", "mixr_base_d"}
+      links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
 -- testMatrix
@@ -237,7 +237,6 @@ project "testRadar"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim"}
-      links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi}
       links {"mixr_interop_dis", "mixr_interop", "mixr_iolinkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
@@ -245,7 +244,6 @@ project "testRadar"
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d"}
-      links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d", LibCigi_d}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_iolinkage_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
@@ -268,7 +266,7 @@ project "testRecordData"
    links       { "libxrecorder", "libxpanel" }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim" }
-      links {"mixr_ig_cigi", "mixr_ig_viewpoint", "mixr_ig", LibCigi }
+      links {"mixr_ighost_cigi", "mixr_ighost_viewpoint", LibCigi }
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_iolinkage" }
       links {"mixr_simulation", "mixr_terrain" }
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base" }
@@ -277,7 +275,7 @@ project "testRecordData"
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d" }
-      links {"mixr_ig_cigi_d", "mixr_ig_viewpoint_d", "mixr_ig_d",  LibCigi_d }
+      links {"mixr_ighost_cigi_d", "mixr_ighost_viewpoint_d", LibCigi_d }
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_iolinkage_d" }
       links {"mixr_simulation_d", "mixr_terrain_d" }
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d" }

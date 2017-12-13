@@ -7,12 +7,17 @@
 
   tcPriority: 0.5
 
-//#include "io/otwSetupPC.epp"
-#include "io/networkSetup.epp"
+   // image generator host interface
+   igHost: {
+      //#include "ighosts/viewpoint.epp"
+      #include "ighosts/cigi.epp"
+   }
 
-  // Simulation scenario
-  ownship: xper
-  simulation: ( WorldModel
+   //#include "networkSetup.epp"
+
+   // Simulation scenario
+   ownship: xper
+   simulation: ( WorldModel
                 //latitude:   41.0  
                 //longitude: -112
 

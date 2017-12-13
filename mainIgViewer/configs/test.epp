@@ -20,6 +20,6 @@
       //Since this display will be drawn by OpenSceneGraph, no graphical components are placed here.
       //For the Page component is the same situation.
 
-      components: {}	
+      components: {}
    )
 )

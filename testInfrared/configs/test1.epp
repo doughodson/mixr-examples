@@ -10,8 +10,8 @@
 //#define REF_LONGITUDE    -121.5
 #define REF_LATITUDE      37.0
 #define REF_LONGITUDE    -116.0
-#define OTW_LATITUDE   REF_LATITUDE
-#define OTW_LONGITUDE  REF_LONGITUDE
+#define IG_LATITUDE   REF_LATITUDE
+#define IG_LONGITUDE  REF_LONGITUDE
 
 
 ( TestStation
@@ -26,9 +26,15 @@
    glutDisplay:
       #include "displays.epp"
 
-   // cigi driver
-//   #include "otwSetupCigi.epp"
+   // image generator host interface
 
+   igHost: {
+
+      //#include "ighosts/cigi.epp"
+
+   }
+
+   
    // ---
    // Simulation scenario
    // ---
@@ -68,7 +74,7 @@
                         maxTOF:  150.0
                         maxBurstRng: 50
                         lethalRange: 30.0
-                        type: "AIM-9"              // this helps map the OTW models - Missile + type
+                        type: "AIM-9"              // this helps map the IG models - Missile + type
                         enableMessageType: INFO
                         //enableMessageType: DEBUG
                         components: {
@@ -85,7 +91,7 @@
                         maxTOF:  150.0
                         maxBurstRng: 50
                         lethalRange: 30.0
-                        type: "AIM-9"             // this helps map the OTW models - Missile + type
+                        type: "AIM-9"             // this helps map the IG models - Missile + type
                         enableMessageType: INFO
                         //enableMessageType: DEBUG
                         components: {

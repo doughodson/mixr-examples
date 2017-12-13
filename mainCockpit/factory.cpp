@@ -16,7 +16,7 @@
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/instruments/factory.hpp"
 #include "mixr/iolinkage/factory.hpp"
-#include "mixr/ig/cigi/factory.hpp"
+#include "mixr/ighost/cigi/factory.hpp"
 #include "mixr/models/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/simulation/factory.hpp"

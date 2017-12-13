@@ -11,8 +11,8 @@
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
-#include "mixr/ig/cigi/factory.hpp"
-#include "mixr/ig/viewpoint/factory.hpp"
+#include "mixr/ighost/cigi/factory.hpp"
+#include "mixr/ighost/viewpoint/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/base/factory.hpp"
 

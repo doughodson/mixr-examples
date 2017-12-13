@@ -36,7 +36,7 @@ Example Applications
 
 * mainGndMapRdr -- ground mapping radar example
 
-* mainIGen -- simple image generator
+* mainIGViewer -- simple image generator
 
 * mainLaero -- demostrates flight navigation
 

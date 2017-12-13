@@ -39,8 +39,8 @@ APPLICATIONS += mainLaero
 # simple cockpit
 APPLICATIONS += mainCockpit
 
-# simple image generator
-APPLICATIONS += mainIgDevice
+# simple image generator viewer
+APPLICATIONS += mainIgViewer
 
 # test table, state machines, events and timer
 APPLICATIONS += testDafif
@@ -56,8 +56,8 @@ APPLICATIONS += testTimer
 APPLICATIONS += testRadar
 APPLICATIONS += testInfrared
 
-# I/O linkage test program
-APPLICATIONS += testIoLinkage
+# linkage test program
+APPLICATIONS += testLinkage
 
 # matrix test program
 APPLICATIONS += testMatrix

@@ -5,15 +5,20 @@
 //
 #define REF_LATITUDE     30.8
 #define REF_LONGITUDE   -86.8
-#define OTW_LATITUDE   REF_LATITUDE
-#define OTW_LONGITUDE  REF_LONGITUDE
+#define IG_LATITUDE   REF_LATITUDE
+#define IG_LONGITUDE  REF_LONGITUDE
 
 ( SimStation
 
    tcPriority: 1
    
-//#include "io/networkSetup.epp"
-//#include "io/otwSetup.epp"
+   // image generator host interface
+   igHost: {
+      #include "ighosts/cigi.epp"
+      //#include "ighosts/cigi2.epp"
+   }
+
+   //#include "networkSetup.epp"
 
 // ---
 // Simulation scenario

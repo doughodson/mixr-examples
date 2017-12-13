@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// IG (visual system) Cigi Configuration
+// -----------------------------------------------------------------------------
+
+#define IG_INPUT_IP                "127.0.0.1"             // IP address for IG input (local TN)
+#define IG_INPUT_PORT              8008                    // Port number the IG machine is broadcasting on
+#define IG_OUTPUT_IP               "127.0.0.1"             // IP address for IG output (remote TN)
+#define IG_OUTPUT_PORT             8108
+//#define IG_OUTPUT_SOURCE_PORT    8208
+
+( Cigi
+   maxRange: ( NauticalMiles 20.0 )
+   maxModels: 5
+   maxElevations: 20
+   latitude:  IG_LATITUDE 
+   longitude: IG_LONGITUDE  
+   async: 0
+   hideOwnshipModel: 1      // otherwise you are inside the ownship model
+   session: ( CigiHostSession
+      netInput: ( UdpUnicastHandler localIpAddress: localhost    port: 8010 ) // HOST
+      netOutput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost port: 8000 localPort: 8208 ) // IG
+      //netInput:   ( UdpMulticastHandler multicastGroup: "224.1.1.2" port: 8008  ignoreSourcePort: 3002 loopback: true  shared: true )
+      //netOutput:  ( UdpMulticastHandler multicastGroup: "224.1.1.2" port: 8008  localPort: 3002        loopback: true  shared: true )
+   )
+
+   #include "CigiModels.epp"
+)

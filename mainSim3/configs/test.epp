@@ -11,7 +11,7 @@
     // ownship flag, we will define this player in scenario.epp
     ownship: player1
 
-    // this is our display  slot
+    // this is our display slot
     #include "mapdisplay.epp"
 
     // here is our simulation scenario

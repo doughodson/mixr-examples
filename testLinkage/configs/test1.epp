@@ -14,8 +14,8 @@
    ioHandler: ( TestIoHandler
       inputData: ( IoData numAI: 20   numDI: 40 )
       devices: {
-         #include "UsbJoystick.epp"
-         #include "MockDevice.epp"
+         #include "linkage/UsbJoystick.epp"
+         #include "linkage/MockDevice.epp"
       }
    )
 

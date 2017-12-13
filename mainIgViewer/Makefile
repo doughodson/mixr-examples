@@ -1,7 +1,7 @@
 #
 include ../makedefs
 
-PGM = mainIgDevice
+PGM = mainIgViewer
 
 OBJS = \
 	SimpleIGen.o \

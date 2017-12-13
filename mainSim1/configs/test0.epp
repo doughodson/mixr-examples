@@ -7,8 +7,13 @@
 
   tcPriority: 0.5
 
-#include "io/otwSetupPC.epp"
-//#include "io/networkSetup.epp"
+   // image generator host interface
+   igHost: {
+      //#include "ighosts/viewpoint.epp"
+      #include "ighosts/cigi.epp"
+   }
+
+   //#include "networkSetup.epp"
 
   // Simulation scenario
   ownship: xper

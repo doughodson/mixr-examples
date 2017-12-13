@@ -1,7 +1,7 @@
 #
 include ../makedefs
 
-PGM = testIoLinkage
+PGM = testLinkage
 
 OBJS = Table.o TableRow.o TestIoDisplay.o TestIoHandler.o factory.o main.o
 

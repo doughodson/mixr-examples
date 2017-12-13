@@ -89,7 +89,7 @@ demoSubDisplays/demoSubDisplays
 mainCockpit/mainCockpit
 mainGlut/mainGlut
 mainGndMapRdr/mainGndMapRdr
-mainIgDevice/mainIgDevice
+mainIgViewer/mainIgViewer
 mainLaero/mainLaero
 mainNonRT1/mainNonRT1
 mainPuzzle1/mainPuzzle1
@@ -104,8 +104,8 @@ testDafif/testDafif
 testEvents/testEvents
 testGraphics/testGraphics
 testInfrared/testInfrared
-testIoLinkage/testIoLinkage
 testLinearSys/testLinearSys
+testLinkage/testLinkage
 testMatrix/testMatrix
 testMetaObject/testMetaObject
 testNavUtils/testNavUtils

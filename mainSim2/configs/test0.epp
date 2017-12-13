@@ -1,6 +1,3 @@
-// =============================================================================
-// Sim3 Simulation
-// =============================================================================
 
 #include "screenSetup.epp"
 
@@ -9,9 +6,28 @@
    tcPriority: 0.0
    netPriority: 0.0
    
-   #include "ioHandler.epp"
-   #include "otwSetupPC.epp"
-   #include "networkSetup.epp"
+   // input/output
+   ioHandler: ( SimIoHandler
+      inputData: ( IoData numAI: 10   numDI: 40 )
+      devices: {
+         //#include "linkage/saitekEVO.epp"
+         #include "linkage/saitekST290.epp"
+         //#include "linkage/thrustmaster.epp"
+         //#include "linkage/warthog.epp"
+      }
+   )
+
+   // image generator host interface
+   igHost: {
+      //#include "ighosts/viewpoint.epp"
+      #include "ighosts/cigi.epp"
+   }
+
+   // interoperability interfaces
+   networks: {
+      #include "dis.epp"
+   }   
+
    #include "scenario.epp"
    #include "instrumentPanel.epp"
 

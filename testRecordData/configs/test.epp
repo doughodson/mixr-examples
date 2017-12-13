@@ -12,17 +12,31 @@
 //
 #define REF_LATITUDE      37.0 
 #define REF_LONGITUDE   -116.0
-#define OTW_LATITUDE   REF_LATITUDE
-#define OTW_LONGITUDE  REF_LONGITUDE
+#define IG_LATITUDE     REF_LATITUDE
+#define IG_LONGITUDE    REF_LONGITUDE
 
 ( SimStation
 
    tcPriority: 1
 
+   // image generator host interface
+   igHost: {
+      #include "ighosts/cigi.epp"
+   }
+
+   ioHandler: ( TestIoHandler
+      inputData: ( IoData numAI: 10   numDI: 40 )
+      devices: {
+         #include "linkage/saitekST290.epp"
+         //#include "linkage/saitekEVO.epp"
+         //#include "linkage/thrustmaster.epp"
+         //#include "linkage/warthog.epp"
+      }
+   )
+
+
    #include "dataRecorder.epp"
-   #include "ioHandler.epp"
    #include "networkSetup.epp"
-   #include "otwSetup.epp"
    #include "scenario.epp"
    #include "xpanel/xpanel.epp"
 )

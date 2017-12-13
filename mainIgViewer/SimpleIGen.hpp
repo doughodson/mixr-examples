@@ -4,7 +4,7 @@
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
-#include "mixr/ig/viewpoint/EntityState.hpp"
+#include "mixr/ighost/viewpoint/EntityState.hpp"
 
 #include <osgViewer/Viewer>
 #include <osgDB/ReadFile>

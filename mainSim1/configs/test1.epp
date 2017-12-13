@@ -8,7 +8,7 @@
   tcPriority: 0.5
 
    // image generator host interface
-   igHost: {
+   igHosts: {
       //#include "ighosts/viewpoint.epp"
       #include "ighosts/cigi.epp"
    }

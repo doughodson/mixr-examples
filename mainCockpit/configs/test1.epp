@@ -20,7 +20,7 @@
    )
 
    // image generator host interface
-   igHost: {
+   igHosts: {
       #include "ighosts/cigi.epp"
    }
 

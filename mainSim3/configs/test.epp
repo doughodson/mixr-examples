@@ -6,15 +6,17 @@
 // --------------------------------------------------------------------------------------------------------------
 ( MapTestStation 
 
-    #include "networkSetup.epp"
+   // interoperability interfaces
+   networks: {
+      #include "interop/dis.epp"
+   }
 
-    // ownship flag, we will define this player in scenario.epp
-    ownship: player1
+   // ownship flag, we will define this player in scenario.epp
+   ownship: player1
 
-    // this is our display slot
-    #include "mapdisplay.epp"
+   // this is our display slot
+   #include "mapdisplay.epp"
 
-    // here is our simulation scenario
-    #include "scenario.epp"
-
+   // here is our simulation scenario
+   #include "scenario.epp"
 )

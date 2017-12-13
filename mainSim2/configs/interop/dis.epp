@@ -23,7 +23,7 @@
          sensor: ( Radar )
          antenna: ( Antenna
             localPlayersOfInterestOnly: true
-            #include "gainPattern.epp"
+            #include "../gainPattern.epp"
          )
          defaultIn:  true
          defaultOut:  true

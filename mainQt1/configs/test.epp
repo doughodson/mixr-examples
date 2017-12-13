@@ -2,11 +2,14 @@
 
 ( QtStation
 
-    //#include "networkSetup.epp"
+   // interoperability interfaces
+   networks: {
+      //#include "interop/dis.epp"
+   }
 
-    // ownship flag, we will define this player in scenario.epp
-    ownship: player1
+   // ownship flag, we will define this player in scenario.epp
+   ownship: player1
 
-    // here is our simulation scenario
-    #include "scenario.epp"
+   // here is our simulation scenario
+   #include "scenario.epp"
 )

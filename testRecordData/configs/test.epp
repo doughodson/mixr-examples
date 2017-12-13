@@ -34,9 +34,12 @@
       }
    )
 
+   // interoperability interfaces
+   networks: {
+      #include "interop/dis.epp"
+   }
 
    #include "dataRecorder.epp"
-   #include "networkSetup.epp"
    #include "scenario.epp"
    #include "xpanel/xpanel.epp"
 )

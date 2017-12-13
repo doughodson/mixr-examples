@@ -14,7 +14,10 @@
       //#include "ighosts/cigi2.epp"
    }
 
-   //#include "networkSetup.epp"
+   // interoperability interfaces
+   networks: {
+      //#include "interop/dis.epp"
+   }
 
    // ---
    // Simulation scenario

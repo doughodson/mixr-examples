@@ -17,6 +17,10 @@
    netPriority: 1.0
    netRate: 5.0
 
-   #include "./test3/networkSetup.epp"
+   // interoperability interfaces
+   networks: {
+      //#include "interop/dis.epp"
+   }
+
    #include "./test3/scenario.epp"
 )

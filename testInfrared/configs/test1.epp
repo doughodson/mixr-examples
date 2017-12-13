@@ -19,19 +19,18 @@
    tcRate: 100
    tcPriority: 0.5
 
-   // interoperability network
-//   #include "networkSetup.epp"
+   // interoperability interfaces
+   networks: {
+      //#include "interop/dis.epp"
+   }
 
    // display
    glutDisplay:
       #include "displays.epp"
 
    // image generator host interface
-
    igHosts: {
-
       //#include "ighosts/cigi.epp"
-
    }
 
    

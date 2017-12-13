@@ -25,7 +25,7 @@
 
    // interoperability interfaces
    networks: {
-      #include "dis.epp"
+      #include "interop/dis.epp"
    }   
 
    #include "scenario.epp"

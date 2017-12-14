@@ -2,7 +2,7 @@
 // Example entity type table the CIGI interface to Out-The-Window system
 // ---
 
-otwModelTypes: {
+igModelTypes: {
 
     // ( Otm  formName  typeName  modelId )
 

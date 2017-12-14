@@ -1,5 +1,5 @@
 
-( Cigi
+( CigiHost
    latitude:  IG_LATITUDE
    longitude: IG_LONGITUDE
    maxRange: ( NauticalMiles 20.0 )

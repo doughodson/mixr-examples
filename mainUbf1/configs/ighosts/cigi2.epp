@@ -5,7 +5,7 @@
 #define IG_OUTPUT_PORT             8108                     // IG's incoming port
 #define IG_OUTPUT_SOURCE_PORT      8208
 
-( Cigi
+( CigiHost
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 50
    maxElevations: 20
@@ -17,7 +17,7 @@
       netOutput: ( UdpUnicastHandler localIpAddress: IG_INPUT_IP ipAddress: IG_OUTPUT_IP  port: IG_OUTPUT_PORT localPort: IG_OUTPUT_SOURCE_PORT )
    )
 
-   otwModelTypes: {
+   igModelTypes: {
       ( Otm UnmannedAirVehicle  "GenericUnmannedAirVehicle"     403 )
       ( Otm UnmannedAirVehicle  "RQ-1"        405 )
    }

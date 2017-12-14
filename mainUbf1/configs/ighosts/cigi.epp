@@ -1,5 +1,5 @@
 
-( Cigi
+( CigiHost
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 50
    maxElevations: 20

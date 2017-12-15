@@ -36,20 +36,13 @@ const double THREAD_PRI  {0.5};       // Pri (0 .. 1)
 
 class TimerThread : public mixr::base::PeriodicTask
 {
-   DECLARE_SUBCLASS(TimerThread, mixr::base::PeriodicTask)
    public: TimerThread(mixr::base::Component* const parent, const double priority, const double rate);
    private: virtual unsigned long userFunc(const double dt) override;
 };
 
-IMPLEMENT_SUBCLASS(TimerThread, "TimerThread")
-EMPTY_SLOTTABLE(TimerThread)
-EMPTY_COPYDATA(TimerThread)
-EMPTY_DELETEDATA(TimerThread)
-
 TimerThread::TimerThread(mixr::base::Component* const parent, const double priority, const double rate)
       : PeriodicTask(parent, priority, rate)
 {
-   STANDARD_CONSTRUCTOR()
 }
 
 unsigned long TimerThread::userFunc(const double dt)

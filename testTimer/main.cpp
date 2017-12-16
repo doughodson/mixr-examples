@@ -15,7 +15,7 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Timers.hpp"
-#include "mixr/base/concurrent/PeriodicTask.hpp"
+#include "mixr/base/threads/PeriodicTask.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
 // class factory

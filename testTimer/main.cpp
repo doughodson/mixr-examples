@@ -36,12 +36,12 @@ const double THREAD_PRI{0.5};          // Pri (0 .. 1)
 
 class TimerThread final : public mixr::base::PeriodicThread
 {
-   public: TimerThread(mixr::base::Component* const parent, const double priority, const double rate);
+   public: TimerThread(mixr::base::Component* const parent, const double rate);
    private: virtual unsigned long userFunc(const double dt) override;
 };
 
-TimerThread::TimerThread(mixr::base::Component* const parent, const double priority, const double rate)
-      : PeriodicThread(parent, priority, rate)
+TimerThread::TimerThread(mixr::base::Component* const parent, const double rate)
+      : PeriodicThread(parent, rate)
 {
 }
 
@@ -56,9 +56,9 @@ unsigned long TimerThread::userFunc(const double dt)
 //------------------------------------------------------------------------------
 TimerThread* createTheThread(Tester* const tester)
 {
-   auto thread = new TimerThread(tester, THREAD_PRI, THREAD_RATE);
+   auto thread = new TimerThread(tester, THREAD_RATE);
 
-   bool ok{thread->create()};
+   bool ok{thread->start(THREAD_PRI)};
    if (!ok) {
       thread = nullptr;
       std::cerr << "createTheThread(): ERROR, failed to create the thread!" << std::endl;

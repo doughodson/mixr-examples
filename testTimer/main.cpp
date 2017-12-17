@@ -34,7 +34,7 @@ const double TIMERS_PRINT_RATE{5.0};   // Hz
 const double THREAD_RATE{20.0};        // hz
 const double THREAD_PRI{0.5};          // Pri (0 .. 1)
 
-class TimerThread : public mixr::base::PeriodicThread
+class TimerThread final : public mixr::base::PeriodicThread
 {
    public: TimerThread(mixr::base::Component* const parent, const double priority, const double rate);
    private: virtual unsigned long userFunc(const double dt) override;

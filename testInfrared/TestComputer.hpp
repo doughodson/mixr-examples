@@ -15,7 +15,7 @@
 //       haveTgt()   true if computer/seeker currently tracking a target
 //
 //------------------------------------------------------------------------------
-class TestComputer : public mixr::models::OnboardComputer
+class TestComputer final: public mixr::models::OnboardComputer
 {
     DECLARE_SUBCLASS(TestComputer, mixr::models::OnboardComputer)
 
@@ -23,21 +23,21 @@ public:
    TestComputer();
    bool haveTgt() const { return haveTarget; }
 
-   virtual void updateShootList(const bool step = false) override;      // Updates the shoot list
+   void updateShootList(const bool step = false) final;      // Updates the shoot list
 
-   virtual void updateTC(const double dt = 0.0) override;
+   void updateTC(const double dt = 0.0) final;
 
-   virtual void reset() override;
+   void reset() final;
 
 protected:
    // process() subfunction, tells computer if we are tracking a target or not
-   virtual bool processIr();
+   bool processIr();
 
-   virtual void process(const double dt) override;
+   void process(const double dt) final;
 
 private:
-   bool uncaged {};      // flag that indicates whether gimbal is free to track target
-   bool haveTarget {};   // flag indicating if we have a target track
+   bool uncaged{};      // flag that indicates whether gimbal is free to track target
+   bool haveTarget{};   // flag indicating if we have a target track
 };
 
 #endif

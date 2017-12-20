@@ -49,16 +49,16 @@ void TestComputer::updateTC(const double dt0)
    // ---
 
    // real or frozen?
-   double dt = dt0;
+   double dt{dt0};
    if (isFrozen()) dt = 0.0;
 
    // Delta time for methods that are running every fourth phase
-   const double dt4 = dt * 4.0;
+   const double dt4{dt * 4.0};
 
    // ---
    // Four phases per frame
    // ---
-   mixr::simulation::Simulation* sim = getOwnship()->getWorldModel();
+   mixr::simulation::Simulation* sim{getOwnship()->getWorldModel()};
    if (sim == nullptr) return;
 
    // ---
@@ -114,11 +114,11 @@ bool TestComputer::processIr()
 
    // waiting on getnexttarget may mean missing one or two updates
    // because we have to wait for obc::updateShootList which is an updateData task
-   mixr::models::Track* irTrk = getNextTarget();
+   mixr::models::Track* irTrk{getNextTarget()};
    if (irTrk && uncaged) {
       // we have a target and our gimbal must be updated
-      double pt_az = irTrk->getPredictedAzimuth();
-      double pt_el = irTrk->getPredictedElevation();
+      double pt_az{irTrk->getPredictedAzimuth()};
+      double pt_el{irTrk->getPredictedElevation()};
 
       const auto irSeeker = dynamic_cast<mixr::models::IrSeeker*>(getOwnship()->getGimbal());
 
@@ -137,7 +137,7 @@ bool TestComputer::processIr()
    // weapon::targetPlayer tells the dynamics model where the target is -
    // if the seeker has no track, then the targetPlayer must be cleared
 
-   mixr::models::Player* irTarget = nullptr;
+   mixr::models::Player* irTarget{};
    if (irTrk)
       irTarget = irTrk->getTarget();
    // tell the missile what to track
@@ -155,20 +155,20 @@ bool TestComputer::processIr()
 void TestComputer::updateShootList(const bool step)
 {
    // Temporary next to shoot indexes
-   int cNTS = -1;  // Current
-   int nNTS = -1;  // New
+   int cNTS{-1};  // Current
+   int nNTS{-1};  // New
 
    // First, let's get the active track list
-   const unsigned int MAX_TRKS = 20;
+   const unsigned int MAX_TRKS{20};
    mixr::base::safe_ptr<mixr::models::Track> trackList[MAX_TRKS];
 
-   int n = 0;
-   mixr::models::TrackManager* tm = getTrackManagerByType(typeid(mixr::models::AngleOnlyTrackManager));
+   int n{};
+   mixr::models::TrackManager* tm{getTrackManagerByType(typeid(mixr::models::AngleOnlyTrackManager))};
    if (tm != nullptr) n = tm->getTrackList(trackList, MAX_TRKS);
 
    if (isMessageEnabled(MSG_DEBUG)) {
       for (int i = 0; i < n; i++) {
-         mixr::models::Track* trk = trackList[i];
+         mixr::models::Track* trk{trackList[i]};
          const auto irTrk = dynamic_cast<mixr::models::IrTrack*>(trk);
          std::cout << irTrk->getTarget()->getID() << " avg " << irTrk->getAvgSignal() << " max " << irTrk->getMaxSignal() << std::endl;
       }
@@ -180,12 +180,12 @@ void TestComputer::updateShootList(const bool step)
       // ---
       if (cNTS < 0) {
          // 1) When we don't have or couldn't find our NTS, pick the track w/ strongest signal
-         int i = 0;
+         int i{};
          do {
             //if (trackList[i]->getGroundSpeed() >= 1.0f) {
                if (nNTS >= 0) {
                   // is this one closer?
-                  mixr::models::Track* trk = trackList[i];
+                  mixr::models::Track* trk{trackList[i]};
                   const auto irTrk = dynamic_cast<mixr::models::IrTrack*>(trk);
 
                   trk = trackList[nNTS];
@@ -194,8 +194,7 @@ void TestComputer::updateShootList(const bool step)
                   if (irTrk->getAvgSignal() > irTrknNTS->getAvgSignal()) {
                      nNTS = i;
                   }
-               }
-               else {
+               } else {
                   // only one so far
                   nNTS = i;
                }
@@ -226,13 +225,12 @@ void TestComputer::updateShootList(const bool step)
       // ---
       if (nNTS >= 0) {
          // Start at the next-to-shoot
-         int idx = nNTS;
+         int idx{nNTS};
          for (int i = 0; i < n; i++) {
             trackList[idx++]->setShootListIndex(i+1);
             if (idx >= n) idx = 0;
          }
-      }
-      else {
+      } else {
          // When there isn't a next to shoot, clear all
          for (int i = 0; i < n; i++) trackList[i]->setShootListIndex(0);
       }

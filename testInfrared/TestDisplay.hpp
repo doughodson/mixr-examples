@@ -25,7 +25,7 @@ namespace graphics { class SymbolLoader; }
 //   'i' or 'I'   -- Increase Range
 //   'd' or 'D'   -- Decrease Range
 //------------------------------------------------------------------------------
-class TestDisplay : public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::GlutDisplay
 {
     DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
@@ -36,10 +36,10 @@ public:
     mixr::simulation::Simulation* getSimulation();
     mixr::simulation::Station* getStation();
 
-    virtual void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
+    void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
 
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    virtual void updateData(const double dt = 0.0) override;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    void updateData(const double dt = 0.0) final;
 
 private:
     // Key event handlers
@@ -52,16 +52,16 @@ private:
     bool onDecRngKey();
     bool onStepOwnshipKey();
 
-    double range {40.0};          // SD range
+    double range{40.0};          // SD range
 
     SendData headingSD;
     SendData rangeSD;
 
     mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
-    static const unsigned int MAX_TRACKS = 200;
-    std::array<mixr::models::Player*, MAX_TRACKS> tracks {};  // players that we're displaying
-    std::array<int, MAX_TRACKS> trkIdx {};                  // Index of track symbols
+    static const int MAX_TRACKS{200};
+    std::array<mixr::models::Player*, MAX_TRACKS> tracks{};  // players that we're displaying
+    std::array<int, MAX_TRACKS> trkIdx{};                    // Index of track symbols
 };
 
 #endif

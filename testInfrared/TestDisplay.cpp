@@ -46,7 +46,7 @@ void TestDisplay::copyData(const TestDisplay& org, const bool)
    BaseClass::copyData(org);
 
    myStation = nullptr;
-   for (unsigned int i = 0; i < MAX_TRACKS; i++) {
+   for (int i = 0; i < MAX_TRACKS; i++) {
       tracks[i] = nullptr;
       trkIdx[i] = 0;
    }
@@ -83,7 +83,7 @@ bool TestDisplay::onFreezeKey()
 bool TestDisplay::onWpnRelKey()
 {
    if (getOwnship() != nullptr) {
-      mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      mixr::models::StoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
          sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2A);
          getOwnship()->event(WPN_REL_EVENT);
@@ -96,10 +96,10 @@ bool TestDisplay::onWpnRelKey()
 bool TestDisplay::onPreRelKey()
 {
     if (getOwnship() != nullptr) {
-       mixr::models::StoresMgr* sms = getOwnship()->getStoresManagement();
+       mixr::models::StoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
             sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2A);
-            mixr::models::AbstractWeapon* wpn = sms->getCurrentWeapon();
+            mixr::models::AbstractWeapon* wpn{sms->getCurrentWeapon()};
             if (wpn != nullptr) {
                wpn->prerelease();
                std::cout << "Prelaunched wpn = " << wpn << std::endl;
@@ -112,7 +112,7 @@ bool TestDisplay::onPreRelKey()
 // Increase range key
 bool TestDisplay::onIncRngKey()
 {
-   double rng = range * 2.0;
+   double rng{range * 2.0};
    if (rng < 200) range =  rng;
    return true;
 }
@@ -120,7 +120,7 @@ bool TestDisplay::onIncRngKey()
 // Decrease range key
 bool TestDisplay::onDecRngKey()
 {
-   double rng = range / 2.0;
+   double rng{range / 2.0};
    if (rng >= 2.0) range = rng;
    return true;
 }
@@ -147,7 +147,7 @@ void TestDisplay::updateData(const double dt)
        send("rangeRO", UPDATE_VALUE, range, rangeSD);
 
        // Maintain Air Tracks
-       mixr::base::Pair* pair = findByName("airTracks");
+       mixr::base::Pair* pair{findByName("airTracks")};
        if (pair != nullptr) {
           const auto myLoader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
           if (myLoader != nullptr) {
@@ -169,16 +169,16 @@ void TestDisplay::updateData(const double dt)
 //------------------------------------------------------------------------------
 void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng)
 {
-   int codes[MAX_TRACKS] {};              // Work codes: empty(0), matched(1), unmatched(-1)
-   const double rng2 = (rng * rng);       // Range squared (KM * KM)
+   int codes[MAX_TRACKS]{};              // Work codes: empty(0), matched(1), unmatched(-1)
+   const double rng2{rng * rng};         // Range squared (KM * KM)
 
-   mixr::models::Player* newTracks[MAX_TRACKS] {};   // New tracks to add
-   int nNewTracks {};                              // Number of new tracks
-   mixr::models::Player* target = nullptr;
+   mixr::models::Player* newTracks[MAX_TRACKS]{};   // New tracks to add
+   int nNewTracks{};                                // Number of new tracks
+   mixr::models::Player* target{};
 
    // The real maximum number of tracks is the smaller of MAX_TRACKS and the loader's maximum
-   int maxTracks = loader->getMaxSymbols();
-   if (MAX_TRACKS < static_cast<unsigned int>(maxTracks)) maxTracks = MAX_TRACKS;
+   int maxTracks{loader->getMaxSymbols()};
+   if (MAX_TRACKS < maxTracks) maxTracks = MAX_TRACKS;
 
    // Set the initial codes
    for (int i = 0; i < maxTracks; i++) {
@@ -189,17 +189,17 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
    // find all air vehicles within range
    {
       // get the player list
-      mixr::simulation::Simulation* sim = getSimulation();
-      mixr::base::PairStream* plist = sim->getPlayers();
+      mixr::simulation::Simulation* sim{getSimulation()};
+      mixr::base::PairStream* plist{sim->getPlayers()};
 
       // search for air vehicles or missiles within range
-      mixr::base::List::Item* item = plist->getFirstItem();
+      mixr::base::List::Item* item{plist->getFirstItem()};
       while (item != nullptr && nNewTracks < maxTracks) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto p = static_cast<mixr::models::Player*>(pair->object());
-         mixr::base::Vec3d rpos = p->getPosition() - getOwnship()->getPosition();
-         const double x = rpos[0] * mixr::base::distance::M2NM;
-         const double y = rpos[1] * mixr::base::distance::M2NM;
+         mixr::base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
+         const double x{rpos[0] * mixr::base::distance::M2NM};
+         const double y{rpos[1] * mixr::base::distance::M2NM};
 
          const auto weapon = dynamic_cast<mixr::models::AbstractWeapon*>(p);
          if (weapon && (weapon->isMode(mixr::models::Player::PRE_RELEASE) || weapon->isActive())) {
@@ -214,8 +214,8 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
                // Ok, it's an active air vehicle or missile that's within range, and it's not us.
 
                // Are we already in the track list?
-               bool found = false;
-               for (unsigned int i = 0; !found && i < static_cast<unsigned int>(maxTracks); i++) {
+               bool found{};
+               for (int i = 0; !found && i < maxTracks; i++) {
                   if (p == tracks[i]) {
                      // Yes it is.  So mark the slot as matched!
                      codes[i] = 1;
@@ -251,21 +251,21 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
 
    // Now add any new tracks
    {
-      int islot = 0;      // slot index
-      int inew = 0;       // new track index
+      int islot{};      // slot index
+      int inew{};       // new track index
 
       while (inew < nNewTracks && islot < maxTracks) {
          if (codes[islot] == 0) {
             // We have an empty slot, so add the symbol
 
-            int type = 4;                                                            // unknown
+            int type{4};                                                               // unknown
             if (newTracks[inew]->isClassType(typeid(mixr::models::AirVehicle))) {
                if (newTracks[inew]->isSide(mixr::models::Player::BLUE)) type = 1;      // friend
                else if (newTracks[inew]->isSide(mixr::models::Player::RED)) type = 2;  // foe
                else type = 3; // neutral/commercial
             }
             else if (newTracks[inew]->isClassType(typeid(mixr::models::Missile))) {
-               type = 5;                                                             // missile
+               type = 5;                                                               // missile
             }
 
             tracks[islot] = newTracks[inew];
@@ -290,11 +290,11 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
    // now update the active tracks
    const auto os = dynamic_cast<mixr::models::Player*>(getOwnship());
    for (int i = 0; i < maxTracks; i++) {
-      const double osX = os->getXPosition();
-      const double osY = os->getYPosition();
+      const double osX{os->getXPosition()};
+      const double osY{os->getYPosition()};
       if (tracks[i] != nullptr && trkIdx[i] != 0) {
-         double xp = tracks[i]->getXPosition() - osX;
-         double yp = tracks[i]->getYPosition() - osY;
+         double xp{tracks[i]->getXPosition() - osX};
+         double yp{tracks[i]->getYPosition() - osY};
          loader->updateSymbolPositionXY( trkIdx[i], (xp * mixr::base::distance::M2NM), (yp * mixr::base::distance::M2NM) );
          loader->updateSymbolHeading( trkIdx[i], tracks[i]->getHeadingD() );
          if (tracks[i]==target) {
@@ -311,8 +311,8 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
 //------------------------------------------------------------------------------
 mixr::models::Player* TestDisplay::getOwnship()
 {
-   mixr::models::Player* p = nullptr;
-   mixr::simulation::Station* sta = getStation();
+   mixr::models::Player* p{};
+   mixr::simulation::Station* sta{getStation()};
    if (sta != nullptr) {
       p = dynamic_cast<mixr::models::Player*>(sta->getOwnship());
    }
@@ -321,8 +321,8 @@ mixr::models::Player* TestDisplay::getOwnship()
 
 mixr::simulation::Simulation* TestDisplay::getSimulation()
 {
-   mixr::simulation::Simulation* s = nullptr;
-   mixr::simulation::Station* sta = getStation();
+   mixr::simulation::Simulation* s{};
+   mixr::simulation::Station* sta{getStation()};
    if (sta != nullptr) s = sta->getSimulation();
    return s;
 }

@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// Infrared calculations test program
+// Infrared test program
 //------------------------------------------------------------------------------
 
 #include "TestStation.hpp"
@@ -18,15 +18,15 @@
 #include <cstdlib>
 
 // background frame rate
-const int bgRate {10};
-TestStation* testStation {};
+const int bgRate{10};
+TestStation* testStation{};
 
 // test station builder
 TestStation* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj = mixr::base::edl_parser(filename, factory, &num_errors);
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -62,18 +62,18 @@ TestStation* builder(const std::string& filename)
 //-----------------------------------------------------------------------------
 void updateDataCB(int)
 {
-   const double dt0 {1.0 / static_cast<double>(bgRate)};
-   const int millis {static_cast<int>(dt0 * 1000)};
+   const double dt0{1.0 / static_cast<double>(bgRate)};
+   const int millis{static_cast<int>(dt0 * 1000)};
    glutTimerFunc(millis, updateDataCB, 1);
 
    // Current time
-   const double time {mixr::base::getComputerTime()};
+   const double time{mixr::base::getComputerTime()};
 
    // N-1 Time
-   static double time0 {time};
+   static double time0{time};
 
    // Compute delta time
-   const double dt {static_cast<double>(time - time0)};
+   const double dt{time - time0};
    time0 = time;
 
    mixr::base::Timer::updateTimers(dt);
@@ -102,8 +102,8 @@ int main(int argc, char* argv[])
    testStation->event(mixr::base::Component::RESET_EVENT);
 
    // set timer for the background tasks
-   const double dt {1.0 / static_cast<double>(bgRate)};
-   const int millis {static_cast<int>(dt * 1000)};
+   const double dt{1.0 / static_cast<double>(bgRate)};
+   const int millis{static_cast<int>(dt * 1000)};
 
    // ensure everything is reset
    testStation->updateData(dt);

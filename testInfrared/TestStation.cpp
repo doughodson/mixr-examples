@@ -89,15 +89,15 @@ void TestStation::reset()
 //------------------------------------------------------------------------------
 void TestStation::stepOwnshipPlayer()
 {
-   mixr::base::PairStream* pl = getSimulation()->getPlayers();
+   mixr::base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
-      mixr::models::Player* f = nullptr;
-      mixr::models::Player* n = nullptr;
-      bool found = false;
+      mixr::models::Player* f{};
+      mixr::models::Player* n{};
+      bool found{};
 
       // Find the next player
-      mixr::base::List::Item* item = pl->getFirstItem();
+      mixr::base::List::Item* item{pl->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          if (pair != nullptr) {

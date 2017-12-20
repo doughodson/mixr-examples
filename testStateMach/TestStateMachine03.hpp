@@ -11,7 +11,7 @@
 //    functions: nextSubstate() and goToSubstate().
 //
 //------------------------------------------------------------------------------
-class TestStateMachine03 : public mixr::base::StateMachine
+class TestStateMachine03 final: public mixr::base::StateMachine
 {
    DECLARE_SUBCLASS(TestStateMachine03, mixr::base::StateMachine)
 
@@ -22,13 +22,13 @@ public:
    TestStateMachine03();
 
 protected:
-   virtual void preStateProc(const double dt) override;
-   virtual void postStateProc(const double dt) override;
-   virtual unsigned short stateTable(
+   void preStateProc(const double dt) final;
+   void postStateProc(const double dt) final;
+   unsigned short stateTable(
          const unsigned short cstate,
          const StateTableCode code,
          const double dt=0
-      ) override;
+      ) final;
 
 private:
    // State specific functions

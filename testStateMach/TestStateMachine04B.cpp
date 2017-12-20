@@ -44,8 +44,7 @@ void TestStateMachine04B::stateFunc01(const double)
    if (getMode() != Mode::RTN_STATE) {
       std::cout << "callState(CALL_01)";
       callState(TestStateMachine04::CALL_01);
-   }
-   else {
+   } else {
       std::cout << "Returned from call(); next()";
       next();
    }

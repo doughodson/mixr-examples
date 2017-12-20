@@ -16,7 +16,7 @@ namespace base { class PairStream; }
 // Slots:
 //    timers   <PairStream>   ! List of timers to be tested
 //------------------------------------------------------------------------------
-class Tester : public mixr::base::Component
+class Tester final: public mixr::base::Component
 {
    DECLARE_SUBCLASS(Tester, mixr::base::Component)
 

@@ -12,7 +12,7 @@ namespace base { class String; }
 // Class: MyComp
 // Description: example class
 //------------------------------------------------------------------------------
-class MyComp : public mixr::base::Component
+class MyComp final: public mixr::base::Component
 {
    DECLARE_SUBCLASS(MyComp, mixr::base::Component)
 

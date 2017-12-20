@@ -14,7 +14,7 @@
 //    select each state's specific code.
 //
 //------------------------------------------------------------------------------
-class TestStateMachine01 : public mixr::base::StateMachine
+class TestStateMachine01 final: public mixr::base::StateMachine
 {
    DECLARE_SUBCLASS(TestStateMachine01, mixr::base::StateMachine)
 
@@ -25,16 +25,16 @@ public:
    TestStateMachine01();
 
 protected:
-   virtual void preStateProc(const double dt) override;
-   virtual void postStateProc(const double dt) override;
-   virtual unsigned short stateTable(
+   void preStateProc(const double dt) final;
+   void postStateProc(const double dt) final;
+   unsigned short stateTable(
          const unsigned short cstate,
          const StateTableCode code,
          const double dt=0
-      ) override;
+      ) final;
 
 private:
-   // State specific functions
+   // state specific functions
    void anyStateFunc(const double dt);
 };
 

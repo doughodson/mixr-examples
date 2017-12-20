@@ -14,7 +14,7 @@ namespace graphics { class Graphic; }
 namespace vpf { class VpfTable; class VMap0MainDirectory; }
 }
 
-class TestDisplay : public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::GlutDisplay
 {
     DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 

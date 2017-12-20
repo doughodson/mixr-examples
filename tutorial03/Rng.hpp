@@ -14,7 +14,7 @@ namespace mixr {
 // Class: Rng
 // Description: Generates random numbers
 //------------------------------------------------------------------------------
-class Rng : public mixr::base::Object
+class Rng final: public mixr::base::Object
 {
    DECLARE_SUBCLASS(Rng, mixr::base::Object)
 

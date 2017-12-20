@@ -16,7 +16,7 @@ namespace base { class Angle; class Number; }
 // ( Worm selectName: 111 color: green speed: 10 startAngle: ( Degrees 30 ) )
 //
 //------------------------------------------------------------------------------
-class Worm : public mixr::graphics::Graphic
+class Worm final: public mixr::graphics::Graphic
 {
    DECLARE_SUBCLASS(Worm, mixr::graphics::Graphic)
 

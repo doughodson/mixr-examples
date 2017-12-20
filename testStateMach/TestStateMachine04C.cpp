@@ -48,8 +48,7 @@ void TestStateMachine04C::stateFunc00(const double)
             const auto arg = new base::Integer(13);
             callState(TestStateMachine04::CALL_02, arg);
             arg->unref();
-         }
-         else {
+         } else {
             std::cout << "Returned from call; ";
             const auto arg = dynamic_cast<const base::Boolean*>( getArgument() );
             if (arg != nullptr) {

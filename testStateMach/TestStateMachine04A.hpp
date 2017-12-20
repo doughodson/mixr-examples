@@ -9,7 +9,7 @@
 //
 //
 //------------------------------------------------------------------------------
-class TestStateMachine04A : public mixr::base::StateMachine
+class TestStateMachine04A final: public mixr::base::StateMachine
 {
    DECLARE_SUBCLASS(TestStateMachine04A, mixr::base::StateMachine)
 
@@ -17,12 +17,12 @@ public:
    TestStateMachine04A();
 
 protected:
-   virtual void preStateProc(const double dt) override;
-   virtual unsigned short stateTable(
+   void preStateProc(const double dt) final;
+   unsigned short stateTable(
          const unsigned short cstate,
          const StateTableCode code,
          const double dt=0
-      ) override;
+      ) final;
 
 private:
    // State specific functions

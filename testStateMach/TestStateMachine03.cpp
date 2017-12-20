@@ -58,7 +58,6 @@ void TestStateMachine03::stateFunc00(const double)
 
 void TestStateMachine03::stateFunc01(const double)
 {
-
    switch (getSubstate()) {
 
       case INIT_STATE : {
@@ -169,8 +168,7 @@ void TestStateMachine03::stateFunc13(const double)
             const auto arg = new base::Integer(13);
             call(CALL_02, arg);
             arg->unref();
-         }
-         else {
+         } else {
             std::cout << "Returned from call; ";
             const auto arg = dynamic_cast<const base::Boolean*>( getArgument() );
             if (arg != nullptr) {

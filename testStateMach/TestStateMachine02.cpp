@@ -78,8 +78,7 @@ void TestStateMachine02::stateFunc04(const double)
    if (getMode() != Mode::RTN_STATE) {
       std::cout << "call(CALL_01)";
       call(CALL_01);
-   }
-   else {
+   } else {
       std::cout << "Returned from call(); next()";
       next();
    }
@@ -110,8 +109,7 @@ void TestStateMachine02::stateFunc13(const double)
       const auto arg = new base::Integer(13);
       call(CALL_02, arg);
       arg->unref();
-   }
-   else {
+   } else {
       std::cout << "Returned from call; ";
       const auto arg = dynamic_cast<const base::Boolean*>( getArgument() );
       if (arg != nullptr) {

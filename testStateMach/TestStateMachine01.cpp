@@ -12,7 +12,7 @@ EMPTY_CONSTRUCTOR(TestStateMachine01)
 EMPTY_COPYDATA(TestStateMachine01)
 EMPTY_DELETEDATA(TestStateMachine01)
 
-// State dispatch table
+// state dispatch table
 BEGIN_STATE_TABLE(TestStateMachine01)
    ANY_STATE_FUNC( anyStateFunc)
 END_STATE_TABLE()

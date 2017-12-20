@@ -30,10 +30,10 @@ public:
    // Restart all of the timers -- they're left in an active state
    void restartAllTimers();
 
-   virtual void reset() override;
+   void reset() final;
 
 private:
-   mixr::base::PairStream* timers {};    // List of timers
+   mixr::base::PairStream* timers{};    // List of timers
 
 private:
    // slot table helper methods

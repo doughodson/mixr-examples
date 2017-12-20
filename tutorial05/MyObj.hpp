@@ -36,15 +36,17 @@ public:
    bool setMessage(const mixr::base::String* const);
    const mixr::base::String* getMessage() const;
 
-   virtual bool isValid() const override;
+   void dumpContents() const;
+
+   bool isValid() const final;
 
 private:
-   const mixr::base::PairStream* colorTable {};
-   const mixr::base::Identifier* textColor {};
-   const mixr::base::Identifier* backColor {};
-   const mixr::base::List* vector {};
-   const mixr::base::String* message {};
-   bool visible {};
+   const mixr::base::PairStream* colorTable{};
+   const mixr::base::Identifier* textColor{};
+   const mixr::base::Identifier* backColor{};
+   const mixr::base::List* vector{};
+   const mixr::base::String* message{};
+   bool visible{};
 
 private:
    // slot table helper methods

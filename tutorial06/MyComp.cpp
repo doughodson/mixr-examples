@@ -51,7 +51,7 @@ const mixr::base::String* MyComp::getStr() const
 
 bool MyComp::setSlotStr(const mixr::base::String* const x)
 {
-   bool ok = false;
+   bool ok{};
    if(x != nullptr) {
       ok = setStr(x);
    }
@@ -69,7 +69,7 @@ void MyComp::reset()
 
 void MyComp::updateTC(const double dt)
 {
-   const int millis {static_cast<int>(dt * 1000)};
+   const int millis{static_cast<int>(dt * 1000)};
    std::cout << "Time has moved forward by " << millis << " milliseconds\n";
 
    // Update base classes stuff

@@ -17,16 +17,14 @@
 // class factory
 mixr::base::Object* factory(const std::string& name)
 {
-   mixr::base::Object* obj {};
+   mixr::base::Object* obj{};
 
    // look in application's classes
    if ( name == Exponential::getFactoryName() ) {
       obj = new Exponential();
-   }
-   else if ( name == Lognormal::getFactoryName() ) {
+   } else if ( name == Lognormal::getFactoryName() ) {
       obj = new Lognormal();
-   }
-   else if ( name == Uniform::getFactoryName() ) {
+   } else if ( name == Uniform::getFactoryName() ) {
       obj = new Uniform();
    }
 
@@ -40,8 +38,8 @@ mixr::base::Object* factory(const std::string& name)
 AbstractRng* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -76,7 +74,7 @@ int main(int argc, char* argv[])
    std::string configFilename = "file0.edl";
 
    // build random
-   AbstractRng* rng {builder(configFilename)};
+   AbstractRng* rng{builder(configFilename)};
 
    for (int i=0; i<10; i++) {
       std::cout << rng->num() << std::endl;

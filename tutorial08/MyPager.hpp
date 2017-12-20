@@ -15,7 +15,7 @@ class MyPager : public mixr::graphics::Page
 public:
    MyPager();
 
-   virtual bool onEntry() override;
+   bool onEntry() final;
 };
 
 #endif

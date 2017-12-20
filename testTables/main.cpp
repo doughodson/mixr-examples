@@ -28,14 +28,14 @@
 
 #include <string>
 
-const int TIMING_LOOPS {10000};
+const int TIMING_LOOPS{10000};
 
 // table builder
 mixr::base::Table* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, mixr::base::factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, mixr::base::factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -69,14 +69,14 @@ mixr::base::Table* builder(const std::string& filename)
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   int cnt {};
+   int cnt{};
 
-   mixr::base::FStorage* s {};
+   mixr::base::FStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
-   const double maxX {tbl->getMaxX()};
-   const double minX {tbl->getMinX()};
-   const double dx {(maxX - minX) / static_cast<double>(20)};
+   const double maxX{tbl->getMaxX()};
+   const double minX{tbl->getMinX()};
+   const double dx{(maxX - minX) / 20.0};
 
    if (!tflg) {
       std::cout << std::endl;
@@ -86,12 +86,12 @@ unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const 
       std::cout << "x, value" << std::endl;
    }
 
-   double x {minX - 2*dx};
+   double x{minX - 2*dx};
    while ( x <= (maxX + 2*dx) ) {
-      double x1 = x;
+      double x1{x};
       if (rflg) x1 = (minX + (maxX - minX) * static_cast<double>(rand()) / static_cast<double>(RAND_MAX));
 
-      double value = tbl->lfi(x1,s);
+      double value{tbl->lfi(x1,s)};
       cnt++;
 
       if (!tflg) std::cout << x1 << ", " << value << std::endl;
@@ -107,18 +107,18 @@ unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   int cnt {};
+   int cnt{};
 
-   mixr::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
-   double maxY = tbl->getMaxY();
-   double minY = tbl->getMinY();
-   double dy = (maxY - minY) / static_cast<double>(10);
+   double maxY{tbl->getMaxY()};
+   double minY{tbl->getMinY()};
+   double dy{(maxY - minY) / 10.0};
 
-   double maxX = tbl->getMaxX();
-   double minX = tbl->getMinX();
-   double dx = (maxX - minX) / static_cast<double>(20);
+   double maxX{tbl->getMaxX()};
+   double minX{tbl->getMinX()};
+   double dx{(maxX - minX) / 20.0};
 
    if (!tflg) {
       std::cout << std::endl;
@@ -128,17 +128,17 @@ unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const 
       std::cout << "x, y, value" << std::endl;
    }
 
-   double y = minY - 2*dy;
+   double y{minY - 2*dy};
    while ( y <= (maxY + 2*dy) ) {
-      double y1 = y;
+      double y1{y};
       if (rflg) y1 = (minY + (maxY - minY) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-      double x = minX - 2*dx;
+      double x{minX - 2*dx};
       while ( x <= (maxX + 2*dx) ) {
-         double x1 = x;
+         double x1{x};
          if (rflg) x1 = (minX + (maxX - minX) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-         double value = tbl->lfi(x1,y1,s);
+         double value{tbl->lfi(x1,y1,s)};
          cnt++;
 
          if (!tflg) std::cout << x1 << ", " << y1 << ", " << value << std::endl;
@@ -156,25 +156,25 @@ unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   int cnt {};
+   int cnt{};
 
-   mixr::base::FStorage* s = nullptr;
+   mixr::base::FStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
    // Setup Z
-   double maxZ = tbl->getMaxZ();
-   double minZ = tbl->getMinZ();
-   double dz = (maxZ - minZ) / static_cast<double>(2*(tbl->getNumZPoints()-1));
+   double maxZ{tbl->getMaxZ()};
+   double minZ{tbl->getMinZ()};
+   double dz{(maxZ - minZ) / static_cast<double>(2.0*(tbl->getNumZPoints()-1))};
 
    // Setup Y
-   double maxY = tbl->getMaxY();
-   double minY = tbl->getMinY();
-   double dy = (maxY - minY) / static_cast<double>(2*(tbl->getNumYPoints()-1));
+   double maxY{tbl->getMaxY()};
+   double minY{tbl->getMinY()};
+   double dy{(maxY - minY) / static_cast<double>(2.0*(tbl->getNumYPoints()-1))};
 
    // Setup X
-   double maxX = tbl->getMaxX();
-   double minX = tbl->getMinX();
-   double dx = (maxX - minX) / static_cast<double>(2*(tbl->getNumXPoints()-1));
+   double maxX{tbl->getMaxX()};
+   double minX{tbl->getMinX()};
+   double dx{(maxX - minX) / static_cast<double>(2.0*(tbl->getNumXPoints()-1))};
 
    if (!tflg) {
       std::cout << std::endl;
@@ -184,22 +184,22 @@ unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const 
       std::cout << "x, y, z, value" << std::endl;
    }
 
-   double z = minZ - dz;
+   double z{minZ - dz};
    while ( z <= (maxZ + dz) ) {
-      double z1 = z;
+      double z1{z};
       if (rflg) z1 = (minZ + (maxZ - minZ) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-      double y = minY - dy;
+      double y{minY - dy};
       while ( y <= (maxY + dy) ) {
-         double y1 = y;
+         double y1{y};
          if (rflg) y1 = (minY + (maxY - minY) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-         double x = minX - dx;
+         double x{minX - dx};
          while ( x <= (maxX + dx) ) {
-            double x1 = x;
+            double x1{x};
             if (rflg) x1 = (minX + (maxX - minX) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-            double value = tbl->lfi(x1,y1,z1,s);
+            double value{tbl->lfi(x1,y1,z1,s)};
             cnt++;
 
             if (!tflg) std::cout << x1 << ", " << y1 << ", " << z1 << ", " << value << std::endl;
@@ -220,27 +220,27 @@ unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const 
 //-----------------------------------------------------------------------------
 unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const bool sflg, const bool rflg)
 {
-   int cnt {};
+   int cnt{};
 
-   mixr::base::FStorage* s {};
+   mixr::base::FStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
    // Setup W
-   const double minW = tbl->getMinW();
-   const double maxW = tbl->getMaxW();
-   const double dw = (maxW - minW) / static_cast<double>(2 * (tbl->getNumWPoints() - 1));
+   const double minW{tbl->getMinW()};
+   const double maxW{tbl->getMaxW()};
+   const double dw{(maxW - minW) / static_cast<double>(2 * (tbl->getNumWPoints() - 1))};
 
-   const double minZ = tbl->getMinZ();
-   const double maxZ = tbl->getMaxZ();
-   const double dz = (maxZ - minZ) / static_cast<double>(2 * (tbl->getNumZPoints() - 1));
+   const double minZ{tbl->getMinZ()};
+   const double maxZ{tbl->getMaxZ()};
+   const double dz{(maxZ - minZ) / static_cast<double>(2 * (tbl->getNumZPoints() - 1))};
 
-   const double minY = tbl->getMinY();
-   const double maxY = tbl->getMaxY();
-   const double dy = (maxY - minY) / static_cast<double>(2 * (tbl->getNumYPoints() - 1));
+   const double minY{tbl->getMinY()};
+   const double maxY{tbl->getMaxY()};
+   const double dy{(maxY - minY) / static_cast<double>(2 * (tbl->getNumYPoints() - 1))};
 
-   const double minX = tbl->getMinX();
-   const double maxX = tbl->getMaxX();
-   const double dx = (maxX - minX) / static_cast<double>(2 * (tbl->getNumXPoints() - 1));
+   const double minX{tbl->getMinX()};
+   const double maxX{tbl->getMaxX()};
+   const double dx{(maxX - minX) / static_cast<double>(2 * (tbl->getNumXPoints() - 1))};
 
    if (!tflg) {
       std::cout << std::endl;
@@ -250,27 +250,27 @@ unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const 
       std::cout << "x, y, z, w, value" << std::endl;
    }
 
-   double w = minW - dw;
+   double w{minW - dw};
    while (w <= (maxW + dw)) {
-      double w1 = w;
+      double w1{w};
       if (rflg) w1 = (minW + (maxW - minW) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-      double z = minZ - dz;
+      double z{minZ - dz};
       while (z <= (maxZ + dz)) {
-         double z1 = z;
+         double z1{z};
          if (rflg) z1 = (minZ + (maxZ - minZ) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-         double y = minY - dy;
+         double y{minY - dy};
          while (y <= (maxY + dy)) {
-            double y1 = y;
+            double y1{y};
             if (rflg) y1 = (minY + (maxY - minY) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-            double x = minX - dx;
+            double x{minX - dx};
             while (x <= (maxX + dx)) {
-               double x1 = x;
+               double x1{x};
                if (rflg) x1 = (minX + (maxX - minX) * static_cast<double>(rand())/static_cast<double>(RAND_MAX));
 
-               double value = tbl->lfi(x1, y1, z1, w1, s);
+               double value{tbl->lfi(x1, y1, z1, w1, s)};
                cnt++;
 
                if (!tflg) {
@@ -300,10 +300,10 @@ unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const 
 
 int main(int argc, char* argv[])
 {
-   bool aflg {};   // All base classes flag
-   bool rflg {};   // Random flag
-   bool sflg {};   // TableStoreage flag
-   bool tflg {};   // Timing flag
+   bool aflg{};   // All base classes flag
+   bool rflg{};   // Random flag
+   bool sflg{};   // TableStoreage flag
+   bool tflg{};   // Timing flag
 
    // default configuration filename
    std::string configFilename = "test1.edl";
@@ -312,23 +312,19 @@ int main(int argc, char* argv[])
    for (int i = 1; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
-      }
-      else if ( std::string(argv[i]) == "-a") {
+      } else if ( std::string(argv[i]) == "-a") {
          aflg = true;
-      }
-      else if ( std::string(argv[i]) == "-r") {
+      } else if ( std::string(argv[i]) == "-r") {
          rflg = true;
-      }
-      else if ( std::string(argv[i]) == "-s") {
+      } else if ( std::string(argv[i]) == "-s") {
          sflg = true;
-      }
-      else if ( std::string(argv[i]) == "-t") {
+      } else if ( std::string(argv[i]) == "-t") {
          tflg = true;
       }
    }
 
    // build table
-   const mixr::base::Table* table {builder(configFilename)};
+   const mixr::base::Table* table{builder(configFilename)};
 
    // ---
    // Serialize the table to the output stream
@@ -346,11 +342,11 @@ int main(int argc, char* argv[])
    // ---
    // Call the test function for this LFI table type
    // ---
-   double startTime = mixr::base::getComputerTime();
-   unsigned int cnt = 0;
-   unsigned int n = 1;
+   double startTime{mixr::base::getComputerTime()};
+   unsigned int cnt{};
+   int n{1};
    if (tflg) n = TIMING_LOOPS;
-   for (unsigned int i = 0; i < n; i++) {
+   for (int i = 0; i < n; i++) {
       if (t1 != nullptr && (aflg || t2 == nullptr) ) {
          cnt += testIt(t1, tflg, sflg, rflg);
       }
@@ -369,13 +365,13 @@ int main(int argc, char* argv[])
    // Timing data
    // ---
    if (tflg) {
-      double endTime = mixr::base::getComputerTime();
-      double deltaTime = endTime - startTime;
-      double perFrameTime = deltaTime/static_cast<double>(TIMING_LOOPS);
+      double endTime{mixr::base::getComputerTime()};
+      double deltaTime{endTime - startTime};
+      double perFrameTime{deltaTime/static_cast<double>(TIMING_LOOPS)};
       std::cout << "Total Time = " << deltaTime << " for " << TIMING_LOOPS << " frames." << std::endl;
       std::cout << "Ave time per frame (uS) = " << perFrameTime*1000000.0 << std::endl;
       if (cnt > 0) {
-         double perCallTime = deltaTime/static_cast<double>(cnt);
+         double perCallTime{deltaTime/static_cast<double>(cnt)};
          std::cout << "Ave time per call (uS) = " << perCallTime*1000000.0 << std::endl;
       }
    }

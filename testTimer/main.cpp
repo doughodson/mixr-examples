@@ -123,7 +123,7 @@ void run(Tester* const tester)
       mixr::base::Timer::freeze(true);
 
       // Time between printing the timer data
-      const double dt{1.0 / static_cast<double>(TIMERS_PRINT_RATE)};
+      const double dt{1.0 / TIMERS_PRINT_RATE};
 
       // Our main test control timer
       const auto mainTimer = new mixr::base::UpTimer();

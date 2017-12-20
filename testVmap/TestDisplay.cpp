@@ -64,12 +64,12 @@ void TestDisplay::updateData(const double dt)
     if (start) {
         if (vpf != 0) {
             // get our reference directory
-            Vpf::VMAP0ReferenceDirectory* ref = vpf->getReferenceDir();
+            Vpf::VMAP0ReferenceDirectory* ref{vpf->getReferenceDir()};
             if (ref != 0) {
 //                bool ok = true;
                 numVerts = 0;
 #if 1
-                Vpf::VMAP0RefCoverageDirectory* rDir = ref->getCoverage(Vpf::VMAP0ReferenceDirectory::CVG_PLACENAM);
+                Vpf::VMAP0RefCoverageDirectory* rDir{ref->getCoverage(Vpf::VMAP0ReferenceDirectory::CVG_PLACENAM)};
                 if (rDir != 0) {
                     //numVerts = rDir->getPlacenameCoordsByRange(20, 20, 39.9276f, -75.2182f, verts, 500);  
                     //updatePoints();
@@ -103,12 +103,12 @@ void TestDisplay::updateData(const double dt)
                     //updatePoints();
     #else
                     // we are going to query our components by a lat long and range
-                    VMAP0RefCoverageDirectory* rDir = ref->getCoverage(VMAP0ReferenceDirectory::CVG_POLBND);
+                    VMAP0RefCoverageDirectory* rDir{ref->getCoverage(VMAP0ReferenceDirectory::CVG_POLBND)};
                     // ok, our placenam coverage directory contains points and their associated names, so let's query them by record first
                     while (numVerts < 500) {
-                        float maxLat = 90, maxLon = 180;
-                        float minLat = -90, minLon = -180;
-                        int x = rDir->getPolBndCoordsByLatLon(maxLat, maxLon, minLat, minLon, numVerts, verts);
+                        float maxLat{90}, maxLon{180};
+                        float minLat{-90}, minLon{-180};
+                        int x{rDir->getPolBndCoordsByLatLon(maxLat, maxLon, minLat, minLon, numVerts, verts)};
                         numVerts += x;
                     }
                     //while (ok && numVerts < 500) {
@@ -146,14 +146,14 @@ void TestDisplay::updateData(const double dt)
 
 void TestDisplay::updatePlaceNames() 
 {
-    base::Pair* pair {subpage()->findByName("places")};
+    base::Pair* pair{subpage()->findByName("places")};
     if (pair != nullptr) {
         pair->ref();
-        graphics::SymbolLoader* myLoader {dynamic_cast<graphics::SymbolLoader*>(pair->object())};
+        graphics::SymbolLoader* myLoader{dynamic_cast<graphics::SymbolLoader*>(pair->object())};
         if (myLoader != nullptr) {
             myLoader->clearLoader();
             for (int i = 0; i < numPlaces; i++) {
-                int idx {myLoader->addSymbol(1, placenames[i])};
+                int idx{myLoader->addSymbol(1, placenames[i])};
                 myLoader->updateSymbolPositionLL(idx, verts[i].x(), verts[i].y());
                 myLoader->updateSymbolText(idx, "name", placenames[i]);
                 std::cout << "PUT PLACENAME " << placenames[i] << " into position " << verts[i].x() << ", " << verts[i].y() << std::endl;
@@ -165,15 +165,15 @@ void TestDisplay::updatePlaceNames()
 
 void TestDisplay::updatePoints() 
 {
-    base::Pair* pair {subpage()->findByName("points")};
+    base::Pair* pair{subpage()->findByName("points")};
     if (pair != nullptr) {
         pair->ref();
-        graphics::SymbolLoader* myLoader {dynamic_cast<graphics::SymbolLoader*>(pair->object())};
+        graphics::SymbolLoader* myLoader{dynamic_cast<graphics::SymbolLoader*>(pair->object())};
         if (myLoader != nullptr) {
             myLoader->clearLoader();
             for (int i = 0; i < numVerts; i++) {
                 if (verts[i].y() != 0 && verts[i].x() != 0 && verts[i].z() != 0) {
-                    int idx {myLoader->addSymbol(1, placenames[i])};
+                    int idx{myLoader->addSymbol(1, placenames[i])};
                     myLoader->updateSymbolPositionLL(idx, verts[i].x(), verts[i].y());
                     std::cout << "COORDINATE = " << verts[i].x() << ", " << verts[i].y() << std::endl;
                 }
@@ -194,19 +194,19 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
     setMouse(x,y);
     if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
         // we just did a pick, let's do a spatial query on it, based on our lat and lon
-        graphics::MapPage* page {static_cast<graphics::MapPage*>(subpage())};
+        graphics::MapPage* page{static_cast<graphics::MapPage*>(subpage())};
         if (page != nullptr) {
-            double refLat {page->getReferenceLatDeg()};
-            double refLon {page->getReferenceLonDeg()};
-            double mapRange {page->getRange()};
+            double refLat{page->getReferenceLatDeg()};
+            double refLon{page->getReferenceLonDeg()};
+            double mapRange{page->getRange()};
             // now get our directory and query our index
             if (vpf != nullptr) {
                 // get our reference directory
-                vpf::VMap0ReferenceDirectory* ref {vpf->getReferenceDir()};
+                vpf::VMap0ReferenceDirectory* ref{vpf->getReferenceDir()};
                 if (ref != nullptr) {
 //                    bool ok = true;
                     numVerts = 0;
-                    vpf::VMap0RefCoverageDirectory* rDir {ref->getCoverage(vpf::VMap0ReferenceDirectory::CVG_PLACENAM)};
+                    vpf::VMap0RefCoverageDirectory* rDir{ref->getCoverage(vpf::VMap0ReferenceDirectory::CVG_PLACENAM)};
                     if (rDir != nullptr) {
                         // query our place name by reference latitutde
                         numVerts = rDir->getPlacenameCoordsByRange(static_cast<float>(mapRange), static_cast<float>(mapRange),
@@ -216,7 +216,7 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
                         // now get our placenames
                         numPlaces = 0;
                         for (int i = 0; i < numVerts; i++) {
-                            int primId {rDir->getSpatialQueryPlacenamePrimID(i+1)};
+                            int primId{rDir->getSpatialQueryPlacenamePrimID(i+1)};
                             rDir->getPlacenameByRecord(primId, placenames[numPlaces++]);
                         }
                         updatePlaceNames();

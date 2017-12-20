@@ -23,12 +23,12 @@ public:
    bool setStr(const mixr::base::String* const);
    const mixr::base::String* getStr() const;
 
-   virtual void reset() override;
-   virtual void updateTC(const double dt = 0.0) override;
-   virtual void updateData(const double dt = 0.0) override;
+   void reset() final;
+   void updateTC(const double dt = 0.0) final;
+   void updateData(const double dt = 0.0) final;
 
 private:
-   const mixr::base::String* str {};
+   const mixr::base::String* str{};
 
 private:
    // slot table helper methods

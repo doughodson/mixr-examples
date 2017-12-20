@@ -7,8 +7,6 @@
 #include "linked_list.hpp"
 #include "mixr/base/colors/Color.hpp"
 
-//using namespace mixr::base;
-
 int main(int argc, char**)
 {
    std::cout << "Test templates" << std::endl;
@@ -24,7 +22,6 @@ int main(int argc, char**)
    colorList->put(c1);
 
    std::cout << "# entries : " << colorList->entries() << std::endl;
-
 
    return 0;
 }

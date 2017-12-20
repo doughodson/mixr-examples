@@ -21,24 +21,25 @@ class TestDisplay : public mixr::glut::GlutDisplay
 public:
     TestDisplay();
     
-    virtual void drawIt();
-    virtual void mouseEvent(const int button, const int state, const int x, const int y);
-    virtual void updateData(const double dt = 0.0);
+    void drawIt() final;
+    void mouseEvent(const int button, const int state, const int x, const int y) final;
+    void updateData(const double dt = 0.0) final;
+
     void updatePlaceNames();
     void updatePoints();
 
 private:
     // Select/Pick test
-    mixr::graphics::Graphic* selected {};
+    mixr::graphics::Graphic* selected{};
     //packet test for vector product format level 0
     mixr::vpf::VpfTable tables[2];
-    bool start {true};
-    int numVerts {};
-    int numRecords {4};
-    int numPlaces {};
+    bool start{true};
+    int numVerts{};
+    int numRecords{4};
+    int numPlaces{};
     mixr::base::Vec3d verts[5000];
-    mixr::vpf::VMap0MainDirectory* vpf {};
-    char placenames[500][100] {};
+    mixr::vpf::VMap0MainDirectory* vpf{};
+    char placenames[500][100]{};
 
 private:
     // slot table helper methods

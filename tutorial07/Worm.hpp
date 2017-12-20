@@ -41,27 +41,27 @@ public:
    void setStartAngle(const double deg);
    void setSpeed(const double xx);
 
-   virtual void drawFunc() override;
+   void drawFunc() final;
 
-   virtual void updateTC(const double dt = 0.0) override;
-   virtual void updateData(const double dt = 0.0) override;
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-   virtual void reset() override;
+   void updateTC(const double dt = 0.0) final;
+   void updateData(const double dt = 0.0) final;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+   void reset() final;
 
 private:
-   static const int MAX_HIST = 10;
+   static const int MAX_HIST{10};
 
-   double left {-10.0}, right {10.0};            // X limits
-   double bottom {-10.0}, top {10.0};            // Y limits
-   double xPos {}, yPos {};                      // Position
-   double xOld {}, yOld {};                      // Previous Position
-   double dx {}, dy {};                          // Delta position
-   double speed {10.0};                          // Speed
-   double sangle {};                             // Starting angle (radians)
+   double left{-10.0}, right{10.0};                // X limits
+   double bottom{-10.0}, top{10.0};                // Y limits
+   double xPos{}, yPos{};                          // Position
+   double xOld{}, yOld{};                          // Previous Position
+   double dx{}, dy{};                              // Delta position
+   double speed{10.0};                             // Speed
+   double sangle{};                                // Starting angle (radians)
    std::array<mixr::base::Vec2d, MAX_HIST> trail;  // Display trail
-   int    nTrails {};                            // Trail size
-   int    index {};                              // Trail index
-   const mixr::base::Angle* iangle {};             // Input angle
+   int nTrails{};                                  // Trail size
+   int index{};                                    // Trail index
+   const mixr::base::Angle* iangle{};              // Input angle
 
 private:
    // slot table helper methods

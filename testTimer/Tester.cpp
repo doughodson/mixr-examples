@@ -39,11 +39,11 @@ void Tester::deleteData()
 //------------------------------------------------------------------------------
 bool Tester::areAllActiveTimerAlarmsOn() const
 {
-   bool on = true;
+   bool on{true};
 
    if (timers != nullptr) {
 
-      const mixr::base::List::Item* item = timers->getFirstItem();
+      const mixr::base::List::Item* item{timers->getFirstItem()};
       while (item != nullptr && on) {
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<const mixr::base::Timer*>(pair->object());
@@ -62,7 +62,7 @@ void Tester::printTimers() const
 {
    if (timers != nullptr) {
 
-      const mixr::base::List::Item* item = timers->getFirstItem();
+      const mixr::base::List::Item* item{timers->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<const mixr::base::Timer*>(pair->object());
@@ -94,7 +94,7 @@ void Tester::restartAllTimers()
 {
    if (timers != nullptr) {
 
-      mixr::base::List::Item* item = timers->getFirstItem();
+      mixr::base::List::Item* item{timers->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<mixr::base::Timer*>(pair->object());
@@ -109,7 +109,7 @@ void Tester::reset()
    BaseClass::reset();
 
    if (timers != nullptr) {
-      mixr::base::List::Item* item = timers->getFirstItem();
+      mixr::base::List::Item* item{timers->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<mixr::base::Timer*>(pair->object());
@@ -131,17 +131,16 @@ bool Tester::setSlotTimers(const mixr::base::PairStream* const msg)
 
       const auto newList = new mixr::base::PairStream();
 
-      unsigned int n = 0;
-      const mixr::base::List::Item* item = msg->getFirstItem();
+      unsigned int n{};
+      const mixr::base::List::Item* item{msg->getFirstItem()};
       while (item != nullptr) {
          n++;
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());
          const auto timer = dynamic_cast<const mixr::base::Timer*>(pair->object());
          if (timer != nullptr) {
-            mixr::base::Pair* newPair = pair->clone();
+            mixr::base::Pair* newPair{pair->clone()};
             newList->put(newPair);
-         }
-         else {
+         } else {
             std::cerr << "Tester::setSlotTimers() rejecting item# " << n << "; not a valid Timer object" << std::endl;
          }
          item = item->getNext();

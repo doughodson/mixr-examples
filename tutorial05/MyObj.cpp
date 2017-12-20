@@ -8,8 +8,10 @@
 #include "mixr/base/List.hpp"
 #include "mixr/base/String.hpp"
 #include "mixr/base/Identifier.hpp"
+#include "mixr/base/colors/Color.hpp"
 
-#include <cstdlib>
+#include <iostream>
+#include <memory>
 
 IMPLEMENT_SUBCLASS(MyObj, "MyObj")
 
@@ -145,7 +147,7 @@ const mixr::base::String* MyObj::getMessage() const
 
 bool MyObj::setSlotColorTable(const mixr::base::PairStream* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr) {
       ok = setColorTable(x);
    }
@@ -154,7 +156,7 @@ bool MyObj::setSlotColorTable(const mixr::base::PairStream* const x)
 
 bool MyObj::setSlotTextColor(const mixr::base::Identifier* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr) {
       ok = setTextColor(x);
    }
@@ -163,7 +165,7 @@ bool MyObj::setSlotTextColor(const mixr::base::Identifier* const x)
 
 bool MyObj::setSlotBackColor(const mixr::base::Identifier* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr) {
       ok = setBackColor(x);
    }
@@ -172,7 +174,7 @@ bool MyObj::setSlotBackColor(const mixr::base::Identifier* const x)
 
 bool MyObj::setSlotVector(const mixr::base::List* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr) {
       ok = setVector(x);
    }
@@ -181,7 +183,7 @@ bool MyObj::setSlotVector(const mixr::base::List* const x)
 
 bool MyObj::setSlotVisible(const mixr::base::Number* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr) {
       ok = setVisible(x->getBoolean());
    }
@@ -190,19 +192,68 @@ bool MyObj::setSlotVisible(const mixr::base::Number* const x)
 
 bool MyObj::setSlotMessage(const mixr::base::String* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr) {
       ok = setMessage(x);
    }
    return ok;
 }
 
+void MyObj::dumpContents() const
+{
+   // print out some color information
+   const mixr::base::PairStream* colorTable{getColorTable()};
+   if (colorTable != nullptr) {
+//    Pair* p = colorTable->findByName("green");
+      const mixr::base::Identifier* id{getTextColor()};
+      if (id != nullptr) {
+         const mixr::base::Pair* p{colorTable->findByName(id->getString())};
+         if (p != nullptr) {
+            std::cout << "Text color: " << id->getString();
+            const auto color = dynamic_cast<const mixr::base::Color*>(p->object());
+            if (color != nullptr) {
+               std::cout << " Red: "   << color->red();
+               std::cout << " Green: " << color->green();
+               std::cout << " Blue: "  << color->blue();
+            }
+            std::cout << std::endl;
+         } else {
+            std::cout << "Text color not found\n" << std::endl;
+         }
+      }
+   }
+
+   // print out vector information
+   const mixr::base::List* vector{getVector()};
+   if (vector != nullptr) {
+      const int numValues{static_cast<int>(vector->entries())};
+      std::unique_ptr<int[]> values(new int[numValues]);
+      const int n {static_cast<int>(vector->getNumberList(values.get(), numValues))};
+      std::cout << "Vector: ";
+      std::cout << "# Numeric Entries: " << n << " Values: ";
+      for (int i=0; i < n; i++)
+         std::cout << values[i] << " ";
+      std::cout << std::endl;
+   }
+
+   // print out visible and message info
+   std::cout << "Visible: " << getVisible() << "\n";
+   const mixr::base::String* message {getMessage()};
+   std::cout << "Message: " << message->getString() << "\n";
+}
+
 //------------------------------------------------------------------------------
 // isValid() -- I'm not going to actually check anything - this method is here
-//              to demonstrate that the capability to check data exists within
-//              the framework
+//              to demonstrate that the capability to check data set via
+//              slottable is correct.
 //------------------------------------------------------------------------------
 bool MyObj::isValid() const
 {
+   std::cout << "------------------------------------------\n";
+   std::cout << "MyObj::isValid() called\n";
+   std::cout << "------------------------------------------\n";
+   dumpContents();
+   std::cout << "------------------------------------------\n";
+
    return true;
 }

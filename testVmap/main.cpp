@@ -28,15 +28,15 @@
 
 using namespace mixr;
 
-const int frameRate {20};
+const int frameRate{20};
 
-class TestDisplay* sys {};
+class TestDisplay* sys{};
 
 void timerFunc(int)
 {
-    const double dt {1.0 / static_cast<double>(frameRate)};
+    const double dt{1.0 / static_cast<double>(frameRate)};
 
-    const unsigned int millis {static_cast<unsigned int>(dt * 1000)};
+    const unsigned int millis{static_cast<unsigned int>(dt * 1000)};
     glutTimerFunc(millis, timerFunc, 1);
 
     base::Timer::updateTimers( static_cast<double>(dt) );
@@ -46,7 +46,7 @@ void timerFunc(int)
 
 base::Object* factory(const std::string& name)
 {
-    base::Object* obj {};
+    base::Object* obj{};
 
     if ( name == TestDisplay::getFactoryName() ) {
         obj = new TestDisplay;
@@ -64,8 +64,8 @@ base::Object* factory(const std::string& name)
 void builder(const std::string& filename)
 {
     // Read the description file
-    int num_errors {};
-    base::Object* obj = base::edl_parser(filename, factory, &num_errors);
+    int num_errors{};
+    base::Object* obj{base::edl_parser(filename, factory, &num_errors)};
     if (num_errors > 0) {
         std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
         std::exit(EXIT_FAILURE);
@@ -102,8 +102,8 @@ int main(int argc, char* argv[])
 
     glutInit(&argc, argv);
     sys->createWindow();
-    const double dt {1.0 / static_cast<double>(frameRate)};
-    const unsigned int millis {static_cast<unsigned int>(dt * 1000)};
+    const double dt{1.0 / static_cast<double>(frameRate)};
+    const unsigned int millis{static_cast<unsigned int>(dt * 1000)};
     glutTimerFunc(millis, timerFunc, 1);
     glutMainLoop();
     return 0;

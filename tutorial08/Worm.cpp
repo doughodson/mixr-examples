@@ -94,8 +94,7 @@ void Worm::updateTC(const double dt)
    if (xPos > right) {
       xPos = right - (xPos - right);
       dx = -dx;
-   }
-   else if (xPos < left) {
+   } else if (xPos < left) {
       xPos = left - (xPos - left);
       dx = -dx;
    }
@@ -104,8 +103,7 @@ void Worm::updateTC(const double dt)
    if (yPos > top) {
       yPos = top - (yPos - top);
       dy = -dy;
-   }
-   else if (yPos < bottom) {
+   } else if (yPos < bottom) {
       yPos = bottom - (yPos - bottom);
      dy = -dy;
    }
@@ -141,7 +139,7 @@ void Worm::drawFunc()
 
 bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
 {
-   bool ok = false;
+   bool ok{};
    if (rsobj != nullptr) {
       setSpeed(rsobj->getReal());
       ok = true;
@@ -151,7 +149,7 @@ bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
 
 bool Worm::setSlotAngle(const mixr::base::Angle* const saobj)
 {
-   bool ok = false;
+   bool ok{};
    if (saobj != nullptr) {
       mixr::base::Radians radians;
       setStartAngle(static_cast<double>(radians.convert(*saobj)));
@@ -164,7 +162,7 @@ bool Worm::setSlotAngle(const mixr::base::Angle* const saobj)
 
 bool Worm::setSlotAngle(const mixr::base::Number* const saobj)
 {
-   bool ok = false;
+   bool ok{};
    if (saobj != nullptr) {
       setStartAngle(saobj->getReal());
       ok = true;

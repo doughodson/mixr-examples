@@ -9,21 +9,21 @@
 //
 // Description: Example MFD page
 //------------------------------------------------------------------------------
-class MfdPage : public mixr::graphics::Page
+class MfdPage final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(MfdPage, mixr::graphics::Page)
 
 public:
    MfdPage();
 
-   virtual bool onEntry() override;
+   bool onEntry() final;
 
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-   virtual void updateData(const double dt = 0.0) override;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+   void updateData(const double dt = 0.0) final;
 
 private:
-   double rotate {};
-   double rotateRate {5.0};
+   double rotate{};
+   double rotateRate{5.0};
    SendData rSD;
 };
 

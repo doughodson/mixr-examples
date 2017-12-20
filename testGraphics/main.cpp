@@ -29,12 +29,12 @@
 #include <cstdlib>
 
 // graphics frame rate (Hz)
-const int frame_rate {10};
+const int frame_rate{10};
 // derived delta times
-const double dt_secs {1.0 / static_cast<double>(frame_rate)};
-const int dt_msecs {static_cast<int>(dt_secs * 1000.0)};
+const double dt_secs{1.0 / static_cast<double>(frame_rate)};
+const int dt_msecs{static_cast<int>(dt_secs * 1000.0)};
 
-TestDisplay* testDisplay {};
+TestDisplay* testDisplay{};
 
 // timerFunc() -- time critical stuff
 void timerFunc(int)
@@ -49,7 +49,7 @@ void timerFunc(int)
 // our class factory
 mixr::base::Object* factory(const std::string& name)
 {
-   mixr::base::Object* obj {};
+   mixr::base::Object* obj{};
 
    //
    if ( name == TestDisplay::getFactoryName() ) {
@@ -90,8 +90,8 @@ mixr::base::Object* factory(const std::string& name)
 TestDisplay* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);

@@ -1,9 +1,9 @@
 
 #include "TestRotator.hpp"
 #include "mixr/base/units/angle_utils.hpp"
+
 #include <GL/glu.h>
 #include <GL/glut.h>
-#include <cmath>
 
 using namespace mixr;
 
@@ -28,7 +28,7 @@ void TestRotator::copyData(const TestRotator& org, const bool)
 
 void TestRotator::drawFunc()
 {
-    GLfloat currentColor[4];
+    GLfloat currentColor[4]{};
     glGetFloatv(GL_CURRENT_COLOR, currentColor);
     //count++;
     //std::cout << "Count = " << count << std::endl;

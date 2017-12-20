@@ -9,18 +9,18 @@
 //
 // Description: Test Display Azimuth Pointer
 //------------------------------------------------------------------------------
-class TdAzPtr : public mixr::graphics::Graphic
+class TdAzPtr final: public mixr::graphics::Graphic
 {
     DECLARE_SUBCLASS(TdAzPtr, mixr::graphics::Graphic)
 
 public:
     TdAzPtr();
 
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    virtual void draw() override;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    void draw() final;
 
 private:
-    double azimuth {};
+    double azimuth{};
 };
 
 #endif

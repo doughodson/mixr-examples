@@ -17,18 +17,18 @@ namespace base { class Angle; class Number; }
 //  ( def-form TestOne
 //  )
 //------------------------------------------------------------------------------
-class TestOne : public mixr::graphics::Graphic
+class TestOne final: public mixr::graphics::Graphic
 {
     DECLARE_SUBCLASS(TestOne, mixr::graphics::Graphic)
 
 public:
     TestOne();
 
-    void getPosition(double& xx, double& yy) const      { xx = xPos; yy = yPos; }
-    void setPosition(const double xx, const double yy)  { xPos = xx; yPos = yy; }
-    virtual bool realSpeed(const mixr::base::Number* const rsobj);
-    virtual bool setAngle(mixr::base::Angle* saobj);
-    virtual bool setAngle(const mixr::base::Number* const saobj);
+    void getPosition(double& xx, double& yy) const             { xx = xPos; yy = yPos; }
+    void setPosition(const double xx, const double yy)         { xPos = xx; yPos = yy; }
+    bool realSpeed(const mixr::base::Number* const rsobj);
+    bool setAngle(mixr::base::Angle* saobj);
+    bool setAngle(const mixr::base::Number* const saobj);
 
     double leftLimit() const                { return left; }
     void leftLimit(const double ll)         { left = ll; }
@@ -47,25 +47,25 @@ public:
 
     virtual void drawFunc() override;
 
-    virtual void updateTC(const double dt = 0.0) override;
-    virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    virtual void reset() override;
+    void updateTC(const double dt = 0.0) final;
+    void updateData(const double dt = 0.0) final;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    void reset() final;
 
 private:
     static const int maxHist = 10;
 
-    double left {-10.0}, right {10.0};           // X limits
-    double bottom {-10.0}, top {10.0};           // Y limits
-    double xPos {}, yPos {};                     // Position
-    double xOld {}, yOld {};                     // Previous Position
-    double dx {}, dy {};                         // Delta position
-    double speed {10.0};                         // Speed
-    double sangle {};                            // Starting angle (radians)
+    double left{-10.0}, right{10.0};               // X limits
+    double bottom{-10.0}, top{10.0};               // Y limits
+    double xPos{}, yPos{};                         // Position
+    double xOld{}, yOld{};                         // Previous Position
+    double dx{}, dy{};                             // Delta position
+    double speed{10.0};                            // Speed
+    double sangle{};                               // Starting angle (radians)
     std::array<mixr::base::Vec2d, maxHist> trail;  // Display trail
-    int nTrails {};                              // Trail size
-    int index {};                                // Trail index
-    mixr::base::Angle* iangle {};                  // Input angle
+    int nTrails{};                                 // Trail size
+    int index{};                                   // Trail index
+    mixr::base::Angle* iangle{};                   // Input angle
 };
 
 #endif

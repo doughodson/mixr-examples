@@ -11,22 +11,22 @@ namespace mixr {
 //------------------------------------------------------------------------------
 // TestDisplay
 //------------------------------------------------------------------------------
-class TestDisplay : public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
 public:
    TestDisplay();
 
-   virtual void drawIt() override;
-   virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+   void drawIt() final;
+   void mouseEvent(const int button, const int state, const int x, const int y) final;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
    bool onFrameBufferKey();
 
 private:
    // select/pick test
-   mixr::graphics::Graphic* selected {};
+   mixr::graphics::Graphic* selected{};
 };
 
 #endif

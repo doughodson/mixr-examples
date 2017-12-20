@@ -24,7 +24,7 @@ void TdAzPtr::copyData(const TdAzPtr& org, const bool)
 //------------------------------------------------------------------------------
 bool TdAzPtr::event(const int event, base::Object* const obj)
 {
-    bool used = false;
+    bool used{};
 
     if (event == UPDATE_VALUE)
     {

@@ -9,27 +9,27 @@
 //
 // Description: Control and Send values 'v1' and 'v2' to components
 //------------------------------------------------------------------------------
-class TestTwo : public mixr::graphics::Graphic
+class TestTwo final: public mixr::graphics::Graphic
 {
     DECLARE_SUBCLASS(TestTwo, mixr::graphics::Graphic)
 
 public:
     TestTwo();
 
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    virtual void updateTC(const double dt = 0.0) override;
-    virtual void updateData(const double dt = 0.0) override;
-    virtual void reset() override;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    void updateTC(const double dt = 0.0) final;
+    void updateData(const double dt = 0.0) final;
+    void reset() final;
 
 private:
-    double v1 {}, v1Rate {};
-    double v1Max {1.0}, v1Min {};
+    double v1{}, v1Rate{};
+    double v1Max{1.0}, v1Min{};
 
-    double v2 {}, v2Rate {};
-    double v2Max {1.0}, v2Min {};
+    double v2{}, v2Rate{};
+    double v2Max{1.0}, v2Min{};
 
-    double iv1 {}, iv1Rate {0.1};
-    double iv2 {}, iv2Rate {0.1};
+    double iv1{}, iv1Rate{0.1};
+    double iv2{}, iv2Rate{0.1};
 
     SendData v1SD;
     SendData v2SD;

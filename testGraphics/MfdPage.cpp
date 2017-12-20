@@ -23,9 +23,9 @@ END_EVENT_HANDLER()
 //------------------------------------------------------------------------------
 bool MfdPage::onEntry()
 {
-   base::PairStream* subcomponents = getComponents();
+   base::PairStream* subcomponents{getComponents()};
     if(subcomponents != nullptr) {
-        base::List::Item* item = subcomponents->getFirstItem();
+        base::List::Item* item{subcomponents->getFirstItem()};
         while (item != nullptr) {
             const auto pair = static_cast<base::Pair*>(item->getValue());
             const auto cp = static_cast<base::Component*>(pair->object());

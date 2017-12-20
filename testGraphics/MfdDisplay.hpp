@@ -12,7 +12,7 @@
 //              -- All it really does for this example is accept the ESC event.
 //
 //------------------------------------------------------------------------------
-class MfdDisplay : public mixr::graphics::Display
+class MfdDisplay final: public mixr::graphics::Display
 {
    DECLARE_SUBCLASS(MfdDisplay, mixr::graphics::Display)
 

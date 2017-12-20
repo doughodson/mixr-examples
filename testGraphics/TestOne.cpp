@@ -31,7 +31,7 @@ TestOne::TestOne()
 
 void TestOne::copyData(const TestOne& org, const bool)
 {
-    int i = 0;
+    int i{};
 
     BaseClass::copyData(org);
 
@@ -106,8 +106,7 @@ void TestOne::updateTC(const double dt)
     if (xPos > right) {
         xPos = right - (xPos - right);
         dx = -dx;
-    }
-    else if (xPos < left) {
+    } else if (xPos < left) {
         xPos = left - (xPos - left);
         dx = -dx;
     }
@@ -116,8 +115,7 @@ void TestOne::updateTC(const double dt)
     if (yPos > top) {
         yPos = top - (yPos - top);
         dy = -dy;
-    }
-    else if (yPos < bottom) {
+    } else if (yPos < bottom) {
         yPos = bottom - (yPos - bottom);
         dy = -dy;
     }
@@ -144,8 +142,8 @@ void TestOne::updateData(const double dt)
 void TestOne::drawFunc()
 {
     glBegin(GL_LINE_STRIP);
-    int idx = index - 1;
-    int i = 0;
+    int idx{index - 1};
+    int i{};
     while (i < nTrails) {
         if (idx < 0) idx = maxHist - 1;
         lcVertex2v(trail[idx--].ptr());

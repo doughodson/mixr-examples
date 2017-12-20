@@ -79,8 +79,7 @@ void TestTwo::updateTC(const double dt)
     if (v1 > v1Max) {
         v1 = v1Max - (v1 - v1Max);
         v1Rate = -v1Rate;
-    }
-    else if (v1 < v1Min) {
+    } else if (v1 < v1Min) {
         v1 = v1Min - (v1 - v1Min);
         v1Rate = -v1Rate;
     }
@@ -90,8 +89,7 @@ void TestTwo::updateTC(const double dt)
     if (v2 > v2Max) {
         v2 = v2Max - (v2 - v2Max);
         v2Rate = -v2Rate;
-    }
-    else if (v2 < v2Min) {
+    } else if (v2 < v2Min) {
         v2 = v2Min - (v2 - v2Min);
         v2Rate = -v2Rate;
     }
@@ -102,7 +100,7 @@ void TestTwo::updateData(const double dt)
     // Update base classes stuff
     BaseClass::updateData(dt);
 
-    int i = 1;
+    int i{1};
     if (v2 < 0) i++;
     if (v2Rate < 0) i += 2;
 

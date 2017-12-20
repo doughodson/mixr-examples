@@ -44,7 +44,7 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
 // reset simulation
 bool TestDisplay::onFrameBufferKey()
 {
-   graphics::Image* image = readFrameBuffer();
+   graphics::Image* image{readFrameBuffer()};
    image->writeFileBMP("./test.bmp");
    return true;
 }

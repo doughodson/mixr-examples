@@ -18,52 +18,52 @@ class TestObject;
 // Description: This class will send down data to it's components in different
 // ways, showing how the SendData class works and testing our send commands.
 //------------------------------------------------------------------------------
-class Display : public mixr::glut::GlutDisplay
+class Display final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
 
 public:
    Display();
 
-   virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) final;
 
 private:
     // boolean
-    bool myBool {};
+    bool myBool{};
     SendData boolSD;
 
     // integer
-    int myInt {};
+    int myInt{};
     SendData intSD;
 
     // float
-    float myFloat {};
+    float myFloat{};
     SendData floatSD;
 
     // double
-    double myDouble {};
+    double myDouble{};
     SendData doubleSD;
 
     // object
-    TestObject* obj {};
+    TestObject* obj{};
     SendData objSD;
 
     // characters
     std::string myChar = "ASCII";
     SendData charSD;
 
-    mixr::base::Color* myColor {};
+    mixr::base::Color* myColor{};
     SendData colorSD;
 
-    static const int MAX_MATERIALS = 3;
-    std::array<mixr::graphics::Material*, MAX_MATERIALS> materials {};
+    static const int MAX_MATERIALS{3};
+    std::array<mixr::graphics::Material*, MAX_MATERIALS> materials{};
     std::array<SendData, MAX_MATERIALS> materialSD;
     std::array<mixr::base::Vec3d, MAX_MATERIALS> diffColorRate;
 
-    std::array<double, MAX_MATERIALS> rotations {};
-    std::array<SendData, MAX_MATERIALS> rotationsSD {};
+    std::array<double, MAX_MATERIALS> rotations{};
+    std::array<SendData, MAX_MATERIALS> rotationsSD{};
 
-    int counter {};    // to slowly increment our numbers
+    int counter{};    // to slowly increment our numbers
 };
 
 #endif

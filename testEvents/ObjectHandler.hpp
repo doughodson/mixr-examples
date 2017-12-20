@@ -12,17 +12,17 @@ class TestObject;
 // command from it's parent as an object, and will then fill it's own
 // private data from that object.
 //------------------------------------------------------------------------------
-class ObjectHandler : public mixr::graphics::Graphic
+class ObjectHandler final: public mixr::graphics::Graphic
 {
    DECLARE_SUBCLASS(ObjectHandler, mixr::graphics::Graphic)
 
 public:
    ObjectHandler();
 
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
-   bool onUpdateObject(const TestObject* const x);
+   bool onUpdateObject(const TestObject* const);
 
    SendData boolSD;
    SendData intSD;

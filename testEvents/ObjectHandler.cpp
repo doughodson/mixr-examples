@@ -36,18 +36,18 @@ void ObjectHandler::copyData(const ObjectHandler& org, const bool)
 bool ObjectHandler::onUpdateObject(const TestObject* const x)
 {
     if (x != nullptr) {
-        TestObject* obj = const_cast<TestObject*>(x);
-        bool boolVal = obj->getBoolean();
+        TestObject* obj{const_cast<TestObject*>(x)};
+        bool boolVal{obj->getBoolean()};
         send("objboolean", UPDATE_VALUE, boolVal, boolSD);
-        int intVal = obj->getInteger();
+        int intVal{obj->getInteger()};
         send("objinteger", UPDATE_VALUE, intVal, intSD);
-        float floatVal = obj->getFloat();
+        float floatVal{obj->getFloat()};
         send("objfloat", UPDATE_VALUE, floatVal, floatSD);
-        double doubleVal = obj->getDouble();
+        double doubleVal{obj->getDouble()};
         send("objdouble", UPDATE_VALUE, doubleVal, doubleSD);
-        double realVal = obj->getReal();
+        double realVal{obj->getReal()};
         send("objreal", UPDATE_VALUE, realVal, realSD);
-        const std::string& myChar = obj->getChar();
+        const std::string& myChar{obj->getChar()};
         send("objascii", UPDATE_VALUE, myChar.c_str(), charSD);
     }
 

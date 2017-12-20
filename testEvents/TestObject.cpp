@@ -2,7 +2,6 @@
 #include "TestObject.hpp"
 
 #include "mixr/base/util/str_utils.hpp"
-#include <iostream>
 
 using namespace mixr;
 

@@ -12,7 +12,7 @@
 // ObjectHandler will extract the data and send it to the output.  This tests
 // the send command passing objects.
 //------------------------------------------------------------------------------
-class TestObject : public mixr::base::Object
+class TestObject final: public mixr::base::Object
 {
    DECLARE_SUBCLASS(TestObject, mixr::base::Object)
 
@@ -36,11 +36,11 @@ public:
    const std::string& getChar()        { return charVal;   }
 
 private:
-   bool boolVal {};
-   int intVal {};
-   float floatVal {};
-   double doubleVal {};
-   double realVal {};
+   bool boolVal{};
+   int intVal{};
+   float floatVal{};
+   double doubleVal{};
+   double realVal{};
    std::string charVal = "ASCII";
 };
 

@@ -35,7 +35,7 @@ Display::Display()
     std::mt19937 gen(rd());                      // mersenne_twister_engine
     std::uniform_real_distribution<double> dis(0, 1);  // uniform distribution from [0, 1)
 
-    for (unsigned int i = 0; i < MAX_MATERIALS; i++) {
+    for (int i = 0; i < MAX_MATERIALS; i++) {
         materials[i] = new graphics::Material();
         materialSD[i].empty();
         diffColor[i].set(dis(gen), dis(gen), dis(gen), 1);
@@ -116,10 +116,10 @@ void Display::updateData(const double dt)
         if (myInt > 999) myInt = 0;
 
         myFloat += 0.002f;
-        if (myFloat > 100) myFloat = 0;
+        if (myFloat > 100) myFloat = 0.0;
 
         myDouble += 0.00002f;
-        if (myDouble > 2) myDouble = 0;
+        if (myDouble > 2) myDouble = 0.0;
 
         if (myChar == "ASCII") {
            myChar = "TEXT";
@@ -146,7 +146,7 @@ void Display::updateData(const double dt)
 
         // our materials
         base::Vec4d diff;
-        double x = 0, y = 0, z = 0;
+        double x{}, y{}, z{};
         for (int i = 0; i < MAX_MATERIALS; i++) {
             if (materials[i] != nullptr) {
                 if (i == 0) {

@@ -83,7 +83,7 @@ void DataRecordTest::deleteData()
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotTabPrinter(recorder::TabPrinter* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myRecPrint = p;
       myRecPrint ->ref();
@@ -97,7 +97,7 @@ bool DataRecordTest::setSlotTabPrinter(recorder::TabPrinter* const p)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotPrintPlayer(recorder::PrintPlayer* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myPrintPlayer = p;
       myPrintPlayer ->ref();
@@ -111,7 +111,7 @@ bool DataRecordTest::setSlotPrintPlayer(recorder::PrintPlayer* const p)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotPrintSelected(recorder::PrintSelected* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myPrintSelected = p;
       myPrintSelected ->ref();
@@ -125,7 +125,7 @@ bool DataRecordTest::setSlotPrintSelected(recorder::PrintSelected* const p)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotPrintSelected2(recorder::PrintSelected* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myPrintSelected2 = p;
       myPrintSelected2 ->ref();
@@ -139,7 +139,7 @@ bool DataRecordTest::setSlotPrintSelected2(recorder::PrintSelected* const p)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotFileWriter(recorder::FileWriter* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myFileWrite = p;
       myFileWrite ->ref();
@@ -153,7 +153,7 @@ bool DataRecordTest::setSlotFileWriter(recorder::FileWriter* const p)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotFileReader(recorder::FileReader* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myFileRead = p;
       myFileRead ->ref();
@@ -167,7 +167,7 @@ bool DataRecordTest::setSlotFileReader(recorder::FileReader* const p)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotFileName(base::String* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       fileName = msg->getCopyString();
       ok = true;
@@ -180,7 +180,7 @@ bool DataRecordTest::setSlotFileName(base::String* const msg)
 //------------------------------------------------------------------------------
 bool DataRecordTest::setSlotRecordData(recorder::DataRecorder* const p)
 {
-   bool ok = false;
+   bool ok{};
    if (p != nullptr) {
       myDataRec = p;
       myDataRec ->ref();
@@ -191,13 +191,13 @@ bool DataRecordTest::setSlotRecordData(recorder::DataRecorder* const p)
 
 bool DataRecordTest::testSerialize()
 {
-   int exitTest = 1;
+   int exitTest{1};
 
    while (exitTest == 1) {
 
       std::cout << "Serializing to file:" << std::endl;
       myFileWrite->openFile();
-      int runNum = 1;
+      int runNum{1};
 
       // Write message
       myFileWrite->processRecord(testFileIdMsg(runNum));
@@ -258,7 +258,7 @@ void DataRecordTest::readSerialFromFile()
 {
    // Read all the messages on the file till "done"
 
-   int outType = 0;
+   int outType{};
    std::cout << "select output: " << std::endl;
    std::cout << "  1: Tab printer " << std::endl;
    std::cout << "  2: Print Player " << std::endl;
@@ -268,8 +268,8 @@ void DataRecordTest::readSerialFromFile()
 //   std::cout << "enter 1 for tab printer: " << std::endl;
    std::cin >> outType;
 
-   bool fileDone = false;
-   int msgNum = 0;
+   bool fileDone{};
+   int msgNum{};
    myFileRead->openFile();
    if (outType == 1) {
       myRecPrint->openFile();
@@ -284,7 +284,7 @@ void DataRecordTest::readSerialFromFile()
       // Need to open a file for print selection if that's what we're using
       myPrintSelected->openFile();
       // For more than one set of criteria, loop till done
-      bool selectDone = false;
+      bool selectDone{};
       while (!selectDone) {
          std::cout << "Select More Fields? Y/N: ";
          std::string selFields;
@@ -314,7 +314,7 @@ void DataRecordTest::readSerialFromFile()
             }
             if ((selMsg == "Y") || (selMsg == "y")) {
                std::cout << "Enter message event token number: ";
-               unsigned int eventNum;
+               unsigned int eventNum{};
                std::cin  >> eventNum;
                if (eventNum >= REID_END_OF_DATA &&  eventNum <= REID_LAST_USER_EVENT) {
                   // Select this message
@@ -350,8 +350,7 @@ void DataRecordTest::readSerialFromFile()
                   }
                }
             }
-         }
-         else {
+         } else {
             selectDone = true;
          }
       }
@@ -365,8 +364,8 @@ void DataRecordTest::readSerialFromFile()
 
          if (readHandle != nullptr) {
             // Check for last message
-            const mixr::recorder::pb::DataRecord* testDr = readHandle->getRecord();
-            unsigned int recId = testDr->id();
+            const mixr::recorder::pb::DataRecord* testDr{readHandle->getRecord()};
+            unsigned int recId{testDr->id()};
             std::cout << "Data record ID: " << recId << std::endl;
             if (recId == REID_END_OF_DATA) {
                std::cout << "Found last record" << std::endl;
@@ -402,8 +401,9 @@ void DataRecordTest::readSerialFromFile()
                   myPrintSelected->processRecord(readHandle);
                }
             }
+         } else {
+            std::cout << "readHandle is 0" << std::endl;
          }
-         else std::cout << "readHandle is 0" << std::endl;
       }
 
       myFileRead->closeFile();
@@ -429,9 +429,9 @@ void DataRecordTest::readSerialFromFile()
 //------------------------------------------------------------------------------
 bool DataRecordTest::testEvents()
 {
-   char ynCont = 'y';
-   char ynMenu = 'y';
-   unsigned int testNumber = 0;
+   char ynCont{'y'};
+   char ynMenu{'y'};
+   unsigned int testNumber{};
  //  unsigned int outSelect;
  //  bool sendToFile = false;
 
@@ -470,9 +470,9 @@ bool DataRecordTest::testEvents()
             default:
                { ynCont = 'n'; /* handle = nullptr; */ std::exit(0);  break; }
          }
+      } else {
+         ynCont = 'n';
       }
-      else ynCont = 'n';
-
    }
 
    return true;
@@ -486,7 +486,6 @@ void DataRecordTest::eventTestMenu()
    std::cout << "=====================================================" << std::endl;
    std::cout << "Event Tests" << std::endl;
    std::cout << "=====================================================" << std::endl;
-
 
    std::cout <<
          "case  1:  testFileIdMsg" << std::endl <<
@@ -518,7 +517,7 @@ void DataRecordTest::eventTestMenu()
 mixr::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::FileIdMsg* msg = recordMsg->mutable_file_id_msg();
+   mixr::recorder::pb::FileIdMsg* msg{recordMsg->mutable_file_id_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -553,12 +552,12 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
 mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::NewPlayerEventMsg* msg = recordMsg->mutable_new_player_event_msg();
+   mixr::recorder::pb::NewPlayerEventMsg* msg{recordMsg->mutable_new_player_event_msg()};
 
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_NEW_PLAYER);
@@ -566,7 +565,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
    recordMsg->mutable_time()->set_sim_time(getSimTime());
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
 
-   unsigned int pId = 0;
+   unsigned int pId{};
    std::string pName = "";
    std::string pFedName = "";
 
@@ -588,7 +587,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    pIdMsg->set_side(1);
@@ -602,10 +601,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerRemovedEventMsg* msg = recordMsg->mutable_player_removed_event_msg();
+   mixr::recorder::pb::PlayerRemovedEventMsg* msg{recordMsg->mutable_player_removed_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_REMOVED);
@@ -628,7 +627,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -640,10 +639,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerDataMsg* msg = recordMsg->mutable_player_data_msg();
+   mixr::recorder::pb::PlayerDataMsg* msg{recordMsg->mutable_player_data_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_DATA);
@@ -666,7 +665,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -678,18 +677,17 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerDamagedEventMsg* msg = recordMsg->mutable_player_damaged_event_msg();
+   mixr::recorder::pb::PlayerDamagedEventMsg* msg{recordMsg->mutable_player_damaged_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
 
    const auto recMsg = new mixr::recorder::pb::DataRecord();
-   const google::protobuf::Descriptor* descriptor = recMsg->GetDescriptor();
-   const google::protobuf::FieldDescriptor* id_field = descriptor->FindFieldByName("id");
+   const google::protobuf::Descriptor* descriptor{recMsg->GetDescriptor()};
+   const google::protobuf::FieldDescriptor* id_field{descriptor->FindFieldByName("id")};
 
-   const google::protobuf::Reflection* reflection = recMsg->GetReflection();
+   const google::protobuf::Reflection* reflection{recMsg->GetReflection()};
    /*unsigned int id = */ reflection->GetUInt32(*recMsg, id_field);
-
 
    // required
    recordMsg->set_id(REID_PLAYER_DAMAGED);
@@ -712,7 +710,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -724,10 +722,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerCollisionEventMsg* msg = recordMsg->mutable_player_collision_event_msg();
+   mixr::recorder::pb::PlayerCollisionEventMsg* msg{recordMsg->mutable_player_collision_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
    /*mixr::recorder::pb::PlayerId* other = */ msg->mutable_other_player_id();
 
    // required
@@ -756,7 +754,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
    msg->mutable_other_player_id()->set_id(975);
    msg->mutable_other_player_id()->set_name("OtherPly");
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -768,10 +766,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerCrashEventMsg* msg = recordMsg->mutable_player_crash_event_msg();
+   mixr::recorder::pb::PlayerCrashEventMsg* msg{recordMsg->mutable_player_crash_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_CRASH);
@@ -806,10 +804,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsigned int type)
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerKilledEventMsg* msg = recordMsg->mutable_player_killed_event_msg();
+   mixr::recorder::pb::PlayerKilledEventMsg* msg{recordMsg->mutable_player_killed_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg = msg->mutable_id();
-   mixr::recorder::pb::PlayerState* pStMsg = msg->mutable_state();
+   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_KILLED);
@@ -832,7 +830,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsig
    pStMsg->mutable_angles()->set_y(.3);
    pStMsg->mutable_angles()->set_z(.4);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -844,7 +842,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsig
 mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsigned int side)
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::WeaponReleaseEventMsg* msg = recordMsg->mutable_weapon_release_event_msg();
+   mixr::recorder::pb::WeaponReleaseEventMsg* msg{recordMsg->mutable_weapon_release_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -876,7 +874,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsi
    msg->mutable_tgt_id()->set_fed_name("tgtFed");
    msg->mutable_tgt_id()->set_name("tgtName");
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
    return handle;
 }
@@ -887,7 +885,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsi
 mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::WeaponHungEventMsg* msg = recordMsg->mutable_weapon_hung_event_msg();
+   mixr::recorder::pb::WeaponHungEventMsg* msg{recordMsg->mutable_weapon_hung_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -895,7 +893,6 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
    recordMsg->mutable_time()->set_exec_time(getExecTime());
    recordMsg->mutable_time()->set_sim_time(getSimTime());
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
-
 
    msg->mutable_wpn_id()->set_id(10);
    msg->mutable_wpn_id()->set_fed_name("wpnFed");
@@ -919,8 +916,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
    msg->mutable_tgt_id()->set_fed_name("tgtFed");
    msg->mutable_tgt_id()->set_name("tgtName");
 
-
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -932,7 +928,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::WeaponDetonationEventMsg* msg = recordMsg->mutable_weapon_detonation_event_msg();
+   mixr::recorder::pb::WeaponDetonationEventMsg* msg{recordMsg->mutable_weapon_detonation_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -940,7 +936,6 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
    recordMsg->mutable_time()->set_exec_time(getExecTime());
    recordMsg->mutable_time()->set_sim_time(getSimTime());
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
-
 
    msg->set_det_type(mixr::recorder::pb::WeaponDetonationEventMsg_DetonationType_DETONATE_GROUND_IMPACT);
 
@@ -956,7 +951,6 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
    msg->mutable_tgt_id()->set_id(23);
    msg->mutable_tgt_id()->set_fed_name("fed23");
    msg->mutable_tgt_id()->set_name("Tgt 23");
-
 
    // weapon state position:
    msg->mutable_wpn_state()->mutable_pos()->set_x(10);
@@ -976,10 +970,9 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
    // missile distance:
    msg->set_miss_dist(123.4);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
    return handle;
-
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -988,7 +981,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::GunFiredEventMsg* msg = recordMsg->mutable_gun_fired_event_msg();
+   mixr::recorder::pb::GunFiredEventMsg* msg{recordMsg->mutable_gun_fired_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -1002,12 +995,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
    msg->mutable_shooter_id()->set_name("shooterName");
    msg->set_rounds(25);
 
-
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
-
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1016,7 +1007,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::NewTrackEventMsg* msg = recordMsg->mutable_new_track_event_msg();
+   mixr::recorder::pb::NewTrackEventMsg* msg{recordMsg->mutable_new_track_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -1100,11 +1091,10 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
    //   LHC         = 5;
    //};
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
-
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1113,7 +1103,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::TrackRemovedEventMsg* msg = recordMsg->mutable_track_removed_event_msg();
+   mixr::recorder::pb::TrackRemovedEventMsg* msg{recordMsg->mutable_track_removed_event_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -1129,7 +1119,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 
    msg->set_track_id("track1");
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -1141,7 +1131,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
 {
    const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::TrackDataMsg* msg = recordMsg->mutable_track_data_msg();
+   mixr::recorder::pb::TrackDataMsg* msg{recordMsg->mutable_track_data_msg()};
    const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
 
    // required
@@ -1149,7 +1139,6 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
    recordMsg->mutable_time()->set_exec_time(getExecTime());
    recordMsg->mutable_time()->set_sim_time(getSimTime());
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
-
 
    // Player Id:
    msg->mutable_player_id()->set_id(999);
@@ -1217,7 +1206,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
    msg->mutable_emission_data()->set_power(5000);
    msg->mutable_emission_data()->set_polarization(mixr::recorder::pb::EmissionData_Polarization_NONE);
 
-   const int messageSize {recordMsg->ByteSize()};
+   const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
 
    return handle;
@@ -1239,21 +1228,20 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testLastMsg()
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
 
    return handle;
-
 }
+
 //------------------------------------------------------------------------------
 // processMessage(): Recursive function to go through all messages
 //---------------------------------------------------------------------------
 bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
 {
+   bool hasSubMessage{};
+   const google::protobuf::Message& root{*msg};
+   const google::protobuf::Descriptor* descriptor{msg->GetDescriptor()};
+   const google::protobuf::Reflection* reflection{msg->GetReflection()};
 
-   bool hasSubMessage = false;
-   const google::protobuf::Message& root = *msg;
-   const google::protobuf::Descriptor* descriptor = msg->GetDescriptor();
-   const google::protobuf::Reflection* reflection = msg->GetReflection();
-
-   int fieldCount = descriptor->field_count();
-   const google::protobuf::FieldDescriptor* fieldDescriptor = nullptr;
+   int fieldCount{descriptor->field_count()};
+   const google::protobuf::FieldDescriptor* fieldDescriptor{};
 
    // look at fields to find a match with the slot condition
    if (fieldCount > 0) {
@@ -1264,7 +1252,7 @@ bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
          fieldDescriptor = descriptor->field(i);
 
          // what type is this field?
-         google::protobuf::FieldDescriptor::CppType cppType = fieldDescriptor->cpp_type();
+         google::protobuf::FieldDescriptor::CppType cppType{fieldDescriptor->cpp_type()};
 
          // First look at all the fields in this message, then decide whether to continue
          if (!(cppType == google::protobuf::FieldDescriptor::CPPTYPE_MESSAGE)) {
@@ -1284,53 +1272,47 @@ bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
                   std::cin >> str;
                   myPrintSelected->setCompareToValue(str);
                   setCompareToValue(str);
-               }
-               //
-               else if ((cppType == google::protobuf::FieldDescriptor::CPPTYPE_INT32) ||
+               } else if ((cppType == google::protobuf::FieldDescriptor::CPPTYPE_INT32) ||
                     (cppType == google::protobuf::FieldDescriptor::CPPTYPE_INT64)     ||
                     (cppType == google::protobuf::FieldDescriptor::CPPTYPE_UINT32)    ||
                     (cppType == google::protobuf::FieldDescriptor::CPPTYPE_UINT64)    ||
                     (cppType == google::protobuf::FieldDescriptor::CPPTYPE_ENUM)) {
-                   int inValue;
+                   int inValue{};
                    std::cout << "Enter integer to match: ";
                    std::cin >> inValue;
                    setCompareToValue(inValue);
-               }
-               else if (cppType == google::protobuf::FieldDescriptor::CPPTYPE_BOOL) {
+               } else if (cppType == google::protobuf::FieldDescriptor::CPPTYPE_BOOL) {
                   std::cout << "Enter 0 (false) or 1 (true) to match: ";
-                  int boolVal = 0;
+                  int boolVal{};
                   std::cin >> boolVal;
                   if (boolVal == 0) setCompareToValue(0);
                   else setCompareToValue(1);
-               }
-               else {
-                  double val;
+               } else {
+                  double val{};
                   std::cout << "Enter double or float value to match: ";
                   std::cin >> val;
                   setCompareToValue(val);
                }
+
                if ((cppType != google::protobuf::FieldDescriptor::CPPTYPE_BOOL) &&
                   (cppType != google::protobuf::FieldDescriptor::CPPTYPE_STRING)) {
 
                   std::cout << "Enter compare condition: 0=EQ, 1=LT, 2=GT: ";
-                  unsigned int cond;
+                  unsigned int cond{};
                   std::cin >>  cond;
                   if (cond == 1) {
                      setCompareCondition(mixr::recorder::PrintSelected::Condition::LT);
-                  }
-                  else if (cond == 2) {
+                  } else if (cond == 2) {
                      setCompareCondition(mixr::recorder::PrintSelected::Condition::GT);
-                  }
-                  else {
+                  } else {
                      setCompareCondition(mixr::recorder::PrintSelected::Condition::EQ);
                   }
+               } else {
+                  setCompareCondition(mixr::recorder::PrintSelected::Condition::EQ); // not needed in this case
                }
-               else setCompareCondition(mixr::recorder::PrintSelected::Condition::EQ); // not needed in this case
-            }
-            else if (select == "Q" || select == "q") {
+            } else if (select == "Q" || select == "q") {
                fieldSelected = true;  // force exit
-            }
-            else {
+            } else {
                // probably entered N or n, keep looking
                fieldSelected = false;
             }
@@ -1340,7 +1322,7 @@ bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
          else if (!fieldSelected) {
             std::cout << "Message name: " << fieldDescriptor->full_name() << std::endl;
             // Get sub message
-            const google::protobuf::Message& sub_message = reflection->GetMessage(root, fieldDescriptor);
+            const google::protobuf::Message& sub_message{reflection->GetMessage(root, fieldDescriptor)};
 
             // If sub message exists, process it
             //if (&sub_message != nullptr) {
@@ -1429,21 +1411,21 @@ bool DataRecordTest::setTimeOnly(const bool flg )
 
 double DataRecordTest::getSimTime()
 {
-   static double simTime = 1000;
+   static double simTime{1000};
    simTime += 100;
    return simTime;
 }
 
 double DataRecordTest::getExecTime()
 {
-   static double execTime = 2000;
+   static double execTime{2000};
    execTime += 100;
    return execTime;
 }
 
 double DataRecordTest::getUtcTime()
 {
-   static double utcTime = 3000;
+   static double utcTime{3000};
    utcTime += 100;
    return utcTime;
 }

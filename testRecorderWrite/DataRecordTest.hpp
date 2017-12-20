@@ -23,7 +23,7 @@ class DataRecordHandle;
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest : public mixr::recorder::OutputHandler
+class DataRecordTest final: public mixr::recorder::OutputHandler
 {
    DECLARE_SUBCLASS(DataRecordTest, mixr::recorder::OutputHandler)
 
@@ -85,23 +85,23 @@ private:
 
    std::string fieldName;
    mixr::recorder::PrintSelected::Condition condition;
-   int compareI {};
+   int compareI{};
    std::string compareS;
-   double compareD {};
+   double compareD{};
    std::string fullFieldName;
-   bool fieldSelected {};
-   unsigned int timesCalled {};
+   bool fieldSelected{};
+   unsigned int timesCalled{};
 
    // Struct and array for saving multiple sets of selection criteria
-   unsigned int selectionNum {};
+   unsigned int selectionNum{};
    struct SelectionCriteria {
-      unsigned int msgToken {};
+      unsigned int msgToken{};
       std::string fieldName = "";
-      double compareValD {};
+      double compareValD{};
       std::string compareValS = "";
-      int compareValI {};
-      mixr::recorder::PrintSelected::Condition condition {mixr::recorder::PrintSelected::Condition::EQ};
-      bool timeOnly {};
+      int compareValI{};
+      mixr::recorder::PrintSelected::Condition condition{mixr::recorder::PrintSelected::Condition::EQ};
+      bool timeOnly{};
    };
    std::array<SelectionCriteria, 20> selection;
 

@@ -12,7 +12,7 @@ namespace mixr {
 // Class: Derived
 // Description: Derived off Base class
 //------------------------------------------------------------------------------
-class Derived : public Base
+class Derived final: public Base
 {
    DECLARE_SUBCLASS(Derived, Base)
 

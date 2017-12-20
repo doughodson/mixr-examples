@@ -12,7 +12,7 @@ namespace base { class Pair; }
 // Class: TableRow
 // Description: One row of in the table (used by Table only)
 //-----------------------------------------------------------------------
-class TableRow : public mixr::graphics::AbstractField
+class TableRow final: public mixr::graphics::AbstractField
 {
    DECLARE_SUBCLASS(TableRow, mixr::graphics::AbstractField)
 
@@ -22,10 +22,10 @@ public:
    void put(mixr::base::Pair* const);
 
    // graphics::AbstractField interface
-   int line() const override;
-   int line(const int ll) override;
-   int column() const override;
-   int column(const int cc) override;
+   int line() const final;
+   int line(const int ll) final;
+   int column() const final;
+   int column(const int cc) final;
 
 private:
    void position();

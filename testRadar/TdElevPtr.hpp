@@ -23,7 +23,7 @@ namespace mixr {
 namespace base { class Number; }
 }
 
-class TdElevPtr : public mixr::graphics::Graphic
+class TdElevPtr final: public mixr::graphics::Graphic
 {
    DECLARE_SUBCLASS(TdElevPtr, mixr::graphics::Graphic)
 
@@ -33,14 +33,14 @@ public:
    double getElevation() const;     // degs
    bool setElevation(const double); // degs
 
-   virtual void draw() override;
+   void draw() final;
 
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
    bool onUpdateValue(const mixr::base::Number* const);
 
-   double elev {};  // (degs)
+   double elev{};  // (degs)
 };
 
 #endif

@@ -35,29 +35,29 @@ public:
     bool areNetworksEnabled() const;
 
     // Initialize the networks
-    virtual bool initNetworks();
+    bool initNetworks();
 
     // Send (transmit) our data buffer; returns true if successful.
     // 'size' just be less than MAX_SIZE.
-    virtual bool sendData(const char* const msg, const unsigned int size);
+    bool sendData(const char* const msg, const unsigned int size);
 
     // Receive a data buffer; returns number of bytes received;
     // 'maxsize' just be less than MAX_SIZE.
-    virtual unsigned int recvData(char* const msg, const unsigned int maxsize);
+    int recvData(char* const msg, const unsigned int maxsize);
 
     void reset() override;
 
 protected:
     void closeConnections();
-    unsigned int getLoops() const { return loops; }
+    int getLoops() const { return loops; }
 
 private:
     mixr::base::safe_ptr<mixr::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
     mixr::base::safe_ptr<mixr::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
-    unsigned int loops {};                                   // Number of transfer loops (zero if no limit)
-    bool networkInitialized {};                              // Network has been initialized
-    bool networkInitFailed {};                               // Network initialization has failed
-    bool noWaitFlag {};                                      // No wait (unblocked) I/O flag
+    int loops{};                                             // Number of transfer loops (zero if no limit)
+    bool networkInitialized{};                               // Network has been initialized
+    bool networkInitFailed{};                                // Network initialization has failed
+    bool noWaitFlag{};                                       // No wait (unblocked) I/O flag
 
 private:
     // slot table helper methods

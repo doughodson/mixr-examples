@@ -61,11 +61,11 @@ void Endpoint::reset()
 bool Endpoint::initNetworks()
 {
     // Init the main net handler
-    bool ok1 = false; // (required)
+    bool ok1{}; // (required)
     if (netHandler != nullptr) ok1 = netHandler->initNetwork(noWaitFlag);
 
     // Init the input net handler
-    bool ok2 = true; // (optional)
+    bool ok2{true}; // (optional)
     if (netInput != nullptr) ok2 = netInput->initNetwork(noWaitFlag);
 
     return (ok1 && ok2);
@@ -77,11 +77,10 @@ bool Endpoint::initNetworks()
 //------------------------------------------------------------------------------
 bool Endpoint::sendData(const char* const msg, const unsigned int size)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr && size > 0 && size < MAX_SIZE  && areNetworksEnabled()) {
       ok = netHandler->sendData(msg, size);
-   }
-   else {
+   } else {
       std::cerr << "NetTester::sendData(): unable to send data; ";
       if (msg == nullptr) std::cerr << "No message buffer.";
       if (size == 0 || size >= MAX_SIZE) std::cerr << "invalid message size.";
@@ -95,28 +94,26 @@ bool Endpoint::sendData(const char* const msg, const unsigned int size)
 // Receive a data buffer; returns number of bytes received;
 // 'maxsize' just be less than MAX_SIZE.
 //------------------------------------------------------------------------------
-unsigned int Endpoint::recvData(char* const msg, const unsigned int maxsize)
+int Endpoint::recvData(char* const msg, const unsigned int maxsize)
 {
-    int n = 0;
+    int n{};
     if (msg != nullptr && maxsize > 0 && maxsize <= MAX_SIZE && areNetworksEnabled()) {
-        char buffer[MAX_SIZE];
-        unsigned int n0 = 0;
+        char buffer[MAX_SIZE]{};
+        int n0{};
         if (netInput != nullptr) {
             // use the optional 'netInput' handler
-            n0 = netInput->recvData( buffer, MAX_SIZE );
-        }
-        else {
+            n0 = static_cast<int>(netInput->recvData( buffer, MAX_SIZE ));
+        } else {
             // default: use the 'netHandler'
-            n0 = netHandler->recvData( buffer, MAX_SIZE );
+            n0 = static_cast<int>(netHandler->recvData( buffer, MAX_SIZE ));
         }
         if (n0 > 0) {
-            for (unsigned int i = 0; i < n0; i++) {
+            for (int i = 0; i < n0; i++) {
                 msg[i] = buffer[i];
             }
             n = n0;
         }
-    }
-    else {
+    } else {
       std::cerr << "NetTester::recvData(): unable to receive data; ";
       if (msg == nullptr) std::cerr << "No message buffer.";
       if (maxsize == 0 || maxsize >= MAX_SIZE) std::cerr << "invalid max message size.";
@@ -132,7 +129,7 @@ unsigned int Endpoint::recvData(char* const msg, const unsigned int maxsize)
 //------------------------------------------------------------------------------
 bool Endpoint::areNetworksEnabled() const
 {
-    bool ok = networkInitialized;
+    bool ok{networkInitialized};
     if (ok && netHandler != nullptr) ok = netHandler->isConnected();
     if (ok && netInput != nullptr)   ok = netInput->isConnected();
     return ok;
@@ -164,7 +161,7 @@ bool Endpoint::setSlotNetInput(mixr::base::NetHandler* const msg)
 // No wait (unblocked) I/O flag
 bool Endpoint::setSlotNoWait(mixr::base::Number* const msg)
 {
-    bool ok = false;
+    bool ok{};
     if (msg != nullptr) {
         noWaitFlag = msg->getBoolean();
         ok = true;
@@ -175,11 +172,11 @@ bool Endpoint::setSlotNoWait(mixr::base::Number* const msg)
 // Number of message loops
 bool Endpoint::setSlotLoops(mixr::base::Number* const msg)
 {
-    bool ok = false;
+    bool ok{};
     if (msg != nullptr) {
-        int ia = msg->getInt();
+        const int ia{msg->getInt()};
         if (ia >= 0) {
-            loops = static_cast<unsigned int>(ia);
+            loops = ia;
             ok = true;
         }
     }

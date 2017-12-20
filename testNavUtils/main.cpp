@@ -20,14 +20,14 @@ using namespace mixr;
 //static double slon = 0.0;
 //static double tlat = 1.0;
 //static double tlon = 1.0;
-static double brng {45.0};
+static double brng{45.0};
 //static double dist = 100.0;
 static const base::EarthModel* pEM {&base::EarthModel::wgs84};
 
-static int testNumber {};
-static char ynCont = 'y';
+static int testNumber{};
+static char ynCont{'y'};
 //static char ynMenu = 'y';
-static const char* enterYourOwnData = "Enter your own data? (y/n) : ";
+static const char* enterYourOwnData{"Enter your own data? (y/n) : "};
 
 //------------------------------------------------------------------------------
 // prototype functions
@@ -70,7 +70,6 @@ void test27_convertUtm();
 void test99_printAllExamples();
 
 void displayNavTestFunctions();
-void selectNavTestFunction(int n);
 
 //------------------------------------------------------------------------------
 // Test navigation functions
@@ -266,16 +265,16 @@ void test01_fbd2llE()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double brng = 45.0;
-   double dist = 100.0;
-   double tlat = 0.0;
-   double tlon = 0.0;
+   double slat{};
+   double slon{};
+   double brng{45.0};
+   double dist{100.0};
+   double tlat{};
+   double tlon{};
 
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
-   const double TGT_LAT = 1.1843;
-   const double TGT_LON = 1.1764;
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
+   const double TGT_LAT{1.1843};
+   const double TGT_LON{1.1764};
 
    //-----------------------------------
    // set output formats
@@ -396,16 +395,16 @@ void test02_fll2bdE()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double brng = 0.0;
-   double dist = 0.0;
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   double slat{};
+   double slon{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double brng{};
+   double dist{};
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
-   const double TGT_BRNG = 45.1924;
-   const double TGT_DIST = 84.7211;
+   const double TGT_BRNG{45.1924};
+   const double TGT_DIST{84.7211};
 
    //-----------------------------------
    // set output formats

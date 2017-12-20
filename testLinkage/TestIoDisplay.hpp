@@ -35,7 +35,7 @@ namespace base { class AbstractIoHandler; class Number; class String; }
 //       item:  5   di: 11    // Item #4 is DI #11
 //   )
 //------------------------------------------------------------------------------
-class TestIoDisplay : public mixr::glut::GlutDisplay
+class TestIoDisplay final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(TestIoDisplay, mixr::glut::GlutDisplay)
 
@@ -47,11 +47,11 @@ public:
 public:
    TestIoDisplay();
 
-   void reset() override;
-   void updateData(const double dt = 0.0) override;
-   void updateTC(const double dt = 0.0) override;
+   void reset() final;
+   void updateData(const double dt = 0.0) final;
+   void updateTC(const double dt = 0.0) final;
 
-   bool onEscKey() override;
+   bool onEscKey() final;
 
 private:
    enum class Type { NONE, AI, DI };
@@ -63,7 +63,7 @@ private:
    mixr::base::safe_ptr<mixr::base::AbstractIoHandler> ioHandler;   // The I/O data handler
 
    // Item/Channel mapping
-   int item {};
+   int item{};
    std::array<Type, TBL_SIZE> types{{Type::NONE}};
    std::array<int, TBL_SIZE> channels {};
    std::array<bool, TBL_SIZE> labelFlags {};

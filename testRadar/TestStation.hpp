@@ -20,7 +20,7 @@ namespace glut { class GlutDisplay; }
 // Slots:
 //   glutDisplay  <graphics::GlutDisplay>  ! All of our display components
 //------------------------------------------------------------------------------
-class TestStation : public mixr::simulation::Station
+class TestStation final: public mixr::simulation::Station
 {
    DECLARE_SUBCLASS(TestStation, mixr::simulation::Station)
 
@@ -30,21 +30,21 @@ public:
    // Step our "ownship" to the next local air vehicle
    void stepOwnshipPlayer();
 
-   virtual void updateTC(const double dt = 0.0) override;
-   virtual void updateData(const double dt = 0.0) override;
-   virtual void reset() override;
+   void updateTC(const double dt = 0.0) final;
+   void updateData(const double dt = 0.0) final;
+   void reset() final;
 
 private:
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
-   bool glutDisplayInit {};
+   bool glutDisplayInit{};
 
    // Past (N-1) switches and values
-   bool rstSw1 {};
-   bool frzSw1 {};
-   bool tgtStepSw1 {};
-   bool wpnRelSw1 {};
-   bool incTagPlayerSw1 {};
-   double bgAntenna {};
+   bool rstSw1{};
+   bool frzSw1{};
+   bool tgtStepSw1{};
+   bool wpnRelSw1{};
+   bool incTagPlayerSw1{};
+   double bgAntenna{};
 
 private:
    // slot table helper methods

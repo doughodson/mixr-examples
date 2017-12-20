@@ -44,7 +44,7 @@ bool TdAzPtr::setAzimuth(const double v)
 //------------------------------------------------------------------------------
 bool TdAzPtr::onUpdateValue(const base::Number* const msg)
 {
-    bool ok = false;
+    bool ok{};
     if (msg != nullptr) {
       ok = setAzimuth(msg->getReal());
     }

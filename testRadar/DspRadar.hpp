@@ -16,7 +16,7 @@ namespace models { class Radar; }
 //              with color coded doppler shift, and overlayed with tracks.
 // Factory name: DspRadar
 //------------------------------------------------------------------------------
-class DspRadar : public mixr::graphics::Graphic
+class DspRadar final: public mixr::graphics::Graphic
 {
    DECLARE_SUBCLASS(DspRadar, mixr::graphics::Graphic)
 
@@ -27,24 +27,24 @@ public:
    const mixr::models::Radar* getRadar() const       { return radar; }
    bool setRadar(mixr::models::Radar* const s)       { radar = s; return true; }
 
-   virtual void drawFunc() override;
+   void drawFunc() final;
 
-   virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) final;
 
 private:
-    static const int MAX_TRKS = 50;
+    static const int MAX_TRKS{50};
 
-    const mixr::models::Radar* radar {};  // The test RADAR sensor
+    const mixr::models::Radar* radar{};  // The test RADAR sensor
     SendData azSD;
     SendData elSD;
 
     // Tracks
-    unsigned int nTracks {};                       // Number of tracks
-    int ntsTrk {-1};                               // Index of the 'next-to-shoot' track
-    std::array<double, MAX_TRKS> trkRng {};        // Track's range                    (meters)
-    std::array<double, MAX_TRKS> trkAz {};         // Track's relative azimuth
-    std::array<double, MAX_TRKS> trkVel {};        // Track's velocity                 (m/s)
-    std::array<double, MAX_TRKS> trkRelGndTrk {};  // Track's relative ground track (to nearest 45 deg)
+    unsigned int nTracks{};                       // Number of tracks
+    int ntsTrk{-1};                               // Index of the 'next-to-shoot' track
+    std::array<double, MAX_TRKS> trkRng{};        // Track's range                    (meters)
+    std::array<double, MAX_TRKS> trkAz{};         // Track's relative azimuth
+    std::array<double, MAX_TRKS> trkVel{};        // Track's velocity                 (m/s)
+    std::array<double, MAX_TRKS> trkRelGndTrk{};  // Track's relative ground track (to nearest 45 deg)
 };
 
 #endif

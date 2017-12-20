@@ -24,7 +24,7 @@ namespace base { class Number; }
 // Events:
 //    UPDATE_VALUE  <Number>  ! azimuth angle (degs)
 //------------------------------------------------------------------------------
-class TdAzPtr : public mixr::graphics::Graphic
+class TdAzPtr final: public mixr::graphics::Graphic
 {
    DECLARE_SUBCLASS(TdAzPtr, mixr::graphics::Graphic)
 
@@ -34,14 +34,14 @@ public:
    double getAzimuth() const;       // degs
    bool setAzimuth(const double);   // degs
 
-   virtual void draw() override;
+   void draw() final;
 
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
    bool onUpdateValue(const mixr::base::Number* const msg);
 
-   double azimuth {};  // (degs)
+   double azimuth{};  // (degs)
 };
 
 #endif

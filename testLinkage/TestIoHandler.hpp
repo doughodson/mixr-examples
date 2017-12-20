@@ -9,7 +9,7 @@
 //
 // Description: Handles the flow of I/O data to and from devices
 //------------------------------------------------------------------------------
-class TestIoHandler : public mixr::linkage::IoHandler
+class TestIoHandler final: public mixr::linkage::IoHandler
 {
    DECLARE_SUBCLASS(TestIoHandler, mixr::linkage::IoHandler)
 

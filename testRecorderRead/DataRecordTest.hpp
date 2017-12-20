@@ -11,19 +11,17 @@ namespace recorder { class InputHandler; class OutputHandler; }
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest : public mixr::base::Component
+class DataRecordTest final: public mixr::base::Component
 {
    DECLARE_SUBCLASS(DataRecordTest, mixr::base::Component)
 
 public:
    DataRecordTest();
 
-   // Main test
+   // main test
    void runTest();
 
 private:
-   void initData();
-
    mixr::base::safe_ptr<mixr::recorder::InputHandler> inputHandler;
    mixr::base::safe_ptr<mixr::recorder::OutputHandler> outputHandler;
 

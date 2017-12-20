@@ -17,16 +17,15 @@
 #include <string>
 #include <cstdlib>
 
-const int UPDATE_RATE {10};  // main loop update rate (Hz)
+const int UPDATE_RATE{10};  // main loop update rate (Hz)
 
 mixr::base::Object* factory(const std::string& name)
 {
-   mixr::base::Object* obj {};
+   mixr::base::Object* obj{};
 
    if ( name == Sender::getFactoryName() ) {
       obj = new Sender();
-   }
-   else if ( name == Echo::getFactoryName() ) {
+   } else if ( name == Echo::getFactoryName() ) {
       obj = new Echo();
    }
 
@@ -42,8 +41,8 @@ mixr::base::Object* factory(const std::string& name)
 Endpoint* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -85,16 +84,16 @@ int main(int argc, char* argv[])
    }
 
    // build an endpoint
-   Endpoint* endpoint {builder(configFilename)};
+   Endpoint* endpoint{builder(configFilename)};
 
    // send a reset event
    std::cout << "Reset event: which will establish the networks." << std::endl;
    endpoint->event(mixr::base::Component::RESET_EVENT);
 
    // system time of day
-   const double dt {1.0 / static_cast<double>(UPDATE_RATE)};   // Delta time
-   double simTime {};                                          // Simulator time reference
-   double startTime {mixr::base::getComputerTime()};           // Time of day (sec) run started
+   const double dt{1.0 / static_cast<double>(UPDATE_RATE)};   // Delta time
+   double simTime{};                                          // Simulator time reference
+   double startTime{mixr::base::getComputerTime()};           // Time of day (sec) run started
 
    // main loop
    std::cout << "Starting main loop ..." << std::endl;
@@ -103,12 +102,12 @@ int main(int argc, char* argv[])
       endpoint->updateTC( static_cast<double>(dt) );
       endpoint->updateData( static_cast<double>(dt) );
 
-      simTime += dt;                                   // time of next frame
-      double timeNow {mixr::base::getComputerTime()};  // time now
+      simTime += dt;                                  // time of next frame
+      double timeNow{mixr::base::getComputerTime()};  // time now
 
-      double elapsedTime {timeNow - startTime};
-      double nextFrameStart {simTime - elapsedTime};
-      const int sleepTime {static_cast<int>(nextFrameStart*1000.0)};
+      double elapsedTime{timeNow - startTime};
+      double nextFrameStart{simTime - elapsedTime};
+      const int sleepTime{static_cast<int>(nextFrameStart*1000.0)};
 
       // wait for the next frame
       if (sleepTime > 0)

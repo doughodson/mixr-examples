@@ -94,15 +94,15 @@ void TestStation::reset()
 //------------------------------------------------------------------------------
 void TestStation::stepOwnshipPlayer()
 {
-   base::PairStream* pl = getSimulation()->getPlayers();
+   base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
-      models::Player* f = nullptr;
-      models::Player* n = nullptr;
-      bool found = false;
+      models::Player* f{};
+      models::Player* n{};
+      bool found{};
 
       // Find the next player
-      base::List::Item* item = pl->getFirstItem();
+      base::List::Item* item{pl->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
          if (pair != nullptr) {

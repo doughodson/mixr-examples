@@ -32,14 +32,14 @@ void DataRecordTest::copyData(const DataRecordTest& org, const bool)
    BaseClass::copyData(org);
 
    {  // Clone input handler
-      mixr::recorder::InputHandler* clone = nullptr;
+      mixr::recorder::InputHandler* clone{};
       if (org.inputHandler != nullptr) clone = org.inputHandler->clone();
       setSlotInputHandler(clone);
       if (clone != nullptr) clone->unref();
    }
 
    {  // Clone output handler
-      mixr::recorder::OutputHandler* clone = nullptr;
+      mixr::recorder::OutputHandler* clone{};
       if (org.outputHandler != nullptr) clone = org.outputHandler->clone();
       setSlotOutputHandler(clone);
       if (clone != nullptr) clone->unref();
@@ -65,9 +65,9 @@ void DataRecordTest::runTest()
       return;
    }
 
-   bool finished = false;
+   bool finished{};
    while (!finished) {
-      const mixr::recorder::DataRecordHandle* p = inputHandler->readRecord();
+      const mixr::recorder::DataRecordHandle* p{inputHandler->readRecord()};
       if (p != nullptr) {
          outputHandler->processRecord(p);
       }

@@ -17,17 +17,17 @@ EMPTY_DELETEDATA(PrintMyData)
 void PrintMyData::processRecordImp(const mixr::recorder::DataRecordHandle* const handle)
 {
    if (handle == nullptr) return;  // cannot continue
-   const mixr::recorder::pb::DataRecord* dataRecord = handle->getRecord();
+   const mixr::recorder::pb::DataRecord* dataRecord{handle->getRecord()};
    if (dataRecord == nullptr) return;  // cannot continue
 
    // Get the time msg
-   const mixr::recorder::pb::Time* timeMsg = nullptr;
+   const mixr::recorder::pb::Time* timeMsg{};
    if (dataRecord->has_time()) {
       timeMsg = &dataRecord->time();
    }
 
    // Get message id
-   unsigned int messageId = dataRecord->id();
+   unsigned int messageId{dataRecord->id()};
    switch (messageId) {
 
       // Extended Marker event
@@ -42,7 +42,7 @@ void PrintMyData::processRecordImp(const mixr::recorder::DataRecordHandle* const
                }
             }
 
-            const mixr::recorder::pb::MarkerMsg* msg = &dataRecord->marker_msg();
+            const mixr::recorder::pb::MarkerMsg* msg{&dataRecord->marker_msg()};
 
             if (msg->has_id()) sout << "id= " << msg->id() << ";  ";
             if (msg->has_source_id()) sout << "source_id= " << msg->source_id() << ";  ";

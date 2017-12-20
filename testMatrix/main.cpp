@@ -11,9 +11,9 @@
 using namespace mixr::base;
 
 namespace d {   // constants that define matrix dimensions
-const unsigned int rows {4};
-const unsigned int cols {4};
-const unsigned int size {rows * cols};
+const unsigned int rows{4};
+const unsigned int cols{4};
+const unsigned int size{rows * cols};
 }
 
 // Size = 3

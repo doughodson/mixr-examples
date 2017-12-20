@@ -187,7 +187,7 @@ void Table::build()
    }
 
    // These are new our subcomponents ...
-   processComponents(newList,typeid(base::Component));
+   processComponents(newList, typeid(base::Component));
    if (newList != nullptr) newList->unref();
 }
 

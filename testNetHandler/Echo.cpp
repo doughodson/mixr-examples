@@ -38,15 +38,15 @@ void Echo::updateData(const double dt)
 
     if (areNetworksEnabled()) {
         // Looking for a message from the client
-        char buffer[MAX_SIZE+1];
-        unsigned int n = recvData(buffer, MAX_SIZE);
+        char buffer[MAX_SIZE+1]{};
+        int n{recvData(buffer, MAX_SIZE)};
         std::cout << "n = " << n << std::endl;
         if (n > 0) {
             buffer[n] = 0;
             std::cout << "RECV: " << buffer << std::endl;
             // And send it right back to the client
             base::msleep(1000);
-            bool ok = sendData(buffer, n);
+            bool ok{sendData(buffer, n)};
             if (ok) {
                std::cout << "SENT: " << buffer << std::endl << std::endl;
 

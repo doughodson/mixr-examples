@@ -11,15 +11,15 @@
 //
 // Factory name: ServerTcpMulti
 //------------------------------------------------------------------------------
-class ServerTcpMultiple : public Endpoint
+class ServerTcpMultiple final: public Endpoint
 {
    DECLARE_SUBCLASS(ServerTcpMultiple, Endpoint)
 
 public:
    ServerTcpMultiple();
 
-   void updateData(const double dt = 0.0) override;
-   void reset() override;
+   void updateData(const double dt = 0.0) final;
+   void reset() final;
 
 };
 

@@ -36,7 +36,7 @@ class DspRwr;
 //   'd' or 'D'   -- Decrease Range
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class TestDisplay : public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::GlutDisplay
 {
     DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
@@ -47,12 +47,11 @@ public:
     mixr::simulation::Simulation* getSimulation();
     mixr::simulation::Station* getStation();
 
-    virtual void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
+    void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
 
-    virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
-
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    virtual void updateData(const double dt = 0.0) override;
+    void mouseEvent(const int button, const int state, const int x, const int y) final;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    void updateData(const double dt = 0.0) final;
 
 private:
     // Key event handlers

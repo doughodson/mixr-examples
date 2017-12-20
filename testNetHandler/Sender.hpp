@@ -11,19 +11,19 @@
 //
 // Factory name: Sender
 //------------------------------------------------------------------------------
-class Sender : public Endpoint
+class Sender final: public Endpoint
 {
     DECLARE_SUBCLASS(Sender, Endpoint)
 
 public:
     Sender();
 
-    void updateData(const double dt = 0.0) override;
-    void reset() override;
+    void updateData(const double dt = 0.0) final;
+    void reset() final;
 
 private:
-    unsigned int msgCounter {};  // test message counter
-    bool         recvMode {};    // True if in receive mode
+    int msgCounter{};  // test message counter
+    bool recvMode{};   // True if in receive mode
 };
 
 #endif

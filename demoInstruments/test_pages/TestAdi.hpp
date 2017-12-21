@@ -9,27 +9,27 @@
 //
 // Description: Tests our core ADI graphic
 //------------------------------------------------------------------------------
-class TestAdi : public mixr::graphics::Page
+class TestAdi final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestAdi, mixr::graphics::Page)
 
 public:
     TestAdi();
 
-    virtual void updateData(const double dt = 0) override;
+    void updateData(const double dt = 0) final;
 
 private:
-    double pitch {};           // our pitch (90 to -90)
+    double pitch{};           // our pitch (90 to -90)
     SendData pitchSD;
-    double  pitchRate {10.0};
+    double  pitchRate{10.0};
 
-    double roll {};            // our roll (3.14 to -3.14)
+    double roll{};            // our roll (3.14 to -3.14)
     SendData rollSD;
-    double rollRate {25.0};
+    double rollRate{25.0};
 
-    double slip {};            // our side slip (20 to -20)
+    double slip{};            // our side slip (20 to -20)
     SendData slipSD;
-    double slipRate {5.0};
+    double slipRate{5.0};
 };
 
 #endif

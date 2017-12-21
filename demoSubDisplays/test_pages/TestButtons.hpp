@@ -9,7 +9,7 @@
 //
 // Description: Simply tests our buttons and prints out which one we hit
 //------------------------------------------------------------------------------
-class TestButtons : public mixr::graphics::Page
+class TestButtons final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestButtons, mixr::graphics::Page)
 
@@ -18,8 +18,8 @@ public:
 
    enum { REGULAR = 0, PUSH_MAINTAINED, PUSH_MOMENTARY, ROTARY, KNOB, SOLENOID };
 
-   virtual void updateData(const double dt = 0.0) override;
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+   void updateData(const double dt = 0.0) final;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
     bool regularButton();
@@ -31,8 +31,8 @@ private:
     bool solenoidUp();
     bool solenoidDown();
 
-    int whichButton {-1};
-    double value {};
+    int whichButton{-1};
+    double value{};
 
     SendData whichButtonSD;
     SendData valueSD;

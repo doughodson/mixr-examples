@@ -10,19 +10,19 @@
 // Description: Example Analog Dial Page
 // This page will supply test data to a generic calibrated air speed
 //------------------------------------------------------------------------------
-class TestCas : public mixr::graphics::Page
+class TestCas final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestCas, mixr::graphics::Page)
 
 public:
     TestCas();
 
-    virtual void updateData(const double dt = 0) override;
+    void updateData(const double dt = 0) final;
 
 private:
-    double tas {};                  // our cas dial rotation position (1 - 900)
+    double tas{};                   // our cas dial rotation position (1 - 900)
     SendData tasSD;
-    double  tasRate {50.0};         // rate which are going (up or down)
+    double  tasRate{50.0};          // rate which are going (up or down)
     SendData tasPointerRotationSD;  // cas pointer rotation (1 - 900)
     SendData tasROSD;
 };

@@ -18,8 +18,8 @@ BEGIN_EVENT_HANDLER(TestCompass)
     ON_EVENT('d', onToggleCenteredTestCompass)
 END_EVENT_HANDLER()
 
-static const double refLat = 0;
-static const double refLon = 0;
+static const double refLat{};
+static const double refLon{};
 
 // navaid names
 static const char* navNames[TestCompass::MAX_NAV_AIDS] = {
@@ -39,10 +39,10 @@ TestCompass::TestCompass()
 
     // initialize our air tracks to test data
     {
-        double trkX {};
-        double trkY {};
-        double hdg {};
-        int myType {1};
+        double trkX{};
+        double trkY{};
+        double hdg{};
+        int myType{1};
         for (int i = 0; i < MAX_TRACKS; i++) {
             myTracks[i].x = trkX;
             myTracks[i].y = trkY;
@@ -61,9 +61,9 @@ TestCompass::TestCompass()
 
     // initialize our airport to test data
     {
-        double apLat {refLat + 0.1};
-        double apLon {refLon};
-        int myType {1};
+        double apLat{refLat + 0.1};
+        double apLon{refLon};
+        int myType{1};
         for (int i = 0; i < MAX_NAV_AIDS; i++) {
             myAP[i].x = apLat;
             myAP[i].y = apLon;
@@ -83,9 +83,9 @@ TestCompass::TestCompass()
 
     // initialize our navaids to test data
     {
-        double navLat {refLat};
-        double navLon {refLon + 0.1};
-        int myType {1};
+        double navLat{refLat};
+        double navLon{refLon + 0.1};
+        int myType{1};
         for (int i = 0; i < MAX_NAV_AIDS; i++) {
             myNA[i].x = navLat;
             myNA[i].y = navLon;
@@ -139,7 +139,7 @@ void TestCompass::updateData(const double dt)
 
     // Load test tracks (once) - load the default (0)
     if (!tracksLoaded) {
-        base::Pair* pair = findByName("airTracks");
+        base::Pair* pair{findByName("airTracks")};
         if (pair != nullptr) {
             pair->ref();
             const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
@@ -158,13 +158,13 @@ void TestCompass::updateData(const double dt)
 
     // Load test airports (once)
     if (!airportsLoaded) {
-        base::Pair* pair = findByName("airports");
+        base::Pair* pair{findByName("airports")};
         if (pair != nullptr) {
             pair->ref();
             const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
             if (myLoader != nullptr) {
                 for (int i = 0; i < MAX_AIRPORTS; i++) {
-                    int idx = myLoader->addSymbol(myAP[i].type, myAP[i].id);
+                    int idx{myLoader->addSymbol(myAP[i].type, myAP[i].id)};
                     myLoader->updateSymbolPositionLL(idx, myAP[i].x, myAP[i].y);
                     myLoader->updateSymbolText(idx, "name", myAP[i].id);
                     //std::cout << "added airport: " << myAP[i].x << ", " <<  myAP[i].y << ", " <<  myAP[i].type << ", " << myAP[i].id << std::endl;
@@ -177,13 +177,13 @@ void TestCompass::updateData(const double dt)
 
     // Load test navaids (once)
     if (!navAidsLoaded) {
-        base::Pair* pair = findByName("navaids");
+        base::Pair* pair{findByName("navaids")};
         if (pair != nullptr) {
             pair->ref();
             const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
             if (myLoader != nullptr) {
                 for (int i = 0; i < MAX_NAV_AIDS; i++) {
-                    int idx = myLoader->addSymbol(myNA[i].type, myNA[i].id);
+                    int idx{myLoader->addSymbol(myNA[i].type, myNA[i].id)};
                     myLoader->updateSymbolPositionLL(idx, myNA[i].x, myNA[i].y);
                     myLoader->updateSymbolText(idx, "name", myNA[i].id);
                     //std::cout << "added navaid: " << myNA[i].x << ", " <<  myNA[i].y << ", " <<  myNA[i].type << ", " << myNA[i].id << std::endl;

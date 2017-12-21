@@ -114,7 +114,7 @@ void TestAdi2::updateData(const double dt)
     // we'll assume an aoa of 2.5degress
     const auto aoaRad = static_cast<double>(5.0 * base::angle::D2RCC);
     const auto rollRad = static_cast<double>(roll * base::angle::D2RCC);
-    double tempAoaDiff = aoaRad * std::cos(rollRad);
+    double tempAoaDiff{aoaRad * std::cos(rollRad)};
 
     //std::cout << "ANGLE OF ATTACK = " << aoa << std::endl;
     //std::cout << "PITCH = " << pitch << std::endl;
@@ -126,7 +126,7 @@ void TestAdi2::updateData(const double dt)
     //std::cout << "FPM Y = " << fpmY << std::endl;
     // convert to screen coordinates
 
-    double ratio = 20/(base::PI/2);
+    double ratio{20/(base::PI/2)};
     //double myTest = (aoaRad * std::cos(rollRad)) * ratio;
 
     cdmX *= ratio;

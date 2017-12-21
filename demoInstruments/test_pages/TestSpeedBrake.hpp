@@ -11,18 +11,18 @@
 // This page will supply test data to the speed brake (generic)
 //
 //------------------------------------------------------------------------------
-class TestSpeedBrake : public mixr::graphics::Page
+class TestSpeedBrake final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestSpeedBrake, mixr::graphics::Page)
 
 public:
     TestSpeedBrake();
 
-    virtual void updateData(const double dt = 0) override;
+    void updateData(const double dt = 0) final;
 
 private:
-    double sbrakePosition {};          // our speed brake position (1 - 100)
-    double sbrakeRate {3.0};           // rate which are going (up or down)
+    double sbrakePosition{};          // our speed brake position (1 - 100)
+    double sbrakeRate{3.0};           // rate which are going (up or down)
     SendData sbrakePositionSD;
     SendData sbrakePositionROSD;
 };

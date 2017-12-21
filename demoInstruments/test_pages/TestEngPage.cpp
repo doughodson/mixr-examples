@@ -110,7 +110,7 @@ void TestEngPage::updateData(const double dt)
 
     {
         // Set to the engine display
-        base::Pair* pair = findByType(typeid(mixr::instruments::EngPage));
+        base::Pair* pair{findByType(typeid(mixr::instruments::EngPage))};
         if (pair != nullptr) {
             const auto p = static_cast<mixr::instruments::EngPage*>(pair->object());
             if (p != nullptr) {

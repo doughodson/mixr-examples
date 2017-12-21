@@ -10,31 +10,31 @@
 //
 // Description: Tests the engine page
 //------------------------------------------------------------------------------
-class TestEngPage : public mixr::graphics::Page
+class TestEngPage final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestEngPage, mixr::graphics::Page )
 
 public:
     TestEngPage();
 
-    virtual void updateData(const double dt = 0.0) override;
+    void updateData(const double dt = 0.0) final;
 
 private:
     // engine 1 n1
-    double n1[mixr::instruments::EngPage::NUM_ENG] {};
-    double n1Rate[mixr::instruments::EngPage::NUM_ENG] {};
+    double n1[mixr::instruments::EngPage::NUM_ENG]{};
+    double n1Rate[mixr::instruments::EngPage::NUM_ENG]{};
 
     // engine 1 n2
-    double n2[mixr::instruments::EngPage::NUM_ENG] {};
-    double n2Rate[mixr::instruments::EngPage::NUM_ENG] {};
+    double n2[mixr::instruments::EngPage::NUM_ENG]{};
+    double n2Rate[mixr::instruments::EngPage::NUM_ENG]{};
 
     // engine 1 tit
-    double tit[mixr::instruments::EngPage::NUM_ENG] {};
-    double titRate[mixr::instruments::EngPage::NUM_ENG] {};
+    double tit[mixr::instruments::EngPage::NUM_ENG]{};
+    double titRate[mixr::instruments::EngPage::NUM_ENG]{};
 
     // engin1 1 fuel flow
-    double ff[mixr::instruments::EngPage::NUM_ENG] {};
-    double ffRate[mixr::instruments::EngPage::NUM_ENG] {};
+    double ff[mixr::instruments::EngPage::NUM_ENG]{};
+    double ffRate[mixr::instruments::EngPage::NUM_ENG]{};
 };
 
 #endif

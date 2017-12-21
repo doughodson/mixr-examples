@@ -9,18 +9,18 @@
 //
 // Description: Another example of using an analog dial.
 //------------------------------------------------------------------------------
-class TestNozzle : public mixr::graphics::Page
+class TestNozzle final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestNozzle, mixr::graphics::Page)
 
 public:
     TestNozzle();
 
-    virtual void updateData(const double dt = 0) override;
+    void updateData(const double dt = 0) final;
 
 private:
-    double nozPos {};
-    double nozRate {5.0};
+    double nozPos{};
+    double nozRate{5.0};
     SendData nozPosSD;
     SendData nozPosROSD;       // sends our readout data (to a numeric readout)
 };

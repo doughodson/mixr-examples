@@ -11,18 +11,18 @@
 // This page will show an analog F16-like aoa gauge beside a digital aoa gauge
 //
 //------------------------------------------------------------------------------
-class TestDigitalGauge : public mixr::graphics::Page
+class TestDigitalGauge final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestDigitalGauge, mixr::graphics::Page)
 
 public:
    TestDigitalGauge();
 
-   virtual void updateData(const double dt = 0) override;
+   void updateData(const double dt = 0) final;
 
 private:
-    double aoa {};
-    double aoaRate {2.0};   // rate which are going (up or down)
+    double aoa{};
+    double aoaRate{2.0};    // rate which are going (up or down)
     SendData aoaSD;
     SendData aoaROSD;       // aoa readout
     SendData aoaASD;        // analog readout

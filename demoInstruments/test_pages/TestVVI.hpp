@@ -11,18 +11,18 @@
 // This page will supply test data to a generic analog tape gauge
 //
 //------------------------------------------------------------------------------
-class TestVVI : public mixr::graphics::Page
+class TestVVI final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestVVI, mixr::graphics::Page)
 
 public:
    TestVVI();
 
-   virtual void updateData(const double dt = 0) override;
+   void updateData(const double dt = 0) final;
 
 private:
-   double gaugePosition {};       // our gauge position (inches)
-   double gaugeRate {500.0};      // rate which are going (up or down)
+   double gaugePosition{};       // our gauge position (inches)
+   double gaugeRate{500.0};      // rate which are going (up or down)
    SendData gaugePositionSD;
    SendData gaugePositionROSD;
 };

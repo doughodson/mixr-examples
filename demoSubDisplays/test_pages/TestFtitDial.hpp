@@ -11,18 +11,18 @@
 // This page will supply test data to the fuel temperature internal dial
 //
 //------------------------------------------------------------------------------
-class TestFtitDial : public mixr::graphics::Page
+class TestFtitDial final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestFtitDial, mixr::graphics::Page)
 
 public:
     TestFtitDial();
 
-    virtual void updateData(const double dt = 0) override;
+    void updateData(const double dt = 0) final;
 
 private:
-    double ftitRotation {};     // our ftit position (0 - 1000)
-    double ftitRate {100.0};    // rate which are going (up or down)
+    double ftitRotation{};      // our ftit position (0 - 1000)
+    double ftitRate{100.0};     // rate which are going (up or down)
     SendData ftitRotationSD;
     SendData ftitRotationROSD;  // for our readout
 };

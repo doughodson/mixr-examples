@@ -43,7 +43,7 @@ bool TdElevPtr::setElevation(const double v)
 //------------------------------------------------------------------------------
 bool TdElevPtr::onUpdateValue(const base::Number* const msg)
 {
-    bool ok = false;
+    bool ok{};
     if (msg != nullptr) {
       ok = setElevation(msg->getReal());
     }

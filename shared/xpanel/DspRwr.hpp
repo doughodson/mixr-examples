@@ -15,7 +15,7 @@ namespace xpanel {
 //              the angle of arrival.
 // Factory name: DspRwr
 //------------------------------------------------------------------------------
-class DspRwr : public graphics::Graphic
+class DspRwr final: public graphics::Graphic
 {
     DECLARE_SUBCLASS(DspRwr, graphics::Graphic)
 
@@ -26,12 +26,11 @@ public:
     const models::Rwr* getRwr() const { return rwr; }
     void setRwr(models::Rwr* s)       { rwr = s; }
 
-    virtual void drawFunc() override;
-
-    virtual void updateData(const double dt = 0.0) override;
+    void drawFunc() final;
+    void updateData(const double dt = 0.0) final;
 
 private:
-    models::Rwr* rwr {};     // The test RWR sensor
+    models::Rwr* rwr{};     // The test RWR sensor
 };
 
 }

@@ -13,7 +13,7 @@ namespace xzmq {
 
 base::Object* factory(const std::string& name)
 {
-    base::Object* obj {};
+    base::Object* obj{};
 
     if ( name == ZeroMQContext::getFactoryName() ) {
         obj = new ZeroMQContext;

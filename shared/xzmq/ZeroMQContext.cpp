@@ -54,7 +54,7 @@ void ZeroMQContext::deleteData()
 
 bool ZeroMQContext::initContext()
 {
-   bool ok = true;
+   bool ok{true};
 
    // Create a new context
    if (ok) {
@@ -76,7 +76,7 @@ bool ZeroMQContext::initContext()
 
 bool ZeroMQContext::terminateContext()
 {
-   bool ok = false;
+   bool ok{};
 
    // Terminate context.  All ZeroMQNetHandlers should be closed
    // before the context will successfully close.
@@ -120,7 +120,7 @@ bool ZeroMQContext::setEnableIPV6(bool enable)
 // threadCount: Integer containing the I/O thread count
 bool ZeroMQContext::setSlotThreadCount(const base::Integer* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) ok = setThreadCount(*msg);
    return ok;
 }
@@ -128,7 +128,7 @@ bool ZeroMQContext::setSlotThreadCount(const base::Integer* const msg)
 // maxSockets: Integer containing the max socket count
 bool ZeroMQContext::setSlotMaxSockets(const base::Integer* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) ok = setMaxSockets(*msg);
    return ok;
 }
@@ -136,7 +136,7 @@ bool ZeroMQContext::setSlotMaxSockets(const base::Integer* const msg)
 // enableIPV6: Boolean containing IPV6 valid
 bool ZeroMQContext::setSlotEnableIPV6(const base::Boolean* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) ok = setEnableIPV6(*msg);
    return ok;
 }

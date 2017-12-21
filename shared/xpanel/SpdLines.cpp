@@ -38,15 +38,15 @@ void SpdLines::copyData(const SpdLines& org, const bool)
 //------------------------------------------------------------------------------
 void SpdLines::drawFunc()
 {
-    GLfloat ocolor[4];
-    GLfloat lw;
+    GLfloat ocolor[4]{};
+    GLfloat lw{};
     glGetFloatv(GL_CURRENT_COLOR, ocolor);
     glGetFloatv(GL_LINE_WIDTH, &lw);
 
     BEGIN_DLIST
 
         if (!isAlt) {
-            double startPoint = 0;
+            double startPoint{};
             // now step through and draw all the lines (100 of them)
             // draw the big lines first
             glLineWidth(2);
@@ -61,7 +61,7 @@ void SpdLines::drawFunc()
                 startPoint += 0.9f;
             }
             // now draw the small lines
-            startPoint = 0.45f;
+            startPoint = 0.45;
             for (int i = 0; i < 50; i++) {
                 glPushMatrix();
                     glBegin(GL_LINES);
@@ -85,9 +85,8 @@ void SpdLines::drawFunc()
                     glVertex2f(0.6f, 1500);
                 glEnd();
             glPopMatrix();
-        }
-        else {
-            double startPoint = 0;
+        } else {
+            double startPoint{};
             // now step through and draw all the lines (approx 280 of them, gets us to about 55,800 feet)
             // draw the big lines first
             glLineWidth(2);
@@ -102,7 +101,7 @@ void SpdLines::drawFunc()
                 startPoint += 0.9f;
             }
             // now draw the small lines
-            startPoint = 0.45f;
+            startPoint = 0.45;
             for (int i = 0; i < 280; i++) {
                 glPushMatrix();
                     glBegin(GL_LINES);
@@ -136,7 +135,7 @@ void SpdLines::drawFunc()
 // Event function
 bool SpdLines::onEventSetIsAltSpdLines(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setIsAlt(x->getBoolean());
     return ok;
 }
@@ -147,7 +146,7 @@ bool SpdLines::onEventSetIsAltSpdLines(const base::Number* const x)
 //------------------------------------------------------------------------------
 bool SpdLines::setSlotIsAlt(const base::Number* const newAltFlag)
 {
-    bool ok = false;
+    bool ok{};
     if (newAltFlag != nullptr) ok = setIsAlt(newAltFlag->getBoolean());
     return ok;
 }

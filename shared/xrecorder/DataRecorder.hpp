@@ -30,7 +30,7 @@ public:
    DataRecorder();
 
 protected:
-   virtual bool recordDataImp(
+   bool recordDataImp(
       const unsigned int id,              // Recorder event Id
       const base::Object* pObjects[4],    // Sample objects
       const double values[4]              // Sample values
@@ -39,7 +39,7 @@ protected:
    // Recorder data event handlers
    virtual bool recordMyData(const base::Object* objs[4], const double values[4]);
 
-   virtual bool recordMarker(const base::Object* objs[4], const double values[4]) override;
+   bool recordMarker(const base::Object* objs[4], const double values[4]) override;
 };
 
 }

@@ -23,7 +23,7 @@ namespace xpanel {
 // Events:
 //    UPDATE_VALUE  <Number>  ! elevation angle (degs)
 //------------------------------------------------------------------------------
-class TdElevPtr : public graphics::Graphic
+class TdElevPtr final: public graphics::Graphic
 {
    DECLARE_SUBCLASS(TdElevPtr, graphics::Graphic)
 
@@ -33,14 +33,13 @@ public:
    double getElevation() const;     // degs
    bool setElevation(const double); // degs
 
-   virtual void draw() override;
-
-   virtual bool event(const int event, base::Object* const obj = nullptr) override;
+   void draw() final;
+   bool event(const int event, base::Object* const obj = nullptr) final;
 
 private:
    bool onUpdateValue(const base::Number* const);
 
-   double elev {};  // (degs)
+   double elev{};  // (degs)
 };
 
 }

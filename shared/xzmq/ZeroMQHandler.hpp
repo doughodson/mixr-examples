@@ -41,41 +41,26 @@ typedef std::map <int, std::string> i2s_t;
 //    <options>   - The set options will each have a slot for them
 //
 //------------------------------------------------------------------------------
-class ZeroMQHandler : public base::NetHandler
+class ZeroMQHandler final: public base::NetHandler
 {
    DECLARE_SUBCLASS(ZeroMQHandler, base::NetHandler)
 
 public:
    ZeroMQHandler();
 
-   virtual bool initNetwork(const bool noWaitFlag) override;
-   virtual bool isConnected() const override;
-   virtual bool closeConnection() override;
-   virtual bool sendData(const char* const packet, const int size) override;
-   virtual unsigned int recvData(char* const packet, const int maxSize) override;
+   bool initNetwork(const bool noWaitFlag) final;
+   bool isConnected() const final;
+   bool closeConnection() final;
+   bool sendData(const char* const packet, const int size) final;
+   unsigned int recvData(char* const packet, const int maxSize) final;
 
    // Casting for the dereference operator much like base::String.  This is
    // useful when using a 0MQ function directly like zmq_poll.
    operator void* ()               { return socket; }
    operator const void* () const   { return socket; }
 
-   virtual bool setBlocked() override;
-   virtual bool setNoWait() override;
-
-   // Slots
-   virtual bool setSlotContext(ZeroMQContext* const msg);
-   virtual bool setSlotSocketType(const base::String* const msg);
-   virtual bool setSlotConnect(const base::String* const msg);
-   virtual bool setSlotAccept(const base::String* const msg);
-   virtual bool setSlotNoWait(const base::Boolean* const msg);
-   virtual bool setSlotLinger(const base::Integer* const msg);
-   virtual bool setSlotSubscribe(const base::String* const msg);
-   virtual bool setSlotBackLog(const base::Integer* const msg);
-   virtual bool setSlotIdentity(const base::String* const msg);
-   virtual bool setSlotSendBufSize(const base::Integer* const msg);
-   virtual bool setSlotRecvBufSize(const base::Integer* const msg);
-   virtual bool setSlotSendHWM(const base::Integer* const msg);
-   virtual bool setSlotRecvHWM(const base::Integer* const msg);
+   bool setBlocked() final;
+   bool setNoWait() final;
 
 protected:
    bool setContext(ZeroMQContext* const context);
@@ -104,22 +89,38 @@ private:
    static i2s_t sti2s;
 
 protected:
-   ZeroMQContext* context {};         // Parent context (oe not ZeroMQ)
-   int            socketType {-1};    // Socket type
-   std::string    endpoint;           // Endpoint for binding
-   int            linger {-1};        // Socket linger period (ms)
-   std::string    subscribe;          // Message filter
-   int            backLog {-1};       // Connection queue size
-   std::string    identity;           // Socket identity
-   int            sendBufSize {-1};   // Kernel buffer size for sending
-   int            recvBufSize {-1};   // Kernel buffer size for receiving
-   int            sendHWM {-1};       // High-water-mark for outbound messages
-   int            recvHWM {-1};       // High-water-mark for inbound messages
-   bool           noWait {};          // No wait flag from the slot
-   void*          socket {};          // 0MQ socket
-   bool           doBind {};          // Accept or connect!
-   bool           dontWait {};        // 0MQ no wait flag
-   bool           ready {};           // Initialization was successful
+   ZeroMQContext* context{};         // Parent context (oe not ZeroMQ)
+   int            socketType{-1};    // Socket type
+   std::string    endpoint;          // Endpoint for binding
+   int            linger{-1};        // Socket linger period (ms)
+   std::string    subscribe;         // Message filter
+   int            backLog{-1};       // Connection queue size
+   std::string    identity;          // Socket identity
+   int            sendBufSize{-1};   // Kernel buffer size for sending
+   int            recvBufSize{-1};   // Kernel buffer size for receiving
+   int            sendHWM{-1};       // High-water-mark for outbound messages
+   int            recvHWM{-1};       // High-water-mark for inbound messages
+   bool           noWait{};          // No wait flag from the slot
+   void*          socket{};          // 0MQ socket
+   bool           doBind{};          // Accept or connect!
+   bool           dontWait{};        // 0MQ no wait flag
+   bool           ready{};           // Initialization was successful
+
+private:
+   // slot table helper methods
+   bool setSlotContext(ZeroMQContext* const);
+   bool setSlotSocketType(const base::String* const);
+   bool setSlotConnect(const base::String* const);
+   bool setSlotAccept(const base::String* const);
+   bool setSlotNoWait(const base::Boolean* const);
+   bool setSlotLinger(const base::Integer* const);
+   bool setSlotSubscribe(const base::String* const);
+   bool setSlotBackLog(const base::Integer* const);
+   bool setSlotIdentity(const base::String* const);
+   bool setSlotSendBufSize(const base::Integer* const);
+   bool setSlotRecvBufSize(const base::Integer* const);
+   bool setSlotSendHWM(const base::Integer* const);
+   bool setSlotRecvHWM(const base::Integer* const);
 };
 
 }

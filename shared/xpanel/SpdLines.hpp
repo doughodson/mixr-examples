@@ -14,7 +14,7 @@ namespace xpanel {
 // Inputs:
 //      UPDATE_VALUE  -> altitude flag on or off
 //------------------------------------------------------------------------------
-class SpdLines : public graphics::Graphic
+class SpdLines final: public graphics::Graphic
 {
     DECLARE_SUBCLASS(SpdLines,graphics::Graphic)
 
@@ -22,23 +22,22 @@ public:
     SpdLines();
 
     // set functions
-    virtual bool setIsAlt(const bool newIsAlt)      { isAlt = newIsAlt; return true; }
+    bool setIsAlt(const bool newIsAlt)      { isAlt = newIsAlt; return true; }
 
     // get functions
-    bool isAltSelected()                            { return isAlt; }
+    bool isAltSelected()                    { return isAlt; }
 
-    virtual void drawFunc() override;
-
-    virtual bool event(const int event, base::Object* const obj = nullptr) override;
+    void drawFunc() final;
+    bool event(const int event, base::Object* const obj = nullptr) final;
 
 protected:
     bool setSlotIsAlt(const base::Number* newIsAlt);
 
 private:
     // event function
-    bool onEventSetIsAltSpdLines(const base::Number* const x);
+    bool onEventSetIsAltSpdLines(const base::Number* const);
 
-    bool isAlt {};     // are we drawing the altitude lines instead?
+    bool isAlt{};     // are we drawing the altitude lines instead?
 };
 
 }

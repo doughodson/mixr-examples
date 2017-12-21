@@ -3,6 +3,8 @@
 
 #include "mixr/models/system/Rwr.hpp"
 
+#include <cmath>
+
 namespace mixr {
 namespace xpanel {
 
@@ -44,17 +46,17 @@ void DspRwr::drawFunc()
    // Draw the RWR signal rays
    // ---
 
-   GLdouble  ocolor[4];
-   glGetDoublev(GL_CURRENT_COLOR,ocolor);
+   GLdouble ocolor[4]{};
+   glGetDoublev(GL_CURRENT_COLOR, ocolor);
 
    glColor3d(0.0, 1.0, 0.0);
 
-   unsigned int n = rwr->getNumberOfRays();
-   for (unsigned int i = 0; i < n; i++) {
-      GLdouble azr = (base::angle::D2RCC *  rwr->getRayAzimuth(i) );
-      GLdouble pwr = rwr->getRay(i);
-      GLdouble up = cos(azr) * pwr;
-      GLdouble right = sin(azr) * pwr;
+   int n{rwr->getNumberOfRays()};
+   for (int i = 0; i < n; i++) {
+      GLdouble azr{(base::angle::D2RCC *  rwr->getRayAzimuth(i) )};
+      GLdouble pwr{rwr->getRay(i)};
+      GLdouble up{std::cos(azr) * pwr};
+      GLdouble right{std::sin(azr) * pwr};
       glBegin(GL_LINES);
          glVertex3d( 0.0,  0.0, 0.0);
          glVertex3d( right, up, 0.0);

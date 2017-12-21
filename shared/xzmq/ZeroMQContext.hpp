@@ -42,11 +42,6 @@ public:
    operator void* ()                { return context; }
    operator const void* () const    { return context; }
 
-   // Slots
-   virtual bool setSlotThreadCount(const base::Integer* const msg);
-   virtual bool setSlotMaxSockets(const base::Integer* const msg);
-   virtual bool setSlotEnableIPV6(const base::Boolean* const msg);
-
 protected:
    bool setThreadCount(const int count);
    bool setMaxSockets(const int count);
@@ -55,11 +50,17 @@ protected:
 private:
    void initData();
    
-   void* context {};          // ZeroMQ context (they use void*)
-   int   threadCount {-1};    // Number of I/O threads in pool (not set = -1)
-   int   maxSockets {-1};     // Number of sockets (not set = -1)
-   int   enableIPV6 {-1};     // Use IPV6 sockets (0 or 1, not set = -1)
-   bool  ready {};            // initialized flag
+   void* context{};          // ZeroMQ context (they use void*)
+   int   threadCount{-1};    // Number of I/O threads in pool (not set = -1)
+   int   maxSockets{-1};     // Number of sockets (not set = -1)
+   int   enableIPV6{-1};     // Use IPV6 sockets (0 or 1, not set = -1)
+   bool  ready{};            // initialized flag
+
+private:
+   // slot table helper methods
+   bool setSlotThreadCount(const base::Integer* const);
+   bool setSlotMaxSockets(const base::Integer* const);
+   bool setSlotEnableIPV6(const base::Boolean* const);
 };
 
 }

@@ -108,5 +108,5 @@ int main(int argc, char* argv[])
 
    // main loop
    glutMainLoop();
-   return EXIT_SUCCESS;
+   return 0;
 }

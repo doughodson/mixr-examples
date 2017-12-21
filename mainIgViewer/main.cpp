@@ -109,5 +109,5 @@ int main(int argc, char* argv[])
    station->createTimeCriticalProcess();
 
    glutMainLoop();
-   return EXIT_SUCCESS;
+   return 0;
 }

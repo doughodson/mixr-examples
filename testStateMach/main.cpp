@@ -80,5 +80,5 @@ int main(int argc, char* argv[])
    // run the test
    theTest(stateMachine);
 
-   return EXIT_SUCCESS;
+   return 0;
 }

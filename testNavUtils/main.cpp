@@ -4522,5 +4522,5 @@ int main(int argc, char* argv[])
       std::cout                                             << std::endl;
    }
 
-   return EXIT_SUCCESS;
+   return 0;
 }

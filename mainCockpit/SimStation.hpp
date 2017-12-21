@@ -22,7 +22,7 @@ namespace mixr {
 //      display          <graphics::GlutDisplay> ! Main graphics display
 //      autoResetTimer   <Time>                  ! Auto RESET timer value (base::Time); default: 0
 //------------------------------------------------------------------------------
-class SimStation : public mixr::simulation::Station
+class SimStation final: public mixr::simulation::Station
 {
     DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
 
@@ -32,18 +32,18 @@ public:
    // Step our "ownship" to the next local air vehicle
    void stepOwnshipPlayer();
 
-   void updateTC(const double dt = 0.0) override;
-   void updateData(const double dt = 0.0) override;
-   void reset() override;
+   void updateTC(const double dt = 0.0) final;
+   void updateData(const double dt = 0.0) final;
+   void reset() final;
 
 private:
    // Main Display
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
-   bool displayInit {};
+   bool displayInit{};
 
    // Auto reset timer
-   double autoResetTimer {};                   // Auto RESET timer (sends a RESET_EVENT after timeout)
-   const mixr::base::Time* autoResetTimer0 {};   // Init value of the Auto RESET timer
+   double autoResetTimer{};                   // Auto RESET timer (sends a RESET_EVENT after timeout)
+   const mixr::base::Time* autoResetTimer0{};   // Init value of the Auto RESET timer
 
 private:
    // slot table helper methods

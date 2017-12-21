@@ -44,7 +44,7 @@ void SimStation::reset()
 {
     if (!displayInit && mainDisplay != nullptr) {
         mainDisplay->createWindow();
-        mixr::base::Pair* p = mainDisplay->findByType(typeid(mixr::graphics::Page));
+        mixr::base::Pair* p{mainDisplay->findByType(typeid(mixr::graphics::Page))};
         if (p != nullptr) mainDisplay->focus(static_cast<mixr::graphics::Graphic*>(p->object()));
         else mainDisplay->focus(nullptr);
         displayInit = true;
@@ -55,8 +55,7 @@ void SimStation::reset()
     // auto reset timer
     if (autoResetTimer0 != nullptr) {
         autoResetTimer = mixr::base::Seconds::convertStatic(*autoResetTimer0);
-    }
-    else {
+    } else {
         autoResetTimer = 0;
     }
 
@@ -100,15 +99,15 @@ void SimStation::updateData(const double dt)
 // step to the next local player
 void SimStation::stepOwnshipPlayer()
 {
-   mixr::base::PairStream* pl = getSimulation()->getPlayers();
+   mixr::base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
-      mixr::models::Player* f = nullptr;
-      mixr::models::Player* n = nullptr;
+      mixr::models::Player* f{};
+      mixr::models::Player* n{};
       bool found = false;
 
       // Find the next player
-      mixr::base::List::Item* item = pl->getFirstItem();
+      mixr::base::List::Item* item{pl->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          if (pair != nullptr) {

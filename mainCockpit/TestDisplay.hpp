@@ -34,7 +34,7 @@ namespace xpanel { class DspRadar; class DspRwr; }
 //   'd' or 'D'   -- Decrease Range
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class TestDisplay : public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::GlutDisplay
 {
     DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
@@ -52,13 +52,12 @@ public:
 
     void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
 
-    void mouseEvent(const int button, const int state, const int x, const int y) override;
-
-    bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-    void updateData(const double dt = 0.0) override;
+    void mouseEvent(const int button, const int state, const int x, const int y) final;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    void updateData(const double dt = 0.0) final;
 
 protected:
-    bool shutdownNotification() override;
+    bool shutdownNotification() final;
 
 private:
     // Key event handlers
@@ -88,64 +87,64 @@ private:
     // RADAR, RWR and SA stuff
     // ---
 
-    std::array<mixr::models::Player*, MAX_TRACKS> tracks {};  // players that we're displaying
-    std::array<int, MAX_TRACKS> trkIdx {};                  // Index of track symbols
+    std::array<mixr::models::Player*, MAX_TRACKS> tracks{};  // players that we're displaying
+    std::array<int, MAX_TRACKS> trkIdx{};                    // Index of track symbols
 
     // ---
     // PFD stuff
     // ---
 
     // pitch and roll
-    double pitch {};           // degs
-    double pitchRate {10.0};   // degs/sec
-    double roll {};            // degs
-    double rollRate {-9.0};    // degs/sec
+    double pitch{};           // degs
+    double pitchRate{10.0};   // degs/sec
+    double roll{};            // degs
+    double rollRate{-9.0};    // degs/sec
 
     // heading and nav stuff
-    double trueHdg {};         // degs
-    double tHdgRate {11.0};    // degs/sec
-    double cmdHdg {};          // commanded heading (heading bug) (degs)
-    double cmdHdgRate {3.0};   // degs/sec
+    double trueHdg{};         // degs
+    double tHdgRate{11.0};    // degs/sec
+    double cmdHdg{};          // commanded heading (heading bug) (degs)
+    double cmdHdgRate{3.0};   // degs/sec
 
     // airspeed
-    double airSpd {};
-    double airSpdRate {5.0};
+    double airSpd{};
+    double airSpdRate{5.0};
 
     // altitude
-    double alt {10000.0};
-    double altRate {80.0};
+    double alt{10000.0};
+    double altRate{80.0};
 
     // side slip
-    double slip {};            // degs
-    double slipRate {10.0};    // degs/sec
+    double slip{};            // degs
+    double slipRate{10.0};    // degs/sec
 
     // glideslope (in dots)
-    double gSlope {};
-    double gSlopeRate {0.2};
+    double gSlope{};
+    double gSlopeRate{0.2};
 
     // Lateral dev
-    double latDev {};
-    double ldRate {0.3};
+    double latDev{};
+    double ldRate{0.3};
 
     // commanded speed
-    double cmdSpd {200.0};
+    double cmdSpd{200.0};
 
     // commanded alt
-    double cmdAlt {6000.0};
+    double cmdAlt{6000.0};
 
     // vvi
-    double vvi {0.0};
-    double vviRate {500.0};
+    double vvi{0.0};
+    double vviRate{500.0};
 
     // flight director stuff (in inches)
-    double fDirBank {};
-    double fDirBankRate {4.0};
-    double fDirPitch {};
-    double fDirPitchRate {7.0};
+    double fDirBank{};
+    double fDirBankRate{4.0};
+    double fDirPitch{};
+    double fDirPitchRate{7.0};
 
     // barometric pressure
-    double baro {};
-    double baroRate {10.0};
+    double baro{};
+    double baroRate{10.0};
 };
 
 #endif

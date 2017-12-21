@@ -114,5 +114,5 @@ int main(int argc, char* argv[])
    // main loop to update graphics
    glutMainLoop();
 
-   return EXIT_SUCCESS;
+   return 0;
 }

@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
    // run test
    dataRecordTest->runTest();
 
-   return EXIT_SUCCESS;
+   return 0;
 }
 
 }

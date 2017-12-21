@@ -114,5 +114,5 @@ int main(int argc, char* argv[])
          mixr::base::msleep(sleepTime);
    }
 
-   return EXIT_SUCCESS;
+   return 0;
 }

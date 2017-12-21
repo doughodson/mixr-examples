@@ -46,5 +46,5 @@ int main(int, char**)
       std::cout << time << ", " << input << ", " << (1.0 - ee) << ", " << out << std::endl;
    }
 
-   return EXIT_SUCCESS;
+   return 0;
 }

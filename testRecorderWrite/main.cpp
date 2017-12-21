@@ -80,5 +80,5 @@ int main(int argc, char* argv[])
    dataRecordTest->testSerialize();
  //  dataRecordTest->testSelect();
 
-   return EXIT_SUCCESS;
+   return 0;
 }

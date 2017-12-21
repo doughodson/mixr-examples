@@ -162,7 +162,7 @@ void RealBeamRadar::transmit(const double dt)
       antElAngle = static_cast<double>(ant->getElevationD());
 
       // Which ray are we on?
-      const auto halfRay{static_cast<double>(IMG_WIDTH/2.0)};
+      const auto halfRay = static_cast<double>(IMG_WIDTH/2.0);
       auto ray = static_cast<int>(((antAzAngle/45.0f) * halfRay) + halfRay);
       if (ray < 0) ray = 0;
       if (ray > (IMG_WIDTH-1)) ray = (IMG_WIDTH-1);

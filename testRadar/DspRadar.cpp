@@ -103,7 +103,7 @@ void DspRadar::drawFunc()
       unsigned int nv{radar->getPtrsPerSweep()};
 
       const double sx{static_cast<double>(n-1)/2.0};
-      const auto sy{static_cast<double>(nv-1)};
+      const auto sy = static_cast<double>(nv-1);
 
       const double* s0{radar->getSweep(0)};
       const double* c0{radar->getClosure(0)};
@@ -117,7 +117,7 @@ void DspRadar::drawFunc()
 
          glBegin(GL_QUAD_STRIP);
          for (unsigned int j = 0; j < nv; j++) {
-            double y{2.0 * static_cast<double>(j)/sy};
+            double y{2.0 * static_cast<double>(j) / sy};
 
             double vclos0{base::alim(c0[j]/100.0, 1.0)};
             hsv[0] = 120.0f - 120.0f * vclos0;

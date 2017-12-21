@@ -1236,7 +1236,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testLastMsg()
 bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
 {
    bool hasSubMessage{};
-   const google::protobuf::Message& root{*msg};
+   const google::protobuf::Message& root = *msg;
    const google::protobuf::Descriptor* descriptor{msg->GetDescriptor()};
    const google::protobuf::Reflection* reflection{msg->GetReflection()};
 
@@ -1322,7 +1322,7 @@ bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
          else if (!fieldSelected) {
             std::cout << "Message name: " << fieldDescriptor->full_name() << std::endl;
             // Get sub message
-            const google::protobuf::Message& sub_message{reflection->GetMessage(root, fieldDescriptor)};
+            const google::protobuf::Message& sub_message = reflection->GetMessage(root, fieldDescriptor);
 
             // If sub message exists, process it
             //if (&sub_message != nullptr) {

@@ -6,7 +6,7 @@ namespace mixr {
 namespace dafif { class WaypointLoader; }
 }
  
-class WaypointTests
+class WaypointTests final
 {
 public:
    WaypointTests(
@@ -26,7 +26,7 @@ public:
    void func3B(const double acLat, const double acLon, const double acElev, const bool printData);    // test queryByIcao()
 
 private:
-   mixr::dafif::WaypointLoader* db {};
+   mixr::dafif::WaypointLoader* db{};
 };
 
 #endif

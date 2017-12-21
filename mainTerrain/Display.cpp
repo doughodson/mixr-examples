@@ -144,7 +144,7 @@ bool Display::setSlotTerrain(terrain::Terrain* const msg)
 // Set min elevation
 bool Display::setSlotMinElevation(const base::Distance* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       ok = setMinElevation( base::Meters::convertStatic(*msg) );
    }
@@ -154,7 +154,7 @@ bool Display::setSlotMinElevation(const base::Distance* const msg)
 // Set max elevation
 bool Display::setSlotMaxElevation(const base::Distance* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       ok = setMaxElevation( base::Meters::convertStatic(*msg) );
    }
@@ -164,7 +164,7 @@ bool Display::setSlotMaxElevation(const base::Distance* const msg)
 // Set max elevation
 bool Display::setSlotAltitude(const base::Distance* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       altitude = base::Meters::convertStatic(*msg);
       ok = true;
@@ -175,7 +175,7 @@ bool Display::setSlotAltitude(const base::Distance* const msg)
 // Set antenna look angle
 bool Display::setSlotLookAngle(const base::Angle* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       lookAngle = static_cast<double>(base::Degrees::convertStatic(*msg));
       ok = true;
@@ -186,7 +186,7 @@ bool Display::setSlotLookAngle(const base::Angle* const msg)
 // Set beam width
 bool Display::setSlotBeamWidth(const base::Angle* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       beamWidth = static_cast<double>(base::Degrees::convertStatic(*msg));
       ok = true;
@@ -197,9 +197,9 @@ bool Display::setSlotBeamWidth(const base::Angle* const msg)
 // Set color scale flag
 bool Display::setSlotColorScale(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
-      int s = msg->getInt();
+      const int s{msg->getInt()};
       if (s >= 0 && s <= 2) {
          colorDepth = static_cast<ColorDepth>(s);
          ok = true;
@@ -211,7 +211,7 @@ bool Display::setSlotColorScale(const base::Number* const msg)
 // Set interpolate flag
 bool Display::setSlotInterpolate(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       interpolate = msg->getBoolean();
       ok = true;
@@ -222,7 +222,7 @@ bool Display::setSlotInterpolate(const base::Number* const msg)
 // Set shadow test flag
 bool Display::setSlotShadowsTest(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       testShadows = msg->getBoolean();
       ok = true;
@@ -233,7 +233,7 @@ bool Display::setSlotShadowsTest(const base::Number* const msg)
 // Set AAC test flag
 bool Display::setSlotAacTest(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       testAac = msg->getBoolean();
       ok = true;
@@ -244,7 +244,7 @@ bool Display::setSlotAacTest(const base::Number* const msg)
 // Set earth curvature test flag
 bool Display::setSlotEarthCurvatureTest(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       testEarthCurv = msg->getBoolean();
       ok = true;
@@ -256,7 +256,7 @@ bool Display::setSlotEarthCurvatureTest(const base::Number* const msg)
 // Set texture test flag
 bool Display::setSlotTextureTest(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       testTexture = msg->getBoolean();
       ok = true;
@@ -271,8 +271,8 @@ bool Display::setSlotTextureTest(const base::Number* const msg)
 void Display::updateData(const double dt)
 {
    // Get Viewport width and height
-   GLsizei vpWidth {};
-   GLsizei vpHeight {};
+   GLsizei vpWidth{};
+   GLsizei vpHeight{};
    getViewportSize(&vpWidth, &vpHeight);
 
    // Generate an image when we have the terrain, a view port and we don't have an image
@@ -280,30 +280,30 @@ void Display::updateData(const double dt)
         vpWidth > 0 && vpHeight > 0 &&
         image == nullptr) {
 
-      GLsizei vpWidth {1024}; // default is texture sizes
-      GLsizei vpHeight {1024};
+      GLsizei vpWidth{1024}; // default is texture sizes
+      GLsizei vpHeight{1024};
       if (!testTexture) {
          // When not using textures, get the viewport parameters
 
          // Get the maximum number of points
-         GLint vpX {}, vpY {};
+         GLint vpX{}, vpY{};
          getViewport(&vpX, &vpY, &vpWidth, &vpHeight);
 
          // Make sure width is correct for a 4 byte alignment
-         GLsizei w0 {(vpWidth * PIXEL_SIZE)};
-         GLsizei w4 {(w0 / 4) * 4};  // Truncate to 4 bytes
+         GLsizei w0{(vpWidth * PIXEL_SIZE)};
+         GLsizei w4{(w0 / 4) * 4};  // Truncate to 4 bytes
          vpWidth = w4 / PIXEL_SIZE;
       }
 
       // Allocate the image memory
-      bool ok = initImageMemory(vpWidth, vpHeight);
+      bool ok{initImageMemory(vpWidth, vpHeight)};
       if (ok) {
 
-         const int NUM_COLUMNS {imgWidth};
-         const int NUM_ROWS {imgHeight};
+         const int NUM_COLUMNS{imgWidth};
+         const int NUM_ROWS{imgHeight};
 
          // Allocating space for 'multi-point' tests
-         double* elevations {};
+         double* elevations{};
          double* aacData{};
          bool* validFlgs{};
          bool* maskFlgs{};
@@ -315,91 +315,91 @@ void Display::updateData(const double dt)
          }
 
          // Max elevation (Z) value (meters)
-         double maxz = terrain->getMaxElevation();
+         double maxz{terrain->getMaxElevation()};
          if (isMaxElevValid()) maxz = getMaxElevation();
 
          // Min elevation (Z) value (meters)
-         double minz = terrain->getMinElevation();
+         double minz{terrain->getMinElevation()};
          if (isMinElevValid()) minz = getMinElevation();
 
          // Delta altitude (meters)
 //         double deltaElev = maxz - minz + 1;
 
          // Compute delta (range of) latitude and longitude
-         const double deltaLat = terrain->getLatitudeNE()  - terrain->getLatitudeSW();
-         const double deltaLon = terrain->getLongitudeNE() - terrain->getLongitudeSW();
+         const double deltaLat{terrain->getLatitudeNE()  - terrain->getLatitudeSW()};
+         const double deltaLon{terrain->getLongitudeNE() - terrain->getLongitudeSW()};
 
          // Compute center position (degs)
-         const double cLat = terrain->getLatitudeSW()  + deltaLat / 2.0;
-         const double cLon = terrain->getLongitudeSW() + deltaLon / 2.0;
+         const double cLat{terrain->getLatitudeSW()  + deltaLat / 2.0};
+         const double cLon{terrain->getLongitudeSW() + deltaLon / 2.0};
 
          // Compute distance between points with zoom factor (degs)
-         const double spacingLat = deltaLat / NUM_ROWS;
-         const double spacingLon = deltaLon / NUM_COLUMNS;
+         const double spacingLat{deltaLat / NUM_ROWS};
+         const double spacingLon{deltaLon / NUM_COLUMNS};
 
          // Generate the earth's curvature effect
-         double* curvature {};
+         double* curvature{};
          if (testEarthCurv) {
             curvature = new double[NUM_ROWS];
             const auto radius = static_cast<double>(base::nav::ERAD60 * base::distance::NM2M);
             const auto maxRng = static_cast<double>(deltaLat * 60.0f * base::distance::NM2M);
             for (int irow = 0; irow < NUM_ROWS; irow++) {
-               const double curRng = maxRng * static_cast<double>(irow)/static_cast<double>(NUM_ROWS);
-               const double arc = curRng / radius;
-               double cs {1.0};
-               const double c0 {std::cos(arc)};
-               if (c0 != 0) cs = 1.0f/c0;
+               const double curRng{maxRng * static_cast<double>(irow)/static_cast<double>(NUM_ROWS)};
+               const double arc{curRng / radius};
+               double cs{1.0};
+               const double c0{std::cos(arc)};
+               if (c0 != 0) cs = 1.0/c0;
                curvature[irow] = radius * (cs  - 1.0f);
             }
          }
 
-         const base::Hsva* grayTable[2] {};
-         //                   hue     sat    value  alpha
-         grayTable[0] = new base::Hsva(  120.0f,  0.0f,  0.0f,  1.0f );  // black0
-         grayTable[1] = new base::Hsva(  120.0f,  0.0f,  1.0f,  1.0f ); // white0
+         const base::Hsva* grayTable[2]{};
+         //                              hue     sat  value  alpha
+         grayTable[0] = new base::Hsva(  120.0,  0.0,  0.0,  1.0 );  // black0
+         grayTable[1] = new base::Hsva(  120.0,  0.0,  1.0,  1.0 );  // white0
 
-         const base::Hsva* colorTable[7] {};
-         //                  hue     sat    value  alpha
-         colorTable[0] = new base::Hsva( 240.0f,   1.0f,  1.0f,  1.0f ); // blue
-         colorTable[1] = new base::Hsva( 180.0f,   1.0f,  1.0f,  1.0f ); // cyan
-         colorTable[2] = new base::Hsva( 120.0f,   1.0f,  1.0f,  1.0f ); // green
-         colorTable[3] = new base::Hsva(  60.0f,   1.0f,  1.0f,  1.0f ); // yellow
-         colorTable[4] = new base::Hsva(   0.0f,   1.0f,  1.0f,  1.0f ); // red
-         colorTable[5] = new base::Hsva(  300.0f,  1.0f,  1.0f,  1.0f ); // magenta
-         colorTable[6] = new base::Hsva(  300.0f,  0.05f, 1.0f,  1.0f ); // white0
+         const base::Hsva* colorTable[7]{};
+         //                              hue     sat  value  alpha
+         colorTable[0] = new base::Hsva( 240.0,  1.0,  1.0,  1.0 );  // blue
+         colorTable[1] = new base::Hsva( 180.0,  1.0,  1.0,  1.0 );  // cyan
+         colorTable[2] = new base::Hsva( 120.0,  1.0,  1.0,  1.0 );  // green
+         colorTable[3] = new base::Hsva(  60.0,  1.0,  1.0,  1.0 );  // yellow
+         colorTable[4] = new base::Hsva(   0.0,  1.0,  1.0,  1.0 );  // red
+         colorTable[5] = new base::Hsva( 300.0,  1.0,  1.0,  1.0 );  // magenta
+         colorTable[6] = new base::Hsva( 300.0,  0.05, 1.0,  1.0 );  // white0
 
 
-         const base::Hsva* greenTable[19] {};
-         //                   hue     sat    value  alpha
-         greenTable[0]  = new base::Hsva(  120.0f,  1.0f,  0.0f,     1.0f );
-         greenTable[1]  = new base::Hsva(  120.0f,  1.0f,  0.0872f,  1.0f );
-         greenTable[2]  = new base::Hsva(  120.0f,  1.0f,  0.1736f,  1.0f );
-         greenTable[3]  = new base::Hsva(  120.0f,  1.0f,  0.2588f,  1.0f );
-         greenTable[4]  = new base::Hsva(  120.0f,  1.0f,  0.3420f,  1.0f );
-         greenTable[5]  = new base::Hsva(  120.0f,  1.0f,  0.4226f,  1.0f );
-         greenTable[6]  = new base::Hsva(  120.0f,  1.0f,  0.5000f,  1.0f );
-         greenTable[7]  = new base::Hsva(  120.0f,  1.0f,  0.5736f,  1.0f );
-         greenTable[8]  = new base::Hsva(  120.0f,  1.0f,  0.6428f,  1.0f );
-         greenTable[9]  = new base::Hsva(  120.0f,  1.0f,  0.7071f,  1.0f );
-         greenTable[10] = new base::Hsva(  120.0f,  1.0f,  0.7660f,  1.0f );
-         greenTable[11] = new base::Hsva(  120.0f,  1.0f,  0.8192f,  1.0f );
-         greenTable[12] = new base::Hsva(  120.0f,  1.0f,  0.8660f,  1.0f );
-         greenTable[13] = new base::Hsva(  120.0f,  1.0f,  0.9063f,  1.0f );
-         greenTable[14] = new base::Hsva(  120.0f,  1.0f,  0.9397f,  1.0f );
-         greenTable[15] = new base::Hsva(  120.0f,  1.0f,  0.9659f,  1.0f );
-         greenTable[16] = new base::Hsva(  120.0f,  1.0f,  0.9848f,  1.0f );
-         greenTable[17] = new base::Hsva(  120.0f,  1.0f,  0.9962f,  1.0f );
-         greenTable[18] = new base::Hsva(  120.0f,  1.0f,  1.0f,     1.0f );
+         const base::Hsva* greenTable[19]{};
+         //                               hue     sat  value    alpha
+         greenTable[0]  = new base::Hsva( 120.0,  1.0,  0.0,     1.0 );
+         greenTable[1]  = new base::Hsva( 120.0,  1.0,  0.0872,  1.0 );
+         greenTable[2]  = new base::Hsva( 120.0,  1.0,  0.1736,  1.0 );
+         greenTable[3]  = new base::Hsva( 120.0,  1.0,  0.2588,  1.0 );
+         greenTable[4]  = new base::Hsva( 120.0,  1.0,  0.3420,  1.0 );
+         greenTable[5]  = new base::Hsva( 120.0,  1.0,  0.4226,  1.0 );
+         greenTable[6]  = new base::Hsva( 120.0,  1.0,  0.5000,  1.0 );
+         greenTable[7]  = new base::Hsva( 120.0,  1.0,  0.5736,  1.0 );
+         greenTable[8]  = new base::Hsva( 120.0,  1.0,  0.6428,  1.0 );
+         greenTable[9]  = new base::Hsva( 120.0,  1.0,  0.7071,  1.0 );
+         greenTable[10] = new base::Hsva( 120.0,  1.0,  0.7660,  1.0 );
+         greenTable[11] = new base::Hsva( 120.0,  1.0,  0.8192,  1.0 );
+         greenTable[12] = new base::Hsva( 120.0,  1.0,  0.8660,  1.0 );
+         greenTable[13] = new base::Hsva( 120.0,  1.0,  0.9063,  1.0 );
+         greenTable[14] = new base::Hsva( 120.0,  1.0,  0.9397,  1.0 );
+         greenTable[15] = new base::Hsva( 120.0,  1.0,  0.9659,  1.0 );
+         greenTable[16] = new base::Hsva( 120.0,  1.0,  0.9848,  1.0 );
+         greenTable[17] = new base::Hsva( 120.0,  1.0,  0.9962,  1.0 );
+         greenTable[18] = new base::Hsva( 120.0,  1.0,  1.0,     1.0 );
 
          std::cout << "start image generation" << std::endl;
-         const double start = base::getComputerTime();
+         const double start{base::getComputerTime()};
 
          for (int icol = 0; icol < NUM_COLUMNS; icol++) {
 
 //            int halfway = NUM_COLUMNS / 2;
 
             // the Lat/long of the southern most point
-            const double longitude = cLon + (icol - NUM_COLUMNS/2) * spacingLon;
+            const double longitude{cLon + (icol - NUM_COLUMNS/2) * spacingLon};
 
             if (testShadows || testAac || testEarthCurv) {
 
@@ -411,12 +411,12 @@ void Display::updateData(const double dt)
                }
 
                // the Lat/long of the southern most point
-               const double latitude = cLat + (0 - NUM_ROWS/2) * spacingLat;
-               const double maxRng = static_cast<double>(deltaLat * 60.0f * base::distance::NM2M);
+               const double latitude{cLat + (0 - NUM_ROWS/2) * spacingLat};
+               const double maxRng{static_cast<double>(deltaLat * 60.0f * base::distance::NM2M)};
 
                // Direction
                //double direction = 30.0f * static_cast<double>(icol - NUM_COLUMNS/2)/static_cast<double>(NUM_COLUMNS/2);
-               double direction {};
+               double direction{};
 
                // get a strip of elevations from south to north
                /*unsigned int num = */ terrain->getElevations(elevations, validFlgs, NUM_ROWS, latitude, longitude, direction, maxRng, interpolate);
@@ -447,8 +447,8 @@ void Display::updateData(const double dt)
             for (int irow = 0; irow < NUM_ROWS; irow++) {
 
                base::Vec3d color(0,0,0);
-               double elev {};
-               bool valid {};
+               double elev{};
+               bool valid{};
 
               if (testShadows || testAac || testEarthCurv) {
                   // multi-point test: get the elevation from the array
@@ -456,10 +456,9 @@ void Display::updateData(const double dt)
                      elev = elevations[irow];
                      valid = true;
                   }
-               }
-               else {
+               } else {
                   // Single point test: compute the latitude of this point and get the elevation
-                  double latitude = cLat + (irow - NUM_ROWS/2) * spacingLat;
+                  double latitude{cLat + (irow - NUM_ROWS/2) * spacingLat};
                   valid = terrain->getElevation(&elev, latitude, longitude, interpolate);
                }
 
@@ -483,15 +482,15 @@ void Display::updateData(const double dt)
                //}
 
                // store this color
-               GLsizei idx = irow*imgWidth*PIXEL_SIZE + icol*PIXEL_SIZE;
+               GLsizei idx{irow*imgWidth*PIXEL_SIZE + icol*PIXEL_SIZE};
                image[idx+0] = GLubyte( 255.0 * color[0] );
                image[idx+1] = GLubyte( 255.0 * color[1] );
                image[idx+2] = GLubyte( 255.0 * color[2] );
             }
          }
 
-         const double end {base::getComputerTime()};
-         const double dtime {(end - start)};
+         const double end{base::getComputerTime()};
+         const double dtime{(end - start)};
          std::cout << "Image finished: time(s) = " << dtime << ", per line(us) = "
                    << (dtime/static_cast<double>(NUM_COLUMNS))*1000000.0 << std::endl;
 
@@ -507,7 +506,6 @@ void Display::updateData(const double dt)
 //------------------------------------------------------------------------------
 void Display::drawFunc()
 {
-
    if (image != nullptr) {
       if (testTexture) {
          // ---
@@ -528,7 +526,7 @@ void Display::drawFunc()
          glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
          glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-         double start = base::getComputerTime();
+         double start{base::getComputerTime()};
 
          glTexImage2D(GL_TEXTURE_2D, 0, PIXEL_SIZE, imgWidth, imgHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 
@@ -548,24 +546,23 @@ void Display::drawFunc()
 
          glEnd();
 
-         double end = base::getComputerTime();
-         double dtime = (end - start);
+         double end{base::getComputerTime()};
+         double dtime{end - start};
          std::cout << "glTexImage2D() dtime = " << dtime << std::endl;
          glDisable(GL_TEXTURE_2D);
-      }
-      else {
+      } else {
          // ---
          // Draw using glDrawPixels()
          // ---
 
          glRasterPos2f(0.0, 0.0);
 
-         double start = base::getComputerTime();
+         double start{base::getComputerTime()};
 
          glDrawPixels(imgWidth, imgHeight, GL_RGB, GL_UNSIGNED_BYTE, image);
 
-         double end = base::getComputerTime();
-         double dtime = (end - start);
+         double end{base::getComputerTime()};
+         double dtime{end - start};
          std::cout << "glDrawPixels() dtime = " << dtime << std::endl;
       }
    }
@@ -595,11 +592,11 @@ bool Display::copyImageMemory(const Display& org)
    freeImageMemory();
 
    // Now allocate the new memory (if needed)
-   bool ok = initImageMemory(org.imgWidth, org.imgHeight);
+   bool ok{initImageMemory(org.imgWidth, org.imgHeight)};
    if (ok) {
       for (GLsizei irow = 0; irow < imgHeight; irow++) {
          for (GLsizei icol = 0; icol < imgWidth; icol++) {
-            GLsizei idx = irow*imgWidth*PIXEL_SIZE + icol*PIXEL_SIZE;
+            GLsizei idx{irow*imgWidth*PIXEL_SIZE + icol*PIXEL_SIZE};
             image[idx+0] = org.image[idx+0];
             image[idx+1] = org.image[idx+1];
             image[idx+2] = org.image[idx+2];
@@ -615,12 +612,12 @@ bool Display::copyImageMemory(const Display& org)
 //------------------------------------------------------------------------------
 bool Display::initImageMemory(const GLsizei width, const GLsizei height)
 {
-   bool ok = false;
+   bool ok{};
    if (width > 0  && width <= MAX_IMAGE_WIDTH &&
       height > 0 && height <= MAX_IMAGE_HEIGHT) {
 
       // allocate space for the image
-      GLubyte* tmpImage = new GLubyte[width*height*PIXEL_SIZE];
+      GLubyte* tmpImage{new GLubyte[width*height*PIXEL_SIZE]};
       if (tmpImage != nullptr) {
 
          // and set our member variables
@@ -640,7 +637,7 @@ bool Display::initImageMemory(const GLsizei width, const GLsizei height)
 void Display::freeImageMemory()
 {
    // temp pointer
-   GLubyte* tmpImage = image;
+   GLubyte* tmpImage{image};
 
    // Clear the member variables
    image = nullptr;

@@ -10,7 +10,7 @@ namespace mixr {
 namespace dafif { class AirportLoader; } 
 }
 
-class AirportTests
+class AirportTests final
 {
 public:
    AirportTests(
@@ -61,7 +61,7 @@ public:
    void func0B(const double acLat, const double acLon, const double acElev, const bool printData);
 
 private:
-   mixr::dafif::AirportLoader* db {};
+   mixr::dafif::AirportLoader* db{};
 };
 
 #endif

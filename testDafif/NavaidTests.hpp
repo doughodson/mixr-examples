@@ -6,7 +6,7 @@ namespace mixr {
 namespace dafif { class NavaidLoader; } 
 }
 
-class NavaidTests
+class NavaidTests final
 {
 public:
    NavaidTests(
@@ -31,7 +31,7 @@ public:
    void func2B(const double acLat, const double acLon, const double acElev, const bool printData);    // test queryByIcao()
 
 private:
-   mixr::dafif::NavaidLoader* db {};
+   mixr::dafif::NavaidLoader* db{};
 };
 
 #endif

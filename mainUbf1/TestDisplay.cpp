@@ -178,7 +178,7 @@ bool TestDisplay::onRtn2SearchKey()
 bool TestDisplay::onAir2AirKey()
 {
    if (getOwnship() != nullptr) {
-      models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      models::StoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
          sms->setWeaponDeliveryMode(models::StoresMgr::A2A);
          std::cout << "Set A/A Weapon Mode!" << std::endl;
@@ -191,7 +191,7 @@ bool TestDisplay::onAir2AirKey()
 bool TestDisplay::onAir2GndKey()
 {
    if (getOwnship() != nullptr) {
-      models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      models::StoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
          sms->setWeaponDeliveryMode(models::StoresMgr::A2G);
          std::cout << "Set A/G Weapon Mode!" << std::endl;
@@ -204,16 +204,16 @@ bool TestDisplay::onAir2GndKey()
 bool TestDisplay::onIncRngKey()
 {
    if (getOwnship() != nullptr) {
-      models::Radar* rdr = nullptr;
+      models::Radar* rdr{};
       {
-         base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Radar));
+         base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Radar))};
          if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
       }
-      models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      models::StoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
          // But could be GMTI ...
          if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
-            base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Gmti));
+            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
             if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
          }
       }
@@ -231,24 +231,23 @@ bool TestDisplay::onIncRngKey()
 bool TestDisplay::onDecRngKey()
 {
    if (getOwnship() != nullptr) {
-      models::Radar* rdr = nullptr;
+      models::Radar* rdr{};
       {
-         base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Radar));
+         base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Radar))};
          if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
       }
-      models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      models::StoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
          // But could be GMTI ...
          if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
-            base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Gmti));
+            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
             if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
          }
       }
       if (rdr != nullptr) {
          rdr->decRange();
-      }
-      else {
-         range = range / 2.0f;
+      } else {
+         range = range / 2.0;
       }
    }
    return true;
@@ -272,21 +271,21 @@ void TestDisplay::updateData(const double dt)
    // Find and update the test RADAR display
    {
       rdrDisplay = nullptr;
-      base::Pair* p = findByType(typeid(xpanel::DspRadar));
+      base::Pair* p{findByType(typeid(xpanel::DspRadar))};
       if (p != nullptr) rdrDisplay = dynamic_cast<xpanel::DspRadar*>( p->object() );
    }
    if (rdrDisplay != nullptr && getOwnship() != nullptr) {
       // Default is TWS - no, simulation::Radar
-      models::Radar* rdr = nullptr;
+      models::Radar* rdr{};
       {
-         base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Radar));
+         base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Radar))};
          if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
       }
-      models::StoresMgr* sms = getOwnship()->getStoresManagement();
+      models::StoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
          // But could be GMTI ...
          if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
-            base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Gmti));
+            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
             if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
          }
       }
@@ -296,12 +295,12 @@ void TestDisplay::updateData(const double dt)
    // Find and update the test RWR display
    {
       rwrDisplay = nullptr;
-      base::Pair* p = findByType(typeid(xpanel::DspRwr));
+      base::Pair* p{findByType(typeid(xpanel::DspRwr))};
       if (p != nullptr) rwrDisplay = dynamic_cast<xpanel::DspRwr*>( p->object() );
    }
    if (rwrDisplay != nullptr && getOwnship() != nullptr) {
-      models::Rwr* rwr = nullptr;
-      base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Rwr));
+      models::Rwr* rwr{};
+      base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Rwr))};
       if (pair != nullptr) rwr = static_cast<models::Rwr*>(pair->object());
       rwrDisplay->setRwr(rwr);
    }
@@ -309,12 +308,12 @@ void TestDisplay::updateData(const double dt)
    // Send flight data to readouts
    if (getOwnship() != nullptr) {
       {
-         models::Radar* rdr = nullptr;
+         models::Radar* rdr{};
          {
-            base::Pair* pair = getOwnship()->getSensorByType(typeid(models::Radar));
+            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Radar))};
             if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
          }
-         models::StoresMgr* sms = getOwnship()->getStoresManagement();
+         models::StoresMgr* sms{getOwnship()->getStoresManagement()};
          if (sms != nullptr) {
             // But could be GMTI ...
             if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
@@ -329,7 +328,7 @@ void TestDisplay::updateData(const double dt)
       send("rangeRO", UPDATE_VALUE, range, rangeSD);
 
       // Maintain Air Tracks
-      base::Pair* pair = findByName("airTracks1");
+      base::Pair* pair{findByName("airTracks1")};
       if (pair != nullptr) {
          const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
          if (myLoader != nullptr) {
@@ -353,15 +352,15 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
    setMouse(x,y);
 
    if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
-      base::Pair* pair = findByName("airTracks1");
+      base::Pair* pair{findByName("airTracks1")};
       if (pair != nullptr) {
          const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
          if (myLoader != nullptr) {
-            graphics::Graphic* selected = pick(0);
+            graphics::Graphic* selected{pick(0)};
             if (selected != nullptr) {
-               int idx = myLoader->getSymbolIndex(selected);
+               int idx{myLoader->getSymbolIndex(selected)};
                if (idx > 0) {
-                  int found = -1;
+                  int found{-1};
                   for (int i = 0; found < 0 && i < MAX_TRACKS; i++) {
                      if (idx == trkIdx[i]) found = i;
                   }
@@ -380,14 +379,14 @@ void TestDisplay::mouseEvent(const int button, const int state, const int x, con
 //------------------------------------------------------------------------------
 void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const double rng)
 {
-    int codes[MAX_TRACKS];              // Work codes: empty(0), matched(1), unmatched(-1)
-    double rng2 = (rng * rng);          // Range squared (KM * KM)
+    int codes[MAX_TRACKS]{};         // Work codes: empty(0), matched(1), unmatched(-1)
+    double rng2{rng * rng};          // Range squared (KM * KM)
 
-    models::Player* newTracks[MAX_TRACKS];      // New tracks to add
-    int nNewTracks = 0;                         // Number of new tracks
+    models::Player* newTracks[MAX_TRACKS];    // New tracks to add
+    int nNewTracks{};                         // Number of new tracks
 
     // The real maximum number of tracks is the smaller of MAX_TRACKS and the loader's maximum
-    int maxTracks = loader->getMaxSymbols();
+    int maxTracks{loader->getMaxSymbols()};
     if (MAX_TRACKS < maxTracks) maxTracks = MAX_TRACKS;
 
     // Set the initial codes
@@ -399,18 +398,18 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
     // find all air vehicles within range
     {
         // get the player list
-        simulation::Simulation* sim = getSimulation();
-        base::PairStream* plist = sim->getPlayers();
+        simulation::Simulation* sim{getSimulation()};
+        base::PairStream* plist{sim->getPlayers()};
 
         // search for air vehicles or missiles within range
-        base::List::Item* item = plist->getFirstItem();
+        base::List::Item* item{plist->getFirstItem()};
         while (item != nullptr && nNewTracks < maxTracks) {
 
             const auto pair = static_cast<base::Pair*>(item->getValue());
             const auto p = static_cast<models::Player*>(pair->object());
-            base::Vec3d rpos = p->getPosition() - getOwnship()->getPosition();
-            double x = rpos[0] * base::distance::M2NM;
-            double y = rpos[1] * base::distance::M2NM;
+            base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
+            double x{rpos[0] * base::distance::M2NM};
+            double y{rpos[1] * base::distance::M2NM};
 
             if (
                p != getOwnship() &&
@@ -420,7 +419,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
                 // Ok, it's an active air vehicle or missile that's within range, and it's not us.
 
                 // Are we already in the track list?
-                bool found = false;
+                bool found{};
                 for (int i = 0; !found && i < maxTracks; i++) {
                     if (p == tracks[i]) {
                         // Yes it is.  So mark the slot as matched!
@@ -457,14 +456,14 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
 
     // Now add any new tracks
     {
-        int islot = 0;      // slot index
-        int inew = 0;       // new track index
+        int islot{};      // slot index
+        int inew{};       // new track index
 
         while (inew < nNewTracks && islot < maxTracks) {
             if (codes[islot] == 0) {
                 // We have an empty slot, so add the symbol
 
-                int type = 4;                                       // unknown
+                int type{4};                                       // unknown
                 if (newTracks[inew]->isClassType(typeid(models::AirVehicle))) {
                   if (newTracks[inew]->getSensorByType(typeid(models::Jammer)) == nullptr) {
                      // non-jammers
@@ -472,8 +471,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
                      else if (newTracks[inew]->isSide(models::Player::RED)) type = 2; // foe
                      else type = 3; // neutral/commercial
                   }
-                }
-                else if (newTracks[inew]->isClassType(typeid(models::Missile))) {
+                } else if (newTracks[inew]->isClassType(typeid(models::Missile))) {
                    type = 5; // Missile
                 }
 
@@ -498,22 +496,21 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
 
     // now update the active tracks
     for (int i = 0; i < maxTracks; i++) {
-        double osX = getOwnship()->getXPosition();
-        double osY = getOwnship()->getYPosition();
+        double osX{getOwnship()->getXPosition()};
+        double osY{getOwnship()->getYPosition()};
         if (tracks[i] != nullptr && trkIdx[i] != 0) {
-            double xp = tracks[i]->getXPosition() - osX;
-            double yp = tracks[i]->getYPosition() - osY;
+            double xp{tracks[i]->getXPosition() - osX};
+            double yp{tracks[i]->getYPosition() - osY};
             loader->updateSymbolPositionXY( trkIdx[i], (xp * base::distance::M2NM), (yp * base::distance::M2NM) );
             loader->updateSymbolHeading( trkIdx[i], tracks[i]->getHeadingD() );
         }
     }
-
 }
 
 models::Player* TestDisplay::getOwnship()
 {
-   models::Player* p = nullptr;
-   simulation::Station* sta = getStation();
+   models::Player* p{};
+   simulation::Station* sta{getStation()};
    if (sta != nullptr) {
       p = dynamic_cast<models::Player*>(sta->getOwnship());
    }
@@ -522,8 +519,8 @@ models::Player* TestDisplay::getOwnship()
 
 simulation::Simulation* TestDisplay::getSimulation()
 {
-   simulation::Simulation* s = nullptr;
-   simulation::Station* sta = getStation();
+   simulation::Simulation* s{};
+   simulation::Station* sta{getStation()};
    if (sta != nullptr) s = sta->getSimulation();
    return s;
 }
@@ -567,7 +564,7 @@ void TestDisplay::updatePfd(const double)
     airSpd = av->getCalibratedAirspeed();
 
     // test data
-    double mach = av->getMach();
+    double mach{av->getMach()};
 
     // commanded speed
     cmdSpd = 150;
@@ -585,21 +582,21 @@ void TestDisplay::updatePfd(const double)
     latDev = 0;
 
     // vvi tape gauge test
-    const base::Vec3d vel = av->getVelocity();
-    double vvMps = -vel[2];
-    vvi = vvMps * 60.0f * base::distance::M2FT;
+    const base::Vec3d vel{av->getVelocity()};
+    double vvMps{-vel[2]};
+    vvi = vvMps * 60.0 * base::distance::M2FT;
 
     // flight director stuff
     // flight diretor bank angle
-    fDirBank = 0;
+    fDirBank = 0.0;
 
     // flight director pitch angle
-    fDirPitch = 0;
+    fDirPitch = 0.0;
 
     // barometric pressure (selected)
     baro = 29.92;
 
-    base::Pair* pair = findByType(typeid(xpanel::Pfd));
+    base::Pair* pair{findByType(typeid(xpanel::Pfd))};
     if (pair != nullptr) {
         const auto p = static_cast<xpanel::Pfd*>(pair->object());
         if (p != nullptr) {

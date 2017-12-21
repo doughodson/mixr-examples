@@ -8,7 +8,7 @@ void testAirports(const char* const ccode, const double acLat, const double acLo
 {
    AirportTests tester(ccode);
 
-   int id = 999;
+   int id{999};
    while (id > 0) {
       std::cout << std::endl;
       std::cout << "1) print all Airport records" << std::endl; 
@@ -96,7 +96,7 @@ void testNavaids(const char* const ccode, const double acLat, const double acLon
 {
    NavaidTests tester(ccode);
 
-   int id = 999;
+   int id{999};
    while (id > 0) {
       std::cout << std::endl;
       std::cout << "1) print all Navaid records" << std::endl; 
@@ -147,7 +147,7 @@ void testWaypoints(const char* const ccode, const double acLat, const double acL
 {
    WaypointTests tester(ccode);
 
-   int id = 99;
+   int id{99};
    while (id > 0) {
       std::cout << std::endl;
       std::cout << "1) print Waypoint records" << std::endl; 
@@ -186,12 +186,12 @@ void testWaypoints(const char* const ccode, const double acLat, const double acL
 
 int main(int argc, char* argv[])
 {
-   char* ccode {};
+   char* ccode{};
    if (argc > 1) {
       ccode = argv[1];
    }
 
-   int id {99};
+   int id{99};
 
    std::cout << std::endl;
    std::cout << "1) Test Airport records" << std::endl; 
@@ -200,12 +200,12 @@ int main(int argc, char* argv[])
    std::cout << "select test (0 to end): ";
    std::cin >> id;
    std::cout << std::endl;
-   double acLat {41.0};
-   double acLon {-112.0};
-   double acElev {10000.0};
+   double acLat{41.0};
+   double acLon{-112.0};
+   double acElev{10000.0};
    std::cout << "Use Standard Test Latitude (Salt Lake area): N41.0 deg., Longitude W112.0 deg., Altitude 10000.0 m" << std::endl; 
 
-   char useStandardTest;
+   char useStandardTest{};
    std::cout << "Y / N: " ; 
    std::cin >> useStandardTest;
    
@@ -218,8 +218,8 @@ int main(int argc, char* argv[])
       std::cin >> acElev;
    }
 
-   char usePrintData {};
-   bool printData {false};
+   char usePrintData{};
+   bool printData{};
 
    std::cout << std::endl;
    std::cout << "Print extra bearing and range data (Y/N):";

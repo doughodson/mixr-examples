@@ -23,7 +23,7 @@ namespace glut { class GlutDisplay; }
 //      display       <graphics::GlutDisplay>  ! Main graphics display
 //
 //------------------------------------------------------------------------------
-class SimStation : public mixr::simulation::Station
+class SimStation final: public mixr::simulation::Station
 {
    DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
 
@@ -33,8 +33,8 @@ public:
    // Step our "ownship" to the next local air vehicle
    void stepOwnshipPlayer();
 
-   void updateTC(const double dt = 0.0) override;
-   void reset() override;
+   void updateTC(const double dt = 0.0) final;
+   void reset() final;
 
 private:
    // Main Display

@@ -44,13 +44,13 @@ void AirportTests::func00R(const double acLat, const double acLon, const double 
 {
    db->setArea(acLat, acLon, 3000.0);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id:";
    std::cin >> id;
 
    while ( strcmp(id,"done") != 0) {
 
-      int found = db->getNumRunwayRecords(id);
+      int found{db->getNumRunwayRecords(id)};
       std::cout << "Runways = " << found << std::endl;
 
       std::cout << "Enter id:";
@@ -63,13 +63,13 @@ void AirportTests::func00I(const double acLat, const double acLon, const double 
 {
    db->setArea(acLat, acLon, 3000.0);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id:";
    std::cin >> id;
 
    while ( strcmp(id,"done") != 0) {
 
-      int found = db->getNumIlsRecords(id);
+      int found{db->getNumIlsRecords(id)};
       std::cout << "ILS = " << found << std::endl;
 
       std::cout << "Enter id:";
@@ -79,21 +79,19 @@ void AirportTests::func00I(const double acLat, const double acLon, const double 
 
 void AirportTests::func01(const double acLat, const double acLon, const double acElev, const bool printData)
 {
-   int num;
-
+   int num{};
    std::cout << "Enter num:";
    std::cin >> num;
 
    while (num >= 0) {
 
-      mixr::dafif::Airport* p = db->airport(num);
+      mixr::dafif::Airport* p{db->airport(num)};
       if (p != 0) {
          p->printRecord(std::cout);
 		 if (printData)
 			 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
          std::cout << std::endl;
-      }
-      else {
+      } else {
          std::cout << "test -- Nothing" << std::endl;
       }
       p->unref();
@@ -108,30 +106,29 @@ void AirportTests::func01I(const double acLat, const double acLon, const double 
 {
    db->setArea(acLat, acLon);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id:";
    std::cin >> id;
 
    while ( strcmp(id,"done") != 0) {
 
-      int num;
+      int num{};
       std::cout << "Enter num:";
       std::cin >> num;
 
       while (num >= 0) {
 
-         int found = db->queryIlsByNumber(id,num);
+         int found{db->queryIlsByNumber(id,num)};
          std::cout << "found = " << found << std::endl;
 
          for (int i = 0; i < found; i++) {
-            mixr::dafif::Ils* p = db->getIls(i);
+            mixr::dafif::Ils* p{db->getIls(i)};
             p->printRecord(std::cout);
-			if (printData)
-			{
-		        p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		        if (p->isIlsType(mixr::dafif::Ils::GLIDESLOPE))
-			        p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
-			}
+			   if (printData) {
+		         p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
+		         if (p->isIlsType(mixr::dafif::Ils::GLIDESLOPE))
+			         p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
+			   }
             std::cout << std::endl;
             p->unref();
          }
@@ -151,26 +148,26 @@ void AirportTests::func01R(const double acLat, const double acLon, const double 
 {
    db->setArea(acLat, acLon);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id:";
    std::cin >> id;
 
    while ( strcmp(id,"done") != 0) {
 
-      int num;
+      int num{};
       std::cout << "Enter num:";
       std::cin >> num;
 
       while (num >= 0) {
 
-         int found = db->queryRunwayByNumber(id,num);
+         int found{db->queryRunwayByNumber(id,num)};
          std::cout << "found = " << found << std::endl;
 
          for (int i = 0; i < found; i++) {
-            mixr::dafif::Runway* p = db->getRunway(i);
+            mixr::dafif::Runway* p{db->getRunway(i)};
             p->printRecord(std::cout);
-			if (printData)
-    		    p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
+            if (printData)
+               p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
             std::cout << std::endl;
             p->unref();
          }
@@ -190,20 +187,20 @@ void AirportTests::func02(const double acLat, const double acLon, const double a
 {
    db->setArea(acLat, acLon);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id (done to end):";
    std::cin >> id;
 
    while ( strcmp(id,"done") != 0) {
 
-      int found = db->queryByIdent(id);
+      int found{db->queryByIdent(id)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Airport* p = db->getAirport(i);
+         mixr::dafif::Airport* p{db->getAirport(i)};
          p->printRecord(std::cout);
-		 if (printData)
-    		 p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
+         if (printData)
+            p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
          std::cout << std::endl;
          p->unref();
       }
@@ -219,24 +216,23 @@ void AirportTests::func02I(const double acLat, const double acLon, const double 
 {
    db->setArea(acLat, acLon);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id (done to end):";
    std::cin >> id;
 
    while ( strcmp(id,"done") != 0) {
 
-      int found = db->queryIlsByIdent(id);
+      int found{db->queryIlsByIdent(id)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Ils* p = db->getIls(i);
+         mixr::dafif::Ils* p{db->getIls(i)};
          p->printRecord(std::cout);
-		 if (printData)
-		 {
-		     p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
-		     if (p->isIlsType(mixr::dafif::Ils::GLIDESLOPE))
-			     p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
-		 }
+         if (printData) {
+            p->printTrueBearingRange(std::cout, acLat, acLon, acElev);
+		      if (p->isIlsType(mixr::dafif::Ils::GLIDESLOPE))
+			      p->printGlideSlopeData(std::cout, acLat, acLon, acElev);
+         }
          std::cout << std::endl;
          p->unref();
       }
@@ -252,7 +248,7 @@ void AirportTests::func02R(const double acLat, const double acLon, const double 
 {
    db->setArea(acLat, acLon);
 
-   char id[12];
+   char id[12]{};
    std::cout << "Enter id (done to end):";
    std::cin >> id;
 

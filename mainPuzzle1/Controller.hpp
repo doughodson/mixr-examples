@@ -16,19 +16,19 @@ class State;
 //
 // Description: Puzzle controller
 //------------------------------------------------------------------------------
-class Controller : public mixr::base::Component
+class Controller final: public mixr::base::Component
 {
     DECLARE_SUBCLASS(Controller, mixr::base::Component)
 
 public:
-   static const unsigned int MAX_STATES = 1000000;    // Max number of states
-   static const unsigned int MAX_REHASH = 20;         // Max number of rehash tries
+   static const int MAX_STATES{1000000};    // Max number of states
+   static const int MAX_REHASH{20};         // Max number of rehash tries
 
 public:
    Controller();
 
-   unsigned int getHashEntries() const    { return nhe; }         // Returns the number of entries in the hash table
-   unsigned int getOpenEntries() const;                           // Returns the number of 'open' states
+   int getHashEntries() const    { return nhe; }         // Returns the number of entries in the hash table
+   int getOpenEntries() const;                           // Returns the number of 'open' states
 
    const State* getInitState() const      { return initState; }   // Returns our 'initial' or starting state
    const State* getGoalState() const      { return goalState; }   // Returns the 'goal' state
@@ -53,16 +53,16 @@ protected:
    virtual void clearHashTable();                     // Clears the hash table
 
 private:
-   State*       initState {};   // Initial (starting) state
-   const State* goalState {};   // Goal (ending) state
+   State*       initState{};   // Initial (starting) state
+   const State* goalState{};   // Goal (ending) state
 
    // open list
-   mixr::base::List* openStates {};   // List of 'open' states (still need to be expanded)
-                                      // (list is ordered by the state's f() values)
+   mixr::base::List* openStates{};   // List of 'open' states (still need to be expanded)
+                                     // (list is ordered by the state's f() values)
 
    // hash table
-   std::array<const State*, MAX_STATES> hashTable {};  // Hash table (for quick lookup of states)
-   unsigned int nhe {};                                // Number of entries in hash table
+   std::array<const State*, MAX_STATES> hashTable{};  // Hash table (for quick lookup of states)
+   int nhe {};                                        // Number of entries in hash table
 
 private:
    // slot table helper methods

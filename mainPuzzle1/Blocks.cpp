@@ -33,15 +33,13 @@ void Block::copyData(const Block& org, const bool)
 
 bool operator>(const Block& b1, const Block& b2)
 {
-   bool gt = false;
+   bool gt{};
    if (b1.getTypeId() > b2.getTypeId()) {
       gt = true;
-   }
-   else if (b1.getTypeId() == b2.getTypeId()) {
+   } else if (b1.getTypeId() == b2.getTypeId()) {
       if (b1.x > b2.x) {
          gt = true;
-      }
-      else if (b1.x == b2.x) {
+      } else if (b1.x == b2.x) {
          if (b1.y > b2.y)
             gt = true;
       }
@@ -68,7 +66,7 @@ bool operator!=(const Block& b1, const Block& b2)
 // Move block by dx and dy; returns true if successful
 bool Block::move(const int dx, const int dy)
 {
-   bool ok = testMove(dx,dy);
+   bool ok{testMove(dx,dy)};
    if ( ok ) {
       x += dx;
       y += dy;
@@ -92,11 +90,11 @@ bool Block::testMove(const int dx, const int dy) const
 //------------------------------------------------------------------------------
 bool Block::collisionCheck(const Block* const b2) const
 {
-  bool c = false;
-  for (unsigned int i = 0; i < getSizeX() && !c; i++) {
-    for (unsigned int j = 0; j < getSizeY() && !c; j++) {
-       unsigned int xx = x + i;
-       unsigned int yy = y + j;
+  bool c{};
+  for (int i = 0; i < getSizeX() && !c; i++) {
+    for (int j = 0; j < getSizeY() && !c; j++) {
+       int xx{x + i};
+       int yy{y + j};
        if ( xx >= b2->x && xx <= (b2->x + b2->getSizeX() - 1) &&
             yy >= b2->y && yy <= (b2->y + b2->getSizeY() - 1) ) c = true;
     }
@@ -107,12 +105,12 @@ bool Block::collisionCheck(const Block* const b2) const
 //------------------------------------------------------------------------------
 // computeHashValue() -- Compute a hash value for this block
 //------------------------------------------------------------------------------
-unsigned int Block::computeHashValue(const unsigned int blockIndex, const unsigned int rehashCount) const
+int Block::computeHashValue(const int blockIndex, const int rehashCount) const
 {
-  unsigned int i {};
-  unsigned int a {1};
-  unsigned int b {1};
-  unsigned int c {1};
+  int i{};
+  int a{1};
+  int b{1};
+  int c{1};
 
   for (i = 0; i < rehashCount; i++) {
      a *= blockIndex;
@@ -133,7 +131,7 @@ unsigned int Block::computeHashValue(const unsigned int blockIndex, const unsign
 //------------------------------------------------------------------------------
 
 // Initial position
-bool Block::setInitPosition(const unsigned int ix, const unsigned int iy)
+bool Block::setInitPosition(const int ix, const int iy)
 {
    x = ix;
    y = iy;
@@ -141,7 +139,7 @@ bool Block::setInitPosition(const unsigned int ix, const unsigned int iy)
 }
 
 // Sets the block's reference ID number
-bool Block::setReferenceID(const unsigned int v)
+bool Block::setReferenceID(const int v)
 {
    refId = v;
    return true;
@@ -152,10 +150,10 @@ bool Block::setReferenceID(const unsigned int v)
 //------------------------------------------------------------------------------
 bool Block::setSlotPosition(const mixr::base::List* const msg)
 {
-   bool ok {};
+   bool ok{};
    if (msg != nullptr) {
       int values[2];
-      int n = msg->getNumberList(values, 2);
+      const int n{static_cast<int>(msg->getNumberList(values, 2))};
       if (n == 2) {
          ok = setInitPosition(values[0], values[1]);
       }
@@ -165,9 +163,9 @@ bool Block::setSlotPosition(const mixr::base::List* const msg)
 
 bool Block::setSlotRefId(const mixr::base::Integer* const msg)
 {
-   bool ok {};
+   bool ok{};
    if (msg != nullptr) {
-      int i = msg->getInt();
+      const int i{msg->getInt()};
       if (i >= 0) {
          const auto id = static_cast<unsigned int>(i);
          ok = setReferenceID(id);
@@ -195,8 +193,8 @@ Block1x1::Block1x1()
 // Access functions
 //------------------------------------------------------------------------------
 Block::BlockId Block1x1::getTypeId() const   { return Block::BLOCK_1X1; }
-unsigned int Block1x1::getSizeX() const      { return 1; }
-unsigned int Block1x1::getSizeY() const      { return 1; }
+int Block1x1::getSizeX() const               { return 1; }
+int Block1x1::getSizeY() const               { return 1; }
 
 
 //==============================================================================
@@ -218,10 +216,8 @@ Block1x2::Block1x2()
 // Access functions
 //------------------------------------------------------------------------------
 Block::BlockId Block1x2::getTypeId() const   { return Block::BLOCK_1X2; }
-unsigned int Block1x2::getSizeX() const      { return 1; }
-unsigned int Block1x2::getSizeY() const      { return 2; }
-
-
+int Block1x2::getSizeX() const               { return 1; }
+int Block1x2::getSizeY() const               { return 2; }
 
 //==============================================================================
 // Class: Block2x1
@@ -242,8 +238,8 @@ Block2x1::Block2x1()
 // Access functions
 //------------------------------------------------------------------------------
 Block::BlockId Block2x1::getTypeId() const   { return Block::BLOCK_2X1; }
-unsigned int Block2x1::getSizeX() const      { return 2; }
-unsigned int Block2x1::getSizeY() const      { return 1; }
+int Block2x1::getSizeX() const               { return 2; }
+int Block2x1::getSizeY() const               { return 1; }
 
 
 //==============================================================================
@@ -265,5 +261,5 @@ Block2x2::Block2x2()
 // Access functions
 //------------------------------------------------------------------------------
 Block::BlockId Block2x2::getTypeId() const   { return Block::BLOCK_2X2; }
-unsigned int Block2x2::getSizeX() const      { return 2; }
-unsigned int Block2x2::getSizeY() const      { return 2; }
+int Block2x2::getSizeX() const               { return 2; }
+int Block2x2::getSizeY() const               { return 2; }

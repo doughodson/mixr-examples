@@ -48,7 +48,7 @@ void PuzzleBoard::copyData(const PuzzleBoard& org, const bool)
    nstates = 0;
 
    // Clear our blocks
-   for (unsigned int i = 0; i < MAX_BLOCKS; i++) {
+   for (int i = 0; i < MAX_BLOCKS; i++) {
       blocks[i] = nullptr;
       blockId[i] = 0;
       xp[i] = 0;
@@ -95,15 +95,14 @@ void PuzzleBoard::updateData(const double dt)
       // ---
       if (finalState != nullptr) {
          //puz->printPath(final);
-         const State* s = finalState;
+         const State* s{finalState};
          while (s->getGeneration() > 0 && nstates < MAX_STATES) {
             path[nstates++] = s;
             s = static_cast<const State*>( s->container() );
          }
          resetSolutionPath();
          std::cout << "PuzzleBoard::updateData() Number moves : " << nstates << std::endl;
-      }
-      else {
+      } else {
          std::cout << "No solution as found!" << std::endl;
       }
    }
@@ -121,19 +120,19 @@ void PuzzleBoard::updateData(const double dt)
 // Setup the list of graphics::Graphic objects for the initial blocks
 // Returns the number of blocks
 //------------------------------------------------------------------------------
-unsigned int PuzzleBoard::setupBlockGraphics()
+int PuzzleBoard::setupBlockGraphics()
 {
    clearGraphics();
 
    if (controller != nullptr && templates != nullptr) {
-      const State* s = controller->getInitState();
+      const State* s{controller->getInitState()};
       if (s != nullptr) {
-         bool finished = false;
-         for (unsigned int i = 0; i < MAX_BLOCKS && !finished; i++) {
-            const Block* b = s->getBlock(i+1);
+         bool finished{};
+         for (int i = 0; i < MAX_BLOCKS && !finished; i++) {
+            const Block* b{s->getBlock(i+1)};
             if (b != nullptr) {
-               unsigned int typeId = b->getTypeId();
-               const base::Pair* pair = templates->getPosition(typeId);
+               int typeId{b->getTypeId()};
+               const base::Pair* pair{templates->getPosition(typeId)};
                if (pair != nullptr) {
                   const auto g = dynamic_cast<const graphics::Graphic*>( pair->object() );
                   if (g != nullptr) {
@@ -148,8 +147,9 @@ unsigned int PuzzleBoard::setupBlockGraphics()
                      nblocks++;
                   }
                }
+            } else {
+               finished = true;
             }
-            else finished = true;
          }
       }
    }
@@ -185,8 +185,7 @@ void PuzzleBoard::updateSolutionPath(const double dt)
          moveTimer = 1.0;
          movingFlg = false;
       }
-   }
-   else if (curPathState > 0) {
+   } else if (curPathState > 0) {
       // Step to next state
       curPathState--;
       updateBlockDeltaPositions();
@@ -219,9 +218,9 @@ void PuzzleBoard::resetSolutionPath()
 void PuzzleBoard::updateBlockDeltaPositions()
 {
    if (curPathState < nstates) {
-      const State* s = path[curPathState];
+      const State* s{path[curPathState]};
       if (s != nullptr) {
-         for (unsigned int i = 0; i < nblocks; i++) {
+         for (int i = 0; i < nblocks; i++) {
 
             // Update the block position with the last deltas
             //  (where we are now)
@@ -230,7 +229,7 @@ void PuzzleBoard::updateBlockDeltaPositions()
 
             // compute the block position deltas for the current state
             //  (where we're going)
-            const Block* b = s->getBlockByRefNum(blockId[i]);
+            const Block* b{s->getBlockByRefNum(blockId[i])};
             if (b != nullptr) {
                xd[i] = b->getX() - xp[i];
                yd[i] = b->getY() - yp[i];
@@ -242,7 +241,7 @@ void PuzzleBoard::updateBlockDeltaPositions()
 
 void PuzzleBoard::drawFunc()
 {
-   for (unsigned int i = 0; i < nblocks; i++) {
+   for (int i = 0; i < nblocks; i++) {
       if (blocks[i] != nullptr) {
          glPushMatrix();
             glTranslated( (xp[i] + xd[i]*moveTimer), (yp[i] + yd[i]*moveTimer), 0.0);

@@ -20,12 +20,12 @@
 #include <cstdlib>
 
 // background frame rate
-const int bgRate {10};
+const int bgRate{10};
 
 mixr::base::Object* factory(const std::string& name)
 {
    // example libraries
-   mixr::base::Object* obj = mixr::xzmq::factory(name);
+   mixr::base::Object* obj{mixr::xzmq::factory(name)};
 
    // framework libraries
    if (obj == nullptr) obj = mixr::cigi::factory(name);
@@ -42,8 +42,8 @@ mixr::base::Object* factory(const std::string& name)
 mixr::simulation::Station* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
    }
 
    // build Station
-   mixr::simulation::Station* station {builder(configFilename)};
+   mixr::simulation::Station* station{builder(configFilename)};
 
    // send a reset event and frame sim once
    station->event(mixr::base::Component::RESET_EVENT);
@@ -96,11 +96,11 @@ int main(int argc, char* argv[])
    mixr::base::msleep(1000);
 
    // calc delta time for background thread
-   const double dt {1.0/static_cast<double>(bgRate)};
+   const double dt{1.0/static_cast<double>(bgRate)};
 
    // system Time of Day
-   double simTime {};                                        // Simulator time reference
-   const double startTime {mixr::base::getComputerTime()};   // Time of day (sec) run started
+   double simTime{};                                        // Simulator time reference
+   const double startTime{mixr::base::getComputerTime()};   // Time of day (sec) run started
 
    int k {};
    std::cout << "Starting background main loop ..." << std::endl;
@@ -110,10 +110,10 @@ int main(int argc, char* argv[])
       station->updateData( static_cast<double>(dt) );
 
       simTime += dt;                                         // time of next frame
-      const double timeNow {mixr::base::getComputerTime()};  // time now
-      const double elapsedTime {timeNow - startTime};
-      const double nextFrameStart {simTime - elapsedTime};
-      const int sleepTime {static_cast<int>(nextFrameStart*1000.0)};
+      const double timeNow{mixr::base::getComputerTime()};  // time now
+      const double elapsedTime{timeNow - startTime};
+      const double nextFrameStart{simTime - elapsedTime};
+      const int sleepTime{static_cast<int>(nextFrameStart * 1000.0)};
 
       // wait for the next frame
       if (sleepTime > 0)

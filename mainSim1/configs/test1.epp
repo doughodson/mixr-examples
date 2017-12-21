@@ -10,7 +10,7 @@
    // image generator host interface
    igHosts: {
       //#include "ighosts/viewpoint.epp"
-      #include "ighosts/cigi.epp"
+      //#include "ighosts/cigi.epp"
    }
 
    // interoperability interfaces

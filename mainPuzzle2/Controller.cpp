@@ -60,9 +60,9 @@ const State* Controller::solve()
    // Until we found the goal or we're out of states to check,
    // expand, expand, expand, ...
    // ---
-   const State* found = nullptr;
-   State* current = getOpen();
-   int i = 0;
+   const State* found{};
+   State* current{getOpen()};
+   int i{};
    while ( (current != nullptr)  && (found == nullptr) ) {
       if (i == (i/100)*100) {
          std::cout << "i: " << i << ", states= " << getHashEntries();
@@ -126,9 +126,9 @@ bool Controller::setGoalState(State* const g)
 //------------------------------------------------------------------------------
 
 // Returns the number of 'open' states
-unsigned int Controller::getOpenEntries() const
+int Controller::getOpenEntries() const
 {
-   unsigned int n = 0;
+   int n{};
    if (openStates != nullptr) {
       n = openStates->entries();
    }
@@ -138,7 +138,7 @@ unsigned int Controller::getOpenEntries() const
 // Returns the next state from the 'open' list
 State* Controller::getOpen()
 {
-   State* p = nullptr;
+   State* p{};
    if (openStates != nullptr) {
       p = static_cast<State*>( openStates->get() );
    }
@@ -158,11 +158,11 @@ void Controller::putOpen(State* const s)
       const auto newItem = new base::List::Item();
       newItem->value = s;
       s->ref();
-      int f = s->f();
+      int f{s->f()};
 
       // Find where in the list to insert this new state (based on their f() values)
-      base::List::Item* item = openStates->getFirstItem();
-      base::List::Item* refItem = nullptr;
+      base::List::Item* item{openStates->getFirstItem()};
+      base::List::Item* refItem{};
       while (item != nullptr && refItem == nullptr) {
          const auto p = static_cast<const State*>( item->getValue() );
          if (f < p->f()) {
@@ -201,12 +201,12 @@ void Controller::clearOpenList()
 // Adds a state to the hash table; returns true if successful
 bool Controller::putHash(const State* const s)
 {
-   bool added = false;
+   bool added{};
 
    if (s != nullptr) {
 
       // Get our new state's g() value
-      int g = s->g();
+      int g{s->g()};
 
       // ---
       // 1) get a hash value for the state and use it as an index into the table
@@ -214,11 +214,11 @@ bool Controller::putHash(const State* const s)
       //    a) if it's the same state:  leave with a false
       //    b) if it's not the same state, rehash
       // ---
-      bool rehash = true;
-      for (unsigned int rh = 0; !added && rehash && rh < MAX_REHASH; rh++) {
+      bool rehash{true};
+      for (int rh = 0; !added && rehash && rh < MAX_REHASH; rh++) {
 
          // Compute the state's hash value for use as the hash table index
-         unsigned int idx = s->hash(rh,MAX_STATES);
+         int idx = s->hash(rh, MAX_STATES);
 
          if (hashTable[idx] == nullptr) {
             // when we found an empty slot in the table
@@ -227,8 +227,7 @@ bool Controller::putHash(const State* const s)
             hashTable[idx] = s;
             nhe++;
             added = true;
-         }
-         else if ( *s  == *(hashTable[idx]) ) {
+         } else if ( *s  == *(hashTable[idx]) ) {
 
             // We've found that the state is already in the table
             rehash = false;
@@ -244,8 +243,7 @@ bool Controller::putHash(const State* const s)
                added = true;
             }
 
-         }
-         else {
+         } else {
             //std::cout << "hash: rh = " << rh;
             //std::cout << ", idx = " << idx;
             //std::cout << "; table position in use -- rehash";
@@ -262,7 +260,7 @@ bool Controller::putHash(const State* const s)
 // Clears the hash table
 void Controller::clearHashTable()
 {
-   for (unsigned int i = 0; i < MAX_STATES; i++) {
+   for (int i = 0; i < MAX_STATES; i++) {
       if (hashTable[i] != nullptr) {
          hashTable[i]->unref();
          hashTable[i] = nullptr;

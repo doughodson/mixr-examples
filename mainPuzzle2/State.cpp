@@ -23,7 +23,7 @@ State::State()
    STANDARD_CONSTRUCTOR()
 }
 
-State::State(const State& org, const Block* const nb, const unsigned int idx)
+State::State(const State& org, const Block* const nb, const int idx)
 {
    STANDARD_CONSTRUCTOR()
 
@@ -67,35 +67,32 @@ int State::gFunc()
 //------------------------------------------------------------------------------
 int State::hFunc(const State* const goal)
 {
-   int value = 0;
+   int value{};
 
    #if 1
       if (goal != nullptr) {
-         for (unsigned int i = 0; i < nblocks; i++) {
-            unsigned int idx = i + 1;
-            const Block* b0 = getBlock(idx);
-            const Block* gb = goal->getBlock(idx);
+         for (int i = 0; i < nblocks; i++) {
+            int idx{i + 1};
+            const Block* b0{getBlock(idx)};
+            const Block* gb{goal->getBlock(idx)};
             if (b0 != nullptr && gb != nullptr) {
 
-               int dx = b0->getX() - gb->getX();
+               int dx{b0->getX() - gb->getX()};
                if (dx < 0) dx = -dx;
 
-               int dy = b0->getY() - gb->getY();
+               int dy{b0->getY() - gb->getY()};
                if (dy < 0) dy = -dy;
 
-               int delta = dx + dy;
+               int delta{dx + dy};
                //if (dy > dx) delta = dy;
 
                if (idx <= 4) {
                   delta += dy*16;
-               }
-               else if (idx <= 8) {
+               } else if (idx <= 8) {
                   delta += dy*9;
-               }
-               else if (idx <= 12) {
+               } else if (idx <= 12) {
                   delta += dy*4;
-               }
-               else {
+               } else {
                   delta += dy*1;
                }
 
@@ -115,9 +112,9 @@ int State::hFunc(const State* const goal)
 //------------------------------------------------------------------------------
 
 // Returns the i'th block (range: 1 .. getNumberOfBlocks()) (const version)
-const Block* State::getBlock(const unsigned int i) const
+const Block* State::getBlock(const int i) const
 {
-   const Block* p = nullptr;
+   const Block* p{};
    if (i > 0 && i <= nblocks) {
       p = blocks[i-1];
    }
@@ -125,10 +122,10 @@ const Block* State::getBlock(const unsigned int i) const
 }
 
 // Returns the block with ref ID
-const Block* State::getBlockByRefNum(const unsigned int refId) const
+const Block* State::getBlockByRefNum(const int refId) const
 {
-   const Block* p = nullptr;
-   for (unsigned int i = 0; i < nblocks && p == nullptr; i++) {
+   const Block* p{};
+   for (int i = 0; i < nblocks && p == nullptr; i++) {
       if (refId == blocks[i]->getReferenceID()) {
          // found it
          p = blocks[i];
@@ -143,25 +140,25 @@ const Block* State::getBlockByRefNum(const unsigned int refId) const
 //------------------------------------------------------------------------------
 const State* State::expand(const State* const goal, Controller* const puz)
 {
-   const State* endState = nullptr;
+   const State* endState{};
    expanded = true;
 
    if (goal != nullptr && puz != nullptr) {
 
       // for each block contained in the state ...
-      for (unsigned int idx = 0; idx < nblocks && endState == nullptr; idx++) {
+      for (int idx = 0; idx < nblocks && endState == nullptr; idx++) {
 
          // Current block
-         const Block* const cb = blocks[idx];
+         const Block* const cb{blocks[idx]};
 
          // move right as far as we can, expanding new states as we go
          {
-            bool collision = false;
-            int dy = 0;
+            bool collision{};
+            int dy{};
             for (int dx = 1; !collision && endState == nullptr && cb->testMove(dx,dy,puz); dx++) {
-               Block* nb = cb->clone();
+               Block* nb{cb->clone()};
                nb->move(dx,dy,puz);
-               for (unsigned int j = 0; j < nblocks && !collision; j++) {
+               for (int j = 0; j < nblocks && !collision; j++) {
                   if ( j != idx ) {
                      collision = nb->collisionCheck(blocks[j]);
                   }
@@ -173,12 +170,12 @@ const State* State::expand(const State* const goal, Controller* const puz)
 
          // move left as far as we can, expanding new states as we go
          {
-            bool collision = false;
-            int dy = 0;
+            bool collision{};
+            int dy{};
             for (int dx = -1; !collision && endState == nullptr &&  cb->testMove(dx,dy,puz); dx--) {
-               Block* nb = cb->clone();
+               Block* nb{cb->clone()};
                nb->move(dx,dy,puz);
-               for (unsigned int j = 0; j < nblocks && !collision; j++) {
+               for (int j = 0; j < nblocks && !collision; j++) {
                   if ( j != idx ) {
                      collision = nb->collisionCheck(blocks[j]);
                   }
@@ -190,12 +187,12 @@ const State* State::expand(const State* const goal, Controller* const puz)
 
          // move up as far as we can, expanding new states as we go
          {
-            bool collision = false;
-            int dx = 0;
+            bool collision{};
+            int dx{};
             for (int dy = 1; !collision && endState == nullptr &&  cb->testMove(dx,dy,puz); dy++) {
-               Block* nb = cb->clone();
+               Block* nb{cb->clone()};
                nb->move(dx,dy,puz);
-               for (unsigned int j = 0; j < nblocks && !collision; j++) {
+               for (int j = 0; j < nblocks && !collision; j++) {
                   if ( j != idx ) {
                      collision = nb->collisionCheck(blocks[j]);
                   }
@@ -207,12 +204,12 @@ const State* State::expand(const State* const goal, Controller* const puz)
 
          // move down as far as we can, expanding new states as we go
          {
-            bool collision = false;
-            int dx = 0;
+            bool collision{};
+            int dx{};
             for (int dy = -1; !collision && endState == nullptr &&  cb->testMove(dx,dy,puz); dy--) {
-               Block* nb = cb->clone();
+               Block* nb{cb->clone()};
                nb->move(dx,dy,puz);
-               for (unsigned int j = 0; j < nblocks && !collision; j++) {
+               for (int j = 0; j < nblocks && !collision; j++) {
                   if ( j != idx ) {
                      collision = nb->collisionCheck(blocks[j]);
                   }
@@ -232,9 +229,9 @@ const State* State::expand(const State* const goal, Controller* const puz)
 // stateFactory -- create a new state (based on this one) and replace the block
 // at index, idx, with the new block, nb.
 //------------------------------------------------------------------------------
-const State* State::stateFactory(const Block* const nb, const unsigned int idx, const State* const goal, Controller* const puz)
+const State* State::stateFactory(const Block* const nb, const int idx, const State* const goal, Controller* const puz)
 {
-   const State* endState = nullptr;
+   const State* endState{};
    if (nb != nullptr && idx < nblocks && goal != nullptr) {
 
       // create a new state with this block.
@@ -252,8 +249,7 @@ const State* State::stateFactory(const Block* const nb, const unsigned int idx, 
          if (ns->reachedGoal(goal)) {
             // We found it!
             endState = ns;
-         }
-         else {
+         } else {
             // Not yet .. add it to the list of open (unexpanded) states
             puz->putOpen(ns);
          }
@@ -270,7 +266,7 @@ const State* State::stateFactory(const Block* const nb, const unsigned int idx, 
 //------------------------------------------------------------------------------
 bool State::reachedGoal(const State* const goalState) const
 {
-   bool ok = false;
+   bool ok{};
 
    if (goalState != nullptr) {
       ok = (*this == *goalState);
@@ -283,7 +279,6 @@ bool State::reachedGoal(const State* const goalState) const
 //------------------------------------------------------------------------------
 bool State::defineBoard(const Controller* const puz)
 {
-
    // Remove the old board IDs
    if (board != nullptr) {
       delete[] board;
@@ -294,23 +289,23 @@ bool State::defineBoard(const Controller* const puz)
    if (puz != nullptr) {
 
       // get the size of the board
-      const unsigned int xSize = puz->getBoardSizeX();
-      const unsigned int ySize = puz->getBoardSizeY();
+      const int xSize{puz->getBoardSizeX()};
+      const int ySize{puz->getBoardSizeY()};
       boardSize = xSize * ySize;
 
       // Allocate the board and clear it
-      board = new unsigned int[boardSize];
-      for (unsigned int i = 0; i < boardSize; i++) {
+      board = new int[boardSize];
+      for (int i = 0; i < boardSize; i++) {
          board[i] = 0;
       }
 
       // Now for all of our blocks, set their IDs in the
       // correct board position
-      for (unsigned int i = 0; i < nblocks; i++) {
-         unsigned int ix = blocks[i]->getX();
-         unsigned int iy = blocks[i]->getY();
+      for (int i = 0; i < nblocks; i++) {
+         int ix{blocks[i]->getX()};
+         int iy{blocks[i]->getY()};
          //unsigned int id = blocks[i]->getTypeId();
-         unsigned idx = (ix-1) + (iy-1) * ySize;
+         int idx{(ix-1) + (iy-1) * ySize};
          if (idx < boardSize) {
             board[idx] = blocks[i]->getTypeId();
          }
@@ -326,8 +321,8 @@ bool State::defineBoard(const Controller* const puz)
 //------------------------------------------------------------------------------
 unsigned int State::hash(unsigned int rh, unsigned int max) const
 {
-   unsigned int h = 0;
-   for (unsigned int idx = 0; idx < nblocks; idx++) {
+   int h{};
+   for (int idx = 0; idx < nblocks; idx++) {
       h += blocks[idx]->computeHashValue(idx,rh);
    }
    return h % max;
@@ -340,7 +335,7 @@ unsigned int State::hash(unsigned int rh, unsigned int max) const
 // operator== -- are two states equal
 bool operator==(const State& ss1, const State& ss2)
 {
-   bool equal = false;
+   bool equal{};
 
    // States are equal if their boards are the same
    if (ss1.board != nullptr && ss2.board != nullptr) {
@@ -348,7 +343,7 @@ bool operator==(const State& ss1, const State& ss2)
          // Both states have boards and they're the same size,
          // so we're equal until proven otherwise
          equal = true;
-         for (unsigned int i = 0; i < ss1.boardSize && equal; i++) {
+         for (int i = 0; i < ss1.boardSize && equal; i++) {
             equal = (ss1.board[i] == ss2.board[i]);
          }
       }
@@ -369,16 +364,16 @@ bool operator!=(const State& ss1, const State& ss2)
 //------------------------------------------------------------------------------
 
 // Sets from an array of pointers to the blocks
-unsigned int State::setBlocks(const Block* const newBlocks[], const unsigned int numNumBlocks)
+int State::setBlocks(const Block* const newBlocks[], const int numNumBlocks)
 {
    // First clear out the old
    clearBlocks();
 
    // Copy the new
    if (newBlocks != nullptr && numNumBlocks > 0) {
-      unsigned int n = numNumBlocks;
+      int n{numNumBlocks};
       if (n > MAX_BLOCKS) n =MAX_BLOCKS;
-      for (unsigned int i = 0; i < n; i++) {
+      for (int i = 0; i < n; i++) {
          blocks[i] = newBlocks[i]->clone();
       }
       nblocks = n;
@@ -390,9 +385,9 @@ unsigned int State::setBlocks(const Block* const newBlocks[], const unsigned int
 // sort the blocks
 void State::sortBlocks()
 {
-   for (unsigned int i = 1; i < nblocks; i++) {
+   for (int i = 1; i < nblocks; i++) {
       for (int j = i; j > 0 && compare( *blocks[j-1] , *blocks[j] ) > 0; j-- ) {
-         const Block* bb = blocks[j];
+         const Block* bb{blocks[j]};
          blocks[j] = blocks[j-1];
          blocks[j-1] = bb;
       }
@@ -402,7 +397,7 @@ void State::sortBlocks()
 // Clear blocks
 void State::clearBlocks()
 {
-   for (unsigned int i = 0; i < MAX_BLOCKS; i++) {
+   for (int i = 0; i < MAX_BLOCKS; i++) {
       if (blocks[i] != nullptr) blocks[i]->unref();
       blocks[i] = nullptr;
    }
@@ -422,25 +417,24 @@ void State::clearBlocks()
 // Blocks (list of Blocks)
 bool State::setSlotBlocks(const base::PairStream* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
 
       // Array of blocks
-      unsigned int n = 0;
+      int n{};
       const Block* newBlocks[MAX_BLOCKS];
 
       // Assume all will be well
       ok = true;
 
       // Find all blocks (and check their type to make sure)
-      const base::List::Item* item = msg->getFirstItem();
+      const base::List::Item* item{msg->getFirstItem()};
       while (item != nullptr && n < MAX_BLOCKS && ok) {
          const auto pair = static_cast<const base::Pair*>(item->getValue());
          const auto p = dynamic_cast<const Block*>( pair->object() );
          if (p != nullptr) {
             newBlocks[n++] = p;  // Save the point
-         }
-         else {
+         } else {
             std::cerr << "State::setSlotBlocks() ERROR -- non-block object was found in the list of blocks" << std::endl;
             ok = false;   // This one wasn't a block
          }

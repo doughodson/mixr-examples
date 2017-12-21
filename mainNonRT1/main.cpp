@@ -13,12 +13,12 @@
 #include <cstdlib>
 
 // frame rate (50 Hz)
-const int frameRate {50};
+const int frameRate{50};
 
 // class factory
 mixr::base::Object* factory(const std::string& name)
 {
-   mixr::base::Object* obj = mixr::simulation::factory(name);
+   mixr::base::Object* obj{mixr::simulation::factory(name)};
    if (obj == nullptr) obj = mixr::models::factory(name);
    if (obj == nullptr) obj = mixr::terrain::factory(name);
    if (obj == nullptr) obj = mixr::base::factory(name);
@@ -29,8 +29,8 @@ mixr::base::Object* factory(const std::string& name)
 mixr::simulation::Simulation* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -72,13 +72,13 @@ int main(int argc, char* argv[])
    }
 
    // build simulation
-   mixr::simulation::Simulation* simulation {builder(configFilename)};
+   mixr::simulation::Simulation* simulation{builder(configFilename)};
 
    // reset component tree
    simulation->reset();
 
    // delta time (20ms)
-   const double dt {1.0 / static_cast<double>(frameRate)};
+   const double dt{1.0 / static_cast<double>(frameRate)};
 
    // execute simulation as fast as possible
    for(; simulation->getExecTimeSec() < 50.0; ) {

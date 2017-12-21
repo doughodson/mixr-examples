@@ -45,7 +45,7 @@ void AdiDisplay::updateData(const double dt)
    mixr::base::Vec3d av;
 
    // get access pointer to ownship
-   mixr::models::Aircraft* pA = getOwnship();
+   mixr::models::Aircraft* pA{getOwnship()};
    if (pA != nullptr) {
       psiRO = pA->getHeadingD();
       thtRO = pA->getPitchD();
@@ -94,8 +94,8 @@ mixr::simulation::Station* AdiDisplay::getStation()
 
 mixr::models::Aircraft* AdiDisplay::getOwnship()
 {
-   mixr::models::Aircraft* pA = nullptr;
-   mixr::simulation::Station* sta = getStation();
+   mixr::models::Aircraft* pA{};
+   mixr::simulation::Station* sta{getStation()};
    if (sta != nullptr) {
       pA = dynamic_cast<mixr::models::Aircraft*>(sta->getOwnship());
       //const unsigned int ffrate = 5;    //LDB

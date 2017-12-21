@@ -121,10 +121,10 @@ void MapPage::drawLine(const double x, const double y)
 
 void MapPage::drawSemiCircle(const double startAngle, const double radius)
 {
-   const double eps = 0.015;
-   const double innerRadius = radius - eps;
-   const double outerRadius = radius + eps;
-   GLUquadricObj* q1 = gluNewQuadric();
+   const double eps{0.015};
+   const double innerRadius{radius - eps};
+   const double outerRadius{radius + eps};
+   GLUquadricObj* q1{gluNewQuadric()};
    gluQuadricDrawStyle(q1, GLU_FILL);
    gluPartialDisk(q1, innerRadius, outerRadius, 100, 1, startAngle, 180.0);
    gluDeleteQuadric(q1);
@@ -161,11 +161,11 @@ void MapPage::drawHoldingPattern()
          //---------------------------------------------------------------------------
          // Draw Holding Pattern
          //---------------------------------------------------------------------------
-            double aLat = 0, aLon = 0, mLat = 0, mLon = 0;
+            double aLat{}, aLon{}, mLat{}, mLon{};
             pRac->getLoiterPointAnchors(&aLat, &aLon, &mLat, &mLon);
             //std::cout << "MIRROR LAT/LON = " << mLat << ", " << mLon << std::endl;
-            const double ibCrs = pRac->getLoiterCourse();
-            const double osVel = pPlr->getTotalVelocityKts();
+            const double ibCrs{pRac->getLoiterCourse()};
+            const double osVel{pPlr->getTotalVelocityKts()};
 
             //setReferenceLatDeg(0.0);
             //setReferenceLonDeg(0.0);
@@ -173,28 +173,27 @@ void MapPage::drawHoldingPattern()
 //            double refLat = getReferenceLatDeg();
 //            double refLon = getReferenceLonDeg();
 
-            const double omegaDps = 3.0;                                     //dps
-            const double omegaRps = omegaDps * mixr::base::angle::D2RCC;       //rps
-            const double rocNM = (osVel / mixr::base::time::H2S) / omegaRps;   //nm
+            const double omegaDps{3.0};                                       //dps
+            const double omegaRps{omegaDps * mixr::base::angle::D2RCC};       //rps
+            const double rocNM{(osVel / mixr::base::time::H2S) / omegaRps};   //nm
             //double obTimeMin = 2.0;                                     //min
             //double obTimeSec = obTimeMin * base::time::M2S;            //sec
 
             //double obDistNM = (osVel / base::time::H2S) * obTimeSec;   //nm
 
-            double obDistNM = 0;
+            double obDistNM{};
             if (pRac->isLoiterTimeBased()) {
                obDistNM = (osVel / mixr::base::time::H2S) * pRac->getLoiterTime();   //nm
-            }
-            else {
+            } else {
                obDistNM = pRac->getLoiterPatternLengthNM();
             }
 
-            double aLatSU = 0.0;
-            double aLonSU = 0.0;
+            double aLatSU{};
+            double aLonSU{};
             latLon2Screen(aLat, aLon, &aLatSU, &aLonSU);
 
-            const double rocSU = rocNM * getScale();
-            const double obDistSU = obDistNM * getScale();
+            const double rocSU{rocNM * getScale()};
+            const double obDistSU{obDistNM * getScale()};
 
             //==============================================
             // begin drawing holding pattern
@@ -257,32 +256,32 @@ void MapPage::drawFunc()
             //-----------------------------------------------------------------
             // get reference lat/lon
             //-----------------------------------------------------------------
-            const double refLat = getReferenceLatDeg();
-            const double refLon = getReferenceLonDeg();
+            const double refLat{getReferenceLatDeg()};
+            const double refLon{getReferenceLonDeg()};
 
             //-----------------------------------------------------------------
             // get lat/lon drawing limits
             //-----------------------------------------------------------------
-            GLdouble l = 0, r = 0, t = 0, b = 0, n = 0, f = 0;
+            GLdouble l{}, r{}, t{}, b{}, n{}, f{};
             pDsp->getOrtho(l, r, b, t, n, f);
 
-            const double latRange = getRange() / 60.0;
-            const double inchPerDegNS = t / latRange;
-            const double northernLat = refLat + latRange;
-            const double southernLat = refLat - latRange;
+            const double latRange{getRange() / 60.0};
+            const double inchPerDegNS{t / latRange};
+            const double northernLat{refLat + latRange};
+            const double southernLat{refLat - latRange};
 
-            const double lonRange = latRange / getCosRefLat();
-            const double inchPerDegEW = r / lonRange;
-            const double easternLon = refLon + lonRange;
-            const double westernLon = refLon - lonRange;
+            const double lonRange{latRange / getCosRefLat()};
+            const double inchPerDegEW{r / lonRange};
+            const double easternLon{refLon + lonRange};
+            const double westernLon{refLon - lonRange};
 
             glPushMatrix();
             glBegin(GL_LINES);
-               int latIdx = 0;
-               int startLat = mixr::base::nint(static_cast<double>(southernLat) - 1);
-               const int endLat = mixr::base::nint(static_cast<double>(northernLat) + 1);
+               int latIdx{};
+               int startLat{mixr::base::nint(static_cast<double>(southernLat) - 1)};
+               const int endLat{mixr::base::nint(static_cast<double>(northernLat) + 1)};
                while (startLat < endLat) {
-                  GLfloat refLatDist = static_cast<GLfloat>(refLat - startLat);
+                  GLfloat refLatDist{static_cast<GLfloat>(refLat - startLat)};
                   if (latIdx < MAX_READOUTS) {
                      lats[latIdx] = startLat;
                      refLatDist *= static_cast<GLfloat>(inchPerDegNS);
@@ -303,11 +302,11 @@ void MapPage::drawFunc()
 
             glPushMatrix();
             glBegin(GL_LINES);
-               int lonIdx = 0;
-               int startLon = mixr::base::nint(static_cast<double>(westernLon) - 1);
-               const int endLon = mixr::base::nint(static_cast<double>(easternLon) + 1);
+               int lonIdx{};
+               int startLon{mixr::base::nint(static_cast<double>(westernLon) - 1)};
+               const int endLon{mixr::base::nint(static_cast<double>(easternLon) + 1)};
                while (startLon < endLon) {
-                  GLfloat refLonDist = static_cast<GLfloat>(refLon - startLon);
+                  GLfloat refLonDist{static_cast<GLfloat>(refLon - startLon)};
                   if (lonIdx < MAX_READOUTS) {
                      lons[lonIdx] = startLon;
                      refLonDist *= static_cast<GLfloat>(inchPerDegEW);
@@ -339,7 +338,7 @@ void MapPage::updateData(const double dt)
 
     // get our pointers
     if (loader == nullptr) {
-        mixr::base::Pair* pair = findByName("playerLoader");
+        mixr::base::Pair* pair{findByName("playerLoader")};
         if (pair != nullptr) {
             loader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
             if (loader != nullptr) loader->ref();
@@ -347,7 +346,7 @@ void MapPage::updateData(const double dt)
     }
 
     if (pStn == nullptr) {
-        mixr::graphics::Display* pDsp = getDisplay();
+        mixr::graphics::Display* pDsp{getDisplay()};
         if (pDsp != nullptr) {
             pStn = static_cast<TestStation*>(pDsp->findContainerByType(typeid(TestStation)));
             if (pStn != nullptr) {
@@ -364,22 +363,22 @@ void MapPage::updateData(const double dt)
 
    // go through one time and add our symbols for the route
    if (!routeLoaded && pStn != nullptr) {
-      mixr::base::Pair* pair = findByName("routeLoader");
+      mixr::base::Pair* pair{findByName("routeLoader")};
       if (pair != nullptr) {
          const auto routeLoader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
          if (routeLoader != nullptr) {
             // get our player's route
             const auto ply = dynamic_cast<mixr::models::Player*>(pStn->getOwnship());
             if (ply != nullptr) {
-               mixr::models::Navigation* nav = ply->getNavigation();
+               mixr::models::Navigation* nav{ply->getNavigation()};
                if (nav != nullptr) {
-                  mixr::models::Route* rte = nav->getPriRoute();
+                  mixr::models::Route* rte{nav->getPriRoute()};
                   if (rte != nullptr) {
                      mixr::base::safe_ptr<mixr::models::Steerpoint> stpts[10];
-                     unsigned int numStpts = rte->getAllSteerpoints(stpts, 10);
+                     unsigned int numStpts{rte->getAllSteerpoints(stpts, 10)};
                      for (unsigned int i = 0; i < numStpts; i++) {
                         if (stpts[i] != nullptr) {
-                           int pos = routeLoader->addSymbol(1, "stpt");
+                           int pos{routeLoader->addSymbol(1, "stpt")};
                            // now update the position
                            routeLoader->updateSymbolPositionLL(pos, stpts[i]->getLatitude(), stpts[i]->getLongitude());
                            // unref when we are done
@@ -400,9 +399,9 @@ void MapPage::updateData(const double dt)
         if (stream != nullptr) {
             // create our new player list
             mixr::models::Player* newPlayers[MAX_PLAYERS];
-            int numNewPlayers = 0;
+            int numNewPlayers{};
             // go through all of our non-ownship players and populate our new list
-            mixr::base::List::Item* item = stream->getFirstItem();
+            mixr::base::List::Item* item{stream->getFirstItem()};
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
                 const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
                 if (pair != nullptr) {
@@ -420,7 +419,7 @@ void MapPage::updateData(const double dt)
             // players that arent in the old list
             for (int i = 0; i < MAX_PLAYERS; i++) {
                 if (player[i] != nullptr) {
-                    bool match = false;
+                    bool match{};
                     for (int j = 0; j < numNewPlayers && !match; j++) {
                         if (player[i] == newPlayers[j]) {
                             // if they do match, get rid of our new player, so we don't re-add it
@@ -444,14 +443,14 @@ void MapPage::updateData(const double dt)
             for (int i = 0; i < numNewPlayers; i++) {
                 // make sure this player wasn't deleted earlier
                 if (newPlayers[i] != nullptr) {
-                    bool found = false;
+                    bool found{};
                     for (int j = 0; j < MAX_PLAYERS && !found; j++) {
                         if (player[j] == nullptr) {
                             found = true;
                             // found an empty player, let's set him!
                             player[j] = newPlayers[i];
                             player[j]->ref();
-                            int type = 1;
+                            int type{1};
                             if (player[j]->isSide(mixr::models::Player::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "");              //<LDB - "player"
                             if (player[j]->getName() != nullptr) {

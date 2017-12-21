@@ -21,7 +21,7 @@ namespace simulation { class AirVehicle; }
 //      display          <glut::GlutDisplay> ! Main graphics display
 //      autoResetTimer   <Time>              ! Auto RESET timer value (base::Time); default: 0
 //------------------------------------------------------------------------------
-class SimStation : public ::mixr::simulation::Station
+class SimStation final: public ::mixr::simulation::Station
 {
    DECLARE_SUBCLASS(SimStation, ::mixr::simulation::Station)
 
@@ -32,10 +32,10 @@ public:
    void stepOwnshipPlayer();
 
    // base::Component Interface
-   virtual void updateTC(const double dt = 0.0f);
-   virtual void updateData(const double dt = 0.0f);
-   virtual void reset();
-   virtual bool event(const int event, ::mixr::base::Object* const obj = nullptr) override;
+   void updateTC(const double dt = 0.0f) final;
+   void updateData(const double dt = 0.0f) final;
+   void reset() final;
+   bool event(const int event, ::mixr::base::Object* const obj = nullptr) final;
 
    // SimStation interface
    bool onEntry();
@@ -43,10 +43,10 @@ public:
 private:
    // main display
    ::mixr::base::safe_ptr<::mixr::glut::GlutDisplay> mainDisplay;
-   bool displayInit {};
+   bool displayInit{};
    // auto reset timer
-   double autoResetTimer {};                      // Auto RESET timer (sends a RESET_EVENT after timeout)
-   const ::mixr::base::Time* autoResetTimer0 {};  // Init value of the Auto RESET timer
+   double autoResetTimer{};                      // Auto RESET timer (sends a RESET_EVENT after timeout)
+   const ::mixr::base::Time* autoResetTimer0{};  // Init value of the Auto RESET timer
 
 private:
    // slot table helper methods

@@ -29,7 +29,7 @@ END_SLOTTABLE(SimpleIGen)
 
 BEGIN_SLOT_MAP(SimpleIGen)
   ON_SLOT(1, setSlotDatabasePath, base::String)
-  ON_SLOT(2, setSlotNetInput, base::NetHandler)
+  ON_SLOT(2, setSlotNetInput,     base::NetHandler)
 END_SLOT_MAP()
 
 SimpleIGen::SimpleIGen()
@@ -43,7 +43,7 @@ SimpleIGen::SimpleIGen()
 // set database path
 bool SimpleIGen::setSlotDatabasePath(base::String* const msg)
 {
-   bool ok {};
+   bool ok{};
    if (msg != nullptr) {
       databasePath = msg->getString();
       ok = true;
@@ -54,7 +54,7 @@ bool SimpleIGen::setSlotDatabasePath(base::String* const msg)
 // Set Network Input Handler
 bool SimpleIGen::setSlotNetInput(base::NetHandler* const msg)
 {
-   bool ok {};
+   bool ok{};
    if (msg != nullptr) {
       netInput = msg;
       ok = true;
@@ -86,7 +86,7 @@ bool SimpleIGen::initNetwork()
 
 int SimpleIGen::recv(char* buffer)
 {
-   int recvCnt {};
+   int recvCnt{};
    if (netOk)
       recvCnt = netInput->recvData(buffer, 1472);
    return recvCnt;
@@ -101,7 +101,7 @@ void SimpleIGen::draw()
 {
    if (viewer->isRealized()) {
       
-      int n {recv((char*)&entityState)};
+      int n{recv((char*)&entityState)};
       if (n > 0) {
          // update position
          x = entityState.pilot_eye_y * base::distance::FT2M;

@@ -15,19 +15,19 @@ namespace simulation { class Station; }
 // Description:
 //      Derived MapDisplay that will simply make our map page move.
 // -------------------------------------------------------------------------------
-class MapDisplay : public mixr::glut::GlutDisplay
+class MapDisplay final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(MapDisplay, mixr::glut::GlutDisplay)
 
 public:
    MapDisplay();
 
-   virtual void mouseMotionEvent(const int x, const int y) override;
-   virtual void mouseEvent(const int button, const int state, const int x, const int y) override;
-   virtual void passiveMotionEvent(const int x, const int y) override;
-   virtual void buttonEvent(const int b) override;
+   void mouseMotionEvent(const int x, const int y) final;
+   void mouseEvent(const int button, const int state, const int x, const int y) final;
+   void passiveMotionEvent(const int x, const int y) final;
+   void buttonEvent(const int b) final;
 
-   virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) final;
 
 private:
    mixr::models::Aircraft* getOwnship();
@@ -58,9 +58,9 @@ private:
 
    mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
-   int startX {};         // startX of our last mouse position
-   int startY {};         // startY of our last mouse position
-   bool dragging {};      // are we dragging the map?
+   int startX{};         // startX of our last mouse position
+   int startY{};         // startY of our last mouse position
+   bool dragging{};      // are we dragging the map?
 
    SendData cmdRangeSD;
    SendData cmdAirspeedSD;
@@ -78,7 +78,7 @@ private:
    SendData maxBankSD;
    SendData maxTurnSD;
 
-   bool passiveEnable {};
+   bool passiveEnable{};
 };
 
 #endif

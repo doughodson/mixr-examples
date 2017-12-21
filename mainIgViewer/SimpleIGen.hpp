@@ -13,7 +13,7 @@ namespace mixr {
 namespace base { class NetHandler; class String; }
 }
 
-class SimpleIGen : public ::mixr::glut::GlutDisplay
+class SimpleIGen final: public ::mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(SimpleIGen, ::mixr::glut::GlutDisplay)
 
@@ -21,19 +21,20 @@ public:
    SimpleIGen();
 
    // base::Component interface
-   virtual void updateData(const double dt = 0) override;
+   void updateData(const double dt = 0) final;
 
    // graphics::Page interface
-    virtual void draw() override;
+   void draw() final;
 
    // graphics::Display interface
-   virtual void reshapeIt(int w, int h);
+   void reshapeIt(int w, int h) final;
 
    // base::Component interface
-   virtual bool event(const int event, ::mixr::base::Object* const obj = nullptr) override;
+   bool event(const int event, ::mixr::base::Object* const obj = nullptr) final;
 
    // SimpleIGen interface
-   bool onEntry();
+   bool onEntry() final;
+
    // initialize the network
    bool initNetwork();      
    // receive a buffer from the network

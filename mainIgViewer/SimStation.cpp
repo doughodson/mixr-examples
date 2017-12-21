@@ -56,7 +56,7 @@ void SimStation::reset()
 {
    if (!displayInit && mainDisplay != nullptr) {
       mainDisplay->createWindow();
-      base::Pair* p = mainDisplay->findByType(typeid(graphics::Page));
+      base::Pair* p{mainDisplay->findByType(typeid(graphics::Page))};
       if (p != nullptr)
          mainDisplay->focus(static_cast<graphics::Graphic*>(p->object()));
       else
@@ -113,18 +113,18 @@ void SimStation::updateData(const double dt)
 //------------------------------------------------------------------------------
 void SimStation::stepOwnshipPlayer()
 {
-   base::PairStream* pl {getSimulation()->getPlayers()};
+   base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
-      models::Player* f {};
-      models::Player* n {};
-      bool found {};
+      models::Player* f{};
+      models::Player* n{};
+      bool found{};
 
       // Find the next player
-      base::List::Item* item {pl->getFirstItem()};
+      base::List::Item* item{pl->getFirstItem()};
       while (item != nullptr) {
          base::Pair* pair {static_cast<base::Pair*>(item->getValue())};
          if (pair != nullptr) {
-            models::Player* ip {static_cast<models::Player*>(pair->object())};
+            models::Player* ip{static_cast<models::Player*>(pair->object())};
             if ( ip->isMode(models::Player::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::AirVehicle)) ) {
                if (f == nullptr) { f = ip; }  // Remember the first
                if (found) { n = ip; ; break; }

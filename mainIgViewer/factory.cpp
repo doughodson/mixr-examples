@@ -16,7 +16,7 @@ using namespace mixr;
 
 base::Object* factory(const std::string& name)
 {
-   base::Object* obj {};
+   base::Object* obj{};
 
    if (name == SimpleIGen::getFactoryName()) {
       obj = new SimpleIGen;

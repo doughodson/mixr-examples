@@ -12,14 +12,14 @@ namespace simulation { class Station; }
 //------------------------------------------------------------------------------
 // Class: AdiDisplay
 //------------------------------------------------------------------------------
-class AdiDisplay : public mixr::glut::GlutDisplay
+class AdiDisplay final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(AdiDisplay, mixr::glut::GlutDisplay)
 
 public:
    AdiDisplay();
 
-   virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) final;
 
 private:
    mixr::models::Aircraft* getOwnship();
@@ -28,18 +28,18 @@ private:
    mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
    //-----------------------------
-   double psiRO {};     // [deg]
-   double thtRO {};     // [deg]
-   double phiRO {};     // [deg]
-   double velRO {};     // [kts]
-   double altRO {};     // [ft]
+   double psiRO{};     // [deg]
+   double thtRO{};     // [deg]
+   double phiRO{};     // [deg]
+   double velRO{};     // [kts]
+   double altRO{};     // [ft]
 
-   double pRO {};       // [deg/sec]
-   double qRO {};       // [deg/sec]
-   double rRO {};       // [deg/sec]
+   double pRO{};       // [deg/sec]
+   double qRO{};       // [deg/sec]
+   double rRO{};       // [deg/sec]
 
-   double bankADI {};   // [deg]
-   double pitchADI {};  // [deg]
+   double bankADI{};   // [deg]
+   double pitchADI{};  // [deg]
 
    //-----------------------------
    SendData psiRO_SD;

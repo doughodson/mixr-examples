@@ -24,16 +24,16 @@ USE_OSGPLUGIN(txp)
 
 using namespace mixr;
 
-const int frameRate {60};
-simulation::Station* station {};
+const int frameRate{60};
+simulation::Station* station{};
 
 // build a station
 simulation::Station* builder(const std::string& fileName)
 {
-   simulation::Station* p {};
+   simulation::Station* p{};
    // Read the description file
-   int errors {};
-   base::Object* obj {base::edl_parser(fileName, factory, &errors)};
+   int errors{};
+   base::Object* obj{base::edl_parser(fileName, factory, &errors)};
    if (errors > 0) {
       std::cerr << "File: " << fileName << ", errors: " << errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -65,10 +65,10 @@ simulation::Station* builder(const std::string& fileName)
 static void updateDataCB(const int msecs)
 {
    // get current time
-   const double time1 {base::getComputerTime()};
-   static double time0 {time1};   // store (N-1) for next iteration
+   const double time1{base::getComputerTime()};
+   static double time0{time1};   // store (N-1) for next iteration
    // compute delta time (elapsed) from previous time
-   const double dt {time1 - time0};
+   const double dt{time1 - time0};
    // update N-1 time
    time0 = time1;
    // update station
@@ -95,8 +95,8 @@ int main(int argc, char* argv[])
 
    station->event(base::Component::RESET_EVENT);
 
-   const double dt {1.0/static_cast<double>(frameRate)};
-   const int msecs {static_cast<int>(dt * 1000)};
+   const double dt{1.0/static_cast<double>(frameRate)};
+   const int msecs{static_cast<int>(dt * 1000)};
 
    station->updateData(dt);
    station->updateTC(dt);

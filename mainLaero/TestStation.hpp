@@ -20,22 +20,22 @@ namespace glut { class GlutDisplay; }
 // Slots:
 //   glutDisplay  <graphics::GlutDisplay>  ! All of our display components
 //------------------------------------------------------------------------------
-class TestStation : public mixr::simulation::Station
+class TestStation final: public mixr::simulation::Station
 {
    DECLARE_SUBCLASS(TestStation, mixr::simulation::Station)
 
 public:
    TestStation();
 
-   virtual void updateTC(const double dt = 0.0) override;
-   virtual void updateData(const double dt = 0.0) override;
-   virtual void reset() override;
+   void updateTC(const double dt = 0.0) final;
+   void updateData(const double dt = 0.0) final;
+   void reset() final;
 
 private:
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mapDisplay;
-   bool glutDisplayInit {};
-   bool mapDisplayInit {};
+   bool glutDisplayInit{};
+   bool mapDisplayInit{};
 
 private:
    // slot table helper methods

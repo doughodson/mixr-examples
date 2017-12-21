@@ -23,7 +23,7 @@
 
 mixr::base::Object* factory(const std::string& name)
 {
-    mixr::base::Object* obj {};
+    mixr::base::Object* obj{};
 
     if ( name == TestStation::getFactoryName() ) {
         obj = new TestStation();

@@ -20,7 +20,7 @@ namespace simulation { class Simulation; class Station; }
 // Slots:
 //    textureTest <Boolean>   Texture test enabled
 // ----------------------------------------------------------------------------
-class Display : public mixr::glut::GlutDisplay
+class Display final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
 
@@ -31,18 +31,18 @@ public:
    mixr::simulation::Simulation* getSimulation();
    mixr::simulation::Station* getStation();
 
-   virtual void configure() override;
-   virtual void drawFunc() override;
+   void configure() final;
+   void drawFunc() final;
 
 private:
    mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
-   bool   testTexture {};      // Texture image test
-   GLuint texture {};          // Texture
+   bool testTexture{};      // Texture image test
+   GLuint texture{};        // Texture
 
 private:
    // slot table helper methods
-   virtual bool setSlotTextureTest(const mixr::base::Number* const);
+   bool setSlotTextureTest(const mixr::base::Number* const);
 };
 
 #endif

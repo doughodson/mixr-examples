@@ -56,8 +56,8 @@ void Display::deleteData()
 //------------------------------------------------------------------------------
 models::Player* Display::getOwnship()
 {
-    models::Player* p = nullptr;
-    simulation::Station* sta = getStation();
+    models::Player* p{};
+    simulation::Station* sta{getStation()};
     if (sta != nullptr) {
         p = dynamic_cast<models::Player*>(sta->getOwnship());
     }
@@ -66,8 +66,8 @@ models::Player* Display::getOwnship()
 
 simulation::Simulation* Display::getSimulation()
 {
-    simulation::Simulation* s = nullptr;
-    simulation::Station* sta = getStation();
+    simulation::Simulation* s{};
+    simulation::Station* sta{getStation()};
     if (sta != nullptr) s = sta->getSimulation();
     return s;
 }
@@ -84,7 +84,7 @@ simulation::Station* Display::getStation()
 // Set texture test flag
 bool Display::setSlotTextureTest(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       testTexture = msg->getBoolean();
       ok = true;
@@ -96,25 +96,25 @@ void Display::drawFunc()
 {
    const auto own = dynamic_cast<models::Player*>(getOwnship());
 
-   const base::Pair* pair = nullptr;
+   const base::Pair* pair{};
    if (own != nullptr) pair = own->getSensorByType(typeid(RealBeamRadar));
 
-   const RealBeamRadar* rdr = nullptr;
+   const RealBeamRadar* rdr{};
    if (pair != nullptr) rdr = static_cast<const RealBeamRadar*>( pair->object() );
 
-   const GLubyte* image = nullptr;  // The image pixels
+   const GLubyte* image{};     // The image pixels
    if (rdr != nullptr) image = rdr->getImage();
 
    if (image != nullptr) {
 
       // Image width  (number of columns)
-      GLsizei imgWidth = rdr->getImageWidth();
+      GLsizei imgWidth{rdr->getImageWidth()};
 
       // Image height (number of rows)
-      GLsizei imgHeight = rdr->getImageHeight();
+      GLsizei imgHeight{rdr->getImageHeight()};
 
-      GLint pixelSize = rdr->getPixelSize();
-      GLenum format = GL_RGB;
+      GLint pixelSize{rdr->getPixelSize()};
+      GLenum format{GL_RGB};
       if (pixelSize == 4) format = GL_RGBA;
 
       if (testTexture) {
@@ -159,8 +159,7 @@ void Display::drawFunc()
 //         double end = getComputerTime();
 //         double dtime = (end - start);
          //std::cout << "glTexImage2D() dtime = " << dtime << std::endl;
-      }
-      else {
+      } else {
          // ---
          // Draw using glDrawPixels()
          // ---

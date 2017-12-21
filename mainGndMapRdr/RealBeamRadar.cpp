@@ -24,8 +24,8 @@
 
 using namespace mixr;
 
-const int IMG_WIDTH = 1024;
-const int IMG_HEIGHT = 1024;
+const int IMG_WIDTH{1024};
+const int IMG_HEIGHT{1024};
 
 IMPLEMENT_SUBCLASS(RealBeamRadar, "RealBeamRadar")
 
@@ -89,12 +89,12 @@ void RealBeamRadar::transmit(const double dt)
    BaseClass::transmit(dt);
 
    // Test parameters
-   double latitude  = 0;
-   double longitude = 0;
+   double latitude{};
+   double longitude{};
    beamWidth = 7.0;
 
    //
-   const models::Player* own = getOwnship();
+   const models::Player* own{getOwnship()};
    if (own != nullptr) {
       // Get our ownship parameters
       altitude = static_cast<double>(own->getAltitude());
@@ -104,7 +104,7 @@ void RealBeamRadar::transmit(const double dt)
       // Locate the terrain elevation database
       if (terrain == nullptr) {
 
-         const models::WorldModel* sim = own->getWorldModel();
+         const models::WorldModel* sim{own->getWorldModel()};
          if (sim != nullptr) {
             setTerrain( dynamic_cast<const mixr::terrain::Terrain*>(sim->getTerrain()) );    // ddh
          }
@@ -112,57 +112,57 @@ void RealBeamRadar::transmit(const double dt)
    }
 
    // Transmitting, scanning
-   const models::Antenna* ant = getAntenna();
+   const models::Antenna* ant{getAntenna()};
    if (isTransmitting() && ant != nullptr && image != nullptr && terrain != nullptr && terrain->isDataLoaded()) {
 
       // Compute max range (NM)
-      double maxRngNM = getRange();
+      double maxRngNM{getRange()};
 
       // Compute ground range
-      double groundRange[IMG_HEIGHT];
+      double groundRange[IMG_HEIGHT]{};
       computeGroundRanges(groundRange, IMG_HEIGHT, maxRngNM);
 
       // Compute slant range
-      double slantRange2[IMG_HEIGHT];
+      double slantRange2[IMG_HEIGHT]{};
       computeSlantRanges2(slantRange2, IMG_HEIGHT, groundRange, altitude);
 
       // Compute the loss from range
-      double rangeLoss[IMG_HEIGHT];
+      double rangeLoss[IMG_HEIGHT]{};
       computeRangeLoss(rangeLoss, IMG_HEIGHT, slantRange2);
 
       // Compute the earth's curvature effect
-      double curvature[IMG_HEIGHT];
+      double curvature[IMG_HEIGHT]{};
       computeEarthCurvature(curvature, IMG_HEIGHT, maxRngNM, static_cast<double>(base::nav::ERAD60));
 
-      double hue = 120.0;      // see Hsv
-      double saturation = 0.0; // see Hsv
+      double hue{120.0};      // see Hsv
+      double saturation{};    // see Hsv
       const base::Hsva* grayTable[19];
-      grayTable[0]  = new base::Hsva(  hue,  saturation,  0.0f,     1.0f );
-      grayTable[1]  = new base::Hsva(  hue,  saturation,  0.0872f,  1.0f );
-      grayTable[2]  = new base::Hsva(  hue,  saturation,  0.1736f,  1.0f );
-      grayTable[3]  = new base::Hsva(  hue,  saturation,  0.2588f,  1.0f );
-      grayTable[4]  = new base::Hsva(  hue,  saturation,  0.3420f,  1.0f );
-      grayTable[5]  = new base::Hsva(  hue,  saturation,  0.4226f,  1.0f );
-      grayTable[6]  = new base::Hsva(  hue,  saturation,  0.5000f,  1.0f );
-      grayTable[7]  = new base::Hsva(  hue,  saturation,  0.5736f,  1.0f );
-      grayTable[8]  = new base::Hsva(  hue,  saturation,  0.6428f,  1.0f );
-      grayTable[9]  = new base::Hsva(  hue,  saturation,  0.7071f,  1.0f );
-      grayTable[10] = new base::Hsva(  hue,  saturation,  0.7660f,  1.0f );
-      grayTable[11] = new base::Hsva(  hue,  saturation,  0.8192f,  1.0f );
-      grayTable[12] = new base::Hsva(  hue,  saturation,  0.8660f,  1.0f );
-      grayTable[13] = new base::Hsva(  hue,  saturation,  0.9063f,  1.0f );
-      grayTable[14] = new base::Hsva(  hue,  saturation,  0.9397f,  1.0f );
-      grayTable[15] = new base::Hsva(  hue,  saturation,  0.9659f,  1.0f );
-      grayTable[16] = new base::Hsva(  hue,  saturation,  0.9848f,  1.0f );
-      grayTable[17] = new base::Hsva(  hue,  saturation,  0.9962f,  1.0f );
-      grayTable[18] = new base::Hsva(  hue,  saturation,  1.0f,     1.0f );
+      grayTable[0]  = new base::Hsva(  hue,  saturation,  0.0,     1.0 );
+      grayTable[1]  = new base::Hsva(  hue,  saturation,  0.0872,  1.0 );
+      grayTable[2]  = new base::Hsva(  hue,  saturation,  0.1736,  1.0 );
+      grayTable[3]  = new base::Hsva(  hue,  saturation,  0.2588,  1.0 );
+      grayTable[4]  = new base::Hsva(  hue,  saturation,  0.3420,  1.0 );
+      grayTable[5]  = new base::Hsva(  hue,  saturation,  0.4226,  1.0 );
+      grayTable[6]  = new base::Hsva(  hue,  saturation,  0.5000,  1.0 );
+      grayTable[7]  = new base::Hsva(  hue,  saturation,  0.5736,  1.0 );
+      grayTable[8]  = new base::Hsva(  hue,  saturation,  0.6428,  1.0 );
+      grayTable[9]  = new base::Hsva(  hue,  saturation,  0.7071,  1.0 );
+      grayTable[10] = new base::Hsva(  hue,  saturation,  0.7660,  1.0 );
+      grayTable[11] = new base::Hsva(  hue,  saturation,  0.8192,  1.0 );
+      grayTable[12] = new base::Hsva(  hue,  saturation,  0.8660,  1.0 );
+      grayTable[13] = new base::Hsva(  hue,  saturation,  0.9063,  1.0 );
+      grayTable[14] = new base::Hsva(  hue,  saturation,  0.9397,  1.0 );
+      grayTable[15] = new base::Hsva(  hue,  saturation,  0.9659,  1.0 );
+      grayTable[16] = new base::Hsva(  hue,  saturation,  0.9848,  1.0 );
+      grayTable[17] = new base::Hsva(  hue,  saturation,  0.9962,  1.0 );
+      grayTable[18] = new base::Hsva(  hue,  saturation,  1.0,     1.0 );
 
       // Get antenna look angles
       antAzAngle = static_cast<double>(ant->getAzimuthD());
       antElAngle = static_cast<double>(ant->getElevationD());
 
       // Which ray are we on?
-      const auto halfRay = static_cast<double>(IMG_WIDTH/2.0f);
+      const auto halfRay{static_cast<double>(IMG_WIDTH/2.0)};
       auto ray = static_cast<int>(((antAzAngle/45.0f) * halfRay) + halfRay);
       if (ray < 0) ray = 0;
       if (ray > (IMG_WIDTH-1)) ray = (IMG_WIDTH-1);
@@ -171,7 +171,7 @@ void RealBeamRadar::transmit(const double dt)
       // ---
       // For all rays from ray0 to our current ray
       // ---
-      int icol = ray0;
+      int icol{ray0};
       while (icol != ray) {
 
          for (int irow = 0; irow < IMG_HEIGHT; irow++) {
@@ -182,8 +182,8 @@ void RealBeamRadar::transmit(const double dt)
          }
 
          // Direction
-         int xx = icol - (IMG_WIDTH/2);
-         double direction = 45.0 * static_cast<double>(xx) / static_cast<double>(IMG_WIDTH/2);
+         int xx{icol - (IMG_WIDTH/2)};
+         double direction{45.0 * static_cast<double>(xx) / static_cast<double>(IMG_WIDTH/2)};
 
          // get a strip of elevations from south to north
          /*unsigned int num = */terrain->getElevations(elevations, validFlgs, IMG_HEIGHT, latitude, longitude, direction, groundRange[IMG_HEIGHT-1], interpolate);
@@ -202,7 +202,7 @@ void RealBeamRadar::transmit(const double dt)
          // Draw a line along the Y points (moving from south to north along the latitude lines)
          for (int irow = 0; irow < IMG_HEIGHT; irow++) {
 
-            double sn = aacData[irow];
+            double sn{aacData[irow]};
 
             // convert to a color (or gray) value
             base::Vec3d color(0,0,0);
@@ -211,7 +211,7 @@ void RealBeamRadar::transmit(const double dt)
             }
 
             // store this color
-            int idx = irow*imgWidth*PIXEL_SIZE + icol*PIXEL_SIZE;
+            int idx{irow*imgWidth*PIXEL_SIZE + icol*PIXEL_SIZE};
             image[idx+0] = static_cast<unsigned char>( 255.0 * color[0] );
             image[idx+1] = static_cast<unsigned char>( 255.0 * color[1] );
             image[idx+2] = static_cast<unsigned char>( 255.0 * color[2] );
@@ -231,17 +231,17 @@ void RealBeamRadar::transmit(const double dt)
 //------------------------------------------------------------------------------
 bool RealBeamRadar::computeGroundRanges(double* const groundRange, const unsigned int n, const double maxRngNM)
 {
-   bool ok = false;
+   bool ok{};
    if (groundRange != nullptr && n > 0 && maxRngNM > 0) {
 
       // Max range (m)
-      double maxRng = maxRngNM * base::distance::NM2M;
+      double maxRng{maxRngNM * base::distance::NM2M};
 
       // Delta range between points (m)
-      double deltaRng = maxRng/static_cast<double>(n);
+      double deltaRng{maxRng/static_cast<double>(n)};
 
       // Step of the ground ranges (m)
-      double curRng = 0;
+      double curRng{};
       for (unsigned int idx = 0; idx < n; idx++) {
          groundRange[idx] = curRng;
          curRng += deltaRng;
@@ -257,11 +257,11 @@ bool RealBeamRadar::computeGroundRanges(double* const groundRange, const unsigne
 //------------------------------------------------------------------------------
 bool RealBeamRadar::computeSlantRanges2(double* const slantRange2, const unsigned int n, const double* const gndRng, const double altitude)
 {
-   bool ok = false;
+   bool ok{};
    if (slantRange2 != nullptr && n > 0 && gndRng != nullptr) {
 
       // Altitude squared
-      double alt2 = altitude * altitude;
+      double alt2{altitude * altitude};
 
       // Slant range squared (m^2) is altitude squared plus ground range squared.
       for (unsigned int idx = 0; idx < n; idx++) {
@@ -278,7 +278,7 @@ bool RealBeamRadar::computeSlantRanges2(double* const slantRange2, const unsigne
 //------------------------------------------------------------------------------
 bool RealBeamRadar::computeRangeLoss(double* const rangeLoss, const unsigned int n, const double* const slantRange2)
 {
-   bool ok = false;
+   bool ok{};
    if (rangeLoss != nullptr && n > 0 && slantRange2 != nullptr) {
 
       for (unsigned int idx = 0; idx < n; idx++) {
@@ -298,16 +298,16 @@ bool RealBeamRadar::computeRangeLoss(double* const rangeLoss, const unsigned int
 //------------------------------------------------------------------------------
 bool RealBeamRadar::computeEarthCurvature(double* const curvature, const unsigned int n, const double maxRngNM, const double radiusNM)
 {
-   bool ok = false;
+   bool ok{};
    if (curvature != nullptr && n > 0 && maxRngNM > 0 && radiusNM > 0) {
 
-      double radius = radiusNM * base::distance::NM2M;
-      double maxRng = maxRngNM * base::distance::NM2M;
+      double radius{radiusNM * base::distance::NM2M};
+      double maxRng{maxRngNM * base::distance::NM2M};
       for (unsigned int idx = 0; idx < n; idx++) {
-         double curRng = maxRng * static_cast<double>(idx)/static_cast<double>(n);
-         double arc = curRng / radius;
-         double cs = 1.0;
-         double c0 = std::cos(arc);
+         double curRng{maxRng * static_cast<double>(idx)/static_cast<double>(n)};
+         double arc{curRng / radius};
+         double cs{1.0};
+         double c0{std::cos(arc)};
          if (c0 != 0) cs = 1.0 / c0;
          curvature[idx] = radius * (cs  - 1.0f);
       }
@@ -338,7 +338,7 @@ bool RealBeamRadar::setTerrain(const terrain::Terrain* const msg)
 // Set interpolate flag
 bool RealBeamRadar::setSlotInterpolate(const base::Number* const msg)
 {
-   bool ok = false;
+   bool ok{};
    if (msg != nullptr) {
       interpolate = msg->getBoolean();
       ok = true;
@@ -355,7 +355,7 @@ bool RealBeamRadar::copyImageMemory(const RealBeamRadar& org)
    freeImageMemory();
 
    // Now allocate the new memory (if needed)
-   bool ok = initImageMemory(org.imgWidth, org.imgHeight);
+   bool ok{initImageMemory(org.imgWidth, org.imgHeight)};
    if (ok) {
 
       // and copy the data
@@ -382,17 +382,17 @@ bool RealBeamRadar::copyImageMemory(const RealBeamRadar& org)
 //------------------------------------------------------------------------------
 bool RealBeamRadar::initImageMemory(const int width, const int height)
 {
-   bool ok = false;
+   bool ok{};
    if (width > 0  && width <= MAX_IMAGE_WIDTH &&
       height > 0 && height <= MAX_IMAGE_HEIGHT) {
 
       // allocate space for the image
-      unsigned char* tmpImage = new unsigned char[width * height * PIXEL_SIZE];
+      unsigned char* tmpImage{new unsigned char[width * height * PIXEL_SIZE]};
       if (tmpImage != nullptr) {
 
          // clear the memory
-         unsigned char* p = tmpImage;
-         unsigned char* q = (tmpImage + width*height * PIXEL_SIZE);
+         unsigned char* p{tmpImage};
+         unsigned char* q{tmpImage + width * height * PIXEL_SIZE};
 //         unsigned int n = width*height*PIXEL_SIZE;
          while (p < q) {
             *p++ = 0;
@@ -422,7 +422,7 @@ bool RealBeamRadar::initImageMemory(const int width, const int height)
 void RealBeamRadar::freeImageMemory()
 {
    // temp pointer
-   unsigned char* tmpImage = image;
+   unsigned char* tmpImage{image};
 
    // Clear the member variables
    image = nullptr;

@@ -19,15 +19,15 @@ base::ubf::AbstractAction* PriorityArbiter::genComplexAction(base::List* const a
 {
    const auto complexAction = new PlaneAction;
 
-   unsigned int maxPitchVote = 0;
-   unsigned int maxRollVote = 0;
-   unsigned int maxHeadingVote = 0;
-   unsigned int maxFireVote = 0;
-   unsigned int maxThrottleVote = 0;
-   unsigned int maxPitchTrimVote = 0;
+   int maxPitchVote{};
+   int maxRollVote{};
+   int maxHeadingVote{};
+   int maxFireVote{};
+   int maxThrottleVote{};
+   int maxPitchTrimVote{};
 
    // process entire action set
-   const base::List::Item* item = actionSet->getFirstItem();
+   const base::List::Item* item{actionSet->getFirstItem()};
    while (item != nullptr) {
       const auto action = dynamic_cast<const PlaneAction*>(item->getValue());
       if (action!=nullptr) {
@@ -60,8 +60,7 @@ base::ubf::AbstractAction* PriorityArbiter::genComplexAction(base::List* const a
             complexAction->setPitchTrim(action->getPitchTrim());
             maxPitchTrimVote = action->getVote();
          }
-      }
-      else {
+      } else {
          std::cout << "Action NOT a PlaneAction\n";
       }
 

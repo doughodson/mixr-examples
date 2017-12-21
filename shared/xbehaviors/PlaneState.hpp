@@ -15,107 +15,106 @@ namespace xbehaviors {
 //              state has only one missile (or is ok with firing all missiles at
 //              first target)
 //------------------------------------------------------------------------------
-class PlaneState : public base::ubf::AbstractState
+class PlaneState final: public base::ubf::AbstractState
 {
    DECLARE_SUBCLASS(PlaneState, base::ubf::AbstractState)
 
 public:
    PlaneState();
 
-   virtual void reset() override;
-
-   virtual void updateState(const base::Component* const actor) override;
+   void reset() final;
+   void updateState(const base::Component* const actor) final;
 
    // set/get
-   virtual void setAlive(const bool x)                 { alive = x; return; }
-   virtual bool isAlive() const                        { return alive; }
+   void setAlive(const bool x)                 { alive = x; return; }
+   bool isAlive() const                        { return alive; }
 
-   virtual void setRoll(const double x)                { roll = x; return; }
-   virtual double getRoll() const                      { return roll; }
+   void setRoll(const double x)                { roll = x; return; }
+   double getRoll() const                      { return roll; }
 
-   virtual void setPitch(const double x)               { pitch = x; return; }
-   virtual double getPitch() const                     { return pitch; }
+   void setPitch(const double x)               { pitch = x; return; }
+   double getPitch() const                     { return pitch; }
 
-   virtual void setHeading(const double x)             { heading = x; return; }
-   virtual double getHeading() const                   { return heading; }
+   void setHeading(const double x)             { heading = x; return; }
+   double getHeading() const                   { return heading; }
 
-   virtual void setRollRate(const double x)            { rollRate = x; return; }
-   virtual double getRollRate() const                  { return rollRate; }
+   void setRollRate(const double x)            { rollRate = x; return; }
+   double getRollRate() const                  { return rollRate; }
 
-   virtual void setPitchRate(const double x)           { pitchRate = x; return; }
-   virtual double getPitchRate() const                 { return pitchRate; }
+   void setPitchRate(const double x)           { pitchRate = x; return; }
+   double getPitchRate() const                 { return pitchRate; }
 
-   virtual void setYawRate(const double x)             { yawRate = x; return; }
-   virtual double getYawRate() const                   { return yawRate; }
+   void setYawRate(const double x)             { yawRate = x; return; }
+   double getYawRate() const                   { return yawRate; }
 
-   virtual void setAltitude(const double x)            { altitude = x; return; }
-   virtual double getAltitude() const                  { return altitude; }
+   void setAltitude(const double x)            { altitude = x; return; }
+   double getAltitude() const                  { return altitude; }
 
-   virtual void setThrottle(const double x)            { throttle = x; return; }
-   virtual double getThrottle() const                  { return throttle; }
+   void setThrottle(const double x)            { throttle = x; return; }
+   double getThrottle() const                  { return throttle; }
 
-   virtual void setSpeed(const double x)               { speed = x; return; }
-   virtual double getSpeed() const                     { return speed; }
+   void setSpeed(const double x)               { speed = x; return; }
+   double getSpeed() const                     { return speed; }
 
-   virtual void setPitchTrim(const double x)           { pitchTrim = x; return; }
-   virtual double getPitchTrim() const                 { return pitchTrim; }
+   void setPitchTrim(const double x)           { pitchTrim = x; return; }
+   double getPitchTrim() const                 { return pitchTrim; }
 
-   virtual void setNumTracks(const unsigned int x)     { numTracks = x; return; }
-   virtual unsigned int getNumTracks() const           { return numTracks; }
+   void setNumTracks(const int x)              { numTracks = x; return; }
+   int getNumTracks() const                    { return numTracks; }
 
    //tracking setter
-   virtual void setTracking(const bool x)              { tracking = x; return; }
+   void setTracking(const bool x)              { tracking = x; return; }
    //returns true if plane is currently tracking
-   virtual bool isTracking() const                     { return tracking; }
+   bool isTracking() const                     { return tracking; }
 
-   virtual void setMissileFired(const bool x)          { missileFired = x; return; }
-   virtual bool isMissileFired() const                 { return missileFired; }
+   void setMissileFired(const bool x)          { missileFired = x; return; }
+   bool isMissileFired() const                 { return missileFired; }
 
-   virtual void setTargetTrack(const unsigned int x)   { targetTrack = x; return; }
-   virtual unsigned int getTargetTrack() const         { return targetTrack; }
+   void setTargetTrack(const int x)            { targetTrack = x; return; }
+   int getTargetTrack() const                  { return targetTrack; }
 
-   virtual void setNumEngines(const unsigned int x)    { numEngines = x; return; }
-   virtual int getNumEngines() const                   { return numEngines; }
+   void setNumEngines(const int x)             { numEngines = x; return; }
+   int getNumEngines() const                   { return numEngines; }
 
-   virtual void setIncomingMissile(const bool x)       { incomingMissile = x; return; }
-   virtual bool isIncomingMissile() const              { return incomingMissile; }
+   void setIncomingMissile(const bool x)       { incomingMissile = x; return; }
+   bool isIncomingMissile() const              { return incomingMissile; }
 
    //sets the pitch to current object being tracked
-   virtual void setPitchToTracked(const unsigned int track, const double angle);
-   virtual double getPitchToTracked(const unsigned int track) const;
+   void setPitchToTracked(const int track, const double angle);
+   double getPitchToTracked(const int track) const;
 
-   virtual void setHeadingToTracked(const unsigned int track, const double angle);
-   virtual double getHeadingToTracked(const unsigned int track) const;
+   void setHeadingToTracked(const int track, const double angle);
+   double getHeadingToTracked(const int track) const;
 
-   virtual void setDistanceToTracked(const unsigned int track, const double distance);
-   virtual double getDistanceToTracked(const unsigned int track) const;
+   void setDistanceToTracked(const int track, const double distance);
+   double getDistanceToTracked(const int track) const;
 
 public:
-   static const unsigned int MAX_TRACKS = 50;
+   static const int MAX_TRACKS{50};
 
 private:
    void initData();
 
-   bool alive {};
-   double roll {};
-   double pitch {};
-   double rollRate {};
-   double pitchRate {};
-   double yawRate {};
-   double heading {};
-   double altitude {};
-   double throttle {};
-   double speed {};
-   double pitchTrim {};
-   std::array<double, MAX_TRACKS> pitchToTracked {};
-   std::array<double, MAX_TRACKS> headingToTracked {};
-   std::array<double, MAX_TRACKS> distanceToTracked {};
-   unsigned int targetTrack {MAX_TRACKS};
-   unsigned int numTracks {};
-   bool tracking {};
-   bool missileFired {};
-   bool incomingMissile {};
-   int numEngines {};
+   bool alive{};
+   double roll{};
+   double pitch{};
+   double rollRate{};
+   double pitchRate{};
+   double yawRate{};
+   double heading{};
+   double altitude{};
+   double throttle{};
+   double speed{};
+   double pitchTrim{};
+   std::array<double, MAX_TRACKS> pitchToTracked{};
+   std::array<double, MAX_TRACKS> headingToTracked{};
+   std::array<double, MAX_TRACKS> distanceToTracked{};
+   int targetTrack{MAX_TRACKS};
+   int numTracks{};
+   bool tracking{};
+   bool missileFired{};
+   bool incomingMissile{};
+   int numEngines{};
 };
 
 }

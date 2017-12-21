@@ -242,20 +242,17 @@ void TestElectronic::updateTestValues(const double dt)
         // change our nav type here, just to test
         navType = NavType::VORTAC;
         secNavType = NavType::TACAN;
-    }
-    else if (windSpeed > 400) {
+    } else if (windSpeed > 400) {
         readoutMode = ReadoutMode::ND_GSP;
         // change our nav type here, just to test
         navType = NavType::TACAN;
         secNavType = NavType::INAV;
-    }
-    else if (windSpeed > 300) {
+    } else if (windSpeed > 300) {
         readoutMode = ReadoutMode::ND_TAS;
         // change our nav type here, just to test
         navType = NavType::INAV;
         secNavType = NavType::VORTAC;
-    }
-    else if (windSpeed > 200) {
+    } else if (windSpeed > 200) {
         readoutMode = ReadoutMode::ND_ET;
         // change our nav type here, just to test
         navType = NavType::VORDME;
@@ -266,8 +263,7 @@ void TestElectronic::updateTestValues(const double dt)
         // change our nav type here, just to test
         navType = NavType::VOR;
         secNavType = NavType::TACAN;
-    }
-    else {
+    } else {
         readoutMode = ReadoutMode::ND_TTG;
         navType = NavType::VORTAC;
         secNavType = NavType::TACAN;
@@ -298,7 +294,7 @@ void TestElectronic::updateData(const double dt)
     // current heading / current heading bug
     {
         // max rate here is 120 degs / second
-        double delta = mixr::base::alim(mixr::base::angle::aepcdDeg(heading - curHdg), 120 * dt);
+        double delta{mixr::base::alim(mixr::base::angle::aepcdDeg(heading - curHdg), 120 * dt)};
         curHdg = mixr::base::angle::aepcdDeg(curHdg + delta);
 
         // now figure our heading bug
@@ -308,8 +304,8 @@ void TestElectronic::updateData(const double dt)
         if (navMode == NavMode::ARC_MODE) {
             // we either move it to the left or right, depending on how far
             // off our slew is.
-            double diff = mixr::base::angle::aepcdDeg(curHdg - curBug);
-            double moveX = -1.8f;
+            double diff{mixr::base::angle::aepcdDeg(curHdg - curBug)};
+            double moveX{-1.8};
             if (diff >= -36 && diff < 36) {
                 if (diff > 0) moveX = 1.53;
                 else moveX = -1.8;
@@ -329,16 +325,15 @@ void TestElectronic::updateData(const double dt)
     // distance data / DME
     {
         // are we a distance type or DME type?
-        bool distType = true;   // initial type is DME
-        bool distVis = true;    // initial visibility is true
-        double curDist = mixr::base::alim(dist, 999.9);    // current distance to DME
+        bool distType{true};   // initial type is DME
+        bool distVis{true};    // initial visibility is true
+        double curDist{mixr::base::alim(dist, 999.9)};    // current distance to DME
 
         if (navSource == NavSource::PRIMARY) {
             // valid DME makes our label visible
             distVis = dmeValid;
             if (navType == NavType::INAV) distType = false;
-        }
-        else if (navSource == NavSource::SECONDARY) {
+        } else if (navSource == NavSource::SECONDARY) {
             // valid DME makes our label visible
             distVis = secDmeValid;
             if (secNavType == NavType::INAV) distType = false;
@@ -355,9 +350,9 @@ void TestElectronic::updateData(const double dt)
         // which course pointer are we using?
         send("whichcourseptr", SELECT, base::as_integer(navSource), whichCrsPtrSD);
 
-        int curIntCourse = 0;
-        double tempCDI = 0.0;
-        double tempCourse = 0.0;
+        int curIntCourse{};
+        double tempCDI{};
+        double tempCourse{};
         // primary nav course
         if (navSource == NavSource::PRIMARY) {
             curIntCourse = mixr::base::nint(course);
@@ -376,11 +371,11 @@ void TestElectronic::updateData(const double dt)
         send("course", UPDATE_VALUE, curIntCourse, courseSD);
 
         // here is the course deviation
-        double delta = mixr::base::alim (mixr::base::angle::aepcdDeg(tempCDI - curCdi), 4 * dt);
+        double delta{mixr::base::alim (mixr::base::angle::aepcdDeg(tempCDI - curCdi), 4 * dt)};
         curCdi = mixr::base::alim (curCdi + delta, 2.0);
 
         // now find our inches to translate the cdi
-        double cdiInch = curCdi * 0.43f;
+        double cdiInch{curCdi * 0.43};
 
         // now figure our course slew
         delta = mixr::base::alim(mixr::base::angle::aepcdDeg(tempCourse - curCourse), 120 * dt);
@@ -389,7 +384,7 @@ void TestElectronic::updateData(const double dt)
         // ok, do our color determination for the course pointer - primary first
         if (navSource == NavSource::PRIMARY) {
             // dealing with our primary course pointer here
-            bool vis = true;
+            bool vis{true};
             if (navMode == NavMode::MAP_MODE || navMode == NavMode::DECLUTTER) vis = false;
             send("primarycoursepointer", SET_VISIBILITY, vis, primaryCrsVisSD);
             // course pointer deviation and rotation
@@ -404,8 +399,7 @@ void TestElectronic::updateData(const double dt)
                 } else {
                     string->setStr("yellow");
                 }
-            }
-            else {
+            } else {
                 if (dmeValid) {
                     string->setStr("green");
                 } else {
@@ -416,10 +410,9 @@ void TestElectronic::updateData(const double dt)
             send("primarycoursepointer", SET_COLOR, string->getString(), priCrsPtrColorSD);
             // get rid of our string
             string->unref();
-        }
-        else {
+        } else {
             // secondary course pointer
-            bool vis = true;
+            bool vis{true};
             if (secNavMode == NavMode::MAP_MODE || secNavMode == NavMode::DECLUTTER) {
                 vis = false;
             }
@@ -433,8 +426,7 @@ void TestElectronic::updateData(const double dt)
             if (secNavType == NavType::VORTAC) {
                 if ((secVhfReceive && !(secVhfDIC || secVhfLGS)) || (secVhfLocValid && secVhfLGS)) string->setStr("green");
                 else string->setStr("yellow");
-            }
-            else {
+            } else {
                 if (secDmeValid) {
                     string->setStr("green");
                 } else {
@@ -457,7 +449,7 @@ void TestElectronic::updateData(const double dt)
 
         // first readout, which is our time to go
         if (readoutMode == ReadoutMode::ND_TTG) {
-            const double curTTG = timeToGo / 60.0;
+            const double curTTG{timeToGo / 60.0};
             send("ttg", UPDATE_VALUE, curTTG, ttgSD);
         }
         // ground speed, drift angle, drift angle side.
@@ -471,13 +463,13 @@ void TestElectronic::updateData(const double dt)
         }
         // true air speed
         else if (readoutMode == ReadoutMode::ND_TAS) {
-            int curTAS = mixr::base::nintd(trueAirSpeed * mixr::base::LinearVelocity::FPS2KTSCC);
+            int curTAS{mixr::base::nintd(trueAirSpeed * mixr::base::LinearVelocity::FPS2KTSCC)};
             send("trueairspeed", UPDATE_VALUE, curTAS, trueAirSpeedSD);
         }
         // elapsed time
         else if (readoutMode == ReadoutMode::ND_ET) {
             const auto hour = static_cast<int>(elapsedTime / 3600);
-            bool isMin = false;    // default to show hours
+            bool isMin{};       // default to show hours
             if (hour < 1) {
                 isMin = true; // show in minutes
                 send("elapsedtimemin", UPDATE_VALUE, elapsedTime, elapsedTimeSD);
@@ -495,7 +487,7 @@ void TestElectronic::updateData(const double dt)
             send("windspeed", UPDATE_VALUE, windSpeed, windSpeedSD);
             // wind drift angle (same as drift angle for test purposes)
             send("driftanglewind", UPDATE_VALUE, std::abs(driftAngle), driftAngleWindSD);
-            bool left = false;  // false is right side, true is left
+            bool left{};       // false is right side, true is left
             // drift angle side
             if (driftAngle < 0) left = true;
             send("driftanglewindside", SELECT, left, whichSideDAWindSD);
@@ -505,13 +497,12 @@ void TestElectronic::updateData(const double dt)
     // bearing readouts
     {
         // determine the source of our bearing
-        int brgSrc = 1; // default to INAV
+        int brgSrc{1}; // default to INAV
         if (navSource == NavSource::PRIMARY) {
             if (navType == NavType::VORTAC) brgSrc = 2;     // primary vortac
             else if (navType == NavType::TACAN) brgSrc = 3; // primary tacan
             send("bearingro", UPDATE_VALUE, bearing, brgROSD);
-        }
-        else {
+        } else {
             if (secNavType == NavType::VORTAC) brgSrc = 4; // secondary vortac
             else brgSrc = 5; // secondary tacan
             send("bearingro", UPDATE_VALUE, secBearing, secBrgROSD);
@@ -522,7 +513,7 @@ void TestElectronic::updateData(const double dt)
 
     // glide slope
     {
-        const auto gsDev = static_cast<double>(mixr::base::alim (gsDots, 2.1f) * 0.35f);
+        const auto gsDev = static_cast<double>(mixr::base::alim(gsDots, 2.1) * 0.35);
         send("glideslopedev", UPDATE_VALUE2, gsDev, glideSlopeSD);
     }
 
@@ -540,7 +531,7 @@ void TestElectronic::updateData(const double dt)
         send("whichnavsource", SELECT, base::as_integer(navSource), whichNavSrcSD);
 
         // primary nav source selection
-        int primaryPos = 1;     // 1 is INAV
+        int primaryPos{1};     // 1 is INAV
         if (navType == NavType::VORTAC) {
             // pilot
             if (loc == Location::PILOT) {
@@ -558,7 +549,7 @@ void TestElectronic::updateData(const double dt)
         send("whichprimaryreadout", SELECT, primaryPos, primaryPosSD);
 
         // now do our secondary source selections
-        int secondaryPos = 1;
+        int secondaryPos{1};
 
         if (secNavType == NavType::VORTAC) {
             // pilot
@@ -578,15 +569,15 @@ void TestElectronic::updateData(const double dt)
 
     // TO / FROM arrow - HSI mode only
     {
-        double toFrom = 0;
+        double toFrom{};
         if (navSource == NavSource::PRIMARY) toFrom = 1 - std::fabs(mixr::base::angle::aepcdDeg(bearing - course)) / 90;
         else toFrom = 1 - std::fabs(mixr::base::angle::aepcdDeg(secBearing - secCourse)) / 90;
 
-        double delta = mixr::base::alim(toFrom - curToFrom, dt);
+        double delta{mixr::base::alim(toFrom - curToFrom, dt)};
         curToFrom = mixr::base::alim(curToFrom + delta, 0.65);
 
         // if we are positive, we are to, negative, from
-        bool whichToFrom = (curToFrom > 0);
+        bool whichToFrom{curToFrom > 0};
         send("toorfrom", SELECT, whichToFrom, toOrFromSD);
 
         // now send down where to translate

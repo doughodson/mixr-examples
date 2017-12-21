@@ -24,33 +24,32 @@
 namespace mixr {
 namespace xbehaviors {
 
-IMPLEMENT_ABSTRACT_SUBCLASS(PlaneBehaviorBase, "PlaneBehaviorBase")
-EMPTY_COPYDATA(PlaneBehaviorBase)
-EMPTY_DELETEDATA(PlaneBehaviorBase)
+IMPLEMENT_ABSTRACT_SUBCLASS(PlaneBehavior, "BasePlaneBehavior")
+EMPTY_COPYDATA(PlaneBehavior)
+EMPTY_DELETEDATA(PlaneBehavior)
 
-BEGIN_SLOTTABLE(PlaneBehaviorBase)
+BEGIN_SLOTTABLE(PlaneBehavior)
     "criticalAltitude",
     "voteOnCriticalAltitude",
     "voteOnIncomingMissile"
-END_SLOTTABLE(PlaneBehaviorBase)
+END_SLOTTABLE(PlaneBehavior)
 
-BEGIN_SLOT_MAP(PlaneBehaviorBase)
-   ON_SLOT( 1, setSlotCriticalAltitude, base::Distance )
+BEGIN_SLOT_MAP(PlaneBehavior)
+   ON_SLOT( 1, setSlotCriticalAltitude,       base::Distance )
    ON_SLOT( 2, setSlotVoteOnCriticalAltitude, base::Number)
-   ON_SLOT( 3, setSlotVoteOnIncomingMissile, base::Number)
+   ON_SLOT( 3, setSlotVoteOnIncomingMissile,  base::Number)
 END_SLOT_MAP()
 
-
-PlaneBehaviorBase::PlaneBehaviorBase()
+PlaneBehavior::PlaneBehavior()
 {
    STANDARD_CONSTRUCTOR()
 }
 
-bool PlaneBehaviorBase::setSlotCriticalAltitude(const base::Distance* const msg)
+bool PlaneBehavior::setSlotCriticalAltitude(const base::Distance* const msg)
 {
-    bool ok = false;
+    bool ok{};
     if (msg != nullptr) {
-       double value = base::Meters::convertStatic( *msg );
+       const double value{base::Meters::convertStatic( *msg )};
        criticalAltitude = value;
        ok = true;
     }
@@ -58,10 +57,10 @@ bool PlaneBehaviorBase::setSlotCriticalAltitude(const base::Distance* const msg)
 }
 
 // [ 1 .. 65535 ]
-bool PlaneBehaviorBase::setSlotVoteOnCriticalAltitude(const base::Number* const num)
+bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Number* const num)
 {
-   bool ok = false;
-   int vote = num->getInt();
+   bool ok{};
+   const int vote{num->getInt()};
    if (vote > 0 && vote <= 65535) {
       voteOnCriticalAltitude = static_cast<unsigned int>(vote);
       ok = true;
@@ -70,10 +69,10 @@ bool PlaneBehaviorBase::setSlotVoteOnCriticalAltitude(const base::Number* const 
 }
 
 // [ 1 .. 65535 ]
-bool PlaneBehaviorBase::setSlotVoteOnIncomingMissile(const base::Number* const num)
+bool PlaneBehavior::setSlotVoteOnIncomingMissile(const base::Number* const num)
 {
-   bool ok = false;
-   int vote = num->getInt();
+   bool ok{};
+   const int vote{num->getInt()};
    if (vote > 0 && vote <= 65535) {
       voteOnIncomingMissile = static_cast<unsigned int>(vote);
       ok = true;
@@ -100,7 +99,7 @@ PlaneFire::PlaneFire()
 
 base::ubf::AbstractAction* PlaneFire::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
    
    //if (pState!=0 && pState->isAlive() && pState->isTracking() && pState->getTargetTrack()>=0) {
@@ -117,9 +116,9 @@ base::ubf::AbstractAction* PlaneFire::genAction(const base::ubf::AbstractState* 
 
 bool PlaneFire::setSlotMaxDistance(const base::Distance* const msg)
 {
-    bool ok = false;
+    bool ok{};
     if (msg != nullptr) {
-       double value = base::Meters::convertStatic( *msg );
+       const double value{base::Meters::convertStatic( *msg )};
        maxDistance = value;
        ok = true;
     }
@@ -139,14 +138,14 @@ PlaneFlyStraight::PlaneFlyStraight()
 
 base::ubf::AbstractAction* PlaneFlyStraight::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
       action = new PlaneAction();
       
       //Reverse pitch to get level with the horizon
-      double pitch = -1 * pState->getPitch();
+      double pitch{-1 * pState->getPitch()};
       //For positive pitch values, multiply to counteract effects of the negative pitch rate
       //of the dynamics model
       if (pitch > 0) {
@@ -158,7 +157,7 @@ base::ubf::AbstractAction* PlaneFlyStraight::genAction(const base::ubf::Abstract
       }
       action->setPitch(pitch);
 
-      double roll = -1 * pState->getRoll();
+      double roll{-1 * pState->getRoll()};
       roll *= 100;
       action->setRoll(roll);
 
@@ -166,7 +165,7 @@ base::ubf::AbstractAction* PlaneFlyStraight::genAction(const base::ubf::Abstract
          action->setPitch(action->getPitch() * -1);                //change pitch in the opposite direction if upside-down
       }
 
-      double heading = 1;
+      double heading{1.0};
       action->setHeading(heading);
       //double pitchTrim = 0;
       action->setThrottle(2.0);
@@ -188,13 +187,13 @@ EMPTY_DELETEDATA(PlaneFollowEnemy)
 
 base::ubf::AbstractAction* PlaneFollowEnemy::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive() && pState->isTracking() && pState->getTargetTrack()<PlaneState::MAX_TRACKS) {
       action = new PlaneAction();
 
-      double pitch = -1 * pState->getPitch()+ .02;// pState->getPitchToEnemy() * 10;
+      double pitch{-1 * pState->getPitch()+ 0.02};// pState->getPitchToEnemy() * 10;
       //For positive pitch values, multiply to counteract effects of the negative pitch rate
       //of the dynamics model
       if (pitch > 0) {
@@ -202,8 +201,8 @@ base::ubf::AbstractAction* PlaneFollowEnemy::genAction(const base::ubf::Abstract
       }
       action->setPitch(pitch);
 
-      double roll = -1 * pState->getRoll();
-      unsigned int targetTrack = pState->getTargetTrack();
+      double roll{-1.0 * pState->getRoll()};
+      int targetTrack{pState->getTargetTrack()};
       roll += pState->getHeadingToTracked(targetTrack) * 10;
 
       if (pState->getRoll() < -1.57079) {
@@ -211,10 +210,10 @@ base::ubf::AbstractAction* PlaneFollowEnemy::genAction(const base::ubf::Abstract
       } else if (pState->getRoll() > 1.57079) {
          roll = -1 * pState->getRoll() + 1.57079;
       }
-      if(roll > 1.0) {
+      if (roll > 1.0) {
          roll = 1.0;
       }
-      if(roll < -1.0) {
+      if (roll < -1.0) {
          roll = -1.0;
       }
       action->setRoll(roll);
@@ -233,7 +232,7 @@ EMPTY_DELETEDATA(PlaneTurn)
 
 base::ubf::AbstractAction* PlaneTurn::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
@@ -242,11 +241,11 @@ base::ubf::AbstractAction* PlaneTurn::genAction(const base::ubf::AbstractState* 
       //double currentAlt = pState->getAltitude();
       //double changeInAlt = currentAlt - prevAlt;
 
-      double pitch = 1;//.5;
+      double pitch{1};          //0.5;
       action->setPitch(pitch);
 
-      double roll;
-      //if(pState->getPitch() >.015)
+      double roll{};
+      //if (pState->getPitch() >.015)
       //{
       //  roll = -1 * pState->getRoll() - 1.25;
       //}else if(pState->getPitch()< 0){
@@ -273,7 +272,7 @@ EMPTY_DELETEDATA(PlaneSlowTurn)
 
 base::ubf::AbstractAction* PlaneSlowTurn::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
@@ -285,7 +284,7 @@ base::ubf::AbstractAction* PlaneSlowTurn::genAction(const base::ubf::AbstractSta
       //double pitch = 1;//.5;
       //action->setPitch(pitch);
 
-      double roll;
+      double roll{};
       //if(pState->getPitch() >.015)
       //{
       //  roll = -1 * pState->getRoll() - 1.25;
@@ -314,14 +313,14 @@ EMPTY_DELETEDATA(PlaneClimb)
 
 base::ubf::AbstractAction* PlaneClimb::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
-      double pitch = -1;
+      double pitch{-1};
       action = new PlaneAction();
 
-      if(pState->getPitch() < base::PI/2) {
+      if (pState->getPitch() < base::PI/2) {
          pitch=1;
       }
       action->setPitch(pitch);
@@ -343,14 +342,14 @@ EMPTY_DELETEDATA(PlaneDive)
 
 base::ubf::AbstractAction* PlaneDive::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
-      double pitch;
+      double pitch{};
       action = new PlaneAction();
 
-      if(pState->getPitch() > -base::PI/2) {
+      if (pState->getPitch() > -base::PI/2) {
          pitch=-1;
       } else {
          pitch = 1;
@@ -378,16 +377,16 @@ PlaneTrim::PlaneTrim()
 
 base::ubf::AbstractAction* PlaneTrim::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
-      double pitchTrim = 0;
+      double pitchTrim{};
       action = new PlaneAction();
 
-      if(pState->getPitch() >0.0) {
+      if (pState->getPitch() >0.0) {
          pitchTrim = -.1;
-      }else{
+      } else {
          pitchTrim = .1;
       }
       action->setPitchTrim(pitchTrim);
@@ -409,11 +408,11 @@ EMPTY_DELETEDATA(PlaneRoll)
 
 base::ubf::AbstractAction* PlaneRoll::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
-      double roll=1;
+      double roll{1.0};
       action = new PlaneAction();
 
       action->setRoll(roll);
@@ -435,7 +434,7 @@ EMPTY_DELETEDATA(PlaneBarrelRoll)
 
 base::ubf::AbstractAction* PlaneBarrelRoll::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
@@ -466,13 +465,13 @@ PlaneLoop::PlaneLoop()
 
 base::ubf::AbstractAction* PlaneLoop::genAction(const base::ubf::AbstractState* const state, const double dt)
 {
-   PlaneAction* action = nullptr;
+   PlaneAction* action{};
    const auto pState = dynamic_cast<const PlaneState*>(state->getUbfStateByType(typeid(PlaneState)));
 
    if (pState!=nullptr && pState->isAlive()) {
       action = new PlaneAction();
       action->setRoll(0.0);
-      if(pState->getSpeed() < 600 && !keepGoing) {
+      if (pState->getSpeed() < 600 && !keepGoing) {
          action->setPitch(0);
       } else {
          keepGoing = true;

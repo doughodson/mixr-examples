@@ -9,14 +9,14 @@
 //
 // Description: Rockwell-Collins Efis test page to stimulate arc mode.
 //------------------------------------------------------------------------------
-class TestElectronic : public mixr::graphics::Page
+class TestElectronic final: public mixr::graphics::Page
 {
    DECLARE_SUBCLASS(TestElectronic, mixr::graphics::Page)
 
 public:
     TestElectronic();
 
-    virtual void updateData(const double dt = 0.0) override;
+    void updateData(const double dt = 0.0) final;
 
 private:
 
@@ -34,16 +34,16 @@ private:
 
     void updateTestValues(const double dt);    // update our data
 
-    double heading {};              // our compass heading
-    double headingRate {3.0};
-    double headingBug {};           // our heading indicator bug
+    double heading{};              // our compass heading
+    double headingRate{3.0};
+    double headingBug{};           // our heading indicator bug
     SendData headingSD;
-    SendData headingBugSD;          // for sending to our heading indicator
+    SendData headingBugSD;         // for sending to our heading indicator
 
-    double bearing {};              // our bearing
-    double secBearing {};           // secondary bearing
-    double brgRate {5.0};
-    bool brgVis {true};             // bearing visibility
+    double bearing{};              // our bearing
+    double secBearing{};           // secondary bearing
+    double brgRate{5.0};
+    bool brgVis{true};             // bearing visibility
 
     // nav
     NavSource navSource {NavSource::PRIMARY};
@@ -53,50 +53,50 @@ private:
     NavMode secNavMode {NavMode::ARC_MODE};
 
     // course and course validity checks
-    double course {};               // primary course
-    double secCourse {};            // secondary course
-    bool   vhfReceive {true};
-    bool   vhfDIC {true};
-    bool   vhfLocValid {true};
-    bool   vhfLGS {true};
-    bool   dmeValid {true};
-    bool   secVhfReceive {true};
-    bool   secVhfDIC {true};
-    bool   secVhfLocValid {true};
-    bool   secVhfLGS {true};
-    bool   secDmeValid {true};
-    double cdi {};
-    double cdiRate {0.3};
-    double secCdi {};
+    double course{};               // primary course
+    double secCourse{};            // secondary course
+    bool   vhfReceive{true};
+    bool   vhfDIC{true};
+    bool   vhfLocValid{true};
+    bool   vhfLGS{true};
+    bool   dmeValid{true};
+    bool   secVhfReceive{true};
+    bool   secVhfDIC{true};
+    bool   secVhfLocValid{true};
+    bool   secVhfLGS{true};
+    bool   secDmeValid{true};
+    double cdi{};
+    double cdiRate{0.3};
+    double secCdi{};
 
-    Location loc {Location::PILOT}; // cockpit location (PILOT or COPILOT)
+    Location loc{Location::PILOT}; // cockpit location (PILOT or COPILOT)
 
-    double dist {};                 // distance (miles) to our next navaid
-    double distRate {3.0};
+    double dist{};                 // distance (miles) to our next navaid
+    double distRate{3.0};
 
     // data
-    double timeToGo {};
-    double ttgRate {50.0};
-    double groundSpeed {};
-    double driftAngle {};
-    double daRate {10.0};
-    double trueAirSpeed {};
-    double tasRate {10.0};
-    double elapsedTime {3500.0};
-    double etRate {20.0};
-    double windDir {};
-    double windSpeed {};
-    ReadoutMode readoutMode {ReadoutMode::ND_TTG};    // primary or secondary
+    double timeToGo{};
+    double ttgRate{50.0};
+    double groundSpeed{};
+    double driftAngle{};
+    double daRate{10.0};
+    double trueAirSpeed{};
+    double tasRate{10.0};
+    double elapsedTime{3500.0};
+    double etRate{20.0};
+    double windDir{};
+    double windSpeed{};
+    ReadoutMode readoutMode{ReadoutMode::ND_TTG};    // primary or secondary
 
     // glideslope
-    double gsDots {};
-    double gsDotsRate {0.2};
-    bool   vhfGSValid {true};
-    bool   vhfGSOOV {true};
+    double gsDots{};
+    double gsDotsRate{0.2};
+    bool   vhfGSValid{true};
+    bool   vhfGSOOV{true};
 
     // SLS - transfer from Electronic HSI class
-    double curHdg {};               // current slewed heading
-    double curBug {};               // current heading bug
+    double curHdg{};                // current slewed heading
+    double curBug{};                // current heading bug
     SendData hdgBugROMoveXSD;       // where to move our heading bug readout
     SendData hdgBugROSD;            // heading bug readout
     SendData distTypeSD;            // type of distance data we are using
@@ -125,10 +125,10 @@ private:
     SendData compassHdgSD;          // compass heading
     SendData hdgBugSD;              // heading bug
     SendData priCourseDevSD;        // primary course deviation
-    double curCdi {};               // current course deviation
+    double curCdi{};                // current course deviation
     SendData crsPntrSD;             // course pointer rotation
     SendData whichCrsPtrSD;         // which course pointer (primary or secondary)
-    double curCourse {};            // current course (for slewing)
+    double curCourse{};             // current course (for slewing)
     SendData priCrsPtrColorSD;      // primary course pointer color
     SendData secCrsPntrSD;          // secondary course pointer rotation
     SendData secCourseDevSD;        // secondary course pointer deviation
@@ -138,7 +138,7 @@ private:
     SendData secondaryPosSD;        // secondary nav position
     SendData primaryCrsVisSD;       // primary course visibility
     SendData secondaryCrsVisSD;     // secondary course visibility
-    double curToFrom {};            // current to / from
+    double curToFrom{};             // current to / from
     SendData toOrFromSD;            // to or from flag
     SendData toFromSD;              // to from translation
 };

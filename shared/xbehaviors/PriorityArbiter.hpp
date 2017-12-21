@@ -10,17 +10,15 @@ namespace xbehaviors {
 
 //------------------------------------------------------------------------------
 // Class: PriorityArbiter
-//
-// Description: Example fusion arbiter for a plane
 //------------------------------------------------------------------------------
-class PriorityArbiter : public base::ubf::Arbiter
+class PriorityArbiter final: public base::ubf::Arbiter
 {
    DECLARE_SUBCLASS(PriorityArbiter, base::ubf::Arbiter)
 
 public:
    PriorityArbiter();
 
-   virtual base::ubf::AbstractAction* genComplexAction(base::List* const actionSet) override;
+   base::ubf::AbstractAction* genComplexAction(base::List* const actionSet) final;
 
 private:
 

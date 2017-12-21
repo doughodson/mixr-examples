@@ -25,131 +25,150 @@ namespace ubf { class AbstractState; class AbstractAction; }
 namespace xbehaviors {
 
 //------------------------------------------------------------------------------
-// test code for a base class for PlaneBehaviors, implements some common slots
+// Class: PlaneBehavior
+// Description: Abstract base class for concrete plane behaviors
 //------------------------------------------------------------------------------
-class PlaneBehaviorBase : public base::ubf::AbstractBehavior
+class PlaneBehavior : public base::ubf::AbstractBehavior
 {
-  DECLARE_SUBCLASS(PlaneBehaviorBase, base::ubf::AbstractBehavior)
+  DECLARE_SUBCLASS(PlaneBehavior, base::ubf::AbstractBehavior)
+
 public:
-   PlaneBehaviorBase();
+   PlaneBehavior();
 
 protected:
-   bool setSlotCriticalAltitude(const base::Distance* const msg);
-   bool setSlotVoteOnCriticalAltitude(const base::Number* const num);
-   bool setSlotVoteOnIncomingMissile(const base::Number* const num);
+   int voteOnIncomingMissile{};
+   int voteOnCriticalAltitude{};
+   double criticalAltitude{3500.0};
 
-   unsigned int voteOnIncomingMissile {};
-   unsigned int voteOnCriticalAltitude {};
-   double criticalAltitude {3500.0};
+private:
+   // slot table helper methods
+   bool setSlotCriticalAltitude(const base::Distance* const);
+   bool setSlotVoteOnCriticalAltitude(const base::Number* const);
+   bool setSlotVoteOnIncomingMissile(const base::Number* const);
 };
-
 
 //------------------------------------------------------------------------------
 // Class: PlaneFire
 //
 // Description: Behavior class that shoots missiles at enemy planes
 //------------------------------------------------------------------------------
-class PlaneFire : public PlaneBehaviorBase
+class PlaneFire final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneFire, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneFire, PlaneBehavior)
+
 public:
    PlaneFire();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
-protected:
-   bool setSlotMaxDistance(const base::Distance* const msg);
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
+
 private:
-   double maxDistance {15500.0};
+   double maxDistance{15500.0};
+
+private:
+   // slot table helper methods
+   bool setSlotMaxDistance(const base::Distance* const);
 };
 
-class PlaneFlyStraight : public PlaneBehaviorBase
+class PlaneFlyStraight final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneFlyStraight, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneFlyStraight, PlaneBehavior)
+
 public:
    PlaneFlyStraight();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
+
 private:
-   double holdingAltitude {4500.0};
+   double holdingAltitude{4500.0};
 };
 
-class PlaneFollowEnemy : public PlaneBehaviorBase
+class PlaneFollowEnemy final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneFollowEnemy, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneFollowEnemy, PlaneBehavior)
+
 public:
    PlaneFollowEnemy();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneTurn : public PlaneBehaviorBase
+class PlaneTurn final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneTurn, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneTurn, PlaneBehavior)
+
 public:
    PlaneTurn();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneSlowTurn : public PlaneBehaviorBase
+class PlaneSlowTurn final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneSlowTurn, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneSlowTurn, PlaneBehavior)
+
 public:
    PlaneSlowTurn();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneClimb : public PlaneBehaviorBase
+class PlaneClimb final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneClimb, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneClimb, PlaneBehavior)
+
 public:
    PlaneClimb();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneDive : public PlaneBehaviorBase
+class PlaneDive final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneDive, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneDive, PlaneBehavior)
+
 public:
    PlaneDive();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneTrim : public PlaneBehaviorBase
+class PlaneTrim final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneTrim, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneTrim, PlaneBehavior)
+
 public:
    PlaneTrim();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
+
 private:
-   double holdingAltitude {4500.0};
-   int count {};
+   double holdingAltitude{4500.0};
+   int count{};
 };
 
-class PlaneRoll : public PlaneBehaviorBase
+class PlaneRoll final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneRoll, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneRoll, PlaneBehavior)
+
 public:
    PlaneRoll();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneBarrelRoll : public PlaneBehaviorBase
+class PlaneBarrelRoll final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneBarrelRoll, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneBarrelRoll, PlaneBehavior)
+
 public:
    PlaneBarrelRoll();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
 };
 
-class PlaneLoop : public PlaneBehaviorBase
+class PlaneLoop final: public PlaneBehavior
 {
-   DECLARE_SUBCLASS(PlaneLoop, PlaneBehaviorBase)
+   DECLARE_SUBCLASS(PlaneLoop, PlaneBehavior)
+
 public:
    PlaneLoop();
-   virtual base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) override;
+   base::ubf::AbstractAction* genAction(const base::ubf::AbstractState* const state, const double dt) final;
+
 private:
-   bool keepGoing {};
+   bool keepGoing{};
 };
 
 }
 }
 
 #endif
-

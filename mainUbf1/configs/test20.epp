@@ -13,8 +13,8 @@
    tcPriority: 1
 
    // image generator host interface
-   igHost: {
-      #include "ighosts/cigi.epp"
+   igHosts: {
+      //#include "ighosts/cigi.epp"
       //#include "ighosts/cigi2.epp"
    }
 

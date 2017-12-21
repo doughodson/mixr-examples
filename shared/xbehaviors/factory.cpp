@@ -14,7 +14,7 @@ namespace xbehaviors {
 
 base::Object* factory(const std::string& name)
 {
-    base::Object* obj {};
+    base::Object* obj{};
 
     if ( name == PlaneState::getFactoryName() ) {
         obj = new PlaneState();

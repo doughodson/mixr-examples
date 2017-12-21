@@ -15,32 +15,31 @@ namespace base { class Number; }
 // Inputs:
 //      UPDATE_VALUE  -> altitude flag on or off
 //------------------------------------------------------------------------------
-class SpdLines : public mixr::graphics::Graphic
+class SpdLines final: public mixr::graphics::Graphic
 {
     DECLARE_SUBCLASS(SpdLines, mixr::graphics::Graphic)
 
 public:
     SpdLines();
 
-    virtual void drawFunc() override;
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+    void drawFunc() final;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
     // set methods
-    virtual bool setIsAlt(const bool newIsAlt)          { isAlt = newIsAlt; return true; }
+    bool setIsAlt(const bool newIsAlt)          { isAlt = newIsAlt; return true; }
 
     // get methods
-    bool isAltSelected()                                { return isAlt; }
+    bool isAltSelected()                        { return isAlt; }
 
 private:
     // event method
-    bool onEventSetIsAltSpdLines(const mixr::base::Number* const x);
+    bool onEventSetIsAltSpdLines(const mixr::base::Number* const);
 
-    bool isAlt {};     // are we drawing the altitude lines instead?
+    bool isAlt{};     // are we drawing the altitude lines instead?
 
 private:
     // slot table helper methods
     bool setSlotIsAlt(const mixr::base::Number*);
-
 };
 
 #endif

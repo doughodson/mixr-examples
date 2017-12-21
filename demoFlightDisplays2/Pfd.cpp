@@ -190,16 +190,16 @@ void Pfd::updateData(const double dt)
     BaseClass::updateData(dt);
 
     // find the last digit for the readout tape
-    double ones = ((airSpd / 10) - static_cast<int>(airSpd / 10)) * 10;
+    double ones{((airSpd / 10) - static_cast<int>(airSpd / 10)) * 10.0};
     // find the 100s value for the dynamic arc segment
     const auto rest = static_cast<int>(airSpd / 10.0);
 
-    const double diff = airSpd - cmdSpd;
+    const double diff{airSpd - cmdSpd};
 
-    const double altDiff = alt - cmdAlt;
+    const double altDiff{alt - cmdAlt};
     // let's break the altitude down into ones and tens, so we can
     // send that data to the tape gauge
-    const double altTens = ((alt/100) - static_cast<int>(alt/100)) * 10;
+    const double altTens{((alt/100) - static_cast<int>(alt/100)) * 10.0};
     // now figure the rest of the number
     const auto altRest = static_cast<int>(alt/99.9999);
 
@@ -219,12 +219,10 @@ void Pfd::updateData(const double dt)
     if (altRest < 10) {
         send("altsel", SELECT, 1, altSelectSD);
         send("altrest1", UPDATE_VALUE, altRest, alt1SD);
-    }
-    else if (altRest < 100) {
+    } else if (altRest < 100) {
         send("altsel", SELECT, 2, altSelectSD);
         send("altrest2", UPDATE_VALUE, altRest, alt2SD);
-    }
-    else {
+    } else {
         send("altsel", SELECT, 3, altSelectSD);
         send("altrest3", UPDATE_VALUE, altRest, alt3SD);
     }
@@ -251,7 +249,7 @@ void Pfd::updateData(const double dt)
     send("ghosthorizonbar", UPDATE_INSTRUMENTS, pitch, pitchGhostSD);
     // convert alt to meters and send it to our meters readout
     auto mAlt = static_cast<int>(base::distance::FeetToMeters(alt));
-    double mAltBug = base::distance::FeetToMeters(cmdAlt);
+    double mAltBug{base::distance::FeetToMeters(cmdAlt)};
     send("malt", UPDATE_VALUE, mAlt, mAltSD);
     send("cmdmalt", UPDATE_VALUE, mAltBug, cmdMAltSD);
 }

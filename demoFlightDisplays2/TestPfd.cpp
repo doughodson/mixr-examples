@@ -128,7 +128,7 @@ void TestPfd::updateData(const double dt)
     }
 
     // test data
-    double mach = airSpd / 600;
+    double mach{airSpd / 600.0};
 
     // commanded speed
     cmdSpd = 150;
@@ -214,8 +214,7 @@ void TestPfd::updateData(const double dt)
         baroRate = -baroRate;
     }
 
-
-    base::Pair* pair = findByType(typeid(Pfd));
+    base::Pair* pair{findByType(typeid(Pfd))};
     if (pair != nullptr) {
         const auto p = static_cast<Pfd*>(pair->object());
         if (p != nullptr) {

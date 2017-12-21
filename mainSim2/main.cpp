@@ -22,15 +22,15 @@ namespace mixr {
 namespace example {
 
 // default background frame rate
-const int BG_RATE {10};
-SimStation* simStation {};
+const int BG_RATE{10};
+SimStation* simStation{};
 
 // SimStation builder
 SimStation* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   base::Object* obj {base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   base::Object* obj{base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -67,11 +67,11 @@ void updateDataCB(int msecs)
    glutTimerFunc(msecs, updateDataCB, msecs);
 
    // Current time
-   const double time {base::getComputerTime()};
+   const double time{base::getComputerTime()};
 
    // Compute delta time
-   static double time0 {time};   // N-1 Time
-   const double dt {time - time0};
+   static double time0{time};   // N-1 Time
+   const double dt{time - time0};
    time0 = time;
 
    simStation->updateData(dt);
@@ -96,8 +96,8 @@ int main(int argc, char* argv[])
    simStation->event(base::Component::RESET_EVENT);
 
    // set timer for background tasks
-   const double dt {1.0 / static_cast<double>(BG_RATE)};
-   const int msecs {static_cast<int>(dt * 1000)};
+   const double dt{1.0 / static_cast<double>(BG_RATE)};
+   const int msecs{static_cast<int>(dt * 1000)};
 
    // ensure everything is reset
    simStation->updateData(dt);

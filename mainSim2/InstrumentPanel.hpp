@@ -21,7 +21,7 @@ class MfdDisplay;
 //   'f' or 'F'   -- Toggle simulation freeze
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class InstrumentPanel : public mixr::glut::GlutDisplay
+class InstrumentPanel final: public mixr::glut::GlutDisplay
 {
    DECLARE_SUBCLASS(InstrumentPanel, mixr::glut::GlutDisplay)
 
@@ -32,8 +32,8 @@ public:
    mixr::simulation::Simulation* getSimulation();
    mixr::simulation::Station* getStation();
 
-   virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
-   virtual void updateData(const double dt = 0.0) override;
+   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+   void updateData(const double dt = 0.0) final;
 
 protected:
    // Key event handlers
@@ -45,50 +45,50 @@ private:
    mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
    // ALT Stuff
-   double altitude {};         // our current altitude
+   double altitude{};         // our current altitude
    SendData altitudeSD;
 
    // VVI Stuff
-   mixr::base::Vec3d vvi;        // velocity vector
+   mixr::base::Vec3d vvi;     // velocity vector
    SendData vviSD;
-   double pastVvi {};          // our past vvi value (to create a linear filter)
+   double pastVvi{};          // our past vvi value (to create a linear filter)
 
    // AOA Stuff
-   double aoa {};              // angle of attack
+   double aoa{};              // angle of attack
    SendData aoaSD;
-   SendData aoaDigSD;          // angle of attack (digital)
+   SendData aoaDigSD;         // angle of attack (digital)
 
    // HSI Stuff - sends this to our Sim3Hsi class
-   double heading {};          // our heading (in degrees)
+   double heading{};          // our heading (in degrees)
    SendData headingSD;
-   double bpAngle {};          // our bearing pointer angle (degrees)
+   double bpAngle{};          // our bearing pointer angle (degrees)
    SendData bpAngleSD;
-   double dme {};              // dme (miles)
+   double dme{};              // dme (miles)
    SendData dmeSD;
 
    // CAS Stuff
-   double airSpeed {};         // our air speed (in knots)
+   double airSpeed{};         // our air speed (in knots)
    SendData airSpeedSD;
 
    // G Stuff
-   double gForce {};           // g's we are pulling
+   double gForce{};           // g's we are pulling
    SendData gForceSD;
-   SendData gForce2SD;         // this is for the analog meter
+   SendData gForce2SD;        // this is for the analog meter
 
    // ADI
-   double pitch {};            // pitch (degrees)
+   double pitch{};            // pitch (degrees)
    SendData pitchSD;
-   double roll {};             // roll (degrees)
+   double roll{};             // roll (degrees)
    SendData rollSD;
-   double slip {};             // slip (degrees)
+   double slip{};             // slip (degrees)
    SendData slipSD;
 
    // Mach
-   double mach {};             // mach number
+   double mach{};             // mach number
    SendData machSD;
 
    // G
-   double gload {};            // G
+   double gload{};            // G
    SendData gloadSD;
 };
 

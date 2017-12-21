@@ -94,27 +94,27 @@ void MapPage::drawFunc()
 {
     // we are going to draw lat / lon lines
     // now let's draw our map lines
-    const double refLat {getReferenceLatDeg()};
-    const double refLon {getReferenceLonDeg()};
+    const double refLat{getReferenceLatDeg()};
+    const double refLon{getReferenceLonDeg()};
     // now get our range
-    double latRange {getRange() / 60.0};
-    const double southernLat {refLat - latRange};
-    const double northernLat {refLat + latRange};
+    double latRange{getRange() / 60.0};
+    const double southernLat{refLat - latRange};
+    const double northernLat{refLat + latRange};
     // after calcs, double our lat range to encompass the whole screen
     latRange *= 2;
 
     // get our viewport
     const auto dis = static_cast<Display*>(getDisplay());
     if (dis != nullptr) {
-        int start {mixr::base::nint(static_cast<double>(southernLat) - 1)};
-        GLdouble l {}, r {}, t {}, b {}, n {}, f {};
+        int start{mixr::base::nint(static_cast<double>(southernLat) - 1)};
+        GLdouble l{}, r{}, t{}, b{}, n{}, f{};
         dis->getOrtho(l, r, b, t, n, f);
-        const double inchPerDegNS {t*2 / latRange};
+        const double inchPerDegNS{t*2 / latRange};
         glPushMatrix();
             glBegin(GL_LINES);
-                int count {};
+                int count{};
                 while (start < mixr::base::nint( static_cast<double>(northernLat) ) + 1) {
-                    GLfloat disFromRef = static_cast<GLfloat>(refLat - start);
+                    GLfloat disFromRef{static_cast<GLfloat>(refLat - start)};
                     disFromRef *= static_cast<GLfloat>(inchPerDegNS);
                     if (count < MAX_READOUTS) {
                         lats[count] = start;
@@ -131,18 +131,18 @@ void MapPage::drawFunc()
         glPopMatrix();
 
         // now for the longitude lines
-        double lonRange {getRange() / (60 * getCosRefLat())};
-        const double easternLon {refLon - lonRange};
-        const double westernLon {refLon + lonRange};
+        double lonRange{getRange() / (60 * getCosRefLat())};
+        const double easternLon{refLon - lonRange};
+        const double westernLon{refLon + lonRange};
 
         lonRange *= 2;
         start = mixr::base::nint(static_cast<double>(easternLon) - 1);
-        const double inchPerDegEW {r*2 / lonRange};
+        const double inchPerDegEW{r*2 / lonRange};
         glPushMatrix();
             glBegin(GL_LINES);
                 count = 0;
                 while (start < mixr::base::nint( static_cast<double>(westernLon) ) + 1) {
-                    GLfloat disFromRef {static_cast<GLfloat>(refLon - start)};
+                    GLfloat disFromRef{static_cast<GLfloat>(refLon - start)};
                     if (count < MAX_READOUTS) {
                         lons[count] = start;
                         disFromRef *= static_cast<GLfloat>(inchPerDegEW);
@@ -165,14 +165,14 @@ void MapPage::updateData(const double dt)
 
     // get our pointers
     if (loader == nullptr) {
-        mixr::base::Pair* pair {findByType(typeid(mixr::graphics::SymbolLoader))};
+        mixr::base::Pair* pair{findByType(typeid(mixr::graphics::SymbolLoader))};
         if (pair != nullptr) {
             loader = dynamic_cast<mixr::graphics::SymbolLoader*>(pair->object());
             if (loader != nullptr) loader->ref();
         }
     }
     if (stn == nullptr) {
-        mixr::graphics::Display* dis {getDisplay()};
+        mixr::graphics::Display* dis{getDisplay()};
         if (dis != nullptr) {
             stn = static_cast<Station*>(dis->findContainerByType(typeid(Station)));
             if (stn != nullptr) {
@@ -192,8 +192,8 @@ void MapPage::updateData(const double dt)
         mixr::base::PairStream* stream {stn->getPlayers()};
         if (stream != nullptr) {
             // create our new player list
-            mixr::models::Player* newPlayers[MAX_PLAYERS] {};
-            int numNewPlayers {};
+            mixr::models::Player* newPlayers[MAX_PLAYERS]{};
+            int numNewPlayers{};
             // go through all of our non-ownship players and populate our new list
             mixr::base::List::Item* item {stream->getFirstItem()};
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
@@ -213,7 +213,7 @@ void MapPage::updateData(const double dt)
             // players that aren't in the old list
             for (int i = 0; i < MAX_PLAYERS; i++) {
                 if (player[i] != nullptr) {
-                    bool match {};
+                    bool match{};
                     for (int j = 0; j < numNewPlayers && !match; j++) {
                         if (player[i] == newPlayers[j]) {
                             // if they do match, get rid of our new player, so we don't re-add it
@@ -237,14 +237,14 @@ void MapPage::updateData(const double dt)
             for (int i = 0; i < numNewPlayers; i++) {
                 // make sure this player wasn't deleted earlier
                 if (newPlayers[i] != nullptr) {
-                    bool found {};
+                    bool found{};
                     for (int j = 0; j < MAX_PLAYERS && !found; j++) {
                         if (player[j] == nullptr) {
                             found = true;
                             // found an empty player, let's set him!
                             player[j] = newPlayers[i];
                             player[j]->ref();
-                            int type {1};
+                            int type{1};
                             if (player[j]->isSide(mixr::models::Player::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "player");
                             if (player[j]->getName() != nullptr) {
@@ -259,7 +259,7 @@ void MapPage::updateData(const double dt)
             }
 
             // ok, now update our symbols' positions
-            for (unsigned int i = 0; i < MAX_PLAYERS; i++) {
+            for (int i = 0; i < MAX_PLAYERS; i++) {
                 if (player[i] != nullptr) {
                     loader->updateSymbolPositionLL(playerIdx[i], player[i]->getLatitude(), player[i]->getLongitude());
                     loader->updateSymbolHeading(playerIdx[i], player[i]->getHeadingD());

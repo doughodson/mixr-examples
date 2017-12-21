@@ -16,18 +16,18 @@ namespace mixr {
 //      it.  This also runs the simulation, and acts as the interface between the
 //      graphics and simulation.
 // -------------------------------------------------------------------------------
-class Station : public mixr::simulation::Station
+class Station final: public mixr::simulation::Station
 {
     DECLARE_SUBCLASS(Station, mixr::simulation::Station)
 
 public:
     Station();
 
-    virtual void reset() override;
+    void reset() final;
 
 private:
-    mixr::glut::GlutDisplay* display {}; // this is our main display that
-    bool displayInit {};               // is our display created?
+    mixr::glut::GlutDisplay* display{}; // this is our main display that
+    bool displayInit{};               // is our display created?
 
 private:
     // slot table helper methods

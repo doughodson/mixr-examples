@@ -27,24 +27,24 @@
 #include <string>
 #include <cstdlib>
 
-const int frameRate {20};
-Station* station {};
+const int frameRate{20};
+Station* station{};
 
 // timer function, in this case, the background (updateData) function
 void timerFunc(int)
 {
-    const double dt0 {1.0 / static_cast<double>(frameRate)};
-    const int millis {static_cast<int>(dt0 * 1000)};
+    const double dt0{1.0 / static_cast<double>(frameRate)};
+    const int millis{static_cast<int>(dt0 * 1000)};
     glutTimerFunc(millis, timerFunc, 1);
 
     // Current time
-    const double time {mixr::base::getComputerTime()};
+    const double time{mixr::base::getComputerTime()};
 
     // N-1 Time
-    static double time0 {time};
+    static double time0{time};
 
     // Compute delta time
-    const double dt {static_cast<double>(time - time0)};
+    const double dt{static_cast<double>(time - time0)};
     time0 = time;
 
     mixr::base::Timer::updateTimers(dt);
@@ -54,7 +54,7 @@ void timerFunc(int)
 
 mixr::base::Object* factory(const std::string& name)
 {
-    mixr::base::Object* obj {};
+    mixr::base::Object* obj{};
 
     if ( name == MapPage::getFactoryName() )       { obj = new MapPage(); }
     else if ( name == Station::getFactoryName() )  { obj = new Station(); }
@@ -82,8 +82,8 @@ mixr::base::Object* factory(const std::string& name)
 Station* builder(const std::string& filename)
 {
    // read configuration file
-   int num_errors {};
-   mixr::base::Object* obj {mixr::base::edl_parser(filename, factory, &num_errors)};
+   int num_errors{};
+   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
@@ -127,8 +127,8 @@ int main(int argc, char* argv[])
    station->event(mixr::base::Component::RESET_EVENT);
 
    // set timer for the background tasks
-   const double dt {1.0 / static_cast<double>(frameRate)};
-   const int millis {static_cast<int>(dt * 1000)};
+   const double dt{1.0 / static_cast<double>(frameRate)};
+   const int millis{static_cast<int>(dt * 1000)};
 
    // ensure everything is reset
    station->updateData(dt);

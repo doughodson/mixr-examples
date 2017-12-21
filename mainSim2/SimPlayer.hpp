@@ -9,14 +9,14 @@
 //
 // Description: Simulation player
 //------------------------------------------------------------------------------
-class SimPlayer : public mixr::models::Aircraft
+class SimPlayer final: public mixr::models::Aircraft
 {
     DECLARE_SUBCLASS(SimPlayer, mixr::models::Aircraft)
 
 public:
     SimPlayer();
 
-    virtual void reset() override;
+    void reset() final;
 };
 
 #endif

@@ -9,7 +9,7 @@
 
    // image generator host interface
    igHosts: {
-      //#include "ighosts/viewpoint.epp"
+      //#include "ighosts/pov.epp"
       //#include "ighosts/cigi.epp"
    }
 

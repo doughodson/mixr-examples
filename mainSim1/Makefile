@@ -7,7 +7,7 @@ OBJS = main.o
 
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
-LDFLAGS += -lmixr_ighost_cigi -lmixr_ighost_viewpoint
+LDFLAGS += -lmixr_ighost_cigi -lmixr_ighost_pov
 LDFLAGS += -lmixr_models -lmixr_simulation
 LDFLAGS += -lmixr_terrain -lmixr_base
 LDFLAGS += -lcigicl -lJSBSim

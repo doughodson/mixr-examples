@@ -92,21 +92,21 @@ bool CrsPntr::setShowToFrom(const bool newTF)
 // Event functions
 bool CrsPntr::onUpdateCdiDotsCrsPntr(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setCdiDots(x->getReal());
     return ok;
 }
 bool CrsPntr::onUpdateToFromCrsPntr(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setToFrom(x->getReal());
     return ok;
 }
 
 void CrsPntr::drawFunc()
 {
-    GLfloat ocolor[4];
-    GLfloat lw;
+    GLfloat ocolor[4]{};
+    GLfloat lw{};
     glGetFloatv(GL_CURRENT_COLOR, ocolor);
     glGetFloatv(GL_LINE_WIDTH, &lw);
 
@@ -137,7 +137,7 @@ void CrsPntr::drawFunc()
 
     if (showCdi) {
         // figure how far to translate
-        double scale = inchesPerDot * cdiDots;
+        double scale{inchesPerDot * cdiDots};
         // limit ourself to the size of the scale
         if (scale > 0.88) scale = 0.88f;
         if (scale < -0.88) scale = -0.88f;
@@ -197,7 +197,7 @@ void CrsPntr::updateData(const double dt)
 //------------------------------------------------------------------------------
 bool CrsPntr::setSlotNumCdiDots(const mixr::base::Number* const newCDI)
 {
-    bool ok = false;
+    bool ok{};
     if (newCDI != nullptr) ok = setNumCdiDots(newCDI->getInt());
     return ok;
 }
@@ -206,7 +206,7 @@ bool CrsPntr::setSlotNumCdiDots(const mixr::base::Number* const newCDI)
 //------------------------------------------------------------------------------
 bool CrsPntr::setSlotNumInches(const mixr::base::Number* const newNI)
 {
-    bool ok = false;
+    bool ok{};
     if (newNI != nullptr) ok = setNumInches(newNI->getReal());
     return ok;
 }
@@ -215,7 +215,7 @@ bool CrsPntr::setSlotNumInches(const mixr::base::Number* const newNI)
 //------------------------------------------------------------------------------
 bool CrsPntr::setSlotShowCdi(const mixr::base::Number* const newSCDI)
 {
-    bool ok = false;
+    bool ok{};
     if (newSCDI != nullptr) ok = setShowCdi(newSCDI->getBoolean());
     return ok;
 }
@@ -224,7 +224,7 @@ bool CrsPntr::setSlotShowCdi(const mixr::base::Number* const newSCDI)
 //------------------------------------------------------------------------------
 bool CrsPntr::setSlotShowCrsPntr(const mixr::base::Number* const newSCP)
 {
-    bool ok = false;
+    bool ok{};
     if (newSCP != nullptr) ok = setShowCrsPntr(newSCP->getBoolean());
     return ok;
 }
@@ -233,7 +233,7 @@ bool CrsPntr::setSlotShowCrsPntr(const mixr::base::Number* const newSCP)
 //------------------------------------------------------------------------------
 bool CrsPntr::setSlotShowToFrom(const mixr::base::Number* const newTF)
 {
-    bool ok = false;
+    bool ok{};
     if (newTF != nullptr) ok = setShowToFrom(newTF->getBoolean());
     return ok;
 }

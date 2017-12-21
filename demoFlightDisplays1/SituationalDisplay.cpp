@@ -108,9 +108,9 @@ bool SituationalDisplay::setNav1Dme(const double newDME)
 }
 bool SituationalDisplay::setNav1Id(const char* const newId)
 {
-    bool ok = false;
+    bool ok{};
     if (newId != nullptr) {
-        std::strncpy(nav1Id,newId,NCHAR_NAV1_ID);
+        std::strncpy(nav1Id, newId, NCHAR_NAV1_ID);
         nav1Id[NCHAR_NAV1_ID] = '\0';
         ok = true;
     }
@@ -128,7 +128,7 @@ bool SituationalDisplay::setNav2Dme(const double newDME)
 }
 bool SituationalDisplay::setNav2Id(const char* const newId)
 {
-    bool ok = false;
+    bool ok{};
     if (newId != nullptr) {
         std::strncpy(nav2Id, newId, NCHAR_NAV2_ID);
         nav2Id[NCHAR_NAV2_ID] = '\0';
@@ -140,7 +140,7 @@ bool SituationalDisplay::setNav2Id(const char* const newId)
 // Get functions
 bool SituationalDisplay::getNav1Id(const int index, char* newString)
 {
-    bool ok = false;
+    bool ok{};
     if (newString != nullptr && nav1Id[index] != 0) {
         base::utStrcpy(newString, sizeof(newString), &nav1Id[index]);
         ok = true;
@@ -149,7 +149,7 @@ bool SituationalDisplay::getNav1Id(const int index, char* newString)
 }
 bool SituationalDisplay::getNav2Id(const int index, char* newString)
 {
-    bool ok = false;
+    bool ok{};
     if (newString != nullptr && nav2Id[index] != 0) {
         base::utStrcpy(newString, sizeof(newString), &nav2Id[index]);
         ok = true;

@@ -158,7 +158,7 @@ void TerrainFollower::copyData(const TerrainFollower& org, const bool)
 void TerrainFollower::testElevPoints()
 {
     //double last = 0;
-    double first = 0;
+    double first{};
     // get first and last values
     first = elevPts[0];
 
@@ -195,7 +195,7 @@ bool TerrainFollower::setViewWidth(const double newW)
 
 bool TerrainFollower::setElevPts(const int num, const double newEPts[])
 {
-    bool ok = false;
+    bool ok{};
     if (num <= MAX_POINTS) {
         for (int i = 0; i < num; i++) {
             elevPts[i] = newEPts[i];
@@ -208,42 +208,42 @@ bool TerrainFollower::setElevPts(const int num, const double newEPts[])
 // Event functions
 bool TerrainFollower::onEventSetPlaneAltTerrainFollower(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setPlaneAlt(x->getReal());
     return ok;
 }
 bool TerrainFollower::onEventSetScanRangeTerrainFollower(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setScanRange(x->getReal());
     return ok;
 }
 bool TerrainFollower::onEventSetViewHeightTerrainFollower(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setViewHeight(x->getReal());
     return ok;
 }
 bool TerrainFollower::onEventSetViewWidthTerrainFollower(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setViewWidth(x->getReal());
     return ok;
 }
 
 void TerrainFollower::drawFunc()
 {
-    GLfloat ocolor[4];
-    GLfloat lw;
+    GLfloat ocolor[4]{};
+    GLfloat lw{};
     glGetFloatv(GL_CURRENT_COLOR, ocolor);
     glGetFloatv(GL_LINE_WIDTH, &lw);
 
     // initialize local variables
-    double temp = 1.4;
-    double moveY = 0;
-    double moveYNext = 0;
+    double temp{1.4};
+    double moveY{};
+    double moveYNext{};
     //double lastMoveY = 0;
-    double start = 0.2;
+    double start{0.2};
 
 
     glColor3f(1, 1, 0);
@@ -293,40 +293,36 @@ void TerrainFollower::drawFunc()
     glColor3f(0, 1, 1);
     glPushMatrix();
         glTranslatef(1.6f, static_cast<GLfloat>(start), 0);
-        double myAvg = 0;
-        double mySum = 0;
+        double myAvg{};
+        double mySum{};
         // make a line strip that follows the terrain
         glBegin(GL_LINE_STRIP);
             // this draws every point
             for (int i = 0; i < numElevPts; i++) {
 
                 // average our six values
-                int myPlace = (numElevPts - (i +1));
+                int myPlace{(numElevPts - (i +1))};
                 if (myPlace >= 6) {
                     mySum = (elevPts[i] + elevPts[i+1] + elevPts[i+2] + elevPts[i+3] + elevPts[i+4] + elevPts[i+5] + elevPts[i+6]);
                     myAvg = mySum / 7;
-                }
-                else if ( myPlace >= 5) {
+                } else if ( myPlace >= 5) {
                     mySum = (elevPts[i] + elevPts[i+1] + elevPts[i+2] + elevPts[i+3] + elevPts[i+4] + elevPts[i+5]);
                     myAvg = mySum / 6;
-                }
-                else if ( myPlace >= 4) {
+                } else if ( myPlace >= 4) {
                     mySum = (elevPts[i] + elevPts[i+1] + elevPts[i+2] + elevPts[i+3] + elevPts[i+4]);
                     myAvg = mySum / 5;
-                }
-                else if ( myPlace >= 3) {
+                } else if ( myPlace >= 3) {
                     mySum = (elevPts[i] + elevPts[i+1] + elevPts[i+2] + elevPts[i+3]);
                     myAvg = mySum / 4;
-                }
-                else if (myPlace >= 2) {
+                } else if (myPlace >= 2) {
                     mySum = (elevPts[i] + elevPts[i+1] + elevPts[i+2]);
                     myAvg = mySum / 3;
-                }
-                else if (myPlace >= 1) {
+                } else if (myPlace >= 1) {
                     mySum = (elevPts[i] + elevPts[i+1]);
                     myAvg = mySum / 2;
+                } else {
+                    myAvg = elevPts[i];
                 }
-                else myAvg = elevPts[i];
 
                 // make sure our moveY is above our terrain average
                 myAvg = ((myAvg + aboveTerr) - minAlt) * aScale;
@@ -384,7 +380,7 @@ void TerrainFollower::updateData(const double dt)
 
     // figure our altitude scale
     // get our range of altitude in feet
-    double temp = maxAlt - minAlt;
+    double temp{maxAlt - minAlt};
     if (temp != 0 && temp > 0) {
         // divide by the number of inches to give us a inches/feet
         aScale = height / temp;
@@ -394,7 +390,7 @@ void TerrainFollower::updateData(const double dt)
         rScale = width / numElevPts;
     }
 
-    double tempR = 0.75f * range;
+    double tempR{0.75 * range};
     send("thirdr", UPDATE_VALUE, tempR, tRSD);
     tempR = range/4;
     send("firstr", UPDATE_VALUE, tempR, firstRSD);

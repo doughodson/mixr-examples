@@ -17,7 +17,7 @@
 //      UPDATE_VALUE7 -> cdi dots
 //      UPDATE_VALUE8 -> to from
 //------------------------------------------------------------------------------
-class Hsi : public mixr::graphics::Rotators
+class Hsi final: public mixr::graphics::Rotators
 {
     DECLARE_SUBCLASS(Hsi, mixr::graphics::Rotators)
 
@@ -25,12 +25,12 @@ public:
     Hsi();
 
     // set functions
-    virtual bool setSelectedHeading(const double newSH);    // Sets selected heading (degs)
-    virtual bool setSelectedCourse(const double newC);      // Selected course (degs)
-    virtual bool setNav1Brg(const double newB);             // Sets Navaid 1 bearing (degs)
-    virtual bool setNav2Brg(const double newB);             // Sets Navaid 2 bearing (degs)
-    virtual bool setCdiDots(const double newCDI);           // Sets CDI deflection (dots)
-    virtual bool setToFrom(const double newTF);             // Sets TO/FROM value [ to(1); from(0) ]
+    bool setSelectedHeading(const double newSH);    // Sets selected heading (degs)
+    bool setSelectedCourse(const double newC);      // Selected course (degs)
+    bool setNav1Brg(const double newB);             // Sets Navaid 1 bearing (degs)
+    bool setNav2Brg(const double newB);             // Sets Navaid 2 bearing (degs)
+    bool setCdiDots(const double newCDI);           // Sets CDI deflection (dots)
+    bool setToFrom(const double newTF);             // Sets TO/FROM value [ to(1); from(0) ]
 
     // get functions
     double getSelHdg()  { return selHdg; }
@@ -40,28 +40,28 @@ public:
     double getCdiDots() { return cdiDots; }
     double getToFrom()  { return toFrom; }
 
-    virtual void updateData(const double dt = 0.0) override;
-    virtual bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+    void updateData(const double dt = 0.0) final;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
     // event functions
-    bool onUpdateSelHdgHsi(const mixr::base::Number* const x);
-    bool onUpdateSelCrsHsi(const mixr::base::Number* const x);
-    bool onUpdateNav1BrgHsi(const mixr::base::Number* const x);
-    bool onUpdateNav2BrgHsi(const mixr::base::Number* const x);
-    bool onUpdateCdiDotsHsi(const mixr::base::Number* const x);
-    bool onUpdateToFromHsi(const mixr::base::Number* const x);
+    bool onUpdateSelHdgHsi(const mixr::base::Number* const);
+    bool onUpdateSelCrsHsi(const mixr::base::Number* const);
+    bool onUpdateNav1BrgHsi(const mixr::base::Number* const);
+    bool onUpdateNav2BrgHsi(const mixr::base::Number* const);
+    bool onUpdateCdiDotsHsi(const mixr::base::Number* const);
+    bool onUpdateToFromHsi(const mixr::base::Number* const);
 
-    double selHdg {};      // selected heading (degs)
+    double selHdg{};      // selected heading (degs)
     SendData selHdgSD;
-    double selCrs {};      // selected course (degs)
+    double selCrs{};      // selected course (degs)
     SendData selCrsSD;
-    double cdiDots {};     // course deviation (dots)
+    double cdiDots{};     // course deviation (dots)
     SendData cdiDotsSD;
-    double toFrom {-1.0};  // our to from indicator ( 1 == to; 0 == from )
+    double toFrom{-1.0};  // our to from indicator ( 1 == to; 0 == from )
     SendData toFromSD;
-    double nav1Brg {};     // our navaid 1 bearing (degs)
-    double nav2Brg {};     // our navaid 2 bearing (degs)
+    double nav1Brg{};     // our navaid 1 bearing (degs)
+    double nav2Brg{};     // our navaid 2 bearing (degs)
     SendData nav1BrgSD;
     SendData nav2BrgSD;
     SendData selHdgROSD;

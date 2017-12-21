@@ -10,8 +10,8 @@
 
 using namespace mixr;
 
-static const double refLat =   41.1f;
-static const double refLon =  111.9f;
+static const double refLat{41.1};
+static const double refLon{111.9};
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestSD, "TestSD")
 EMPTY_DELETEDATA(TestSD)
@@ -38,10 +38,10 @@ TestSD::TestSD()
 
     // initialize our air tracks to test data
     {
-        double trkX {};
-        double trkY {};
-        double hdg {};
-        int myType {1};
+        double trkX{};
+        double trkY{};
+        double hdg{};
+        int myType{1};
         for (int i = 0; i < MAX_TRACKS; i++) {
             myTracks[i].x = trkX;
             myTracks[i].y = trkY;
@@ -60,9 +60,9 @@ TestSD::TestSD()
 
     // initialize our airports to test data
     {
-        double apLat {refLat + 0.1};
-        double apLon {refLon};
-        int myType {1};
+        double apLat{refLat + 0.1};
+        double apLon{refLon};
+        int myType{1};
         for (int i = 0; i < MAX_NAV_AIDS; i++) {
             myAP[i].x = apLat;
             myAP[i].y = apLon;
@@ -82,8 +82,8 @@ TestSD::TestSD()
 
     // initialize our navaids to test data
     {
-        double navLat {refLat};
-        double navLon {refLon + 0.1};
+        double navLat{refLat};
+        double navLon{refLon + 0.1};
         int myType {1};
         for (int i = 0; i < MAX_NAV_AIDS; i++) {
             myNA[i].x = navLat;
@@ -170,7 +170,7 @@ void TestSD::updateData(const double dt)
     // to use send commands for every one, so it's easier just to get a pointer to the object and
     // set the variables using member functions.
     {
-    base::Pair* pair = findByType(typeid(SituationalDisplay));
+    base::Pair* pair{findByType(typeid(SituationalDisplay))};
         if (pair != nullptr) {
             const auto p = static_cast<SituationalDisplay*>(pair->object());
             if (p != nullptr) {
@@ -188,13 +188,13 @@ void TestSD::updateData(const double dt)
 
     // Load test tracks (once)
     if (!tracksLoaded) {
-        base::Pair* pair = findByName("airTracks");
+        base::Pair* pair{findByName("airTracks")};
         if (pair != nullptr) {
             pair->ref();
             const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
             if (myLoader != nullptr) {
                 for (int i = 0; i < MAX_TRACKS; i++) {
-                    int idx = myLoader->addSymbol(myTracks[i].type, myTracks[i].id);
+                    int idx{myLoader->addSymbol(myTracks[i].type, myTracks[i].id)};
                     myLoader->updateSymbolPositionXY(idx, myTracks[i].x, myTracks[i].y);
                     myLoader->updateSymbolHeading(idx, myTracks[i].hdg);
                     //std::cout << "added track: " << myTracks[i].x << ", " <<  myTracks[i].y<< ", " <<  myTracks[i].hdg  << ", " <<  myTracks[i].type << ", " << myTracks[i].id << std::endl;
@@ -207,13 +207,13 @@ void TestSD::updateData(const double dt)
 
     // Load test airports (once)
     if (!airportsLoaded) {
-        base::Pair* pair = findByName("airports");
+        base::Pair* pair{findByName("airports")};
         if (pair != nullptr) {
             pair->ref();
             const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
             if (myLoader != nullptr) {
                 for (int i = 0; i < MAX_AIRPORTS; i++) {
-                    int idx = myLoader->addSymbol(myAP[i].type, myAP[i].id);
+                    int idx{myLoader->addSymbol(myAP[i].type, myAP[i].id)};
                     myLoader->updateSymbolPositionLL(idx, myAP[i].x, myAP[i].y);
                     //std::cout << "added airport: " << myAP[i].x << ", " <<  myAP[i].y << ", " <<  myAP[i].type << ", " << myAP[i].id << std::endl;
                 }
@@ -225,13 +225,13 @@ void TestSD::updateData(const double dt)
 
     // Load test navaids (once)
     if (!navAidsLoaded) {
-        base::Pair* pair = findByName("navaids");
+        base::Pair* pair{findByName("navaids")};
         if (pair != nullptr) {
             pair->ref();
             const auto myLoader = dynamic_cast<graphics::SymbolLoader*>(pair->object());
             if (myLoader != nullptr) {
                 for (int i = 0; i < MAX_NAV_AIDS; i++) {
-                    int idx = myLoader->addSymbol(myNA[i].type, myNA[i].id);
+                    int idx{myLoader->addSymbol(myNA[i].type, myNA[i].id)};
                     myLoader->updateSymbolPositionLL(idx, myNA[i].x, myNA[i].y);
                     //std::cout << "added navaid: " << myNA[i].x << ", " <<  myNA[i].y << ", " <<  myNA[i].type << ", " << myNA[i].id << std::endl;
                 }

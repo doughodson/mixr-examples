@@ -1,10 +1,7 @@
 
-#define TEST_PFD
-
 #include "TestPfd.hpp"
 #include "mixr/base/Pair.hpp"
 #include "Pfd.hpp"
-#include "mixr/graphics/Display.hpp"
 
 using namespace mixr;
 
@@ -18,7 +15,6 @@ TestPfd::TestPfd()
 
 void TestPfd::copyData(const TestPfd& org, const bool)
 {
-    // Always copy base class stuff first
     BaseClass::copyData(org);
 
     // pitch and roll
@@ -30,25 +26,16 @@ void TestPfd::copyData(const TestPfd& org, const bool)
     // hdg and nav
     trueHdg = org.trueHdg;
     tHdgRate = org.tHdgRate;
-    cmdCrs = org.cmdCrs;
-    cmdCrsRate = org.cmdCrsRate;
     cmdHdg = org.cmdHdg;
     cmdHdgRate = org.cmdHdgRate;
-
-    // cdi
-    cdiDots = org.cdiDots;
-    cdiRate = org.cdiRate;
-
-    // to from
-    toFrom = org.toFrom;
 
     // airspeed
     airSpd = org.airSpd;
     airSpdRate = org.airSpdRate;
 
     // altitude
-    alt = 0;
-    altRate = 10;
+    alt = org.alt;
+    altRate = org.alt;
 
     // side slip
     slip = org.slip;
@@ -67,23 +54,8 @@ void TestPfd::copyData(const TestPfd& org, const bool)
 
     // commanded alt
     cmdAlt = org.cmdAlt;
-
-    // master caution
-    mstrCtn = false;
-
-    // vvi
     vvi = org.vvi;
     vviRate = org.vviRate;
-    maxVvi = org.minVvi;
-    minVvi = org.minVvi;
-
-    // aoa
-    aoa = org.aoa;
-    aoaRate = org.aoaRate;
-
-    // ground speed
-    gSpd = org.gSpd;
-    gSpdRate = org.gSpdRate;
 
     // flight director (command bars)
     fDirBank = org.fDirBank;
@@ -94,27 +66,6 @@ void TestPfd::copyData(const TestPfd& org, const bool)
     // selected barometric pressure
     baro = org.baro;
     baroRate = org.baroRate;
-
-    // radar alt
-    rAlt = org.rAlt;
-    rAltRate = org.rAltRate;
-    rAltMin = org.rAltMin;
-
-    // tacan and waypoint course
-    nav1Brg = org.nav1Brg;
-    nav1BrgRate = org.nav1BrgRate;
-    nav2Brg = org.nav2Brg;
-    nav2BrgRate = org.nav2BrgRate;
-
-    // FPM
-    fpmX = org.fpmX;
-    fpmY = org.fpmY;
-    fpmXRate = org.fpmXRate;
-    fpmYRate = org.fpmYRate;
-
-    sixtyVisSD.empty();
-    ninetyVisSD.empty();
-
 }
 
 void TestPfd::updateData(const double dt)
@@ -122,7 +73,6 @@ void TestPfd::updateData(const double dt)
     // update our BaseClass
     BaseClass::updateData(dt);
 
-#ifdef TEST_PFD
     // pitch
     pitch += pitchRate * dt;
     if (pitch > 90) {
@@ -136,48 +86,24 @@ void TestPfd::updateData(const double dt)
 
     // roll
     roll  += rollRate * dt;
-    if (roll > 90) {
-        roll = 90;
+    if (roll > 90.0f) {
+        roll = 90.0f;
         rollRate = -rollRate;
     }
-    if (roll < -90) {
-        roll = -90;
+    if (roll < -90.0f) {
+        roll = -90.0f;
         rollRate = -rollRate;
     }
 
     // heading
     trueHdg += tHdgRate * dt;
-    if (trueHdg > 360) {
-        trueHdg = 0;
-    }
+    if (trueHdg > 360) trueHdg = 0;
 
     // selected heading
     cmdHdg += cmdHdgRate * dt;
     if (cmdHdg > 360) {
         cmdHdg = 0;
     }
-
-    // selected course
-    cmdCrs += cmdCrsRate * dt;
-    if (cmdCrs > 360) {
-        cmdCrs = 0;
-    }
-
-    // course deviation test
-    cdiDots += cdiRate * dt;
-    if (cdiDots > 2) {
-        cdiDots = 2;
-        cdiRate = -cdiRate;
-    }
-    if (cdiDots < -2) {
-        cdiDots = -2;
-        cdiRate = -cdiRate;
-    }
-
-    double temp = (cmdCrs - trueHdg);
-    if (temp > 50) toFrom = 0;
-    else  if (temp < -50) toFrom = 1;
-    else toFrom = -1;
 
     // here is sideslip
     slip += slipRate * dt;
@@ -190,26 +116,6 @@ void TestPfd::updateData(const double dt)
         slipRate = -slipRate;
     }
 
-    nav1Brg += nav1BrgRate * dt;
-    if (nav1Brg > 360) {
-        nav1Brg = 360;
-        nav1BrgRate = -nav1BrgRate;
-    }
-    if (nav1Brg < 0) {
-        nav1Brg = 0;
-        nav1BrgRate = -nav1BrgRate;
-    }
-
-    nav2Brg += nav2BrgRate * dt;
-    if (nav2Brg > 360) {
-        nav2Brg = 360;
-        nav2BrgRate = -nav2BrgRate;
-    }
-    if (nav2Brg < 0) {
-        nav2Brg = 0;
-        nav2BrgRate = -nav2BrgRate;
-    }
-
     // airspeed
     airSpd += airSpdRate * dt;
     if (airSpd > 200) {
@@ -220,6 +126,9 @@ void TestPfd::updateData(const double dt)
         airSpd = 50;
         airSpdRate = -airSpdRate;
     }
+
+    // test data
+    double mach{airSpd / 600.0};
 
     // commanded speed
     cmdSpd = 150;
@@ -260,10 +169,6 @@ void TestPfd::updateData(const double dt)
         ldRate = -ldRate;
     }
 
-    // master caution stuff
-    if (pitch > 70 || pitch < -70 ) mstrCtn = true;
-    else mstrCtn = false;
-
     // vvi tape gauge test
     vvi += vviRate * dt;
     if (vvi > 7000) {
@@ -275,30 +180,8 @@ void TestPfd::updateData(const double dt)
         vviRate = -vviRate;
     }
 
-    // angle of attack
-    aoa += aoaRate * dt;
-    if (aoa > 60) {
-        aoa = 60;
-        aoaRate = -aoaRate;
-    }
-    if (aoa < -30) {
-        aoa = -30;
-        aoaRate = -aoaRate;
-    }
-
-    // ground speed
-    gSpd += gSpdRate * dt;
-    if (gSpd > 60) {
-        gSpd = 60;
-        gSpdRate = -gSpdRate;
-    }
-    if (gSpd < -30) {
-        gSpd = -30;
-        gSpdRate = -gSpdRate;
-    }
-
-    // flight director stuff (limit to 0.56 inches each way)
-    // flight diretor bank angle
+    // flight director stuff
+    // flight director bank angle
     fDirBank += fDirBankRate * dt;
     if (fDirBank > 90) {
         fDirBank = 90;
@@ -322,8 +205,8 @@ void TestPfd::updateData(const double dt)
 
     // barometric pressure (selected)
     baro += baroRate * dt;
-    if (baro > 99.99) {
-        baro = 99.99f;
+    if (baro > 999) {
+        baro = 999;
         baroRate = -baroRate;
     }
     if (baro < 0) {
@@ -331,87 +214,26 @@ void TestPfd::updateData(const double dt)
         baroRate = -baroRate;
     }
 
-    // radar altitude and minimums
-    rAlt += rAltRate * dt;
-    if (rAlt > 50000) {
-        rAlt = 50000;
-        rAltRate = -rAltRate;
-    }
-    if (rAlt < 0) {
-        rAlt = 0;
-        rAltRate = -rAltRate;
-    }
-
-    // flight path pitch marker
-    fpmX += (fpmXRate * dt);
-    if (fpmX > 5) {
-        fpmX = 5;
-        fpmXRate = -fpmXRate;
-    }
-    if (fpmX < -5) {
-        fpmX = -5;
-        fpmXRate = -fpmXRate;
-    }
-    // flight path roll marker
-    fpmY += (fpmYRate * dt);
-    if (fpmY > 8.28) {
-        fpmY = 8.28f;
-        fpmYRate = -fpmYRate;
-    }
-    if (fpmY < -8.28) {
-        fpmY = -8.28f;
-        fpmYRate = -fpmYRate;
-    }
-#endif
-
-    // Since we have so much data to send, it
-    // is easier to get a pointer and use
-    // member functions than to just send
-    // it using the send function.
-    base::Pair* pair = findByType(typeid(Pfd));
+    base::Pair* pair{findByType(typeid(Pfd))};
     if (pair != nullptr) {
         const auto p = static_cast<Pfd*>(pair->object());
         if (p != nullptr) {
             p->setPitchDeg(pitch);
             p->setRollDeg(roll);
             p->setTrueHeading(trueHdg);
-            p->setCmdCourse(cmdCrs);
             p->setCmdHdg(cmdHdg);
-            p->setCdiDots(cdiDots);
-            p->setToFrom(toFrom);
             p->setAirSpeedKts(airSpd);
             p->setAltitudeFt(alt);
+            p->setMach(mach);
             p->setSideSlip(slip);
             p->setGlideslope(gSlope);
             p->setLatDev(latDev);
             p->setCmdAirSpdKts(cmdSpd);
             p->setCmdAltFt(cmdAlt);
-            p->setMstrCtn(mstrCtn);
             p->setVVI(vvi);
-            p->setAOA(aoa);
-            p->setGroundSpdKts(gSpd);
             p->setFltDirBankDeg(fDirBank);
             p->setFltDirPitchDeg(fDirPitch);
             p->setBaroPress(baro);
-            p->setRdrAltFt(rAlt);
-            p->setNav1Brg(nav1Brg);
-            p->setNav2Brg(nav2Brg);
-            p->setFPMX(fpmX);
-            p->setFPMY(fpmY);
         }
     }
-
-    // we only display the 60 and 90 degree marks if we are past 45 and 60 degrees,
-    // respectively
-    bool sixtyVis = false, ninetyVis = false;
-    if (roll > 45 || roll < -45) {
-        sixtyVis = true;
-    }
-
-    if (roll > 60 || roll < -60) {
-        ninetyVis = true;
-    }
-
-    send("60indices", SET_VISIBILITY, sixtyVis, sixtyVisSD);
-    send("90indices", SET_VISIBILITY, ninetyVis, ninetyVisSD);
 }

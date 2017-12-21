@@ -79,37 +79,37 @@ bool Hsi::setToFrom(const double newTF)
 // Event functions
 bool Hsi::onUpdateSelHdgHsi(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setSelectedHeading(x->getReal());
     return ok;
 }
 bool Hsi::onUpdateSelCrsHsi(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setSelectedCourse(x->getReal());
     return ok;
 }
 bool Hsi::onUpdateNav1BrgHsi(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setNav1Brg(x->getReal());
     return ok;
 }
 bool Hsi::onUpdateNav2BrgHsi(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setNav2Brg(x->getReal());
     return ok;
 }
 bool Hsi::onUpdateCdiDotsHsi(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setCdiDots(x->getReal());
     return ok;
 }
 bool Hsi::onUpdateToFromHsi(const mixr::base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setToFrom(x->getReal());
     return ok;
 }

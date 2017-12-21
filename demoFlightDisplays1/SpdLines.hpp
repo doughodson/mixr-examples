@@ -4,37 +4,42 @@
 
 #include "mixr/graphics/Graphic.hpp"
 
+namespace mixr {
+namespace base { class Number; }
+}
+
 //------------------------------------------------------------------------------
 // Class: SpdLines
 //
 // Description: Draws the lines for the airspeed graphic
-// Inputs:  Slots only
+// Inputs:
+//      UPDATE_VALUE  -> altitude flag on or off
 //------------------------------------------------------------------------------
-class SpdLines : public mixr::graphics::Graphic
+class SpdLines final: public mixr::graphics::Graphic
 {
     DECLARE_SUBCLASS(SpdLines, mixr::graphics::Graphic)
 
 public:
     SpdLines();
 
-    virtual void drawFunc() override;
+    void drawFunc() final;
+    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
-    // set functions
-    virtual bool setIsAlt(const bool newIsAlt);
-    virtual bool setDrawBack(const bool newDB);
+    // set methods
+    bool setIsAlt(const bool newIsAlt)          { isAlt = newIsAlt; return true; }
 
-    // get functions
-    bool isAltOn()          { return isAlt; }
-    bool isBackgroundOn()   { return drawBack; }
+    // get methods
+    bool isAltSelected()                        { return isAlt; }
 
 private:
-    bool isAlt {};     // are we drawing the altitude lines instead?
-    bool drawBack {};  // draw the background (for transparency purposes)
+    // event method
+    bool onEventSetIsAltSpdLines(const mixr::base::Number* const);
+
+    bool isAlt{};     // are we drawing the altitude lines instead?
 
 private:
     // slot table helper methods
     bool setSlotIsAlt(const mixr::base::Number*);
-    bool setSlotDrawBack(const mixr::base::Number*);
 };
 
 #endif

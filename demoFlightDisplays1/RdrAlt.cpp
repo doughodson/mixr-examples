@@ -44,13 +44,13 @@ bool RdrAlt::setRAlt(const double newRA)
 // Event functions
 bool RdrAlt::onEventSetRAltRdrAlt(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setRAlt(x->getReal());
     return ok;
 }
 bool RdrAlt::onEventSetRAltMinRdrAlt(const base::Number* const x)
 {
-    bool ok = false;
+    bool ok{};
     if (x != nullptr) ok = setRAltMin(x->getReal());
     return ok;
 }
@@ -62,13 +62,13 @@ void RdrAlt::updateData(const double dt)
 
     // check our min alt, and if we are lower, turn both readouts yellow,
     // else one is white and the other is magenta
-    bool tooLow = false;
+    bool tooLow{};
     if (rAlt < rAltMin) tooLow = true;
 
     // we have to find each readout separately, get it's individual display, and
     // change the color
     // here is the minimum readout display
-    base::Pair* pair = findByName("rmin");
+    base::Pair* pair{findByName("rmin")};
     if (pair != nullptr) {
         const auto r = dynamic_cast<graphics::NumericReadout*>(pair->object());
         if (r != nullptr) {
@@ -87,7 +87,7 @@ void RdrAlt::updateData(const double dt)
         }
     }
     // actual radar readout
-    base::Pair* pair2 = findByName("ralt");
+    base::Pair* pair2{findByName("ralt")};
     if (pair2 != nullptr) {
         const auto r1 = dynamic_cast<graphics::NumericReadout*>(pair2->object());
         if (r1 != nullptr) {

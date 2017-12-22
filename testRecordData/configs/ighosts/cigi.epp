@@ -1,7 +1,5 @@
 
 ( CigiHost
-   latitude:  IG_LATITUDE
-   longitude: IG_LONGITUDE
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 50
    maxElevations: 20

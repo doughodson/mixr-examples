@@ -9,8 +9,6 @@
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 5
    maxElevations: 20
-   latitude:  IG_LATITUDE 
-   longitude: IG_LONGITUDE  
    async: 0
    hideOwnshipModel: 1      // otherwise you are inside the ownship model
    session: ( CigiHostSession

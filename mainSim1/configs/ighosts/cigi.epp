@@ -3,8 +3,6 @@
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 50
    maxElevations: 20
-   latitude: IG_LATITUDE
-   longitude: IG_LONGITUDE
    async: 0
    session: ( CigiHostSession
       netInput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8008 )

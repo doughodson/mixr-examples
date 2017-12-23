@@ -12,7 +12,7 @@ LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11
 #LDFLAGS += -lXmu -lXi
 LDFLAGS += -lrt -lpthread
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $(PGM) $(OBJS) $(LDFLAGS)

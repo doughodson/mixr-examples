@@ -14,7 +14,7 @@ OBJS =  \
 LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_dafif -lmixr_terrain -lmixr_base 
 LDFLAGS += -lpthread -lrt
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

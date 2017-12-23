@@ -17,7 +17,7 @@ CPPFLAGS += -I/usr/local/include
 
 EPPFLAGS +=  -I.
 
-all: $(PGM)
+all: edl $(PGM)
 
 edl:
 	cpp configs/test0.epp > test0.edl $(EPPFLAGS)

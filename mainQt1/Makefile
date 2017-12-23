@@ -5,7 +5,7 @@ PGM = mainQt1
 
 EPPFLAGS +=  -I.
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM):
 	qmake

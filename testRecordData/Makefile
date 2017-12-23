@@ -24,7 +24,7 @@ CPPFLAGS += -I/usr/local/include
 
 EPPFLAGS += -I.
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

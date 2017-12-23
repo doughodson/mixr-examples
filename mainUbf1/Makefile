@@ -22,7 +22,7 @@ LDFLAGS  += -L$(MIXR_LIB_DIR)
 
 EPPFLAGS += -I.
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

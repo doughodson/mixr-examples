@@ -12,7 +12,7 @@ LDFLAGS += -lrt
 
 EPPFLAGS += -DFONT_11_19_PATH="\"$(DATA_DIR)/fonts/11x19/normal/\""
 
-all: $(PGM)
+all: edl $(PGM)
 
 edl:
 	cpp configs/test1.epp >test1.edl $(EPPFLAGS)

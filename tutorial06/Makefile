@@ -7,7 +7,7 @@ OBJS = main.o MyComp.o
 
 LDFLAGS += -lmixr_base -lpthread -lrt
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

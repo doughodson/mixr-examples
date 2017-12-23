@@ -14,7 +14,7 @@ LDFLAGS += -lpthread
 
 CPPFLAGS += -I/usr/local/include
 
-all: $(PGM)
+all: edl $(PGM)
 
 edl:
 	cpp configs/test1.epp >test1.edl   $(EPPFLAGS)

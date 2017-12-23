@@ -8,7 +8,7 @@ OBJS = main.o Tester.o
 LDFLAGS += -lmixr_base
 LDFLAGS += -lpthread -lrt
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

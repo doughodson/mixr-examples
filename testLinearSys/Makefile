@@ -6,7 +6,7 @@ OBJS = main.o
 
 LDFLAGS += -lmixr_linearsystem -lmixr_base
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

@@ -8,7 +8,7 @@ OBJS = main.o Worm.o
 LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base
 LDFLAGS += -lpthread -lftgl -lfreetype -lglut -lGLU -lGL -lrt
 
-all: $(PGM)
+all: edl $(PGM)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

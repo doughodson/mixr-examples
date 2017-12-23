@@ -15,15 +15,15 @@ class Display;
 //
 // Description: Test station for the Ground mapping radar demo
 //------------------------------------------------------------------------------
-class TestStation : public mixr::simulation::Station
+class TestStation final: public mixr::simulation::Station
 {
     DECLARE_SUBCLASS(TestStation, mixr::simulation::Station)
 
 public:
     TestStation();
 
-    virtual void updateTC(const double dt = 0.0) override;
-    virtual void reset() override;
+    void updateTC(const double dt = 0.0) final;
+    void reset() final;
 
 private:
     mixr::base::safe_ptr<Display> display;

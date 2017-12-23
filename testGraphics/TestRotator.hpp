@@ -6,8 +6,6 @@
 
 //------------------------------------------------------------------------------
 // Class: TestRotator
-//
-// Description: Example MFD page
 //------------------------------------------------------------------------------
 class TestRotator final: public mixr::graphics::Graphic
 {

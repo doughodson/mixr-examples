@@ -11,9 +11,7 @@ namespace dafif { class AirportLoader; class NavaidLoader; class WaypointLoader;
 //------------------------------------------------------------------------------
 // Class: WorldModel
 //
-// Description: Class to manage the reference position, and other common
-//              simulation support components (ground truths, terrain elevation
-//              database, etc)
+// Description: Extends model::WorldModel by adding DAFIF support.
 //
 // Slots --
 //
@@ -21,42 +19,31 @@ namespace dafif { class AirportLoader; class NavaidLoader; class WaypointLoader;
 //    navaidLoader   <dafif::NavaidLoader>    ! NAVAID database (default: nullptr)
 //    waypointLoader <dafif::WaypointLoader>  ! Waypoint database (default: nullptr)
 //
-//
-// Environments:
-//
-//    Current simulation environments include terrain elevation posts, getTerrain(),
-//    atmosphere model, getAtmosphere(), and DAFIF navigational aids,
-//    getNavaids(), getAirports() and getWaypoints().
-//
-// Shutdown:
-//
-//    At shutdown, the parent object must send a SHUTDOWN_EVENT event to
-//    this object, environments and other components.
-//
-// Factory name: Simulation
+// Factory name: WorldModel
 //------------------------------------------------------------------------------
 class WorldModel : public mixr::models::WorldModel
 {
-    DECLARE_SUBCLASS(WorldModel, mixr::models::WorldModel)
+   DECLARE_SUBCLASS(WorldModel, mixr::models::WorldModel)
 
 public:
-    WorldModel();
+   WorldModel();
 
-    mixr::dafif::AirportLoader* getAirports();           // Returns the airport loader
-    mixr::dafif::NavaidLoader* getNavaids();             // Returns the NAVAID loader
-    mixr::dafif::WaypointLoader* getWaypoints();         // Returns the waypoint loader
+   mixr::dafif::AirportLoader* getAirports();           // Returns the airport loader
+   mixr::dafif::NavaidLoader* getNavaids();             // Returns the NAVAID loader
+   mixr::dafif::WaypointLoader* getWaypoints();         // Returns the waypoint loader
 
-    virtual bool setAirports(mixr::dafif::AirportLoader* const p);   // Sets the airport loader
-    virtual bool setNavaids(mixr::dafif::NavaidLoader* const p);     // Sets the NAVAID loader
-    virtual bool setWaypoints(mixr::dafif::WaypointLoader* const p); // Sets the waypoint loader
-
-    virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) override;
 
 private:
-   mixr::dafif::AirportLoader*  airports {};   // Airport loader
-   mixr::dafif::NavaidLoader*   navaids {};    // NAVAID loader
+   mixr::dafif::AirportLoader*  airports{};   // Airport loader
+   mixr::dafif::NavaidLoader*   navaids{};    // NAVAID loader
    mixr::dafif::WaypointLoader* waypoints {};  // Waypoint loader
 
+private:
+   // slot table helper methods
+   bool setSlotAirports(mixr::dafif::AirportLoader* const);   // Sets the airport loader
+   bool setSlotNavaids(mixr::dafif::NavaidLoader* const);     // Sets the NAVAID loader
+   bool setSlotWaypoints(mixr::dafif::WaypointLoader* const); // Sets the waypoint loader
 };
 
 

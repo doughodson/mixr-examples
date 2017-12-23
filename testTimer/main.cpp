@@ -37,7 +37,7 @@ const double THREAD_PRI{0.5};          // Pri (0 .. 1)
 class TimerThread final : public mixr::base::PeriodicThread
 {
    public: TimerThread(mixr::base::Component* const parent, const double rate);
-   private: virtual unsigned long userFunc(const double dt) override;
+   private: unsigned long userFunc(const double dt) override;
 };
 
 TimerThread::TimerThread(mixr::base::Component* const parent, const double rate)

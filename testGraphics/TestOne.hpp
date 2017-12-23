@@ -13,9 +13,6 @@ namespace base { class Angle; class Number; }
 // Class: TestOne
 //
 // Description: Move within a user defined box displaying a trail
-//
-//  ( def-form TestOne
-//  )
 //------------------------------------------------------------------------------
 class TestOne final: public mixr::graphics::Graphic
 {
@@ -45,7 +42,7 @@ public:
     void setStartAngle(const double deg);
     void setSpeed(const double xx);
 
-    virtual void drawFunc() override;
+    void drawFunc() final;
 
     void updateTC(const double dt = 0.0) final;
     void updateData(const double dt = 0.0) final;
@@ -53,7 +50,7 @@ public:
     void reset() final;
 
 private:
-    static const int maxHist = 10;
+    static const int maxHist{10};
 
     double left{-10.0}, right{10.0};               // X limits
     double bottom{-10.0}, top{10.0};               // Y limits

@@ -11,14 +11,14 @@ namespace base { class Number; }
 //------------------------------------------------------------------------------
 // Class: Exponential
 //------------------------------------------------------------------------------
-class Exponential: public AbstractRng
+class Exponential final: public AbstractRng
 {
    DECLARE_SUBCLASS(Exponential, AbstractRng)
 
 public:
    Exponential();
 
-   virtual double num() override;
+   double num() final;
 
    bool setMean(const double x)            { mean = x; return true; }
    double getMean() const                  { return mean; }

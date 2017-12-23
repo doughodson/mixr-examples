@@ -15,14 +15,14 @@ namespace mixr {
 //     mu    : continuous parameter
 //     gamma : continuous location parameter (gamma = 0 for 2 parameter lognormal)
 //------------------------------------------------------------------------------
-class Lognormal: public AbstractRng
+class Lognormal final: public AbstractRng
 {
    DECLARE_SUBCLASS(Lognormal, AbstractRng)
 
 public:
    Lognormal();
 
-   virtual double num() override;
+   double num() final;
   
    bool setMean(const double x)       { mean = x; return true; }
    double getMean() const             { return mean; }
@@ -31,8 +31,8 @@ public:
    double getStdDev() const           { return stddev; }
 
 private:
-   double mean {};
-   double stddev {};
+   double mean{};
+   double stddev{};
 
 private:
    // slot table helper methods

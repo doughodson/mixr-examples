@@ -8,14 +8,14 @@ namespace mixr {
 namespace base { class Number; }
 }
 
-class Uniform: public AbstractRng
+class Uniform final: public AbstractRng
 {
    DECLARE_SUBCLASS(Uniform, AbstractRng)
 
 public:
    Uniform();
 
-   virtual double num() override;
+   double num() final;
   
    bool setMin(const double x)  { min = x; return true; }
    double getMin() const        { return min; }

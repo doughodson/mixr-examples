@@ -22,7 +22,7 @@ class AbstractRng : public mixr::base::Object
 public:
    AbstractRng();
 
-   virtual double num() = 0;
+   virtual double num() =0;
 
    void setSeed(const unsigned int);
 

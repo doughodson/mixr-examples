@@ -15,7 +15,7 @@ namespace models { class Rwr; }
 //              the angle of arrival.
 // Factory name: DspRwr
 //------------------------------------------------------------------------------
-class DspRwr : public mixr::graphics::Graphic
+class DspRwr final: public mixr::graphics::Graphic
 {
     DECLARE_SUBCLASS(DspRwr, mixr::graphics::Graphic)
 
@@ -26,12 +26,12 @@ public:
     const mixr::models::Rwr* getRwr() const   { return rwr; }
     void setRwr(mixr::models::Rwr* s)         { rwr = s; }
 
-    virtual void drawFunc() override;
+    void drawFunc() final;
 
-    virtual void updateData(const double dt = 0.0) override;
+    void updateData(const double dt = 0.0) final;
 
 private:
-    mixr::models::Rwr* rwr {};     // The test RWR sensor
+    mixr::models::Rwr* rwr{};     // The test RWR sensor
 };
 
 #endif

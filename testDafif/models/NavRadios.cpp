@@ -66,9 +66,9 @@ mixr::dafif::NavaidLoader* NavRadio::getNavaidLoader()
 {
    // If we don't have a NAVAID loader, try to get one from our simulation
    if (nvdb == nullptr) {
-      WorldModel* sim = dynamic_cast<WorldModel*>(getWorldModel());
+      WorldModel* sim{dynamic_cast<WorldModel*>(getWorldModel())};
       if (sim != nullptr) {
-         mixr::dafif::NavaidLoader* p = sim->getNavaids();
+         mixr::dafif::NavaidLoader* p{sim->getNavaids()};
          if (p != nullptr && p->isDbLoader()) {
             nvdb = p;
          }
@@ -81,9 +81,9 @@ mixr::dafif::AirportLoader* NavRadio::getAirportLoader()
 {
    // If we don't have an airport loader, try to get one from our simulation
    if (apdb == nullptr) {
-      WorldModel* sim = dynamic_cast<WorldModel*>(getWorldModel());
+      WorldModel* sim{dynamic_cast<WorldModel*>(getWorldModel())};
       if (sim != nullptr) {
-         mixr::dafif::AirportLoader* p = sim->getAirports();
+         mixr::dafif::AirportLoader* p{sim->getAirports()};
          if (p != nullptr && p->isDbLoader()) {
             apdb = p;
          }
@@ -97,9 +97,9 @@ mixr::dafif::AirportLoader* NavRadio::getAirportLoader()
 //------------------------------------------------------------------------------
 bool NavRadio::setPosition()
 {
-   bool ok = false;
+   bool ok{};
 
-   const mixr::models::Player* p = getOwnship();
+   const mixr::models::Player* p{getOwnship()};
    if (p != nullptr) {
       latitude = p->getLatitude();
       longitude = p->getLongitude();
@@ -129,7 +129,7 @@ void TacanRadio::initData()
 
     // Set frequencies
     {
-        unsigned short chan = 1;
+        unsigned short chan{1};
 
         // channels [ 1 .. 16 ]
         while (chan <= 16) {
@@ -227,7 +227,7 @@ bool TacanRadio::setBand(const Band x)
 //------------------------------------------------------------------------------
 bool TacanRadio::computeRangeBearing(bool* rngIsValid, double* range, double* grdrange, bool* bearingIsValid, double* bearing)
 {
-   bool ok = false;
+   bool ok{};
 
    //*rngIsValid = false;
    //*range = 0.0;
@@ -271,8 +271,8 @@ bool TacanRadio::computeRangeBearing(bool* rngIsValid, double* range, double* gr
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(IlsRadio, "IlsRadio")
 EMPTY_DELETEDATA(IlsRadio)
 
-const double IlsRadio::GS_DEG_PER_DOT = 0.25;
-const double IlsRadio::LOC_DEG_PER_DOT = 1.25;
+const double IlsRadio::GS_DEG_PER_DOT{0.25};
+const double IlsRadio::LOC_DEG_PER_DOT{1.25};
 
 IlsRadio::IlsRadio()
 {
@@ -366,19 +366,19 @@ bool IlsRadio::findILSGlideslopeByFreq(double freq)
          //Set the active area:
          getAirportLoader()->setArea(getLatitude(), getLongitude(), getMaxDetectRange());
          //See what the results are:
-         int found = getAirportLoader()->queryIlsByFreq(static_cast<float>(freq));
+         int found{getAirportLoader()->queryIlsByFreq(static_cast<float>(freq))};
 
          //Sort through the results and check the type - assume the closest ones are correct
          //"found" list is already sorted from closest to farthest away:
          for (int i = 0; i < found; i++) {
-            mixr::dafif::Ils* p = getAirportLoader()->getIls(i);
+            mixr::dafif::Ils* p{getAirportLoader()->getIls(i)};
             //Debug Prints:
             //p->printRecord(std::cout);
             //Get Glideslope data here:
             if((!glideSlopeValid)&&(p->isIlsType(mixr::dafif::Ils::GLIDESLOPE))){
                //Glideslope should not affect the bearing data from the localizer
                currentMagVar = p->magVariance();
-               float ilsGS(0), acGS(0), delGS(0);
+               float ilsGS{}, acGS{}, delGS{};
                p->getGlideSlopeData(getLatitude(),getLongitude(),getAltitude(),&ilsGS,&acGS,&delGS);
                ilsGlideSlope = ilsGS;
                acGlideSlope= acGS;

@@ -32,15 +32,15 @@ protected:
    // Slave our position to our ownship
    virtual bool setPosition();
 
-   virtual bool shutdownNotification() override;
+   bool shutdownNotification() override;
 
 private:
    mixr::base::safe_ptr<mixr::dafif::AirportLoader> apdb; // Pointer to Airport loader
    mixr::base::safe_ptr<mixr::dafif::NavaidLoader> nvdb;  // Pointer to Navaid loader
 
-   double latitude {};           // Ownship Latitude
-   double longitude {};          // Ownship Longitude
-   double altitude {};           // Ownship altitude HAE (ft)
+   double latitude{};           // Ownship Latitude
+   double longitude{};          // Ownship Longitude
+   double altitude{};           // Ownship altitude HAE (ft)
 };
 
 //------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ public:
    double getRange() const;       // Range (nautical miles)
    double getBearing() const;     // Bearing (degrees)
 
-   virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) override;
 
 protected:
    // Get Range and Bearing - Input pointers for your outputs
@@ -84,15 +84,15 @@ private:
 
    Band band {Band::TCN_X_BAND};
 
-   bool rangeIsValid {};
-   bool bearingIsValid {};
+   bool rangeIsValid{};
+   bool bearingIsValid{};
 
-   double range {};
-   double grdrange {};
-   double bearing {};
-   double destLatitude {};
-   double destLongitude {};
-   double currentMagVar {};
+   double range{};
+   double grdrange{};
+   double bearing{};
+   double destLatitude{};
+   double destLongitude{};
+   double currentMagVar{};
 };
 
 //------------------------------------------------------------------------------
@@ -118,29 +118,29 @@ public:
    double getGlideslopeDifferenceDots();
    double getLocalizerDifferenceDots();
 
-   virtual void updateData(const double dt = 0.0) override;
+   void updateData(const double dt = 0.0) override;
 
 protected:
-   //Always find the glideslope first!!!!
+   // Always find the glideslope first!!!!
    virtual bool findILSGlideslopeByFreq(double freq);
    virtual bool findLocalizerByFreq(double freq);
 
 private:
-   int timerCounter {};              // For Only doing calc every so often
-   bool localizerValid {};
-   bool glideSlopeValid {};
-   double range {};                  // slant range to the end of the runway
-   double grdrange {};               // ground range to the end of the RWY
-   double bearing {};                // bearing of the end of the RWY
-   double destLatitude {};           // lat for end of RWY
-   double destLongitude {};          // lon for end of RWY
-   double deltaGlideSlope {};
-   double deltaLocalizerBearing {};
-   double currentMagVar {};          // mag var at glideslope emitter
-   double acGlideSlope {};
-   double acLocalizerBearing {};
-   double ilsGlideSlope {};
-   double ilsLocalizerBearing {};
+   int timerCounter{};              // For Only doing calc every so often
+   bool localizerValid{};
+   bool glideSlopeValid{};
+   double range{};                  // slant range to the end of the runway
+   double grdrange{};               // ground range to the end of the RWY
+   double bearing{};                // bearing of the end of the RWY
+   double destLatitude{};           // lat for end of RWY
+   double destLongitude{};          // lon for end of RWY
+   double deltaGlideSlope{};
+   double deltaLocalizerBearing{};
+   double currentMagVar{};          // mag var at glideslope emitter
+   double acGlideSlope{};
+   double acLocalizerBearing{};
+   double ilsGlideSlope{};
+   double ilsLocalizerBearing{};
 };
 
 #endif

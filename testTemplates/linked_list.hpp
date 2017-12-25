@@ -1,6 +1,6 @@
 
-#ifndef __oe_base_LinkedList_H__
-#define __oe_base_LinkedList_H__
+#ifndef __mixr_base_LinkedList_H__
+#define __mixr_base_LinkedList_H__
 
 #include "mixr/base/Object.hpp"
 

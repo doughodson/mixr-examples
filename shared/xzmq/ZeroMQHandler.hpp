@@ -1,6 +1,6 @@
 
-#ifndef __oe_xzmq_ZeroMQHandler_H__
-#define __oe_xzmq_ZeroMQHandler_H__
+#ifndef __mixr_xzmq_ZeroMQHandler_H__
+#define __mixr_xzmq_ZeroMQHandler_H__
 
 #include "mixr/base/network/NetHandler.hpp"
 
@@ -89,7 +89,7 @@ private:
    static i2s_t sti2s;
 
 protected:
-   ZeroMQContext* context{};         // Parent context (oe not ZeroMQ)
+   ZeroMQContext* context{};         // Parent context (mixr not ZeroMQ)
    int            socketType{-1};    // Socket type
    std::string    endpoint;          // Endpoint for binding
    int            linger{-1};        // Socket linger period (ms)

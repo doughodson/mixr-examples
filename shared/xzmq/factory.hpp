@@ -1,6 +1,6 @@
 
-#ifndef __oe_xzmq_factory_H__
-#define __oe_xzmq_factory_H__
+#ifndef __mixr_xzmq_factory_H__
+#define __mixr_xzmq_factory_H__
 
 #include <string>
 

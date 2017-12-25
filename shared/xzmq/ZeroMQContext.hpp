@@ -1,6 +1,6 @@
 
-#ifndef __oe_xzmq_ZeroMQContext_H__
-#define __oe_xzmq_ZeroMQContext_H__
+#ifndef __mixr_xzmq_ZeroMQContext_H__
+#define __mixr_xzmq_ZeroMQContext_H__
 
 #include "mixr/base/Component.hpp"
 

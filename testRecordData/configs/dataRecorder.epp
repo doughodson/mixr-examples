@@ -52,7 +52,7 @@ dataRecorder: ( XDataRecorder
          ( PrintSelected
             filename: "./zPrintSelected2.csv"
             messageToken: REID_PLAYER_DATA
-            fieldName:   "oe.Recorder.Pb.PlayerId.name"
+            fieldName:   "mixr.Recorder.Pb.PlayerId.name"
             compareToValS: "duck12"
          )
 

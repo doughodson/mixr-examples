@@ -7,7 +7,7 @@ The most current version of the mixed reality simulation platform can be found a
 Notes
 -----
 
-*  Use makeEdl.bat to generate the example *.edl files under windows, and
+*  Use make-edl.cmd to generate the example *.edl files under windows, and
    use 'make edl' to generate the *.edl files under linux.
 
 

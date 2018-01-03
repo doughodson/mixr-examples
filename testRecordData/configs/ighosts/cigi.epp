@@ -10,7 +10,7 @@
       netOutput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8108 localPort: 8208 )
    )
 
-   // Include the models
-   #include "CigiModels.epp"
+   // an example mapping of players to cigi entity IDs
+   #include "CigiTypeMap.epp"
 )
 

@@ -9,7 +9,7 @@
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 5
    maxElevations: 20
-   async: 0
+   async: false
    hideOwnshipModel: 1      // otherwise you are inside the ownship model
    session: ( CigiHostSession
       netInput: ( UdpUnicastHandler localIpAddress: localhost    port: 8010 ) // HOST

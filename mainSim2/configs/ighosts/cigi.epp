@@ -3,7 +3,7 @@
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 50
    maxElevations: 20
-   async: 0
+   async: false
    session: ( CigiHostSession
       netInput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8008 )
       netOutput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8108 localPort: 8208 )

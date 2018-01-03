@@ -9,7 +9,7 @@
    maxRange: ( NauticalMiles 20.0 )
    maxModels: 50
    maxElevations: 20
-   async: 5
+   async: true
    session: (CigiHostSession
       netInput:  ( UdpUnicastHandler localIpAddress: IG_INPUT_IP ipAddress: IG_INPUT_IP  port: IG_INPUT_PORT )
       netOutput: ( UdpUnicastHandler localIpAddress: IG_INPUT_IP ipAddress: IG_OUTPUT_IP port: IG_OUTPUT_PORT localPort: IG_OUTPUT_SOURCE_PORT )

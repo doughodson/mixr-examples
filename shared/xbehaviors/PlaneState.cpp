@@ -69,7 +69,7 @@ void PlaneState::updateState(const base::Component* const actor)
    setAlive(false);
    if (airVehicle != nullptr && airVehicle->isActive()) {
       setAltitude(airVehicle->getAltitude());
-      setAlive(airVehicle->getMode() == models::Player::ACTIVE);
+      setAlive(airVehicle->getMode() == models::Player::Mode::ACTIVE);
       setHeading(airVehicle->getHeading());
       setPitch(airVehicle->getPitch());
       setRoll(airVehicle->getRoll());
@@ -102,7 +102,7 @@ void PlaneState::updateState(const base::Component* const actor)
             // Get the pointer to the target player
             const auto pair = static_cast<const base::Pair*>(item->getValue());
             const auto player = static_cast<const models::Player*>(pair->object());
-            if (player->isMajorType(models::Player::WEAPON) && (player->isActive() || player->isMode(models::Player::PRE_RELEASE)) && (player->getSide() == airVehicle->getSide())) {
+            if (player->isMajorType(models::Player::WEAPON) && (player->isActive() || player->isMode(models::Player::Mode::PRE_RELEASE)) && (player->getSide() == airVehicle->getSide())) {
                // our side has a weapon on-the-way/in-the-air;
                setMissileFired(true);
                finished=true;

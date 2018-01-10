@@ -202,7 +202,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
          const double y{rpos[1] * mixr::base::distance::M2NM};
 
          const auto weapon = dynamic_cast<mixr::models::AbstractWeapon*>(p);
-         if (weapon && (weapon->isMode(mixr::models::Player::PRE_RELEASE) || weapon->isActive())) {
+         if (weapon && (weapon->isMode(mixr::models::Player::Mode::PRE_RELEASE) || weapon->isActive())) {
             target = weapon->getTargetPlayer();
          }
 

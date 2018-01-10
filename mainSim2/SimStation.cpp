@@ -115,7 +115,7 @@ void SimStation::stepOwnshipPlayer()
            const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
            if (pair != nullptr) {
                const auto ip = static_cast<mixr::models::Player*>(pair->object());
-               if ( ip->isMode(mixr::models::Player::ACTIVE) &&
+               if ( ip->isMode(mixr::models::Player::Mode::ACTIVE) &&
                     ip->isLocalPlayer() &&
                     ip->isClassType(typeid(mixr::models::AirVehicle))
                     ) {

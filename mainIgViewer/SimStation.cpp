@@ -125,7 +125,7 @@ void SimStation::stepOwnshipPlayer()
          base::Pair* pair {static_cast<base::Pair*>(item->getValue())};
          if (pair != nullptr) {
             models::Player* ip{static_cast<models::Player*>(pair->object())};
-            if ( ip->isMode(models::Player::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::AirVehicle)) ) {
+            if ( ip->isMode(models::Player::Mode::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::AirVehicle)) ) {
                if (f == nullptr) { f = ip; }  // Remember the first
                if (found) { n = ip; ; break; }
                if (ip == getOwnship()) found = true;

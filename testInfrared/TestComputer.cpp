@@ -109,7 +109,7 @@ void TestComputer::process(const double dt)
 bool TestComputer::processIr()
 {
    // set the seeker/gimbal free to track target if just launched
-   if (uncaged==false && getOwnship()->isMode(mixr::models::Player::ACTIVE))
+   if (uncaged==false && getOwnship()->isMode(mixr::models::Player::Mode::ACTIVE))
       uncaged = true;
 
    // waiting on getnexttarget may mean missing one or two updates

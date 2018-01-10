@@ -84,7 +84,7 @@ void SimStation::stepOwnshipPlayer()
          const auto pair = static_cast<base::Pair*>(item->getValue());
          if (pair != nullptr) {
             const auto ip = static_cast<models::Player*>(pair->object());
-            if ( ip->isMode(models::Player::ACTIVE) &&
+            if ( ip->isMode(models::Player::Mode::ACTIVE) &&
                ip->isLocalPlayer() &&
                ip->isClassType(typeid(models::AirVehicle))
                ) {

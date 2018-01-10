@@ -453,8 +453,8 @@ void MapPage::updateData(const double dt)
                             int type{1};
                             if (player[j]->isSide(mixr::models::Player::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "");              //<LDB - "player"
-                            if (player[j]->getName() != nullptr) {
-                                loader->updateSymbolText(playerIdx[j], "name", player[j]->getName()->getString());
+                            if (player[j]->getName() != "") {
+                                loader->updateSymbolText(playerIdx[j], "name", player[j]->getName().c_str());
                             }
                             // now let's empty our new player list
                             newPlayers[i]->unref();

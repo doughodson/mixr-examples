@@ -9,7 +9,7 @@
    // Tab Printer
    tabPrinter: ( TabPrinter
       filename: "./fileWrite.txt"
-      msgHdrOptn: "ON_CHANGE"
+      msgHdrOptn: on_change
    )
    // print player
    //   printPlayer: ( PrintPlayer

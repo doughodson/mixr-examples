@@ -48,7 +48,7 @@ sensors:
             upperWavelength: 7.5          //  2: Upper wavelength limit (microns)
             nei: 0.0000001                //  3: Noise Equivalent Irradiance  (watts/str-m^2) not (watts/str-cm^2)
             threshold: 2.0                //  4: Signal to Noise Threshold
-            sensorType: "hot spot"        //  6: Sensor Type (CONTRAST, HOTSPOT) "contrast"
+            sensorType: hotspot           //  6: Sensor Type {contrast, hotspot}
             IFOV: 0.0059802001725619360   //  5: Instantaneous Field of View  (steradians) theta=5deg, theta/2 = 2.5 deg
             //azimuthBin:  BINSIZE        //  8: Azimuth minimum  1/4 of a degree in radians
             //elevationBin: BINSIZE       //  9: Elevation minimum
@@ -62,7 +62,7 @@ sensors:
             upperWavelength: 5.0          //  2: Upper wavelength limit (microns)
             nei: 0.0000001                //  3: Noise Equivalent Irradiance  (watts/str-m^2) not (watts/str-cm^2)
             threshold: 2.0                //  4: Signal to Noise Threshold
-            sensorType: "hot spot"        //  6: Sensor Type (CONTRAST, HOTSPOT) "contrast"
+            sensorType: hotspot           //  6: Sensor Type {contrast, hotspot}
             IFOV: 0.0059802001725619360   //  5: Instantaneous Field of View  (steradians) theta=5deg, theta/2 = 2.5 deg
             //azimuthBin:  BINSIZE        //  8: Azimuth minimum  1/4 of a degree in radians
             //elevationBin: BINSIZE       //  9: Elevation minimum

@@ -19,8 +19,8 @@
 
    // image generator host interface
    igHosts: {
-      //#include "ighosts/pov.epp"
-      #include "ighosts/cigi.epp"
+      #include "ighosts/pov.epp"
+      //#include "ighosts/cigi.epp"
    }
 
    // interoperability interfaces

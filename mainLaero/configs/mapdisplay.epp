@@ -16,7 +16,7 @@
 
    clearDepth: 20.0
    clearColor: ( rgb 0.321 0.321 0.321 )
-    
+
    normalFont: normal
 
    fonts: {

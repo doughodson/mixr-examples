@@ -39,7 +39,7 @@ dataRecorder: ( XDataRecorder
 
          // Test tab printer
          ( TabPrinter
-            msgHdrOptn: NEW_MSG
+            msgHdrOptn: new_msg
             filename: "./zTabPrinter.csv"
          )
 

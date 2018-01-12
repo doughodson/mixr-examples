@@ -28,12 +28,12 @@
          // Tab printer
          ( TabPrinter
             //enabledList: [ REID_PLAYER_DATA ]
-            msgHdrOptn: NEW_MSG
+            msgHdrOptn: new_msg
             filename: "./zTabPrinter2.csv"
          )
          ( TabPrinter
             disabledList: [ REID_PLAYER_DATA ]
-            msgHdrOptn: NEW_MSG
+            msgHdrOptn: new_msg
             filename: "./zTabPrinter2a.csv"
          )
          ( PrintPlayer

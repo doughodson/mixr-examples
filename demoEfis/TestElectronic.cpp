@@ -1,6 +1,8 @@
 
 #include "TestElectronic.hpp"
 
+#include "mixr/base/String.hpp"
+
 #include "mixr/base/util/enum_utils.hpp"
 #include "mixr/base/units/LinearVelocity.hpp"
 

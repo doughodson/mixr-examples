@@ -3,6 +3,7 @@
 
 #include "events.hpp"
 
+#include "mixr/base/String.hpp"
 #include "mixr/base/units/Distances.hpp"
 #include "mixr/base/units/distance_utils.hpp"
 

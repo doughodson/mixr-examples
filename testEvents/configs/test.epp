@@ -12,14 +12,14 @@
     
     clearDepth: 1.0
     clearColor: ( rgb 0 0 0 )
-    
+
     vpX:        100
     vpY:        100
     vpWidth:    500
     vpHeight:   500
-    
+
     normalFont: default
-    
+
     fonts: {
         default:
         ( FTGLPolygonFonts
@@ -32,7 +32,7 @@
             file: "arialn.ttf"
         )   
     }
-    
+
     components: {
         // background lines to separate
         ( Line

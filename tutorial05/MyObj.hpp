@@ -5,7 +5,7 @@
 #include "mixr/base/Object.hpp"
 
 namespace mixr {
-namespace base { class PairStream; class List; class String; class Number; class Identifier; }
+namespace base { class Boolean; class PairStream; class List; class String; class Identifier; }
 }
 
 //------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ private:
    bool setSlotTextColor(const mixr::base::Identifier* const);
    bool setSlotBackColor(const mixr::base::Identifier* const);
    bool setSlotVector(const mixr::base::List* const);
-   bool setSlotVisible(const mixr::base::Number* const);
+   bool setSlotVisible(const mixr::base::Boolean* const);
    bool setSlotMessage(const mixr::base::String* const);
 };
 

@@ -68,7 +68,7 @@
             components: {            
                 rtpointer:
                 ( GaugeSlider
-                    vertical: 0
+                    vertical: false
                     scalingTable: 
                     ( Table1
                         x: [ -2 2 ]

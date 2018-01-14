@@ -13,7 +13,7 @@
     vpHeight: 500
     clearDepth: 1.0
     clearColor: (rgb 0 0 0)
-    fullScreen: 0
+    fullScreen: false
     
     #if defined (SHOW_MATERIALS)
     materials: {

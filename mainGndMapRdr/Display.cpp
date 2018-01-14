@@ -7,7 +7,7 @@
 #include "mixr/simulation/Simulation.hpp"
 #include "mixr/simulation/Station.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/colors/Color.hpp"
 #include "mixr/base/colors/Rgb.hpp"
@@ -29,7 +29,7 @@ BEGIN_SLOTTABLE(Display)
 END_SLOTTABLE(Display)
 
 BEGIN_SLOT_MAP(Display)
-   ON_SLOT( 1, setSlotTextureTest, base::Number)
+   ON_SLOT( 1, setSlotTextureTest, base::Boolean)
 END_SLOT_MAP()
 
 Display::Display()
@@ -82,7 +82,7 @@ simulation::Station* Display::getStation()
 }
 
 // Set texture test flag
-bool Display::setSlotTextureTest(const base::Number* const msg)
+bool Display::setSlotTextureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

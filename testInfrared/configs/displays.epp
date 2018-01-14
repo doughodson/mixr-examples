@@ -48,7 +48,7 @@
          bitmapHeight: 19
          characterSpacing: 0.08    //0.048
          lineSpacing: 0.08
-         reverse: 1
+         reverse: true
          path: MIXR_DATA_FONT_11_19_PATH
       )
 
@@ -83,7 +83,7 @@
          transform: ( Translation 0 0 -0.5 )
          components: {
          
-            ( Circle selectName: 0x1001 color: ( hsv 100.0 0.9 0.0 ) radius: AIR_TRACKS_RADIUS  slices: 50 filled: 1 transform: ( Translation 0.0 0.0 -0.5 ) )
+            ( Circle selectName: 0x1001 color: ( hsv 100.0 0.9 0.0 ) radius: AIR_TRACKS_RADIUS  slices: 50 filled: true transform: ( Translation 0.0 0.0 -0.5 ) )
             ( Circle selectName: 0x1002 color: white radius: AIR_TRACKS_RADIUS  slices: 50  )
             ( Circle selectName: 0x1003 color: white radius: 0.9  slices: 50  )
             
@@ -184,7 +184,7 @@
                }
             )
             ( Line
-               segment: 1
+               segment: true
                vertices: {
                   [  0.0  -0.15 ]  [  0.0  0.05 ]
                   [  0.1   0.0  ]  [ -0.1  0.0  ]

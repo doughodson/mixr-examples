@@ -3,7 +3,7 @@
 //   2 columns, 20 rows each, of AI and DI channels (see Display.h)
 //------------------------------------------------------------------------------
 
-fullScreen: 0
+fullScreen: false
 
 left:        -17.5
 right:       622.5

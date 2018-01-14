@@ -12,7 +12,7 @@
                         ( Line
                             linewidth: 2
                             color: cyan
-                            segment: 1
+                            segment: true
                             vertices: {
                                 // top
                                 [ 0 1.25 ] [ -0.05 1.16 ]
@@ -42,7 +42,7 @@
                         ( Line
                             linewidth: 2
                             color: cyan
-                            segment: 1
+                            segment: true
                             vertices: {
                                 [ 0 1.25 ] [ 0  0.85 ]
                                 [ -0.1 1.1 ] [ 0 1.25 ]
@@ -60,8 +60,8 @@
                 // course pointer
                 ( CrsPntr 
                     numDots: 4
-                    showCdi: 1
-                    showCrsPntr: 1
+                    showCdi: true
+                    showCrsPntr: true
                     components: {
                         // Cdi scale
                         ( Graphic
@@ -69,25 +69,25 @@
                             components: {
                                 ( Circle
                                     transform: ( Translation -0.88 0 ) 
-                                    filled: 1
+                                    filled: true
                                     slices: 1000
                                     radius: 0.1
                                 )
                                 ( Circle
                                     transform: ( Translation -0.44 0 ) 
-                                    filled: 1
+                                    filled: true
                                     slices: 1000
                                     radius: 0.1
                                 )
                                 ( Circle
                                     transform: ( Translation 0.88 0 ) 
-                                    filled: 1
+                                    filled: true
                                     slices: 1000
                                     radius: 0.1
                                 )
                                 ( Circle
                                     transform: ( Translation 0.44 0 ) 
-                                    filled: 1
+                                    filled: true
                                     slices: 1000
                                     radius: 0.1
                                 )                                

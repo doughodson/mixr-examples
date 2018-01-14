@@ -3,6 +3,7 @@
 
 #include "mixr/terrain/Terrain.hpp"
 
+#include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Number.hpp"
 
 #include "mixr/base/colors/Color.hpp"
@@ -41,18 +42,18 @@ BEGIN_SLOTTABLE(Display)
 END_SLOTTABLE(Display)
 
 BEGIN_SLOT_MAP(Display)
-   ON_SLOT( 1, setSlotTerrain,       terrain::Terrain)
-   ON_SLOT( 2, setSlotMinElevation,  base::Distance)
-   ON_SLOT( 3, setSlotMaxElevation,  base::Distance)
-   ON_SLOT( 4, setSlotAltitude,      base::Distance)
-   ON_SLOT( 5, setSlotLookAngle,     base::Angle)
-   ON_SLOT( 6, setSlotBeamWidth,     base::Angle)
-   ON_SLOT( 7, setSlotColorScale,    base::Number)
-   ON_SLOT( 8, setSlotInterpolate,   base::Number)
-   ON_SLOT( 9, setSlotShadowsTest,   base::Number)
-   ON_SLOT(10, setSlotAacTest,       base::Number)
-   ON_SLOT(11, setSlotEarthCurvatureTest, base::Number)
-   ON_SLOT(12, setSlotTextureTest, base::Number)
+   ON_SLOT( 1, setSlotTerrain,            terrain::Terrain)
+   ON_SLOT( 2, setSlotMinElevation,       base::Distance)
+   ON_SLOT( 3, setSlotMaxElevation,       base::Distance)
+   ON_SLOT( 4, setSlotAltitude,           base::Distance)
+   ON_SLOT( 5, setSlotLookAngle,          base::Angle)
+   ON_SLOT( 6, setSlotBeamWidth,          base::Angle)
+   ON_SLOT( 7, setSlotColorScale,         base::Number)
+   ON_SLOT( 8, setSlotInterpolate,        base::Boolean)
+   ON_SLOT( 9, setSlotShadowsTest,        base::Boolean)
+   ON_SLOT(10, setSlotAacTest,            base::Boolean)
+   ON_SLOT(11, setSlotEarthCurvatureTest, base::Boolean)
+   ON_SLOT(12, setSlotTextureTest,        base::Boolean)
 END_SLOT_MAP()
 
 Display::Display()
@@ -209,7 +210,7 @@ bool Display::setSlotColorScale(const base::Number* const msg)
 }
 
 // Set interpolate flag
-bool Display::setSlotInterpolate(const base::Number* const msg)
+bool Display::setSlotInterpolate(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -220,7 +221,7 @@ bool Display::setSlotInterpolate(const base::Number* const msg)
 }
 
 // Set shadow test flag
-bool Display::setSlotShadowsTest(const base::Number* const msg)
+bool Display::setSlotShadowsTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -231,7 +232,7 @@ bool Display::setSlotShadowsTest(const base::Number* const msg)
 }
 
 // Set AAC test flag
-bool Display::setSlotAacTest(const base::Number* const msg)
+bool Display::setSlotAacTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -242,7 +243,7 @@ bool Display::setSlotAacTest(const base::Number* const msg)
 }
 
 // Set earth curvature test flag
-bool Display::setSlotEarthCurvatureTest(const base::Number* const msg)
+bool Display::setSlotEarthCurvatureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -254,7 +255,7 @@ bool Display::setSlotEarthCurvatureTest(const base::Number* const msg)
 
 
 // Set texture test flag
-bool Display::setSlotTextureTest(const base::Number* const msg)
+bool Display::setSlotTextureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

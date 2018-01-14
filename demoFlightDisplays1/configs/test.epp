@@ -10,7 +10,7 @@
     vpHeight: 1000
     clearDepth: 1.0
     clearColor: (rgb 0 0 0)
-    fullScreen: 0
+    fullScreen: false
 
     colorTable: {
         black:      ( rgba 0 0 0 )

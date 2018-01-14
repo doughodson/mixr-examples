@@ -6,7 +6,7 @@
 #include "mixr/base/units/distance_utils.hpp"
 
 namespace mixr {
-namespace base { class Angle; class Distance; class Number; }
+namespace base { class Angle; class Boolean; class Distance; class Number; }
 namespace terrain { class Terrain; }
 }
 
@@ -104,11 +104,11 @@ private:
    bool setSlotLookAngle(const mixr::base::Angle* const);
    bool setSlotBeamWidth(const mixr::base::Angle* const);
    bool setSlotColorScale(const mixr::base::Number* const);
-   bool setSlotInterpolate(const mixr::base::Number* const);
-   bool setSlotShadowsTest(const mixr::base::Number* const);
-   bool setSlotAacTest(const mixr::base::Number* const);
-   bool setSlotEarthCurvatureTest(const mixr::base::Number* const);
-   bool setSlotTextureTest(const mixr::base::Number* const);
+   bool setSlotInterpolate(const mixr::base::Boolean* const);
+   bool setSlotShadowsTest(const mixr::base::Boolean* const);
+   bool setSlotAacTest(const mixr::base::Boolean* const);
+   bool setSlotEarthCurvatureTest(const mixr::base::Boolean* const);
+   bool setSlotTextureTest(const mixr::base::Boolean* const);
 };
 
 #endif

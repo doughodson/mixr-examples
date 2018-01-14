@@ -75,8 +75,8 @@ sensors:
 aimobc:
    ( TestComputer
 
-     //enableMessageType: INFO
-     //enableMessageType: DEBUG
+     //enableMessageType: info
+     //enableMessageType: debug
    
      components: {
         aimTrkMgr: ( AirAngleOnlyTrkMgr

@@ -33,7 +33,7 @@ hsimode:
                 bugro:
                 ( NumericReadout
                     format: "00#"
-                    inheritColor: 1
+                    inheritColor: true
                     transform: { ( Translation 0 0.825 ) ( Scale 0.11 ) }
                 )
             }
@@ -68,15 +68,15 @@ hsimode:
                         ( Rotary2
                             transform: ( Translation -1.7 1.4 )
                             components: {
-                                ( AsciiText inheritColor: 1 transform: ( Scale 0.12 ) text: "DIST" ) // false
-                                ( AsciiText inheritColor: 1 transform: ( Scale 0.12 ) text: "DME"  ) // true
+                                ( AsciiText inheritColor: true transform: ( Scale 0.12 ) text: "DIST" ) // false
+                                ( AsciiText inheritColor: true transform: ( Scale 0.12 ) text: "DME"  ) // true
                             }
                         )
                         distval:
                         ( NumericReadout
                             transform: { ( Translation -1.7 1.2 ) ( Scale 0.15 ) }
                             format: "###.#"
-                            inheritColor: 1
+                            inheritColor: true
                         )
                     }
                 )
@@ -87,13 +87,13 @@ hsimode:
         ( Graphic
             components: {
                 ( AsciiText
-                    inheritColor: 1
+                    inheritColor: true
                     transform: { ( Translation 1.35 1.4 ) ( Scale 0.12 ) }
                     text: "CRS"
                 )
                 course:
                 ( NumericReadout
-                    inheritColor: 1
+                    inheritColor: true
                     transform: { ( Translation 1.35 1.2 ) ( Scale 0.15 ) }
                     format: "###"
                 )
@@ -104,10 +104,10 @@ hsimode:
         whichlabel:
         ( Rotary
             components: {
-                ( AsciiText inheritColor: 1 transform: { ( Translation 1.35 -1.25 ) ( Scale 0.12 ) } text: "TTG" )  // 1
-                ( AsciiText inheritColor: 1 transform: { ( Translation 1.1  -1.25 ) ( Scale 0.12 ) } text: "GS"  )  // 2
-                ( AsciiText inheritColor: 1 transform: { ( Translation 1.35 -1.25 ) ( Scale 0.12 ) } text: "TAS" )  // 3
-                ( AsciiText inheritColor: 1 transform: { ( Translation 1.35 -1.25 ) ( Scale 0.12 ) } text: "ET"  )  // 4
+                ( AsciiText inheritColor: true transform: { ( Translation 1.35 -1.25 ) ( Scale 0.12 ) } text: "TTG" )  // 1
+                ( AsciiText inheritColor: true transform: { ( Translation 1.1  -1.25 ) ( Scale 0.12 ) } text: "GS"  )  // 2
+                ( AsciiText inheritColor: true transform: { ( Translation 1.35 -1.25 ) ( Scale 0.12 ) } text: "TAS" )  // 3
+                ( AsciiText inheritColor: true transform: { ( Translation 1.35 -1.25 ) ( Scale 0.12 ) } text: "ET"  )  // 4
                 ( AsciiText text: "" ) // 5
             }
         )
@@ -119,7 +119,7 @@ hsimode:
                 // time to go
                 ttg:
                 ( NumericReadout
-                    inheritColor: 1
+                    inheritColor: true
                     format: "###.#"
                     transform: { ( Translation 1.21 -1.45 ) ( Scale 0.15 ) }
                 )
@@ -129,7 +129,7 @@ hsimode:
                     components: {
                         groundspeed:
                         ( NumericReadout
-                            inheritColor: 1
+                            inheritColor: true
                             transform: { ( Translation 1.35 -1.25 ) ( Scale 0.15 ) }
                             format: "###"
                             value: 9
@@ -138,15 +138,15 @@ hsimode:
                         driftangle:
                         ( NumericReadout
                             transform: { ( Translation 1.35 -1.45 ) ( Scale 0.15 ) }
-                            inheritColor: 1
+                            inheritColor: true
                             format: "###"
                         )
                         driftangleside:
                         ( Rotary2
                             transform: { ( Translation 1.6 -1.45 ) ( Scale 0.15 ) }
                             components: {
-                                ( AsciiText inheritColor: 1 text: "R" ) // 0
-                                ( AsciiText inheritColor: 1 text: "L" ) // 1
+                                ( AsciiText inheritColor: true text: "R" ) // 0
+                                ( AsciiText inheritColor: true text: "L" ) // 1
                             }
                         )
                     }
@@ -155,7 +155,7 @@ hsimode:
                 // true air speed
                 trueairspeed:
                 ( NumericReadout
-                    inheritColor: 1
+                    inheritColor: true
                     transform:  { ( Translation 1.35 -1.45 ) ( Scale 0.15 ) }
                     format: "###"
                 )
@@ -171,13 +171,13 @@ hsimode:
                                     components: {
                                         // this is the H label for hours and minutes
                                         ( AsciiText
-                                            inheritColor: 1
+                                            inheritColor: true
                                             transform: { ( Translation 1.08 -1.45 ) ( Scale 0.15 ) }
                                             text: "H"
                                         )
                                         elapsedtimehour:
                                         ( TimeReadout
-                                            inheritColor: 1
+                                            inheritColor: true
                                             transform: { ( Translation 1.125 -1.45 ) ( Scale 0.15 ) }
                                             format: "HH:MM"
                                         )
@@ -186,7 +186,7 @@ hsimode:
                                 // time readout in minutes and seconds
                                 elapsedtimemin:
                                 ( TimeReadout
-                                    inheritColor: 1
+                                    inheritColor: true
                                     transform: { ( Translation 1.125 -1.45 ) ( Scale 0.15 ) }
                                     format: "MM:SS"
                                 )
@@ -202,7 +202,7 @@ hsimode:
                         driftanglewind:
                         ( NumericReadout
                             transform: { ( Translation 1.35 -1.25 ) ( Scale 0.15 ) }
-                            inheritColor: 1
+                            inheritColor: true
                             format: "###"
                         )
 
@@ -210,29 +210,29 @@ hsimode:
                         ( Rotary2
                             transform: { ( Translation 1.6 -1.25 ) ( Scale 0.15 ) }
                             components: {
-                                ( AsciiText inheritColor: 1 text: "R" ) // 0
-                                ( AsciiText inheritColor: 1 text: "L" ) // 1
+                                ( AsciiText inheritColor: true text: "R" ) // 0
+                                ( AsciiText inheritColor: true text: "L" ) // 1
                             }
                         )
 
                         winddirection:
                         ( NumericReadout
-                            inheritColor: 1
+                            inheritColor: true
                             format: "00#"
                             transform: { ( Translation 0.81 -1.45 ) ( Scale 0.15 ) }
                         )
 
                         ( AsciiText
-                            inheritColor: 1
+                            inheritColor: true
                             transform: { ( Translation 1.05 -1.45 ) ( Scale 0.15 ) }
                             text: "/"
                         )
 
                         windspeed:
                         ( NumericReadout
-                            inheritColor: 1
+                            inheritColor: true
                             format: "###"
-                            justification: "left"
+                            justification: left
                             value: 999
                             transform: { ( Translation 1.14 -1.45 ) ( Scale 0.15 ) }
                         )
@@ -268,7 +268,7 @@ hsimode:
                 bearingro:
                 ( NumericReadout
                     transform: { ( Translation -1.35 -1.25 ) ( Scale 0.12 ) }
-                    inheritColor: 1
+                    inheritColor: true
                     format: "00#"
                     value: 999
                 )
@@ -463,12 +463,12 @@ hsimode:
                 whichprimaryreadout:
                 ( Rotary
                     components: {
-                        ( AsciiText inheritColor: 1 transform: (Scale 0.12 )  vertical: 1  text: "INAV" ) // 1
-                        ( AsciiText inheritColor: 1 transform: (Scale 0.12 )  vertical: 1  text: "LOC1" ) // 2
-                        ( AsciiText inheritColor: 1 transform: (Scale 0.12 )  vertical: 1  text: "VOR1" ) // 3
-                        ( AsciiText inheritColor: 1 transform: (Scale 0.12 )  vertical: 1  text: "LOC2" ) // 4
-                        ( AsciiText inheritColor: 1 transform: (Scale 0.12 )  vertical: 1  text: "VOR2" ) // 5
-                        ( AsciiText inheritColor: 1 transform: (Scale 0.12 )  vertical: 1  text: "TAC"  ) // 6
+                        ( AsciiText inheritColor: true transform: (Scale 0.12 )  vertical: true  text: "INAV" ) // 1
+                        ( AsciiText inheritColor: true transform: (Scale 0.12 )  vertical: true  text: "LOC1" ) // 2
+                        ( AsciiText inheritColor: true transform: (Scale 0.12 )  vertical: true  text: "VOR1" ) // 3
+                        ( AsciiText inheritColor: true transform: (Scale 0.12 )  vertical: true  text: "LOC2" ) // 4
+                        ( AsciiText inheritColor: true transform: (Scale 0.12 )  vertical: true  text: "VOR2" ) // 5
+                        ( AsciiText inheritColor: true transform: (Scale 0.12 )  vertical: true  text: "TAC"  ) // 6
                     }
                 )
             }
@@ -481,12 +481,12 @@ hsimode:
                 whichsecondaryreadout:
                 ( Rotary
                     components: {
-                        ( AsciiText inheritColor: 1 vertical: 1 transform: (Scale 0.12 ) text: "INAV" ) // 1
-                        ( AsciiText inheritColor: 1 vertical: 1 transform: (Scale 0.12 ) text: "LOC1" ) // 2
-                        ( AsciiText inheritColor: 1 vertical: 1 transform: (Scale 0.12 ) text: "VOR1" ) // 3
-                        ( AsciiText inheritColor: 1 vertical: 1 transform: (Scale 0.12 ) text: "LOC2" ) // 4
-                        ( AsciiText inheritColor: 1 vertical: 1 transform: (Scale 0.12 ) text: "VOR2" ) // 5
-                        ( AsciiText inheritColor: 1 vertical: 1 transform: (Scale 0.12 ) text: "TAC"  ) // 6
+                        ( AsciiText inheritColor: true vertical: true transform: (Scale 0.12 ) text: "INAV" ) // 1
+                        ( AsciiText inheritColor: true vertical: true transform: (Scale 0.12 ) text: "LOC1" ) // 2
+                        ( AsciiText inheritColor: true vertical: true transform: (Scale 0.12 ) text: "VOR1" ) // 3
+                        ( AsciiText inheritColor: true vertical: true transform: (Scale 0.12 ) text: "LOC2" ) // 4
+                        ( AsciiText inheritColor: true vertical: true transform: (Scale 0.12 ) text: "VOR2" ) // 5
+                        ( AsciiText inheritColor: true vertical: true transform: (Scale 0.12 ) text: "TAC"  ) // 6
                     }
                 )
             }

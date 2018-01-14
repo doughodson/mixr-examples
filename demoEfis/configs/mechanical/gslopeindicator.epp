@@ -92,7 +92,7 @@
         ( GaugeSlider
             transform: ( Translation -0.13 0 )
             color: white
-            vertical: 1
+            vertical: true
             scalingTable: 
             ( Table1
                 x: [ -2.5 2.5 ]

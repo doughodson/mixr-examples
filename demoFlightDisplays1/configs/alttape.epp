@@ -350,7 +350,7 @@
         )   
         // now draw all of the lines 
         ( SpdLines 
-            isAlt: 1
+            isAlt: true
         )
     }
 )

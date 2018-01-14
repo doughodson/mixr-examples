@@ -136,7 +136,7 @@ horizonbar: ( Line
             // 35 degree
             ( Line
                 color: white
-                segment: 1
+                segment: true
                 transform: ( Translation 0 3.22 )
                 vertices: { [ -0.47 0 ] [ 0.47 0 ] }
             )                  
@@ -440,7 +440,7 @@ horizonbar: ( Line
             // -35 degree
             ( Line
                 color: white
-                segment: 1
+                segment: true
                 transform: ( Translation 0 -3.22 )
                 vertices: { [ -0.47 0 ] [ 0.47 0 ] }
             )                  

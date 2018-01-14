@@ -72,7 +72,7 @@
       ( AsciiText color: white  position: [ 14 30 ] text: "30" )
       ( AsciiText color: white  position: [ 1 33 ] text: "B-Scan" )
       rangeRO: ( NumericReadout color: white position: [ 3 35 ] format: "0##" )
-      ( AsciiText color: white  position: [ 3 33 ] vertical: 1  text: "RANGE" )
+      ( AsciiText color: white  position: [ 3 33 ] vertical: true  text: "RANGE" )
    
 
       ( Graphic       // RWR
@@ -82,7 +82,7 @@
             ( Graphic   // background display
                transform: ( Translation 0.0 0.0 -0.5 ) 
                components: {
-                  ( Circle color: ( hsv 120.0 0.5 0.0 ) radius: 1.0  slices: 50 filled: 1 transform: ( Translation 0.0 0.0 -0.5 ) )
+                  ( Circle color: ( hsv 120.0 0.5 0.0 ) radius: 1.0  slices: 50 filled: true transform: ( Translation 0.0 0.0 -0.5 ) )
                   ( Circle color: white radius: 0.01 slices: 4 )
                   ( Circle color: white radius: 0.2  slices: 25 )
                   ( Circle color: white radius: 0.4  slices: 25 )
@@ -102,7 +102,7 @@
          components: {
             ( Line
                color: white
-               segment: 1
+               segment: true
                vertices: {
                   [ -1.0   0.0 ] [ -1.0    2.0 ]      // Left Side
                   [  1.0   0.0 ] [  1.0    2.0 ]      // Right Side
@@ -145,7 +145,7 @@
          transform: ( Translation -1.0 -1.9 -0.5 )
          components: {
          
-            ( Circle selectName: 0x1001 color: ( hsv 100.0 0.9 0.0 ) radius: AIR_TRACKS_RADIUS  slices: 50 filled: 1 transform: ( Translation 0.0 0.0 -0.5 ) )
+            ( Circle selectName: 0x1001 color: ( hsv 100.0 0.9 0.0 ) radius: AIR_TRACKS_RADIUS  slices: 50 filled: true transform: ( Translation 0.0 0.0 -0.5 ) )
             ( Circle selectName: 0x1002 color: white radius: AIR_TRACKS_RADIUS  slices: 50  )
             ( Circle selectName: 0x1003 color: white radius: 0.9  slices: 50  )
             
@@ -246,7 +246,7 @@
                }
             )
             ( Line
-               segment: 1
+               segment: true
                vertices: {
                   [  0.0  -0.15 ]  [  0.0  0.05 ]
                   [  0.1   0.0  ]  [ -0.1  0.0  ]

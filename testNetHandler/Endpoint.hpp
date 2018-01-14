@@ -5,7 +5,7 @@
 #include "mixr/base/Component.hpp"
 
 namespace mixr {
-namespace base { class NetHandler; class Number; }
+namespace base { class Boolean; class NetHandler; class Number; }
 }
 
 //------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ namespace base { class NetHandler; class Number; }
 //      netHandler  <NetHandler>    Network handler (input/output, or just output if 'netInput' is defined)
 //      netInput    <NetHandler>    Optional input handler (otherwise 'netHandler' is used)
 //      netOutput   <NetHandler>    Alias for the 'netHandler' slot.
-//      noWait      <Number>        No wait (unblocked) I/O flag (default: false -- blocked I/O)
+//      noWait      <Boolean>       No wait (unblocked) I/O flag (default: false -- blocked I/O)
 //      loops       <Number>        Number of messages to send/recv before disconnecting and
 //                                  halting (default: infinite)
 //
@@ -27,7 +27,7 @@ class Endpoint : public mixr::base::Component
    DECLARE_SUBCLASS(Endpoint, mixr::base::Component)
 
 public:
-    static const unsigned int MAX_SIZE{1024};  // Max buffer size
+    static const int MAX_SIZE{1024};  // Max buffer size
 
 public:
     Endpoint();
@@ -63,7 +63,7 @@ private:
     // slot table helper methods
     bool setSlotNetwork(mixr::base::NetHandler* const);
     bool setSlotNetInput(mixr::base::NetHandler* const);
-    bool setSlotNoWait(mixr::base::Number* const);
+    bool setSlotNoWait(mixr::base::Boolean* const);
     bool setSlotLoops(mixr::base::Number* const);
 };
 

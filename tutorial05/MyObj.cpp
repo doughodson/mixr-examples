@@ -1,7 +1,6 @@
 
 #include "MyObj.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/PairStream.hpp"
@@ -20,7 +19,7 @@ BEGIN_SLOTTABLE(MyObj)
    "textColor",          // 2: Text color          <Identifier>
    "backColor",          // 3: Background color    <Identifier>
    "vector",             // 4: Vector              <List>
-   "visible",            // 5: Visibility flag     <Number>
+   "visible",            // 5: Visibility flag     <Boolean>
    "message",            // 6: The message         <String>
 END_SLOTTABLE(MyObj)
 
@@ -29,7 +28,7 @@ BEGIN_SLOT_MAP(MyObj)
    ON_SLOT(2, setSlotTextColor,  mixr::base::Identifier)
    ON_SLOT(3, setSlotBackColor,  mixr::base::Identifier)
    ON_SLOT(4, setSlotVector,     mixr::base::List)
-   ON_SLOT(5, setSlotVisible,    mixr::base::Number)
+   ON_SLOT(5, setSlotVisible,    mixr::base::Boolean)
    ON_SLOT(6, setSlotMessage,    mixr::base::String)
 END_SLOT_MAP()
 
@@ -181,7 +180,7 @@ bool MyObj::setSlotVector(const mixr::base::List* const x)
    return ok;
 }
 
-bool MyObj::setSlotVisible(const mixr::base::Number* const x)
+bool MyObj::setSlotVisible(const mixr::base::Boolean* const x)
 {
    bool ok{};
    if (x != nullptr) {

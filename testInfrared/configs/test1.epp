@@ -69,13 +69,13 @@
                         #ifdef USE_MISSILE_OFFSET
                            initPosition: [1.0 5.0 1.0]
                         #endif
-                        power: 0
+                        power: false
                         maxTOF:  150.0
                         maxBurstRng: 50
                         lethalRange: 30.0
                         type: "AIM-9"              // this helps map the IG models - Missile + type
-                        enableMessageType: INFO
-                        //enableMessageType: DEBUG
+                        enableMessageType: info
+                        //enableMessageType: debug
                         components: {
                            // if not configured with obc, sensor and seeker, will behave as simple aam
                            // to configure as an IR missile, need all of OBC, Sensor and Seeker
@@ -86,13 +86,13 @@
                         #ifdef USE_MISSILE_OFFSET
                            initPosition: [1.0 -5.0 1.0]
                         #endif
-                        power: 0
+                        power: false
                         maxTOF:  150.0
                         maxBurstRng: 50
                         lethalRange: 30.0
                         type: "AIM-9"             // this helps map the IG models - Missile + type
-                        enableMessageType: INFO
-                        //enableMessageType: DEBUG
+                        enableMessageType: info
+                        //enableMessageType: debug
                         components: {
                            // if not configured with obc, sensor and seeker, will behave as simple aam
                            // to configure as an IR missile, need all of OBC, Sensor and Seeker

@@ -5,7 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class Boolean; class Number; }
 }
 
 //------------------------------------------------------------------------------
@@ -33,13 +33,13 @@ public:
 
 private:
     // event method
-    bool onEventSetIsAltSpdLines(const mixr::base::Number* const);
+    bool onEventSetIsAltSpdLines(const mixr::base::Boolean* const);
 
     bool isAlt{};     // are we drawing the altitude lines instead?
 
 private:
     // slot table helper methods
-    bool setSlotIsAlt(const mixr::base::Number*);
+    bool setSlotIsAlt(const mixr::base::Boolean*);
 };
 
 #endif

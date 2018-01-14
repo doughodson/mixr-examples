@@ -5,7 +5,7 @@
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class Boolean; }
 namespace models { class Player; }
 namespace simulation { class Simulation; class Station; }
 }
@@ -42,7 +42,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotTextureTest(const mixr::base::Number* const);
+   bool setSlotTextureTest(const mixr::base::Boolean* const);
 };
 
 #endif

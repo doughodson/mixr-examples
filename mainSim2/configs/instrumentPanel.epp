@@ -34,7 +34,6 @@ display:
 
     clearColor: ( rgb 0.0 0.0 0.0 )
     clearDepth: 1.0
-   
 
     // include all of our independent displays and instruments
     page: eadi3D

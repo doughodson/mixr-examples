@@ -73,7 +73,7 @@
             //orbitCircle:
             //( Circle
             //   color: red
-            //   filled: 1
+            //   filled: true
             //   slices: 72
             //)
             //anchorArc:
@@ -202,7 +202,7 @@
             // symbol loader for route points
             routeLoader:
             ( SymbolLoader
-               interconnect: 1
+               interconnect: true
                templates: {
                   //----------------------------------------
                   // Steerpoint
@@ -211,7 +211,7 @@
                      components: {
                         symbol:
                         ( Circle
-                           filled: 1
+                           filled: true
                            slices: 100
                            color: green
                            radius: 0.5

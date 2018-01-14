@@ -27,7 +27,7 @@ testnozzle:
         )                                    
         // Label to tell us what test we are running
         ( AsciiText
-            position: [ 15 2 ]
+            position: [ 20 2 ]
             color: white
             text: "testnozzle.epp"
         )

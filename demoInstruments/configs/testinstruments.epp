@@ -16,7 +16,7 @@
     vpHeight: 800
     clearDepth: 1.0
     clearColor: (rgb 0 0 0)
-    fullScreen: 0
+    fullScreen: false
         
     // color is different.
     colorTable: {
@@ -26,13 +26,13 @@
         yellow:     ( rgb 1 1 0 )
         blue:       ( rgb 0 0 1 )
         magenta:    ( rgb 1 0 1 )
-        brown:      ( rgb 0.3921568627450980392156862745098 0.27058823529411764705882352941176 0.15686274509803921568627450980392 )
+        brown:      ( rgb 0.3921 0.2705 0.1568 )
         white:      ( rgb 1 1 1 )
         gray:       ( rgb 0.4 0.4 0.4 )
-        adiCyan:    ( rgb 0.7921568627450980392156862745098 0.83529411764705882352941176470588 0.81176470588235294117647058823529 )    
+        adiCyan:    ( rgb 0.7921 0.8352 0.8117 )
         cyan:       ( rgb 0 1 1 )
-        gray2:      ( rgb 0.2 0.2 0.2 )    
-        amber:      ( rgb 1 0.5 0 )   
+        gray2:      ( rgb 0.2 0.2 0.2 )
+        amber:      ( rgb 1 0.5 0 )
         gray1:      ( rgb 0.1 0.1 0.1 )
         gray8:      ( rgb 0.8 0.8 0.8 )
     }
@@ -119,7 +119,7 @@
             material: m1
             size: 1
             transform: ( Translation 8.8 -9 )
-            filled: 1
+            filled: true
             translateLight: { -1 1 1 }
         )
     }   

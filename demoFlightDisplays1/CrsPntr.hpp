@@ -4,6 +4,10 @@
 
 #include "mixr/graphics/Rotators.hpp"
 
+namespace mixr {
+namespace base { class Boolean; class Number; }
+}
+
 //------------------------------------------------------------------------------
 // Class: CrsPntr
 //
@@ -60,9 +64,9 @@ private:
     // slot table helper methods
     bool setSlotNumCdiDots(const mixr::base::Number* const);
     bool setSlotNumInches(const mixr::base::Number* const);
-    bool setSlotShowCdi(const mixr::base::Number* const);
-    bool setSlotShowCrsPntr(const mixr::base::Number* const);
-    bool setSlotShowToFrom(const mixr::base::Number* const);
+    bool setSlotShowCdi(const mixr::base::Boolean* const);
+    bool setSlotShowCrsPntr(const mixr::base::Boolean* const);
+    bool setSlotShowToFrom(const mixr::base::Boolean* const);
 };
 
 #endif

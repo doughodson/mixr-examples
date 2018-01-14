@@ -23,7 +23,7 @@ testgmeterdial:
         
         // Label to tell us what test we are running
         ( AsciiText
-            position: [ 26 2 ]
+            position: [ 20 2 ]
             color: white
             text: "testgmeterdial.epp"
         )

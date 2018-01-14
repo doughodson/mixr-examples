@@ -7,7 +7,7 @@
 
 #include "mixr/terrain/Terrain.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/colors/Color.hpp"
 #include "mixr/base/colors/Rgb.hpp"
@@ -34,7 +34,7 @@ BEGIN_SLOTTABLE(RealBeamRadar)
 END_SLOTTABLE(RealBeamRadar)
 
 BEGIN_SLOT_MAP(RealBeamRadar)
-   ON_SLOT( 1, setSlotInterpolate, base::Number)
+   ON_SLOT( 1, setSlotInterpolate, base::Boolean)
 END_SLOT_MAP()
 
 RealBeamRadar::RealBeamRadar()
@@ -336,7 +336,7 @@ bool RealBeamRadar::setTerrain(const terrain::Terrain* const msg)
 //------------------------------------------------------------------------------
 
 // Set interpolate flag
-bool RealBeamRadar::setSlotInterpolate(const base::Number* const msg)
+bool RealBeamRadar::setSlotInterpolate(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

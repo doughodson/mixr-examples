@@ -13,9 +13,9 @@
    applicationID: APPLICATION_ID
    exerciseID: 1
        
-   enableInput: 1
-   enableOutput: 1
-   enableRelay: 0
+   enableInput: true
+   enableOutput: true
+   enableRelay: false
       
    //netInput:  ( UdpMulticastHandler multicastGroup: "224.9.9.2" port: 3000  )
    //netOutput: ( UdpMulticastHandler multicastGroup: "224.9.9.2" port: 3000 localPort: 3221 )

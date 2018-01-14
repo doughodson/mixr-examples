@@ -23,7 +23,7 @@
                 // inches
                 data: [ 1.3125 -1.3125 ]
             )
-            vertical: 1
+            vertical: true
             components: {
                 cmdroll:
                 ( Rotators
@@ -131,7 +131,7 @@
                         )
                         ( Circle
                             color: (rgb 0.1 0.1 0.1 )
-                            filled: 1
+                            filled: true
                             radius: 0.252
                             slices: 1000
                         )
@@ -186,7 +186,7 @@
                             }
                         )
                         ( Circle
-                            filled: 1
+                            filled: true
                             color: green
                             radius: 0.252
                             slices: 1000
@@ -247,7 +247,7 @@
                             }
                         )
                         ( Circle
-                            filled: 1
+                            filled: true
                             slices: 1000
                             color: (rgb 0.1 0.1 0.1)
                             radius: 0.252
@@ -300,7 +300,7 @@
                             }
                         )
                         ( Circle
-                            filled: 1
+                            filled: true
                             color: yellow
                             radius: 0.252
                             slices: 1000

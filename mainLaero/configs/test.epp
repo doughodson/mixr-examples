@@ -32,7 +32,7 @@
             components: {
                pilot:
                ( Autopilot 
-                  navMode:             0
+                  navMode:             false
                   // maximum rate of turn in degrees per second (PILOT limit)
                   //maxRateOfTurnDps:    10
                   // maximum bank angle in degrees (PILOT limit)

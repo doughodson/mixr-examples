@@ -24,8 +24,8 @@ testspeedbrake:
 
     sbrakeRO:
         ( NumericReadout
-            position: [ 20 24 ]
             color: white
+            position: [ 18 23 ]
             // this slot shows us how to display our number.  You can also specify leading zeros and plus and minus operators by using the "0##.#" and "+0##.#" formats.
             format: "###.#"
         )
@@ -54,12 +54,12 @@ testspeedbrake:
         )
         ( AsciiText
             color: white
-            position: [ 20 2 ]
+            position: [ 18 2 ]
             text: "SPEEDBRAKE POSITION = " 
         )        
         // Label to tell us what test we are running
         ( AsciiText
-            position: [ 26 2 ]
+            position: [ 20 2 ]
             color: white
             text: "testspeedbrake.epp"
          )

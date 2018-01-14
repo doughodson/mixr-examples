@@ -20,7 +20,7 @@
                 )
                 // low end 
                 ( AsciiText
-                    inheritColor: 1
+                    inheritColor: true
                     font: pfdnormfont
                     transform: { ( Translation 0.8 0.13 ) ( Scale 1.4 ) }
                     text: "0"
@@ -29,7 +29,7 @@
                 middlealt:
                 ( NumericReadout
                     font: pfdnormfont
-                    inheritColor: 1
+                    inheritColor: true
                     transform: { ( Translation 0.28 1.03 ) ( Scale 1.4 ) }
                     format: "#####"
                     value: 10000
@@ -38,7 +38,7 @@
                 maxalt:
                 ( NumericReadout
                     font: pfdnormfont
-                    inheritColor: 1
+                    inheritColor: true
                     transform: { ( Translation 0.28 1.93 ) ( Scale 1.4 ) }
                     format: "#####"
                     value: 20000
@@ -47,7 +47,7 @@
                 ( Graphic
                     components: {
                         ( Line 
-                            segment: 1
+                            segment: true
                             transform: ( Translation 1.6 2.1 0.1 ) 
                             vertices: {
                                 [ 0 0 ] [ 0 -0.1 ]
@@ -63,7 +63,7 @@
                             }
                         )
                         ( Line 
-                            segment: 1
+                            segment: true
                             transform: ( Translation 3.75 2.1 0.1 ) 
                             vertices: {
                                 [ 0 0 ] [ 0 -0.1 ]
@@ -79,7 +79,7 @@
                             }
                         )
                         ( Line 
-                            segment: 1
+                            segment: true
                             transform: ( Translation 2.675 2.1 0.1 ) 
                             vertices: {
                                 [ 0 0 ] [ 0 -0.1 ]
@@ -95,7 +95,7 @@
                             }
                         )
                         ( Line 
-                            segment: 1
+                            segment: true
                             transform: ( Translation 4.825 2.1 0.1 ) 
                             vertices: {
                                 [ 0 0 ] [ 0 -0.1 ]
@@ -111,7 +111,7 @@
                             }
                         )
                         ( Line 
-                            segment: 1
+                            segment: true
                             transform: ( Translation 5.9 2.1 0.1 ) 
                             vertices: {
                                 [ 0 0 ] [ 0 -0.1 ]
@@ -227,7 +227,7 @@
                         ( Line
                             color: white
                             linewidth: 2
-                            segment: 1
+                            segment: true
                             vertices: {
                                 [ 0 0 ] [ 0 -0.1 ]
                                 [ 0 0 ] [ 0.23 0.05 ]
@@ -258,7 +258,7 @@
                     transform: ( Translation -2.99 4.9 ) 
                     components: {
                         ( Line
-                            segment: 1
+                            segment: true
                             vertices: {
                                 [ 0 -0.2 ] [ 0 0.2 ]
                                 [ -0.07 -0.2 ] [ 0.07 -0.2 ]
@@ -267,14 +267,14 @@
                             }
                         )
                         ( AsciiText
-                            inheritColor: 1
+                            inheritColor: true
                             font: pfdspecfont
                             transform: { ( Translation 0.2 0.3 ) ( Scale 1.4 ) }
                             text: "TAC"
                         )
                         nav1Id:
                         ( AsciiText
-                            inheritColor: 1
+                            inheritColor: true
                             font: pfdspecfont
                             transform: { ( Translation 0.2 0.05 ) ( Scale 1.4 ) }
                             text: "XXX"
@@ -313,7 +313,7 @@
                     transform: ( Translation 1.9 0 ) 
                     components: {
                         ( Line
-                            segment: 1
+                            segment: true
                             vertices: {
                                 [ 0 0.245 ] [ -0.05 0.155 ]
                                 [ 0 0.245 ] [ 0.05 0.155 ]
@@ -327,14 +327,14 @@
                             }
                         )
                         ( AsciiText
-                            inheritColor: 1
+                            inheritColor: true
                             font: pfdspecfont
                             transform: { ( Translation 0.2 0.3 ) ( Scale 1.4 ) }
                             text: "NAV"
                         )
                         nav2Id:
                         ( AsciiText
-                            inheritColor: 1
+                            inheritColor: true
                             font: pfdspecfont
                             transform: { ( Translation 0.2 0.05 ) ( Scale 1.4 ) }
                             text: "XXXXX"
@@ -541,7 +541,7 @@
                                         components: {
                                             ( Line
                                                 color: cyan
-                                                segment: 0
+                                                segment: false
                                                 vertices: {
                                                     [ 0.0225 0.035 ]    
                                                     [ 0.0575 0.0575 ]
@@ -691,7 +691,7 @@
                                         ( Circle
                                             color: green
                                             radius: 0.07
-                                            filled: 1
+                                            filled: true
                                             slices: 12
                                         )
                                     }
@@ -725,7 +725,7 @@
                                         ( Circle
                                             color: cyan
                                             radius: 0.07
-                                            filled: 1
+                                            filled: true
                                             slices: 12
                                         )
                                     }
@@ -759,7 +759,7 @@
                                         ( Circle
                                             color: blue
                                             radius: 0.07
-                                            filled: 1
+                                            filled: true
                                             slices: 12
                                         )
                                     }
@@ -793,7 +793,7 @@
                                         ( Circle
                                             color: yellow
                                             radius: 0.07
-                                            filled: 1
+                                            filled: true
                                             slices: 12
                                         )
                                     }
@@ -1052,7 +1052,7 @@
                                     transform: ( Translation 0 5 )
                                     color: cyan
                                     linewidth: 2
-                                    segment: 1
+                                    segment: true
                                     vertices: {
                                         [ 0 0 ] [ -0.05 -0.09 ]
                                         [ 0 0 ] [ 0.05 -0.09 ]
@@ -1066,7 +1066,7 @@
                                     linewidth: 2
                                     transform: ( Translation 0 -5 )
                                     color: cyan
-                                    segment: 1
+                                    segment: true
                                     vertices: {
                                         [ -0.05 0.42 ] [ 0.05 0.42 ]
                                         [ -0.05 0.07 ] [ -0.05 0.42 ]
@@ -1090,7 +1090,7 @@
                                     transform: ( Translation 0 5 )
                                     linewidth: 2
                                     color: cyan
-                                    segment: 1
+                                    segment: true
                                     vertices: {
                                         [ 0 0 ] [ 0 -0.4 ]
                                         [ -0.1 -0.15 ] [ 0 0 ]
@@ -1102,7 +1102,7 @@
                                     linewidth: 2
                                     color: cyan
                                     transform: ( Translation 0 -5 ) 
-                                    segment: 1
+                                    segment: true
                                     vertices: {
                                         [ 0 0 ] [ 0 0.4 ]
                                         [ 0 0.13 ] [ -0.146 0.08 ]

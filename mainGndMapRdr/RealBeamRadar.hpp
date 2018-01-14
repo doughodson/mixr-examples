@@ -5,7 +5,7 @@
 #include "mixr/models/system/Radar.hpp"
 
 namespace mixr {
-namespace base { class Angle; class Distance; class Number; }
+namespace base { class Angle; class Boolean; class Distance; }
 namespace terrain { class Terrain; }
 }
 
@@ -81,7 +81,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotInterpolate(const mixr::base::Number* const);
+   bool setSlotInterpolate(const mixr::base::Boolean* const);
    
 };
 

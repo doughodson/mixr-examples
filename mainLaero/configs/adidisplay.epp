@@ -14,7 +14,7 @@
       vpHeight: 800
       clearDepth: 1.0
       clearColor: (rgb 0 0 0)
-      fullScreen: 0
+      fullScreen: false
 
       // color is different.
       colorTable: {
@@ -435,7 +435,7 @@
              components: {
                  // waterline
                  ( Line
-                     segment: 1
+                     segment: true
                      vertices: {
                          [  0.0  0.0 ] [ -0.2 -0.2 ]
                          [ -0.2 -0.2 ] [ -0.4  0.0 ]
@@ -650,7 +650,7 @@
                                  ( Line
                                      color: white
                                      linewidth: 2
-                                     segment: 1
+                                     segment: true
                                      vertices: {
                                          [ -1.0  0.0 ] [ -100 0.0 ]
                                          [  1.0  0.0 ] [  100 0.0 ]
@@ -688,7 +688,7 @@
                                      gaugeLength: 20
                                      quantity: 10
                                      tickLength: -0.2
-                                     flip: 1
+                                     flip: true
                                      color: white
                                  )
                                  ( TickMarks
@@ -697,7 +697,7 @@
                                      gaugeLength: 20
                                      quantity: 10
                                      tickLength: -0.2
-                                     flip: 1
+                                     flip: true
                                      color: white
                                  )
 
@@ -727,7 +727,7 @@
                                              radius: 0.35 
                                              outerRadius: 0.4
                                              slices: 100
-                                             filled: 1
+                                             filled: true
                                          )
                                          ( Line 
                                              linewidth: 2
@@ -755,7 +755,7 @@
                                      transform: ( Translation 1 -2.2 )
                                      gaugeLength: -20
                                      quantity: 10
-                                     flip: 1
+                                     flip: true
                                      tickLength: 0.3
                                      color: white
                                  )
@@ -764,7 +764,7 @@
                                      transform: ( Translation -1 -2.2 )
                                      gaugeLength: -20
                                      quantity: 10
-                                     flip: 1
+                                     flip: true
                                      tickLength: 0.3
                                      color: white
                                  )
@@ -778,7 +778,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.087 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -788,7 +788,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.087 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -808,7 +808,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.174 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -818,7 +818,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.174 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -837,7 +837,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.262 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -847,7 +847,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.262 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -875,7 +875,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.349 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -885,7 +885,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.349 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -904,7 +904,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.436 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -914,7 +914,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.436 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0     0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -934,7 +934,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.52 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -944,7 +944,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.52 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -971,7 +971,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.61 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -981,7 +981,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.61 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]
@@ -1000,7 +1000,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation 1 0 ) ( Rotation -0.7 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [ 0.0    0.0 ] [ 0.195  0.0 ]
                                                  [ 0.2925 0.0 ] [ 0.4875 0.0 ]
@@ -1010,7 +1010,7 @@
                                          ( Line
                                              linewidth: 2
                                              transform: { ( Translation -1 0 ) ( Rotation 0.7 ) }
-                                             segment: 1
+                                             segment: true
                                              vertices: {
                                                  [  0.0    0.0 ] [ -0.195  0.0 ]
                                                  [ -0.2925 0.0 ] [ -0.4875 0.0 ]

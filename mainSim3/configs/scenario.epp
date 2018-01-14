@@ -17,7 +17,7 @@ simulation:
             initAlt: ( Feet 5000 )
             initHeading: ( Degrees 0.0 )      // Initial heading
             initVelocity: 250
-            positionFreeze: 0
+            positionFreeze: false
             components: {
                 pilot:
                 ( Autopilot )
@@ -33,7 +33,7 @@ simulation:
             initPosition: [ 15000 0 -10000 ]
             initHeading: ( Degrees 275 )
             initVelocity: 250
-            positionFreeze: 0
+            positionFreeze: false
             components: {
                 pilot:
                 ( Autopilot )

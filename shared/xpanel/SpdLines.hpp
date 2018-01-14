@@ -5,6 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
+namespace base { class Boolean; class Number; }
 namespace xpanel {
 
 //------------------------------------------------------------------------------
@@ -16,7 +17,7 @@ namespace xpanel {
 //------------------------------------------------------------------------------
 class SpdLines final: public graphics::Graphic
 {
-    DECLARE_SUBCLASS(SpdLines,graphics::Graphic)
+    DECLARE_SUBCLASS(SpdLines, graphics::Graphic)
 
 public:
     SpdLines();
@@ -31,11 +32,11 @@ public:
     bool event(const int event, base::Object* const obj = nullptr) final;
 
 protected:
-    bool setSlotIsAlt(const base::Number* newIsAlt);
+    bool setSlotIsAlt(const base::Boolean*);
 
 private:
     // event function
-    bool onEventSetIsAltSpdLines(const base::Number* const);
+    bool onEventSetIsAltSpdLines(const base::Boolean* const);
 
     bool isAlt{};     // are we drawing the altitude lines instead?
 };

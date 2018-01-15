@@ -13,11 +13,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "mixr/base/functors/FStorage.hpp"
-#include "mixr/base/functors/Table1.hpp"
-#include "mixr/base/functors/Table2.hpp"
-#include "mixr/base/functors/Table3.hpp"
-#include "mixr/base/functors/Table4.hpp"
+#include "mixr/base/relations/FStorage.hpp"
+#include "mixr/base/relations/Table1.hpp"
+#include "mixr/base/relations/Table2.hpp"
+#include "mixr/base/relations/Table3.hpp"
+#include "mixr/base/relations/Table4.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"

@@ -268,7 +268,7 @@ bool TestIoDisplay::setSlotLabel(const base::String* const msg)
    bool ok{};
    if (item >= 1 && item <= TBL_SIZE) {
       if (msg != nullptr) {
-         labels[item-1] = *msg;
+         labels[item-1] = msg->c_str();
          labelFlags[item-1] = true;
       } else {
          labelFlags[item-1] = false;

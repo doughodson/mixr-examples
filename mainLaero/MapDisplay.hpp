@@ -34,7 +34,7 @@ private:
    mixr::simulation::Station* getStation();
 
    // button hit enumerations
-   enum class Btn {
+   enum class Btn:int {
       DEC_RANGE = 101,           // Increase / decrease the map range (NM)
       INC_RANGE,
       DEC_CMD_AS,                // Increase / decrease the commanded airspeed (Kts - only works with no autopilot mode engaged)

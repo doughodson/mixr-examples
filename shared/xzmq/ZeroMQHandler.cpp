@@ -386,7 +386,7 @@ bool ZeroMQHandler::setSlotSocketType(const base::String* const msg)
    // Find the token in the map and get the enumeration for use in the
    // initialization of the socket
    bool ok{};
-   if (msg != nullptr) ok = setSocketType(*msg);
+   if (msg != nullptr) ok = setSocketType(msg->c_str());
    return ok;
 }
 
@@ -396,7 +396,7 @@ bool ZeroMQHandler::setSlotConnect(const base::String* const msg)
    // Save the endpoint definition for use in the initialization of
    // the socket
    bool ok{};
-   if (msg != nullptr) ok = setConnect(*msg);
+   if (msg != nullptr) ok = setConnect(msg->c_str());
    return ok;
 }
 
@@ -406,7 +406,7 @@ bool ZeroMQHandler::setSlotAccept(const base::String* const msg)
    // Save the endpoint definition for use in the initialization of
    // the socket
    bool ok{};
-   if (msg != nullptr) ok = setAccept(*msg);
+   if (msg != nullptr) ok = setAccept(msg->c_str());
    return ok;
 }
 
@@ -436,7 +436,7 @@ bool ZeroMQHandler::setSlotSubscribe(const base::String* const msg)
    // Save the subscribe filter for use in the initialization of the
    // socket.
    bool ok{};
-   if (msg != nullptr) ok = setSubscribe(*msg);
+   if (msg != nullptr) ok = setSubscribe(msg->c_str());
    return ok;
 }
 
@@ -456,7 +456,7 @@ bool ZeroMQHandler::setSlotIdentity(const base::String* const msg)
    // Save the socket identity for use in the initialization of the
    // socket
    bool ok{};
-   if (msg != nullptr) ok = setIdentity(*msg);
+   if (msg != nullptr) ok = setIdentity(msg->c_str());
    return ok;
 }
 

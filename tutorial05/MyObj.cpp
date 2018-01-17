@@ -206,9 +206,9 @@ void MyObj::dumpContents() const
 //    Pair* p = colorTable->findByName("green");
       const mixr::base::Identifier* id{getTextColor()};
       if (id != nullptr) {
-         const mixr::base::Pair* p{colorTable->findByName(id->getString())};
+         const mixr::base::Pair* p{colorTable->findByName(id->c_str())};
          if (p != nullptr) {
-            std::cout << "Text color: " << id->getString();
+            std::cout << "Text color: " << id->c_str();
             const auto color = dynamic_cast<const mixr::base::Color*>(p->object());
             if (color != nullptr) {
                std::cout << " Red: "   << color->red();
@@ -238,7 +238,7 @@ void MyObj::dumpContents() const
    // print out visible and message info
    std::cout << "Visible: " << getVisible() << "\n";
    const mixr::base::String* message {getMessage()};
-   std::cout << "Message: " << message->getString() << "\n";
+   std::cout << "Message: " << message->c_str() << "\n";
 }
 
 //------------------------------------------------------------------------------

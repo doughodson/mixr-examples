@@ -22,7 +22,7 @@ private:
 
     enum class NavType { VORTAC, TACAN, INAV, VORDME, VOR };
     enum class NavMode { DECLUTTER, MAP_MODE, NORMAL, HSI_MODE, ARC_MODE, ARC_MAP_MODE };
-    enum class NavSource { PRIMARY=0, SECONDARY=1 };
+    enum class NavSource:int { PRIMARY=0, SECONDARY=1 };
     enum class Location { PILOT, COPILOT };
     // readout modes
     // ND_TTG  : time to go
@@ -30,7 +30,7 @@ private:
     // ND_TAS  : true air speed
     // ND_ET   : elapsed time
     // ND_WIND : wind dir/speed, drift angle
-    enum class ReadoutMode { ND_TTG=1, ND_GSP=2, ND_TAS=3, ND_ET=4, ND_WIND=5 };
+    enum class ReadoutMode:int { ND_TTG=1, ND_GSP=2, ND_TAS=3, ND_ET=4, ND_WIND=5 };
 
     void updateTestValues(const double dt);    // update our data
 

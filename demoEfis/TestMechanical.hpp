@@ -60,10 +60,10 @@ private:
     double speedDotsRate{0.4};
     SendData speedDotsSD;
     // gaLight stuff
-    int gaMode {true};
+    bool gaMode{true};
     double gaTimer{};
     // mdaLight stuff
-    int mdaMode{true};
+    bool mdaMode{true};
     double mdaTimer{};
     // cmptr stuff
     bool cmptrFail{};          // our computer fail flag (on = true)

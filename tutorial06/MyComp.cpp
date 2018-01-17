@@ -80,7 +80,7 @@ void MyComp::updateData(const double dt)
 {
    // print out string info if a string has been defined
    if (str != nullptr)
-      std::cout << "BG Str: " << str->getString() << "\n";
+      std::cout << "BG Str: " << str->c_str() << "\n";
    else
       std::cout << "BG Str: Nothing to print\n";
 

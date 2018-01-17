@@ -763,18 +763,18 @@ void AirportTests::func09(const double acLat, const double acLon, const double a
       db->setArea(acLat, acLon, rng);
 
 
-      int found = db->queryByType(mixr::dafif::Airport::AirportType(type));
+      int found = db->queryByType(mixr::dafif::Airport::Type(type));
       std::cout << "found = " << found;
 	  
-	  if (mixr::dafif::Airport::AirportType(type) == mixr::dafif::Airport::ANY)
+	  if (mixr::dafif::Airport::Type(type) == mixr::dafif::Airport::Type::ANY)
 		  std::cout << "  ANY Airports" << std::endl;
-	  else if (mixr::dafif::Airport::AirportType(type) == mixr::dafif::Airport::CIVIL)
+	  else if (mixr::dafif::Airport::Type(type) == mixr::dafif::Airport::Type::CIVIL)
 		  std::cout << "  CIVIL Airports" << std::endl;
-	  else if (mixr::dafif::Airport::AirportType(type) == mixr::dafif::Airport::JOINT)
+	  else if (mixr::dafif::Airport::Type(type) == mixr::dafif::Airport::Type::JOINT)
 		  std::cout << "  JOINT Airports" << std::endl;
-	  else if (mixr::dafif::Airport::AirportType(type) == mixr::dafif::Airport::MILITARY)
+	  else if (mixr::dafif::Airport::Type(type) == mixr::dafif::Airport::Type::MILITARY)
 		  std::cout << "  MILITARY Airports" << std::endl;
-	  else if (mixr::dafif::Airport::AirportType(type) == mixr::dafif::Airport::INACTIVE)
+	  else if (mixr::dafif::Airport::Type(type) == mixr::dafif::Airport::Type::INACTIVE)
 		  std::cout << "  INACTIVE Airports" << std::endl;
 	  else
 		  std::cout << "  UNDEFINED" << std::endl;

@@ -46,7 +46,7 @@ bool SimpleIGen::setSlotDatabasePath(base::String* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      databasePath = msg->getString();
+      databasePath = msg->c_str();
       ok = true;
    }
    return ok;

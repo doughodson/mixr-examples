@@ -169,7 +169,7 @@ bool DataRecordTest::setSlotFileName(base::String* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      fileName = msg->getCopyString();
+      fileName = msg->c_str();
       ok = true;
    }
    return ok;

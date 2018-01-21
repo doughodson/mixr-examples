@@ -4,7 +4,7 @@
 #include "mixr/terrain/Terrain.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 
 #include "mixr/base/colors/Color.hpp"
 #include "mixr/base/colors/Rgb.hpp"
@@ -48,7 +48,7 @@ BEGIN_SLOT_MAP(Display)
    ON_SLOT( 4, setSlotAltitude,           base::Distance)
    ON_SLOT( 5, setSlotLookAngle,          base::Angle)
    ON_SLOT( 6, setSlotBeamWidth,          base::Angle)
-   ON_SLOT( 7, setSlotColorScale,         base::Number)
+   ON_SLOT( 7, setSlotColorScale,         base::Integer)
    ON_SLOT( 8, setSlotInterpolate,        base::Boolean)
    ON_SLOT( 9, setSlotShadowsTest,        base::Boolean)
    ON_SLOT(10, setSlotAacTest,            base::Boolean)
@@ -196,7 +196,7 @@ bool Display::setSlotBeamWidth(const base::Angle* const msg)
 }
 
 // Set color scale flag
-bool Display::setSlotColorScale(const base::Number* const msg)
+bool Display::setSlotColorScale(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

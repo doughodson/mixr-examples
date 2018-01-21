@@ -5,7 +5,7 @@
 #include "mixr/graphics/readouts/AbstractField.hpp"
 
 namespace mixr {
-namespace base { class Number; class PairStream; }
+namespace base { class Integer; class PairStream; }
 }
 
 //------------------------------------------------------------------------------
@@ -14,8 +14,8 @@ namespace base { class Number; class PairStream; }
 //
 // Factory name: Table
 // Slots:
-//    rows     <Number>     ! Number of rows (default: 1)
-//    spacing  <Number>     ! Spacing between rows (default: 1)
+//    rows     <Integer>    ! Number of rows (default: 1)
+//    spacing  <Integer>    ! Spacing between rows (default: 1)
 //    columns  <PairStream> ! Column descriptions: list of items in each row
 //------------------------------------------------------------------------------
 class Table final: public mixr::graphics::AbstractField
@@ -50,8 +50,8 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotRows(mixr::base::Number* const);
-   bool setSlotSpacing(mixr::base::Number* const);
+   bool setSlotRows(mixr::base::Integer* const);
+   bool setSlotSpacing(mixr::base::Integer* const);
    bool setSlotColumns(mixr::base::PairStream* const);
 };
 

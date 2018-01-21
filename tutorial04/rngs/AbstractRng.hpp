@@ -7,7 +7,7 @@
 #include <random>
 
 namespace mixr {
-   namespace base { class Number; }
+   namespace base { class Integer; }
 }
 
 //------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ public:
 
    virtual double num() =0;
 
-   void setSeed(const unsigned int);
+   void setSeed(const int);
 
 protected:
    // mersenne twister algoithm
@@ -32,7 +32,7 @@ protected:
 
 private:
    // slot table helper methods
-   bool setSlotSeed(const mixr::base::Number* const);
+   bool setSlotSeed(const mixr::base::Integer* const);
 };
 
 #endif

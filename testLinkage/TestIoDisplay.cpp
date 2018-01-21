@@ -3,7 +3,7 @@
 
 #include "mixr/base/concepts/linkage/AbstractIoData.hpp"
 #include "mixr/base/concepts/linkage/AbstractIoHandler.hpp"
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/String.hpp"
 
 #include <cstdio>
@@ -24,9 +24,9 @@ END_SLOTTABLE(TestIoDisplay)
 
 BEGIN_SLOT_MAP(TestIoDisplay)
     ON_SLOT(1, setSlotIoHandler, base::AbstractIoHandler)
-    ON_SLOT(2, setSlotItem,      base::Number)
-    ON_SLOT(3, setSlotDiChannel, base::Number)
-    ON_SLOT(4, setSlotAiChannel, base::Number)
+    ON_SLOT(2, setSlotItem,      base::Integer)
+    ON_SLOT(3, setSlotDiChannel, base::Integer)
+    ON_SLOT(4, setSlotAiChannel, base::Integer)
     ON_SLOT(5, setSlotLabel,     base::String)
 END_SLOT_MAP()
 
@@ -214,7 +214,7 @@ bool TestIoDisplay::setSlotIoHandler(base::AbstractIoHandler* const msg)
    return true;
 }
 
-bool TestIoDisplay::setSlotItem(const base::Number* const msg)
+bool TestIoDisplay::setSlotItem(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -231,7 +231,7 @@ bool TestIoDisplay::setSlotItem(const base::Number* const msg)
    return ok;
 }
 
-bool TestIoDisplay::setSlotAiChannel(const base::Number* const msg)
+bool TestIoDisplay::setSlotAiChannel(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr && item >= 1 && item <= TBL_SIZE) {
@@ -247,7 +247,7 @@ bool TestIoDisplay::setSlotAiChannel(const base::Number* const msg)
    return ok;
 }
 
-bool TestIoDisplay::setSlotDiChannel(const base::Number* const msg)
+bool TestIoDisplay::setSlotDiChannel(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr && item >= 1 && item <= TBL_SIZE) {

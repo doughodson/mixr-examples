@@ -3,7 +3,7 @@
 
 #include "mixr/base/network/TcpHandler.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 #include <iostream>
 
 using namespace mixr;
@@ -24,7 +24,7 @@ BEGIN_SLOT_MAP(Endpoint)
     ON_SLOT(2, setSlotNetInput,  mixr::base::NetHandler)
     ON_SLOT(3, setSlotNetwork,   mixr::base::NetHandler)
     ON_SLOT(4, setSlotNoWait,    mixr::base::Boolean)
-    ON_SLOT(5, setSlotLoops,     mixr::base::Number)
+    ON_SLOT(5, setSlotLoops,     mixr::base::Integer)
 END_SLOT_MAP()
 
 Endpoint::Endpoint()
@@ -171,7 +171,7 @@ bool Endpoint::setSlotNoWait(mixr::base::Boolean* const msg)
 }
 
 // Number of message loops
-bool Endpoint::setSlotLoops(mixr::base::Number* const msg)
+bool Endpoint::setSlotLoops(mixr::base::Integer* const msg)
 {
     bool ok{};
     if (msg != nullptr) {

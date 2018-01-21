@@ -18,7 +18,7 @@
 #include "mixr/base/ubf/AbstractBehavior.hpp"
 
 namespace mixr {
-namespace base { class Distance; class State; }
+namespace base { class Distance; class Integer; class State; }
 namespace base {
 namespace ubf { class AbstractState; class AbstractAction; }
 }
@@ -43,8 +43,8 @@ protected:
 private:
    // slot table helper methods
    bool setSlotCriticalAltitude(const base::Distance* const);
-   bool setSlotVoteOnCriticalAltitude(const base::Number* const);
-   bool setSlotVoteOnIncomingMissile(const base::Number* const);
+   bool setSlotVoteOnCriticalAltitude(const base::Integer* const);
+   bool setSlotVoteOnIncomingMissile(const base::Integer* const);
 };
 
 //------------------------------------------------------------------------------

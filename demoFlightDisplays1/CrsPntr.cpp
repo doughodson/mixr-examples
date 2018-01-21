@@ -1,6 +1,7 @@
 
 #include "CrsPntr.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/Angles.hpp"
 
@@ -21,7 +22,7 @@ BEGIN_SLOTTABLE(CrsPntr)
 END_SLOTTABLE(CrsPntr)
 
 BEGIN_SLOT_MAP(CrsPntr)
-    ON_SLOT(1, setSlotNumCdiDots,  mixr::base::Number)
+    ON_SLOT(1, setSlotNumCdiDots,  mixr::base::Integer)
     ON_SLOT(2, setSlotNumInches,   mixr::base::Number)
     ON_SLOT(3, setSlotShowCdi,     mixr::base::Boolean)
     ON_SLOT(4, setSlotShowCrsPntr, mixr::base::Boolean)
@@ -196,7 +197,7 @@ void CrsPntr::updateData(const double dt)
 //------------------------------------------------------------------------------
 // setSlotNumCdiDots() - set the number of cdi dots we are using
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotNumCdiDots(const mixr::base::Number* const newCDI)
+bool CrsPntr::setSlotNumCdiDots(const mixr::base::Integer* const newCDI)
 {
     bool ok{};
     if (newCDI != nullptr) ok = setNumCdiDots(newCDI->getInt());

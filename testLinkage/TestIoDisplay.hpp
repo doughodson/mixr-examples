@@ -8,7 +8,7 @@
 #include <string>
 
 namespace mixr {
-namespace base { class AbstractIoHandler; class Number; class String; }
+namespace base { class AbstractIoHandler; class Integer; class String; }
 }
 
 //------------------------------------------------------------------------------
@@ -82,9 +82,9 @@ private:
 private:
    // slot table helper methods
    bool setSlotIoHandler(mixr::base::AbstractIoHandler* const);
-   bool setSlotItem(const mixr::base::Number* const);
-   bool setSlotAiChannel(const mixr::base::Number* const);
-   bool setSlotDiChannel(const mixr::base::Number* const);
+   bool setSlotItem(const mixr::base::Integer* const);
+   bool setSlotAiChannel(const mixr::base::Integer* const);
+   bool setSlotDiChannel(const mixr::base::Integer* const);
    bool setSlotLabel(const mixr::base::String* const);
 };
 

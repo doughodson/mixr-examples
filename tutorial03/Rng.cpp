@@ -1,7 +1,7 @@
 
 #include "Rng.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 
 #include <iostream>
 #include <random>
@@ -14,7 +14,7 @@ BEGIN_SLOTTABLE(Rng)
 END_SLOTTABLE(Rng)
 
 BEGIN_SLOT_MAP(Rng)
-   ON_SLOT(1, setSlotSeed, mixr::base::Number)
+   ON_SLOT(1, setSlotSeed, mixr::base::Integer)
 END_SLOT_MAP()
 
 Rng::Rng()
@@ -34,12 +34,12 @@ double Rng::num()
    return dist(engine);
 }
 
-void Rng::setSeed(const unsigned int seed)
+void Rng::setSeed(const int seed)
 {
    engine.seed(seed);
 }
 
-bool Rng::setSlotSeed(const mixr::base::Number* const seed)
+bool Rng::setSlotSeed(const mixr::base::Integer* const seed)
 {
    bool ok{};
    if (seed != nullptr) {

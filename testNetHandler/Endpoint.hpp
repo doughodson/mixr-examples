@@ -5,7 +5,7 @@
 #include "mixr/base/Component.hpp"
 
 namespace mixr {
-namespace base { class Boolean; class NetHandler; class Number; }
+namespace base { class Boolean; class NetHandler; class Integer; }
 }
 
 //------------------------------------------------------------------------------
@@ -14,12 +14,12 @@ namespace base { class Boolean; class NetHandler; class Number; }
 // Description: Common basic class that contains network handlers
 //
 // Slots:
-//      netHandler  <NetHandler>    Network handler (input/output, or just output if 'netInput' is defined)
-//      netInput    <NetHandler>    Optional input handler (otherwise 'netHandler' is used)
-//      netOutput   <NetHandler>    Alias for the 'netHandler' slot.
-//      noWait      <Boolean>       No wait (unblocked) I/O flag (default: false -- blocked I/O)
-//      loops       <Number>        Number of messages to send/recv before disconnecting and
-//                                  halting (default: infinite)
+//      netHandler  <NetHandler>    ! Network handler (input/output, or just output if 'netInput' is defined)
+//      netInput    <NetHandler>    ! Optional input handler (otherwise 'netHandler' is used)
+//      netOutput   <NetHandler>    ! Alias for the 'netHandler' slot.
+//      noWait      <Boolean>       ! No wait (unblocked) I/O flag (default: false -- blocked I/O)
+//      loops       <Integer>       ! Number of messages to send/recv before disconnecting and
+//                                  ! halting (default: infinite)
 //
 //------------------------------------------------------------------------------
 class Endpoint : public mixr::base::Component
@@ -64,7 +64,7 @@ private:
     bool setSlotNetwork(mixr::base::NetHandler* const);
     bool setSlotNetInput(mixr::base::NetHandler* const);
     bool setSlotNoWait(mixr::base::Boolean* const);
-    bool setSlotLoops(mixr::base::Number* const);
+    bool setSlotLoops(mixr::base::Integer* const);
 };
 
 #endif

@@ -16,6 +16,7 @@
 #include "PlaneAction.hpp"
 #include "PlaneState.hpp"
 
+#include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/units/Distances.hpp"
 #include "mixr/base/ubf/AbstractAction.hpp"
 #include "mixr/base/ubf/AbstractState.hpp"
@@ -36,8 +37,8 @@ END_SLOTTABLE(PlaneBehavior)
 
 BEGIN_SLOT_MAP(PlaneBehavior)
    ON_SLOT( 1, setSlotCriticalAltitude,       base::Distance )
-   ON_SLOT( 2, setSlotVoteOnCriticalAltitude, base::Number)
-   ON_SLOT( 3, setSlotVoteOnIncomingMissile,  base::Number)
+   ON_SLOT( 2, setSlotVoteOnCriticalAltitude, base::Integer)
+   ON_SLOT( 3, setSlotVoteOnIncomingMissile,  base::Integer)
 END_SLOT_MAP()
 
 PlaneBehavior::PlaneBehavior()
@@ -57,7 +58,7 @@ bool PlaneBehavior::setSlotCriticalAltitude(const base::Distance* const msg)
 }
 
 // [ 1 .. 65535 ]
-bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Number* const num)
+bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Integer* const num)
 {
    bool ok{};
    const int vote{num->getInt()};
@@ -69,7 +70,7 @@ bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Number* const num)
 }
 
 // [ 1 .. 65535 ]
-bool PlaneBehavior::setSlotVoteOnIncomingMissile(const base::Number* const num)
+bool PlaneBehavior::setSlotVoteOnIncomingMissile(const base::Integer* const num)
 {
    bool ok{};
    const int vote{num->getInt()};

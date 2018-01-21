@@ -6,7 +6,7 @@
 #include "mixr/base/units/distance_utils.hpp"
 
 namespace mixr {
-namespace base { class Angle; class Boolean; class Distance; class Number; }
+namespace base { class Angle; class Boolean; class Distance; class Integer; }
 namespace terrain { class Terrain; }
 }
 
@@ -26,7 +26,7 @@ class MainWindow;
 //    altitude       <Distance>             ! Reference altitude (Distance) (default: 15000 feet)
 //    lookAngle      <Angle>                ! Antenna look angle (Angle) (default: 0 degrees)
 //    beamWidth      <Angle>                ! Antenna Beam Width (Angle) (default: 180 degrees)
-//    colorScale     <Number>               ! Color scale:  gray(0), color(1), green(2) (default: gray)
+//    colorScale     <Integer>              ! Color scale:  gray(0), color(1), green(2) (default: gray)
 //    interpolate    <Boolean>              ! Interpolate flag (default: false)
 //    shadows        <Boolean>              ! Shadow test enabled
 //    aac            <Boolean>              ! Aspect Angle test enabled
@@ -103,7 +103,7 @@ private:
    bool setSlotAltitude(const mixr::base::Distance* const);
    bool setSlotLookAngle(const mixr::base::Angle* const);
    bool setSlotBeamWidth(const mixr::base::Angle* const);
-   bool setSlotColorScale(const mixr::base::Number* const);
+   bool setSlotColorScale(const mixr::base::Integer* const);
    bool setSlotInterpolate(const mixr::base::Boolean* const);
    bool setSlotShadowsTest(const mixr::base::Boolean* const);
    bool setSlotAacTest(const mixr::base::Boolean* const);

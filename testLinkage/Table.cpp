@@ -3,7 +3,7 @@
 
 #include "TableRow.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/Integer.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
@@ -21,8 +21,8 @@ BEGIN_SLOTTABLE(Table)
 END_SLOTTABLE(Table)
 
 BEGIN_SLOT_MAP(Table)
-   ON_SLOT( 1, setSlotRows,    base::Number)
-   ON_SLOT( 2, setSlotSpacing, base::Number)
+   ON_SLOT( 1, setSlotRows,    base::Integer)
+   ON_SLOT( 2, setSlotSpacing, base::Integer)
    ON_SLOT( 3, setSlotColumns, base::PairStream)
 END_SLOT_MAP()
 
@@ -191,11 +191,7 @@ void Table::build()
    if (newList != nullptr) newList->unref();
 }
 
-
-//------------------------------------------------------------------------------
-// Slot functions
-//------------------------------------------------------------------------------
-bool Table::setSlotRows(base::Number* const msg)
+bool Table::setSlotRows(base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -208,7 +204,7 @@ bool Table::setSlotRows(base::Number* const msg)
    return ok;
 }
 
-bool Table::setSlotSpacing(base::Number* const msg)
+bool Table::setSlotSpacing(base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

@@ -6,8 +6,8 @@ duck12:
     side: red
     signature: ( SigSphere radius: 2.0 )
 
-    initLatitude:  ( LatLon direction: "n" degrees: 36   minutes: 54.0 )
-    initLongitude: ( LatLon direction: "w" degrees: 116  minutes:  1.0 )
+    initLatitude:  ( Latitude  direction: north degrees: 36   minutes: 54.0 )
+    initLongitude: ( Longitude direction: west  degrees: 116  minutes:  1.0 )
 
     initAlt: ( Feet 15000 )
     initHeading: ( Degrees 0.0 )      // Initial heading

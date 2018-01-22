@@ -18,8 +18,8 @@ simulation:
             type: "F-16"
             signature: ( SigSphere radius: 1.0 )
 
-            initLatitude:  ( LatLon direction: "n" degrees:  38 minutes: 0.0 )
-            initLongitude: ( LatLon direction: "w" degrees: 114 minutes: 0.0 )
+            initLatitude:  ( Latitude  direction: north degrees:  38 minutes: 0.0 )
+            initLongitude: ( Longitude direction: west  degrees: 114 minutes: 0.0 )
             initAlt: ( Feet 20000 )
 
             initHeading: ( Degrees 0 )

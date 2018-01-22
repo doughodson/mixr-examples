@@ -9,8 +9,8 @@ duck11: ( Aircraft
    type: "F-16"
    id: 1000
    signature: ( SigSphere radius: 2.0 )
-   initLatitude:  ( LatLon direction: "n" degrees: 40 minutes:  5.0 )
-   initLongitude: ( LatLon direction: "w" degrees: 84 minutes: 13.5 )
+   initLatitude:  ( Latitude  direction: north degrees: 40 minutes:  5.0 )
+   initLongitude: ( Longitude direction: west  degrees: 84 minutes: 13.5 )
    initAlt: ( Feet 15000 )
    initHeading: ( Degrees 180.0 )
    initVelocity: 250

@@ -1,6 +1,7 @@
 
 #include "TestTwo.hpp"
-#include "mixr/base/units/Angles.hpp"
+
+#include "mixr/base/numeric/Number.hpp"
 
 using namespace mixr;
 
@@ -19,14 +20,14 @@ BEGIN_SLOTTABLE(TestTwo)
 END_SLOTTABLE(TestTwo)
 
 BEGIN_SLOT_MAP(TestTwo)
-    ON_SLOT(1, setV1, base::Number)
+    ON_SLOT(1, setV1,     base::Number)
     ON_SLOT(2, setV1Rate, base::Number)
-    ON_SLOT(3, setV1Max, base::Number)
-    ON_SLOT(4, setV1Min, base::Number)
-    ON_SLOT(5, setV2, base::Number)
+    ON_SLOT(3, setV1Max,  base::Number)
+    ON_SLOT(4, setV1Min,  base::Number)
+    ON_SLOT(5, setV2,     base::Number)
     ON_SLOT(6, setV2Rate, base::Number)
-    ON_SLOT(7, setV2Max, base::Number)
-    ON_SLOT(8, setV2Min, base::Number)
+    ON_SLOT(7, setV2Max,  base::Number)
+    ON_SLOT(8, setV2Min,  base::Number)
 END_SLOT_MAP()
 
 BEGIN_EVENT_HANDLER(TestTwo)

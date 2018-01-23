@@ -1,5 +1,7 @@
 
 #include "TestOne.hpp"
+
+#include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/Angles.hpp"
 
 #include <cmath>
@@ -16,8 +18,8 @@ END_SLOTTABLE(TestOne)
 
 BEGIN_SLOT_MAP(TestOne)
     ON_SLOT(1, realSpeed, base::Number)
-    ON_SLOT(2, setAngle, base::Angle)
-    ON_SLOT(2, setAngle, base::Number)
+    ON_SLOT(2, setAngle,  base::Angle)
+    ON_SLOT(2, setAngle,  base::Number)
 END_SLOT_MAP()
 
 BEGIN_EVENT_HANDLER(TestOne)

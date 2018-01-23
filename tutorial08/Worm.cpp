@@ -1,5 +1,7 @@
 
 #include "Worm.hpp"
+
+#include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/Angles.hpp"
 
 #include <cmath>

@@ -4,6 +4,10 @@
 
 #include "mixr/graphics/Graphic.hpp"
 
+namespace mixr {
+namespace base { class Number; }
+}
+
 //------------------------------------------------------------------------------
 // Class: TestTwo
 //

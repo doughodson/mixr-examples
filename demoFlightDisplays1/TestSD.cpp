@@ -5,7 +5,7 @@
 
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/units/angle_utils.hpp"
+#include "mixr/base/units/util/angle_utils.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
 #include "SituationalDisplay.hpp"

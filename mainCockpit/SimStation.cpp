@@ -6,13 +6,14 @@
 #include "mixr/models/player/air/AirVehicle.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
+
 #include "mixr/base/Identifier.hpp"
-#include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/Timers.hpp"
-#include "mixr/base/units/Angles.hpp"
-#include "mixr/base/units/Times.hpp"
+#include "mixr/base/numeric/Boolean.hpp"
+#include "mixr/base/units/angles.hpp"
+#include "mixr/base/units/times.hpp"
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
 EMPTY_DELETEDATA(SimStation)

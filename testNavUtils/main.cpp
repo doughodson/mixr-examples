@@ -3,7 +3,6 @@
 //-----------------------------------------------------------------------------
 
 #include "mixr/base/EarthModel.hpp"
-#include "mixr/base/units/Distances.hpp"
 #include "mixr/base/util/nav_utils.hpp"
 
 #include <iostream>

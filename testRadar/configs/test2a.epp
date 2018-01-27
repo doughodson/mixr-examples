@@ -85,7 +85,6 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
-
                         )
                         rwr: ( Antenna 
                            polarization: horizontal

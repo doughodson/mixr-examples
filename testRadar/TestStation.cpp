@@ -6,11 +6,9 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
-#include "mixr/base/units/Angles.hpp"
 #include "mixr/base/Timers.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"

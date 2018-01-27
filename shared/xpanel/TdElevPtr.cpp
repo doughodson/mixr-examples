@@ -1,7 +1,7 @@
 
 #include "TdElevPtr.hpp"
 #include "mixr/base/numeric/Number.hpp"
-#include "mixr/base/units/angle_utils.hpp"
+#include "mixr/base/units/util/angle_utils.hpp"
 
 namespace mixr {
 namespace xpanel {
@@ -45,7 +45,7 @@ bool TdElevPtr::onUpdateValue(const base::Number* const msg)
 {
     bool ok{};
     if (msg != nullptr) {
-      ok = setElevation(msg->getReal());
+      ok = setElevation(msg->to_double());
     }
     return ok;
 }

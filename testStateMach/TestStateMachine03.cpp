@@ -172,7 +172,7 @@ void TestStateMachine03::stateFunc13(const double)
             std::cout << "Returned from call; ";
             const auto arg = dynamic_cast<const base::Boolean*>( getArgument() );
             if (arg != nullptr) {
-               std::cout << "arg(" << arg->getBoolean() << "); ";
+               std::cout << "arg(" << arg->to_bool() << "); ";
             }
             std::cout << "nextSubstate()";
             nextSubstate();
@@ -205,7 +205,7 @@ void TestStateMachine03::stateFunc21(const double)
 {
    const auto arg = dynamic_cast<const base::Number*>( getArgument() );
    if (arg != nullptr) {
-      std::cout << "arg(" << arg->getReal() << "); ";
+      std::cout << "arg(" << arg->to_double() << "); ";
    }
 
    std::cout << "next()";

@@ -8,8 +8,8 @@
 
 #include "mixr/base/osg/Vec3d"
 
-#include "mixr/base/units/Distances.hpp"
-#include "mixr/base/units/Times.hpp"
+#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/times.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(AdiDisplay, "AdiDisplay")
 EMPTY_DELETEDATA(AdiDisplay)

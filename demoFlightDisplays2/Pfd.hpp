@@ -3,7 +3,7 @@
 #define __Pfd_H__
 
 #include "mixr/graphics/Page.hpp"
-#include "mixr/base/units/angle_utils.hpp"
+#include "mixr/base/units/util/angle_utils.hpp"
 
 //------------------------------------------------------------------------------
 // Class: Pfd

@@ -13,8 +13,8 @@
 #include "mixr/base/colors/Rgb.hpp"
 #include "mixr/base/colors/Hsva.hpp"
 
-#include "mixr/base/units/Angles.hpp"
-#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/units/angles.hpp"
+#include "mixr/base/units/distances.hpp"
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/Pair.hpp"
@@ -86,7 +86,7 @@ bool Display::setSlotTextureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testTexture = msg->getBoolean();
+      testTexture = msg->to_bool();
       ok = true;
    }
    return ok;

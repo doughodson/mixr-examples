@@ -30,7 +30,7 @@ bool TdAzPtr::event(const int event, base::Object* const obj)
     {
         const auto num = dynamic_cast<const base::Number*>(obj);
         if (num != nullptr) {
-            azimuth = num->getReal();
+            azimuth = num->to_double();
             used = true;
         }
     }
@@ -38,7 +38,7 @@ bool TdAzPtr::event(const int event, base::Object* const obj)
     if (!used)
     {
         // Otherwise, pass key events up to our base class
-        used = BaseClass::event(event,obj);
+        used = BaseClass::event(event, obj);
     }
 
     return used;

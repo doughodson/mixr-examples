@@ -43,7 +43,7 @@ bool Uniform::setSlotMin(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMin(x->getDouble());
+      ok = setMin(x->to_double());
    return ok;
 }
 
@@ -51,7 +51,7 @@ bool Uniform::setSlotMax(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMax(x->getDouble());
+      ok = setMax(x->to_double());
    return ok;
 }
 

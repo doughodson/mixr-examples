@@ -17,7 +17,7 @@
 #include "PlaneState.hpp"
 
 #include "mixr/base/numeric/Integer.hpp"
-#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/units/distances.hpp"
 #include "mixr/base/ubf/AbstractAction.hpp"
 #include "mixr/base/ubf/AbstractState.hpp"
 #include "mixr/base/util/constants.hpp"
@@ -61,7 +61,7 @@ bool PlaneBehavior::setSlotCriticalAltitude(const base::Distance* const msg)
 bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Integer* const num)
 {
    bool ok{};
-   const int vote{num->getInt()};
+   const int vote{num->toInt()};
    if (vote > 0 && vote <= 65535) {
       voteOnCriticalAltitude = static_cast<unsigned int>(vote);
       ok = true;
@@ -73,7 +73,7 @@ bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Integer* const num
 bool PlaneBehavior::setSlotVoteOnIncomingMissile(const base::Integer* const num)
 {
    bool ok{};
-   const int vote{num->getInt()};
+   const int vote{num->toInt()};
    if (vote > 0 && vote <= 65535) {
       voteOnIncomingMissile = static_cast<unsigned int>(vote);
       ok = true;

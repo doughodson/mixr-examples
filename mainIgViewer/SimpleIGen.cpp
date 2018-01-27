@@ -4,10 +4,8 @@
 #include "events.hpp"
 
 #include "mixr/base/String.hpp"
-#include "mixr/base/units/Distances.hpp"
-#include "mixr/base/units/distance_utils.hpp"
-
 #include "mixr/base/network/NetHandler.hpp"
+#include "mixr/base/units/distances.hpp"
 
 #include <iostream>
 

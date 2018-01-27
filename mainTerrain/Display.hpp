@@ -3,7 +3,7 @@
 #define __Display_H__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
-#include "mixr/base/units/distance_utils.hpp"
+#include "mixr/base/units/util/distance_utils.hpp"
 
 namespace mixr {
 namespace base { class Angle; class Boolean; class Distance; class Integer; }

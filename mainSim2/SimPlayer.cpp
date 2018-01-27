@@ -1,7 +1,5 @@
 
 #include "SimPlayer.hpp"
-#include "mixr/base/List.hpp"
-#include "mixr/base/units/Angles.hpp"
 
 IMPLEMENT_SUBCLASS(SimPlayer, "SimPlayer")
 EMPTY_DELETEDATA(SimPlayer)

@@ -37,9 +37,9 @@ double Exponential::num()
 
 bool Exponential::setSlotMean(const Number* const x)
 {
-   bool ok = false;
+   bool ok{};
    if (x != nullptr)
-      ok = setMean(x->getDouble());
+      ok = setMean(x->to_double());
    return ok;
 }
 

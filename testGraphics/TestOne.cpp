@@ -2,7 +2,7 @@
 #include "TestOne.hpp"
 
 #include "mixr/base/numeric/Number.hpp"
-#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/angles.hpp"
 
 #include <cmath>
 
@@ -159,7 +159,7 @@ void TestOne::drawFunc()
 //------------------------------------------------------------------------------
 bool TestOne::realSpeed(const base::Number* const rsobj)
 {
-    if (rsobj != nullptr) setSpeed(rsobj->getReal());
+    if (rsobj != nullptr) setSpeed(rsobj->to_double());
     return true;
 }
 
@@ -182,6 +182,6 @@ bool TestOne::setAngle(base::Angle* saobj)
 //------------------------------------------------------------------------------
 bool TestOne::setAngle(const base::Number* const saobj)
 {
-    setStartAngle(saobj->getReal());
+    setStartAngle(saobj->to_double());
     return true;
 }

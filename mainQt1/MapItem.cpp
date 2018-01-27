@@ -2,7 +2,7 @@
 #include "MapItem.hpp"
 
 #include "mixr/base/util/math_utils.hpp"
-#include "mixr/base/units/angle_utils.hpp"
+#include "mixr/base/units/angles.hpp"
 
 #include <QPainter>
 #include <QGraphicsSceneMouseEvent>

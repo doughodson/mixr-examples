@@ -1,7 +1,7 @@
 
 #include "TestMechanical.hpp"
 
-#include "mixr/base/units/angle_utils.hpp"
+#include "mixr/base/units/util/angle_utils.hpp"
 
 // static slew rates
 const double TestMechanical::T1{120.0};

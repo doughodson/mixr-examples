@@ -13,8 +13,6 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
-#include "mixr/base/units/Angles.hpp"
-
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")

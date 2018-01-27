@@ -121,7 +121,7 @@ bool ZeroMQContext::setEnableIPV6(bool enable)
 bool ZeroMQContext::setSlotThreadCount(const base::Integer* const msg)
 {
    bool ok{};
-   if (msg != nullptr) ok = setThreadCount(*msg);
+   if (msg != nullptr) ok = setThreadCount(msg->toInt());
    return ok;
 }
 
@@ -129,7 +129,7 @@ bool ZeroMQContext::setSlotThreadCount(const base::Integer* const msg)
 bool ZeroMQContext::setSlotMaxSockets(const base::Integer* const msg)
 {
    bool ok{};
-   if (msg != nullptr) ok = setMaxSockets(*msg);
+   if (msg != nullptr) ok = setMaxSockets(msg->toInt());
    return ok;
 }
 
@@ -137,7 +137,7 @@ bool ZeroMQContext::setSlotMaxSockets(const base::Integer* const msg)
 bool ZeroMQContext::setSlotEnableIPV6(const base::Boolean* const msg)
 {
    bool ok{};
-   if (msg != nullptr) ok = setEnableIPV6(*msg);
+   if (msg != nullptr) ok = setEnableIPV6(msg->to_bool());
    return ok;
 }
 

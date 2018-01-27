@@ -102,7 +102,7 @@ void TestStateMachine04::stateFunc21(const double)
 {
    const auto arg = dynamic_cast<const base::Number*>( getArgument() );
    if (arg != nullptr) {
-      std::cout << "arg(" << arg->getReal() << "); ";
+      std::cout << "arg(" << arg->to_double() << "); ";
    }
 
    std::cout << "next()";

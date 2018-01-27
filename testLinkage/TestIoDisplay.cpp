@@ -218,7 +218,7 @@ bool TestIoDisplay::setSlotItem(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      const int v{msg->getInt()};
+      const int v{msg->toInt()};
       if (v >= 1 && v <= TBL_SIZE) {
          item = v;
          types[item-1] = Type::NONE;
@@ -235,7 +235,7 @@ bool TestIoDisplay::setSlotAiChannel(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr && item >= 1 && item <= TBL_SIZE) {
-      const int v{msg->getInt()};
+      const int v{msg->toInt()};
       if (v >= 0 && v <= 0xFFFF) {
          channels[item-1] = v;
          types[item-1] = Type::AI;
@@ -251,7 +251,7 @@ bool TestIoDisplay::setSlotDiChannel(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr && item >= 1 && item <= TBL_SIZE) {
-      const int v{msg->getInt()};
+      const int v{msg->toInt()};
       if (v >= 0 && v <= 0xFFFF) {
          channels[item-1] = v;
          types[item-1] = Type::DI;

@@ -1,6 +1,6 @@
 
 #include "TestAdi2.hpp"
-#include "mixr/base/units/angle_utils.hpp"
+#include "mixr/base/units/util/angle_utils.hpp"
 
 #include <cmath>
 

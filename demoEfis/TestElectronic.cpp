@@ -3,12 +3,10 @@
 
 #include "mixr/base/String.hpp"
 
-#include "mixr/base/units/LinearVelocity.hpp"
+#include "mixr/base/units/util/rate_utils.hpp"
 
 #include "mixr/base/util/math_utils.hpp"
-#include "mixr/base/units/angle_utils.hpp"
-
-#include <cmath>
+#include "mixr/base/units/util/angle_utils.hpp"
 
 using namespace mixr;
 
@@ -468,7 +466,7 @@ void TestElectronic::updateData(const double dt)
         }
         // true air speed
         else if (readoutMode == ReadoutMode::ND_TAS) {
-            int curTAS{mixr::base::nintd(trueAirSpeed * mixr::base::LinearVelocity::FPS2KTSCC)};
+            int curTAS{mixr::base::nintd(trueAirSpeed * mixr::base::rate::FPS2KTSCC)};
             send("trueairspeed", UPDATE_VALUE, curTAS, trueAirSpeedSD);
         }
         // elapsed time

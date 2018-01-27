@@ -209,25 +209,25 @@ bool TerrainFollower::setElevPts(const int num, const double newEPts[])
 bool TerrainFollower::onEventSetPlaneAltTerrainFollower(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setPlaneAlt(x->getReal());
+    if (x != nullptr) ok = setPlaneAlt(x->to_double());
     return ok;
 }
 bool TerrainFollower::onEventSetScanRangeTerrainFollower(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setScanRange(x->getReal());
+    if (x != nullptr) ok = setScanRange(x->to_double());
     return ok;
 }
 bool TerrainFollower::onEventSetViewHeightTerrainFollower(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setViewHeight(x->getReal());
+    if (x != nullptr) ok = setViewHeight(x->to_double());
     return ok;
 }
 bool TerrainFollower::onEventSetViewWidthTerrainFollower(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setViewWidth(x->getReal());
+    if (x != nullptr) ok = setViewWidth(x->to_double());
     return ok;
 }
 

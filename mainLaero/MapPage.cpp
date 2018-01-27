@@ -21,7 +21,7 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
-#include "mixr/base/units/time_utils.hpp"
+#include "mixr/base/units/util/time_utils.hpp"
 
 #include <array>
 #include <GL/glut.h>
@@ -398,7 +398,7 @@ void MapPage::updateData(const double dt)
         mixr::base::PairStream* stream = pStn->getPlayers();
         if (stream != nullptr) {
             // create our new player list
-            mixr::models::Player* newPlayers[MAX_PLAYERS];
+            mixr::models::Player* newPlayers[MAX_PLAYERS]{};
             int numNewPlayers{};
             // go through all of our non-ownship players and populate our new list
             mixr::base::List::Item* item{stream->getFirstItem()};

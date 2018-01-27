@@ -5,12 +5,13 @@
 #include "factory.hpp"
 
 #include "mixr/terrain/ded/DedFile.hpp"
-#include "mixr/base/util/system_utils.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/edl_parser.hpp"
-#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/angles.hpp"
+#include "mixr/base/util/system_utils.hpp"
+
 #include "mixr/graphics/Graphic.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"

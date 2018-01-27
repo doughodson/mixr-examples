@@ -32,7 +32,7 @@ bool AbstractRng::setSlotSeed(const mixr::base::Integer* const seed)
 {
    bool ok = false;
    if (seed != nullptr) {
-      setSeed(seed->getInt());
+      setSeed(seed->toInt());
       ok = true;
    }
    return ok;

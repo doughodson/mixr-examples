@@ -2,8 +2,9 @@
 #include "NavaidTests.hpp"
 
 #include "mixr/dafif/NavaidLoader.hpp"
-#include "mixr/base/units/Angles.hpp"
-#include "mixr/base/units/Distances.hpp"
+
+#include "mixr/base/units/angles.hpp"
+#include "mixr/base/units/distances.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
 #include <iostream>

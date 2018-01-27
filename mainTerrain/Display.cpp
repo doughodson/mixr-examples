@@ -14,8 +14,8 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
-#include "mixr/base/units/Angles.hpp"
-#include "mixr/base/units/Distances.hpp"
+#include "mixr/base/units/angles.hpp"
+#include "mixr/base/units/distances.hpp"
 
 #include "mixr/base/util/nav_utils.hpp"
 #include "mixr/base/util/system_utils.hpp"
@@ -200,7 +200,7 @@ bool Display::setSlotColorScale(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      const int s{msg->getInt()};
+      const int s{msg->toInt()};
       if (s >= 0 && s <= 2) {
          colorDepth = static_cast<ColorDepth>(s);
          ok = true;
@@ -214,7 +214,7 @@ bool Display::setSlotInterpolate(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      interpolate = msg->getBoolean();
+      interpolate = msg->to_bool();
       ok = true;
    }
    return ok;
@@ -225,7 +225,7 @@ bool Display::setSlotShadowsTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testShadows = msg->getBoolean();
+      testShadows = msg->to_bool();
       ok = true;
    }
    return ok;
@@ -236,7 +236,7 @@ bool Display::setSlotAacTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testAac = msg->getBoolean();
+      testAac = msg->to_bool();
       ok = true;
    }
    return ok;
@@ -247,7 +247,7 @@ bool Display::setSlotEarthCurvatureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testEarthCurv = msg->getBoolean();
+      testEarthCurv = msg->to_bool();
       ok = true;
    }
    return ok;
@@ -259,7 +259,7 @@ bool Display::setSlotTextureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testTexture = msg->getBoolean();
+      testTexture = msg->to_bool();
       ok = true;
    }
    return ok;

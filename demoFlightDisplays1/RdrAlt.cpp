@@ -45,13 +45,13 @@ bool RdrAlt::setRAlt(const double newRA)
 bool RdrAlt::onEventSetRAltRdrAlt(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setRAlt(x->getReal());
+    if (x != nullptr) ok = setRAlt(x->to_double());
     return ok;
 }
 bool RdrAlt::onEventSetRAltMinRdrAlt(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setRAltMin(x->getReal());
+    if (x != nullptr) ok = setRAltMin(x->to_double());
     return ok;
 }
 

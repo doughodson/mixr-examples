@@ -8,9 +8,9 @@
 #include "mixr/models/system/Autopilot.hpp"
 #include "mixr/models/dynamics/LaeroModel.hpp"
 
-#include "mixr/base/units/Angles.hpp"
-#include "mixr/base/units/Distances.hpp"
-#include "mixr/base/units/Times.hpp"
+#include "mixr/base/units/angles.hpp"
+#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/times.hpp"
 
 #include <GL/glut.h>
 #include <iomanip>

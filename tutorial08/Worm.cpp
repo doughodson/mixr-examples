@@ -2,7 +2,7 @@
 #include "Worm.hpp"
 
 #include "mixr/base/numeric/Number.hpp"
-#include "mixr/base/units/Angles.hpp"
+#include "mixr/base/units/angles.hpp"
 
 #include <cmath>
 
@@ -143,7 +143,7 @@ bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
 {
    bool ok{};
    if (rsobj != nullptr) {
-      setSpeed(rsobj->getReal());
+      setSpeed(rsobj->to_double());
       ok = true;
    }
    return ok;
@@ -166,7 +166,7 @@ bool Worm::setSlotAngle(const mixr::base::Number* const saobj)
 {
    bool ok{};
    if (saobj != nullptr) {
-      setStartAngle(saobj->getReal());
+      setStartAngle(saobj->to_double());
       ok = true;
    }
    return ok;

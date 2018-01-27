@@ -184,7 +184,7 @@ bool MyObj::setSlotVisible(const mixr::base::Boolean* const x)
 {
    bool ok{};
    if (x != nullptr) {
-      ok = setVisible(x->getBoolean());
+      ok = setVisible(x->to_bool());
    }
    return ok;
 }

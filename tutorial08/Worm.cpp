@@ -143,7 +143,7 @@ bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
 {
    bool ok{};
    if (rsobj != nullptr) {
-      setSpeed(rsobj->to_double());
+      setSpeed(rsobj->asDouble());
       ok = true;
    }
    return ok;
@@ -166,7 +166,7 @@ bool Worm::setSlotAngle(const mixr::base::Number* const saobj)
 {
    bool ok{};
    if (saobj != nullptr) {
-      setStartAngle(saobj->to_double());
+      setStartAngle(saobj->asDouble());
       ok = true;
    }
    return ok;

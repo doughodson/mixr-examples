@@ -43,7 +43,7 @@ bool Rng::setSlotSeed(const mixr::base::Integer* const seed)
 {
    bool ok{};
    if (seed != nullptr) {
-      setSeed(seed->toInt());
+      setSeed(seed->asInt());
       ok = true;
    }
    return ok;

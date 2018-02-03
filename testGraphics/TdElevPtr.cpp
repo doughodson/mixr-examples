@@ -38,6 +38,6 @@ void TdElevPtr::draw()
 //------------------------------------------------------------------------------
 bool TdElevPtr::onUpdateValue(const base::Number* const ouvobj)
 {
-    if (ouvobj != nullptr) elev = ouvobj->to_double();
+    if (ouvobj != nullptr) elev = ouvobj->asDouble();
     return true;
 }

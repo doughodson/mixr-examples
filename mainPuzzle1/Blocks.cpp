@@ -165,7 +165,7 @@ bool Block::setSlotRefId(const mixr::base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      const int i{msg->toInt()};
+      const int i{msg->asInt()};
       if (i >= 0) {
          const auto id = static_cast<unsigned int>(i);
          ok = setReferenceID(id);

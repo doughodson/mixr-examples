@@ -45,7 +45,7 @@ bool TdElevPtr::onUpdateValue(const base::Number* const msg)
 {
     bool ok{};
     if (msg != nullptr) {
-      ok = setElevation(msg->to_double());
+      ok = setElevation(msg->asDouble());
     }
     return ok;
 }

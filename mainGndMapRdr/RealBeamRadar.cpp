@@ -340,7 +340,7 @@ bool RealBeamRadar::setSlotInterpolate(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      interpolate = msg->to_bool();
+      interpolate = msg->asBool();
       ok = true;
    }
    return ok;

@@ -42,7 +42,7 @@ bool TdAzPtr::onUpdateValue(const base::Number* const msg)
 {
     bool ok{};
     if (msg != nullptr) {
-      ok = setAzimuth(msg->to_double());
+      ok = setAzimuth(msg->asDouble());
     }
     return ok;
 }

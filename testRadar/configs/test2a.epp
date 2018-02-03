@@ -58,7 +58,7 @@
             // ---
             // Blue row #1
             // ---
-            
+
             p011: ( Aircraft
                 id: 1011
                 side: blue

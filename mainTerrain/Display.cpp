@@ -200,7 +200,7 @@ bool Display::setSlotColorScale(const base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      const int s{msg->toInt()};
+      const int s{msg->asInt()};
       if (s >= 0 && s <= 2) {
          colorDepth = static_cast<ColorDepth>(s);
          ok = true;
@@ -214,7 +214,7 @@ bool Display::setSlotInterpolate(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      interpolate = msg->to_bool();
+      interpolate = msg->asBool();
       ok = true;
    }
    return ok;
@@ -225,7 +225,7 @@ bool Display::setSlotShadowsTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testShadows = msg->to_bool();
+      testShadows = msg->asBool();
       ok = true;
    }
    return ok;
@@ -236,7 +236,7 @@ bool Display::setSlotAacTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testAac = msg->to_bool();
+      testAac = msg->asBool();
       ok = true;
    }
    return ok;
@@ -247,7 +247,7 @@ bool Display::setSlotEarthCurvatureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testEarthCurv = msg->to_bool();
+      testEarthCurv = msg->asBool();
       ok = true;
    }
    return ok;
@@ -259,7 +259,7 @@ bool Display::setSlotTextureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testTexture = msg->to_bool();
+      testTexture = msg->asBool();
       ok = true;
    }
    return ok;

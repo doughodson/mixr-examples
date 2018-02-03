@@ -43,7 +43,7 @@ bool Lognormal::setSlotMean(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setMean(x->to_double());
+      ok = setMean(x->asDouble());
    return ok;
 }
 
@@ -51,7 +51,7 @@ bool Lognormal::setSlotStdDev(const Number* const x)
 {
    bool ok = false;
    if (x != nullptr)
-      ok = setStdDev(x->to_double());
+      ok = setStdDev(x->asDouble());
    return ok;
 }
 

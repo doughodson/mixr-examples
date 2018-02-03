@@ -164,7 +164,7 @@ bool Endpoint::setSlotNoWait(mixr::base::Boolean* const msg)
 {
     bool ok{};
     if (msg != nullptr) {
-        noWaitFlag = msg->to_bool();
+        noWaitFlag = msg->asBool();
         ok = true;
     }
     return ok;
@@ -175,7 +175,7 @@ bool Endpoint::setSlotLoops(mixr::base::Integer* const msg)
 {
     bool ok{};
     if (msg != nullptr) {
-        const int ia{msg->toInt()};
+        const int ia{msg->asInt()};
         if (ia >= 0) {
             loops = ia;
             ok = true;

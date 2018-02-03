@@ -80,37 +80,37 @@ bool Hsi::setToFrom(const double newTF)
 bool Hsi::onUpdateSelHdgHsi(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setSelectedHeading(x->to_double());
+    if (x != nullptr) ok = setSelectedHeading(x->asDouble());
     return ok;
 }
 bool Hsi::onUpdateSelCrsHsi(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setSelectedCourse(x->to_double());
+    if (x != nullptr) ok = setSelectedCourse(x->asDouble());
     return ok;
 }
 bool Hsi::onUpdateNav1BrgHsi(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setNav1Brg(x->to_double());
+    if (x != nullptr) ok = setNav1Brg(x->asDouble());
     return ok;
 }
 bool Hsi::onUpdateNav2BrgHsi(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setNav2Brg(x->to_double());
+    if (x != nullptr) ok = setNav2Brg(x->asDouble());
     return ok;
 }
 bool Hsi::onUpdateCdiDotsHsi(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setCdiDots(x->to_double());
+    if (x != nullptr) ok = setCdiDots(x->asDouble());
     return ok;
 }
 bool Hsi::onUpdateToFromHsi(const base::Number* const x)
 {
     bool ok{};
-    if (x != nullptr) ok = setToFrom(x->to_double());
+    if (x != nullptr) ok = setToFrom(x->asDouble());
     return ok;
 }
 

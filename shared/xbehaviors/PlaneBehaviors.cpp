@@ -61,7 +61,7 @@ bool PlaneBehavior::setSlotCriticalAltitude(const base::Distance* const msg)
 bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Integer* const num)
 {
    bool ok{};
-   const int vote{num->toInt()};
+   const int vote{num->asInt()};
    if (vote > 0 && vote <= 65535) {
       voteOnCriticalAltitude = static_cast<unsigned int>(vote);
       ok = true;
@@ -73,7 +73,7 @@ bool PlaneBehavior::setSlotVoteOnCriticalAltitude(const base::Integer* const num
 bool PlaneBehavior::setSlotVoteOnIncomingMissile(const base::Integer* const num)
 {
    bool ok{};
-   const int vote{num->toInt()};
+   const int vote{num->asInt()};
    if (vote > 0 && vote <= 65535) {
       voteOnIncomingMissile = static_cast<unsigned int>(vote);
       ok = true;

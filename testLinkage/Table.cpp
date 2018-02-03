@@ -195,7 +195,7 @@ bool Table::setSlotRows(base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      const int v{msg->toInt()};
+      const int v{msg->asInt()};
       if (v >= 0) {
          rows = v;
          ok = true;
@@ -208,7 +208,7 @@ bool Table::setSlotSpacing(base::Integer* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      const int v{msg->toInt()};
+      const int v{msg->asInt()};
       if (v >= 0) {
          spacing = v;
          ok = true;

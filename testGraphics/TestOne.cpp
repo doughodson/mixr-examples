@@ -159,7 +159,7 @@ void TestOne::drawFunc()
 //------------------------------------------------------------------------------
 bool TestOne::realSpeed(const base::Number* const rsobj)
 {
-    if (rsobj != nullptr) setSpeed(rsobj->to_double());
+    if (rsobj != nullptr) setSpeed(rsobj->asDouble());
     return true;
 }
 
@@ -182,6 +182,6 @@ bool TestOne::setAngle(base::Angle* saobj)
 //------------------------------------------------------------------------------
 bool TestOne::setAngle(const base::Number* const saobj)
 {
-    setStartAngle(saobj->to_double());
+    setStartAngle(saobj->asDouble());
     return true;
 }

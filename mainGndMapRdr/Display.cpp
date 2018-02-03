@@ -86,7 +86,7 @@ bool Display::setSlotTextureTest(const base::Boolean* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      testTexture = msg->to_bool();
+      testTexture = msg->asBool();
       ok = true;
    }
    return ok;

@@ -402,8 +402,8 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
             const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
             const auto p = static_cast<mixr::models::Player*>(pair->object());
             mixr::base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
-            double x{rpos[0] * mixr::base::distance::M2NM};
-            double y{rpos[1] * mixr::base::distance::M2NM};
+            double x{rpos[0] * mixr::base::length::M2NM};
+            double y{rpos[1] * mixr::base::length::M2NM};
 
             if (
                p != getOwnship() &&
@@ -495,7 +495,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
         if (tracks[i] != nullptr && trkIdx[i] != 0) {
             double xp{tracks[i]->getXPosition() - osX};
             double yp{tracks[i]->getYPosition() - osY};
-            loader->updateSymbolPositionXY( trkIdx[i], (xp * mixr::base::distance::M2NM), (yp * mixr::base::distance::M2NM) );
+            loader->updateSymbolPositionXY( trkIdx[i], (xp * mixr::base::length::M2NM), (yp * mixr::base::length::M2NM) );
             loader->updateSymbolHeading( trkIdx[i], tracks[i]->getHeadingD() );
         }
     }
@@ -581,7 +581,7 @@ void TestDisplay::updatePfd(const double)
     // vvi tape gauge test
     const mixr::base::Vec3d vel{av->getVelocity()};
     const double vvMps{-vel[2]};
-    vvi = vvMps * 60.0f * mixr::base::distance::M2FT;
+    vvi = vvMps * 60.0f * mixr::base::length::M2FT;
 
     // flight director stuff
     // flight diretor bank angle

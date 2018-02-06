@@ -3,10 +3,10 @@
 #define __Display_H__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
-#include "mixr/base/units/util/distance_utils.hpp"
+#include "mixr/base/units/util/length_utils.hpp"
 
 namespace mixr {
-namespace base { class Angle; class Boolean; class Distance; class Integer; }
+namespace base { class Angle; class Boolean; class Integer; class Length; }
 namespace terrain { class Terrain; }
 }
 
@@ -21,9 +21,9 @@ class MainWindow;
 //
 // Slots:
 //    terrain        <terrain::Terrain>     ! The terrain elevation database
-//    minElevation   <Distance>             ! Minimum elevation (Distance) (default: use database max value)
-//    maxElevation   <Distance>             ! Maximum elevation (Distance) (default: use database max value)
-//    altitude       <Distance>             ! Reference altitude (Distance) (default: 15000 feet)
+//    minElevation   <Length>               ! Minimum elevation (Distance) (default: use database max value)
+//    maxElevation   <Length>               ! Maximum elevation (Distance) (default: use database max value)
+//    altitude       <Length>               ! Reference altitude (Distance) (default: 15000 feet)
 //    lookAngle      <Angle>                ! Antenna look angle (Angle) (default: 0 degrees)
 //    beamWidth      <Angle>                ! Antenna Beam Width (Angle) (default: 180 degrees)
 //    colorScale     <Integer>              ! Color scale:  gray(0), color(1), green(2) (default: gray)
@@ -69,9 +69,9 @@ private:
 
    mixr::terrain::Terrain* terrain{};                      // Terrain data
 
-   double maxElev{15000.0 * mixr::base::distance::FT2M};   // Max elevation (meters)
+   double maxElev{15000.0 * mixr::base::length::FT2M};     // Max elevation (meters)
    double minElev{};                                       // Min elevation (meters)
-   double altitude{15000.0 * mixr::base::distance::FT2M};  // Ref altitude (meters)
+   double altitude{15000.0 * mixr::base::length::FT2M};    // Ref altitude (meters)
    double lookAngle{};                                     // Antenna look angle (degs)
    double beamWidth{180.0};                                // Antenna beam width (degs)
    ColorDepth colorDepth{ColorDepth::GRAY};                // Color scale index; gray, color, green
@@ -98,9 +98,9 @@ private:
 private:
    // slot table helper methods
    bool setSlotTerrain(mixr::terrain::Terrain* const);
-   bool setSlotMinElevation(const mixr::base::Distance* const);
-   bool setSlotMaxElevation(const mixr::base::Distance* const);
-   bool setSlotAltitude(const mixr::base::Distance* const);
+   bool setSlotMinElevation(const mixr::base::Length* const);
+   bool setSlotMaxElevation(const mixr::base::Length* const);
+   bool setSlotAltitude(const mixr::base::Length* const);
    bool setSlotLookAngle(const mixr::base::Angle* const);
    bool setSlotBeamWidth(const mixr::base::Angle* const);
    bool setSlotColorScale(const mixr::base::Integer* const);

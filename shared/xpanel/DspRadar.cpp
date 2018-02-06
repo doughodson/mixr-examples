@@ -154,7 +154,7 @@ void DspRadar::drawFunc()
 
       // Vertices of the basic symbol
       //static double maxRng = 40000.0;
-      double maxRng{radar->getRange() * base::distance::NM2M};
+      double maxRng{radar->getRange() * base::length::NM2M};
       static double ss{0.05};
 
       // The color

@@ -15,7 +15,7 @@
 #include "mixr/base/PairStream.hpp"
 
 #include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 
 #include "mixr/base/util/nav_utils.hpp"
 #include "mixr/base/util/system_utils.hpp"
@@ -43,9 +43,9 @@ END_SLOTTABLE(Display)
 
 BEGIN_SLOT_MAP(Display)
    ON_SLOT( 1, setSlotTerrain,            terrain::Terrain)
-   ON_SLOT( 2, setSlotMinElevation,       base::Distance)
-   ON_SLOT( 3, setSlotMaxElevation,       base::Distance)
-   ON_SLOT( 4, setSlotAltitude,           base::Distance)
+   ON_SLOT( 2, setSlotMinElevation,       base::Length)
+   ON_SLOT( 3, setSlotMaxElevation,       base::Length)
+   ON_SLOT( 4, setSlotAltitude,           base::Length)
    ON_SLOT( 5, setSlotLookAngle,          base::Angle)
    ON_SLOT( 6, setSlotBeamWidth,          base::Angle)
    ON_SLOT( 7, setSlotColorScale,         base::Integer)
@@ -143,31 +143,31 @@ bool Display::setSlotTerrain(terrain::Terrain* const msg)
 }
 
 // Set min elevation
-bool Display::setSlotMinElevation(const base::Distance* const msg)
+bool Display::setSlotMinElevation(const base::Length* const x)
 {
    bool ok{};
-   if (msg != nullptr) {
-      ok = setMinElevation( base::Meters::convertStatic(*msg) );
+   if (x != nullptr) {
+      ok = setMinElevation(x->getValueInMeters());
    }
    return ok;
 }
 
 // Set max elevation
-bool Display::setSlotMaxElevation(const base::Distance* const msg)
+bool Display::setSlotMaxElevation(const base::Length* const x)
 {
    bool ok{};
-   if (msg != nullptr) {
-      ok = setMaxElevation( base::Meters::convertStatic(*msg) );
+   if (x != nullptr) {
+      ok = setMaxElevation(x->getValueInMeters());
    }
    return ok;
 }
 
 // Set max elevation
-bool Display::setSlotAltitude(const base::Distance* const msg)
+bool Display::setSlotAltitude(const base::Length* const x)
 {
    bool ok{};
-   if (msg != nullptr) {
-      altitude = base::Meters::convertStatic(*msg);
+   if (x != nullptr) {
+      altitude = x->getValueInMeters();
       ok = true;
    }
    return ok;
@@ -178,7 +178,7 @@ bool Display::setSlotLookAngle(const base::Angle* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      lookAngle = static_cast<double>(base::Degrees::convertStatic(*msg));
+      lookAngle = msg->getValueInDegrees();
       ok = true;
    }
    return ok;
@@ -189,7 +189,7 @@ bool Display::setSlotBeamWidth(const base::Angle* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
-      beamWidth = static_cast<double>(base::Degrees::convertStatic(*msg));
+      beamWidth = msg->getValueInDegrees();
       ok = true;
    }
    return ok;
@@ -342,8 +342,8 @@ void Display::updateData(const double dt)
          double* curvature{};
          if (testEarthCurv) {
             curvature = new double[NUM_ROWS];
-            const auto radius = static_cast<double>(base::nav::ERAD60 * base::distance::NM2M);
-            const auto maxRng = static_cast<double>(deltaLat * 60.0f * base::distance::NM2M);
+            const auto radius = static_cast<double>(base::nav::ERAD60 * base::length::NM2M);
+            const auto maxRng = static_cast<double>(deltaLat * 60.0f * base::length::NM2M);
             for (int irow = 0; irow < NUM_ROWS; irow++) {
                const double curRng{maxRng * static_cast<double>(irow)/static_cast<double>(NUM_ROWS)};
                const double arc{curRng / radius};
@@ -413,7 +413,7 @@ void Display::updateData(const double dt)
 
                // the Lat/long of the southern most point
                const double latitude{cLat + (0 - NUM_ROWS/2) * spacingLat};
-               const double maxRng{static_cast<double>(deltaLat * 60.0f * base::distance::NM2M)};
+               const double maxRng{static_cast<double>(deltaLat * 60.0f * base::length::NM2M)};
 
                // Direction
                //double direction = 30.0f * static_cast<double>(icol - NUM_COLUMNS/2)/static_cast<double>(NUM_COLUMNS/2);

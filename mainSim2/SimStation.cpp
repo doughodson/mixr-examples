@@ -55,7 +55,7 @@ void SimStation::reset()
 
     // auto reset timer
     if (autoResetTimer0 != nullptr) {
-        autoResetTimer = mixr::base::Seconds::convertStatic(*autoResetTimer0);
+        autoResetTimer = autoResetTimer0->getValueInSeconds();
     }
     else {
         autoResetTimer = 0;
@@ -152,7 +152,7 @@ bool SimStation::setSlotAutoResetTime(const mixr::base::Time* const num)
     autoResetTimer0 = num;
     if (autoResetTimer0 != nullptr) {
         autoResetTimer0->ref();
-        autoResetTimer = mixr::base::Seconds::convertStatic(*autoResetTimer0);
+        autoResetTimer = autoResetTimer0->getValueInSeconds();
     }
     return true;
 }

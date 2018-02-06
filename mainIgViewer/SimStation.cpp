@@ -66,7 +66,7 @@ void SimStation::reset()
       mainDisplay->reset();
    // auto reset timer
    if (autoResetTimer0 != nullptr)
-      autoResetTimer = base::Seconds::convertStatic(*autoResetTimer0);
+      autoResetTimer = autoResetTimer0->getValueInSeconds();
    else
       autoResetTimer = 0;
    // reset our baseclass 
@@ -164,7 +164,7 @@ bool SimStation::setSlotAutoResetTime(const base::Time* const num)
    autoResetTimer0 = num;
    if (autoResetTimer0 != nullptr) {
       autoResetTimer0->ref();
-      autoResetTimer = base::Seconds::convertStatic(*autoResetTimer0);
+      autoResetTimer = autoResetTimer0->getValueInSeconds();
    }
    return true;
 }

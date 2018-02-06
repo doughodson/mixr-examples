@@ -67,8 +67,7 @@ void TestOne::reset()
     yPos =0;
     nTrails = 0;
     if (iangle != nullptr) {
-        base::Radians radians;
-        setStartAngle(static_cast<double>(radians.convert(*iangle)));
+        setStartAngle(iangle->getValueInRadians());
     }
 }
 
@@ -166,12 +165,11 @@ bool TestOne::realSpeed(const base::Number* const rsobj)
 //------------------------------------------------------------------------------
 // setAngle() -- sets the starting angle using an base::Angle parameter
 //------------------------------------------------------------------------------
-bool TestOne::setAngle(base::Angle* saobj)
+bool TestOne::setAngle(base::Angle* x)
 {
-    if (saobj != nullptr) {
-        base::Radians radians;
-        setStartAngle(static_cast<double>(radians.convert(*saobj)));
-        iangle = saobj;
+    if (x != nullptr) {
+        setStartAngle(x->getValueInRadians());
+        iangle = x;
         iangle->ref();
     }
     return true;

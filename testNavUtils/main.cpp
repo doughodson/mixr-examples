@@ -21,7 +21,7 @@ using namespace mixr;
 //static double tlon = 1.0;
 static double brng{45.0};
 //static double dist = 100.0;
-static const base::EarthModel* pEM {&base::EarthModel::wgs84};
+static const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
 static int testNumber{};
 static char ynCont{'y'};
@@ -522,15 +522,15 @@ void test03_fbd2llS()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double brng = 45.0;
-   double dist = 100.0;
-   double tlat = 0.0;
-   double tlon = 0.0;
+   double slat{};
+   double slon{};
+   double brng{45.0};
+   double dist{100.0};
+   double tlat{};
+   double tlon{};
 
-   const double TGT_LAT = 1.1785;
-   const double TGT_LON = 1.1785;
+   const double TGT_LAT{1.1785};
+   const double TGT_LON{1.1785};
 
    //-----------------------------------
    // set output formats
@@ -559,7 +559,7 @@ void test03_fbd2llS()
    //-----------------------------------
    // calculate actual results
    //-----------------------------------
-   base::nav::fbd2llS(slat,slon,brng,dist,&tlat,&tlon);
+   base::nav::fbd2llS(slat, slon, brng, dist, &tlat, &tlon);
 
    //-----------------------------------
    // show actual results
@@ -587,12 +587,12 @@ void test03_fbd2llS()
 
       if (ynCont != 'n') {
 
-         double slat = 0.0;
-         double slon = 0.0;
-         double brng = 0.0;
-         double dist = 0.0;
-         double tlat = 0.0;
-         double tlon = 0.0;
+         double slat{};
+         double slon{};
+         double brng{};
+         double dist{};
+         double tlat{};
+         double tlon{};
 
          std::cout << "Enter source latitude   [DEG] : "; std::cin >> slat;
          std::cout << "Enter source longitude  [DEG] : "; std::cin >> slon;
@@ -648,15 +648,15 @@ void test04_fll2bdS()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double brng = 0.0;
-   double dist = 0.0;
+   double slat{};
+   double slon{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double brng{};
+   double dist{};
 
-   const double TGT_BRNG = 45.0;
-   const double TGT_DIST = 84.8528;
+   const double TGT_BRNG{45.0};
+   const double TGT_DIST{84.8528};
 
    //-----------------------------------
    // set output formats
@@ -773,14 +773,14 @@ void test05_aer2xyz()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double azim = 45.0;
-   double elev = 30.0;
-   double ranj = 1000.0;
+   double azim{45.0};
+   double elev{30.0};
+   double ranj{1000.0};
    base::Vec3d pos;
 
-   const double XPOS = 612.3724;
-   const double YPOS = 612.3724;
-   const double ZPOS = -500.0;
+   const double XPOS{612.3724};
+   const double YPOS{612.3724};
+   const double ZPOS{-500.0};
 
    //-----------------------------------
    // set output formats
@@ -844,9 +844,9 @@ void test05_aer2xyz()
 
       if (ynCont != 'n') {
 
-         double azim = 0.0;
-         double elev = 0.0;
-         double ranj = 0.0;
+         double azim{};
+         double elev{};
+         double ranj{};
          base::Vec3d pos;
 
          std::cout << "Enter azimuth    [DEG] : "; std::cin >> azim;
@@ -917,19 +917,18 @@ void test06_aer2xyz()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double roll  = 10.0;
-   double pitch = 20.0;
-   double yaw   = 30.0;
+   double roll{10.0};
+   double pitch{20.0};
+   double yaw{30.0};
    base::Matrixd rm;
 
-   const double NORTH =   39.0485;
-   const double EAST  =  819.1647;
-   const double DOWN  = -572.2276;
+   const double NORTH{39.0485};
+   const double EAST{819.1647};
+   const double DOWN{-572.2276};
 
-
-   double azim  = 45.0;
-   double elev  = 30.0;
-   double ranj  = 1000.0;
+   double azim{45.0};
+   double elev{30.0};
+   double ranj{1000.0};
    base::Vec3d pos;
 
    base::Matrixd ER;
@@ -1063,14 +1062,14 @@ void test06_aer2xyz()
 
       if (ynCont != 'n') {
 
-         double roll  = 0.0;
-         double pitch = 0.0;
-         double yaw   = 0.0;
+         double roll{};
+         double pitch{};
+         double yaw{};
          base::Matrixd rm;
 
-         double azim  = 0.0;
-         double elev  = 0.0;
-         double ranj  = 0.0;
+         double azim{};
+         double elev{};
+         double ranj{};
          base::Vec3d pos;
 
          std::cout << "Enter roll   [DEG] : "; std::cin >> roll;
@@ -1156,13 +1155,13 @@ void test07_xyz2aer()
    // declare function parameters
    //-------------------------
    base::Vec3d aer;
-   double x = 100.0;
-   double y = 200.0;
-   double z = 300.0;
+   double x{100.0};
+   double y{200.0};
+   double z{300.0};
 
-   const double AZIM =  63.4349;
-   const double ELEV = -53.3008;
-   const double RANJ = 374.1657;
+   const double AZIM{63.4349};
+   const double ELEV{-53.3008};
+   const double RANJ{374.1657};
 
    //-------------------------
    // set output formats
@@ -1290,16 +1289,16 @@ void test08_xyz2aer()
    //-----------------------------------
    base::Vec3d aer;
    base::Matrixd rm;
-   double roll  =  10.0;
-   double pitch =  20.0;
-   double yaw   =  30.0;
-   double x     =  100.0;
-   double y     =  200.0;
-   double z     = -300.0;
+   double roll{10.0};
+   double pitch{20.0};
+   double yaw{30.0};
+   double x{100.0};
+   double y{200.0};
+   double z{-300.0};
 
-   const double AZIM =  16.7137;  // [DEG]
-   const double ELEV =  39.1375;  // [DEG]
-   const double RANJ = 374.1657;  // [M]
+   const double AZIM{16.7137};   // [DEG]
+   const double ELEV{39.1375};   // [DEG]
+   const double RANJ{374.1657};  // [M]
    base::Matrixd erm;
    erm(0,0) =  0.8138;
    erm(0,1) =  0.4698;
@@ -1310,7 +1309,6 @@ void test08_xyz2aer()
    erm(2,0) =  0.3785;
    erm(2,1) =  0.0180;
    erm(2,2) =  0.9254;
-
 
    //-----------------------------------
    // set output formats
@@ -1501,16 +1499,16 @@ void test09_gbd2ll()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double brng = 45.0;
-   double dist = 100.0;
-   double tlat = 0.0;
-   double tlon = 0.0;
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   double slat{};
+   double slon{};
+   double brng{45.0};
+   double dist{100.0};
+   double tlat{};
+   double tlon{};
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
-   const double TLAT = 1.1763;
-   const double TLON = 1.1845;
+   const double TLAT{1.1763};
+   const double TLON{1.1845};
 
    //-----------------------------------
    // set output formats
@@ -1636,16 +1634,16 @@ void test10_gll2bd()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double brng = 0.0;
-   double dist = 0.0;
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   double slat{};
+   double slon{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double brng{};
+   double dist{};
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
-   const double BRNG = 44.8043;  // [DEG]
-   const double DIST = 84.7189;  //  [NM]
+   const double BRNG{44.8043};  // [DEG]
+   const double DIST{84.7189};  //  [NM]
 
    //-----------------------------------
    // set output formats
@@ -1704,13 +1702,13 @@ void test10_gll2bd()
 
       if (ynCont != 'n') {
 
-         double slat = 0.0;
-         double slon = 0.0;
-         double tlat = 0.0;
-         double tlon = 0.0;
-         double brng = 0.0;
-         double dist = 0.0;
-         const base::EarthModel* pEM = &base::EarthModel::wgs84;
+         double slat{};
+         double slon{};
+         double tlat{};
+         double tlon{};
+         double brng{};
+         double dist{};
+         const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
          std::cout << "Enter slat [DEG] : "; std::cin >> slat;
          std::cout << "Enter slon [DEG] : "; std::cin >> slon;
@@ -1766,15 +1764,15 @@ void test11_gbd2llS()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double brng = 45.0;
-   double dist = 100.0;
-   double tlat = 0.0;
-   double tlon = 0.0;
+   double slat{};
+   double slon{};
+   double brng{45.0};
+   double dist{100.0};
+   double tlat{};
+   double tlon{};
 
-   const double TLAT = 1.1784;
-   const double TLON = 1.1787;
+   const double TLAT{1.1784};
+   const double TLON{1.1787};
 
    //-----------------------------------
    // set output formats
@@ -1891,16 +1889,16 @@ void test12_gll2bdS()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double brng = 0.0;
-   double dist = 0.0;
-//   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   double slat{};
+   double slon{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double brng{};
+   double dist{};
+//   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
-   const double BRNG = 44.9956;
-   const double DIST = 84.8507;
+   const double BRNG{44.9956};
+   const double DIST{84.8507};
 
    //-----------------------------------
    // set output formats
@@ -2027,22 +2025,22 @@ void test13_glla2bd()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double salt = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double talt = 10000.0;
-   double brng = 0.0;
-   double srng = 0.0;
-   double dist = 0.0;
-   double elev = 0.0;
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;  // default earth model
+   double slat{};
+   double slon{};
+   double salt{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double talt{10000.0};
+   double brng{};
+   double srng{};
+   double dist{};
+   double elev{};
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};  // default earth model
 
-   const double BRNG = 44.8043;
-   const double SRNG = 84.8908;
-   const double DIST = 84.7189;
-   const double ELEV =  3.6468;
+   const double BRNG{44.8043};
+   const double SRNG{84.8908};
+   const double DIST{84.7189};
+   const double ELEV{3.6468};
 
    //-----------------------------------
    // set output formats
@@ -2184,21 +2182,21 @@ void test14_glla2bdS()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double salt = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double talt = 10000.0;
-   double brng    = 0.0;
-   double srng    = 0.0;
-   double dist    = 0.0;
-   double elev    = 0.0;
+   double slat{};
+   double slon{};
+   double salt{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double talt{10000.0};
+   double brng{};
+   double srng{};
+   double dist{};
+   double elev{};
 
-   const double BRNG = 44.9956;
-   const double SRNG = 85.0223;
-   const double DIST = 84.8507;
-   const double ELEV =  3.6412;
+   const double BRNG{44.9956};
+   const double SRNG{85.0223};
+   const double DIST{84.8507};
+   const double ELEV{3.6412};
 
    //-----------------------------------
    // set output formats
@@ -2335,17 +2333,17 @@ void test15_vbd2ll()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double brg1 = 45.0;
-   double dist = 100.0;
-   double tlat = 0.0;
-   double tlon = 0.0;
-//   double brg2 = 0.0;
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   double slat{};
+   double slon{};
+   double brg1{45.0};
+   double dist{100.0};
+   double tlat{};
+   double tlon{};
+//   double brg2{};
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
-   const double TLAT = 1.18424220;
-   const double TLON = 1.17656578;
+   const double TLAT{1.18424220};
+   const double TLON{1.17656578};
 
    //-----------------------------------
    // set output formats
@@ -2476,18 +2474,18 @@ void test16_vll2bd()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double slat = 0.0;
-   double slon = 0.0;
-   double tlat = 1.0;
-   double tlon = 1.0;
-   double brg1 = 0.0;
-   double dist = 0.0;
-   double brg2 = 0.0;
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   double slat{};
+   double slon{};
+   double tlat{1.0};
+   double tlon{1.0};
+   double brg1{};
+   double dist{};
+   double brg2{};
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
-   const double BRG1 =   45.18804023;
-   const double DIST =   84.71898935;
-   const double BRG2 = -134.80323268;
+   const double BRG1{45.18804023};
+   const double DIST{84.71898935};
+   const double BRG2{-134.80323268};
 
    //-----------------------------------
    // set output formats
@@ -2613,8 +2611,8 @@ void test17_computeWorldMatrix()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double rlat = 40.0;
-   double rlon = 50.0;
+   double rlat{40.0};
+   double rlon{50.0};
    base::Matrixd wm;
 
    base::Matrixd worldMatrix;
@@ -2694,8 +2692,8 @@ void test17_computeWorldMatrix()
 
       if (ynCont != 'n') {
 
-         double rlat = 0.0;
-         double rlon = 0.0;
+         double rlat{};
+         double rlon{};
          base::Matrixd wm;
 
          std::cout << "Enter reference latitude   [DEG] : "; std::cin  >> rlat;
@@ -2747,25 +2745,25 @@ void test18_computeEulerAnglesDeg()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double roll  = 0.0;
-   double pitch = 0.0;
-   double yaw   = 0.0;
+   double roll{};
+   double pitch{};
+   double yaw{};
    base::Matrixd rm;        // IN: Rotational matrix
    base::Vec3d angles;      // OUT: euler angles (radians)
    base::Vec2d scPhi;       // OUT: Sin/Cos of phi   (Optional)
    base::Vec2d scTht;       // OUT: Sin/Cos of theta (Optional)
    base::Vec2d scPsi;       // OUT: Sin/Cos of psi   (Optional)
 
-   const double ROLL  = 10.0;
-   const double PITCH = 20.0;
-   const double YAW   = 30.0;
+   const double ROLL{10.0};
+   const double PITCH{20.0};
+   const double YAW{30.0};
 
-   const double SIN_PHI = std::sin(ROLL  * base::angle::D2RCC);
-   const double COS_PHI = std::cos(ROLL  * base::angle::D2RCC);
-   const double SIN_THT = std::sin(PITCH * base::angle::D2RCC);
-   const double COS_THT = std::cos(PITCH * base::angle::D2RCC);
-   const double SIN_PSI = std::sin(YAW   * base::angle::D2RCC);
-   const double COS_PSI = std::cos(YAW   * base::angle::D2RCC);
+   const double SIN_PHI{std::sin(ROLL  * base::angle::D2RCC)};
+   const double COS_PHI{std::cos(ROLL  * base::angle::D2RCC)};
+   const double SIN_THT{std::sin(PITCH * base::angle::D2RCC)};
+   const double COS_THT{std::cos(PITCH * base::angle::D2RCC)};
+   const double SIN_PSI{std::sin(YAW   * base::angle::D2RCC)};
+   const double COS_PSI{std::cos(YAW   * base::angle::D2RCC)};
 
    base::Matrixd testRotationMatrix;
 
@@ -2934,9 +2932,9 @@ void test19_computeRotationalMatrix()
    // declare function parameters
    //-----------------------------------
    // inputs
-   double roll  = 0.2;  // [RAD]
-   double pitch = 0.4;  // [RAD]
-   double yaw   = 0.6;  // [RAD]
+   double roll{0.2};   // [RAD]
+   double pitch{0.4};  // [RAD]
+   double yaw{0.6};    // [RAD]
    base::Vec3d angles;
 
    // outputs
@@ -2945,9 +2943,9 @@ void test19_computeRotationalMatrix()
    base::Vec2d scTht;
    base::Vec2d scPsi;
 
-   const double ROLL    = 0.2;
-   const double PITCH   = 0.4;
-   const double YAW     = 0.6;
+   const double ROLL{0.2};
+   const double PITCH{0.4};
+   const double YAW{0.6};
 
    base::Matrixd testRotMatrix;
    testRotMatrix(0,0) =  0.7602;
@@ -2960,12 +2958,12 @@ void test19_computeRotationalMatrix()
    testRotMatrix(2,1) =  0.0515;
    testRotMatrix(2,2) =  0.9027;
 
-   const double SIN_PHI = std::sin(ROLL);
-   const double COS_PHI = std::cos(ROLL);
-   const double SIN_THT = std::sin(PITCH);
-   const double COS_THT = std::cos(PITCH);
-   const double SIN_PSI = std::sin(YAW);
-   const double COS_PSI = std::cos(YAW);
+   const double SIN_PHI{std::sin(ROLL)};
+   const double COS_PHI{std::cos(ROLL)};
+   const double SIN_THT{std::sin(PITCH)};
+   const double COS_THT{std::cos(PITCH)};
+   const double SIN_PSI{std::sin(YAW)};
+   const double COS_PSI{std::cos(YAW)};
 
    //-----------------------------------
    // set output formats
@@ -3046,9 +3044,9 @@ void test19_computeRotationalMatrix()
       if (ynCont != 'n') {
 
          // reset inputs
-         double roll  = 0.0;
-         double pitch = 0.0;
-         double yaw   = 0.0;
+         double roll{};
+         double pitch{};
+         double yaw{};
 
          std::cout << "Enter roll   [RAD] : "; std::cin  >> roll;
          std::cout << "Enter pitch  [RAD] : "; std::cin  >> pitch;
@@ -3115,9 +3113,9 @@ void test20_computeRotationalMatrix()
    base::Vec2d scTht;
    base::Vec2d scPsi;
 
-   const double ROLL    = 0.2;
-   const double PITCH   = 0.4;
-   const double YAW     = 0.6;
+   const double ROLL{0.2};
+   const double PITCH{0.4};
+   const double YAW{0.6};
 
    base::Matrixd testRotMatrix;
    testRotMatrix(0,0) =  0.7602;
@@ -3130,12 +3128,12 @@ void test20_computeRotationalMatrix()
    testRotMatrix(2,1) =  0.0515;
    testRotMatrix(2,2) =  0.9027;
 
-   const double SIN_PHI = std::sin(ROLL);
-   const double COS_PHI = std::cos(ROLL);
-   const double SIN_THT = std::sin(PITCH);
-   const double COS_THT = std::cos(PITCH);
-   const double SIN_PSI = std::sin(YAW);
-   const double COS_PSI = std::cos(YAW);
+   const double SIN_PHI{std::sin(ROLL)};
+   const double COS_PHI{std::cos(ROLL)};
+   const double SIN_THT{std::sin(PITCH)};
+   const double COS_THT{std::cos(PITCH)};
+   const double SIN_PSI{std::sin(YAW)};
+   const double COS_PSI{std::cos(YAW)};
 
    //-----------------------------------
    // set output formats
@@ -3216,9 +3214,9 @@ void test20_computeRotationalMatrix()
       if (ynCont != 'n') {
 
          // inputs
-         double roll  = 0.0;
-         double pitch = 0.0;
-         double yaw   = 0.0;
+         double roll{};
+         double pitch{};
+         double yaw{};
          base::Vec3d angles;
 
          // outputs
@@ -3306,9 +3304,9 @@ void test21_computeRotationalMatrixDeg()
    // declare function parameters
    //-----------------------------------
    // inputs
-   double roll  = 10.0;  // [RAD]
-   double pitch = 20.0;  // [RAD]
-   double yaw   = 30.0;  // [RAD]
+   double roll{10.0};   // [RAD]
+   double pitch{20.0};  // [RAD]
+   double yaw{30.0};    // [RAD]
    base::Vec3d angles;
 
    // outputs
@@ -3317,9 +3315,9 @@ void test21_computeRotationalMatrixDeg()
    base::Vec2d scTht;
    base::Vec2d scPsi;
 
-   const double ROLL    = 10.0;
-   const double PITCH   = 20.0;
-   const double YAW     = 30.0;
+   const double ROLL{10.0};
+   const double PITCH{20.0};
+   const double YAW{30.0};
 
    base::Matrixd testRotMatrix;
 
@@ -3333,12 +3331,12 @@ void test21_computeRotationalMatrixDeg()
    testRotMatrix(2,1) =  0.0180;
    testRotMatrix(2,2) =  0.9254;
 
-   const double SIN_PHI = std::sin(ROLL  * base::angle::D2RCC);
-   const double COS_PHI = std::cos(ROLL  * base::angle::D2RCC);
-   const double SIN_THT = std::sin(PITCH * base::angle::D2RCC);
-   const double COS_THT = std::cos(PITCH * base::angle::D2RCC);
-   const double SIN_PSI = std::sin(YAW   * base::angle::D2RCC);
-   const double COS_PSI = std::cos(YAW   * base::angle::D2RCC);
+   const double SIN_PHI{std::sin(ROLL  * base::angle::D2RCC)};
+   const double COS_PHI{std::cos(ROLL  * base::angle::D2RCC)};
+   const double SIN_THT{std::sin(PITCH * base::angle::D2RCC)};
+   const double COS_THT{std::cos(PITCH * base::angle::D2RCC)};
+   const double SIN_PSI{std::sin(YAW   * base::angle::D2RCC)};
+   const double COS_PSI{std::cos(YAW   * base::angle::D2RCC)};
 
    //-----------------------------------
    // set output formats
@@ -3418,9 +3416,9 @@ void test21_computeRotationalMatrixDeg()
       if (ynCont != 'n') {
 
          // reset inputs
-         double roll  = 0.0;
-         double pitch = 0.0;
-         double yaw   = 0.0;
+         double roll{};
+         double pitch{};
+         double yaw{};
 
          std::cout << "Enter roll   [DEG] : "; std::cin  >> roll;
          std::cout << "Enter pitch  [DEG] : "; std::cin  >> pitch;
@@ -3483,16 +3481,16 @@ void test22_computeRotationalMatrixDeg()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   const double ROLL    = 10.0;
-   const double PITCH   = 20.0;
-   const double YAW     = 30.0;
+   const double ROLL{10.0};
+   const double PITCH{20.0};
+   const double YAW{30.0};
 
-   const double SIN_PHI = std::sin(ROLL  * base::angle::D2RCC);
-   const double COS_PHI = std::cos(ROLL  * base::angle::D2RCC);
-   const double SIN_THT = std::sin(PITCH * base::angle::D2RCC);
-   const double COS_THT = std::cos(PITCH * base::angle::D2RCC);
-   const double SIN_PSI = std::sin(YAW   * base::angle::D2RCC);
-   const double COS_PSI = std::cos(YAW   * base::angle::D2RCC);
+   const double SIN_PHI{std::sin(ROLL  * base::angle::D2RCC)};
+   const double COS_PHI{std::cos(ROLL  * base::angle::D2RCC)};
+   const double SIN_THT{std::sin(PITCH * base::angle::D2RCC)};
+   const double COS_THT{std::cos(PITCH * base::angle::D2RCC)};
+   const double SIN_PSI{std::sin(YAW   * base::angle::D2RCC)};
+   const double COS_PSI{std::cos(YAW   * base::angle::D2RCC)};
 
    // inputs
    base::Vec3d angles;
@@ -3596,9 +3594,9 @@ void test22_computeRotationalMatrixDeg()
       if (ynCont != 'n') {
 
          // inputs
-         double roll  = 0.0;
-         double pitch = 0.0;
-         double yaw   = 0.0;
+         double roll{};
+         double pitch{};
+         double yaw{};
          base::Vec3d angles;
 
          // outputs
@@ -3688,21 +3686,21 @@ void test23_convertPosVec2llE()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double rlat = 40.0;  // IN: source (reference) latitude  [DEG]
-   double rlon = 50.0;  // IN: source (reference) longitude [DEG]
+   double rlat{40.0};  // IN: source (reference) latitude  [DEG]
+   double rlon{50.0};  // IN: source (reference) longitude [DEG]
 
    base::Vec3d pos;     // IN: NED position vector from ref point (meters)
    pos[0] = 1000.0;     //     North  [M]
    pos[1] = 2000.0;     //     East   [M]
    pos[2] = 3000.0;     //     Down   [M]
 
-   double lat = 0.0;    // OUT: Latitude  [DEG]
-   double lon = 0.0;    // OUT: Longitude [DEG]
-   double alt = 0.0;    // OUT: Altitude    [M]
+   double lat{};    // OUT: Latitude  [DEG]
+   double lon{};    // OUT: Longitude [DEG]
+   double alt{};    // OUT: Altitude    [M]
 
-   const double LAT =    40.0090;
-   const double LON =    50.0234;
-   const double ALT = -3000.0000;
+   const double LAT{40.0090};
+   const double LON{50.0234};
+   const double ALT{-3000.0000};
 
    //-----------------------------------
    // set output formats
@@ -3829,21 +3827,21 @@ void test24_convertLL2PosVecE()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double rlat =   40.0;  // IN: Reference latitude    [DEG]
-   double rlon =   50.0;  // IN: Reference longitude   [DEG]
+   double rlat{40.0};    // IN: Reference latitude    [DEG]
+   double rlon{50.0};    // IN: Reference longitude   [DEG]
 
-   double tlat =   41.0;  // IN: Target latitude       [DEG]
-   double tlon =   51.0;  // IN: Target longitude      [DEG]
-   double talt = 5000.0;  // IN: Target altitude       [M]
+   double tlat{41.0};    // IN: Target latitude       [DEG]
+   double tlon{51.0};    // IN: Target longitude      [DEG]
+   double talt{5000.0};  // IN: Target altitude       [M]
 
-   base::Vec3d pos;       // OUT: NED position vector  [M,M,M]
+   base::Vec3d pos;      // OUT: NED position vector  [M,M,M]
 
-   //const double NORTH = 111120.0000;
-   //const double EAST  =  85122.8585;
-   //const double DOWN  =  -5000.0000;
-   const double NORTH = 111034.6326;
-   const double EAST  =  85393.8570;
-   const double DOWN  =  -5000.0000;
+   //const double NORTH{111120.0000};
+   //const double EAST{85122.8585};
+   //const double DOWN{-5000.0000};
+   const double NORTH{111034.6326};
+   const double EAST{85393.8570};
+   const double DOWN{-5000.0000};
 
    //-----------------------------------
    // set output formats
@@ -3989,23 +3987,23 @@ void test25_convertEcef2Geod()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double x {4000000.0};
-   double y {4000000.0};
-   double z {4000000.0};
-   double lat {};
-   double lon {};
-   double alt {};
+   double x{4000000.0};
+   double y{4000000.0};
+   double z{4000000.0};
+   double lat{};
+   double lon{};
+   double alt{};
 
-   base::Vec3d xyz(x, y, z);
+   const base::Vec3d xyz(x, y, z);
    base::Vec3d lla;
 
-   double XYZ[3] {x, y, z};
-   double LLA[3] {};
+   const double XYZ[3]{x, y, z};
+   double LLA[3]{};
 
    //base::Vec3d result(35.4314, 45.0000, 557215.8470);  // expected result (x, y, z)
-   const double LAT {35.4314};
-   const double LON {45.0000};
-   const double ALT {557215.8470};
+   const double LAT{35.4314};
+   const double LON{45.0000};
+   const double ALT{557215.8470};
 
    //-----------------------------------
    // set output formats
@@ -4114,19 +4112,19 @@ void test25_convertEcef2Geod()
       if (ynCont != 'n') {
 
          // inputs
-         double lat = 0.0;
-         double lon = 0.0;
-         double alt = 0.0;
+         double lat{};
+         double lon{};
+         double alt{};
          base::Vec3d lla;
-         double LLA[3];
-         const base::EarthModel* pEM = &base::EarthModel::wgs84;
+         double LLA[3]{};
+         const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
          // outputs
-         double x = 0.0;
-         double y = 0.0;
-         double z = 0.0;
+         double x{};
+         double y{};
+         double z{};
          base::Vec3d xyz;
-         double XYZ[3];
+         double XYZ[3]{};
 
          std::cout << "Enter latitude  [DEG] : "; std::cin >> lat;
          std::cout << "Enter longitude [DEG] : "; std::cin >> lon;
@@ -4219,9 +4217,9 @@ void test26_convertGeod2Ecef()
    //-----------------------------------
    // declare function parameters
    //-----------------------------------
-   double lat = 40.0;
-   double lon = 50.0;
-   double alt =  0.0;
+   double lat{40.0};
+   double lon{50.0};
+   double alt{};
 
    base::Vec3d result;  // expected result (x, y, z)
    result[0] = 3144971.8231;
@@ -4263,7 +4261,7 @@ void test26_convertGeod2Ecef()
    std::cout << "base::nav::convertGeod2Ecef(lat, lon, alt, &x, &y, &z, pEM);" << std::endl;
    std::cout << std::endl;
    {
-      double x(0), y(0), z(0);
+      double x{}, y{}, z{};
       base::nav::convertGeod2Ecef(lat, lon, alt, &x, &y, &z, pEM);
       std::cout << "Results:" << std::endl;
       std::cout << "  x      = " << std::setw(12) << x << "; err = " << std::setw(8) << (x-result[0]) << std::endl;
@@ -4292,8 +4290,8 @@ void test26_convertGeod2Ecef()
    std::cout << "base::nav::convertGeod2Ecef(LLA, XYZ, pEM);" << std::endl;
    std::cout << std::endl;
    {
-      double lla[3] = {lat, lon, alt};
-      double XYZ[3] = {0,0,0};
+      double lla[3]{lat, lon, alt};
+      double XYZ[3]{};
       base::nav::convertGeod2Ecef(lla, XYZ, pEM);
       std::cout << "Results:" << std::endl
                 << "  XYZ[0] = " << std::setw(12) << XYZ[0] << "; err = " << std::setw(8) << (XYZ[0]-result[0]) << std::endl
@@ -4313,19 +4311,19 @@ void test26_convertGeod2Ecef()
       if (ynCont != 'n') {
 
          // inputs
-         double lat = 0.0;
-         double lon = 0.0;
-         double alt = 0.0;
+         double lat{};
+         double lon{};
+         double alt{};
          base::Vec3d lla;
-         double LLA[3];
-         const base::EarthModel* pEM = &base::EarthModel::wgs84;
+         double LLA[3]{};
+         const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
          // outputs
-         double x = 0.0;
-         double y = 0.0;
-         double z = 0.0;
+         double x{};
+         double y{};
+         double z{};
          base::Vec3d xyz;
-         double XYZ[3];
+         double XYZ[3]{};
 
          std::cout << "Enter latitude  [DEG] : "; std::cin >> lat;
          std::cout << "Enter longitude [DEG] : "; std::cin >> lon;
@@ -4424,8 +4422,7 @@ int displayMatrix(const base::Matrixd M)
 //--------
 void test27_convertUtm()
 {
-
-   const unsigned int ARRAY_SIZE = 38;
+   const int ARRAY_SIZE{38};
    //double lat[ARRAY_SIZE] = { -90.0, -80.0,  -70.0,  -60.0,  -50.0,  -40.0,  -30.0,  -20.0,  -10.0,   0.0,
    //                            10.0,  20.0,   30.0,   40.0,   50.0,   60.0,   70.0,   80.0,   90.0,
    //                           -90.0, -80.0,  -70.0,  -60.0,  -50.0,  -40.0,  -30.0,  -20.0,  -10.0,   0.0,
@@ -4450,18 +4447,18 @@ void test27_convertUtm()
 //   char*  pZone = Zone;
 
    //===========================================================================
-   double latitude  = 0.0;
-   double longitude = 0.0;
+   double latitude{};
+   double longitude{};
 
-   char   latZone   = '*';
-   int    lonZone   = 0;
-   double N         = 0.0;
-   double E         = 0.0;
+   char   latZone{'*'};
+   int    lonZone{};
+   double N{};
+   double E{};
 
-   const base::EarthModel* pEM = &base::EarthModel::wgs84;
+   const base::EarthModel* pEM{&base::EarthModel::wgs84};
 
 
-   for (unsigned int i=0; i<ARRAY_SIZE; i++) {
+   for (int i=0; i<ARRAY_SIZE; i++) {
 
       std::cout << "==============================================" << std::endl;
       std::cout << "lat       = " << std::setw(14) << lat[i] << std::endl;
@@ -4489,8 +4486,8 @@ void test27_convertUtm()
 
 int main(int argc, char* argv[])
 {
-   bool runAll = false;
-   bool imode = false;
+   bool runAll{};
+   bool imode{};
 
    for (int i = 1; i < argc; i++) {
       if ( std::string(argv[i]) == "-a" ) {
@@ -4505,12 +4502,10 @@ int main(int argc, char* argv[])
       // Run all tests
       testNumber = 99;
       test99_printAllExamples();
-   }
-   else if (imode) {
+   } else if (imode) {
       // Interactive mode
       testNavFns();
-   }
-   else {
+   } else {
       std::cout                                             << std::endl;
       std::cout << "Test base::nav functions ---"          << std::endl;
       std::cout                                             << std::endl;

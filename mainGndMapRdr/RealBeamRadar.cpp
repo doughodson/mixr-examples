@@ -41,7 +41,7 @@ RealBeamRadar::RealBeamRadar()
 {
    STANDARD_CONSTRUCTOR()
 
-   altitude = 15000.0 * base::distance::FT2M;
+   altitude = 15000.0 * base::length::FT2M;
 
    // working storage
    elevations = new double[IMG_WIDTH];
@@ -235,7 +235,7 @@ bool RealBeamRadar::computeGroundRanges(double* const groundRange, const unsigne
    if (groundRange != nullptr && n > 0 && maxRngNM > 0) {
 
       // Max range (m)
-      double maxRng{maxRngNM * base::distance::NM2M};
+      double maxRng{maxRngNM * base::length::NM2M};
 
       // Delta range between points (m)
       double deltaRng{maxRng/static_cast<double>(n)};
@@ -301,8 +301,8 @@ bool RealBeamRadar::computeEarthCurvature(double* const curvature, const unsigne
    bool ok{};
    if (curvature != nullptr && n > 0 && maxRngNM > 0 && radiusNM > 0) {
 
-      double radius{radiusNM * base::distance::NM2M};
-      double maxRng{maxRngNM * base::distance::NM2M};
+      double radius{radiusNM * base::length::NM2M};
+      double maxRng{maxRngNM * base::length::NM2M};
       for (unsigned int idx = 0; idx < n; idx++) {
          double curRng{maxRng * static_cast<double>(idx)/static_cast<double>(n)};
          double arc{curRng / radius};

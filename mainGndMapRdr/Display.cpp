@@ -14,7 +14,7 @@
 #include "mixr/base/colors/Hsva.hpp"
 
 #include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/Pair.hpp"

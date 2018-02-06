@@ -373,8 +373,8 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
             const auto pair = static_cast<base::Pair*>(item->getValue());
             const auto p = static_cast<models::Player*>(pair->object());
             base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
-            double x{rpos[0] * base::distance::M2NM};
-            double y{rpos[1] * base::distance::M2NM};
+            double x{rpos[0] * base::length::M2NM};
+            double y{rpos[1] * base::length::M2NM};
 
             if (
                p != getOwnship() &&
@@ -466,7 +466,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
         if (tracks[i] != nullptr && trkIdx[i] != 0) {
             double xp{tracks[i]->getXPosition() - osX};
             double yp{tracks[i]->getYPosition() - osY};
-            loader->updateSymbolPositionXY( trkIdx[i], (xp * base::distance::M2NM), (yp * base::distance::M2NM) );
+            loader->updateSymbolPositionXY( trkIdx[i], (xp * base::length::M2NM), (yp * base::length::M2NM) );
             loader->updateSymbolHeading( trkIdx[i], tracks[i]->getHeadingD() );
         }
     }

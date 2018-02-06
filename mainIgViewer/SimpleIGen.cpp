@@ -5,7 +5,7 @@
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/network/NetHandler.hpp"
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 
 #include <iostream>
 
@@ -34,8 +34,8 @@ END_SLOT_MAP()
 SimpleIGen::SimpleIGen()
 {
    STANDARD_CONSTRUCTOR()
-   x = -20.0f * base::distance::KM2M;
-   y = -20.0f * base::distance::KM2M;
+   x = -20.0f * base::length::KM2M;
+   y = -20.0f * base::length::KM2M;
    viewer = new osgViewer::Viewer;
 }
 
@@ -103,9 +103,9 @@ void SimpleIGen::draw()
       int n{recv((char*)&entityState)};
       if (n > 0) {
          // update position
-         x = entityState.pilot_eye_y * base::distance::FT2M;
-         y = entityState.pilot_eye_x * base::distance::FT2M;
-         z = entityState.pilot_eye_z * base::distance::FT2M;
+         x = entityState.pilot_eye_y * base::length::FT2M;
+         y = entityState.pilot_eye_x * base::length::FT2M;
+         z = entityState.pilot_eye_z * base::length::FT2M;
          // update orientation
          yaw = -entityState.psi;     // OSE heading is -(A/C heading)
          pitch = entityState.theta;

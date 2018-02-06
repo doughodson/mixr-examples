@@ -198,8 +198,8 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto p = static_cast<mixr::models::Player*>(pair->object());
          mixr::base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
-         const double x{rpos[0] * mixr::base::distance::M2NM};
-         const double y{rpos[1] * mixr::base::distance::M2NM};
+         const double x{rpos[0] * mixr::base::length::M2NM};
+         const double y{rpos[1] * mixr::base::length::M2NM};
 
          const auto weapon = dynamic_cast<mixr::models::AbstractWeapon*>(p);
          if (weapon && (weapon->isMode(mixr::models::Player::Mode::PRE_RELEASE) || weapon->isActive())) {
@@ -295,7 +295,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
       if (tracks[i] != nullptr && trkIdx[i] != 0) {
          double xp{tracks[i]->getXPosition() - osX};
          double yp{tracks[i]->getYPosition() - osY};
-         loader->updateSymbolPositionXY( trkIdx[i], (xp * mixr::base::distance::M2NM), (yp * mixr::base::distance::M2NM) );
+         loader->updateSymbolPositionXY( trkIdx[i], (xp * mixr::base::length::M2NM), (yp * mixr::base::length::M2NM) );
          loader->updateSymbolHeading( trkIdx[i], tracks[i]->getHeadingD() );
          if (tracks[i]==target) {
             //const auto temp = new base::Identifier("green");

@@ -17,7 +17,7 @@
 #include "PlaneState.hpp"
 
 #include "mixr/base/numeric/Integer.hpp"
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 #include "mixr/base/ubf/AbstractAction.hpp"
 #include "mixr/base/ubf/AbstractState.hpp"
 #include "mixr/base/util/constants.hpp"
@@ -36,7 +36,7 @@ BEGIN_SLOTTABLE(PlaneBehavior)
 END_SLOTTABLE(PlaneBehavior)
 
 BEGIN_SLOT_MAP(PlaneBehavior)
-   ON_SLOT( 1, setSlotCriticalAltitude,       base::Distance )
+   ON_SLOT( 1, setSlotCriticalAltitude,       base::Length )
    ON_SLOT( 2, setSlotVoteOnCriticalAltitude, base::Integer)
    ON_SLOT( 3, setSlotVoteOnIncomingMissile,  base::Integer)
 END_SLOT_MAP()
@@ -46,12 +46,11 @@ PlaneBehavior::PlaneBehavior()
    STANDARD_CONSTRUCTOR()
 }
 
-bool PlaneBehavior::setSlotCriticalAltitude(const base::Distance* const msg)
+bool PlaneBehavior::setSlotCriticalAltitude(const base::Length* const x)
 {
     bool ok{};
-    if (msg != nullptr) {
-       const double value{base::Meters::convertStatic( *msg )};
-       criticalAltitude = value;
+    if (x != nullptr) {
+       criticalAltitude = x->getValueInMeters();
        ok = true;
     }
     return ok;
@@ -90,7 +89,7 @@ BEGIN_SLOTTABLE(PlaneFire)
 END_SLOTTABLE(PlaneFire)
 
 BEGIN_SLOT_MAP(PlaneFire)
-   ON_SLOT( 1, setSlotMaxDistance, base::Distance )
+   ON_SLOT( 1, setSlotMaxDistance, base::Length )
 END_SLOT_MAP()
 
 PlaneFire::PlaneFire()
@@ -115,12 +114,11 @@ base::ubf::AbstractAction* PlaneFire::genAction(const base::ubf::AbstractState* 
    return action;
 }
 
-bool PlaneFire::setSlotMaxDistance(const base::Distance* const msg)
+bool PlaneFire::setSlotMaxDistance(const base::Length* const x)
 {
     bool ok{};
-    if (msg != nullptr) {
-       const double value{base::Meters::convertStatic( *msg )};
-       maxDistance = value;
+    if (x != nullptr) {
+       maxDistance = x->getValueInMeters();
        ok = true;
     }
     return ok;

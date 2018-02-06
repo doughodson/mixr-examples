@@ -9,7 +9,7 @@
 #include "mixr/models/dynamics/LaeroModel.hpp"
 
 #include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 #include "mixr/base/units/times.hpp"
 
 #include <GL/glut.h>

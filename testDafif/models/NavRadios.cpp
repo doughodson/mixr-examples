@@ -9,7 +9,7 @@
 #include "WorldModel.hpp"
 
 #include "mixr/base/numeric/Number.hpp"
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 #include "mixr/base/util/nav_utils.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(NavRadio, "NavRadio")

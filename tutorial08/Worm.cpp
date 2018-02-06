@@ -64,8 +64,7 @@ void Worm::reset()
    yPos =0;
    nTrails = 0;
    if (iangle != nullptr) {
-      mixr::base::Radians radians;
-      setStartAngle(static_cast<double>(radians.convert(*iangle)));
+      setStartAngle(iangle->getValueInRadians());
    }
 }
 
@@ -149,13 +148,13 @@ bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
    return ok;
 }
 
-bool Worm::setSlotAngle(const mixr::base::Angle* const saobj)
+bool Worm::setSlotAngle(const mixr::base::Angle* const x)
 {
    bool ok{};
-   if (saobj != nullptr) {
+   if (x != nullptr) {
       mixr::base::Radians radians;
-      setStartAngle(static_cast<double>(radians.convert(*saobj)));
-      iangle = saobj;
+      setStartAngle(x->getValueInRadians());
+      iangle = x;
       iangle->ref();
       ok = true;
    }

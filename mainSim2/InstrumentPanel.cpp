@@ -140,7 +140,7 @@ void InstrumentPanel::updateData(const double dt)
          eadi->setAirspeed(airSpeed);
          eadi->setHeading(heading);
          eadi->setAOA(aoa);
-         eadi->setVVI(-vvi.z() * mixr::base::distance::M2FT * 60.0);
+         eadi->setVVI(-vvi.z() * mixr::base::length::M2FT * 60.0);
          eadi->setPitch(pitch);
          eadi->setRoll(roll);
          eadi->setMach(mach);

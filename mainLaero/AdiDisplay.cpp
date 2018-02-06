@@ -8,7 +8,7 @@
 
 #include "mixr/base/osg/Vec3d"
 
-#include "mixr/base/units/distances.hpp"
+#include "mixr/base/units/lengths.hpp"
 #include "mixr/base/units/times.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(AdiDisplay, "AdiDisplay")

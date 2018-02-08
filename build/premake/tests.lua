@@ -428,6 +428,26 @@ project "testTimer"
       links {"mixr_base_d"}
       links {LibWindows}
 
+-- testUnits: general test of several base classes, including unit conversions
+project "testUnits"
+   targetname "testUnits"
+   targetdir "../../testUnits"
+   debugdir "../../testUnits"
+   files {
+      "../../testUnits/**.h*",
+      "../../testUnits/**.cpp",
+      "../../testUnits/**.epp",
+      "../../testUnits/**.edl"
+   }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   filter "configurations:Release"
+      links {"mixr_base"}
+      links {LibWindows}
+   filter "configurations:Debug"
+      links {"mixr_base_d"}
+      links {LibWindows}
+
 -- testVmap - test VMAP0 loader library
 project "testVmap"
    targetname "testVmap"

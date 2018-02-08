@@ -79,6 +79,9 @@ APPLICATIONS += testRecorderWrite
 # test VMAP0 loader library
 APPLICATIONS += testVmap
 
+# test unit classes and a few other things
+APPLICATIONS += testUnits
+
 # tutorial examples
 APPLICATIONS += tutorial01
 APPLICATIONS += tutorial02

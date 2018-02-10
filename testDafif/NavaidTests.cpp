@@ -1,23 +1,21 @@
 
 #include "NavaidTests.hpp"
 
-#include "mixr/dafif/NavaidLoader.hpp"
+#include "mixr/dafif/loaders/NavaidLoader.hpp"
 
 #include "mixr/base/units/angles.hpp"
 #include "mixr/base/units/lengths.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
+#include <string>
 #include <iostream>
 
 NavaidTests::NavaidTests(
-               const char* country,
-               const char* file,
-               const char* path)
+               const std::string& country,
+               const std::string& file,
+               const std::string& path)
 {
-   char fullname[512];
-   mixr::base::utStrcpy(fullname,512,path);
-   mixr::base::utStrcat(fullname,512,"/");
-   mixr::base::utStrcat(fullname,512,file);
+   std::string fullname = path + "/" + file;
    db = new mixr::dafif::NavaidLoader();
    db->setPathname(path);
    db->setFilename(file);
@@ -28,7 +26,7 @@ NavaidTests::NavaidTests(
 
 NavaidTests::~NavaidTests()
 {
-   delete db;
+   if (db != nullptr) { db->unref(); db = nullptr; }
 }
 
 void NavaidTests::dump()

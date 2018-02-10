@@ -2,11 +2,13 @@
 #include "AirportTests.hpp"
 #include "NavaidTests.hpp"
 #include "WaypointTests.hpp"
+
+#include <string>
 #include <iostream>
 
-void testAirports(const char* const ccode, const double acLat, const double acLon, const double acElev, const bool printData)
+void testAirports(const std::string& ccode, const double acLat, const double acLon, const double acElev, const bool printData)
 {
-   AirportTests tester(ccode);
+   AirportTests tester(ccode, "FILE0", "../../mixr-data/DAFIF/FULLALL/");
 
    int id{999};
    while (id > 0) {
@@ -92,9 +94,9 @@ void testAirports(const char* const ccode, const double acLat, const double acLo
 }
 
 
-void testNavaids(const char* const ccode, const double acLat, const double acLon, const double acElev, const bool printData)
+void testNavaids(const std::string& ccode, const double acLat, const double acLon, const double acElev, const bool printData)
 {
-   NavaidTests tester(ccode);
+   NavaidTests tester(ccode, "FILE2", "../../mixr-data/DAFIF/FULLALL/");
 
    int id{999};
    while (id > 0) {
@@ -143,9 +145,9 @@ void testNavaids(const char* const ccode, const double acLat, const double acLon
    }
 }
 
-void testWaypoints(const char* const ccode, const double acLat, const double acLon, const double acElev, const bool printData)
+void testWaypoints(const std::string& ccode, const double acLat, const double acLon, const double acElev, const bool printData)
 {
-   WaypointTests tester(ccode);
+   WaypointTests tester(ccode, "FILE3", "../../mixr-data/DAFIF/FULLALL/");
 
    int id{99};
    while (id > 0) {
@@ -186,7 +188,7 @@ void testWaypoints(const char* const ccode, const double acLat, const double acL
 
 int main(int argc, char* argv[])
 {
-   char* ccode{};
+   std::string ccode;
    if (argc > 1) {
       ccode = argv[1];
    }
@@ -208,7 +210,7 @@ int main(int argc, char* argv[])
    char useStandardTest{};
    std::cout << "Y / N: " ; 
    std::cin >> useStandardTest;
-   
+
    if (useStandardTest != 'Y' && useStandardTest != 'y') {
       std::cout << "Input aircraft Latitude: " ; 
       std::cin >> acLat;

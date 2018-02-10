@@ -3,8 +3,8 @@
 
 #include "mixr/models/player/Player.hpp"
 
-#include "mixr/dafif/AirportLoader.hpp"
-#include "mixr/dafif/NavaidLoader.hpp"
+#include "mixr/dafif/loaders/AirportLoader.hpp"
+#include "mixr/dafif/loaders/NavaidLoader.hpp"
 
 #include "WorldModel.hpp"
 

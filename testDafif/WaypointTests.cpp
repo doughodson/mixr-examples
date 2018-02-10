@@ -1,20 +1,18 @@
 
 #include "WaypointTests.hpp"
 
-#include "mixr/dafif/WaypointLoader.hpp"
+#include "mixr/dafif/loaders/WaypointLoader.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
+#include <string>
 #include <iostream>
 
 WaypointTests::WaypointTests(
-               const char* country,
-               const char* file,
-               const char* path)
+               const std::string& country,
+               const std::string& file,
+               const std::string& path)
 {
-   char fullname[512];
-   mixr::base::utStrcpy(fullname,512,path);
-   mixr::base::utStrcat(fullname,512,"/");
-   mixr::base::utStrcat(fullname,512,file);
+   std::string fullname = path + "/" + file;
    db = new mixr::dafif::WaypointLoader();
    db->setPathname(path);
    db->setFilename(file);
@@ -25,7 +23,7 @@ WaypointTests::WaypointTests(
 
 WaypointTests::~WaypointTests()
 {
-   delete db;
+   if (db != nullptr) { db->unref(); db = nullptr; }
 }
 
 void WaypointTests::dump()
@@ -43,7 +41,7 @@ void WaypointTests::func30()
 void WaypointTests::func31(const double acLat, const double acLon, const double acElev, const bool printData)
 {
    std::cout << "Enter index (-1 to end):";
-   int idx;
+   int idx{};
    std::cin >> idx;
 
    while (idx >= 0) {

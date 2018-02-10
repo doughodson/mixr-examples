@@ -108,7 +108,7 @@ Test Applications
 
 * testTimer -- tests the functionality of the Timer class.
 
-* testUnits  -- temporary location for misc docs for how unit conversions were tested
+* testUnits  -- tests units and other base library functionalities
 
 Tutorial applications:
 --------------------------------------------------------------------------------------------

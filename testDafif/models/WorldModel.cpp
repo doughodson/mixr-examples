@@ -1,9 +1,9 @@
 
 #include "WorldModel.hpp"
 
-#include "mixr/dafif/AirportLoader.hpp"
-#include "mixr/dafif/NavaidLoader.hpp"
-#include "mixr/dafif/WaypointLoader.hpp"
+#include "mixr/dafif/loaders/AirportLoader.hpp"
+#include "mixr/dafif/loaders/NavaidLoader.hpp"
+#include "mixr/dafif/loaders/WaypointLoader.hpp"
 
 IMPLEMENT_SUBCLASS(WorldModel, "WorldModel")
 EMPTY_COPYDATA(WorldModel)

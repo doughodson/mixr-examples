@@ -2,21 +2,22 @@
 #ifndef __AirportTests_H__
 #define __AirportTests_H__
 
-//------------------------------------------------
-// AirportLoader test subroutines
-//------------------------------------------------
+#include <string>
 
 namespace mixr {
 namespace dafif { class AirportLoader; } 
 }
 
+//------------------------------------------------
+// AirportLoader test subroutines
+//------------------------------------------------
 class AirportTests final
 {
 public:
    AirportTests(
-      const char* country,
-      const char* file = "FILE0",
-      const char* path = "../../mixr-data/DAFIF/FULLALL/"
+      const std::string& country,
+      const std::string& file = "FILE0",
+      const std::string& path = "../../mixr-data/DAFIF/FULLALL/"
    );
 
    ~AirportTests();

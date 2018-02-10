@@ -1,31 +1,30 @@
 
 #include "AirportTests.hpp"
 
-#include "mixr/dafif/AirportLoader.hpp"
-#include "mixr/base/util/str_utils.hpp"
+#include "mixr/dafif/loaders/AirportLoader.hpp"
 
+#include <string>
 #include <iostream>
 
 AirportTests::AirportTests(
-               const char* country,
-               const char* file,
-               const char* path)
+               const std::string& country,
+               const std::string& file,
+               const std::string& path)
 {
-   char fullname[512];
-   mixr::base::utStrcpy(fullname, 512, path);
-   mixr::base::utStrcat(fullname, 512, "/");
-   mixr::base::utStrcat(fullname, 512, file);
+   std::string fullname = path + "/" + file;
    db = new mixr::dafif::AirportLoader();
    db->setPathname(path);
    db->setFilename(file);
    std::cout << "Loading airport file: " << fullname << std::endl;
+   std::cout << "For country : " << country << std::endl;
+
    db->load(country);
    std::cout << "Completed: number of records = " << db->numberOfRecords() << std::endl;
 }
 
 AirportTests::~AirportTests()
 {
-   delete db;
+   if (db != nullptr) { db->unref(); db = nullptr; }
 }
 
 void AirportTests::dump()
@@ -110,7 +109,7 @@ void AirportTests::func01I(const double acLat, const double acLon, const double 
    std::cout << "Enter id:";
    std::cin >> id;
 
-   while ( strcmp(id,"done") != 0) {
+   while ( strcmp(id, "done") != 0) {
 
       int num{};
       std::cout << "Enter num:";
@@ -152,7 +151,7 @@ void AirportTests::func01R(const double acLat, const double acLon, const double 
    std::cout << "Enter id:";
    std::cin >> id;
 
-   while ( strcmp(id,"done") != 0) {
+   while ( strcmp(id, "done") != 0) {
 
       int num{};
       std::cout << "Enter num:";

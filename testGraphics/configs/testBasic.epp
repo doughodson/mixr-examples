@@ -60,7 +60,7 @@ fonts: {
 
 leftBracketChar:  "*"
 rightBracketChar: "*"
-reverseVideoBrackets: 0
+reverseVideoBrackets: false
 
 
 // ---

@@ -31,7 +31,7 @@ sample:
                 ( Line
                     selectName: 280
                     color: white
-                    segment: 1
+                    segment: true
                     vertices: {
                         [ -1.0   0.0 ] [ -1.0    2.0 ]      // Left Side
                         [  1.0   0.0 ] [  1.0    2.0 ]      // Right Side
@@ -145,7 +145,7 @@ sample:
             components: {
 
                 v1: ( LatitudeReadout
-                    highLight: 1
+                    highLight: true
                     position: [ 18 2 ]
                     format: "+0D@MM"
                 )

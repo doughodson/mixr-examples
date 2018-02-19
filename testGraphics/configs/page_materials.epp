@@ -1,6 +1,6 @@
 #define MASK 0
 #define NO_DISPLAY_LIST 0
-#define FILLED 1
+#define FILLED true
 
 // this is the page in which we will setup simple openGL materials, as well as masking as well
 materials:
@@ -97,7 +97,7 @@ materials:
             
                 ( Polygon
                     material: m1
-                    noDisplayList: 1
+                    noDisplayList: true
                     //color: yellow
                     vertices: {
                         // front side
@@ -108,7 +108,7 @@ materials:
                     }
                 )
                 ( Polygon
-                    noDisplayList: 1
+                    noDisplayList: true
                     texture: t1
                     vertices: {
                         // bottom side
@@ -125,7 +125,7 @@ materials:
                     }
                 )
                 ( Polygon
-                    noDisplayList: 1
+                    noDisplayList: true
                     //color: red
                     material: m2
                     vertices: {
@@ -137,7 +137,7 @@ materials:
                     }
                 )
                 ( Polygon
-                    noDisplayList: 1
+                    noDisplayList: true
                     //color: green
                     material: m3
                     vertices: {
@@ -149,7 +149,7 @@ materials:
                     }
                 )
                 ( Polygon
-                    noDisplayList: 1
+                    noDisplayList: true
                     //color: cyan
                     material: m4
                     vertices: {
@@ -161,7 +161,7 @@ materials:
                     }
                 )
                 ( Polygon
-                    noDisplayList: 1
+                    noDisplayList: true
                     //color: white
                     material: m2
                     vertices: {

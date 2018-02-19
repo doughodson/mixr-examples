@@ -3,9 +3,9 @@ include ../makedefs
 
 PGM = testUnits
 
-OBJS = main.o
+OBJS = main.o test_readout_utils.o
 
-LDFLAGS += -lmixr_base
+LDFLAGS += -lmixr_base -lmixr_graphics
 LDFLAGS += -lrt -lpthread
 
 CPPFLAGS += -I/usr/local/include

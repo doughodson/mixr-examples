@@ -28,11 +28,11 @@ int TableRow::line() const
    return BaseClass::line();
 }
 
-int TableRow::line(const int ll)
+void TableRow::line(const int ll)
 {
    BaseClass::line(ll);
    position();
-   return BaseClass::line();
+   return;
 }
 
 int TableRow::column() const
@@ -40,17 +40,17 @@ int TableRow::column() const
    return BaseClass::column();
 }
 
-int TableRow::column(const int cc)
+void TableRow::column(const int cc)
 {
    BaseClass::column(cc);
    position();
-   return BaseClass::column();
+   return;
 }
 
 void  TableRow::put(base::Pair* pp)
 {
    base::PairStream* subcomponents{getComponents()};
-   BaseClass::processComponents(subcomponents, typeid(graphics::AbstractField), pp);
+   BaseClass::processComponents(subcomponents, typeid(graphics::Readout), pp);
    if (subcomponents != nullptr) subcomponents->unref();
 }
 
@@ -66,7 +66,7 @@ void TableRow::position()
       base::List::Item* item{subcomponents->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
-         const auto ti = static_cast<graphics::AbstractField*>(pair->object());
+         const auto ti = static_cast<graphics::Readout*>(pair->object());
 
          ti->line(ln);
          ti->column(cp);

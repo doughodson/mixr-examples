@@ -95,18 +95,18 @@ int Table::getNumberOfRows() const
 //------------------------------------------------------------------------------
 // set functions
 //------------------------------------------------------------------------------
-int Table::line(const int ll)
+void Table::line(const int ll)
 {
    BaseClass::line(ll);
    position();
-   return BaseClass::line();
+   return;
 }
 
-int Table::column(const int cc)
+void Table::column(const int cc)
 {
    BaseClass::column(cc);
    position();
-   return BaseClass::column();
+   return;
 }
 
 //------------------------------------------------------------------------------
@@ -226,7 +226,7 @@ bool Table::setSlotColumns(base::PairStream* const msg)
       base::List::Item* item{msg->getFirstItem()};
       while (item != nullptr) {
           const auto pair = static_cast<base::Pair*>(item->getValue());
-          const auto g = dynamic_cast<graphics::AbstractField*>(pair->object());
+          const auto g = dynamic_cast<graphics::Readout*>(pair->object());
           if (g != nullptr) {
               // We have a Field object, so add it to the new columns list
               newColumns->put(pair);

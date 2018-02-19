@@ -22,7 +22,7 @@
     vpX:        300
     vpY:        200
     //vpWidth:    500
-    vpWidth:    ( + 200 100 100 50 25 10 10 5)
+    vpWidth:    500    //   200 + 100 + 100 + 50 + 25 + 10 + 10 + 5
     vpHeight:   500
 
     #include "testBasic.epp"

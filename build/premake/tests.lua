@@ -442,10 +442,10 @@ project "testUnits"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
-      links {"mixr_base"}
+      links {"mixr_base", "mixr_graphics"}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_base_d"}
+      links {"mixr_base_d", "mixr_graphics_d"}
       links {LibWindows}
 
 -- testVmap - test VMAP0 loader library

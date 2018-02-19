@@ -6,8 +6,14 @@
 // factories
 #include "mixr/base/factory.hpp"
 
+#include "mixr/graphics/readouts/readout_utils.hpp"
+
 #include <string>
 #include <cstdlib>
+
+void testReadouts();
+
+using namespace mixr;
 
 mixr::base::Object* factory(const std::string& name)
 {
@@ -44,16 +50,16 @@ mixr::base::Object* builder(const std::string& filename)
    return obj;
 }
 
-int main(int argc, char* argv[])
+void testFileReader()
 {
    // default configuration filename
    std::string configFilename = "testFileReader.edl";
 
-   for (int i = 1; i < argc; i++) {
-      if ( std::string(argv[i]) == "-f" ) {
-         configFilename = argv[++i];
-      }
-   }
+   return;
+}
 
+int main(int argc, char* argv[])
+{
+   testReadouts();
    return 0;
 }

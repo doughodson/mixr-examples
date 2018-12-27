@@ -4,6 +4,9 @@
 
 #include "mixr/base/Object.hpp"
 
+#include <cstring>
+#include <string>
+
 namespace mixr {
 namespace base {
 
@@ -132,7 +135,7 @@ class LinkedList : public Object
     private: static ::mixr::base::MetaObject metaObject;                                                                                     
     protected: static const ::mixr::base::MetaObject* getMetaObject();                                                                                
     public: static const char* getFactoryName();                                                                                
-    public: bool isFactoryName(const char name[]) const override;                                                       
+    public: bool isFactoryName(const std::string& name) const override;                                                       
     protected: bool setSlotByIndex(const int slotindex, ::mixr::base::Object* const obj) override;                        
     public: static const ::mixr::base::SlotTable& getSlotTable();                                                                 
     protected: static const ::mixr::base::SlotTable slottable;                                                                    
@@ -225,13 +228,13 @@ template <class T>
 
 
 template <class T>
-    const char* LinkedList<T>::getFactoryName() { return metaObject.getFactoryName(); }                   
+    const char* LinkedList<T>::getFactoryName() { return metaObject.getFactoryName().c_str(); }                   
 
 template <class T>
-    bool LinkedList<T>::isFactoryName(const char name[]) const                              
+    bool LinkedList<T>::isFactoryName(const std::string& name) const                              
     {                                                                                  
-        if (name == nullptr) return false;                                             
-        if ( std::strcmp(metaObject.getFactoryName(), name) == 0 )  return true;                      
+        if (name.empty()) return false;                                             
+        if (metaObject.getFactoryName() == name)  return true;                      
         else return LinkedList<T>::Object::isFactoryName(name);                          
     }                                                                                  
 

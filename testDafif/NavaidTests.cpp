@@ -7,6 +7,7 @@
 #include "mixr/base/units/lengths.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
+#include <cstring>
 #include <string>
 #include <iostream>
 
@@ -77,13 +78,13 @@ void NavaidTests::func22(const double acLat, const double acLon, const double ac
    std::cin >> id;
    db->setArea(acLat, acLon);
 
-   while ( strcmp(id,"done") != 0) {
+   while (std::strcmp(id, "done") != 0) {
 
-      int found = db->queryByIdent(id);
+      int found{db->queryByIdent(id)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav{db->getNavaid(i)};
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -175,13 +176,13 @@ void NavaidTests::func26(const double acLat, const double acLon, const double ac
    char key[10];
    std::cin.getline(key,10,'\n');
 
-   while ( strcmp(key,"done") != 0) {
+   while (std::strcmp(key, "done") != 0) {
 
-      int found  = db->queryByKey(key);
+      int found{db->queryByKey(key)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav{db->getNavaid(i)};
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -312,13 +313,13 @@ void NavaidTests::func2B(const double acLat, const double acLon, const double ac
    std::cout << "Enter code:";
    std::cin >> code;
 
-   while ( strcmp(code,"done") != 0) {
+   while (std::strcmp(code, "done") != 0) {
 
-      int found = db->queryByIcao(code);
+      int found{db->queryByIcao(code)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Navaid* nav = db->getNavaid(i);
+         mixr::dafif::Navaid* nav{db->getNavaid(i)};
          nav->printRecord(std::cout);
 		 if (printData)
     		 nav->printTrueBearingRange(std::cout, acLat, acLon, acElev);

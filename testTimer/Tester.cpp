@@ -6,6 +6,7 @@
 #include "mixr/base/Timers.hpp"
 
 #include <cstdio>
+#include <string>
 
 IMPLEMENT_SUBCLASS(Tester, "Tester")
 
@@ -67,7 +68,7 @@ void Tester::printTimers() const
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<const mixr::base::Timer*>(pair->object());
 
-         std::printf("  timer(%s)", pair->slot()->c_str());
+         std::printf("  timer(%s)", pair->slot().c_str());
          std::printf(" = %4.1f", timer->getCurrentTime());
 
          if (timer->getType() == mixr::base::Timer::Type::UP) std::printf(", up");

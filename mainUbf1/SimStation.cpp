@@ -16,6 +16,8 @@
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/Timers.hpp"
 
+#include <string>
+
 using namespace mixr;
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
@@ -38,7 +40,7 @@ SimStation::SimStation()
 void SimStation::reset()
 {
     // setup ownship player pointer
-    setOwnshipByName( getOwnshipName()->c_str() );
+    setOwnshipByName( getOwnshipName().c_str() );
 
     if (!displayInit && mainDisplay != nullptr) {
         mainDisplay->createWindow();

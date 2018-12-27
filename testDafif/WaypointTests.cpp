@@ -4,6 +4,7 @@
 #include "mixr/dafif/loaders/WaypointLoader.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
+#include <cstring>
 #include <string>
 #include <iostream>
 
@@ -70,13 +71,13 @@ void WaypointTests::func32(const double acLat, const double acLon, const double 
    std::cin >> id;
 
 
-   while ( strcmp(id,"done") != 0) {
+   while (std::strcmp(id, "done") != 0) {
 
-      int found = db->queryByIdent(id);
+      int found{db->queryByIdent(id)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Waypoint* wp = db->getWaypoint(i);
+         mixr::dafif::Waypoint* wp{db->getWaypoint(i)};
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -131,13 +132,13 @@ void WaypointTests::func36(const double acLat, const double acLon, const double 
    char key[16];
    std::cin.getline(key,14,'\n');
 
-   while ( strcmp(key,"done") != 0) {
+   while (std::strcmp(key, "done") != 0) {
 
-      int found  = db->queryByKey(key);
+      int found{db->queryByKey(key)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Waypoint* wp = db->getWaypoint(i);
+         mixr::dafif::Waypoint* wp{db->getWaypoint(i)};
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);
@@ -166,13 +167,13 @@ void WaypointTests::func3B(const double acLat, const double acLon, const double 
    std::cin >> code;
 
 
-   while ( strcmp(code,"done") != 0) {
+   while (std::strcmp(code, "done") != 0) {
 
-      int found = db->queryByIcao(code);
+      int found{db->queryByIcao(code)};
       std::cout << "found = " << found << std::endl;
 
       for (int i = 0; i < found; i++) {
-         mixr::dafif::Waypoint* wp = db->getWaypoint(i);
+         mixr::dafif::Waypoint* wp{db->getWaypoint(i)};
          wp->printRecord(std::cout);
 		 if (printData)
     		 wp->printTrueBearingRange(std::cout, acLat, acLon, acElev);

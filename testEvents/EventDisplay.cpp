@@ -95,12 +95,12 @@ void EventDisplay::deleteData()
 
 void EventDisplay::updateData(const double dt)
 {
-    static int counter{};
+//    static int counter{};
 
     BaseClass::updateData(dt);
 
-    counter++;
-    if (counter > 1) {
+//    counter++;
+//    if (counter > 1) {
         myBool = !myBool;
 
         myInt++;
@@ -143,37 +143,44 @@ void EventDisplay::updateData(const double dt)
         // our materials
         base::Vec4d diff;
         double x{}, y{}, z{};
-        for (int i = 0; i < MAX_MATERIALS; i++) {
+        for (int i{}; i < MAX_MATERIALS; i++) {
             if (materials[i] != nullptr) {
                 if (i == 0) {
                     diff = materials[i]->getDiffuseColor();
                     rotations[i] += 40 * dt;
-                }
-                else if (i == 1) {
+                } else if (i == 1) {
                     diff = materials[i]->getAmbientColor();
                     rotations[i] -= 45 * dt;
-                }
-                else if (i == 2) {
+                } else if (i == 2) {
                     diff = materials[i]->getEmissiveColor();
                     rotations[i] += 30 * dt;
                 }
                 x = diff.x();
                 y = diff.y();
                 z = diff.z();
-                if (x > 1 || x < 0) diffColorRate[i].x() = -diffColorRate[i].x();
+                if (x > 1 || x < 0) {
+                    diffColorRate[i].x() = -diffColorRate[i].x();
+                }
                 x += diffColorRate[i].x() * 0.01f;
-                if (y > 1 || y < 0) diffColorRate[i].y() = -diffColorRate[i].y();
+                if (y > 1 || y < 0) {
+                    diffColorRate[i].y() = -diffColorRate[i].y();
+                }
                 y += diffColorRate[i].y() * 0.02f;
-                if (z > 1 || z < 0) diffColorRate[i].z() = -diffColorRate[i].z();
+                if (z > 1 || z < 0) {
+                    diffColorRate[i].z() = -diffColorRate[i].z();
+                }
                 z += diffColorRate[i].z() * 0.025f;
                 diff.set(x,y,z,1);
-                if (i == 0) materials[i]->setDiffuseColor(diff);
-                else if (i == 1) materials[i]->setAmbientColor(diff);
+                if (i == 0) {
+                    materials[i]->setDiffuseColor(diff);
+                } else if (i == 1) {
+                    materials[i]->setAmbientColor(diff);
+                }
             }
         }
 
-        counter = 0;
-    }
+//        counter = 0;
+//    }
 
 
     send("boolean", UPDATE_VALUE, myBool, boolSD);
@@ -184,8 +191,8 @@ void EventDisplay::updateData(const double dt)
     send("objtest", UPDATE_VALUE, obj, objSD);
     send("colors", SET_COLOR, myColor, colorSD);
     // convert materials to objects real quick, so we can send them down
-    base::Object* tempMat[MAX_MATERIALS];
-    for (int i = 0; i < MAX_MATERIALS; i++) {
+    base::Object* tempMat[MAX_MATERIALS]{};
+    for (int i{}; i < MAX_MATERIALS; i++) {
         tempMat[i] = static_cast<base::Object*>(materials[i]);
     }
     send("matarray%d", SET_MATERIAL, tempMat, materialSD.data(), MAX_MATERIALS);

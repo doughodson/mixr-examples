@@ -40,7 +40,7 @@
         ( AsciiText position: [ 1 1 ] text: "1" )
         ( AsciiText position: [ 1 2 ] text: "2" )
 
-        ( AsciiText position: [ 2 1 ] text: "[Row, Column]" )
+        ( AsciiText position: [ 2 1 ] text: "[Line Column]" )
 
         ( AsciiText position: [ 20 1 ] text: "X" )
 

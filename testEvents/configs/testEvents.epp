@@ -51,7 +51,7 @@
         // here our the numeric readout tests
         // Boolean
         ( AsciiText position: [ 2 1 ] text: "BOOLEAN:" )
-        boolean: ( NumericReadout format: "#" position: [ 2 10 ] )
+        boolean: ( BooleanText position: [ 2 10 ] )
 
         // Integer
         ( AsciiText position: [ 3 1 ] text: "INTEGER:" )
@@ -77,7 +77,7 @@
 
                 // Boolean
                 ( AsciiText color: cyan position: [ 12 1 ] text: "BOOLEAN:" )
-                objboolean: ( NumericReadout color: cyan format: "#" position: [ 12 10 ] )
+                objboolean: ( BooleanText color: cyan position: [ 12 10 ] )
 
                 // Integer
                 ( AsciiText color: cyan position: [ 13 1 ] text: "INTEGER:" )

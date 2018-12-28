@@ -63,8 +63,6 @@ private:
 
     std::array<double, MAX_MATERIALS> rotations{};
     std::array<SendData, MAX_MATERIALS> rotationsSD{};
-
-    int counter{};    // to slowly increment our numbers
 };
 
 #endif

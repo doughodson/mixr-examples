@@ -17,7 +17,7 @@ class ObjectHandler final: public mixr::graphics::Graphic
    DECLARE_SUBCLASS(ObjectHandler, mixr::graphics::Graphic)
 
 public:
-   ObjectHandler();
+   ObjectHandler()     { STANDARD_CONSTRUCTOR() }
 
    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 

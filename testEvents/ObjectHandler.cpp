@@ -13,11 +13,6 @@ BEGIN_EVENT_HANDLER(ObjectHandler)
     ON_EVENT_OBJ(UPDATE_VALUE, onUpdateObject, TestObject)
 END_EVENT_HANDLER()
 
-ObjectHandler::ObjectHandler()
-{
-    STANDARD_CONSTRUCTOR()
-}
-
 void ObjectHandler::copyData(const ObjectHandler& org, const bool)
 {
     BaseClass::copyData(org);
@@ -45,8 +40,6 @@ bool ObjectHandler::onUpdateObject(const TestObject* const x)
         send("objfloat", UPDATE_VALUE, floatVal, floatSD);
         double doubleVal{obj->getDouble()};
         send("objdouble", UPDATE_VALUE, doubleVal, doubleSD);
-        double realVal{obj->getReal()};
-        send("objreal", UPDATE_VALUE, realVal, realSD);
         const std::string& myChar{obj->getChar()};
         send("objascii", UPDATE_VALUE, myChar.c_str(), charSD);
     }

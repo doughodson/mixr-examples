@@ -17,22 +17,19 @@ class TestObject final: public mixr::base::Object
    DECLARE_SUBCLASS(TestObject, mixr::base::Object)
 
 public:
-   TestObject();
+   TestObject()                        { STANDARD_CONSTRUCTOR() }
 
-   // set functions
+   // set/get data
    void setBoolean(const bool x)       { boolVal = x;      }
    void setInteger(const int x)        { intVal = x;       }
    void setFloat(const float x)        { floatVal = x;     }
    void setDouble(const double x)      { doubleVal = x;    }
-   void setReal(const double x)        { realVal = x;      }
    void setChar(const std::string& x)  { charVal = x;      }
 
-   // get functions
    bool getBoolean()                   { return boolVal;   }
    int getInteger()                    { return intVal;    }
    float getFloat()                    { return floatVal;  }
    double getDouble()                  { return doubleVal; }
-   double getReal()                    { return realVal;   }
    const std::string& getChar()        { return charVal;   }
 
 private:
@@ -40,7 +37,6 @@ private:
    int intVal{};
    float floatVal{};
    double doubleVal{};
-   double realVal{};
    std::string charVal = "ASCII";
 };
 

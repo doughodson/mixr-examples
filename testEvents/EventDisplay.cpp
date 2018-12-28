@@ -23,19 +23,16 @@ EventDisplay::EventDisplay()
 {
     STANDARD_CONSTRUCTOR()
 
-    obj = new TestObject();
-    myColor = new base::Color();
-    myColor->setRed(0.0);
-    myColor->setBlue(0.0);
-    myColor->setGreen(0.0);
+    obj = new TestObject;
+    myColor = new base::Color(0.0, 0.0, 0.0);  // black
 
     std::array<base::Vec4d, MAX_MATERIALS> diffColor;
 
-    std::random_device rd;                       // used to generate random seed for generator
-    std::mt19937 gen(rd());                      // mersenne_twister_engine
+    std::random_device rd;                             // used to generate random seed for generator
+    std::mt19937 gen(rd());                            // mersenne_twister_engine
     std::uniform_real_distribution<double> dis(0, 1);  // uniform distribution from [0, 1)
 
-    for (int i = 0; i < MAX_MATERIALS; i++) {
+    for (int i{}; i < MAX_MATERIALS; i++) {
         materials[i] = new graphics::Material();
         materialSD[i].empty();
         diffColor[i].set(dis(gen), dis(gen), dis(gen), 1);
@@ -82,20 +79,12 @@ void EventDisplay::copyData(const EventDisplay& org, const bool)
     }
 
     myChar = org.myChar;
-
-    counter = org.counter;
 }
 
 void EventDisplay::deleteData()
 {
-    if (obj != nullptr) {
-        obj->unref();
-        obj = nullptr;
-    }
-    if (myColor != nullptr) {
-        myColor->unref();
-        myColor = nullptr;
-    }
+    if (obj != nullptr)     { obj->unref();     obj = nullptr;     }
+    if (myColor != nullptr) { myColor->unref(); myColor = nullptr; }
     for (int i = 0; i < MAX_MATERIALS; i++) {
         if (materials[i] != nullptr) {
             materials[i]->unref();
@@ -106,6 +95,8 @@ void EventDisplay::deleteData()
 
 void EventDisplay::updateData(const double dt)
 {
+    static int counter{};
+
     BaseClass::updateData(dt);
 
     counter++;
@@ -137,7 +128,6 @@ void EventDisplay::updateData(const double dt)
         obj->setInteger(obj->getInteger() + 1);
         obj->setFloat(obj->getFloat() + 0.01f);
         obj->setDouble(obj->getDouble() + 0.0003);
-        obj->setReal(obj->getReal() + 0.1f);
         if (obj->getChar() == "ASCII") {
             obj->setChar("TEXT");
         } else {

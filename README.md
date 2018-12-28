@@ -66,11 +66,11 @@ Example GUI Applications
 Test Applications
 -----------------
 
-* testDafif -- exercises DAFIF library capabilities
+* testDafif -- tests DAFIF library capabilities
 
-* testEvents -- exercises Component class send() methods
+* testEvents -- tests Component class send() methods
 
-* testGraphics -- exercises graphic class available in 'graphics' library
+* testGraphics -- tests graphic class available in 'graphics' library
     1. Contains several test MFD pages with common background graphics
     2. Use 'n' and 'p' (next and previous) to move between pages
     3. OpenGL selection test: use cursor and left mouse button to select a graphic item.  The selected item will flash.
@@ -78,13 +78,13 @@ Test Applications
 
 * testInfrared -- general IR test program
 
-* testLinkage -- exercises linkage architecture that interfaces applications to physical I/O devices
+* testLinkage -- tests linkage architecture that interfaces applications to physical I/O devices
 
 * testLinearSys
 
-* testMatrix -- exercies Matrix class functionality
+* testMatrix -- tests Matrix class functionality
 
-* testMetaObject -- exercises meta-object functionality
+* testMetaObject -- tests meta-object functionality
 
 * testNavUtils -- extensive set of navigation test routines
 

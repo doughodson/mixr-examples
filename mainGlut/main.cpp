@@ -1,6 +1,6 @@
 //----------------------------------------------------------------
-// Simple example program that creates a GLUT window and draws an image
-// as defined by EDL file.
+// Simple example program that creates a GLUT window and draws what
+// is defined by an EDL file
 //----------------------------------------------------------------
 
 #include "mixr/base/Pair.hpp"
@@ -21,7 +21,7 @@
 #include <string>
 
 const int frameRate{20};
-mixr::glut::GlutDisplay* glutDisplay{};
+mixr::glut::GlutDisplay* display{};
 
 // timerFunc() -- Time critical stuff
 void timerFunc(int)
@@ -32,7 +32,7 @@ void timerFunc(int)
 
    mixr::base::Timer::updateTimers(static_cast<double>(dt));
    mixr::graphics::Graphic::flashTimer(static_cast<double>(dt));
-   glutDisplay->tcFrame(static_cast<double>(dt));
+   display->tcFrame(static_cast<double>(dt));
 }
 
 // our class factory
@@ -85,17 +85,17 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "glutdisplay.edl";
+   std::string configFilename = "alignmentPattern.edl";
    for (int i = 1; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }
    }
 
-   glutDisplay = builder(configFilename);
+   display = builder(configFilename);
 
    // create a display window
-   glutDisplay->createWindow();
+   display->createWindow();
 
    // set timer
    const double dt{1.0 / static_cast<double>(frameRate)};

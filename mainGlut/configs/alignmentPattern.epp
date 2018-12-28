@@ -1,6 +1,5 @@
 // ---
-// Simple example display ---
-//   30 degree FOV alignment pattern
+// Simple display -- 30 degree FOV alignment pattern
 // ---
 
 ( GlutDisplay

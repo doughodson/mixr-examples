@@ -1,0 +1,52 @@
+//
+// Simple display to show text and demostrate how it is defined and positioned
+//
+( GlutDisplay
+
+    name: "Text Display"
+
+    left:       -10
+    right:       10
+    bottom:     -10
+    top:         10
+    near:       -50.0
+    far:         50.0
+
+    clearDepth: 1.0
+    clearColor: ( rgb 0 0 0 )
+
+    vpX:        200
+    vpY:        200
+    vpWidth:    600
+    vpHeight:   600
+
+    normalFont: default
+
+    fonts: {
+        default:
+        ( FTGLPolygonFonts
+            fontPosition: [ -10 10 ]
+            fontWidth: 1.0
+            fontHeight: 1.0
+            characterSpacing: 0.5
+            lineSpacing: 1
+            path: MIXR_DATA_FONT_PATH
+            file: "arialn.ttf"
+        )   
+    }
+
+    components: {
+
+        ( AsciiText position: [ 1 1 ] text: "1" )
+        ( AsciiText position: [ 1 2 ] text: "2" )
+
+        ( AsciiText position: [ 2 1 ] text: "[Row, Column]" )
+
+        ( AsciiText position: [ 20 1 ] text: "X" )
+
+        ( AsciiText position: [ 1 40 ] text: "Y" )
+
+        ( AsciiText position: [ 20 40 ] text: "Z" )
+
+    }
+)

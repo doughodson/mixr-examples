@@ -1,5 +1,6 @@
 //----------------------------------------------------------------
-// Test Component send command, using different parameters
+// Test Component event processing using send commands
+// (using different parameters)
 //----------------------------------------------------------------
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"
@@ -12,14 +13,14 @@
 #include "mixr/base/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 
-#include "TestDisplay.hpp"
+#include "EventDisplay.hpp"
 #include "ObjectHandler.hpp"
 
 #include <string>
 #include <cstdlib>
 
 const int frameRate{20};
-TestDisplay* display{};
+EventDisplay* display{};
 
 void timerFunc(int)
 {
@@ -37,13 +38,11 @@ mixr::base::Object* factory(const std::string& name)
 {
    mixr::base::Object* obj{};
 
-   if ( name == TestDisplay::getFactoryName() ) {
-      obj = new TestDisplay();
-   }
-   else if ( name == ObjectHandler::getFactoryName() ) {
+   if ( name == EventDisplay::getFactoryName() ) {
+      obj = new EventDisplay();
+   } else if ( name == ObjectHandler::getFactoryName() ) {
       obj = new ObjectHandler();
-   }
-   else {
+   } else {
       if (obj == nullptr) obj = mixr::graphics::factory(name);
       if (obj == nullptr) obj = mixr::glut::factory(name);
       if (obj == nullptr) obj = mixr::base::factory(name);
@@ -53,7 +52,7 @@ mixr::base::Object* factory(const std::string& name)
 }
 
 // display builder
-TestDisplay* builder(const std::string& filename)
+EventDisplay* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -78,7 +77,7 @@ TestDisplay* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto display = dynamic_cast<TestDisplay*>(obj);
+   const auto display = dynamic_cast<EventDisplay*>(obj);
    if (display == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -91,7 +90,7 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "test.edl";
+   std::string configFilename = "testEvents.edl";
 
    display = builder(configFilename);
 
@@ -100,8 +99,8 @@ int main(int argc, char* argv[])
 
    // set timer
    const double dt{1.0 / static_cast<double>(frameRate)};
-   const int millis{static_cast<int>(dt * 1000)};
-   glutTimerFunc(millis, timerFunc, 1);
+   const int millisecs{static_cast<int>(dt * 1000)};
+   glutTimerFunc(millisecs, timerFunc, 1);
 
    // main loop
    glutMainLoop();

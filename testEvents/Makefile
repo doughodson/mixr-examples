@@ -3,7 +3,7 @@ include ../makedefs
 
 PGM = testEvents
 
-OBJS = TestDisplay.o ObjectHandler.o TestObject.o main.o
+OBJS = EventDisplay.o ObjectHandler.o TestObject.o main.o
 
 LDFLAGS += -lmixr_instruments -lmixr_ui_glut -lmixr_graphics -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
@@ -13,7 +13,7 @@ LDFLAGS += -lrt
 all: edl $(PGM)
 
 edl:
-	cpp configs/test.epp >test.edl   $(EPPFLAGS)
+	cpp configs/testEvents.epp > testEvents.edl   $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

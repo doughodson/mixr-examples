@@ -1,5 +1,5 @@
 
-#include "TestDisplay.hpp"
+#include "EventDisplay.hpp"
 #include "TestObject.hpp"
 
 #include "mixr/base/colors/Color.hpp"
@@ -17,9 +17,9 @@
 
 using namespace mixr;
 
-IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestDisplay, "TestDisplay")
+IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(EventDisplay, "EventDisplay")
 
-TestDisplay::TestDisplay()
+EventDisplay::EventDisplay()
 {
     STANDARD_CONSTRUCTOR()
 
@@ -48,7 +48,7 @@ TestDisplay::TestDisplay()
     }
 }
 
-void TestDisplay::copyData(const TestDisplay& org, const bool)
+void EventDisplay::copyData(const EventDisplay& org, const bool)
 {
     BaseClass::copyData(org);
 
@@ -86,7 +86,7 @@ void TestDisplay::copyData(const TestDisplay& org, const bool)
     counter = org.counter;
 }
 
-void TestDisplay::deleteData()
+void EventDisplay::deleteData()
 {
     if (obj != nullptr) {
         obj->unref();
@@ -104,7 +104,7 @@ void TestDisplay::deleteData()
     }
 }
 
-void TestDisplay::updateData(const double dt)
+void EventDisplay::updateData(const double dt)
 {
     BaseClass::updateData(dt);
 
@@ -113,13 +113,19 @@ void TestDisplay::updateData(const double dt)
         myBool = !myBool;
 
         myInt++;
-        if (myInt > 999) myInt = 0;
+        if (myInt > 999) {
+            myInt = 0;
+        }
 
         myFloat += 0.002f;
-        if (myFloat > 100) myFloat = 0.0;
+        if (myFloat > 100.0) {
+            myFloat = 0.0;
+        }
 
         myDouble += 0.00002f;
-        if (myDouble > 2) myDouble = 0.0;
+        if (myDouble > 2) {
+            myDouble = 0.0;
+        }
 
         if (myChar == "ASCII") {
            myChar = "TEXT";

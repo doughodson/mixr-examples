@@ -1,6 +1,6 @@
 // TestEvents - tests our Components send routines, using different parameters
-( TestDisplay
-    
+( EventDisplay
+
     name: "Test Events"
 
     left:       -10

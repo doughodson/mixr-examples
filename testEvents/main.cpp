@@ -12,14 +12,14 @@
 #include "mixr/base/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 
-#include "Display.hpp"
+#include "TestDisplay.hpp"
 #include "ObjectHandler.hpp"
 
 #include <string>
 #include <cstdlib>
 
 const int frameRate{20};
-Display* display{};
+TestDisplay* display{};
 
 void timerFunc(int)
 {
@@ -37,8 +37,8 @@ mixr::base::Object* factory(const std::string& name)
 {
    mixr::base::Object* obj{};
 
-   if ( name == Display::getFactoryName() ) {
-      obj = new Display();
+   if ( name == TestDisplay::getFactoryName() ) {
+      obj = new TestDisplay();
    }
    else if ( name == ObjectHandler::getFactoryName() ) {
       obj = new ObjectHandler();
@@ -53,7 +53,7 @@ mixr::base::Object* factory(const std::string& name)
 }
 
 // display builder
-Display* builder(const std::string& filename)
+TestDisplay* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -78,7 +78,7 @@ Display* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto display = dynamic_cast<Display*>(obj);
+   const auto display = dynamic_cast<TestDisplay*>(obj);
    if (display == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

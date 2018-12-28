@@ -1,5 +1,5 @@
 // TestEvents - tests our Components send routines, using different parameters
-( SendDataDisplay
+( TestDisplay
     
     name: "Test Events"
             

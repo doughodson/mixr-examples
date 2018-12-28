@@ -1,5 +1,5 @@
 
-#include "Display.hpp"
+#include "TestDisplay.hpp"
 #include "TestObject.hpp"
 
 #include "mixr/base/colors/Color.hpp"
@@ -17,9 +17,9 @@
 
 using namespace mixr;
 
-IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Display, "SendDataDisplay")
+IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TestDisplay, "TestDisplay")
 
-Display::Display()
+TestDisplay::TestDisplay()
 {
     STANDARD_CONSTRUCTOR()
 
@@ -48,7 +48,7 @@ Display::Display()
     }
 }
 
-void Display::copyData(const Display& org, const bool)
+void TestDisplay::copyData(const TestDisplay& org, const bool)
 {
     BaseClass::copyData(org);
 
@@ -86,7 +86,7 @@ void Display::copyData(const Display& org, const bool)
     counter = org.counter;
 }
 
-void Display::deleteData()
+void TestDisplay::deleteData()
 {
     if (obj != nullptr) {
         obj->unref();
@@ -104,7 +104,7 @@ void Display::deleteData()
     }
 }
 
-void Display::updateData(const double dt)
+void TestDisplay::updateData(const double dt)
 {
     BaseClass::updateData(dt);
 

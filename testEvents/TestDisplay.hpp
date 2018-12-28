@@ -1,6 +1,6 @@
 
-#ifndef __Display_H__
-#define __Display_H__
+#ifndef __TestDisplay_H__
+#define __TestDisplay_H__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 #include <array>
@@ -14,16 +14,16 @@ namespace graphics { class Material; }
 class TestObject;
 
 //------------------------------------------------------------------------------
-// Class: Display
+// Class: TestDisplay
 // Description: This class will send down data to it's components in different
 // ways, showing how the SendData class works and testing our send commands.
 //------------------------------------------------------------------------------
-class Display final: public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::GlutDisplay
 {
-   DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
 
 public:
-   Display();
+   TestDisplay();
 
    void updateData(const double dt = 0.0) final;
 

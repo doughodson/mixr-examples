@@ -50,7 +50,7 @@ void TableRow::column(const int cc)
 void  TableRow::put(base::Pair* pp)
 {
    base::PairStream* subcomponents{getComponents()};
-   BaseClass::processComponents(subcomponents, typeid(graphics::Readout), pp);
+   BaseClass::processComponents(subcomponents, typeid(graphics::AbstractReadout), pp);
    if (subcomponents != nullptr) subcomponents->unref();
 }
 
@@ -66,7 +66,7 @@ void TableRow::position()
       base::List::Item* item{subcomponents->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
-         const auto ti = static_cast<graphics::Readout*>(pair->object());
+         const auto ti = static_cast<graphics::AbstractReadout*>(pair->object());
 
          ti->line(ln);
          ti->column(cp);

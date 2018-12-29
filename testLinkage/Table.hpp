@@ -2,7 +2,7 @@
 #ifndef __Table_H__
 #define __Table_H__
 
-#include "mixr/graphics/readouts/Readout.hpp"
+#include "mixr/graphics/readouts/AbstractReadout.hpp"
 
 namespace mixr {
 namespace base { class Integer; class PairStream; }
@@ -18,9 +18,9 @@ namespace base { class Integer; class PairStream; }
 //    spacing  <Integer>    ! Spacing between rows (default: 1)
 //    columns  <PairStream> ! Column descriptions: list of items in each row
 //------------------------------------------------------------------------------
-class Table final: public mixr::graphics::Readout
+class Table final: public mixr::graphics::AbstractReadout
 {
-   DECLARE_SUBCLASS(Table, mixr::graphics::Readout)
+   DECLARE_SUBCLASS(Table, mixr::graphics::AbstractReadout)
 
 public:
    Table();

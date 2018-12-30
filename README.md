@@ -8,7 +8,7 @@ Notes
 -----
 
 *  Use make-edl.cmd to generate the example *.edl files under windows, and
-   use 'make edl' to generate the *.edl files under linux.
+   use 'make edl' to generate the *.edl files under Linux.
 
 
 Demonstration Applications
@@ -38,7 +38,7 @@ Example Applications
 
 * mainIGViewer -- simple image generator
 
-* mainLaero -- demostrates flight navigation
+* mainLaero -- demonstrates flight navigation
 
 * mainNonRT1 -- executes a simulation as fast as possible (not real-time, no concern about wall clock)
 
@@ -46,7 +46,7 @@ Example Applications
 
 * mainPuzzle2 -- puzzle problem solver (15 block puzzle)
 
-* mainSim1 -- presents the simpest full-featured simulation that can be built with and only with MIXR classes.
+* mainSim1 -- presents the simplest full-featured simulation that can be built with and only with MIXR classes.
 
 * mainSim2 -- same as mainSim1 except the vehicle can be flown with a joystick and supports the JSBSim model
 

@@ -1,6 +1,6 @@
 
-#ifndef __TestSD_H__
-#define __TestSD_H__
+#ifndef __TestSD_HPP__
+#define __TestSD_HPP__
 
 #include "mixr/graphics/Page.hpp"
 #include "mixr/base/units/util/angle_utils.hpp"

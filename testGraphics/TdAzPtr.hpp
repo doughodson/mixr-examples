@@ -1,6 +1,6 @@
 
-#ifndef __TdAzPtr_H__
-#define __TdAzPtr_H__
+#ifndef __TdAzPtr_HPP__
+#define __TdAzPtr_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

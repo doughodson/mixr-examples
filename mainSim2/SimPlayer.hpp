@@ -1,6 +1,6 @@
 
-#ifndef __SimPlayer_H__
-#define __SimPlayer_H__
+#ifndef __SimPlayer_HPP__
+#define __SimPlayer_HPP__
 
 #include "mixr/models/player/air/Aircraft.hpp"
 

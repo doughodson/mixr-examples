@@ -1,6 +1,6 @@
 
-#ifndef __TestIoDisplay_H__
-#define __TestIoDisplay_H__
+#ifndef __TestIoDisplay_HPP__
+#define __TestIoDisplay_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

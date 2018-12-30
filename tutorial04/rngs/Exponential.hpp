@@ -1,6 +1,6 @@
 
-#ifndef __Exponential_H__
-#define __Exponential_H__
+#ifndef __Exponential_HPP__
+#define __Exponential_HPP__
 
 #include "AbstractRng.hpp"
 

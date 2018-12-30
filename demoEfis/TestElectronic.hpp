@@ -1,6 +1,6 @@
 
-#ifndef __TestElectronic_H__
-#define __TestElectronic_H__
+#ifndef __TestElectronic_HPP__
+#define __TestElectronic_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

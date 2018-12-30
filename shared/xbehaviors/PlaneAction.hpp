@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xbehaviors_PlaneAction_H__
-#define __mixr_xbehaviors_PlaneAction_H__
+#ifndef __mixr_xbehaviors_PlaneAction_HPP__
+#define __mixr_xbehaviors_PlaneAction_HPP__
 
 #include "mixr/base/ubf/AbstractAction.hpp"
 

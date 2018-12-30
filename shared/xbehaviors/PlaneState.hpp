@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xbehaviors_PlaneState_H__
-#define __mixr_xbehaviors_PlaneState_H__
+#ifndef __mixr_xbehaviors_PlaneState_HPP__
+#define __mixr_xbehaviors_PlaneState_HPP__
 
 #include "mixr/base/ubf/AbstractState.hpp"
 #include <array>

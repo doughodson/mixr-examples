@@ -1,6 +1,6 @@
 
-#ifndef __TerrainFollower_H__
-#define __TerrainFollower_H__
+#ifndef __TerrainFollower_HPP__
+#define __TerrainFollower_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

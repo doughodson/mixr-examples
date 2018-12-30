@@ -1,6 +1,6 @@
 
-#ifndef __Endpoint_H__
-#define __Endpoint_H__
+#ifndef __Endpoint_HPP__
+#define __Endpoint_HPP__
 
 #include "mixr/base/Component.hpp"
 

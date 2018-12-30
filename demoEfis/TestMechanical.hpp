@@ -1,6 +1,6 @@
 
-#ifndef __TestMechanical_H__
-#define __TestMechanical_H__
+#ifndef __TestMechanical_HPP__
+#define __TestMechanical_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

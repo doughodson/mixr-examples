@@ -1,6 +1,6 @@
 
-#ifndef __Uniform_H__
-#define __Uniform_H__
+#ifndef __Uniform_HPP__
+#define __Uniform_HPP__
 
 #include "AbstractRng.hpp"
 

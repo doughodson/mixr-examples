@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xzmq_ZeroMQHandler_H__
-#define __mixr_xzmq_ZeroMQHandler_H__
+#ifndef __mixr_xzmq_ZeroMQHandler_HPP__
+#define __mixr_xzmq_ZeroMQHandler_HPP__
 
 #include "mixr/base/network/NetHandler.hpp"
 

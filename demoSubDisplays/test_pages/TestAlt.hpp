@@ -1,6 +1,6 @@
 
-#ifndef __TestAlt_H__
-#define __TestAlt_H__
+#ifndef __TestAlt_HPP__
+#define __TestAlt_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

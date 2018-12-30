@@ -1,6 +1,6 @@
 
-#ifndef __Hsi_H__
-#define __Hsi_H__
+#ifndef __Hsi_HPP__
+#define __Hsi_HPP__
 
 #include "mixr/graphics/Rotators.hpp"
 

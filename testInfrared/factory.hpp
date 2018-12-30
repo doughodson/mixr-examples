@@ -1,6 +1,6 @@
 
-#ifndef __factory_H__
-#define __factory_H__
+#ifndef __factory_HPP__
+#define __factory_HPP__
 
 #include <string>
 

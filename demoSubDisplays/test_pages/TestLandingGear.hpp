@@ -1,6 +1,6 @@
 
-#ifndef __TestLandingGear_H__
-#define __TestLandingGear_H__
+#ifndef __TestLandingGear_HPP__
+#define __TestLandingGear_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

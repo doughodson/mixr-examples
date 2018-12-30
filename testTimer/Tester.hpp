@@ -1,6 +1,6 @@
 
-#ifndef __Tester_H__
-#define __Tester_H__
+#ifndef __Tester_HPP__
+#define __Tester_HPP__
 
 #include "mixr/base/Component.hpp"
 

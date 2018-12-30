@@ -1,6 +1,6 @@
 
-#ifndef __TestFtitDial_H__
-#define __TestFtitDial_H__
+#ifndef __TestFtitDial_HPP__
+#define __TestFtitDial_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

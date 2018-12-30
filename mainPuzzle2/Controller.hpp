@@ -1,6 +1,6 @@
 
-#ifndef __Controller_H__
-#define __Controller_H__
+#ifndef __Controller_HPP__
+#define __Controller_HPP__
 
 #include "mixr/base/Component.hpp"
 

@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xpanel_TdElevPtr_H__
-#define __mixr_xpanel_TdElevPtr_H__
+#ifndef __mixr_xpanel_TdElevPtr_HPP__
+#define __mixr_xpanel_TdElevPtr_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

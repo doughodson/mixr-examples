@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xpanel_Pfd_H__
-#define __mixr_xpanel_Pfd_H__
+#ifndef __mixr_xpanel_Pfd_HPP__
+#define __mixr_xpanel_Pfd_HPP__
 
 #include "mixr/graphics/Page.hpp"
 #include "mixr/base/units/util/angle_utils.hpp"

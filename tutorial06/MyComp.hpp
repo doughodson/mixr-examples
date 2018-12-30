@@ -1,6 +1,6 @@
 
-#ifndef __MyComp_H__
-#define __MyComp_H__
+#ifndef __MyComp_HPP__
+#define __MyComp_HPP__
 
 #include "mixr/base/Component.hpp"
 

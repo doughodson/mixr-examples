@@ -1,6 +1,6 @@
 
-#ifndef __AdiDisplay_H__
-#define __AdiDisplay_H__
+#ifndef __AdiDisplay_HPP__
+#define __AdiDisplay_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

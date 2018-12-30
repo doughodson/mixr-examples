@@ -1,6 +1,6 @@
 
-#ifndef __DataRecordTest_H__
-#define __DataRecordTest_H__
+#ifndef __DataRecordTest_HPP__
+#define __DataRecordTest_HPP__
 
 #include "mixr/recorder/OutputHandler.hpp"
 

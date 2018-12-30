@@ -1,6 +1,6 @@
 
-#ifndef __RdrAlt_H__
-#define __RdrAlt_H__
+#ifndef __RdrAlt_HPP__
+#define __RdrAlt_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

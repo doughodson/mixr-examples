@@ -1,6 +1,6 @@
 
-#ifndef __events_H__
-#define __events_H__
+#ifndef __events_HPP__
+#define __events_HPP__
 
 #include "mixr/base/Component.hpp"
 

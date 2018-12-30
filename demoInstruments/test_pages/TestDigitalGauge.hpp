@@ -1,6 +1,6 @@
 
-#ifndef __TestDigitalGauge_H__
-#define __TestDigitalGauge_H__
+#ifndef __TestDigitalGauge_HPP__
+#define __TestDigitalGauge_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

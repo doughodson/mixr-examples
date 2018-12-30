@@ -1,6 +1,6 @@
 
-#ifndef __SpdLines_H__
-#define __SpdLines_H__
+#ifndef __SpdLines_HPP__
+#define __SpdLines_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

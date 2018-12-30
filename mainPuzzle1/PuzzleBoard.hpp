@@ -1,6 +1,6 @@
 
-#ifndef __PuzzleBoard_H__
-#define __PuzzleBoard_H__
+#ifndef __PuzzleBoard_HPP__
+#define __PuzzleBoard_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

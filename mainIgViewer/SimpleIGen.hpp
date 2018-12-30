@@ -1,6 +1,6 @@
 
-#ifndef __SimpleIGen_H__
-#define __SimpleIGen_H__
+#ifndef __SimpleIGen_HPP__
+#define __SimpleIGen_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

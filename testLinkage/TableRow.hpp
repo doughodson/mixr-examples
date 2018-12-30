@@ -1,6 +1,6 @@
 
-#ifndef __TableRow_H__
-#define __TableRow_H__
+#ifndef __TableRow_HPP__
+#define __TableRow_HPP__
 
 #include "mixr/graphics/readouts/AbstractReadout.hpp"
 

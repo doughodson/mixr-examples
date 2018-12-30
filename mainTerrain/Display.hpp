@@ -1,6 +1,6 @@
 
-#ifndef __Display_H__
-#define __Display_H__
+#ifndef __Display_HPP__
+#define __Display_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 #include "mixr/base/units/util/length_utils.hpp"

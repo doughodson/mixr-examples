@@ -1,6 +1,6 @@
 
-#ifndef __TestCompass_H__
-#define __TestCompass_H__
+#ifndef __TestCompass_HPP__
+#define __TestCompass_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

@@ -1,6 +1,6 @@
 
-#ifndef __MyObj_H__
-#define __MyObj_H__
+#ifndef __MyObj_HPP__
+#define __MyObj_HPP__
 
 #include "mixr/base/Object.hpp"
 

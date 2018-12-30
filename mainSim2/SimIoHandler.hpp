@@ -1,6 +1,6 @@
 
-#ifndef __SimIoHandler_H__
-#define __SimIoHandler_H__
+#ifndef __SimIoHandler_HPP__
+#define __SimIoHandler_HPP__
 
 #include "mixr/linkage/IoHandler.hpp"
 

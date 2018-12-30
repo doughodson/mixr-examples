@@ -1,6 +1,6 @@
 
-#ifndef __MapDisplay_H__
-#define __MapDisplay_H__
+#ifndef __MapDisplay_HPP__
+#define __MapDisplay_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

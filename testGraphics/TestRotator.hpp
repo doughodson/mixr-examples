@@ -1,6 +1,6 @@
 
-#ifndef __TestRotator_H__
-#define __TestRotator_H__
+#ifndef __TestRotator_HPP__
+#define __TestRotator_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

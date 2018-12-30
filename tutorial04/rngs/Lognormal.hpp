@@ -1,6 +1,6 @@
 
-#ifndef __Lognormal_H__
-#define __Lognormal_H__
+#ifndef __Lognormal_HPP__
+#define __Lognormal_HPP__
 
 #include "AbstractRng.hpp"
 

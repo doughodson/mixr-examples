@@ -1,6 +1,6 @@
 
-#ifndef __CrsPntr_H__
-#define __CrsPntr_H__
+#ifndef __CrsPntr_HPP__
+#define __CrsPntr_HPP__
 
 #include "mixr/graphics/Rotators.hpp"
 

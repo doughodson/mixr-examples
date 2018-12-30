@@ -1,6 +1,6 @@
 
-#ifndef __Derived_H__
-#define __Derived_H__
+#ifndef __Derived_HPP__
+#define __Derived_HPP__
 
 #include "Base.hpp"
 

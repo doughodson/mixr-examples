@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xpanel_DspRadar_H__
-#define __mixr_xpanel_DspRadar_H__
+#ifndef __mixr_xpanel_DspRadar_HPP__
+#define __mixr_xpanel_DspRadar_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 #include <array>

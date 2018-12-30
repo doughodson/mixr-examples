@@ -1,6 +1,6 @@
 
-#ifndef __DspRadar_H__
-#define __DspRadar_H__
+#ifndef __DspRadar_HPP__
+#define __DspRadar_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 #include <array>

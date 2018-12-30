@@ -1,6 +1,6 @@
 
-#ifndef __NavRadio_H__
-#define __NavRadio_H__
+#ifndef __NavRadio_HPP__
+#define __NavRadio_HPP__
 
 #include "mixr/models/system/Radio.hpp"
 

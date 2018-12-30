@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xrecorder_DataRecorder_H__
-#define __mixr_xrecorder_DataRecorder_H__
+#ifndef __mixr_xrecorder_DataRecorder_HPP__
+#define __mixr_xrecorder_DataRecorder_HPP__
 
 #include "mixr/recorder/DataRecorder.hpp"
 

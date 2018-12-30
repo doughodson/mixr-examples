@@ -12,8 +12,8 @@
 //          PlaneBehaviorBase -> PlaneBarrelRoll
 //          PlaneBehaviorBase -> PlaneLoop
 //------------------------------------------------------------------------------
-#ifndef __mixr_xbehaviors_PlaneBehaviors_H__
-#define __mixr_xbehaviors_PlaneBehaviors_H__
+#ifndef __mixr_xbehaviors_PlaneBehaviors_HPP__
+#define __mixr_xbehaviors_PlaneBehaviors_HPP__
 
 #include "mixr/base/ubf/AbstractBehavior.hpp"
 

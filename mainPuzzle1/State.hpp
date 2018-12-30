@@ -1,6 +1,6 @@
 
-#ifndef __State_H__
-#define __State_H__
+#ifndef __State_HPP__
+#define __State_HPP__
 
 #include "mixr/base/Component.hpp"
 

@@ -1,6 +1,6 @@
 
-#ifndef __TestButtons_H__
-#define __TestButtons_H__
+#ifndef __TestButtons_HPP__
+#define __TestButtons_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

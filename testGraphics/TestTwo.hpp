@@ -1,6 +1,6 @@
 
-#ifndef __TestTwo_H__
-#define __TestTwo_H__
+#ifndef __TestTwo_HPP__
+#define __TestTwo_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

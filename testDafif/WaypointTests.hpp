@@ -1,6 +1,6 @@
 
-#ifndef __WaypointTests_H__
-#define __WaypointTests_H__
+#ifndef __WaypointTests_HPP__
+#define __WaypointTests_HPP__
 
 #include <string>
 

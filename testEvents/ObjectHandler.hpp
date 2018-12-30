@@ -1,6 +1,6 @@
 
-#ifndef __ObjectHandler_H__
-#define __ObjectHandler_H__
+#ifndef __ObjectHandler_HPP__
+#define __ObjectHandler_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

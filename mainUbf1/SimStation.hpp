@@ -1,6 +1,6 @@
 
-#ifndef __SimStation_H__
-#define __SimStation_H__
+#ifndef __SimStation_HPP__
+#define __SimStation_HPP__
 
 //#include "agent/AgentStation.h"
 #include "mixr/simulation/Station.hpp"

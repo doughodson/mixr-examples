@@ -1,6 +1,6 @@
 
-#ifndef __TestObject_H__
-#define __TestObject_H__
+#ifndef __TestObject_HPP__
+#define __TestObject_HPP__
 
 #include "mixr/base/Object.hpp"
 #include <string>

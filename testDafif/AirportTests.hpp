@@ -1,6 +1,6 @@
 
-#ifndef __AirportTests_H__
-#define __AirportTests_H__
+#ifndef __AirportTests_HPP__
+#define __AirportTests_HPP__
 
 #include <string>
 

@@ -1,6 +1,6 @@
 
-#ifndef __PrintMyData_H__
-#define __PrintMyData_H__
+#ifndef __PrintMyData_HPP__
+#define __PrintMyData_HPP__
 
 #include "mixr/recorder/PrintHandler.hpp"
 

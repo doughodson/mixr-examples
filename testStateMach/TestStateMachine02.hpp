@@ -1,6 +1,6 @@
 
-#ifndef __TestStateMachine02_H__
-#define __TestStateMachine02_H__
+#ifndef __TestStateMachine02_HPP__
+#define __TestStateMachine02_HPP__
 
 #include "mixr/base/StateMachine.hpp"
 

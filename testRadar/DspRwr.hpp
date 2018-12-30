@@ -1,6 +1,6 @@
 
-#ifndef __DspRwr_H__
-#define __DspRwr_H__
+#ifndef __DspRwr_HPP__
+#define __DspRwr_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

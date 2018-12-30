@@ -6,8 +6,8 @@
 //    2) This file defines channels for both the C++ code and the MIXR
 //       input files, so use only C pre-processor directives only.
 //------------------------------------------------------------------------------
-#ifndef __channel_map_H__
-#define __channel_map_H__
+#ifndef __channel_map_HPP__
+#define __channel_map_HPP__
 
 // analog input channels
 #define ROLL_AI            1

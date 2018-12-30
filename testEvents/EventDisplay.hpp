@@ -1,6 +1,6 @@
 
-#ifndef __EventDisplay_H__
-#define __EventDisplay_H__
+#ifndef __EventDisplay_HPP__
+#define __EventDisplay_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 #include <array>

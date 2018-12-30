@@ -1,6 +1,6 @@
 
-#ifndef __TestIoHandler_H___
-#define __TestIoHandler_H___
+#ifndef __TestIoHandler_HPP___
+#define __TestIoHandler_HPP___
 
 #include "mixr/linkage/IoHandler.hpp"
 

@@ -1,6 +1,6 @@
 
-#ifndef __ServerTcpMultiple_H__
-#define __ServerTcpMultiple_H__
+#ifndef __ServerTcpMultiple_HPP__
+#define __ServerTcpMultiple_HPP__
 
 #include "Endpoint.hpp"
 

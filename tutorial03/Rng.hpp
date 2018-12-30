@@ -1,6 +1,6 @@
 
-#ifndef __Rng_H__
-#define __Rng_H__
+#ifndef __Rng_HPP__
+#define __Rng_HPP__
 
 #include "mixr/base/Object.hpp"
 

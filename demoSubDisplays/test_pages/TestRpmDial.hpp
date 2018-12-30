@@ -1,6 +1,6 @@
 
-#ifndef __TestRpmDial_H__
-#define __TestRpmDial_H__
+#ifndef __TestRpmDial_HPP__
+#define __TestRpmDial_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

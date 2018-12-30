@@ -1,6 +1,6 @@
 
-#ifndef __Pfd_H__
-#define __Pfd_H__
+#ifndef __Pfd_HPP__
+#define __Pfd_HPP__
 
 #include "mixr/graphics/Page.hpp"
 #include "mixr/base/units/util/angle_utils.hpp"

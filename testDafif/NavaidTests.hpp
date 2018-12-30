@@ -1,6 +1,6 @@
 
-#ifndef __NavaidTests_H__
-#define __NavaidTests_H__
+#ifndef __NavaidTests_HPP__
+#define __NavaidTests_HPP__
 
 #include <string>
 

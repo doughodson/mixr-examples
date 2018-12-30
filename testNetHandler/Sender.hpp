@@ -1,6 +1,6 @@
 
-#ifndef __Sender_H__
-#define __Sender_H__
+#ifndef __Sender_HPP__
+#define __Sender_HPP__
 
 #include "Endpoint.hpp"
 

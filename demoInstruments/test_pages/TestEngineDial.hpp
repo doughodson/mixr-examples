@@ -1,6 +1,6 @@
 
-#ifndef __TestEngineDial_H__
-#define __TestEngineDial_H__
+#ifndef __TestEngineDial_HPP__
+#define __TestEngineDial_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

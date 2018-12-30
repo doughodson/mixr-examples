@@ -1,6 +1,6 @@
 
-#ifndef __Station_H__
-#define __Station_H__
+#ifndef __Station_HPP__
+#define __Station_HPP__
 
 #include "mixr/simulation/Station.hpp"
 

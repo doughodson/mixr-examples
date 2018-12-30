@@ -1,6 +1,6 @@
 
-#ifndef __MyPager_H__
-#define __MyPager_H__
+#ifndef __MyPager_HPP__
+#define __MyPager_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

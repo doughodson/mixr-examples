@@ -1,6 +1,6 @@
 
-#ifndef __TestComputer_H__
-#define __TestComputer_H__
+#ifndef __TestComputer_HPP__
+#define __TestComputer_HPP__
 
 #include "mixr/models/system/OnboardComputer.hpp"
 

@@ -1,6 +1,6 @@
 
-#ifndef __InstrumentPanel_H__
-#define __InstrumentPanel_H__
+#ifndef __InstrumentPanel_HPP__
+#define __InstrumentPanel_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

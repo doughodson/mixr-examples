@@ -1,5 +1,5 @@
-#ifndef __Worm_H__
-#define __Worm_H__
+#ifndef __Worm_HPP__
+#define __Worm_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 #include <array>

@@ -1,6 +1,6 @@
 
-#ifndef __TestAdi2_H__
-#define __TestAdi2_H__
+#ifndef __TestAdi2_HPP__
+#define __TestAdi2_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

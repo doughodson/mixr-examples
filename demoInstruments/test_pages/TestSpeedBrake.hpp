@@ -1,6 +1,6 @@
 
-#ifndef __TestSpeedBrake_H__
-#define __TestSpeedBrake_H__
+#ifndef __TestSpeedBrake_HPP__
+#define __TestSpeedBrake_HPP__
 
 #include "mixr/graphics/Page.hpp"
 

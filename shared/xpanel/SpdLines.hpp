@@ -1,6 +1,6 @@
 
-#ifndef __mixr_xpanel_SpdLines_H__
-#define __mixr_xpanel_SpdLines_H__
+#ifndef __mixr_xpanel_SpdLines_HPP__
+#define __mixr_xpanel_SpdLines_HPP__
 
 #include "mixr/graphics/Graphic.hpp"
 

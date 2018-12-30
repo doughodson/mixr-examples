@@ -1,6 +1,6 @@
 
-#ifndef __WorldModel_H__
-#define __WOrldModel_H__
+#ifndef __WorldModel_HPP__
+#define __WOrldModel_HPP__
 
 #include "mixr/models/WorldModel.hpp"
 

@@ -1,6 +1,6 @@
 
-#ifndef __RealBeamRadar_H__
-#define __RealBeamRadar_H__
+#ifndef __RealBeamRadar_HPP__
+#define __RealBeamRadar_HPP__
 
 #include "mixr/models/system/Radar.hpp"
 

@@ -1,7 +1,7 @@
 
 include ../makedefs
 
-PGM = testUnits
+PGM = tests
 
 OBJS = main.o test_readout_utils.o
 

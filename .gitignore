@@ -121,8 +121,8 @@ testStateMach/testStateMach
 testTables/testTables
 testTemplates/testTemplates
 testTimer/testTimer
-testUnits/testUnits
 testVmap/testVmap
+tests/tests
 tutorial01/tutorial01
 tutorial02/tutorial02
 tutorial03/tutorial03

@@ -428,16 +428,16 @@ project "testTimer"
       links {"mixr_base_d"}
       links {LibWindows}
 
--- testUnits: general test of several base classes, including unit conversions
-project "testUnits"
-   targetname "testUnits"
-   targetdir "../../testUnits"
-   debugdir "../../testUnits"
+-- tests: general test of several base and graphics functionalities
+project "tests"
+   targetname "tests"
+   targetdir "../../tests"
+   debugdir "../../tests"
    files {
-      "../../testUnits/**.h*",
-      "../../testUnits/**.cpp",
-      "../../testUnits/**.epp",
-      "../../testUnits/**.edl"
+      "../../tests/**.h*",
+      "../../tests/**.cpp",
+      "../../tests/**.epp",
+      "../../tests/**.edl"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }

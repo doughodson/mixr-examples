@@ -27,8 +27,8 @@ readouts:
         ( AsciiText position: [ 7 1 ] color: white text: "TimeReadout" )
         ( TimeReadout position: [ 7 20 ] color: white format: "HH:MM:SS.S" )
 
-//        ( AsciiText position: [ 8 1 ] color: white text: "DirectionReadout" )
-//        ( DirectionReadout position: [ 8 20 ] color: white format: "0DD@" )
+        ( AsciiText position: [ 8 1 ] color: white text: "DirectionReadout" )
+        ( DirectionReadout position: [ 8 20 ] color: white format: "0DD@" )
 
         ( AsciiText position: [ 9 1 ] color: white text: "LatitudeReadout" )
         ( LatitudeReadout position: [ 9 20 ] color: white format: "+0D@MM" )

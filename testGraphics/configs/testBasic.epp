@@ -1,8 +1,8 @@
 // ---
-// Basic description of test.epp and test2.epp displays
+// configuration of test.epp and test2.epp displays
 // ---
 
-// Textures
+// textures
 textures: {
   t1:     ( BitmapTexture width: 128 height: 128 path: MIXR_DATA_TEXTURES_PATH  file: "Mesh.bmp" )
   t2:     ( BitmapTexture width: 128 height: 128 path: MIXR_DATA_TEXTURES_PATH  file: "Coffee_Bean.bmp" )
@@ -18,17 +18,17 @@ textures: {
   hsi256: ( BitmapTexture width: 256 height: 256 path: MIXR_DATA_TEXTURES_PATH  file: "Hsi_256_256.bmp" )
 }
 
-// Materials
+// materials
 materials: {
-  m1: ( Material diffuseColor: { 0 0.5 1 } emissiveColor: { 0.25 0 0 } specularColor: { 1 1 1 } shininess: 128 )
-  m2: ( Material diffuseColor: { 1 0.5 0.2 } specularColor: { 0.4 0.3 0.4 } shininess: 50 )
-  m3: ( Material diffuseColor: { 0.2 0.6 0.1 } specularColor: { 0.2 0.4 0.4 } shininess: 50 )
-  m4: ( Material diffuseColor: { 1 1 1 } specularColor: { 1 1 1 } emissiveColor: { 0.1 0 0 } shininess: 50 )
-  m5: ( Material ambientColor: { 0 0 0 } diffuseColor: { 0.7 0.29 0.8 } specularColor: { 0.5 0.5 0.5 } shininess: 128 )
-  m6: ( Material diffuseColor: { 0.2 0.2 0.2 } specularColor: { 0.5 0.5 0.5 } shininess: 50 )
-  m7: ( Material diffuseColor: { 0.1 0.5 1 } specularColor: { 0.8 0.8 0.8 } shininess: 50 )
-  m8: ( Material diffuseColor: { 0.8 0.9 0.3 } specularColor: { 1 1 1 } shininess: 128 )
-  m9: ( Material diffuseColor: { 1 0.5 1 } emissiveColor: { 0 0.75 0 } specularColor: { 0.5 1 1 } shininess: 25 )
+  m1: ( Material diffuseColor: { 0.0 0.5 1.0 } emissiveColor: { 0.25 0.00 0.00 } specularColor: { 1.0 1.0 1.0 } shininess: 128 )
+  m2: ( Material diffuseColor: { 1.0 0.5 0.2 } specularColor: { 0.40 0.30 0.40 } shininess: 50 )
+  m3: ( Material diffuseColor: { 0.2 0.6 0.1 } specularColor: { 0.20 0.40 0.40 } shininess: 50 )
+  m4: ( Material diffuseColor: { 1.0 1.0 1.0 } specularColor: { 1.00 1.00 1.00 } emissiveColor: { 0.1 0.0 0.0 } shininess: 50 )
+  m5: ( Material ambientColor: { 0.0 0.0 0.0 } diffuseColor:  { 0.70 0.29 0.80 } specularColor: { 0.5 0.5 0.5 } shininess: 128 )
+  m6: ( Material diffuseColor: { 0.2 0.2 0.2 } specularColor: { 0.50 0.50 0.50 } shininess: 50 )
+  m7: ( Material diffuseColor: { 0.1 0.5 1.0 } specularColor: { 0.80 0.80 0.80 } shininess: 50 )
+  m8: ( Material diffuseColor: { 0.8 0.9 0.3 } specularColor: { 1.00 1.00 1.00 } shininess: 128 )
+  m9: ( Material diffuseColor: { 1.0 0.5 1.0 } emissiveColor: { 0.00 0.75 0.00 } specularColor: { 0.5 1.0 1.0 } shininess: 25 )
 }
 
 // This is the default font table, and all fields will use this font if their
@@ -61,7 +61,6 @@ fonts: {
 leftBracketChar:  "*"
 rightBracketChar: "*"
 reverseVideoBrackets: false
-
 
 // ---
 // Add a background box to the main display

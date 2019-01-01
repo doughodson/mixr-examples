@@ -18,7 +18,6 @@
 
 #include <GL/glut.h>
 
-#include "MfdPage.hpp"
 #include "TestOne.hpp"
 #include "TestTwo.hpp"
 #include "TdAzPtr.hpp"
@@ -54,9 +53,6 @@ mixr::base::Object* factory(const std::string& name)
    //
    if ( name == TestDisplay::getFactoryName() ) {
       obj = new TestDisplay;
-   }
-   else if ( name == MfdPage::getFactoryName() ) {
-      obj = new MfdPage;
    }
 
    // TestX

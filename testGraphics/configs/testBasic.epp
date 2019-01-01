@@ -49,9 +49,9 @@ fonts: {
   bigfont:
   ( FTGLPolygonFonts
       fontPosition: [ -10.5 10.5 ]
-      fontWidth: 2.0          // Font width scaling
-      fontHeight: 2.0         // Font height scaling
-      characterSpacing: 1.2   // This font is 2:1 (height:width) or (line spacing:char spacing)
+      fontWidth: 2.0          // font width scaling
+      fontHeight: 2.0         // font height scaling
+      characterSpacing: 1.2   // font is 2:1 (height:width) or (line spacing:char spacing)
       lineSpacing: 2
       path: MIXR_DATA_FONT_PATH
       file: "arialn.ttf"

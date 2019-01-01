@@ -3,7 +3,7 @@
 // ---
 
 hsvcolors:
-( MfdPage
+( Page
     pagingEvent: {
         n: hlscolors
         p: sample

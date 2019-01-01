@@ -1,15 +1,15 @@
 // ---
 // Example page ZZ
 // ---
-        
+
 zz:
-( MfdPage
+( Page
     pagingEvent: {
         n: worms
         p: yy
         btest: sample
     }
-    
+
     components: {
         ( Polygon
             selectName: 501

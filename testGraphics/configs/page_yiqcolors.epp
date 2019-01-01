@@ -3,7 +3,7 @@
 // ---
 
 yiqcolors:
-( MfdPage
+( Page
     pagingEvent: {
         n: materials
         p: cmycolors

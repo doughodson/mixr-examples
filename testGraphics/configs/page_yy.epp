@@ -3,13 +3,13 @@
 // ---
 
 yy:
-( MfdPage
+( Page
     pagingEvent: {
         n: zz
         p: xx
         btest: worms
     }
-    
+
     components: {
         ( AsciiText  font: bigfont position: [  1   1 ]   text: "ABCDEFG"  reversed: true   selectName: 1401)
         ( AsciiText  font: bigfont position: [  2   2 ]   text: "ABCDEFG"  color: white  selectName: 1402 brackets: true )

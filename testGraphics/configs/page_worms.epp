@@ -1,6 +1,6 @@
 
 worms:
-( MfdPage
+( Page
     pagingEvent: {
         n: readouts
         p: zz

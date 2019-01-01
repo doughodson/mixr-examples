@@ -3,7 +3,7 @@
 // ---
 
 readouts:
-( MfdPage
+( Page
     pagingEvent: {
         n: sample
         p: worms

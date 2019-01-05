@@ -108,7 +108,7 @@ Test Applications
 
 * testTimer -- tests the functionality of the Timer class.
 
-* tests  -- tests base and graphics library functionalities
+* test  -- tests base and graphics library functionalities
 
 Tutorial applications:
 --------------------------------------------------------------------------------------------

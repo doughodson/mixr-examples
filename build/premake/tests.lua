@@ -428,16 +428,16 @@ project "testTimer"
       links {"mixr_base_d"}
       links {LibWindows}
 
--- tests: general test of several base and graphics functionalities
-project "tests"
-   targetname "tests"
-   targetdir "../../tests"
-   debugdir "../../tests"
+-- test: general test of several base and graphics functionalities
+project "test"
+   targetname "test"
+   targetdir "../../test"
+   debugdir "../../test"
    files {
-      "../../tests/**.h*",
-      "../../tests/**.cpp",
-      "../../tests/**.epp",
-      "../../tests/**.edl"
+      "../../test/**.h*",
+      "../../test/**.cpp",
+      "../../test/**.epp",
+      "../../test/**.edl"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }

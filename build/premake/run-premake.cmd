@@ -5,6 +5,10 @@ rmdir /S /Q ..\gmake
 rmdir /S /Q ..\vs2017
 rmdir /S /Q ..\obj
 rem
+rem delete old shared example libraries
+rem
+rem rmdir /S /Q ..\..\shared\lib
+rem
 rem delete old compiled libraries
 rem
 del ..\..\lib\*.lib

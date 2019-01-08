@@ -2,8 +2,6 @@
 -- If premake command is not supplied an action (target compiler), exit!
 --
 -- Target of interest:
---     vs2013     (Visual Studio 2013)
---     vs2015     (Visual Studio 2015)
 --     vs2017     (Visual Studio 2017)
 --
 
@@ -25,8 +23,8 @@ MIXR_IncPath         = MIXR_ROOT.."/include"
 MIXR_LibPath         = MIXR_ROOT.."/lib/"
 MIXR_3rdPartyIncPath = MIXR_3RD_PARTY_ROOT.."/include"
 MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
-MIXR_ExamplesIncPath = "../../shared"
-MIXR_ExamplesLibPath = "../../lib/"
+MIXR_ExamplesIncPath = "../../shared/src"
+MIXR_ExamplesLibPath = "../../shared/lib"
 print ("MIXR Paths:")
 print ("  Include   : "..MIXR_IncPath)
 print ("  Libraries : "..MIXR_LibPath)
@@ -119,8 +117,8 @@ workspace "examples"
       targetsuffix "_d"
       defines { "WIN32", "_DEBUG" }
 
-   -- libraries
-   dofile "libs.lua"
+   -- libraries shared between examples
+   dofile "shared-libs.lua"
 
    -- demos
    dofile "demos.lua"

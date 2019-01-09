@@ -101,8 +101,8 @@ project "mainLaero"
       "../../mainLaero/**.epp",
       "../../mainLaero/**.edl"
    }
-   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
@@ -204,8 +204,8 @@ project "mainSim1"
       "../../mainSim1/**.epp",
       "../../mainSim1/**.edl"
    }
-   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
@@ -237,8 +237,8 @@ project "mainSim2"
       "../../mainSim2/**.epp",
       "../../mainSim2/**.edl"
    }
-   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }
@@ -270,8 +270,8 @@ project "mainSim3"
       "../../mainSim3/**.epp",
       "../../mainSim3/**.edl"
    }
-   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }

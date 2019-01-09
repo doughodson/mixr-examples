@@ -12,9 +12,9 @@
 //          PlaneBehaviorBase -> PlaneBarrelRoll
 //          PlaneBehaviorBase -> PlaneLoop
 //------------------------------------------------------------------------------
-#include "PlaneBehaviors.hpp"
-#include "PlaneAction.hpp"
-#include "PlaneState.hpp"
+#include "shared/xbehaviors/PlaneBehaviors.hpp"
+#include "shared/xbehaviors/PlaneAction.hpp"
+#include "shared/xbehaviors/PlaneState.hpp"
 
 #include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/units/lengths.hpp"

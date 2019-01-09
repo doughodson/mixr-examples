@@ -1,7 +1,9 @@
 
-#include "DataRecorder.hpp"
-#include "protobuf/DataRecord.pb.h"
-#include "dataRecorderTokens.hpp"
+#include "shared/xrecorder/DataRecorder.hpp"
+
+#include "shared/xrecorder/protobuf/DataRecord.pb.h"
+#include "shared/xrecorder/dataRecorderTokens.hpp"
+
 #include "mixr/base/util/math_utils.hpp"
 
 namespace mixr {

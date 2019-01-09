@@ -2,12 +2,12 @@
 #include "TestDisplay.hpp"
 #include "SimStation.hpp"
 
-#include "xpanel/DspRadar.hpp"
-#include "xpanel/DspRwr.hpp"
-#include "xpanel/Pfd.hpp"
+#include "shared/xpanel/DspRadar.hpp"
+#include "shared/xpanel/DspRwr.hpp"
+#include "shared/xpanel/Pfd.hpp"
 
-#include "xrecorder/DataRecorder.hpp"
-#include "xrecorder/dataRecorderTokens.hpp"
+#include "shared/xrecorder/DataRecorder.hpp"
+#include "shared/xrecorder/dataRecorderTokens.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/weapon/Missile.hpp"

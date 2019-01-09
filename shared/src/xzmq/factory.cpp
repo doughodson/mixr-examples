@@ -1,10 +1,10 @@
 
-#include "factory.hpp"
+#include "shared/xzmq/factory.hpp"
 
 #include "mixr/base/Object.hpp"
 
-#include "ZeroMQContext.hpp"
-#include "ZeroMQHandler.hpp"
+#include "shared/xzmq/ZeroMQContext.hpp"
+#include "shared/xzmq/ZeroMQHandler.hpp"
 
 #include <string>
 

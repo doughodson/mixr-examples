@@ -8,7 +8,7 @@
 #include "mixr/base/util/system_utils.hpp"
 
 // factories
-#include "../shared/xzmq/factory.hpp"
+#include "shared/xzmq/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/instruments/factory.hpp"

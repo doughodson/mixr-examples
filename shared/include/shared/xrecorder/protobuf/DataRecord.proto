@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// Example Protocol file -- extends the original DataRecorder and messages
+//
+// Notes:
+//
+//    1) The DataRecord.pb.h and DataRecord.pb.cc files were
+//       generated with 'protoc' version 2.6.1
+//
+//    2) Compile with the 'protoc' compiler using the following commands
+//
+//       For Windows ...
+//          protoc -I%MIXR_EXAMPLES_ROOT%\shared -I%MIXR_ROOT%\include --cpp_out=%MIXR_EXAMPLES_ROOT%\shared %MIXR_EXAMPLES_ROOT%\shared\xrecorder\protobuf\DataRecord.proto
+//
+//       For Linux ...
+//          protoc -I$MIXR_EXAMPLES_ROOT/shared -I$MIXR_ROOT/include --cpp_out=$MIXR_EXAMPLES_ROOT/shared $MIXR_EXAMPLES_ROOT/shared/xrecorder/protobuf/DataRecord.proto
+//
+// -----------------------------------------------------------------------------
+
+import "mixr/recorder/protobuf/DataRecord.proto";
+
+package mixr.xrecorder.pb;
+
+// =============================================================================
+// Extend the common data record
+// =============================================================================
+
+extend mixr.recorder.pb.DataRecord {
+   optional MyDataMsg my_data_msg = 1000;
+}
+
+
+// =============================================================================
+// Extend the standard data messages
+// =============================================================================
+
+// Extend the Marker message
+extend mixr.recorder.pb.MarkerMsg {
+   optional uint32 foo = 100;       // my own marker value
+}
+
+// =============================================================================
+// My data messages
+// =============================================================================
+
+message MyDataMsg {
+   required uint32 fee = 1;
+   required uint32 fi  = 2;
+   required uint32 fo  = 3;
+}
+

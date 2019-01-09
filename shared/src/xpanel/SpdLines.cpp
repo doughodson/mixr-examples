@@ -1,5 +1,6 @@
 
-#include "SpdLines.hpp"
+#include "shared/xpanel/SpdLines.hpp"
+
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Number.hpp"
 #include <iostream>

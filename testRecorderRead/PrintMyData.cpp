@@ -1,8 +1,9 @@
 
 #include "PrintMyData.hpp"
 
-#include "xrecorder/protobuf/DataRecord.pb.h"
-#include "xrecorder/dataRecorderTokens.hpp"
+#include "shared/xrecorder/protobuf/DataRecord.pb.h"
+#include "shared/xrecorder/dataRecorderTokens.hpp"
+
 #include "mixr/recorder/DataRecordHandle.hpp"
 
 using namespace mixr;

@@ -1,5 +1,5 @@
 
-#include "DspRwr.hpp"
+#include "shared/xpanel/DspRwr.hpp"
 
 #include "mixr/models/system/Rwr.hpp"
 

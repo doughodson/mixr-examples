@@ -1,5 +1,6 @@
 
-#include "TdElevPtr.hpp"
+#include "shared/xpanel/TdElevPtr.hpp"
+
 #include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/util/angle_utils.hpp"
 

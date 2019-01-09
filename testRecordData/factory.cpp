@@ -7,8 +7,8 @@
 #include "TestIoHandler.hpp"
 #include "SimStation.hpp"
 
-#include "xrecorder/factory.hpp"
-#include "xpanel/factory.hpp"
+#include "shared/xrecorder/factory.hpp"
+#include "shared/xpanel/factory.hpp"
 
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"

@@ -21,10 +21,13 @@ MIXR_3RD_PARTY_ROOT = "../../../mixr-3rdparty"
 --
 MIXR_IncPath         = MIXR_ROOT.."/include"
 MIXR_LibPath         = MIXR_ROOT.."/lib/"
+
 MIXR_3rdPartyIncPath = MIXR_3RD_PARTY_ROOT.."/include"
 MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
-MIXR_ExamplesIncPath = "../../shared/src"
+
+MIXR_ExamplesIncPath = "../../shared/include"
 MIXR_ExamplesLibPath = "../../shared/lib"
+
 print ("MIXR Paths:")
 print ("  Include   : "..MIXR_IncPath)
 print ("  Libraries : "..MIXR_LibPath)

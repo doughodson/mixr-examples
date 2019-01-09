@@ -12,7 +12,7 @@
 
 // factories
 #include "mixr/base/factory.hpp"
-#include "../shared/xzmq/factory.hpp"
+#include "shared/xzmq/factory.hpp"
 
 #include <string>
 #include <cstdlib>

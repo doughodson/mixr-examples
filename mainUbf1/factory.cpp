@@ -7,8 +7,8 @@
 #include "SimStation.hpp"
 
 // factories
-#include "xbehaviors/factory.hpp"
-#include "xpanel/factory.hpp"
+#include "shared/xbehaviors/factory.hpp"
+#include "shared/xpanel/factory.hpp"
 
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"

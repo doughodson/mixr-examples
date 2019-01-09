@@ -1,11 +1,11 @@
 
-#include "factory.hpp"
+#include "shared/xbehaviors/factory.hpp"
 
 #include "mixr/base/Object.hpp"
 
-#include "PlaneState.hpp"
-#include "PlaneBehaviors.hpp"
-#include "PriorityArbiter.hpp"
+#include "shared/xbehaviors/PlaneState.hpp"
+#include "shared/xbehaviors/PlaneBehaviors.hpp"
+#include "shared/xbehaviors/PriorityArbiter.hpp"
 
 #include <string>
 

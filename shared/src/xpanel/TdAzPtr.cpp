@@ -1,12 +1,13 @@
 
-#include "TdAzPtr.hpp"
+#include "shared/xpanel/TdAzPtr.hpp"
+
 #include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/util/angle_utils.hpp"
 
 namespace mixr {
 namespace xpanel {
 
-IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdAzPtr,"TdAzPtr")
+IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TdAzPtr, "TdAzPtr")
 EMPTY_DELETEDATA(TdAzPtr)
 
 BEGIN_EVENT_HANDLER(TdAzPtr)

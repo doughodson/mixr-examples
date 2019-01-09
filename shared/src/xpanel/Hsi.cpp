@@ -1,5 +1,5 @@
 
-#include "Hsi.hpp"
+#include "shared/xpanel/Hsi.hpp"
 
 #include "mixr/base/numeric/Number.hpp"
 

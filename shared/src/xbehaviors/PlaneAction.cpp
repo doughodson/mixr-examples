@@ -1,5 +1,5 @@
 
-#include "PlaneAction.hpp"
+#include "shared/xbehaviors/PlaneAction.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/system/StoresMgr.hpp"

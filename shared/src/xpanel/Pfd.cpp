@@ -1,5 +1,6 @@
 
-#include "Pfd.hpp"
+#include "shared/xpanel/Pfd.hpp"
+
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/units/util/length_utils.hpp"
 

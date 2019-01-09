@@ -1,15 +1,15 @@
 
-#include "factory.hpp"
+#include "shared/xpanel/factory.hpp"
 
 #include "mixr/base/Object.hpp"
 
-#include "DspRadar.hpp"
-#include "DspRwr.hpp"
-#include "Hsi.hpp"
-#include "TdAzPtr.hpp"
-#include "TdElevPtr.hpp"
-#include "Pfd.hpp"
-#include "SpdLines.hpp"
+#include "shared/xpanel/DspRadar.hpp"
+#include "shared/xpanel/DspRwr.hpp"
+#include "shared/xpanel/Hsi.hpp"
+#include "shared/xpanel/TdAzPtr.hpp"
+#include "shared/xpanel/TdElevPtr.hpp"
+#include "shared/xpanel/Pfd.hpp"
+#include "shared/xpanel/SpdLines.hpp"
 #include <string>
 
 namespace mixr {

@@ -2,7 +2,7 @@
 // source: xrecorder/protobuf/DataRecord.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include "shared/xrecorder/protobuf/DataRecord.pb.h"
+#include "xrecorder/protobuf/DataRecord.pb.h"
 
 #include <algorithm>
 

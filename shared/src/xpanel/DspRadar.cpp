@@ -1,5 +1,5 @@
 
-#include "DspRadar.hpp"
+#include "shared/xpanel/DspRadar.hpp"
 
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/system/Radar.hpp"

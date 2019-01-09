@@ -210,8 +210,8 @@ project "testNetHandler"
       "../../testNetHandler/**.epp",
       "../../testNetHandler/**.edl"
    }
-   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
+   includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    -- zeromq nethandlers
    defines { "ZMQ_STATIC" }
    links { "libxzmq" }

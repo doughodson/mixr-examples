@@ -1,9 +1,9 @@
 
-#include "PriorityArbiter.hpp"
+#include "shared/xbehaviors/PriorityArbiter.hpp"
 
 #include "mixr/base/List.hpp"
 
-#include "PlaneAction.hpp"
+#include "shared/xbehaviors/PlaneAction.hpp"
 #include <iostream>
 
 namespace mixr {

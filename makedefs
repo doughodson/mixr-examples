@@ -6,10 +6,16 @@
 include ${MIXR_ROOT}/src/makedefs
 
 # ---
-# Add location of MIXR libs and example libraries
+# MIXR examples library path
+# ---
+MIXR_SHARED_INC_PATH=$(MIXR_EXAMPLES_ROOT)/shared/include
+MIXR_SHARED_LIB_PATH=$(MIXR_EXAMPLES_ROOT)/shared/lib
+
+# ---
+# Add location of MIXR libs and shared example libraries
 # ---
 LDFLAGS += -L$(MIXR_ROOT)/lib
-LDFLAGS += -L$(MIXR_EXAMPLES_LIB_PATH)
+LDFLAGS += -L$(MIXR_SHARED_LIB_PATH)
 
 # ---
 # Add location of 3rd party libs
@@ -23,7 +29,7 @@ endif
 # ---
 # CPP flags
 # ---
-CPPFLAGS += -I$(MIXR_EXAMPLES_ROOT)/shared
+CPPFLAGS += -I$(MIXR_SHARED_INC_PATH)
 #CPPFLAGS += -pedantic
 
 # ---
@@ -31,7 +37,7 @@ CPPFLAGS += -I$(MIXR_EXAMPLES_ROOT)/shared
 # ---
 EPPFLAGS = \
 	-I$(MIXR_DATA_ROOT) \
-	-I$(MIXR_ROOT)/../mixr-examples/shared \
+	-I$(MIXR_ROOT)/../mixr-examples/shared/include/shared \
 	-I$(MIXR_ROOT)/include \
 	-DMIXR_DATA_PATH=\"$(MIXR_DATA_ROOT)/\" \
 	-DMIXR_DATA_FONT_PATH=\"$(MIXR_DATA_ROOT)/fonts/\" \

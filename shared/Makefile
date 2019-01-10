@@ -7,10 +7,10 @@
 # xpanel            : eXample instrument panel
 # xzmq              : eXample ZeroMQ-based network handlers
 #
-LIBRARIES  = xbehaviors
-LIBRARIES += xrecorder
-LIBRARIES += xpanel
-LIBRARIES += xzmq
+LIBRARIES  = src/xbehaviors
+LIBRARIES += src/xrecorder
+LIBRARIES += src/xpanel
+LIBRARIES += src/xzmq
 
 .PHONY: all clean $(LIBRARIES)
 

@@ -76,7 +76,7 @@ project "mainIgViewer"
       "../../mainIgViewer/**.edl"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
-   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_3rdPartyLibPath.."/osgPlugins-3.4.1" }
+   libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_3rdPartyLibPath.."/osgPlugins-3.6.3" }
    filter "configurations:Release"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
       links {"mixr_ighost_cigi", "mixr_ighost_pov", LibCigi}

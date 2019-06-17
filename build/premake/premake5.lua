@@ -23,7 +23,7 @@ MIXR_IncPath         = MIXR_ROOT.."/include"
 MIXR_LibPath         = MIXR_ROOT.."/lib/"
 
 MIXR_3rdPartyIncPath = MIXR_3RD_PARTY_ROOT.."/include"
-MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-32"
+MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-x32"
 
 MIXR_ExamplesIncPath = "../../shared/include"
 MIXR_ExamplesLibPath = "../../shared/lib"
@@ -67,18 +67,18 @@ LibGL         = "opengl32"
 LibWindows    = {"Ws2_32", "Winmm", "comctl32", "gdi32", "iphlpapi"}
 
 LibOsg        = {"osgdb_txp",
-                 "osg131-osg", "osg131-osgAnimation", "osg131-osgDB", "osg131-osgFX", "osg131-osgGA",
-                 "osg131-osgManipulator", "osg131-osgParticle", "osg131-osgPresentation",
-                 "osg131-osgShadow", "osg131-osgSim", "osg131-osgTerrain", "osg131-osgText",
-                 "osg131-osgUI", "osg131-osgUtil", "osg131-osgViewer", "osg131-osgVolume", "osg131-osgWidget",
-                 "ot20-OpenThreads"}
+                 "osg158-osg", "osg158-osgAnimation", "osg158-osgDB", "osg158-osgFX", "osg158-osgGA",
+                 "osg158-osgManipulator", "osg158-osgParticle", "osg158-osgPresentation",
+                 "osg158-osgShadow", "osg158-osgSim", "osg158-osgTerrain", "osg158-osgText",
+                 "osg158-osgUI", "osg158-osgUtil", "osg158-osgViewer", "osg158-osgVolume", "osg158-osgWidget",
+                 "ot21-OpenThreads"}
 
 LibOsg_d      = {"osgdb_txpd",
-                 "osg131-osgd", "osg131-osgAnimationd", "osg131-osgDBd", "osg131-osgFXd", "osg131-osgGAd",
-                 "osg131-osgManipulatord", "osg131-osgParticled", "osg131-osgPresentationd",
-                 "osg131-osgShadowd", "osg131-osgSimd", "osg131-osgTerraind", "osg131-osgTextd",
-                 "osg131-osgUId", "osg131-osgUtild", "osg131-osgViewerd", "osg131-osgVolumed", "osg131-osgWidgetd",
-                 "ot20-OpenThreadsd"}
+                 "osg158-osgd", "osg158-osgAnimationd", "osg158-osgDBd", "osg158-osgFXd", "osg158-osgGAd",
+                 "osg158-osgManipulatord", "osg158-osgParticled", "osg158-osgPresentationd",
+                 "osg158-osgShadowd", "osg158-osgSimd", "osg158-osgTerraind", "osg158-osgTextd",
+                 "osg158-osgUId", "osg158-osgUtild", "osg158-osgViewerd", "osg158-osgVolumed", "osg158-osgWidgetd",
+                 "ot21-OpenThreadsd"}
 
 workspace "examples"
 

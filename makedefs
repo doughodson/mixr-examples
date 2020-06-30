@@ -22,8 +22,7 @@ LDFLAGS += -L$(MIXR_SHARED_LIB_PATH)
 # ---
 ifdef MIXR_3RD_PARTY_ROOT
    LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib
-   LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib64
-   LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib64/osgPlugins-3.4.1
+   LDFLAGS += -L$(MIXR_3RD_PARTY_ROOT)/lib/osgPlugins-3.6.5
 endif
 
 # ---

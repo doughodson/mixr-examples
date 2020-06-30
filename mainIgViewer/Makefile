@@ -15,10 +15,9 @@ CPPFLAGS += -DOSG_LIBRARY_STATIC
 LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_terrain
 LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base
 
-LDFLAGS += -losgdb_txp -losgText -losgSim
-LDFLAGS += -losgViewer -losgUtil -losgDB -losgGA -losg -lOpenThreads -ldl
+LDFLAGS += -losgdb_txp -losgText -losgSim -losgViewer -losgUtil -losgGA -losgDB -losg -lOpenThreads -ldl
 
-LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
+LDFLAGS += -lfontconfig -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt
 

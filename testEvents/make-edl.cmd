@@ -1,3 +1,3 @@
 call ..\makedefs.cmd
-%mcpp% configs/test.epp > test.edl %EPPFLAGS%
+%mcpp% configs/testEvents.epp > testEvents.edl %EPPFLAGS%
 

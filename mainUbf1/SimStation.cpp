@@ -40,7 +40,7 @@ SimStation::SimStation()
 void SimStation::reset()
 {
     // setup ownship player pointer
-    setOwnshipByName( getOwnshipName().c_str() );
+    setOwnshipByName( getOwnshipName()->c_str() );
 
     if (!displayInit && mainDisplay != nullptr) {
         mainDisplay->createWindow();

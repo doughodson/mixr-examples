@@ -2,7 +2,7 @@
 #include "EventDisplay.hpp"
 #include "TestObject.hpp"
 
-#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/Rgb.hpp"
 
 #include "mixr/base/numeric/Number.hpp"
 
@@ -24,7 +24,7 @@ EventDisplay::EventDisplay()
     STANDARD_CONSTRUCTOR()
 
     obj = new TestObject;
-    myColor = new base::Color(0.0, 0.0, 0.0);  // black
+    myColor = new base::Rgb();  // black
 
     std::array<base::Vec4d, MAX_MATERIALS> diffColor;
 

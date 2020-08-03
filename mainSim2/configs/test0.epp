@@ -19,7 +19,7 @@
 
    // image generator host interface
    igHosts: {
-      #include "ighosts/pov.epp"
+      #include "ighosts/flightgear.epp"
       //#include "ighosts/cigi.epp"
    }
 

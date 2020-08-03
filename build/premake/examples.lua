@@ -63,7 +63,7 @@ project "mainGndMapRdr"
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
 
--- Image generator viewer
+-- Image generator viewer (understands flightgear compatible packets)
 project "mainIgViewer"
    targetname "mainIgViewer"
    targetdir "../../mainIgViewer"
@@ -79,13 +79,13 @@ project "mainIgViewer"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_3rdPartyLibPath.."/osgPlugins-3.6.3" }
    filter "configurations:Release"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
-      links {"mixr_ighost_cigi", "mixr_ighost_pov", LibCigi}
+      links {"mixr_ighost_flightgear"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibOsg, LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "mixr_simulation_d", "JSBSim_d", "mixr_terrain_d"}
-      links {"mixr_ighost_cigi_d", "mixr_ighost_pov_d", LibCigi}
+      links {"mixr_ighost_flightgear_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibOsg_d, LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}

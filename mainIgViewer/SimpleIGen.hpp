@@ -4,7 +4,7 @@
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
-#include "mixr/ighost/pov/EntityState.hpp"
+#include "mixr/ighost/flightgear/EntityState.hpp"
 
 #include <osgViewer/Viewer>
 #include <osgDB/ReadFile>
@@ -52,7 +52,7 @@ private:
    // Position
    float x {}, y {}, z {6000.0};
    // Data from simulation
-   ::mixr::pov::EntityState entityState;
+   ::mixr::flightgear::EntityState entityState;
    // Coord System Shift (Z Up)
    ::osg::Matrix viewMatrix;
    ::osg::Matrix viewRotAndPosMatrix;

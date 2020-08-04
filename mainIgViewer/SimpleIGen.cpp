@@ -105,7 +105,7 @@ void SimpleIGen::draw()
 {
    if (viewer->isRealized()) {
       
-      int n{recv((char*)&fgNetFDM)};
+      int n{recv(reinterpret_cast<char*>(&fgNetFDM))};
       if (n > 0) {
 
          // swap endian

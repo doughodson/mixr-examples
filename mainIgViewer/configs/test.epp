@@ -14,7 +14,7 @@
       vpWidth:     800
       vpHeight:    600
 
-      netInput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost port: 4950)
+      netInput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost port: 5500)
       databasePath: MIXR_DATA_VISUALDB_PATH
 
       //Since this display will be drawn by OpenSceneGraph, no graphical components are placed here.

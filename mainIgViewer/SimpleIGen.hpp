@@ -4,7 +4,7 @@
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
-#include "mixr/ighost/flightgear/EntityState.hpp"
+#include "mixr/ighost/flightgear/FGNetFDM.hpp"
 
 #include <osgViewer/Viewer>
 #include <osgDB/ReadFile>
@@ -47,13 +47,13 @@ private:
    ::osg::ref_ptr<::osg::Light> light;
    ::osg::ref_ptr<::osg::LightSource> lightSource;
    ::osg::observer_ptr<osgViewer::GraphicsWindow> window;
-   // Attitude
+   // attitude
    float yaw {}, pitch {}, roll {};
-   // Position
+   // position
    float x {}, y {}, z {6000.0};
-   // Data from simulation
-   ::mixr::flightgear::EntityState entityState;
-   // Coord System Shift (Z Up)
+   // data from simulation
+   ::mixr::flightgear::FGNetFDM fgNetFDM;
+   // coord System Shift (Z Up)
    ::osg::Matrix viewMatrix;
    ::osg::Matrix viewRotAndPosMatrix;
    ::osg::Matrix eyeMatrix;

@@ -6,6 +6,11 @@
 #include "mixr/base/String.hpp"
 #include "mixr/base/network/NetHandler.hpp"
 #include "mixr/base/units/lengths.hpp"
+#include "mixr/base/util/endian_utils.hpp"
+
+#include "mixr/ighost/flightgear/FGNetFDM.hpp"
+#include "mixr/ighost/flightgear/swap_endian.hpp"
+
 
 #include <iostream>
 
@@ -100,16 +105,22 @@ void SimpleIGen::draw()
 {
    if (viewer->isRealized()) {
       
-      int n{recv((char*)&entityState)};
+      int n{recv((char*)&fgNetFDM)};
       if (n > 0) {
+
+         // swap endian
+         if (!base::is_big_endian()) {
+            mixr::flightgear::swap_endian(&fgNetFDM);
+         }
+
          // update position
-         x = entityState.pilot_eye_y * base::length::FT2M;
-         y = entityState.pilot_eye_x * base::length::FT2M;
-         z = entityState.pilot_eye_z * base::length::FT2M;
+         x = fgNetFDM.latitude * base::length::FT2M;
+         y = fgNetFDM.longitude * base::length::FT2M;
+         z = fgNetFDM.altitude * base::length::FT2M;
          // update orientation
-         yaw = -entityState.psi;     // OSE heading is -(A/C heading)
-         pitch = entityState.theta;
-         roll = entityState.phi;
+         //yaw = -entityState.psi;     // OSE heading is -(A/C heading)
+         //pitch = entityState.theta;
+         //roll = entityState.phi;
       }
 
       viewMatrix.set(

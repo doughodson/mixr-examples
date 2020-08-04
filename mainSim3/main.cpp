@@ -17,7 +17,7 @@
 #include "mixr/terrain/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/ighost/cigi/factory.hpp"
-#include "mixr/ighost/pov/factory.hpp"
+#include "mixr/ighost/flightgear/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 
 #include "MapPage.hpp"
@@ -65,7 +65,7 @@ mixr::base::Object* factory(const std::string& name)
 
     // platform libraries
     if (obj == nullptr)  { obj = mixr::cigi::factory(name);         }
-    if (obj == nullptr)  { obj = mixr::pov::factory(name);    }
+    if (obj == nullptr)  { obj = mixr::flightgear::factory(name);    }
     if (obj == nullptr)  { obj = mixr::instruments::factory(name);  }
     if (obj == nullptr)  { obj = mixr::simulation::factory(name);   }
     if (obj == nullptr)  { obj = mixr::models::factory(name);       }

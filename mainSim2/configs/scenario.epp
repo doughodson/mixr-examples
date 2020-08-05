@@ -13,8 +13,8 @@ simulation: ( WorldModel
    // ---
    // Reference position (player positions are relative to this location)
    // ---
-   latitude:    37.0 
-   longitude: -116.0
+   latitude:   45.0
+   longitude: -120.69202
 
    players: {
 
@@ -28,7 +28,7 @@ simulation: ( WorldModel
          // Starting position (relative to ref point)
          initXPos: ( NauticalMiles 0 )
          initYPos: ( NauticalMiles 0 )
-         initAlt: ( Feet 10000 )
+         initAlt: ( Meters 150.0 )
          initHeading: ( Degrees 0.0 )      // Initial heading
          initVelocity: 250
          

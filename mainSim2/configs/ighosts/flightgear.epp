@@ -1,4 +1,12 @@
 
+//
+// Launch FlightGear with the following arguments to set it up as a visual system
+//
+// Windows (fgfs.exe) 
+// Linux (fgfs)
+// Arguments: --aircraft=c172p --disable-random-objects --fdm=external --vc=0 --bpp=32 --timeofday=noon --native-fdm=socket,in,1,,5500,udp
+//
+
 ( FlightGearHost
 //  netOutput: ( UdpUnicastHandler ipAddress: "127.0.0.1"  port: 5500 localPort: 5501 )
     netOutput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost  port: 5500 localPort: 5501 shared: true)

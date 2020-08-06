@@ -7,10 +7,9 @@
 display:
 ( InstrumentPanel
     idleSleepTime: 20
-    
-    name: "Sim3 Display"
-    
-   
+
+    name: "Sim2 Display"
+
     textures: {
     }
 

@@ -16,10 +16,9 @@
 #include "mixr/base/units/times.hpp"
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
-EMPTY_DELETEDATA(SimStation)
 
 BEGIN_SLOTTABLE(SimStation)
-    "display",                  //  1) Main Display
+    "display",                  //  1: main display
     "autoResetTimer",           //  2: Auto RESET timer value (base::Time); default: zero (no auto reset)
 END_SLOTTABLE(SimStation)
 
@@ -39,6 +38,14 @@ void SimStation::copyData(const SimStation& org, const bool)
 
     setSlotAutoResetTime(org.autoResetTimer0);
     autoResetTimer = org.autoResetTimer;
+}
+
+void SimStation::deleteData()
+{
+   if (autoResetTimer0 != nullptr) {
+      autoResetTimer0->unref();
+      autoResetTimer0 = nullptr;
+   }
 }
 
 void SimStation::reset()
@@ -142,7 +149,7 @@ bool SimStation::setSlotMainDisplay(mixr::glut::GlutDisplay* const d)
 }
 
 // setSlotAutoResetTime() -- Sets the startup RESET pulse timer
-bool SimStation::setSlotAutoResetTime(const mixr::base::Time* const num)
+bool SimStation::setSlotAutoResetTime(mixr::base::Time* const num)
 {
     if (autoResetTimer0 != nullptr) {
         autoResetTimer0->unref();

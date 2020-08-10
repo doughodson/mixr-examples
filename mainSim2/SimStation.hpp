@@ -42,13 +42,13 @@ private:
     bool displayInit{};
 
     // Auto reset timer
-    double autoResetTimer{};                     // Auto RESET timer (sends a RESET_EVENT after timeout)
-    const mixr::base::Time* autoResetTimer0{};   // Init value of the Auto RESET timer
+    double autoResetTimer{};              // auto RESET timer (sends a RESET_EVENT after timeout)
+    mixr::base::Time* autoResetTimer0{};  // init value of the auto RESET timer
 
 private:
     // slot table helper methods
     bool setSlotMainDisplay(mixr::glut::GlutDisplay* const);
-    bool setSlotAutoResetTime(const mixr::base::Time* const);     // Sets the auto RESET timer
+    bool setSlotAutoResetTime(mixr::base::Time* const);
 };
 
 #endif

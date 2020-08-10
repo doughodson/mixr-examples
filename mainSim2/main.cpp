@@ -99,7 +99,6 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    simStation->updateData(dt);
    simStation->updateTC(dt);
-   simStation->event(base::Component::RESET_EVENT);
 
    glutTimerFunc(msecs, updateDataCB, msecs);
 

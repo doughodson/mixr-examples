@@ -49,7 +49,7 @@ void theTest(mixr::base::StateMachine* stateMachine)
    const double dt{0.05};  // Fake delta time
 
    while (stateMachine->getState() != 99) {
-      mixr::base::Timer::updateTimers(static_cast<double>(dt));
+      mixr::base::Timer::updateTimers(dt);
       stateMachine->updateTC(dt);
       stateMachine->updateData(dt);
    }
@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
    std::string configFilename = "test1.edl";
 
    // parse arguments
-   for (int i = 1; i < argc; i++) {
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }

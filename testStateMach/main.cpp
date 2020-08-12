@@ -58,7 +58,7 @@ void theTest(mixr::base::StateMachine* stateMachine)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "test1.edl";
+   std::string configFilename{"test1.edl"};
 
    // parse arguments
    for (int i{1}; i < argc; i++) {
@@ -72,13 +72,13 @@ int main(int argc, char* argv[])
    // ---
    mixr::base::StateMachine* stateMachine{builder(configFilename)};
 
-   //stateMachine->serialize(std::cout);
-
    // reset the system
    stateMachine->event(mixr::base::Component::RESET_EVENT);
 
    // run the test
    theTest(stateMachine);
+
+   stateMachine->unref();
 
    return 0;
 }

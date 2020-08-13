@@ -10,7 +10,6 @@ namespace xpanel {
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")
 EMPTY_SLOTTABLE(DspRwr)
-EMPTY_DELETEDATA(DspRwr)
 
 DspRwr::DspRwr()
 {
@@ -21,6 +20,14 @@ void DspRwr::copyData(const DspRwr& org, const bool)
 {
    BaseClass::copyData(org);
    rwr = nullptr;
+}
+
+void DspRwr::deleteData()
+{
+   if (rwr != nullptr) {
+      rwr->unref();
+      rwr = nullptr;
+   }
 }
 
 void DspRwr::updateData(const double dt)

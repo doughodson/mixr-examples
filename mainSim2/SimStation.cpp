@@ -16,6 +16,7 @@
 #include "mixr/base/units/times.hpp"
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
+EMPTY_DELETEDATA(SimStation)
 
 BEGIN_SLOTTABLE(SimStation)
     "display",                  //  1: main display
@@ -23,7 +24,7 @@ BEGIN_SLOTTABLE(SimStation)
 END_SLOTTABLE(SimStation)
 
 BEGIN_SLOT_MAP(SimStation)
-    ON_SLOT( 1, setSlotMainDisplay,    mixr::glut::GlutDisplay)
+    ON_SLOT( 1, setSlotDisplay,    mixr::glut::GlutDisplay)
     ON_SLOT( 2, setSlotAutoResetTime,  mixr::base::Time)
 END_SLOT_MAP()
 
@@ -36,36 +37,28 @@ void SimStation::copyData(const SimStation& org, const bool)
 {
     BaseClass::copyData(org);
 
-    setSlotAutoResetTime(org.autoResetTimer0);
-    autoResetTimer = org.autoResetTimer;
-}
-
-void SimStation::deleteData()
-{
-   if (autoResetTimer0 != nullptr) {
-      autoResetTimer0->unref();
-      autoResetTimer0 = nullptr;
-   }
+    display = org.display->clone();
+    //setSlotAutoResetTime(org.autoResetTimer0);
+    autoResetTimer0 = org.autoResetTimer0->clone();
 }
 
 void SimStation::reset()
 {
-    if (!displayInit && mainDisplay != nullptr) {
-        mainDisplay->createWindow();
-        mixr::base::Pair* p{mainDisplay->findByType(typeid(mixr::graphics::Page))};
-        if (p != nullptr) mainDisplay->focus(static_cast<mixr::graphics::Graphic*>(p->object()));
-        else mainDisplay->focus(nullptr);
+    if (display != nullptr && !displayInit) {
+        display->createWindow();
+        mixr::base::Pair* p{display->findByType(typeid(mixr::graphics::Page))};
+        if (p != nullptr) display->focus(static_cast<mixr::graphics::Graphic*>(p->object()));
+        else display->focus(nullptr);
         displayInit = true;
     }
     // reset all of our subcomponents
-    if (mainDisplay != nullptr) mainDisplay->reset();
+    if (display != nullptr) display->reset();
 
     // auto reset timer
     if (autoResetTimer0 != nullptr) {
         autoResetTimer = autoResetTimer0->getValueInSeconds();
-    }
-    else {
-        autoResetTimer = 0;
+    } else {
+        autoResetTimer = 0.0;
     }
 
     // reset our baseclass
@@ -81,7 +74,7 @@ void SimStation::updateTC(const double dt)
     mixr::graphics::Graphic::flashTimer(dt);
 
     // Update any TC stuff in our main display
-    if (mainDisplay != nullptr) mainDisplay->updateTC(dt);
+    if (display != nullptr) display->updateTC(dt);
 }
 
 void SimStation::updateData(const double dt)
@@ -139,27 +132,25 @@ void SimStation::stepOwnshipPlayer()
     }
 }
 
-bool SimStation::setSlotMainDisplay(mixr::glut::GlutDisplay* const d)
+bool SimStation::setSlotDisplay(mixr::glut::GlutDisplay* const x)
 {
-    if (mainDisplay != nullptr)   { mainDisplay->container(nullptr);  }
-    mainDisplay = d;
-    if (mainDisplay != nullptr)   { mainDisplay->container(this);     }
-    displayInit = false;
-    return true;
+    bool ok{};
+    display = x;
+    if (display != nullptr) {
+        display->container(this);
+        ok = true;
+    }
+    return ok;
 }
 
 // setSlotAutoResetTime() -- Sets the startup RESET pulse timer
-bool SimStation::setSlotAutoResetTime(mixr::base::Time* const num)
+bool SimStation::setSlotAutoResetTime(mixr::base::Time* const x)
 {
+    autoResetTimer0 = x;
     if (autoResetTimer0 != nullptr) {
-        autoResetTimer0->unref();
-        autoResetTimer0 = nullptr;
-        autoResetTimer = -1.0;
-    }
-    autoResetTimer0 = num;
-    if (autoResetTimer0 != nullptr) {
-        autoResetTimer0->ref();
         autoResetTimer = autoResetTimer0->getValueInSeconds();
+    } else {
+        autoResetTimer = -1.0;
     }
     return true;
 }

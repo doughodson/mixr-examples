@@ -26,8 +26,8 @@ public:
     void reset() final;
 
 private:
-    mixr::glut::GlutDisplay* display{}; // this is our main display that
-    bool displayInit{};               // is our display created?
+    mixr::base::safe_ptr<mixr::glut::GlutDisplay> display;  // main display
+    bool displayInit{};                                     // display created?
 
 private:
     // slot table helper methods

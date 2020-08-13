@@ -44,7 +44,9 @@ mixr::models::Player* InstrumentPanel::getOwnship()
 {
    mixr::models::Player* p = nullptr;
    mixr::simulation::Station* sta = getStation();
-   if (sta != nullptr) p = dynamic_cast<mixr::models::Player*>(sta->getOwnship());
+   if (sta != nullptr) {
+      p = dynamic_cast<mixr::models::Player*>(sta->getOwnship());
+   }
    return p;
 }
 
@@ -52,7 +54,9 @@ mixr::simulation::Simulation* InstrumentPanel::getSimulation()
 {
    mixr::simulation::Simulation* s = nullptr;
    mixr::simulation::Station* sta = getStation();
-   if (sta != nullptr) s = sta->getSimulation();
+   if (sta != nullptr) {
+      s = sta->getSimulation();
+   }
    return s;
 }
 
@@ -60,7 +64,9 @@ mixr::simulation::Station* InstrumentPanel::getStation()
 {
    if (myStation == nullptr) {
       const auto s = dynamic_cast<mixr::simulation::Station*>( findContainerByType(typeid(mixr::simulation::Station)) );
-      if (s != nullptr) myStation = s;
+      if (s != nullptr) {
+         myStation = s;
+      }
    }
    return myStation;
 }
@@ -92,8 +98,7 @@ void InstrumentPanel::updateData(const double dt)
       gload = tempOwnship->getGload();
 
       tempOwnship->unref();
-   }
-   else {
+   } else {
       const auto player = dynamic_cast<SimPlayer*>( getOwnship() );
       if (player != nullptr) {
          player->ref();
@@ -115,8 +120,7 @@ void InstrumentPanel::updateData(const double dt)
          gload = 1.0;
 
          player->unref();
-      }
-      else {
+      } else {
 #if 0
          sBrakePos = 0;
          course = 0;

@@ -5,7 +5,6 @@
 #include "mixr/simulation/Station.hpp"
 
 namespace mixr {
-namespace base { class Table1; }
 namespace glut { class GlutDisplay; }
 }
 
@@ -37,17 +36,17 @@ public:
    void reset() final;
 
 private:
-    // Main Display
-    mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
-    bool displayInit{};
+    // main Display
+    mixr::base::safe_ptr<mixr::glut::GlutDisplay> display;  // main display
+    bool displayInit{};                                     // display created?
 
-    // Auto reset timer
-    double autoResetTimer{};              // auto RESET timer (sends a RESET_EVENT after timeout)
-    mixr::base::Time* autoResetTimer0{};  // init value of the auto RESET timer
+    // auto reset timer
+    double autoResetTimer{};                                   // auto RESET timer (sends a RESET_EVENT after timeout)
+    mixr::base::safe_ptr<mixr::base::Time> autoResetTimer0{};  // init value of the auto RESET timer
 
 private:
     // slot table helper methods
-    bool setSlotMainDisplay(mixr::glut::GlutDisplay* const);
+    bool setSlotDisplay(mixr::glut::GlutDisplay* const);
     bool setSlotAutoResetTime(mixr::base::Time* const);
 };
 

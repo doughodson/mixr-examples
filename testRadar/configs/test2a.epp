@@ -9,7 +9,7 @@
 //    8 players (24 players), or 48 total players.  To show the doppler
 //    shift in the real-beam return, the blue's second and third rows are
 //    moving faster, or away from, the first blue row (red shift), and
-//    the red players are comming head-on (blue shift).
+//    the red players are coming head-on (blue shift).
 //
 //    Select players on the situation display using the mouse to switch
 //    the 'ownship' focus of the radar and rwr displays.

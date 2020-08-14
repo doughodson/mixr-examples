@@ -52,7 +52,7 @@ void DspRadar::updateData(const double dt)
       if (tm != nullptr) {
          base::safe_ptr<models::Track> trackList[MAX_TRKS];
          int n{tm->getTrackList(trackList, MAX_TRKS)};
-         for (int i = 0; i < n; i++) {
+         for (int i{}; i < n; i++) {
             base::Vec3d pos       = trackList[i]->getPosition();
             trkRng[nTracks]       = pos.length();
             trkAz[nTracks]        = trackList[i]->getRelAzimuth();

@@ -4,6 +4,7 @@
 
 -- tutorial01
 project "tutorial01"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial01"
    targetdir "../../tutorial01"
    debugdir "../../tutorial01"
@@ -22,6 +23,7 @@ project "tutorial01"
 
 -- tutorial02
 project "tutorial02"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial02"
    targetdir "../../tutorial02"
    debugdir "../../tutorial02"
@@ -40,6 +42,7 @@ project "tutorial02"
 
 -- tutorial03
 project "tutorial03"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial03"
    targetdir "../../tutorial03"
    debugdir "../../tutorial03"
@@ -60,6 +63,7 @@ project "tutorial03"
 
 -- tutorial04
 project "tutorial04"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial04"
    targetdir "../../tutorial04"
    debugdir "../../tutorial04"
@@ -80,6 +84,7 @@ project "tutorial04"
 
 -- tutorial05
 project "tutorial05"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial05"
    targetdir "../../tutorial05"
    debugdir "../../tutorial05"
@@ -100,6 +105,7 @@ project "tutorial05"
 
 -- tutorial06
 project "tutorial06"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial06"
    targetdir "../../tutorial06"
    debugdir "../../tutorial06"
@@ -120,6 +126,7 @@ project "tutorial06"
 
 -- tutorial07
 project "tutorial07"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial07"
    targetdir "../../tutorial07"
    debugdir "../../tutorial07"
@@ -143,6 +150,7 @@ project "tutorial07"
 
 -- tutorial08
 project "tutorial08"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "tutorial08"
    targetdir "../../tutorial08"
    debugdir "../../tutorial08"
@@ -163,4 +171,3 @@ project "tutorial08"
       links {"ftgl_d", "freetype2_d", "freeglut_d"}
       links {"glu32", "opengl32"}
       links {LibWindows}
-

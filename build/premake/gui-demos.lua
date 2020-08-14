@@ -4,6 +4,7 @@
 
 -- GLUT-based GUI example
 project "mainGlut"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainGlut"
    targetdir "../../mainGlut"
    debugdir "../../mainGlut"

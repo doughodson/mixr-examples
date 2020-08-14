@@ -10,6 +10,7 @@ namespace xpanel {
 
 IMPLEMENT_SUBCLASS(DspRwr, "DspRwr")
 EMPTY_SLOTTABLE(DspRwr)
+EMPTY_DELETEDATA(DspRwr)
 
 DspRwr::DspRwr()
 {
@@ -20,14 +21,6 @@ void DspRwr::copyData(const DspRwr& org, const bool)
 {
    BaseClass::copyData(org);
    rwr = nullptr;
-}
-
-void DspRwr::deleteData()
-{
-   if (rwr != nullptr) {
-      rwr->unref();
-      rwr = nullptr;
-   }
 }
 
 void DspRwr::updateData(const double dt)
@@ -59,7 +52,7 @@ void DspRwr::drawFunc()
    glColor3d(0.0, 1.0, 0.0);
 
    int n{rwr->getNumberOfRays()};
-   for (int i = 0; i < n; i++) {
+   for (int i{}; i < n; i++) {
       GLdouble azr{(base::angle::D2RCC *  rwr->getRayAzimuth(i) )};
       GLdouble pwr{rwr->getRay(i)};
       GLdouble up{std::cos(azr) * pwr};

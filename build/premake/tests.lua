@@ -4,6 +4,7 @@
 
 -- test dafif library functionality
 project "testDafif"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testDafif"
    targetdir "../../testDafif"
    debugdir "../../testDafif"
@@ -25,6 +26,7 @@ project "testDafif"
 
 -- testEvents: test of event passing
 project "testEvents"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testEvents"
    targetdir "../../testEvents"
    debugdir "../../testEvents"
@@ -47,6 +49,7 @@ project "testEvents"
 
 -- testGraphics : test of basic graphics
 project "testGraphics"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testGraphics"
    targetdir "../../testGraphics"
    debugdir "../../testGraphics"
@@ -69,6 +72,7 @@ project "testGraphics"
 
 -- testInfrared: IR test
 project "testInfrared"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testInfrared"
    targetdir "../../testInfrared"
    debugdir "../../testInfrared"
@@ -99,6 +103,7 @@ project "testInfrared"
 
 -- testLinearSys: test of linear system components
 project "testLinearSys"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testLinearSys"
    targetdir "../../testLinearSys"
    debugdir "../../testLinearSys"
@@ -119,6 +124,7 @@ project "testLinearSys"
 
 -- testLinkage: linkage test
 project "testLinkage"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testLinkage"
    targetdir "../../testLinkage"
    debugdir "../../testLinkage"
@@ -141,6 +147,7 @@ project "testLinkage"
 
 -- testMatrix
 project "testMatrix"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testMatrix"
    targetdir "../../testMatrix"
    debugdir "../../testMatrix"
@@ -161,6 +168,7 @@ project "testMatrix"
 
 -- testMetaObject
 project "testMetaObject"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testMetaObject"
    targetdir "../../testMetaObject"
    debugdir "../../testMetaObject"
@@ -181,6 +189,7 @@ project "testMetaObject"
 
 -- test navigation utility functions
 project "testNavUtils"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testNavUtils"
    targetdir "../../testNavUtils"
    debugdir "../../testNavUtils"
@@ -201,6 +210,7 @@ project "testNavUtils"
 
 -- testNetHandler
 project "testNetHandler"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testNetHandler"
    targetdir "../../testNetHandler"
    debugdir "../../testNetHandler"
@@ -224,6 +234,7 @@ project "testNetHandler"
 
 -- testRadar
 project "testRadar"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testRadar"
    targetdir "../../testRadar"
    debugdir "../../testRadar"
@@ -252,6 +263,7 @@ project "testRadar"
 
 -- testRecordData
 project "testRecordData"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testRecordData"
    targetdir "../../testRecordData"
    debugdir "../../testRecordData"
@@ -285,6 +297,7 @@ project "testRecordData"
 
 -- testRecorderRead
 project "testRecorderRead"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testRecorderRead"
    targetdir "../../testRecorderRead"
    debugdir "../../testRecorderRead"
@@ -308,6 +321,7 @@ project "testRecorderRead"
 
 -- testRecorderWrite
 project "testRecorderWrite"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testRecorderWrite"
    targetdir "../../testRecorderWrite"
    debugdir "../../testRecorderWrite"
@@ -331,6 +345,7 @@ project "testRecorderWrite"
 
 -- testSlots
 project "testSlots"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testSlots"
    targetdir "../../testSlots"
    debugdir "../../testSlots"
@@ -351,6 +366,7 @@ project "testSlots"
 
 -- testStateMach
 project "testStateMach"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testStateMach"
    targetdir "../../testStateMach"
    debugdir "../../testStateMach"
@@ -371,6 +387,7 @@ project "testStateMach"
 
 -- testTables
 project "testTables"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testTables"
    targetdir "../../testTables"
    debugdir "../../testTables"
@@ -391,6 +408,7 @@ project "testTables"
 
 -- testTemplates
 project "testTemplates"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testTemplates"
    targetdir "../../testTemplates"
    debugdir "../../testTemplates"
@@ -411,6 +429,7 @@ project "testTemplates"
 
 -- testTimer
 project "testTimer"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testTimer"
    targetdir "../../testTimer"
    debugdir "../../testTimer"
@@ -430,6 +449,7 @@ project "testTimer"
 
 -- test: general test of several base and graphics functionalities
 project "test"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "test"
    targetdir "../../test"
    debugdir "../../test"
@@ -450,6 +470,7 @@ project "test"
 
 -- testVmap - test VMAP0 loader library
 project "testVmap"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "testVmap"
    targetdir "../../testVmap"
    debugdir "../../testVmap"

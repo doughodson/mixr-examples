@@ -136,5 +136,5 @@ workspace "examples"
    dofile "tutorials.lua"
 
    -- gui examples
-   dofile "guidemos.lua"
+   dofile "gui-demos.lua"
 

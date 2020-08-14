@@ -4,6 +4,7 @@
 
 -- demoEfis: demo of EFIS
 project "demoEfis"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "demoEfis"
    targetdir "../../demoEfis"
    debugdir "../../demoEfis"
@@ -26,6 +27,7 @@ project "demoEfis"
 
 -- Flight Display 1 demo
 project "demoFlightDisplays1"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "demoFlightDisplays1"
    targetdir "../../demoFlightDisplays1"
    debugdir "../../demoFlightDisplays1"
@@ -48,6 +50,7 @@ project "demoFlightDisplays1"
 
 -- Flight Display 2 demo
 project "demoFlightDisplays2"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "demoFlightDisplays2"
    targetdir "../../demoFlightDisplays2"
    debugdir "../../demoFlightDisplays2"
@@ -70,6 +73,7 @@ project "demoFlightDisplays2"
 
 -- demoInstruments
 project "demoInstruments"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "demoInstruments"
    targetdir "../../demoInstruments"
    debugdir "../../demoInstruments"
@@ -92,6 +96,7 @@ project "demoInstruments"
 
 -- demoSubDisplays
 project "demoSubDisplays"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "demoSubDisplays"
    targetdir "../../demoSubDisplays"
    debugdir "../../demoSubDisplays"

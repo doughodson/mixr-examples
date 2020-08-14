@@ -4,6 +4,7 @@
 
 -- Simple cockpit
 project "mainCockpit"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainCockpit"
    targetdir "../../mainCockpit"
    debugdir "../../mainCockpit"
@@ -41,6 +42,7 @@ project "mainCockpit"
 
 -- Ground Mapping Radar example
 project "mainGndMapRdr"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainGndMapRdr"
    targetdir "../../mainGndMapRdr"
    debugdir "../../mainGndMapRdr"
@@ -65,6 +67,7 @@ project "mainGndMapRdr"
 
 -- Image generator viewer (understands flightgear compatible packets)
 project "mainIgViewer"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainIgViewer"
    targetdir "../../mainIgViewer"
    debugdir "../../mainIgViewer"
@@ -92,6 +95,7 @@ project "mainIgViewer"
 
 -- mainLaero example
 project "mainLaero"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainLaero"
    targetdir "../../mainLaero"
    debugdir "../../mainLaero"
@@ -123,6 +127,7 @@ project "mainLaero"
 
 -- Non-RealTime 1 example
 project "mainNonRT1"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainNonRT1"
    targetdir "../../mainNonRT1"
    debugdir "../../mainNonRT1"
@@ -151,6 +156,7 @@ project "mainNonRT1"
 
 -- Puzzle 1 example
 project "mainPuzzle1"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainPuzzle1"
    targetdir "../../mainPuzzle1"
    debugdir "../../mainPuzzle1"
@@ -173,6 +179,7 @@ project "mainPuzzle1"
 
 -- Puzzle 2 example
 project "mainPuzzle2"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainPuzzle2"
    targetdir "../../mainPuzzle2"
    debugdir "../../mainPuzzle2"
@@ -195,6 +202,7 @@ project "mainPuzzle2"
 
  -- simple Simulation 1 example
 project "mainSim1"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainSim1"
    targetdir "../../mainSim1"
    debugdir "../../mainSim1"
@@ -228,6 +236,7 @@ project "mainSim1"
 
 -- simple Simulation 2 example
 project "mainSim2"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainSim2"
    targetdir "../../mainSim2"
    debugdir "../../mainSim2"
@@ -261,6 +270,7 @@ project "mainSim2"
 
 -- simple Simulation 3 example
 project "mainSim3"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainSim3"
    targetdir "../../mainSim3"
    debugdir "../../mainSim3"
@@ -294,6 +304,7 @@ project "mainSim3"
 
 -- Terrain loading example
 project "mainTerrain"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainTerrain"
    targetdir "../../mainTerrain"
    debugdir "../../mainTerrain"
@@ -318,6 +329,7 @@ project "mainTerrain"
 
 -- mainUbf1
 project "mainUbf1"
+   location ("../" .. _ACTION .. "/examples/%{prj.name}")
    targetname "mainUbf1"
    targetdir "../../mainUbf1"
    debugdir "../../mainUbf1"

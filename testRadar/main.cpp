@@ -16,8 +16,6 @@
 #include <string>
 #include <cstdlib>
 
-//#define PARSE_TIMING_TEST
-
 // background frame rate
 const int bgRate{10};
 TestStation* testStation{};
@@ -25,16 +23,6 @@ TestStation* testStation{};
 // test station builder
 TestStation* builder(const std::string& filename)
 {
-#ifdef PARSE_TIMING_TEST
-    LARGE_INTEGER cFreq;
-    QueryPerformanceFrequency(&cFreq);
-    LONGLONG freq = cFreq.QuadPart;
-
-    LARGE_INTEGER fcnt;
-    QueryPerformanceCounter(&fcnt);
-    LONGLONG startCnt = fcnt.QuadPart;
-#endif
-
    // read configuration file
    int num_errors{};
    mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
@@ -42,16 +30,6 @@ TestStation* builder(const std::string& filename)
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);
    }
-
-#ifdef PARSE_TIMING_TEST
-    QueryPerformanceCounter(&fcnt);
-    LONGLONG endCnt = fcnt.QuadPart;
-    double dfreq = freq;
-    double dcnt = endCnt - startCnt;
-    double dtime{dcnt/dfreq};
-    //double dtime1 = ( dtime * 1000.0 );
-    std::cout << "dtime1 = " << dtime1 << "MS" << std::endl;
-#endif
 
    // test to see if an object was created
    if (obj == nullptr) {

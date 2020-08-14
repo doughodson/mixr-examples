@@ -73,7 +73,6 @@
       ( AsciiText color: white  position: [ 1 33 ] text: "B-Scan" )
       rangeRO: ( NumericReadout color: white position: [ 3 35 ] format: "0##" )
       ( AsciiText color: white  position: [ 3 33 ] vertical: true  text: "RANGE" )
-   
 
       ( Graphic       // RWR
          //transform: { ( Translation 1.05 1.0 ) ( Scale 1.0 ) }
@@ -92,7 +91,7 @@
                   ( Line   color: white  vertices: { [ 0 0 ] [ 0 1 ] } )
                }
             )
-            ( DspRwr  color: red )
+            ( DspRwr color: red )
          }
       )
 
@@ -136,7 +135,6 @@
             )
          }
       )
-      
       
 #define AIRTRACK_SYM_SCALE  0.8
 #define AIR_TRACKS_RADIUS   1.8

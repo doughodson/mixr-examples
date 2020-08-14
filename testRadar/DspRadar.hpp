@@ -38,13 +38,13 @@ private:
     SendData azSD;
     SendData elSD;
 
-    // Tracks
-    unsigned int nTracks{};                       // Number of tracks
-    int ntsTrk{-1};                               // Index of the 'next-to-shoot' track
-    std::array<double, MAX_TRKS> trkRng{};        // Track's range                    (meters)
-    std::array<double, MAX_TRKS> trkAz{};         // Track's relative azimuth
-    std::array<double, MAX_TRKS> trkVel{};        // Track's velocity                 (m/s)
-    std::array<double, MAX_TRKS> trkRelGndTrk{};  // Track's relative ground track (to nearest 45 deg)
+    // tracks
+    int nTracks{};                                // number of tracks
+    int ntsTrk{-1};                               // index of the 'next-to-shoot' track
+    std::array<double, MAX_TRKS> trkRng{};        // track's range                    (meters)
+    std::array<double, MAX_TRKS> trkAz{};         // track's relative azimuth
+    std::array<double, MAX_TRKS> trkVel{};        // track's velocity                 (m/s)
+    std::array<double, MAX_TRKS> trkRelGndTrk{};  // track's relative ground track (to nearest 45 deg)
 };
 
 #endif

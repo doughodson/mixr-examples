@@ -169,7 +169,7 @@ void DspRadar::drawFunc()
       hsv[0] = 360.0f;
       base::Hsv::hsv2rgb(ntsRGB, hsv);
 
-      for (unsigned int i = 0; i < nTracks; i++) {
+      for (int i{}; i < nTracks; i++) {
          double xp{(base::angle::R2DCC * trkAz[i]) / 30.0};
          double yp{2.0 * trkRng[i]/maxRng};
          if (static_cast<int>(i) == ntsTrk) lcColor3v(ntsRGB.ptr());

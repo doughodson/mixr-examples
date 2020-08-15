@@ -40,8 +40,8 @@ project "libxpanel"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    files {
       "../../shared/include/shared/xpanel/*.h*",
+      "../../shared/include/shared/xpanel/**.epp",
       "../../shared/src/xpanel/*.cpp",
-      "../../shared/src/xpanel/**.epp",
    }
    defines { "_LIB" }
 
@@ -54,8 +54,8 @@ project "libxzmq"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    defines { "ZMQ_STATIC" }
    files {
-      "../../shared/src/xzmq/*.h*",
+      "../../shared/include/shared/xzmq/*.h*",
+      "../../shared/include/shared/xzmq/**.epp",
       "../../shared/src/xzmq/*.cpp",
-      "../../shared/src/xzmq/**.epp",
    }
    defines { "_LIB" }

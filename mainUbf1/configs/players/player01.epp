@@ -40,7 +40,6 @@ p01: ( Aircraft
          components: {
             radar: ( Antenna
                maxPlayersOfInterest: 6
-               playerOfInterestTypes: { "air" "weapon" }
                polarization: horizontal
                gain: ( dB 42 )
                gainPattern: ANTENNA_PATTERN()

@@ -10,12 +10,12 @@ duck11:
     initLongitude: ( Longitude direction: west  degrees: 115 minutes: 59.0 )
 
     initAlt: ( Feet 15000 )
-    initHeading: ( Degrees 0.0 )      // Initial heading
+    initHeading: ( Degrees 0.0 )      // initial heading
     initVelocity: 300
     positionFreeze: false
     killRemoval: true
 
-    dataLogTime: ( Seconds 0.5 )      // Test data recorder at 2hz
+    dataLogTime: ( Seconds 0.5 )      // test data recorder at 2hz
 
     components: {
 
@@ -35,7 +35,6 @@ duck11:
          components: {
             radar: ( Antenna
                   maxPlayersOfInterest: 6
-                  playerOfInterestTypes: { "air" "weapon" }
                   polarization: horizontal
                   gain: ( dB 42 )
                   #include "gainPattern.epp"

@@ -10,7 +10,7 @@ duck12:
     initLongitude: ( Longitude direction: west  degrees: 116 minutes:  1.0 )
 
     initAlt: ( Feet 15000 )
-    initHeading: ( Degrees 0.0 )      // Initial heading
+    initHeading: ( Degrees 0.0 )      // initial heading
     initVelocity: 300
     positionFreeze: false
     killRemoval: true
@@ -35,7 +35,6 @@ duck12:
          components: {
             radar: ( Antenna
                   maxPlayersOfInterest: 6
-                  playerOfInterestTypes: { "air" "weapon" }
                   polarization: horizontal
                   gain: ( dB 42 )
                   #include "gainPattern.epp"

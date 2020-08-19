@@ -9,7 +9,7 @@ p01:
     initLongitude: ( Longitude direction: west  degrees: 116 minutes:  0.0 )
   
     initAlt: ( Feet 15000 )
-    initHeading: ( Degrees 0.0 )      // Initial heading
+    initHeading: ( Degrees 0.0 )      // initial heading
     initVelocity: 300
     
     positionFreeze: false
@@ -35,7 +35,6 @@ p01:
          components: {
             radar: ( Antenna
                   maxPlayersOfInterest: 6
-                  playerOfInterestTypes: { "air" "weapon" }
                   polarization: horizontal
                   gain: ( dB 42 )
                   #include "gainPattern.epp"
@@ -52,7 +51,7 @@ p01:
                   localPlayersOfInterestOnly: false
                   useWorldCoordinates: false
             )
-            rwr: ( Antenna 
+            rwr: ( Antenna
                   scanMode: manual
                   polarization: horizontal
                   gain: ( dB 12 )

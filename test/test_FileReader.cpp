@@ -6,7 +6,7 @@
 void testFileReader()
 {
    // default configuration filename
-   std::string configFilename = "testFileReader.edl";
+   std::string configFilename{"testFileReader.edl"};
 
    mixr::base::Object* obj = builder<mixr::base::Object*>(configFilename);
 

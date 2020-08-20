@@ -294,7 +294,7 @@ void DataRecordTest::readSerialFromFile()
             // Time?
             {
                std::cout << "select by Time? Y/N: " ;
-               std::string selTime = "N";
+               std::string selTime;
                std::cin >> selTime;
                if ((selTime == "Y") || (selTime == "y")) {
                   const auto dataRecord = new recorder::pb::DataRecord();
@@ -566,8 +566,8 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
 
    unsigned int pId{};
-   std::string pName = "";
-   std::string pFedName = "";
+   std::string pName;
+   std::string pFedName;
 
    timesCalled++;
    pId = 123 * timesCalled;

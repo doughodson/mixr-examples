@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "testEvents.edl";
+   std::string configFilename{"testEvents.edl"};
 
    display = builder(configFilename);
 

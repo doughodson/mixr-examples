@@ -67,7 +67,7 @@ MyObj* builder(const std::string& filename)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "file0.edl";
+   std::string configFilename{"file0.edl"};
 
    // build my object
    MyObj* myObj{builder(configFilename)};

@@ -62,10 +62,10 @@ mixr::simulation::Simulation* builder(const std::string& filename)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "test1.edl";
+   std::string configFilename{"test1.edl"};
 
    // read filename from command line if provided
-   for (int i = 1; i < argc; i++) {
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }

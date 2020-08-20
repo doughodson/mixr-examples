@@ -306,10 +306,10 @@ int main(int argc, char* argv[])
    bool tflg{};   // Timing flag
 
    // default configuration filename
-   std::string configFilename = "test1.edl";
+   std::string configFilename{"test1.edl"};
 
    // Parse arguments
-   for (int i = 1; i < argc; i++) {
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       } else if ( std::string(argv[i]) == "-a") {

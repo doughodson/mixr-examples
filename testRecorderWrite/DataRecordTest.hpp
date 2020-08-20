@@ -96,9 +96,9 @@ private:
    unsigned int selectionNum{};
    struct SelectionCriteria {
       unsigned int msgToken{};
-      std::string fieldName = "";
+      std::string fieldName;
       double compareValD{};
-      std::string compareValS = "";
+      std::string compareValS;
       int compareValI{};
       mixr::recorder::PrintSelected::Condition condition{mixr::recorder::PrintSelected::Condition::EQ};
       bool timeOnly{};

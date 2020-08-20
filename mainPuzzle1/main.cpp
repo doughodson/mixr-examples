@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "puzzle.edl";
+   std::string configFilename{"puzzle.edl"};
 
    board = builder(configFilename);
 

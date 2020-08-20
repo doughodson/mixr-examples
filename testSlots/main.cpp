@@ -66,7 +66,7 @@ Base* builder(const std::string& filename)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "file0.edl";
+   std::string configFilename{"file0.edl"};
 
    Base* base{builder(configFilename)};
 

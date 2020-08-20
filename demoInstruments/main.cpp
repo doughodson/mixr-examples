@@ -186,7 +186,7 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "testinstruments.edl";
+   std::string configFilename{"testinstruments.edl"};
    glutDisplay = builder(configFilename);
 
    glutDisplay->createWindow();

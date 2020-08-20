@@ -37,7 +37,7 @@ private:
    int intVal{};
    float floatVal{};
    double doubleVal{};
-   std::string charVal = "ASCII";
+   std::string charVal{"ASCII"};
 };
 
 #endif

@@ -97,7 +97,7 @@ void builder(const std::string& filename)
 
 int main(int argc, char* argv[])
 {
-    std::string configFilename = "test.edl";
+    std::string configFilename{"test.edl"};
     builder(configFilename);
 
     glutInit(&argc, argv);

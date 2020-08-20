@@ -87,10 +87,10 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "test1.edl";
+   std::string configFilename{"test1.edl"};
 
    // parse arguments
-   for (int i = 1; i < argc; i++) {
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }

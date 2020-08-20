@@ -85,8 +85,8 @@ int main(int argc, char* argv[])
    glutInit(&argc, argv);
 
    // default configuration filename
-   std::string configFilename = "alignmentPattern.edl";
-   for (int i = 1; i < argc; i++) {
+   std::string configFilename{"alignmentPattern.edl"};
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }

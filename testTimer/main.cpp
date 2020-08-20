@@ -171,10 +171,10 @@ void run(Tester* const tester)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "test01.edl";
+   std::string configFilename{"test01.edl"};
 
    // parse arguments
-   for (int i = 1; i < argc; i++) {
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }

@@ -13,7 +13,7 @@ WaypointTests::WaypointTests(
                const std::string& file,
                const std::string& path)
 {
-   std::string fullname = path + "/" + file;
+   std::string fullname{path + "/" + file};
    db = new mixr::dafif::WaypointLoader();
    db->setPathname(path);
    db->setFilename(file);

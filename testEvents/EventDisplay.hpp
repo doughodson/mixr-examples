@@ -50,7 +50,7 @@ private:
     SendData objSD;
 
     // characters
-    std::string myChar = "ASCII";
+    std::string myChar{"ASCII"};
     SendData charSD;
 
     mixr::base::Color* myColor{};

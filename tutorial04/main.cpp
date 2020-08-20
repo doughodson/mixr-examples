@@ -71,12 +71,12 @@ AbstractRng* builder(const std::string& filename)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "file0.edl";
+   std::string configFilename{"file0.edl"};
 
    // build random
    AbstractRng* rng{builder(configFilename)};
 
-   for (int i=0; i<10; i++) {
+   for (int i{}; i<10; i++) {
       std::cout << rng->num() << std::endl;
    }
 

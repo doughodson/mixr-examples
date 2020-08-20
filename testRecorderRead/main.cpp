@@ -47,10 +47,10 @@ DataRecordTest* builder(const std::string& filename)
 int main(int argc, char* argv[])
 {
    // default configuration filename
-   std::string configFilename = "test.edl";
+   std::string configFilename{"test.edl"};
 
    // parse command line arguments
-   for (int i = 1; i < argc; i++) {
+   for (int i{1}; i < argc; i++) {
       if ( std::string(argv[i]) == "-f" ) {
          configFilename = argv[++i];
       }

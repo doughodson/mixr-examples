@@ -9,9 +9,7 @@ EMPTY_SLOTTABLE(SimPlayer)
 SimPlayer::SimPlayer()
 {
     STANDARD_CONSTRUCTOR()
-
-    static mixr::base::String generic("Sim");
-    setType(&generic);
+    setType("Sim");
 }
 
 void SimPlayer::reset()

@@ -9,25 +9,25 @@
    tcPriority: 1
 
    // input/output
-   ioHandler: ( TestIoHandler
-      inputData: ( IoData numAI: 10   numDI: 40 )
-      devices: {
-         #include "linkage/saitekST290.epp"
-         //#include "linkage/saitekEVO.epp"
-         //#include "linkage/thrustmaster.epp"
-         //#include "linkage/warthog.epp"
-      }
-   )
+//   ioHandler: ( TestIoHandler
+//      inputData: ( IoData numAI: 10   numDI: 40 )
+//     devices: {
+//         #include "linkage/saitekST290.epp"
+//         //#include "linkage/saitekEVO.epp"
+//         //#include "linkage/thrustmaster.epp"
+//         //#include "linkage/warthog.epp"
+//      }
+//   )
 
    // image generator host interface
-   igHosts: {
-      #include "ighosts/cigi.epp"
-   }
+//   igHosts: {
+//      #include "ighosts/cigi.epp"
+//   }
 
    // interoperability interfaces
-   networks: {
-      #include "interop/dis.epp"
-   }
+//   networks: {
+//    #include "interop/dis.epp"
+//   }
 
    #include "scenario.epp"
    #include "xpanel/xpanel.epp"

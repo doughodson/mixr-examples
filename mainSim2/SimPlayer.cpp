@@ -11,7 +11,7 @@ SimPlayer::SimPlayer()
     STANDARD_CONSTRUCTOR()
 
     static mixr::base::String generic("Sim");
-    setType(&generic);
+    setType_old(&generic);
 }
 
 void SimPlayer::reset()

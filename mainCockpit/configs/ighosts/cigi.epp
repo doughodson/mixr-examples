@@ -6,8 +6,12 @@
    async: false
 
    session: ( CigiHostSession
-      netInput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8008 )
-      netOutput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8108 localPort: 8208 )
+      // data received from IG
+      netInput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8005 )
+      // data sent to IG
+      netOutput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8004)
+//      netInput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8008 )
+//      netOutput: ( UdpUnicastHandler localIpAddress: "127.0.0.1" ipAddress: "127.0.0.1" port: 8108 localPort: 8208 )
    )
 
    // an example mapping of players to cigi entity IDs

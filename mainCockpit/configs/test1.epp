@@ -1,5 +1,5 @@
 
-#define REF_LATITUDE      38.624670999999 // (St Louis, Missouri)
+#define REF_LATITUDE     38.624670999999 // (St Louis, Missouri)
 #define REF_LONGITUDE   -90.1849629999999
 
 #define IG_LATITUDE     REF_LATITUDE
@@ -26,9 +26,9 @@
    }
 
    // interoperability interfaces
-//   networks: {
-//      #include "interop/dis.epp"
-//   }
+   networks: {
+      #include "interop/dis.epp"
+   }
 
    #include "scenario.epp"
    #include "xpanel/xpanel.epp"

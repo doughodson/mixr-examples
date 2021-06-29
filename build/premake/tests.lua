@@ -116,10 +116,10 @@ project "testLinearSys"
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
    filter "configurations:Release"
-      links {"mixr_linearsystem", "mixr_base"}
+      links {"mixr_base"}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_linearsystem_d", "mixr_base_d"}
+      links {"mixr_base_d"}
       links {LibWindows}
 
 -- testLinkage: linkage test

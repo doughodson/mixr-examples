@@ -1,3 +1,8 @@
+//#define REF_LATITUDE     38.624670999999 // (St Louis, Missouri)
+//#define REF_LONGITUDE   -90.1849629999999
+
+#define REF_LATITUDE      47.201568 // (Mt St. Helens, WA)
+#define REF_LONGITUDE   -122.188834
 
 #include "screenSetup.epp"
 
@@ -5,7 +10,7 @@
 
    tcPriority: 0.0
    netPriority: 0.0
-   
+
    // input/output
    ioHandler: ( SimIoHandler
       inputData: ( IoData numAI: 10   numDI: 40 )
@@ -26,7 +31,7 @@
    // interoperability interfaces
    networks: {
       #include "interop/dis.epp"
-   }   
+   }
 
    #include "scenario.epp"
    #include "instrumentPanel.epp"

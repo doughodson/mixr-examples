@@ -9,9 +9,8 @@
 #include "mixr/base/units/util/angle_utils.hpp"
 #include "mixr/base/util/endian_utils.hpp"
 
-#include "mixr/ighost/flightgear/FGNetFDM.hpp"
-#include "mixr/ighost/flightgear/swap_endian.hpp"
-
+#include "mixr/ighost/pov/Pov.hpp"
+#include "mixr/ighost/pov/swap_endian.hpp"
 
 #include <iostream>
 
@@ -40,8 +39,8 @@ END_SLOT_MAP()
 SimpleIGen::SimpleIGen()
 {
    STANDARD_CONSTRUCTOR()
-   x = -20.0f * base::length::KM2M;
-   y = -20.0f * base::length::KM2M;
+   //x = -20.0f * base::length::KM2M;
+   //y = -20.0f * base::length::KM2M;
    viewer = new osgViewer::Viewer;
 }
 
@@ -106,22 +105,31 @@ void SimpleIGen::draw()
 {
    if (viewer->isRealized()) {
 
-      int n{recv(reinterpret_cast<char*>(&fgNetFDM))};
+      int n{recv(reinterpret_cast<char*>(&pov))};
       if (n > 0) {
 
          // swap endian
          if (!base::is_big_endian()) {
-            mixr::flightgear::swap_endian(&fgNetFDM);
+            mixr::pov::swap_endian(&pov);
          }
 
          // update position
-         x = fgNetFDM.latitude * base::length::FT2M;
-         y = fgNetFDM.longitude * base::length::FT2M;
-         z = fgNetFDM.altitude * base::length::FT2M;
+         //x = fgNetFDM.latitude * base::length::FT2M;
+         //y = fgNetFDM.longitude * base::length::FT2M;
+         //z = fgNetFDM.altitude * base::length::FT2M;
          // update orientation
-         yaw = -fgNetFDM.psi * base::angle::R2DCC;     // OSE heading is -(A/C heading)
-         pitch = fgNetFDM.theta * base::angle::R2DCC;
-         roll = fgNetFDM.phi * base::angle::R2DCC;
+         //yaw = -fgNetFDM.psi * base::angle::R2DCC;     // OSE heading is -(A/C heading)
+         //pitch = fgNetFDM.theta * base::angle::R2DCC;
+         //roll = fgNetFDM.phi * base::angle::R2DCC;
+
+         // update position
+         x = pov.latitude * base::length::FT2M;
+         y = pov.longitude * base::length::FT2M;
+         z = -pov.altitude * base::length::FT2M;
+         // update orientation
+         yaw = pov.psi;
+         pitch = pov.theta;
+         roll = pov.phi;
       }
 
       viewMatrix.set(

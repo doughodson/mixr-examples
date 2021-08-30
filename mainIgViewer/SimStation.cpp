@@ -25,7 +25,7 @@ EMPTY_DELETEDATA(SimStation)
 
 BEGIN_SLOTTABLE(SimStation)
    "display",                  //  1) Main Display
-   "autoResetTimer",           //  2: Auto RESET timer value (Basic::Time); default: zero (no auto reset)
+   "autoResetTimer",           //  2: Auto RESET timer value (base::Time); default: zero (no auto reset)
 END_SLOTTABLE(SimStation)
 
 BEGIN_EVENT_HANDLER(SimStation)
@@ -62,14 +62,14 @@ void SimStation::reset()
    }
 
    // reset all of our subcomponents
-   if (mainDisplay != nullptr) 
+   if (mainDisplay != nullptr)
       mainDisplay->reset();
    // auto reset timer
    if (autoResetTimer0 != nullptr)
       autoResetTimer = autoResetTimer0->getValueInSeconds();
    else
       autoResetTimer = 0;
-   // reset our baseclass 
+   // reset our baseclass
    BaseClass::reset();
 }
 
@@ -103,7 +103,7 @@ void SimStation::updateData(const double dt)
       }
    }
    BaseClass::updateData(dt);
-} 
+}
 
 //------------------------------------------------------------------------------
 // stepOwnshipPlayer() -- Step to the next local player
@@ -140,12 +140,12 @@ void SimStation::stepOwnshipPlayer()
 // Set Slot Functions
 //------------------------------------------------------------------------------
 
-bool SimStation::setSlotMainDisplay(glut::GlutDisplay* const d)
+bool SimStation::setSlotMainDisplay(glut::GlutDisplay* const x)
 {
    if (mainDisplay != nullptr) {
       mainDisplay->container(nullptr);
    }
-   mainDisplay = d;	
+   mainDisplay = x;
    if (mainDisplay != nullptr) {
       mainDisplay->container(this);
    }

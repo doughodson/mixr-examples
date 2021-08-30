@@ -4,7 +4,7 @@
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
-#include "mixr/ighost/flightgear/FGNetFDM.hpp"
+#include "mixr/ighost/pov/Pov.hpp"
 
 #include <osgViewer/Viewer>
 #include <osgDB/ReadFile>
@@ -52,7 +52,7 @@ private:
    // position
    float x {}, y {}, z {1000.0};
    // data from simulation
-   ::mixr::flightgear::FGNetFDM fgNetFDM;
+   ::mixr::pov::Pov pov;
    // coord System Shift (Z Up)
    ::osg::Matrix viewMatrix;
    ::osg::Matrix viewRotAndPosMatrix;

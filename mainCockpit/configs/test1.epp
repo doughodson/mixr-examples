@@ -1,9 +1,11 @@
 
-#define REF_LATITUDE     38.624670999999 // (St Louis, Missouri)
-#define REF_LONGITUDE   -90.1849629999999
+//#define REF_LATITUDE     38.624670999999 // (St Louis, Missouri)
+//#define REF_LONGITUDE   -90.1849629999999
+#define REF_LATITUDE      46.201568 // (Mt St. Helens, WA)
+#define REF_LONGITUDE   -122.188834
 
-#define IG_LATITUDE     REF_LATITUDE
-#define IG_LONGITUDE    REF_LONGITUDE
+#define IG_LATITUDE   REF_LATITUDE
+#define IG_LONGITUDE  REF_LONGITUDE
 
 ( SimStation
 
@@ -23,7 +25,8 @@
    // image generator host interface
    igHosts: {
       //#include "ighosts/cigi.epp"
-      #include "ighosts/flightgear.epp"
+      //#include "ighosts/flightgear.epp"
+      #include "ighosts/pov.epp"
    }
 
    // interoperability interfaces

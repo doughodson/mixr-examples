@@ -1,0 +1,4 @@
+
+( PovHost
+    netOutput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost  port: 5500 localPort: 5501 shared: true)
+)

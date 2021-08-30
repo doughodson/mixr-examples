@@ -1,14 +1,14 @@
 ( TestStation
 
-   glutDisplay: 
+   glutDisplay:
    #include "adidisplay.epp"
-   
-   mapDisplay: 
+
+   mapDisplay:
    #include "mapdisplay.epp"
 
    // image generator host interface
    igHosts: {
-      //#include "ighosts/flightgear.epp"
+      #include "ighosts/flightgear.epp"
    }
 
    ownship: player1
@@ -30,13 +30,13 @@
             signature:     ( SigSphere radius: 2.0 )
             initLatitude:  ( Degrees  0 )
             initLongitude: ( Degrees  0 )
-            initAlt:       ( Feet 20000 )
+            initAlt:       ( Feet 80000 )
             initHeading:   ( Degrees 0 )
             initVelocity:  100
 
             components: {
                pilot:
-               ( Autopilot 
+               ( Autopilot
                   navMode:             false
                   // maximum rate of turn in degrees per second (PILOT limit)
                   //maxRateOfTurnDps:    10
@@ -54,10 +54,10 @@
                   //loiterPatternTime: ( Minutes 3 )
                   //loiterPatternLength: 2
                )
-               
+
                dynamicsModel:
                ( LaeroModel )
-               
+
                navigation:
                ( Navigation
                   route:
@@ -67,10 +67,10 @@
                         ( Steerpoint
                            latitude:   0.1
                            longitude:  0.1
-                           altitude: ( Feet 12000 )
+                           altitude: ( Feet 20000 )
                            airspeed: 300
                         )
-                        ( Steerpoint 
+                        ( Steerpoint
                            latitude:   0.1
                            longitude: -0.1
                            altitude: ( Feet 13000 )

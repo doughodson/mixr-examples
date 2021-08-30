@@ -2,11 +2,8 @@
 // Stress test rig
 // ---
 
-//
 #define REF_LATITUDE      37.0
 #define REF_LONGITUDE   -116.0
-#define IG_LATITUDE     REF_LATITUDE
-#define IG_LONGITUDE    REF_LONGITUDE
 
 ( Station
    // ---

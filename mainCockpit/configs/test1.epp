@@ -4,9 +4,6 @@
 #define REF_LATITUDE      46.201568 // (Mt St. Helens, WA)
 #define REF_LONGITUDE   -122.188834
 
-#define IG_LATITUDE   REF_LATITUDE
-#define IG_LONGITUDE  REF_LONGITUDE
-
 ( SimStation
 
    tcPriority: 1

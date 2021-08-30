@@ -2,16 +2,13 @@
 // Example simulation
 // ---
 
-//
 #define REF_LATITUDE     30.8
 #define REF_LONGITUDE   -86.8
-#define IG_LATITUDE   REF_LATITUDE
-#define IG_LONGITUDE  REF_LONGITUDE
 
 ( SimStation
 
    tcPriority: 1
-   
+
    // image generator host interface
    igHosts: {
       //#include "ighosts/cigi.epp"
@@ -53,15 +50,15 @@ simulation: ( WorldModel
 
           initLatitude:  ( Latitude  direction: north degrees: 39 minutes: 54.0 )
           initLongitude: ( Longitude direction: west  degrees: 84 minutes: 13.5 )
-        
+
           initAlt: ( Feet 5000 )
           initHeading: ( Degrees 0.0 )      // Initial heading
           initVelocity: 250  //was 250
-          
+
           positionFreeze: false
           killRemoval: true
           fuelFreeze: true
-          
+
           components: {
 
             dynamicsModel: ( JSBSimModel
@@ -74,10 +71,10 @@ simulation: ( WorldModel
                state: ( PlaneState )
                behavior: ( PriorityArbiter
                   behaviors: {
-                     ( PlaneFlyStraight 
+                     ( PlaneFlyStraight
                         vote: 10
                         voteOnCriticalAltitude: 100
-                        criticalAltitude: ( Meters 3500 ) 
+                        criticalAltitude: ( Meters 3500 )
                      )
                      ( PlaneFire vote: 50 )
                      ( PlaneFollowEnemy vote: 50 )
@@ -86,14 +83,14 @@ simulation: ( WorldModel
                   }
                )
             )
-      
+
             pilot: ( Autopilot
                navMode: false
                altitudeHoldMode: false
                headingHoldMode: false
                velocityHoldMode: true
             )
-          
+
             antennas: ( Gimbal
                components: {
                   radar: ( Antenna
@@ -115,7 +112,7 @@ simulation: ( WorldModel
                         localPlayersOfInterestOnly: false
                         useWorldCoordinates: false
                   )
-                  rwr: ( Antenna 
+                  rwr: ( Antenna
                         scanMode: manual
                         polarization: horizontal
                         gain: ( dB 12 )
@@ -130,7 +127,7 @@ simulation: ( WorldModel
                    )
                }
             )
-            
+
             sensors: ( SensorMgr
                components: {
                   ( Tws
@@ -139,15 +136,15 @@ simulation: ( WorldModel
                      powerPeak:  ( KiloWatts 500.0 )
                      frequency:  ( GigaHertz 3.0 )
                      bandwidth:  ( GigaHertz 2.0 )
-                     PRF:        ( Hertz 500.0 ) 
+                     PRF:        ( Hertz 500.0 )
                      pulseWidth: ( MilliSeconds 0.01 )
                      threshold:  ( dB 0.0 )
                      ranges:     [ 10 20 40 80 160 ]
                      initRangeIdx: 2
                   )
-                  ( Rwr 
+                  ( Rwr
                       trackManagerName: rwrTrkMgr
-                      antennaName: rwr  
+                      antennaName: rwr
                       threshold:  ( dB 0.0 )
                       frequency:  ( GigaHertz 3.0 )
                       bandwidth:  ( GigaHertz 2.0 )
@@ -161,7 +158,7 @@ simulation: ( WorldModel
                         )
                }
             )
-            
+
             obc: ( OnboardComputer
                components: {
                   twsTrkMgr: ( AirTrkMgr
@@ -252,7 +249,7 @@ simulation: ( WorldModel
                      )
                   }
               )
-              
+
           }
       )
 
@@ -270,7 +267,7 @@ simulation: ( WorldModel
           positionFreeze: false
           killRemoval: true
           fuelFreeze: true
-          
+
           components: {
 
             dynamicsModel: ( JSBSimModel
@@ -281,10 +278,10 @@ simulation: ( WorldModel
             ubf2: ( UbfAgent
                behavior: ( PriorityArbiter
                   behaviors: {
-                     ( PlaneFlyStraight 
+                     ( PlaneFlyStraight
                         vote: 10
                         voteOnCriticalAltitude: 100
-                        criticalAltitude: ( Meters 3500 ) 
+                        criticalAltitude: ( Meters 3500 )
                      )
                      ( PlaneFollowEnemy vote: 50 )
                      ( PlaneTurn vote: 15 )
@@ -298,7 +295,7 @@ simulation: ( WorldModel
                headingHoldMode: false
                velocityHoldMode: false
             )
-          
+
             antennas: ( Gimbal
                components: {
                   radar: ( Antenna
@@ -320,7 +317,7 @@ simulation: ( WorldModel
                         localPlayersOfInterestOnly: false
                         useWorldCoordinates: false
                   )
-                  rwr: ( Antenna 
+                  rwr: ( Antenna
                         scanMode: manual
                         polarization: horizontal
                         gain: ( dB 12 )
@@ -335,14 +332,14 @@ simulation: ( WorldModel
                      powerPeak:  ( KiloWatts 500.0 )
                      frequency:  ( GigaHertz 3.0 )
                      bandwidth:  ( GigaHertz 2.0 )
-                     PRF:        ( Hertz 500.0 ) 
+                     PRF:        ( Hertz 500.0 )
                      pulseWidth: ( MilliSeconds 0.01 )
                      threshold:  ( dB 0.0 )
                      ranges:     [ 10 20 40 80 160 ]
                      initRangeIdx: 2
                   )
-                  ( Rwr 
-                      antennaName: rwr  
+                  ( Rwr
+                      antennaName: rwr
                       threshold:  ( dB 0.0 )
                       frequency:  ( GigaHertz 3.0 )
                       bandwidth:  ( GigaHertz 2.0 )
@@ -384,7 +381,7 @@ simulation: ( WorldModel
                      )
                   }
               )
-              
+
           }
       )
 

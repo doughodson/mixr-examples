@@ -1,8 +1,6 @@
 
 #define REF_LATITUDE     30.8
 #define REF_LONGITUDE   -86.8
-#define IG_LATITUDE   REF_LATITUDE
-#define IG_LONGITUDE  REF_LONGITUDE
 
 ( SimStation
 

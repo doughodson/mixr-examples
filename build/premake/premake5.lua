@@ -2,7 +2,7 @@
 -- If premake command is not supplied an action (target compiler), exit!
 --
 -- Target of interest:
---     vs2017     (Visual Studio 2017)
+--     vs2019     (Visual Studio 2019)
 --
 
 -- we must have an ide/compiler specified
@@ -23,7 +23,7 @@ MIXR_IncPath         = MIXR_ROOT.."/include"
 MIXR_LibPath         = MIXR_ROOT.."/lib/"
 
 MIXR_3rdPartyIncPath = MIXR_3RD_PARTY_ROOT.."/include"
-MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-x32"
+MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-x64"
 
 MIXR_ExamplesIncPath = "../../shared/include"
 MIXR_ExamplesLibPath = "../../shared/lib"
@@ -51,7 +51,7 @@ print ("  Include   : "..HLALibPath)
 --
 -- 3rd party library names
 --
-LibCigi       = "ccl_lib"
+LibCigi       = "cigicl"
 LibFtgl       = "ftgl"
 LibFreetype   = "freetype2"
 LibGlut       = "freeglut"
@@ -67,17 +67,17 @@ LibGL         = "opengl32"
 LibWindows    = {"Ws2_32", "Winmm", "comctl32", "gdi32", "iphlpapi"}
 
 LibOsg        = {"osgdb_txp",
-                 "osg158-osg", "osg158-osgAnimation", "osg158-osgDB", "osg158-osgFX", "osg158-osgGA",
-                 "osg158-osgManipulator", "osg158-osgParticle", "osg158-osgPresentation",
-                 "osg158-osgShadow", "osg158-osgSim", "osg158-osgTerrain", "osg158-osgText",
-                 "osg158-osgUI", "osg158-osgUtil", "osg158-osgViewer", "osg158-osgVolume", "osg158-osgWidget",
+                 "osg161-osg", "osg161-osgAnimation", "osg161-osgDB", "osg161-osgFX", "osg161-osgGA",
+                 "osg161-osgManipulator", "osg161-osgParticle", "osg161-osgPresentation",
+                 "osg161-osgShadow", "osg161-osgSim", "osg161-osgTerrain", "osg161-osgText",
+                 "osg161-osgUI", "osg161-osgUtil", "osg161-osgViewer", "osg161-osgVolume", "osg161-osgWidget",
                  "ot21-OpenThreads"}
 
 LibOsg_d      = {"osgdb_txpd",
-                 "osg158-osgd", "osg158-osgAnimationd", "osg158-osgDBd", "osg158-osgFXd", "osg158-osgGAd",
-                 "osg158-osgManipulatord", "osg158-osgParticled", "osg158-osgPresentationd",
-                 "osg158-osgShadowd", "osg158-osgSimd", "osg158-osgTerraind", "osg158-osgTextd",
-                 "osg158-osgUId", "osg158-osgUtild", "osg158-osgViewerd", "osg158-osgVolumed", "osg158-osgWidgetd",
+                 "osg161-osgd", "osg161-osgAnimationd", "osg161-osgDBd", "osg161-osgFXd", "osg161-osgGAd",
+                 "osg161-osgManipulatord", "osg161-osgParticled", "osg161-osgPresentationd",
+                 "osg161-osgShadowd", "osg161-osgSimd", "osg161-osgTerraind", "osg161-osgTextd",
+                 "osg161-osgUId", "osg161-osgUtild", "osg161-osgViewerd", "osg161-osgVolumed", "osg161-osgWidgetd",
                  "ot21-OpenThreadsd"}
 
 workspace "examples"
@@ -97,6 +97,7 @@ workspace "examples"
    --     Debug          (Application linked to Multi-threaded Debug DLL)
    --
    configurations { "Release", "Debug" }
+   platforms { "x64" }
 
    -- visual studio options and warnings
    -- /wd4351 (C4351 warning) - disable warning associated with array brace initialization
@@ -109,16 +110,25 @@ workspace "examples"
 
    -- common release configuration flags, symbols and libraries
    filter { "configurations:Release" }
+      symbols "Off"
       optimize "On"
       -- favor speed over size
       buildoptions { "/Ot" }
       defines { "WIN32", "NDEBUG" }
+
+   filter {}
 
    -- common debug configuration flags, symbols and libraries
    filter { "configurations:Debug" }
       symbols "On"
       targetsuffix "_d"
       defines { "WIN32", "_DEBUG" }
+
+   filter { "platforms:x64" }
+      system "Windows"
+      architecture "x86_64"
+
+   filter {}
 
    -- libraries shared between examples
    dofile "shared-libs.lua"

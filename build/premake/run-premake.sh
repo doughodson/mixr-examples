@@ -2,8 +2,6 @@
 # remove any generated build files
 #
 rm -rf ..\gmake
-rm -rf ..\vs2017
-rm -rf ..\vs2019
 rm -rf ..\obj
 #
 # remove any compiled libraries

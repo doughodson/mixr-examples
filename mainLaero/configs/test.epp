@@ -6,6 +6,11 @@
    mapDisplay: 
    #include "mapdisplay.epp"
 
+   // image generator host interface
+   igHosts: {
+      //#include "ighosts/flightgear.epp"
+   }
+
    ownship: player1
 
    simulation:
@@ -50,15 +55,8 @@
                   //loiterPatternLength: 2
                )
                
-               #if 1
-                  dynamicsModel:
-                  ( LaeroModel )
-               #else
-                  //dynamicsModel:
-                  //( RacModel )
-                  dynamicsModel:
-                  ( JSBSimModel )
-               #endif
+               dynamicsModel:
+               ( LaeroModel )
                
                navigation:
                ( Navigation

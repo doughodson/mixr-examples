@@ -11,7 +11,7 @@ OBJS =  \
 	MapPage.o \
 	TestStation.o
 
-LDFLAGS += -lmixr_interop_dis -lmixr_interop
+LDFLAGS += -lmixr_interop_dis -lmixr_interop -lmixr_ighost_flightgear
 LDFLAGS += -lmixr_models -lJSBSim
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lmixr_simulation -lmixr_models -lmixr_terrain

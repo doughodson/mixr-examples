@@ -5,7 +5,8 @@
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/network/NetHandler.hpp"
-#include "mixr/base/units/lengths.hpp"
+#include "mixr/base/units/util/length_utils.hpp"
+#include "mixr/base/units/util/angle_utils.hpp"
 #include "mixr/base/util/endian_utils.hpp"
 
 #include "mixr/ighost/flightgear/FGNetFDM.hpp"
@@ -104,7 +105,7 @@ void SimpleIGen::updateData(const double dt)
 void SimpleIGen::draw()
 {
    if (viewer->isRealized()) {
-      
+
       int n{recv(reinterpret_cast<char*>(&fgNetFDM))};
       if (n > 0) {
 
@@ -118,9 +119,9 @@ void SimpleIGen::draw()
          y = fgNetFDM.longitude * base::length::FT2M;
          z = fgNetFDM.altitude * base::length::FT2M;
          // update orientation
-         //yaw = -entityState.psi;     // OSE heading is -(A/C heading)
-         //pitch = entityState.theta;
-         //roll = entityState.phi;
+         yaw = -fgNetFDM.psi * base::angle::R2DCC;     // OSE heading is -(A/C heading)
+         pitch = fgNetFDM.theta * base::angle::R2DCC;
+         roll = fgNetFDM.phi * base::angle::R2DCC;
       }
 
       viewMatrix.set(
@@ -132,7 +133,7 @@ void SimpleIGen::draw()
       rotate = osg::Matrix::rotate(osg::DegreesToRadians(roll), osg::Y_AXIS, osg::DegreesToRadians(pitch),
                                    osg::X_AXIS, osg::DegreesToRadians(yaw), osg::Z_AXIS);
       translate = osg::Matrix::translate(x, y, z);
-      
+
       // Setup Rotation and Position Matrix
       viewRotAndPosMatrix = rotate * translate;
       // Invert Model View Matrix

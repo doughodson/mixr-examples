@@ -36,7 +36,7 @@ public:
    bool onEntry() final;
 
    // initialize the network
-   bool initNetwork();      
+   bool initNetwork();
    // receive a buffer from the network
    int recv(char* buffer);
 
@@ -47,10 +47,10 @@ private:
    ::osg::ref_ptr<::osg::Light> light;
    ::osg::ref_ptr<::osg::LightSource> lightSource;
    ::osg::observer_ptr<osgViewer::GraphicsWindow> window;
-   // attitude
+   // orientation
    float yaw {}, pitch {}, roll {};
    // position
-   float x {}, y {}, z {6000.0};
+   float x {}, y {}, z {1000.0};
    // data from simulation
    ::mixr::flightgear::FGNetFDM fgNetFDM;
    // coord System Shift (Z Up)

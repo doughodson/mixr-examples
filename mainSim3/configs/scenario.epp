@@ -30,7 +30,9 @@ simulation:
             side: red
             type: "F-16C"
             signature: ( SigSphere radius: 2.0 )
-            initPosition: [ 15000 0 -10000 ]
+            initXPos: ( Meters 15000 )
+            initYPos: ( Meters 0 )
+            initAlt: ( Meters 10000 )
             initHeading: ( Degrees 275 )
             initVelocity: 250
             positionFreeze: false

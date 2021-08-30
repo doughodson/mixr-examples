@@ -22,7 +22,8 @@
 
    // image generator host interface
    igHosts: {
-      #include "ighosts/cigi.epp"
+      //#include "ighosts/cigi.epp"
+      #include "ighosts/flightgear.epp"
    }
 
    // interoperability interfaces

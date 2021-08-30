@@ -1,0 +1,28 @@
+//
+// Launch FlightGear with the following arguments to set it up as a visual system
+// (many options exist, use "fsfg --help --verbose" to see them all
+//
+// On Windows use "fgfs.exe", for Linux use "fgfs" 
+//
+// Below are the options we typically set:
+//
+//    --aircraft=ufo                          // this aircraft is selected so that disable instrument panel works
+//    --disable-panel                         // disable instrument panel
+//    --disable-random-objects                // exclude random scenry objects such as buildings, etc.
+//    --fdm=null                              // core flight dynamics model (for us, this is MIXR)
+//    --max-fps=60                            // max frame rate in Hz
+//    --vc=0                                  // initial airspeed in knots
+//    --timeofday=noon                        // the time of day
+//    --native-fdm=socket,in,30,,5500,udp     // connection to FG native FDM
+//                                            // format (--native=socket,direction,hz,machine,port,type -- no spaces!!)
+//                                            //   direction = in, out or bi
+//                                            //   hz = number of times per second
+//                                            //   machine = machine name of ip address if client (leave empty if server) 
+//                                            //   port = port, leave empty to let system choose
+//                                            //   type = tcp or udp
+//
+
+( FlightGearHost
+//  netOutput: ( UdpUnicastHandler ipAddress: "127.0.0.1"  port: 5500 localPort: 5501 )
+    netOutput: ( UdpUnicastHandler localIpAddress: localhost ipAddress: localhost  port: 5500 localPort: 5501 shared: true)
+)

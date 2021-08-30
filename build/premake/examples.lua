@@ -23,7 +23,7 @@ project "mainCockpit"
    defines { "_CONSOLE" }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
-      links {"mixr_ighost_cigi", "mixr_ighost_flightgear", LibCigi}
+      links {"mixr_ighost_cigi", LibCigi, "mixr_ighost_flightgear" }
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_linkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}

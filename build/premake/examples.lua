@@ -23,7 +23,7 @@ project "mainCockpit"
    defines { "_CONSOLE" }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq"}
-      links {"mixr_ighost_cigi", LibCigi, "mixr_ighost_flightgear" }
+      links {"mixr_ighost_cigi", LibCigi, "mixr_ighost_flightgear", "mixr_ighost_pov" }
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_linkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
@@ -32,7 +32,7 @@ project "mainCockpit"
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d"}
-      links {"mixr_ighost_cigi_d", LibCigi_d, "mixr_ighost_flightgear_d"}
+      links {"mixr_ighost_cigi_d", LibCigi_d, "mixr_ighost_flightgear_d", "mixr_ighost_pov_d"}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_linkage_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
@@ -82,13 +82,13 @@ project "mainIgViewer"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_3rdPartyLibPath.."/osgPlugins-3.6.5" }
    filter "configurations:Release"
       links {"mixr_models", "mixr_simulation", "JSBSim", "mixr_terrain"}
-      links {"mixr_ighost_flightgear"}
+      links {"mixr_ighost_pov"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibOsg, LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "mixr_simulation_d", "JSBSim_d", "mixr_terrain_d"}
-      links {"mixr_ighost_flightgear_d"}
+      links {"mixr_ighost_pov_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibOsg_d, LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}
       links {LibWindows}
@@ -112,14 +112,14 @@ project "mainLaero"
    links { "libxzmq" }
    filter "configurations:Release"
       links {"mixr_models", "JSBSim", "libzmq" }
-      links {"mixr_interop_dis", "mixr_interop", "mixr_ighost_flightgear"}
+      links {"mixr_interop_dis", "mixr_interop", "mixr_ighost_flightgear", "mixr_ighost_pov"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
       links {"mixr_models_d", "JSBSim_d", "libzmq_d" }
-      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_ighost_flightgear_d"}
+      links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_ighost_flightgear_d", "mixr_ighost_pov_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}

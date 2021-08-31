@@ -23,7 +23,7 @@ MIXR_IncPath         = MIXR_ROOT.."/include"
 MIXR_LibPath         = MIXR_ROOT.."/lib/"
 
 MIXR_3rdPartyIncPath = MIXR_3RD_PARTY_ROOT.."/include"
-MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/".._ACTION.."-x64"
+MIXR_3rdPartyLibPath = MIXR_3RD_PARTY_ROOT.."/lib/msvc_v142_x64"
 
 MIXR_ExamplesIncPath = "../../shared/include"
 MIXR_ExamplesLibPath = "../../shared/lib"

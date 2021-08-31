@@ -1,3 +1,4 @@
+
 ( TestStation
 
    glutDisplay:
@@ -8,7 +9,8 @@
 
    // image generator host interface
    igHosts: {
-      #include "ighosts/flightgear.epp"
+      //#include "ighosts/flightgear.epp"
+      #include "ighosts/pov.epp"
    }
 
    ownship: player1
@@ -28,9 +30,7 @@
             side:          blue
             type:          "F-16"
             signature:     ( SigSphere radius: 2.0 )
-            initLatitude:  ( Degrees  0 )
-            initLongitude: ( Degrees  0 )
-            initAlt:       ( Feet 80000 )
+            initAlt:       ( Meters 500 )
             initHeading:   ( Degrees 0 )
             initVelocity:  100
 

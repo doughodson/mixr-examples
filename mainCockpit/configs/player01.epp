@@ -5,8 +5,8 @@ p01:
     type: "F-16"
     signature: ( SigSphere radius: 2.0 )
 
-    initAlt: ( Meters 500 )
-    initHeading: ( Degrees 0.0 )      // initial heading
+    initAlt: ( Meters 5000 )
+    initHeading: ( Degrees 90.0 )      // initial heading
     initVelocity: 300
 
     positionFreeze: false

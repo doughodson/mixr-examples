@@ -6,10 +6,10 @@ duck11:
     side: red
     signature: ( SigSphere radius: 2.0 )
 
-    initXPos: ( Meters 7000 )
-    initYPos: ( Meters 1000 )
+    initXPos: ( Meters 1000 )
+    initYPos: ( Meters 7000 )
     initAlt: ( Meters 500 )
-    initHeading: ( Degrees 0.0 )      // Initial heading
+    initHeading: ( Degrees 90.0 )      // Initial heading
     initVelocity: 300
 
     positionFreeze: false

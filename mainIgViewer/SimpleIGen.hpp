@@ -47,10 +47,6 @@ private:
    ::osg::ref_ptr<::osg::Light> light;
    ::osg::ref_ptr<::osg::LightSource> lightSource;
    ::osg::observer_ptr<osgViewer::GraphicsWindow> window;
-   // orientation
-   float yaw {}, pitch {}, roll {};
-   // position
-   float x {}, y {}, z {1000.0};
    // data from simulation
    ::mixr::pov::Pov pov;
    // coord System Shift (Z Up)

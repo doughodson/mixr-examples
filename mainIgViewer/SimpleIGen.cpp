@@ -39,8 +39,6 @@ END_SLOT_MAP()
 SimpleIGen::SimpleIGen()
 {
    STANDARD_CONSTRUCTOR()
-   //x = -20.0f * base::length::KM2M;
-   //y = -20.0f * base::length::KM2M;
    viewer = new osgViewer::Viewer;
 }
 
@@ -103,6 +101,9 @@ void SimpleIGen::updateData(const double dt)
 
 void SimpleIGen::draw()
 {
+   // position & orientation
+   static float x{}, y{}, z{1000.0};
+   static float heading{}, pitch{}, roll{};
    if (viewer->isRealized()) {
 
       int n{recv(reinterpret_cast<char*>(&pov))};
@@ -114,22 +115,13 @@ void SimpleIGen::draw()
          }
 
          // update position
-         //x = fgNetFDM.latitude * base::length::FT2M;
-         //y = fgNetFDM.longitude * base::length::FT2M;
-         //z = fgNetFDM.altitude * base::length::FT2M;
+         x = pov.east;
+         y = pov.north;
+         z = pov.alt_agl;
          // update orientation
-         //yaw = -fgNetFDM.psi * base::angle::R2DCC;     // OSE heading is -(A/C heading)
-         //pitch = fgNetFDM.theta * base::angle::R2DCC;
-         //roll = fgNetFDM.phi * base::angle::R2DCC;
-
-         // update position
-         x = pov.latitude * base::length::FT2M;
-         y = pov.longitude * base::length::FT2M;
-         z = -pov.altitude * base::length::FT2M;
-         // update orientation
-         yaw = pov.psi;
-         pitch = pov.theta;
-         roll = pov.phi;
+         heading = -pov.heading;
+         pitch = pov.pitch;
+         roll = pov.roll;
       }
 
       viewMatrix.set(
@@ -139,7 +131,7 @@ void SimpleIGen::draw()
          0, 0, 0, 1);
 
       rotate = osg::Matrix::rotate(osg::DegreesToRadians(roll), osg::Y_AXIS, osg::DegreesToRadians(pitch),
-                                   osg::X_AXIS, osg::DegreesToRadians(yaw), osg::Z_AXIS);
+                                   osg::X_AXIS, osg::DegreesToRadians(heading), osg::Z_AXIS);
       translate = osg::Matrix::translate(x, y, z);
 
       // Setup Rotation and Position Matrix

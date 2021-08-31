@@ -53,7 +53,9 @@
             side: blue
             type: "F-16"
 
-            initPosition: [ 0 0 -10000 ]
+            initXPos: ( Meters 0 )
+            initYPos: ( Meters 0 )
+            initAlt:  ( Meters -10000 )
             initHeading: ( Degrees HDNG )
             initPitch: ( Degrees PITCH )
             initVelocity: 300 //250
@@ -110,7 +112,10 @@
             initVelocity: 200
             initHeading: ( Degrees HDNG1 )
             initPitch: ( Degrees PITCH )
-            initPosition: [ RANGE1 0 -10000 ]
+            initXPos: ( Meters RANGE1 )
+            initYPos: ( Meters 0 )
+            initAlt:  ( Meters -10000 )
+
          )
 #if 1
          target2: ( Aircraft
@@ -122,7 +127,10 @@
             initVelocity: 200
             initHeading: ( Degrees HDNG2 )
             initPitch: ( Degrees PITCH )
-            initPosition: [ RANGE2 0 -10000 ]
+            initXPos: ( Meters RANGE2 )
+            initYPos: ( Meters 0 )
+            initAlt:  ( Meters -10000 )
+
          )
 #endif
       } // End Players

@@ -3,7 +3,7 @@
 //
 //    Each player with a RADAR and a RWR (plus one red player with an
 //    optional noise jammer), and each player's radar will process
-//    all other players as targets (simple n-squared problem). 
+//    all other players as targets (simple n-squared problem).
 //
 //    Blue has 3 rows of 8 (24 players) and Red has 3 rows of
 //    8 players (24 players), or 48 total players.  To show the doppler
@@ -15,7 +15,7 @@
 //    the 'ownship' focus of the radar and rwr displays.
 //
 //    No track managers, and the R/F parameters are made up.
-//    
+//
 //    (note: On Intel/Xeon 5140 @ 2.33GHz; with 4 processors), execution time is
 //     about 10MS per frame.  Using numTcThreads @ 3 threads, execution time is about
 //     6MS per frame)
@@ -107,7 +107,7 @@
             // ---
             // Blue row #1
             // ---
-            
+
             p011: ( Aircraft
                 id: 1011
                 side: blue
@@ -137,7 +137,7 @@
                            useWorldCoordinates: USE_WORLD
 
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -151,14 +151,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -195,7 +195,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -209,14 +209,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -253,7 +253,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -267,14 +267,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -311,7 +311,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -325,14 +325,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -369,7 +369,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -383,14 +383,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -427,7 +427,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -441,14 +441,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -485,7 +485,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -499,14 +499,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -543,7 +543,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -557,14 +557,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -577,7 +577,7 @@
             // ---
             // Blue row #2
             // ---
-            
+
             p021: ( Aircraft
                 id: 1021
                 side: blue
@@ -605,7 +605,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -619,14 +619,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -663,7 +663,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -677,14 +677,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -721,7 +721,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -735,14 +735,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -779,7 +779,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -793,14 +793,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -837,7 +837,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -851,14 +851,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -895,7 +895,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -909,14 +909,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -953,7 +953,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -967,14 +967,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1011,7 +1011,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1025,14 +1025,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1045,7 +1045,7 @@
             // ---
             // Blue row #3
             // ---
-            
+
             p031: ( Aircraft
                 id: 1031
                 side: blue
@@ -1073,7 +1073,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1087,14 +1087,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1131,7 +1131,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1145,14 +1145,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1189,7 +1189,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1203,14 +1203,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1247,7 +1247,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1261,14 +1261,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1305,7 +1305,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1319,14 +1319,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1363,7 +1363,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1377,14 +1377,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1392,7 +1392,7 @@
                      }
                   )
                }
-            )            
+            )
 
             p037: ( Aircraft
                 id: 1037
@@ -1421,7 +1421,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1435,14 +1435,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1451,7 +1451,7 @@
                   )
                }
             )
-   
+
             p038: ( Aircraft
                 id: 1038
                 side: blue
@@ -1479,7 +1479,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1493,14 +1493,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1513,7 +1513,7 @@
             // ---
             // Red row #1
             // ---
-            
+
             p111: ( Aircraft
                 id: 1111
                 side: red
@@ -1541,7 +1541,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1555,14 +1555,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1598,7 +1598,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1612,14 +1612,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1655,7 +1655,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1669,14 +1669,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1712,7 +1712,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1726,14 +1726,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 3.0 )
@@ -1769,7 +1769,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1783,14 +1783,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1826,7 +1826,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1840,14 +1840,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1883,7 +1883,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1897,14 +1897,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1940,7 +1940,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -1954,14 +1954,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1971,11 +1971,11 @@
                }
             )
 
-            
+
             // ---
             // Red row #2
             // ---
-            
+
             p121: ( Aircraft
                 id: 1121
                 side: red
@@ -2002,7 +2002,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2016,14 +2016,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2059,7 +2059,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2073,14 +2073,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2116,7 +2116,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2130,14 +2130,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2173,7 +2173,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2187,14 +2187,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2230,7 +2230,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2244,14 +2244,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2287,7 +2287,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2301,14 +2301,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2344,7 +2344,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2358,14 +2358,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2401,7 +2401,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2415,14 +2415,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2431,12 +2431,12 @@
                   )
                }
             )
-            
-                        
+
+
             // ---
             // Red row #3
             // ---
-            
+
             p131: ( Aircraft
                 id: 1131
                 side: red
@@ -2463,7 +2463,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2477,14 +2477,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2520,7 +2520,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2534,14 +2534,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2577,7 +2577,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2591,14 +2591,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2634,7 +2634,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2648,14 +2648,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2691,7 +2691,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2700,7 +2700,6 @@
                         jammer: ( Antenna
                            polarization: horizontal
                            gain: ( dB 5 )
-                           //initPosition: [ -0.17 0 ]
                            initPosition: [ 0.0 0 ]
                            #include "gainPattern.epp"
                            useWorldCoordinates: USE_WORLD
@@ -2715,14 +2714,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2767,7 +2766,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2781,14 +2780,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2824,7 +2823,7 @@
                            numBars: NUM_BARS
                            useWorldCoordinates: USE_WORLD
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2838,14 +2837,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2880,7 +2879,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                            maxPlayersOfInterest: 0
@@ -2894,14 +2893,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )

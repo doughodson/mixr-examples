@@ -29,6 +29,7 @@ edl:
 	cpp configs/test3b.epp >test3b.edl   $(EPPFLAGS)
 	cpp configs/test4a.epp >test4a.edl   $(EPPFLAGS)
 	cpp configs/test4b.epp >test4b.edl   $(EPPFLAGS)
+	cpp configs/test4c.epp >test4c.edl   $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

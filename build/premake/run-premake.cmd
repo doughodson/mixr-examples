@@ -16,3 +16,4 @@ rem
 rem create solution/workspace files
 rem
 premake5-beta1.exe --os=windows --file=mixr-examples.lua vs2019
+premake5-beta1.exe --os=windows --file=mixr-examples.lua vs2022

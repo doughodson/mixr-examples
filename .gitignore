@@ -113,6 +113,7 @@ testRadar/testRadar
 testRecordData/testRecordData
 testRecordData/*_v*
 testRecorderRead/testRecorderRead
+testRecorderRead/testRecorderRead/*.csv
 testRecorderWrite/testRecorderWrite
 testRecorderWrite/*.bin
 testSlots/testSlots

@@ -12,7 +12,8 @@ OBJS = \
 
 CPPFLAGS += -DOSG_LIBRARY_STATIC
 
-LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_terrain
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_simulation -lmixr_terrain
 LDFLAGS += -lmixr_ui_glut -lmixr_graphics -lmixr_base -lmixr_ighost_pov
 
 LDFLAGS += -losgdb_txp -losgText -losgSim -losgViewer -losgUtil -losgGA -losgDB -losg -lOpenThreads -ldl

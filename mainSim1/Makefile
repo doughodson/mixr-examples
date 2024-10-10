@@ -8,9 +8,10 @@ OBJS = main.o
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
 LDFLAGS += -lmixr_ighost_cigi -lmixr_ighost_flightgear
-LDFLAGS += -lmixr_models -lmixr_simulation
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_simulation
 LDFLAGS += -lmixr_terrain -lmixr_base
-LDFLAGS += -lcigicl -lJSBSim
+LDFLAGS += -lcigicl
 LDFLAGS += -lrt -lpthread
 
 CPPFLAGS += -I/usr/local/include

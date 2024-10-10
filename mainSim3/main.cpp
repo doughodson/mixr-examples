@@ -14,6 +14,7 @@
 #include "mixr/instruments/factory.hpp"
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
+#include "mixr/models/dynamics/jsbsim/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/ighost/cigi/factory.hpp"
@@ -64,16 +65,17 @@ mixr::base::Object* factory(const std::string& name)
     if (obj == nullptr)  { obj = mixr::xzmq::factory(name);         }
 
     // platform libraries
-    if (obj == nullptr)  { obj = mixr::cigi::factory(name);         }
-    if (obj == nullptr)  { obj = mixr::flightgear::factory(name);    }
-    if (obj == nullptr)  { obj = mixr::instruments::factory(name);  }
-    if (obj == nullptr)  { obj = mixr::simulation::factory(name);   }
-    if (obj == nullptr)  { obj = mixr::models::factory(name);       }
-    if (obj == nullptr)  { obj = mixr::terrain::factory(name);      }
-    if (obj == nullptr)  { obj = mixr::dis::factory(name);          }
-    if (obj == nullptr)  { obj = mixr::graphics::factory(name);     }
-    if (obj == nullptr)  { obj = mixr::glut::factory(name);         }
-    if (obj == nullptr)  { obj = mixr::base::factory(name);         }
+    if (obj == nullptr)  { obj = mixr::cigi::factory(name);           }
+    if (obj == nullptr)  { obj = mixr::flightgear::factory(name);     }
+    if (obj == nullptr)  { obj = mixr::instruments::factory(name);    }
+    if (obj == nullptr)  { obj = mixr::simulation::factory(name);     }
+    if (obj == nullptr)  { obj = mixr::models::factory(name);         }
+    if (obj == nullptr)  { obj = mixr::models::jsbsim::factory(name); }
+    if (obj == nullptr)  { obj = mixr::terrain::factory(name);        }
+    if (obj == nullptr)  { obj = mixr::dis::factory(name);            }
+    if (obj == nullptr)  { obj = mixr::graphics::factory(name);       }
+    if (obj == nullptr)  { obj = mixr::glut::factory(name);           }
+    if (obj == nullptr)  { obj = mixr::base::factory(name);           }
 
     return obj;
 }

@@ -13,6 +13,7 @@
 #include "mixr/base/factory.hpp"
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
+#include "mixr/models/dynamics/jsbsim/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/instruments/factory.hpp"
@@ -46,6 +47,7 @@ mixr::base::Object* factory(const std::string& name)
     // Framework libraries
     if (obj == nullptr) obj = mixr::simulation::factory(name);
     if (obj == nullptr) obj = mixr::models::factory(name);
+    if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);
     if (obj == nullptr) obj = mixr::terrain::factory(name);
     if (obj == nullptr) obj = mixr::instruments::factory(name);
     if (obj == nullptr) obj = mixr::flightgear::factory(name);

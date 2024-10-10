@@ -7,7 +7,7 @@ OBJS =	DspRadar.o DspRwr.o TdAzPtr.o TdElevPtr.o \
 	TestDisplay.o TestStation.o factory.o main.o
 
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
-LDFLAGS += -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
 LDFLAGS += -lmixr_simulation
 LDFLAGS += -lmixr_ui_glut -lmixr_instruments -lmixr_graphics
 LDFLAGS += -lmixr_linkage -lmixr_terrain

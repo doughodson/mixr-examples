@@ -6,6 +6,7 @@
 // factories
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
+#include "mixr/models/dynamics/jsbsim/factory.hpp"
 #include "mixr/terrain/factory.hpp"
 #include "mixr/base/factory.hpp"
 
@@ -20,6 +21,7 @@ mixr::base::Object* factory(const std::string& name)
 {
    mixr::base::Object* obj{mixr::simulation::factory(name)};
    if (obj == nullptr) obj = mixr::models::factory(name);
+   if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);
    if (obj == nullptr) obj = mixr::terrain::factory(name);
    if (obj == nullptr) obj = mixr::base::factory(name);
    return obj;

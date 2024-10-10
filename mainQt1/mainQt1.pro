@@ -49,6 +49,7 @@ win32:CONFIG(release, debug|release): LIBS +=        \
     -lmixr_interop_dis                               \
     -lmixr_interop                                   \
     -lmixr_simulation                                \
+    -lmixr_models_jsbsim                             \
     -lmixr_models                                    \
     -lmixr_terrain                                   \
     -lmixr_base                                      \
@@ -65,6 +66,7 @@ else:win32:CONFIG(debug, debug|release): LIBS +=        \
     -lmixr_interop_dis_d                                \
     -lmixr_interop_d                                    \
     -lmixr_simulation_d                                 \
+    -lmixr_models_jsbsim_d                              \
     -lmixr_models_d                                     \
     -lmixr_terrain_d                                    \
     -lmixr_base_d                                       \
@@ -81,6 +83,7 @@ else:unix:!macx:!symbian: LIBS +=       \
     -lmixr_interop_dis                  \
     -lmixr_interop                      \
     -lmixr_simulation                   \
+    -lmixr_models_jsbsim                \
     -lmixr_models                       \
     -lmixr_terrain                      \
     -lmixr_base                         \

@@ -6,7 +6,8 @@ PGM = testInfrared
 OBJS =	factory.o TestComputer.o TestDisplay.o TestStation.o main.o
 
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
-LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_instruments -lJSBSim
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_simulation -lmixr_instruments
 LDFLAGS += -lmixr_linkage
 LDFLAGS += -lmixr_ighost_cigi -lmixr_ighost_flightgear
 LDFLAGS += -lmixr_terrain

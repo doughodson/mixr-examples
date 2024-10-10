@@ -5,7 +5,8 @@ PGM = mainNonRT1
 
 OBJS = main.o
 
-LDFLAGS += -lmixr_models -lmixr_simulation -lJSBSim
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_simulation
 LDFLAGS += -lmixr_instruments -lmixr_terrain
 LDFLAGS += -lmixr_base
 LDFLAGS += -lrt -lX11

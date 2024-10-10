@@ -4,7 +4,7 @@ PGM = testRecorderWrite
 
 OBJS = main.o DataRecordTest.o
 
-LDFLAGS += -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
 LDFLAGS += -lmixr_recorder -lmixr_simulation
 LDFLAGS += -lmixr_terrain -lmixr_base
 LDFLAGS += -lprotobuf

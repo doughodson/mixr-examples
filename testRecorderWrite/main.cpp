@@ -6,6 +6,7 @@
 
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
+#include "mixr/models/dynamics/jsbsim/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/recorder/factory.hpp"
 
@@ -21,6 +22,7 @@ mixr::base::Object* factory(const std::string& name)
    } else {
       if (obj == nullptr) obj = mixr::simulation::factory(name);
       if (obj == nullptr) obj = mixr::models::factory(name);
+      if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);
       if (obj == nullptr) obj = mixr::base::factory(name);
       if (obj == nullptr) obj = mixr::recorder::factory(name);
    }

@@ -11,7 +11,8 @@ OBJS =  \
 	WaypointTests.o \
 	main.o
     
-LDFLAGS += -lmixr_models -lmixr_simulation -lmixr_dafif -lmixr_terrain -lmixr_base 
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
+LDFLAGS += -lmixr_simulation -lmixr_dafif -lmixr_terrain -lmixr_base 
 LDFLAGS += -lpthread -lrt
 
 all: edl $(PGM)

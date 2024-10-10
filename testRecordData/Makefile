@@ -8,7 +8,7 @@ OBJS += TestIoHandler.o
 OBJS += factory.o main.o
 
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
-LDFLAGS += -lmixr_models
+LDFLAGS += -lmixr_models_jsbsim -lmixr_models
 LDFLAGS += -lxrecorder -lxpanel
 LDFLAGS += -lmixr_recorder -lmixr_terrain
 LDFLAGS += -lmixr_simulation -lmixr_instruments

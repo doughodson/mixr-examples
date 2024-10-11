@@ -18,10 +18,10 @@ project "testDafif"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
-      links {"mixr_models", "mixr_simulation", "mixr_terrain", "mixr_dafif", "mixr_base"}
+      links {"mixr_models_jsbsim", "mixr_models", "mixr_simulation", "mixr_terrain", "mixr_dafif", "mixr_base"}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_d", "mixr_simulation_d", "mixr_terrain_d", "mixr_dafif_d", "mixr_base_d"}
+      links {"mixr_models_jsbsim_d", "mixr_models_d", "mixr_simulation_d", "mixr_terrain_d", "mixr_dafif_d", "mixr_base_d"}
       links {LibWindows}
 
 -- testEvents: test of event passing
@@ -85,7 +85,7 @@ project "testInfrared"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
-      links {"mixr_models", "JSBSim"}
+      links {"mixr_models_jsbsim", "mixr_models", "JSBSim"}
       links {"mixr_ighost_cigi", LibCigi, "mixr_ighost_flightgear"}
       links {"mixr_interop_dis", "mixr_interop" }
       links {"mixr_simulation", "mixr_terrain"}
@@ -93,7 +93,7 @@ project "testInfrared"
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_d", "JSBSim_d"}
+      links {"mixr_models_jsbsim_d", "mixr_models_d", "JSBSim_d"}
       links {"mixr_ighost_cigi_d", LibCigi_d, "mixr_ighost_flightgear_d"}
       links {"mixr_interop_dis_d", "mixr_interop_d" }
       links {"mixr_simulation_d", "mixr_terrain_d"}
@@ -247,14 +247,14 @@ project "testRadar"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
-      links {"mixr_models", "JSBSim"}
+      links {"mixr_models_jsbsim", "mixr_models", "JSBSim"}
       links {"mixr_interop_dis", "mixr_interop", "mixr_linkage"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_d", "JSBSim_d"}
+      links {"mixr_models_jsbsim_d", "mixr_models_d", "JSBSim_d"}
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_linkage_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
@@ -277,7 +277,7 @@ project "testRecordData"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder", "libxpanel" }
    filter "configurations:Release"
-      links {"mixr_models", "JSBSim" }
+      links {"mixr_models_jsbsim", "mixr_models", "JSBSim" }
       links {"mixr_ighost_cigi", LibCigi, "mixr_ighost_flightgear" }
       links {"mixr_interop_dis", "mixr_interop", "mixr_recorder", "mixr_linkage" }
       links {"mixr_simulation", "mixr_terrain" }
@@ -286,7 +286,7 @@ project "testRecordData"
       links {"libprotobuf" }
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_d", "JSBSim_d" }
+      links {"mixr_models_jsbsim_d", "mixr_models_d", "JSBSim_d" }
       links {"mixr_ighost_cigi_d", LibCigi_d, "mixr_ighost_flightgear_d" }
       links {"mixr_interop_dis_d", "mixr_interop_d", "mixr_recorder_d", "mixr_linkage_d" }
       links {"mixr_simulation_d", "mixr_terrain_d" }
@@ -311,11 +311,11 @@ project "testRecorderRead"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
    filter "configurations:Release"
-      links {"mixr_models", "JSBSim" }
+      links {"mixr_models_jsbsim", "mixr_models", "JSBSim" }
       links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_d", "JSBSim_d" }
+      links {"mixr_models_jsbsim_d", "mixr_models_d", "JSBSim_d" }
       links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
 
@@ -335,11 +335,11 @@ project "testRecorderWrite"
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
    links       { "libxrecorder" }
    filter "configurations:Release"
-      links {"mixr_models", "JSBSim" }
+      links {"mixr_models_jsbsim", "mixr_models", "JSBSim" }
       links {"mixr_recorder", "mixr_simulation", "mixr_base", "libprotobuf"}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_d", "JSBSim_d" }
+      links {"mixr_models_jsbsim_d", "mixr_models_d", "JSBSim_d" }
       links {"mixr_recorder_d", "mixr_simulation_d", "mixr_base_d", "libprotobuf_d" }
       links {LibWindows}
 

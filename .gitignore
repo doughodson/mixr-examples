@@ -1,6 +1,6 @@
 # vs directories
-vs2017/
 vs2019/
+vs2022/
 build/obj/
 .vs/
 *.tmp

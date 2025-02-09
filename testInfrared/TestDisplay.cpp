@@ -99,7 +99,7 @@ bool TestDisplay::onPreRelKey()
        mixr::models::StoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
             sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2A);
-            mixr::models::AbstractWeapon* wpn{sms->getCurrentWeapon()};
+            mixr::models::IWeapon* wpn{sms->getCurrentWeapon()};
             if (wpn != nullptr) {
                wpn->prerelease();
                std::cout << "Prelaunched wpn = " << wpn << std::endl;
@@ -201,7 +201,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
          const double x{rpos[0] * mixr::base::length::M2NM};
          const double y{rpos[1] * mixr::base::length::M2NM};
 
-         const auto weapon = dynamic_cast<mixr::models::AbstractWeapon*>(p);
+         const auto weapon = dynamic_cast<mixr::models::IWeapon*>(p);
          if (weapon && (weapon->isMode(mixr::models::Player::Mode::PRE_RELEASE) || weapon->isActive())) {
             target = weapon->getTargetPlayer();
          }

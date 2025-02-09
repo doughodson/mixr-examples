@@ -6,7 +6,7 @@
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/weapon/Missile.hpp"
-#include "mixr/models/player/weapon/AbstractWeapon.hpp"
+#include "mixr/models/player/weapon/IWeapon.hpp"
 
 #include "mixr/models/system/Jammer.hpp"
 #include "mixr/models/system/Radar.hpp"
@@ -112,7 +112,7 @@ bool TestDisplay::onPreRelKey()
     if (getOwnship() != nullptr) {
        models::StoresMgr* sms = getOwnship()->getStoresManagement();
         if (sms != nullptr) {
-            models::AbstractWeapon* wpn = sms->getCurrentWeapon();
+            models::IWeapon* wpn = sms->getCurrentWeapon();
             if (wpn != nullptr) {
                wpn->prerelease();
                std::cout << "Prelaunched wpn = " << wpn << std::endl;

@@ -3,7 +3,7 @@
 
 #include "mixr/models/Track.hpp"
 #include "mixr/models/system/trackmanager/AngleOnlyTrackManager.hpp"
-#include "mixr/models/player/weapon/AbstractWeapon.hpp"
+#include "mixr/models/player/weapon/IWeapon.hpp"
 #include "mixr/models/system/IrSeeker.hpp"
 #include "mixr/models/system/IrSensor.hpp"
 
@@ -131,7 +131,7 @@ bool TestComputer::processIr()
       }
    }
 
-   const auto ourWeapon = dynamic_cast<mixr::models::AbstractWeapon*>(getOwnship());
+   const auto ourWeapon = dynamic_cast<mixr::models::IWeapon*>(getOwnship());
 
    // update the weapon's tracking if the target changed (includes loss of target)
    // weapon::targetPlayer tells the dynamics model where the target is -

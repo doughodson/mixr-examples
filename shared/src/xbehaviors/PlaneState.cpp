@@ -151,7 +151,7 @@ void PlaneState::updateState(const base::Component* const actor)
                if (isIncomingMissile() == false) {
                   // is this track a weapon, and if so, is it targeting me?
                   auto target = trackList[trackIndex]->getTarget();
-                  const auto weapon = dynamic_cast<models::AbstractWeapon*> (target);
+                  const auto weapon = dynamic_cast<models::IWeapon*> (target);
                   if (weapon!=nullptr && !weapon->isDead()) {
                      models::Player* wpntgt{weapon->getTargetPlayer()};
                      if (wpntgt == airVehicle) {
@@ -202,7 +202,7 @@ void PlaneState::updateState(const base::Component* const actor)
                // hack to implement "missile warning"
                if (isIncomingMissile() == false) {
                   // is this track a weapon, and if so, is it targeting me?
-                  const auto weapon = dynamic_cast<models::AbstractWeapon*> (target);
+                  const auto weapon = dynamic_cast<models::IWeapon*> (target);
                   if (weapon!=nullptr && !weapon->isDead()) {
                      models::Player* wpntgt{weapon->getTargetPlayer()};
                      if (wpntgt == airVehicle) {

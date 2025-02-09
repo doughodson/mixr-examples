@@ -7,7 +7,7 @@
 #include <string>
 
 namespace mixr {
-namespace base { class Color; }
+namespace base { class IColor; }
 namespace graphics { class Material; }
 }
 
@@ -53,7 +53,7 @@ private:
     std::string myChar{"ASCII"};
     SendData charSD;
 
-    mixr::base::Color* myColor{};
+    mixr::base::IColor* myColor{};
     SendData colorSD;
 
     static const int MAX_MATERIALS{3};

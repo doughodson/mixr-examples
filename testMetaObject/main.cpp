@@ -7,7 +7,7 @@
 #include "mixr/base/MetaObject.hpp"
 
 #include "mixr/base/numeric/Decibel.hpp"
-#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/IColor.hpp"
 #include "mixr/base/Matrix.hpp"
 
 void printMetadata(const mixr::base::MetaObject* metaObject)
@@ -26,11 +26,11 @@ int main(int, char**)
    const auto db = new mixr::base::Decibel();
    printMetadata(mixr::base::Decibel::getMetaObject());
 
-   const auto c1 = new mixr::base::Color();
-   const auto c2 = new mixr::base::Color();
-   const auto c3 = new mixr::base::Color();
+   const auto c1 = new mixr::base::IColor();
+   const auto c2 = new mixr::base::IColor();
+   const auto c3 = new mixr::base::IColor();
    c2->unref();
-   printMetadata(mixr::base::Color::getMetaObject());
+   printMetadata(mixr::base::IColor::getMetaObject());
 
    const auto matrix1 = new mixr::base::Matrix();
    printMetadata(mixr::base::Matrix::getMetaObject());

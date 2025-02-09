@@ -9,7 +9,7 @@
 
 #include "mixr/base/numeric/Boolean.hpp"
 
-#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/IColor.hpp"
 #include "mixr/base/colors/Rgb.hpp"
 #include "mixr/base/colors/Hsva.hpp"
 

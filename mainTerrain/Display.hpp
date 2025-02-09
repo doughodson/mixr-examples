@@ -7,7 +7,7 @@
 
 namespace mixr {
 namespace base { class Angle; class Boolean; class Integer; class Length; }
-namespace terrain { class Terrain; }
+namespace terrain { class ITerrain; }
 }
 
 class MainWindow;
@@ -20,7 +20,7 @@ class MainWindow;
 // Factory name: TerrainDisplay
 //
 // Slots:
-//    terrain        <terrain::Terrain>     ! The terrain elevation database
+//    terrain        <terrain::ITerrain>    ! The terrain elevation database
 //    minElevation   <Length>               ! Minimum elevation (Distance) (default: use database max value)
 //    maxElevation   <Length>               ! Maximum elevation (Distance) (default: use database max value)
 //    altitude       <Length>               ! Reference altitude (Distance) (default: 15000 feet)
@@ -44,7 +44,7 @@ public:
 public:
    Display();
 
-   const mixr::terrain::Terrain* getTerrain() const              { return terrain; }
+   const mixr::terrain::ITerrain* getTerrain() const              { return terrain; }
 
    bool isMinElevValid() const { return haveMinElev; }   // Ture if the min elevation is valid
    double getMinElevation() const { return minElev; }    // Returns the min elevation (meters)
@@ -67,7 +67,7 @@ private:
    bool copyImageMemory(const Display& org);
    void freeImageMemory();
 
-   mixr::terrain::Terrain* terrain{};                      // Terrain data
+   mixr::terrain::ITerrain* terrain{};                     // Terrain data
 
    double maxElev{15000.0 * mixr::base::length::FT2M};     // Max elevation (meters)
    double minElev{};                                       // Min elevation (meters)
@@ -97,7 +97,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotTerrain(mixr::terrain::Terrain* const);
+   bool setSlotTerrain(mixr::terrain::ITerrain* const);
    bool setSlotMinElevation(const mixr::base::Length* const);
    bool setSlotMaxElevation(const mixr::base::Length* const);
    bool setSlotAltitude(const mixr::base::Length* const);

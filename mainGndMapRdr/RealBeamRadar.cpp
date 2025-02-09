@@ -5,14 +5,13 @@
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/WorldModel.hpp"
 
-#include "mixr/terrain/Terrain.hpp"
+#include "mixr/terrain/ITerrain.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 
-#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/IColor.hpp"
 #include "mixr/base/colors/Rgb.hpp"
 #include "mixr/base/colors/Hsva.hpp"
-#include "mixr/base/colors/Color.hpp"
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/Pair.hpp"
@@ -106,7 +105,7 @@ void RealBeamRadar::transmit(const double dt)
 
          const models::WorldModel* sim{own->getWorldModel()};
          if (sim != nullptr) {
-            setTerrain( dynamic_cast<const mixr::terrain::Terrain*>(sim->getTerrain()) );    // ddh
+            setTerrain( dynamic_cast<const mixr::terrain::ITerrain*>(sim->getTerrain()) );    // ddh
          }
       }
    }
@@ -194,10 +193,10 @@ void RealBeamRadar::transmit(const double dt)
          }
 
          // Generate Masks
-         terrain::Terrain::vbwShadowChecker(maskFlgs, elevations, validFlgs, IMG_HEIGHT, groundRange[IMG_HEIGHT-1], altitude, antElAngle, beamWidth);
+         terrain::ITerrain::vbwShadowChecker(maskFlgs, elevations, validFlgs, IMG_HEIGHT, groundRange[IMG_HEIGHT-1], altitude, antElAngle, beamWidth);
 
          // Compute AAC data
-         terrain::Terrain::aac(aacData, elevations, maskFlgs, IMG_HEIGHT, groundRange[IMG_HEIGHT-1], altitude);
+         terrain::ITerrain::aac(aacData, elevations, maskFlgs, IMG_HEIGHT, groundRange[IMG_HEIGHT-1], altitude);
 
          // Draw a line along the Y points (moving from south to north along the latitude lines)
          for (int irow = 0; irow < IMG_HEIGHT; irow++) {
@@ -207,7 +206,7 @@ void RealBeamRadar::transmit(const double dt)
             // convert to a color (or gray) value
             base::Vec3d color(0,0,0);
             if (validFlgs[irow] && !maskFlgs[irow]) {
-               terrain::Terrain::getElevationColor(sn, 0.0, 1.0, grayTable, 19, color);
+               terrain::ITerrain::getElevationColor(sn, 0.0, 1.0, grayTable, 19, color);
             }
 
             // store this color
@@ -321,7 +320,7 @@ bool RealBeamRadar::computeEarthCurvature(double* const curvature, const unsigne
 // set functions
 //------------------------------------------------------------------------------
 
-bool RealBeamRadar::setTerrain(const terrain::Terrain* const msg)
+bool RealBeamRadar::setTerrain(const terrain::ITerrain* const msg)
 {
    if (msg != terrain) {
       if (terrain != nullptr) terrain->unref();

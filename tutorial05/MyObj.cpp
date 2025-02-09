@@ -7,7 +7,7 @@
 #include "mixr/base/List.hpp"
 #include "mixr/base/String.hpp"
 #include "mixr/base/Identifier.hpp"
-#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/IColor.hpp"
 
 #include <iostream>
 #include <memory>
@@ -209,7 +209,7 @@ void MyObj::dumpContents() const
          const mixr::base::Pair* p{colorTable->findByName(id->c_str())};
          if (p != nullptr) {
             std::cout << "Text color: " << id->c_str();
-            const auto color = dynamic_cast<const mixr::base::Color*>(p->object());
+            const auto color = dynamic_cast<const mixr::base::IColor*>(p->object());
             if (color != nullptr) {
                std::cout << " Red: "   << color->red();
                std::cout << " Green: " << color->green();

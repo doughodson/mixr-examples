@@ -1,12 +1,12 @@
 
 #include "Display.hpp"
 
-#include "mixr/terrain/Terrain.hpp"
+#include "mixr/terrain/ITerrain.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Integer.hpp"
 
-#include "mixr/base/colors/Color.hpp"
+#include "mixr/base/colors/IColor.hpp"
 #include "mixr/base/colors/Rgb.hpp"
 #include "mixr/base/colors/Hsva.hpp"
 
@@ -42,7 +42,7 @@ BEGIN_SLOTTABLE(Display)
 END_SLOTTABLE(Display)
 
 BEGIN_SLOT_MAP(Display)
-   ON_SLOT( 1, setSlotTerrain,            terrain::Terrain)
+   ON_SLOT( 1, setSlotTerrain,            terrain::ITerrain)
    ON_SLOT( 2, setSlotMinElevation,       base::Length)
    ON_SLOT( 3, setSlotMaxElevation,       base::Length)
    ON_SLOT( 4, setSlotAltitude,           base::Length)
@@ -134,7 +134,7 @@ bool Display::clearMaxElevation()
 //------------------------------------------------------------------------------
 // Slot functions
 //------------------------------------------------------------------------------
-bool Display::setSlotTerrain(terrain::Terrain* const msg)
+bool Display::setSlotTerrain(terrain::ITerrain* const msg)
 {
    if (terrain != nullptr) terrain->unref();
    terrain = msg;
@@ -431,7 +431,7 @@ void Display::updateData(const double dt)
 
                // Generate Masks
                if (testShadows) {
-                  terrain::Terrain::vbwShadowChecker(maskFlgs, elevations, validFlgs, NUM_ROWS, maxRng, altitude, lookAngle, beamWidth);
+                  terrain::ITerrain::vbwShadowChecker(maskFlgs, elevations, validFlgs, NUM_ROWS, maxRng, altitude, lookAngle, beamWidth);
                }
 
                // Compute AAC data
@@ -439,7 +439,7 @@ void Display::updateData(const double dt)
                   //simulation::Terrain::aac(aacData, elevations, maskFlgs, NUM_ROWS, maxRng, altitude);
                   const auto angle = static_cast<double>(-10.0f * base::angle::D2RCC);
                   base::Vec2d vec(std::cos(angle),std::sin(angle));
-                  terrain::Terrain::cLight(aacData, elevations, maskFlgs, NUM_ROWS, maxRng, vec);
+                  terrain::ITerrain::cLight(aacData, elevations, maskFlgs, NUM_ROWS, maxRng, vec);
                }
 
             }
@@ -466,11 +466,11 @@ void Display::updateData(const double dt)
                // If valid and not masked, convert the elevation to a color (or gray) value
                if (valid && !(testShadows && maskFlgs[irow])) {
                   if (colorDepth == ColorDepth::GRAY)
-                     terrain::Terrain::getElevationColor(elev, minz, maxz, grayTable,  2, color);
+                     terrain::ITerrain::getElevationColor(elev, minz, maxz, grayTable,  2, color);
                   else if (colorDepth == ColorDepth::COLOR)
-                     terrain::Terrain::getElevationColor(elev, minz, maxz, colorTable, 7, color);
+                     terrain::ITerrain::getElevationColor(elev, minz, maxz, colorTable, 7, color);
                   else if (colorDepth == ColorDepth::GREEN)
-                     terrain::Terrain::getElevationColor(elev, minz, maxz, greenTable,  19, color);
+                     terrain::ITerrain::getElevationColor(elev, minz, maxz, greenTable,  19, color);
                }
 
                // Apply AAC data

@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace base { class Angle; class Boolean; class Distance; }
-namespace terrain { class Terrain; }
+namespace terrain { class ITerrain; }
 }
 
 //------------------------------------------------------------------------------
@@ -21,8 +21,8 @@ class RealBeamRadar final: public mixr::models::Radar
 public:
     RealBeamRadar();
 
-   const mixr::terrain::Terrain* getTerrain() const                      { return terrain; }
-   virtual bool setTerrain(const mixr::terrain::Terrain* const msg);
+   const mixr::terrain::ITerrain* getTerrain() const                      { return terrain; }
+   virtual bool setTerrain(const mixr::terrain::ITerrain* const msg);
 
    double getAltitude() const                     { return altitude; }    // Ref altitude (meters)
    double getAntennaAzimuthAngle() const          { return antAzAngle; }  // Antenna look angle (degs)
@@ -53,7 +53,7 @@ private:
    bool copyImageMemory(const RealBeamRadar& org);
    void freeImageMemory();
 
-   const mixr::terrain::Terrain* terrain{};  // Terrain data
+   const mixr::terrain::ITerrain* terrain{};  // Terrain data
    double            altitude{};             // Ref altitude (meters)
    double            antAzAngle{};           // Antenna azimuth angle (degs)
    double            antElAngle{};           // Antenna elevation angle (degs)
@@ -82,7 +82,7 @@ private:
 private:
    // slot table helper methods
    bool setSlotInterpolate(const mixr::base::Boolean* const);
-   
+
 };
 
 #endif

@@ -1,8 +1,8 @@
 
 #include "TestIoDisplay.hpp"
 
-#include "mixr/base/concepts/linkage/AbstractIoData.hpp"
-#include "mixr/base/concepts/linkage/AbstractIoHandler.hpp"
+#include "mixr/base/concepts/linkage/IIoData.hpp"
+#include "mixr/base/concepts/linkage/IIoHandler.hpp"
 #include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/String.hpp"
 
@@ -23,7 +23,7 @@ BEGIN_SLOTTABLE(TestIoDisplay)
 END_SLOTTABLE(TestIoDisplay)
 
 BEGIN_SLOT_MAP(TestIoDisplay)
-    ON_SLOT(1, setSlotIoHandler, base::AbstractIoHandler)
+    ON_SLOT(1, setSlotIoHandler, base::IIoHandler)
     ON_SLOT(2, setSlotItem,      base::Integer)
     ON_SLOT(3, setSlotDiChannel, base::Integer)
     ON_SLOT(4, setSlotAiChannel, base::Integer)
@@ -51,7 +51,7 @@ void TestIoDisplay::copyData(const TestIoDisplay& org, const bool cc)
    if (cc) initData();
 
    if (org.ioHandler != nullptr) {
-      base::AbstractIoHandler* copy = org.ioHandler->clone();
+      base::IIoHandler* copy = org.ioHandler->clone();
       setSlotIoHandler(copy);
       copy->unref();
    } else {
@@ -146,7 +146,7 @@ void TestIoDisplay::updateData(const double dt)
 
 void TestIoDisplay::updateDisplay()
 {
-   base::AbstractIoData* ioData{};
+   base::IIoData* ioData{};
    if (ioHandler != nullptr) ioData = ioHandler->getInputData();
 
    // Item/channel mapping
@@ -202,7 +202,7 @@ void TestIoDisplay::updateDisplay()
    }
 }
 
-bool TestIoDisplay::setSlotIoHandler(base::AbstractIoHandler* const msg)
+bool TestIoDisplay::setSlotIoHandler(base::IIoHandler* const msg)
 {
    if (ioHandler != nullptr) {
       ioHandler->container(nullptr);

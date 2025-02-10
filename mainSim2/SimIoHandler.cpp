@@ -10,7 +10,7 @@
 
 #include "mixr/simulation/Simulation.hpp"
 
-#include "mixr/base/concepts/linkage/AbstractIoData.hpp"
+#include "mixr/base/concepts/linkage/IIoData.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/util/math_utils.hpp"
 
@@ -49,7 +49,7 @@ void SimIoHandler::inputDevicesImpl(const double dt)
    // ---
    // get the Input data buffer
    // ---
-   const mixr::base::AbstractIoData* const inData{getInputData()};
+   const mixr::base::IIoData* const inData{getInputData()};
 
    // ---
    // get the Station, Simulation and our ownship player

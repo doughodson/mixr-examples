@@ -5,7 +5,7 @@
 #include "mixr/base/ubf/Arbiter.hpp"
 
 namespace mixr {
-namespace base { class List; class AbstractAction; }
+namespace base { class List; class IAction; }
 namespace xbehaviors {
 
 //------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ class PriorityArbiter final: public base::ubf::Arbiter
 public:
    PriorityArbiter();
 
-   base::ubf::AbstractAction* genComplexAction(base::List* const actionSet) final;
+   base::ubf::IAction* genComplexAction(base::List* const actionSet) final;
 
 private:
 
@@ -26,7 +26,7 @@ private:
    // and the change would go against the intended control stick action.  If so,
    // invalidate the trim change.
    // Returns nothing, but modifies what the action object points to
-   void trimChangeValidation(base::ubf::AbstractAction* const);
+   void trimChangeValidation(base::ubf::IAction* const);
 };
 
 }

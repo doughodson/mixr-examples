@@ -2,7 +2,7 @@
 #ifndef __mixr_xbehaviors_PlaneState_HPP__
 #define __mixr_xbehaviors_PlaneState_HPP__
 
-#include "mixr/base/ubf/AbstractState.hpp"
+#include "mixr/base/ubf/IState.hpp"
 #include <array>
 
 namespace mixr {
@@ -15,9 +15,9 @@ namespace xbehaviors {
 //              state has only one missile (or is ok with firing all missiles at
 //              first target)
 //------------------------------------------------------------------------------
-class PlaneState final: public base::ubf::AbstractState
+class PlaneState final: public base::ubf::IState
 {
-   DECLARE_SUBCLASS(PlaneState, base::ubf::AbstractState)
+   DECLARE_SUBCLASS(PlaneState, base::ubf::IState)
 
 public:
    PlaneState();

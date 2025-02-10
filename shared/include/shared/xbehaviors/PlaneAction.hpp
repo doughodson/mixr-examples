@@ -2,7 +2,7 @@
 #ifndef __mixr_xbehaviors_PlaneAction_HPP__
 #define __mixr_xbehaviors_PlaneAction_HPP__
 
-#include "mixr/base/ubf/AbstractAction.hpp"
+#include "mixr/base/ubf/IAction.hpp"
 
 namespace mixr {
 namespace simulation { class Player; }
@@ -11,9 +11,9 @@ namespace xbehaviors {
 //------------------------------------------------------------------------------
 // Class: PlaneAction
 //------------------------------------------------------------------------------
-class PlaneAction final: public base::ubf::AbstractAction
+class PlaneAction final: public base::ubf::IAction
 {
-   DECLARE_SUBCLASS(PlaneAction, base::ubf::AbstractAction)
+   DECLARE_SUBCLASS(PlaneAction, base::ubf::IAction)
 
 public:
    PlaneAction();

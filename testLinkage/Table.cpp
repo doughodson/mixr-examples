@@ -226,7 +226,7 @@ bool Table::setSlotColumns(base::PairStream* const msg)
       base::List::Item* item{msg->getFirstItem()};
       while (item != nullptr) {
           const auto pair = static_cast<base::Pair*>(item->getValue());
-          const auto g = dynamic_cast<graphics::AbstractReadout*>(pair->object());
+          const auto g = dynamic_cast<graphics::IReadout*>(pair->object());
           if (g != nullptr) {
               // We have a Field object, so add it to the new columns list
               newColumns->put(pair);

@@ -2,7 +2,7 @@
 #ifndef __TableRow_HPP__
 #define __TableRow_HPP__
 
-#include "mixr/graphics/readouts/AbstractReadout.hpp"
+#include "mixr/graphics/readouts/IReadout.hpp"
 
 namespace mixr {
 namespace base { class Pair; }
@@ -12,9 +12,9 @@ namespace base { class Pair; }
 // Class: TableRow
 // Description: One row of in the table (used by Table only)
 //-----------------------------------------------------------------------
-class TableRow final: public mixr::graphics::AbstractReadout
+class TableRow final: public mixr::graphics::IReadout
 {
-   DECLARE_SUBCLASS(TableRow, mixr::graphics::AbstractReadout)
+   DECLARE_SUBCLASS(TableRow, mixr::graphics::IReadout)
 
 public:
    TableRow();

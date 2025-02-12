@@ -36,7 +36,7 @@ BEGIN_SLOTTABLE(PlaneBehavior)
 END_SLOTTABLE(PlaneBehavior)
 
 BEGIN_SLOT_MAP(PlaneBehavior)
-   ON_SLOT( 1, setSlotCriticalAltitude,       base::Length )
+   ON_SLOT( 1, setSlotCriticalAltitude,       base::ILength )
    ON_SLOT( 2, setSlotVoteOnCriticalAltitude, base::Integer)
    ON_SLOT( 3, setSlotVoteOnIncomingMissile,  base::Integer)
 END_SLOT_MAP()
@@ -46,7 +46,7 @@ PlaneBehavior::PlaneBehavior()
    STANDARD_CONSTRUCTOR()
 }
 
-bool PlaneBehavior::setSlotCriticalAltitude(const base::Length* const x)
+bool PlaneBehavior::setSlotCriticalAltitude(const base::ILength* const x)
 {
     bool ok{};
     if (x != nullptr) {
@@ -89,7 +89,7 @@ BEGIN_SLOTTABLE(PlaneFire)
 END_SLOTTABLE(PlaneFire)
 
 BEGIN_SLOT_MAP(PlaneFire)
-   ON_SLOT( 1, setSlotMaxDistance, base::Length )
+   ON_SLOT( 1, setSlotMaxDistance, base::ILength )
 END_SLOT_MAP()
 
 PlaneFire::PlaneFire()
@@ -114,7 +114,7 @@ base::ubf::IAction* PlaneFire::genAction(const base::ubf::IState* const state, c
    return action;
 }
 
-bool PlaneFire::setSlotMaxDistance(const base::Length* const x)
+bool PlaneFire::setSlotMaxDistance(const base::ILength* const x)
 {
     bool ok{};
     if (x != nullptr) {

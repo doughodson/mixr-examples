@@ -6,7 +6,7 @@
 #include "mixr/base/units/util/length_utils.hpp"
 
 namespace mixr {
-namespace base { class Angle; class Boolean; class Integer; class Length; }
+namespace base { class IAngle; class Boolean; class Integer; class ILength; }
 namespace terrain { class ITerrain; }
 }
 
@@ -98,11 +98,11 @@ private:
 private:
    // slot table helper methods
    bool setSlotTerrain(mixr::terrain::ITerrain* const);
-   bool setSlotMinElevation(const mixr::base::Length* const);
-   bool setSlotMaxElevation(const mixr::base::Length* const);
-   bool setSlotAltitude(const mixr::base::Length* const);
-   bool setSlotLookAngle(const mixr::base::Angle* const);
-   bool setSlotBeamWidth(const mixr::base::Angle* const);
+   bool setSlotMinElevation(const mixr::base::ILength* const);
+   bool setSlotMaxElevation(const mixr::base::ILength* const);
+   bool setSlotAltitude(const mixr::base::ILength* const);
+   bool setSlotLookAngle(const mixr::base::IAngle* const);
+   bool setSlotBeamWidth(const mixr::base::IAngle* const);
    bool setSlotColorScale(const mixr::base::Integer* const);
    bool setSlotInterpolate(const mixr::base::Boolean* const);
    bool setSlotShadowsTest(const mixr::base::Boolean* const);

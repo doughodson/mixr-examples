@@ -6,7 +6,7 @@
 #include <array>
 
 namespace mixr {
-namespace base { class Angle; class Number; }
+namespace base { class IAngle; class Number; }
 }
 
 //------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ public:
     void getPosition(double& xx, double& yy) const             { xx = xPos; yy = yPos; }
     void setPosition(const double xx, const double yy)         { xPos = xx; yPos = yy; }
     bool realSpeed(const mixr::base::Number* const rsobj);
-    bool setAngle(mixr::base::Angle* saobj);
+    bool setAngle(mixr::base::IAngle* saobj);
     bool setAngle(const mixr::base::Number* const saobj);
 
     double leftLimit() const                { return left; }
@@ -62,7 +62,7 @@ private:
     std::array<mixr::base::Vec2d, maxHist> trail;  // Display trail
     int nTrails{};                                 // Trail size
     int index{};                                   // Trail index
-    mixr::base::Angle* iangle{};                   // Input angle
+    mixr::base::IAngle* iangle{};                  // Input angle
 };
 
 #endif

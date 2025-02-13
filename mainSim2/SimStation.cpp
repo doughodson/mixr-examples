@@ -24,8 +24,8 @@ BEGIN_SLOTTABLE(SimStation)
 END_SLOTTABLE(SimStation)
 
 BEGIN_SLOT_MAP(SimStation)
-    ON_SLOT( 1, setSlotDisplay,    mixr::glut::GlutDisplay)
-    ON_SLOT( 2, setSlotAutoResetTime,  mixr::base::Time)
+    ON_SLOT( 1, setSlotDisplay,        mixr::glut::GlutDisplay)
+    ON_SLOT( 2, setSlotAutoResetTime,  mixr::base::ITime)
 END_SLOT_MAP()
 
 SimStation::SimStation()
@@ -144,7 +144,7 @@ bool SimStation::setSlotDisplay(mixr::glut::GlutDisplay* const x)
 }
 
 // setSlotAutoResetTime() -- Sets the startup RESET pulse timer
-bool SimStation::setSlotAutoResetTime(mixr::base::Time* const x)
+bool SimStation::setSlotAutoResetTime(mixr::base::ITime* const x)
 {
     autoResetTimer0 = x;
     if (autoResetTimer0 != nullptr) {

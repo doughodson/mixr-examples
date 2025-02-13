@@ -43,11 +43,11 @@ END_SLOTTABLE(Display)
 
 BEGIN_SLOT_MAP(Display)
    ON_SLOT( 1, setSlotTerrain,            terrain::ITerrain)
-   ON_SLOT( 2, setSlotMinElevation,       base::Length)
-   ON_SLOT( 3, setSlotMaxElevation,       base::Length)
-   ON_SLOT( 4, setSlotAltitude,           base::Length)
-   ON_SLOT( 5, setSlotLookAngle,          base::Angle)
-   ON_SLOT( 6, setSlotBeamWidth,          base::Angle)
+   ON_SLOT( 2, setSlotMinElevation,       base::ILength)
+   ON_SLOT( 3, setSlotMaxElevation,       base::ILength)
+   ON_SLOT( 4, setSlotAltitude,           base::ILength)
+   ON_SLOT( 5, setSlotLookAngle,          base::IAngle)
+   ON_SLOT( 6, setSlotBeamWidth,          base::IAngle)
    ON_SLOT( 7, setSlotColorScale,         base::Integer)
    ON_SLOT( 8, setSlotInterpolate,        base::Boolean)
    ON_SLOT( 9, setSlotShadowsTest,        base::Boolean)
@@ -143,7 +143,7 @@ bool Display::setSlotTerrain(terrain::ITerrain* const msg)
 }
 
 // Set min elevation
-bool Display::setSlotMinElevation(const base::Length* const x)
+bool Display::setSlotMinElevation(const base::ILength* const x)
 {
    bool ok{};
    if (x != nullptr) {
@@ -153,7 +153,7 @@ bool Display::setSlotMinElevation(const base::Length* const x)
 }
 
 // Set max elevation
-bool Display::setSlotMaxElevation(const base::Length* const x)
+bool Display::setSlotMaxElevation(const base::ILength* const x)
 {
    bool ok{};
    if (x != nullptr) {
@@ -163,7 +163,7 @@ bool Display::setSlotMaxElevation(const base::Length* const x)
 }
 
 // Set max elevation
-bool Display::setSlotAltitude(const base::Length* const x)
+bool Display::setSlotAltitude(const base::ILength* const x)
 {
    bool ok{};
    if (x != nullptr) {
@@ -174,7 +174,7 @@ bool Display::setSlotAltitude(const base::Length* const x)
 }
 
 // Set antenna look angle
-bool Display::setSlotLookAngle(const base::Angle* const msg)
+bool Display::setSlotLookAngle(const base::IAngle* const msg)
 {
    bool ok{};
    if (msg != nullptr) {
@@ -185,7 +185,7 @@ bool Display::setSlotLookAngle(const base::Angle* const msg)
 }
 
 // Set beam width
-bool Display::setSlotBeamWidth(const base::Angle* const msg)
+bool Display::setSlotBeamWidth(const base::IAngle* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

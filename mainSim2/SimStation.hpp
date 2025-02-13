@@ -19,7 +19,7 @@ namespace glut { class GlutDisplay; }
 // Factory name: SimStation
 // Slots:
 //      display                 <glut::GlutDisplay>  ! Main graphics display
-//      autoResetTimer          <Time>               ! Auto RESET timer value (base::Time); default: 0
+//      autoResetTimer          <ITime>              ! Auto RESET timer value (base::Time); default: 0
 //------------------------------------------------------------------------------
 class SimStation final: public mixr::simulation::Station
 {
@@ -42,12 +42,12 @@ private:
 
     // auto reset timer
     double autoResetTimer{};                                   // auto RESET timer (sends a RESET_EVENT after timeout)
-    mixr::base::safe_ptr<mixr::base::Time> autoResetTimer0{};  // init value of the auto RESET timer
+    mixr::base::safe_ptr<mixr::base::ITime> autoResetTimer0{};  // init value of the auto RESET timer
 
 private:
     // slot table helper methods
     bool setSlotDisplay(mixr::glut::GlutDisplay* const);
-    bool setSlotAutoResetTime(mixr::base::Time* const);
+    bool setSlotAutoResetTime(mixr::base::ITime* const);
 };
 
 #endif

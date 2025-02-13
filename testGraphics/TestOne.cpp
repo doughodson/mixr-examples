@@ -18,7 +18,7 @@ END_SLOTTABLE(TestOne)
 
 BEGIN_SLOT_MAP(TestOne)
     ON_SLOT(1, realSpeed, base::Number)
-    ON_SLOT(2, setAngle,  base::Angle)
+    ON_SLOT(2, setAngle,  base::IAngle)
     ON_SLOT(2, setAngle,  base::Number)
 END_SLOT_MAP()
 
@@ -165,7 +165,7 @@ bool TestOne::realSpeed(const base::Number* const rsobj)
 //------------------------------------------------------------------------------
 // setAngle() -- sets the starting angle using an base::Angle parameter
 //------------------------------------------------------------------------------
-bool TestOne::setAngle(base::Angle* x)
+bool TestOne::setAngle(base::IAngle* x)
 {
     if (x != nullptr) {
         setStartAngle(x->getValueInRadians());

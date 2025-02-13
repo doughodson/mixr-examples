@@ -10,6 +10,7 @@
 
 // factories
 #include "mixr/graphics/factory.hpp"
+#include "mixr/graphics/fonts/ftgl/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 
@@ -44,6 +45,7 @@ mixr::base::Object* factory(const std::string& name)
       obj = new ObjectHandler();
    } else {
       if (obj == nullptr) obj = mixr::graphics::factory(name);
+      if (obj == nullptr) obj = mixr::graphics::ftgl::factory(name);
       if (obj == nullptr) obj = mixr::glut::factory(name);
       if (obj == nullptr) obj = mixr::base::factory(name);
    }

@@ -22,6 +22,7 @@
 // factories
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
+#include "mixr/graphics/fonts/ftgl/factory.hpp"
 #include "mixr/instruments/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 #include "mixr/map/vpf/factory.hpp"
@@ -55,9 +56,10 @@ base::Object* factory(const std::string& name)
     if (obj == nullptr) obj = vpf::factory(name);
     if (obj == nullptr) obj = instruments::factory(name);
     if (obj == nullptr) obj = graphics::factory(name);
+    if (obj == nullptr) obj = graphics::ftgl::factory(name);
     if (obj == nullptr) obj = glut::factory(name);
     if (obj == nullptr) obj = base::factory(name);
-    
+
     return obj;
 }
 

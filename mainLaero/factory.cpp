@@ -18,6 +18,7 @@
 #include "mixr/interop/dis/factory.hpp"
 #include "mixr/instruments/factory.hpp"
 #include "mixr/graphics/factory.hpp"
+#include "mixr/graphics/fonts/ftgl/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 #include "mixr/ighost/flightgear/factory.hpp"
 #include "mixr/ighost/pov/factory.hpp"
@@ -54,6 +55,7 @@ mixr::base::Object* factory(const std::string& name)
     if (obj == nullptr) obj = mixr::pov::factory(name);
     if (obj == nullptr) obj = mixr::dis::factory(name);
     if (obj == nullptr) obj = mixr::graphics::factory(name);
+    if (obj == nullptr) obj = mixr::graphics::ftgl::factory(name);
     if (obj == nullptr) obj = mixr::glut::factory(name);
     if (obj == nullptr) obj = mixr::base::factory(name);
 

@@ -11,6 +11,7 @@
 #include "shared/xzmq/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
+#include "mixr/graphics/fonts/ftgl/factory.hpp"
 #include "mixr/instruments/factory.hpp"
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"
@@ -74,6 +75,7 @@ mixr::base::Object* factory(const std::string& name)
     if (obj == nullptr)  { obj = mixr::terrain::factory(name);        }
     if (obj == nullptr)  { obj = mixr::dis::factory(name);            }
     if (obj == nullptr)  { obj = mixr::graphics::factory(name);       }
+    if (obj == nullptr)  { obj = mixr::graphics::ftgl::factory(name); }
     if (obj == nullptr)  { obj = mixr::glut::factory(name);           }
     if (obj == nullptr)  { obj = mixr::base::factory(name);           }
 

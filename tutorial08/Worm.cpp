@@ -16,7 +16,7 @@ END_SLOTTABLE(Worm)
 
 BEGIN_SLOT_MAP(Worm)
    ON_SLOT(1, setSlotSpeed, mixr::base::Number)
-   ON_SLOT(2, setSlotAngle, mixr::base::Angle)
+   ON_SLOT(2, setSlotAngle, mixr::base::IAngle)
    ON_SLOT(2, setSlotAngle, mixr::base::Number)
 END_SLOT_MAP()
 
@@ -148,7 +148,7 @@ bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
    return ok;
 }
 
-bool Worm::setSlotAngle(const mixr::base::Angle* const x)
+bool Worm::setSlotAngle(const mixr::base::IAngle* const x)
 {
    bool ok{};
    if (x != nullptr) {

@@ -5,7 +5,7 @@
 #include <array>
 
 namespace mixr {
-namespace base { class Angle; class Number; }
+namespace base { class IAngle; class Number; }
 }
 
 //------------------------------------------------------------------------------
@@ -61,12 +61,12 @@ private:
    std::array<mixr::base::Vec2d, MAX_HIST> trail;  // Display trail
    int nTrails{};                                  // Trail size
    int index{};                                    // Trail index
-   const mixr::base::Angle* iangle{};              // Input angle
+   const mixr::base::IAngle* iangle{};             // Input angle
 
 private:
    // slot table helper methods
    bool setSlotSpeed(const mixr::base::Number* const);
-   bool setSlotAngle(const mixr::base::Angle* const);
+   bool setSlotAngle(const mixr::base::IAngle* const);
    bool setSlotAngle(const mixr::base::Number* const);
 };
 

@@ -5,7 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -42,14 +42,14 @@ private:
 
 private:
     // slot table helper methods
-    bool setV1(const mixr::base::Number* const);
-    bool setV1Rate(const mixr::base::Number* const);
-    bool setV1Max(const mixr::base::Number* const);
-    bool setV1Min(const mixr::base::Number* const);
-    bool setV2(const mixr::base::Number* const);
-    bool setV2Rate(const mixr::base::Number* const);
-    bool setV2Max(const mixr::base::Number* const);
-    bool setV2Min(const mixr::base::Number* const);
+    bool setV1(const mixr::base::INumber* const);
+    bool setV1Rate(const mixr::base::INumber* const);
+    bool setV1Max(const mixr::base::INumber* const);
+    bool setV1Min(const mixr::base::INumber* const);
+    bool setV2(const mixr::base::INumber* const);
+    bool setV2Rate(const mixr::base::INumber* const);
+    bool setV2Max(const mixr::base::INumber* const);
+    bool setV2Min(const mixr::base::INumber* const);
 };
 
 #endif

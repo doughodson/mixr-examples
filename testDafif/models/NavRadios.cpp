@@ -8,7 +8,6 @@
 
 #include "WorldModel.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
 #include "mixr/base/units/lengths.hpp"
 #include "mixr/base/util/nav_utils.hpp"
 

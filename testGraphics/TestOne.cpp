@@ -1,7 +1,7 @@
 
 #include "TestOne.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 #include "mixr/base/units/angles.hpp"
 
 #include <cmath>
@@ -17,9 +17,9 @@ BEGIN_SLOTTABLE(TestOne)
 END_SLOTTABLE(TestOne)
 
 BEGIN_SLOT_MAP(TestOne)
-    ON_SLOT(1, realSpeed, base::Number)
+    ON_SLOT(1, realSpeed, base::INumber)
     ON_SLOT(2, setAngle,  base::IAngle)
-    ON_SLOT(2, setAngle,  base::Number)
+    ON_SLOT(2, setAngle,  base::INumber)
 END_SLOT_MAP()
 
 BEGIN_EVENT_HANDLER(TestOne)
@@ -156,7 +156,7 @@ void TestOne::drawFunc()
 //------------------------------------------------------------------------------
 // realSpeed() -- sets the starting real speed
 //------------------------------------------------------------------------------
-bool TestOne::realSpeed(const base::Number* const rsobj)
+bool TestOne::realSpeed(const base::INumber* const rsobj)
 {
     if (rsobj != nullptr) setSpeed(rsobj->asDouble());
     return true;
@@ -178,7 +178,7 @@ bool TestOne::setAngle(base::IAngle* x)
 //------------------------------------------------------------------------------
 // setAngle() -- sets the starting angle using an base::Number parameter
 //------------------------------------------------------------------------------
-bool TestOne::setAngle(const base::Number* const saobj)
+bool TestOne::setAngle(const base::INumber* const saobj)
 {
     setStartAngle(saobj->asDouble());
     return true;

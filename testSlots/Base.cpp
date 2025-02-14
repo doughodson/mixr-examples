@@ -1,7 +1,7 @@
 
 #include "Base.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 
 #include <iostream>
 
@@ -14,7 +14,7 @@ BEGIN_SLOTTABLE(Base)
 END_SLOTTABLE(Base)
 
 BEGIN_SLOT_MAP(Base)
-   ON_SLOT(1, setSlotSeed, mixr::base::Number)
+   ON_SLOT(1, setSlotSeed, mixr::base::INumber)
 END_SLOT_MAP()
 
 Base::Base()
@@ -23,7 +23,7 @@ Base::Base()
    std::cout << "Base::Base() called\n";
 }
 
-bool Base::setSlotSeed(const mixr::base::Number* const)
+bool Base::setSlotSeed(const mixr::base::INumber* const)
 {
    std::cout << "Base seed being set\n";
    return true;

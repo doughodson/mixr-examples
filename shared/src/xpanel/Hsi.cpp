@@ -1,7 +1,7 @@
 
 #include "shared/xpanel/Hsi.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 
 namespace mixr {
 namespace xpanel {
@@ -10,12 +10,12 @@ IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(Hsi, "Hsi")
 EMPTY_DELETEDATA(Hsi)
 
 BEGIN_EVENT_HANDLER(Hsi)
-    ON_EVENT_OBJ(UPDATE_VALUE3, onUpdateSelHdgHsi,  base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE4, onUpdateSelCrsHsi,  base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE5, onUpdateNav1BrgHsi, base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE6, onUpdateNav2BrgHsi, base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE7, onUpdateCdiDotsHsi, base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE8, onUpdateToFromHsi,  base::Number)
+    ON_EVENT_OBJ(UPDATE_VALUE3, onUpdateSelHdgHsi,  base::INumber)
+    ON_EVENT_OBJ(UPDATE_VALUE4, onUpdateSelCrsHsi,  base::INumber)
+    ON_EVENT_OBJ(UPDATE_VALUE5, onUpdateNav1BrgHsi, base::INumber)
+    ON_EVENT_OBJ(UPDATE_VALUE6, onUpdateNav2BrgHsi, base::INumber)
+    ON_EVENT_OBJ(UPDATE_VALUE7, onUpdateCdiDotsHsi, base::INumber)
+    ON_EVENT_OBJ(UPDATE_VALUE8, onUpdateToFromHsi,  base::INumber)
 END_EVENT_HANDLER()
 
 Hsi::Hsi()
@@ -77,37 +77,37 @@ bool Hsi::setToFrom(const double newTF)
 }
 
 // Event functions
-bool Hsi::onUpdateSelHdgHsi(const base::Number* const x)
+bool Hsi::onUpdateSelHdgHsi(const base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setSelectedHeading(x->asDouble());
     return ok;
 }
-bool Hsi::onUpdateSelCrsHsi(const base::Number* const x)
+bool Hsi::onUpdateSelCrsHsi(const base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setSelectedCourse(x->asDouble());
     return ok;
 }
-bool Hsi::onUpdateNav1BrgHsi(const base::Number* const x)
+bool Hsi::onUpdateNav1BrgHsi(const base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setNav1Brg(x->asDouble());
     return ok;
 }
-bool Hsi::onUpdateNav2BrgHsi(const base::Number* const x)
+bool Hsi::onUpdateNav2BrgHsi(const base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setNav2Brg(x->asDouble());
     return ok;
 }
-bool Hsi::onUpdateCdiDotsHsi(const base::Number* const x)
+bool Hsi::onUpdateCdiDotsHsi(const base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setCdiDots(x->asDouble());
     return ok;
 }
-bool Hsi::onUpdateToFromHsi(const base::Number* const x)
+bool Hsi::onUpdateToFromHsi(const base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setToFrom(x->asDouble());

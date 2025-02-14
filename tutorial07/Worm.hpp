@@ -5,7 +5,7 @@
 #include <array>
 
 namespace mixr {
-namespace base { class IAngle; class Number; }
+namespace base { class IAngle; class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -65,9 +65,9 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotSpeed(const mixr::base::Number* const);
+   bool setSlotSpeed(const mixr::base::INumber* const);
    bool setSlotAngle(const mixr::base::IAngle* const);
-   bool setSlotAngle(const mixr::base::Number* const);
+   bool setSlotAngle(const mixr::base::INumber* const);
 };
 
 #endif

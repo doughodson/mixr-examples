@@ -5,7 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ public:
     void draw() final;
 
     //event handler macro functions
-    bool onUpdateValue(const mixr::base::Number* const ouvobj);
+    bool onUpdateValue(const mixr::base::INumber* const ouvobj);
 
 private:
     double elev {};

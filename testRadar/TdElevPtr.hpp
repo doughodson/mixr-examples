@@ -20,7 +20,7 @@
 //    UPDATE_VALUE  <Number>  ! elevation angle (degs)
 //------------------------------------------------------------------------------
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 }
 
 class TdElevPtr final: public mixr::graphics::Graphic
@@ -38,7 +38,7 @@ public:
    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
-   bool onUpdateValue(const mixr::base::Number* const);
+   bool onUpdateValue(const mixr::base::INumber* const);
 
    double elev{};  // (degs)
 };

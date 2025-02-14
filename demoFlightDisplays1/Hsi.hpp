@@ -45,12 +45,12 @@ public:
 
 private:
     // event functions
-    bool onUpdateSelHdgHsi(const mixr::base::Number* const);
-    bool onUpdateSelCrsHsi(const mixr::base::Number* const);
-    bool onUpdateNav1BrgHsi(const mixr::base::Number* const);
-    bool onUpdateNav2BrgHsi(const mixr::base::Number* const);
-    bool onUpdateCdiDotsHsi(const mixr::base::Number* const);
-    bool onUpdateToFromHsi(const mixr::base::Number* const);
+    bool onUpdateSelHdgHsi(const mixr::base::INumber* const);
+    bool onUpdateSelCrsHsi(const mixr::base::INumber* const);
+    bool onUpdateNav1BrgHsi(const mixr::base::INumber* const);
+    bool onUpdateNav2BrgHsi(const mixr::base::INumber* const);
+    bool onUpdateCdiDotsHsi(const mixr::base::INumber* const);
+    bool onUpdateToFromHsi(const mixr::base::INumber* const);
 
     double selHdg{};      // selected heading (degs)
     SendData selHdgSD;

@@ -1,6 +1,7 @@
 
 #include "TestStateMachine04.hpp"
 
+#include "mixr/base/numeric/INumber.hpp"
 #include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 
@@ -100,7 +101,7 @@ void TestStateMachine04::stateFunc15(const double)
 
 void TestStateMachine04::stateFunc21(const double)
 {
-   const auto arg = dynamic_cast<const base::Number*>( getArgument() );
+   const auto arg = dynamic_cast<const base::INumber*>( getArgument() );
    if (arg != nullptr) {
       std::cout << "arg(" << arg->asDouble() << "); ";
    }

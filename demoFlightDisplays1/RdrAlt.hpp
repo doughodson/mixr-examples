@@ -5,7 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -38,8 +38,8 @@ public:
 
 private:
     // event functions
-    bool onEventSetRAltRdrAlt(const mixr::base::Number* const);
-    bool onEventSetRAltMinRdrAlt(const mixr::base::Number* const);
+    bool onEventSetRAltRdrAlt(const mixr::base::INumber* const);
+    bool onEventSetRAltMinRdrAlt(const mixr::base::INumber* const);
 
     double rAlt{};        // ft -- our actual radar alt
     SendData rAltSD;

@@ -1,7 +1,7 @@
 
 #include "TestTwo.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 
 using namespace mixr;
 
@@ -20,14 +20,14 @@ BEGIN_SLOTTABLE(TestTwo)
 END_SLOTTABLE(TestTwo)
 
 BEGIN_SLOT_MAP(TestTwo)
-    ON_SLOT(1, setV1,     base::Number)
-    ON_SLOT(2, setV1Rate, base::Number)
-    ON_SLOT(3, setV1Max,  base::Number)
-    ON_SLOT(4, setV1Min,  base::Number)
-    ON_SLOT(5, setV2,     base::Number)
-    ON_SLOT(6, setV2Rate, base::Number)
-    ON_SLOT(7, setV2Max,  base::Number)
-    ON_SLOT(8, setV2Min,  base::Number)
+    ON_SLOT(1, setV1,     base::INumber)
+    ON_SLOT(2, setV1Rate, base::INumber)
+    ON_SLOT(3, setV1Max,  base::INumber)
+    ON_SLOT(4, setV1Min,  base::INumber)
+    ON_SLOT(5, setV2,     base::INumber)
+    ON_SLOT(6, setV2Rate, base::INumber)
+    ON_SLOT(7, setV2Max,  base::INumber)
+    ON_SLOT(8, setV2Min,  base::INumber)
 END_SLOT_MAP()
 
 BEGIN_EVENT_HANDLER(TestTwo)
@@ -114,7 +114,7 @@ void TestTwo::updateData(const double dt)
 //------------------------------------------------------------------------------
 // setV1() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV1(const base::Number* const sv1obj)
+bool TestTwo::setV1(const base::INumber* const sv1obj)
 {
     if (sv1obj != nullptr) iv1 = sv1obj->asDouble();
     return true;
@@ -123,7 +123,7 @@ bool TestTwo::setV1(const base::Number* const sv1obj)
 //------------------------------------------------------------------------------
 // setV1Rate() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV1Rate(const base::Number* const sv1robj)
+bool TestTwo::setV1Rate(const base::INumber* const sv1robj)
 {
     if (sv1robj != nullptr) iv1Rate = sv1robj->asDouble();
     return true;
@@ -132,7 +132,7 @@ bool TestTwo::setV1Rate(const base::Number* const sv1robj)
 //------------------------------------------------------------------------------
 // setV1Max() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV1Max(const base::Number* const sv1mobj)
+bool TestTwo::setV1Max(const base::INumber* const sv1mobj)
 {
     if (sv1mobj != nullptr) v1Max = sv1mobj->asDouble();
     return true;
@@ -141,7 +141,7 @@ bool TestTwo::setV1Max(const base::Number* const sv1mobj)
 //------------------------------------------------------------------------------
 // setV1Min() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV1Min(const base::Number* const sv1miobj)
+bool TestTwo::setV1Min(const base::INumber* const sv1miobj)
 {
     if (sv1miobj != nullptr) v1Min = sv1miobj->asDouble();
     return true;
@@ -150,7 +150,7 @@ bool TestTwo::setV1Min(const base::Number* const sv1miobj)
 //------------------------------------------------------------------------------
 // setV2() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV2(const base::Number* const sv2obj)
+bool TestTwo::setV2(const base::INumber* const sv2obj)
 {
     if (sv2obj != nullptr) iv2 = sv2obj->asDouble();
     return true;
@@ -159,7 +159,7 @@ bool TestTwo::setV2(const base::Number* const sv2obj)
 //------------------------------------------------------------------------------
 // setV2Rate() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV2Rate(const base::Number* const sv2robj)
+bool TestTwo::setV2Rate(const base::INumber* const sv2robj)
 {
     if (sv2robj != nullptr) iv2Rate = sv2robj->asDouble();
     return true;
@@ -168,7 +168,7 @@ bool TestTwo::setV2Rate(const base::Number* const sv2robj)
 //------------------------------------------------------------------------------
 // setV2Max() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV2Max(const base::Number* const sv2mobj)
+bool TestTwo::setV2Max(const base::INumber* const sv2mobj)
 {
     if (sv2mobj != nullptr) v2Max = sv2mobj->asDouble();
     return true;
@@ -177,7 +177,7 @@ bool TestTwo::setV2Max(const base::Number* const sv2mobj)
 //------------------------------------------------------------------------------
 // setV2Min() --
 //------------------------------------------------------------------------------
-bool TestTwo::setV2Min(const base::Number* const sv2miobj)
+bool TestTwo::setV2Min(const base::INumber* const sv2miobj)
 {
     if (sv2miobj != nullptr) v2Min = sv2miobj->asDouble();
     return true;

@@ -4,8 +4,6 @@
 
 #include "mixr/base/colors/Rgb.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
-
 #include "mixr/base/util/math_utils.hpp"
 #include "mixr/base/util/system_utils.hpp"
 

@@ -5,9 +5,9 @@
 #include "AbstractRng.hpp"
 
 namespace mixr {
-  namespace base { class Number; }
+  namespace base { class INumber; }
 }
-  
+
 //------------------------------------------------------------------------------
 // Lognormal - this class returns a random variate from the lognormal distribution.
 // Input parameters:
@@ -23,7 +23,7 @@ public:
    Lognormal();
 
    double num() final;
-  
+
    bool setMean(const double x)       { mean = x; return true; }
    double getMean() const             { return mean; }
 
@@ -36,8 +36,8 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotMean(const mixr::base::Number* const);
-   bool setSlotStdDev(const mixr::base::Number* const);
+   bool setSlotMean(const mixr::base::INumber* const);
+   bool setSlotStdDev(const mixr::base::INumber* const);
 };
 
 #endif

@@ -5,7 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ namespace base { class Number; }
 // Factory name: TdAzPtr
 //
 // Events:
-//    UPDATE_VALUE  <Number>  ! azimuth angle (degs)
+//    UPDATE_VALUE  <INumber>  ! azimuth angle (degs)
 //------------------------------------------------------------------------------
 class TdAzPtr final: public mixr::graphics::Graphic
 {
@@ -39,7 +39,7 @@ public:
    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
 
 private:
-   bool onUpdateValue(const mixr::base::Number* const msg);
+   bool onUpdateValue(const mixr::base::INumber* const msg);
 
    double azimuth{};  // (degs)
 };

@@ -5,7 +5,7 @@
 #include "Base.hpp"
 
 namespace mixr {
-   namespace base { class Number; }
+   namespace base { class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ public:
 
 private:
    // slot table helper methods
-   bool setSlotSeed(const mixr::base::Number* const);
+   bool setSlotSeed(const mixr::base::INumber* const);
 };
 
 #endif

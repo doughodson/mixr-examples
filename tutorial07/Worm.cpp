@@ -1,7 +1,7 @@
 
 #include "Worm.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 #include "mixr/base/units/angles.hpp"
 
 #include <cmath>
@@ -15,9 +15,9 @@ BEGIN_SLOTTABLE(Worm)
 END_SLOTTABLE(Worm)
 
 BEGIN_SLOT_MAP(Worm)
-   ON_SLOT(1, setSlotSpeed, mixr::base::Number)
+   ON_SLOT(1, setSlotSpeed, mixr::base::INumber)
    ON_SLOT(2, setSlotAngle, mixr::base::IAngle)
-   ON_SLOT(2, setSlotAngle, mixr::base::Number)
+   ON_SLOT(2, setSlotAngle, mixr::base::INumber)
 END_SLOT_MAP()
 
 BEGIN_EVENT_HANDLER(Worm)
@@ -138,7 +138,7 @@ void Worm::drawFunc()
    glEnd();
 }
 
-bool Worm::setSlotSpeed(const mixr::base::Number* const rsobj)
+bool Worm::setSlotSpeed(const mixr::base::INumber* const rsobj)
 {
    bool ok{};
    if (rsobj != nullptr) {
@@ -160,7 +160,7 @@ bool Worm::setSlotAngle(const mixr::base::IAngle* const x)
    return ok;
 }
 
-bool Worm::setSlotAngle(const mixr::base::Number* const saobj)
+bool Worm::setSlotAngle(const mixr::base::INumber* const saobj)
 {
    bool ok{};
    if (saobj != nullptr) {

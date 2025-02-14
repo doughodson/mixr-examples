@@ -5,7 +5,7 @@
 #include "mixr/graphics/Rotators.hpp"
 
 namespace mixr {
-namespace base { class Boolean; class Integer; class Number; }
+namespace base { class Boolean; class Integer; class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -48,8 +48,8 @@ public:
 
 private:
     // event functions
-    bool onUpdateCdiDotsCrsPntr(const mixr::base::Number* const);
-    bool onUpdateToFromCrsPntr(const mixr::base::Number* const);
+    bool onUpdateCdiDotsCrsPntr(const mixr::base::INumber* const);
+    bool onUpdateToFromCrsPntr(const mixr::base::INumber* const);
 
     double toFrom{};          // to = 1; from = 0;  Somewhere in between is usually not visible, unless scaled to be visible
     double cdiDots{};         // course deviation dots
@@ -63,7 +63,7 @@ private:
 private:
     // slot table helper methods
     bool setSlotNumCdiDots(const mixr::base::Integer* const);
-    bool setSlotNumInches(const mixr::base::Number* const);
+    bool setSlotNumInches(const mixr::base::INumber* const);
     bool setSlotShowCdi(const mixr::base::Boolean* const);
     bool setSlotShowCrsPntr(const mixr::base::Boolean* const);
     bool setSlotShowToFrom(const mixr::base::Boolean* const);

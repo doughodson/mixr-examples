@@ -3,9 +3,7 @@
 
 #include "Lognormal.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
-
-using mixr::base::Number;
+#include "mixr/base/numeric/INumber.hpp"
 
 IMPLEMENT_SUBCLASS(Lognormal, "Lognormal")
 EMPTY_DELETEDATA(Lognormal)
@@ -17,8 +15,8 @@ BEGIN_SLOTTABLE(Lognormal)
 END_SLOTTABLE(Lognormal)
 //  map slot table to handles
 BEGIN_SLOT_MAP(Lognormal)
-  ON_SLOT(1, setSlotMean, Number)
-  ON_SLOT(2, setSlotStdDev, Number)
+  ON_SLOT(1, setSlotMean, mixr::base::INumber)
+  ON_SLOT(2, setSlotStdDev, mixr::base::INumber)
 END_SLOT_MAP()
 
 Lognormal::Lognormal()
@@ -39,7 +37,7 @@ double Lognormal::num()
    return dist(engine);
 }
 
-bool Lognormal::setSlotMean(const Number* const x)
+bool Lognormal::setSlotMean(const mixr::base::INumber* const x)
 {
    bool ok = false;
    if (x != nullptr)
@@ -47,7 +45,7 @@ bool Lognormal::setSlotMean(const Number* const x)
    return ok;
 }
 
-bool Lognormal::setSlotStdDev(const Number* const x)
+bool Lognormal::setSlotStdDev(const mixr::base::INumber* const x)
 {
    bool ok = false;
    if (x != nullptr)

@@ -2,7 +2,6 @@
 #include "shared/xpanel/SpdLines.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/numeric/Number.hpp"
 #include <iostream>
 
 namespace mixr {

@@ -6,7 +6,7 @@
 #include <array>
 
 namespace mixr {
-namespace base { class IAngle; class Number; }
+namespace base { class IAngle; class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ public:
 
     void getPosition(double& xx, double& yy) const             { xx = xPos; yy = yPos; }
     void setPosition(const double xx, const double yy)         { xPos = xx; yPos = yy; }
-    bool realSpeed(const mixr::base::Number* const rsobj);
+    bool realSpeed(const mixr::base::INumber* const rsobj);
     bool setAngle(mixr::base::IAngle* saobj);
-    bool setAngle(const mixr::base::Number* const saobj);
+    bool setAngle(const mixr::base::INumber* const saobj);
 
     double leftLimit() const                { return left; }
     void leftLimit(const double ll)         { left = ll; }

@@ -5,7 +5,7 @@
 #include "mixr/graphics/Graphic.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 namespace xpanel {
 
 //------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ namespace xpanel {
 //
 // Factory name: TdElevPtr
 // Events:
-//    UPDATE_VALUE  <Number>  ! elevation angle (degs)
+//    UPDATE_VALUE  <INumber>  ! elevation angle (degs)
 //------------------------------------------------------------------------------
 class TdElevPtr final: public graphics::Graphic
 {
@@ -37,7 +37,7 @@ public:
    bool event(const int event, base::Object* const obj = nullptr) final;
 
 private:
-   bool onUpdateValue(const base::Number* const);
+   bool onUpdateValue(const base::INumber* const);
 
    double elev{};  // (degs)
 };

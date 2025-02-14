@@ -2,15 +2,15 @@
 #include "CrsPntr.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Integer.hpp"
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 #include "mixr/base/units/angles.hpp"
 
 IMPLEMENT_SUBCLASS(CrsPntr, "CrsPntr")
 EMPTY_DELETEDATA(CrsPntr)
 
 BEGIN_EVENT_HANDLER(CrsPntr)
-    ON_EVENT_OBJ(UPDATE_VALUE7, onUpdateCdiDotsCrsPntr, mixr::base::Number)
-    ON_EVENT_OBJ(UPDATE_VALUE8, onUpdateToFromCrsPntr,  mixr::base::Number)
+    ON_EVENT_OBJ(UPDATE_VALUE7, onUpdateCdiDotsCrsPntr, mixr::base::INumber)
+    ON_EVENT_OBJ(UPDATE_VALUE8, onUpdateToFromCrsPntr,  mixr::base::INumber)
 END_EVENT_HANDLER()
 
 BEGIN_SLOTTABLE(CrsPntr)
@@ -23,7 +23,7 @@ END_SLOTTABLE(CrsPntr)
 
 BEGIN_SLOT_MAP(CrsPntr)
     ON_SLOT(1, setSlotNumCdiDots,  mixr::base::Integer)
-    ON_SLOT(2, setSlotNumInches,   mixr::base::Number)
+    ON_SLOT(2, setSlotNumInches,   mixr::base::INumber)
     ON_SLOT(3, setSlotShowCdi,     mixr::base::Boolean)
     ON_SLOT(4, setSlotShowCrsPntr, mixr::base::Boolean)
     ON_SLOT(5, setSlotShowToFrom,  mixr::base::Boolean)
@@ -92,13 +92,13 @@ bool CrsPntr::setShowToFrom(const bool newTF)
 }
 
 // Event functions
-bool CrsPntr::onUpdateCdiDotsCrsPntr(const mixr::base::Number* const x)
+bool CrsPntr::onUpdateCdiDotsCrsPntr(const mixr::base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setCdiDots(x->asDouble());
     return ok;
 }
-bool CrsPntr::onUpdateToFromCrsPntr(const mixr::base::Number* const x)
+bool CrsPntr::onUpdateToFromCrsPntr(const mixr::base::INumber* const x)
 {
     bool ok{};
     if (x != nullptr) ok = setToFrom(x->asDouble());
@@ -206,7 +206,7 @@ bool CrsPntr::setSlotNumCdiDots(const mixr::base::Integer* const newCDI)
 //------------------------------------------------------------------------------
 // setSlotNumInches() - set the number of inches we are scaling across the dots
 //------------------------------------------------------------------------------
-bool CrsPntr::setSlotNumInches(const mixr::base::Number* const newNI)
+bool CrsPntr::setSlotNumInches(const mixr::base::INumber* const newNI)
 {
     bool ok{};
     if (newNI != nullptr) ok = setNumInches(newNI->asDouble());

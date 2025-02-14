@@ -1,6 +1,6 @@
 
 #include "TdAzPtr.hpp"
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 #include <iostream>
 
 using namespace mixr;
@@ -28,7 +28,7 @@ bool TdAzPtr::event(const int event, base::Object* const obj)
 
     if (event == UPDATE_VALUE)
     {
-        const auto num = dynamic_cast<const base::Number*>(obj);
+        const auto num = dynamic_cast<const base::INumber*>(obj);
         if (num != nullptr) {
             azimuth = num->asDouble();
             used = true;

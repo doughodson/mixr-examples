@@ -1,7 +1,7 @@
 
 #include "Derived.hpp"
 
-#include "mixr/base/numeric/Number.hpp"
+#include "mixr/base/numeric/INumber.hpp"
 
 #include <iostream>
 
@@ -14,7 +14,7 @@ BEGIN_SLOTTABLE(Derived)
 END_SLOTTABLE(Derived)
 
 BEGIN_SLOT_MAP(Derived)
-   ON_SLOT(1, setSlotSeed, mixr::base::Number)
+   ON_SLOT(1, setSlotSeed, mixr::base::INumber)
 END_SLOT_MAP()
 
 Derived::Derived()
@@ -23,7 +23,7 @@ Derived::Derived()
    std::cout << "Derived::Derived() called\n";
 }
 
-bool Derived::setSlotSeed(const mixr::base::Number* const)
+bool Derived::setSlotSeed(const mixr::base::INumber* const)
 {
    std::cout << "Derived seed being set\n";
    return true;

@@ -1,7 +1,6 @@
 
 #include "SpdLines.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/numeric/Number.hpp"
 #include <iostream>
 
 using namespace mixr;

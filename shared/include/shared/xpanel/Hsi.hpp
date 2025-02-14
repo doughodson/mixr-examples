@@ -48,12 +48,12 @@ public:
 
 private:
     // event functions
-    bool onUpdateSelHdgHsi(const base::Number* const);
-    bool onUpdateSelCrsHsi(const base::Number* const);
-    bool onUpdateNav1BrgHsi(const base::Number* const);
-    bool onUpdateNav2BrgHsi(const base::Number* const);
-    bool onUpdateCdiDotsHsi(const base::Number* const);
-    bool onUpdateToFromHsi(const base::Number* const);
+    bool onUpdateSelHdgHsi(const base::INumber* const);
+    bool onUpdateSelCrsHsi(const base::INumber* const);
+    bool onUpdateNav1BrgHsi(const base::INumber* const);
+    bool onUpdateNav2BrgHsi(const base::INumber* const);
+    bool onUpdateCdiDotsHsi(const base::INumber* const);
+    bool onUpdateToFromHsi(const base::INumber* const);
 
     double selHdg{};      // selected heading (degs)
     SendData selHdgSD;

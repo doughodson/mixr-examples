@@ -5,7 +5,7 @@
 #include "AbstractRng.hpp"
 
 namespace mixr {
-namespace base { class Number; }
+namespace base { class INumber; }
 }
 
 //------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotMean(const mixr::base::Number* const);
+   bool setSlotMean(const mixr::base::INumber* const);
 };
 
 #endif

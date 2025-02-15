@@ -2,7 +2,6 @@
 #include "Endpoint.hpp"
 
 #include "mixr/base/network/INetHandler.hpp"
-#include "mixr/base/network/TcpHandler.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Integer.hpp"
 #include <iostream>

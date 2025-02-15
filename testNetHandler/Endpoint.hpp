@@ -5,7 +5,7 @@
 #include "mixr/base/Component.hpp"
 
 namespace mixr {
-namespace base { class Boolean; class NetHandler; class Integer; }
+namespace base { class Boolean; class INetHandler; class Integer; }
 }
 
 //------------------------------------------------------------------------------
@@ -14,9 +14,9 @@ namespace base { class Boolean; class NetHandler; class Integer; }
 // Description: Common basic class that contains network handlers
 //
 // Slots:
-//      netHandler  <NetHandler>    ! Network handler (input/output, or just output if 'netInput' is defined)
-//      netInput    <NetHandler>    ! Optional input handler (otherwise 'netHandler' is used)
-//      netOutput   <NetHandler>    ! Alias for the 'netHandler' slot.
+//      netHandler  <INetHandler>   ! Network handler (input/output, or just output if 'netInput' is defined)
+//      netInput    <INetHandler>   ! Optional input handler (otherwise 'netHandler' is used)
+//      netOutput   <INetHandler>   ! Alias for the 'netHandler' slot.
 //      noWait      <Boolean>       ! No wait (unblocked) I/O flag (default: false -- blocked I/O)
 //      loops       <Integer>       ! Number of messages to send/recv before disconnecting and
 //                                  ! halting (default: infinite)
@@ -52,17 +52,17 @@ protected:
     int getLoops() const { return loops; }
 
 private:
-    mixr::base::safe_ptr<mixr::base::NetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
-    mixr::base::safe_ptr<mixr::base::NetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
-    int loops{};                                             // Number of transfer loops (zero if no limit)
-    bool networkInitialized{};                               // Network has been initialized
-    bool networkInitFailed{};                                // Network initialization has failed
-    bool noWaitFlag{};                                       // No wait (unblocked) I/O flag
+    mixr::base::safe_ptr<mixr::base::INetHandler> netHandler; // Network handler (input/output, or just output if netInput is defined)
+    mixr::base::safe_ptr<mixr::base::INetHandler> netInput;   // Optional input handler (otherwise 'netHandler' is used)
+    int loops{};                                              // Number of transfer loops (zero if no limit)
+    bool networkInitialized{};                                // Network has been initialized
+    bool networkInitFailed{};                                 // Network initialization has failed
+    bool noWaitFlag{};                                        // No wait (unblocked) I/O flag
 
 private:
     // slot table helper methods
-    bool setSlotNetwork(mixr::base::NetHandler* const);
-    bool setSlotNetInput(mixr::base::NetHandler* const);
+    bool setSlotNetwork(mixr::base::INetHandler* const);
+    bool setSlotNetInput(mixr::base::INetHandler* const);
     bool setSlotNoWait(mixr::base::Boolean* const);
     bool setSlotLoops(mixr::base::Integer* const);
 };

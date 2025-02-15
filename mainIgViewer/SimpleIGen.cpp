@@ -4,7 +4,7 @@
 #include "events.hpp"
 
 #include "mixr/base/String.hpp"
-#include "mixr/base/network/NetHandler.hpp"
+#include "mixr/base/network/INetHandler.hpp"
 #include "mixr/base/units/util/length_utils.hpp"
 #include "mixr/base/units/util/angle_utils.hpp"
 #include "mixr/base/util/endian_utils.hpp"
@@ -33,7 +33,7 @@ END_SLOTTABLE(SimpleIGen)
 
 BEGIN_SLOT_MAP(SimpleIGen)
   ON_SLOT(1, setSlotDatabasePath, base::String)
-  ON_SLOT(2, setSlotNetInput,     base::NetHandler)
+  ON_SLOT(2, setSlotNetInput,     base::INetHandler)
 END_SLOT_MAP()
 
 SimpleIGen::SimpleIGen()
@@ -54,7 +54,7 @@ bool SimpleIGen::setSlotDatabasePath(base::String* const msg)
 }
 
 // Set Network Input Handler
-bool SimpleIGen::setSlotNetInput(base::NetHandler* const msg)
+bool SimpleIGen::setSlotNetInput(base::INetHandler* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

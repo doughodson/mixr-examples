@@ -1,6 +1,7 @@
 
 #include "Endpoint.hpp"
 
+#include "mixr/base/network/INetHandler.hpp"
 #include "mixr/base/network/TcpHandler.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Integer.hpp"
@@ -20,9 +21,9 @@ BEGIN_SLOTTABLE(Endpoint)
 END_SLOTTABLE(Endpoint)
 
 BEGIN_SLOT_MAP(Endpoint)
-    ON_SLOT(1, setSlotNetwork,   mixr::base::NetHandler)
-    ON_SLOT(2, setSlotNetInput,  mixr::base::NetHandler)
-    ON_SLOT(3, setSlotNetwork,   mixr::base::NetHandler)
+    ON_SLOT(1, setSlotNetwork,   mixr::base::INetHandler)
+    ON_SLOT(2, setSlotNetInput,  mixr::base::INetHandler)
+    ON_SLOT(3, setSlotNetwork,   mixr::base::INetHandler)
     ON_SLOT(4, setSlotNoWait,    mixr::base::Boolean)
     ON_SLOT(5, setSlotLoops,     mixr::base::Integer)
 END_SLOT_MAP()
@@ -146,14 +147,14 @@ void Endpoint::closeConnections()
 }
 
 // Network Handler
-bool Endpoint::setSlotNetwork(mixr::base::NetHandler* const msg)
+bool Endpoint::setSlotNetwork(mixr::base::INetHandler* const msg)
 {
     netHandler = msg;
     return true;
 }
 
 // Input Handler
-bool Endpoint::setSlotNetInput(mixr::base::NetHandler* const msg)
+bool Endpoint::setSlotNetInput(mixr::base::INetHandler* const msg)
 {
     netInput = msg;
     return true;

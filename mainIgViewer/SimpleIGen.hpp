@@ -10,7 +10,7 @@
 #include <osgDB/ReadFile>
 
 namespace mixr {
-namespace base { class NetHandler; class String; }
+namespace base { class INetHandler; class String; }
 }
 
 class SimpleIGen final: public ::mixr::glut::GlutDisplay
@@ -56,13 +56,13 @@ private:
    ::osg::Matrix translate;
    ::osg::Matrix rotate;
    std::string databasePath;                                    // database path
-   ::mixr::base::safe_ptr<::mixr::base::NetHandler> netInput;   // Input network handler
+   ::mixr::base::safe_ptr<::mixr::base::INetHandler> netInput;  // Input network handler
    bool netOk {};
 
 private:
    // slot table helper methods
    bool setSlotDatabasePath(::mixr::base::String* const);
-   bool setSlotNetInput(::mixr::base::NetHandler* const);
+   bool setSlotNetInput(::mixr::base::INetHandler* const);
 };
 
 #endif

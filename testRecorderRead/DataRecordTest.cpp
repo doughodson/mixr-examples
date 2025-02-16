@@ -1,7 +1,7 @@
 
 #include "DataRecordTest.hpp"
 
-#include "mixr/recorder/InputHandler.hpp"
+#include "mixr/recorder/IInputHandler.hpp"
 #include "mixr/recorder/OutputHandler.hpp"
 #include "mixr/recorder/DataRecordHandle.hpp"
 
@@ -18,7 +18,7 @@ BEGIN_SLOTTABLE(DataRecordTest)
 END_SLOTTABLE(DataRecordTest)
 
 BEGIN_SLOT_MAP(DataRecordTest)
-   ON_SLOT(1, setSlotInputHandler, mixr::recorder::InputHandler)
+   ON_SLOT(1, setSlotInputHandler, mixr::recorder::IInputHandler)
    ON_SLOT(2, setSlotOutputHandler, mixr::recorder::OutputHandler)
 END_SLOT_MAP()
 
@@ -32,7 +32,7 @@ void DataRecordTest::copyData(const DataRecordTest& org, const bool)
    BaseClass::copyData(org);
 
    {  // Clone input handler
-      mixr::recorder::InputHandler* clone{};
+      mixr::recorder::IInputHandler* clone{};
       if (org.inputHandler != nullptr) clone = org.inputHandler->clone();
       setSlotInputHandler(clone);
       if (clone != nullptr) clone->unref();
@@ -75,7 +75,7 @@ void DataRecordTest::runTest()
    }
 }
 
-bool DataRecordTest::setSlotInputHandler(mixr::recorder::InputHandler* const msg)
+bool DataRecordTest::setSlotInputHandler(mixr::recorder::IInputHandler* const msg)
 {
    inputHandler = msg;
    if (inputHandler != nullptr) inputHandler->container(this);

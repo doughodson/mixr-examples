@@ -3,7 +3,7 @@
 
 #include "mixr/recorder/FileReader.hpp"
 #include "mixr/recorder/FileWriter.hpp"
-#include "mixr/recorder/InputHandler.hpp"
+#include "mixr/recorder/IInputHandler.hpp"
 #include "mixr/recorder/NetInput.hpp"
 
 #include "mixr/recorder/DataRecorder.hpp"

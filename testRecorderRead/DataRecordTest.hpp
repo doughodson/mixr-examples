@@ -5,7 +5,7 @@
 #include "mixr/base/Component.hpp"
 
 namespace mixr {
-namespace recorder { class InputHandler; class OutputHandler; }
+namespace recorder { class IInputHandler; class OutputHandler; }
 }
 
 //------------------------------------------------------------------------------
@@ -22,12 +22,12 @@ public:
    void runTest();
 
 private:
-   mixr::base::safe_ptr<mixr::recorder::InputHandler> inputHandler;
+   mixr::base::safe_ptr<mixr::recorder::IInputHandler> inputHandler;
    mixr::base::safe_ptr<mixr::recorder::OutputHandler> outputHandler;
 
 private:
    // slot table helper methods
-   bool setSlotInputHandler(mixr::recorder::InputHandler* const);
+   bool setSlotInputHandler(mixr::recorder::IInputHandler* const);
    bool setSlotOutputHandler(mixr::recorder::OutputHandler* const);
 };
 

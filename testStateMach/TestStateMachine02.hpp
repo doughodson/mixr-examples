@@ -2,7 +2,7 @@
 #ifndef __TestStateMachine02_HPP__
 #define __TestStateMachine02_HPP__
 
-#include "mixr/base/StateMachine.hpp"
+#include "mixr/base/IStateMachine.hpp"
 
 //------------------------------------------------------------------------------
 // Class: TestStateMachine02
@@ -11,9 +11,9 @@
 //    Same as Test #1 except that we're using separate state specific functions.
 //
 //------------------------------------------------------------------------------
-class TestStateMachine02 final: public mixr::base::StateMachine
+class TestStateMachine02 final: public mixr::base::IStateMachine
 {
-   DECLARE_SUBCLASS(TestStateMachine02, mixr::base::StateMachine)
+   DECLARE_SUBCLASS(TestStateMachine02, mixr::base::IStateMachine)
 
 public:
    enum { CALL_01 = 11, CALL_02 = 22 };

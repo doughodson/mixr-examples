@@ -3,14 +3,14 @@
 
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/StateMachine.hpp"
+#include "mixr/base/IStateMachine.hpp"
 #include "mixr/base/Timers.hpp"
 
 #include <string>
 #include <cstdlib>
 
 // state machine builder
-mixr::base::StateMachine* builder(const std::string& filename)
+mixr::base::IStateMachine* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -35,7 +35,7 @@ mixr::base::StateMachine* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto stateMachine = dynamic_cast<mixr::base::StateMachine*>(obj);
+   const auto stateMachine = dynamic_cast<mixr::base::IStateMachine*>(obj);
    if (stateMachine == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -44,7 +44,7 @@ mixr::base::StateMachine* builder(const std::string& filename)
 }
 
 // main test loop
-void theTest(mixr::base::StateMachine* stateMachine)
+void theTest(mixr::base::IStateMachine* stateMachine)
 {
    const double dt{0.05};  // Fake delta time
 
@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
    // ---
    // Read in the description files
    // ---
-   mixr::base::StateMachine* stateMachine{builder(configFilename)};
+   mixr::base::IStateMachine* stateMachine{builder(configFilename)};
 
    // reset the system
    stateMachine->event(mixr::base::Component::RESET_EVENT);

@@ -1,4 +1,5 @@
 
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/edl_parser.hpp"
@@ -128,7 +129,7 @@ int main(int argc, char* argv[])
    station = builder(configFilename);
 
    // reset the Simulation
-   station->event(mixr::base::Component::RESET_EVENT);
+   station->event(mixr::base::IComponent::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt{1.0 / static_cast<double>(frameRate)};

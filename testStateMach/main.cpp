@@ -3,6 +3,7 @@
 
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Pair.hpp"
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/IStateMachine.hpp"
 #include "mixr/base/Timers.hpp"
 
@@ -73,7 +74,7 @@ int main(int argc, char* argv[])
    mixr::base::IStateMachine* stateMachine{builder(configFilename)};
 
    // reset the system
-   stateMachine->event(mixr::base::Component::RESET_EVENT);
+   stateMachine->event(mixr::base::IComponent::RESET_EVENT);
 
    // run the test
    theTest(stateMachine);

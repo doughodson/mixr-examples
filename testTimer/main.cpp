@@ -36,11 +36,11 @@ const double THREAD_PRI{0.5};          // Pri (0 .. 1)
 
 class TimerThread final : public mixr::base::PeriodicThread
 {
-   public: TimerThread(mixr::base::Component* const parent, const double rate);
+   public: TimerThread(mixr::base::IComponent* const parent, const double rate);
    private: unsigned long userFunc(const double dt) override;
 };
 
-TimerThread::TimerThread(mixr::base::Component* const parent, const double rate)
+TimerThread::TimerThread(mixr::base::IComponent* const parent, const double rate)
       : PeriodicThread(parent, rate)
 {
 }
@@ -190,7 +190,7 @@ int main(int argc, char* argv[])
       // run the test
       run(tester);
 
-      tester->event(mixr::base::Component::SHUTDOWN_EVENT);
+      tester->event(mixr::base::IComponent::SHUTDOWN_EVENT);
       tester->unref();
       tester = nullptr;
 

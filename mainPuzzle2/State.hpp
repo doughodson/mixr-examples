@@ -2,7 +2,7 @@
 #ifndef __State_HPP__
 #define __State_HPP__
 
-#include "mixr/base/Component.hpp"
+#include "mixr/base/IComponent.hpp"
 
 #include <array>
 
@@ -17,9 +17,9 @@ class Controller;
 //
 // Description:  Puzzle state vector
 //------------------------------------------------------------------------------
-class State final: public mixr::base::Component
+class State final: public mixr::base::IComponent
 {
-    DECLARE_SUBCLASS(State, mixr::base::Component)
+    DECLARE_SUBCLASS(State, mixr::base::IComponent)
 
 public:
    static const int MAX_BLOCKS{30};         // Max number of blocks in each state

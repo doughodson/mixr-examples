@@ -4,6 +4,7 @@
 
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/base/edl_parser.hpp"
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/simulation/Station.hpp"
@@ -96,7 +97,7 @@ int main(int argc, char* argv[])
    station = builder(configFilename);
 
    // reset the simulation
-   station->event(mixr::base::Component::RESET_EVENT);
+   station->event(mixr::base::IComponent::RESET_EVENT);
 
    // create the time critical thread
    station->createTimeCriticalProcess();
@@ -107,7 +108,7 @@ int main(int argc, char* argv[])
 
    // ensure everything is reset
    station->updateData(dt);
-   station->event(mixr::base::Component::RESET_EVENT);
+   station->event(mixr::base::IComponent::RESET_EVENT);
 
    glutTimerFunc(millis, updateDataCB, 1);
 

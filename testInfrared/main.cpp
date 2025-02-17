@@ -8,6 +8,7 @@
 
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/base/edl_parser.hpp"
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/util/system_utils.hpp"
@@ -99,7 +100,7 @@ int main(int argc, char* argv[])
    testStation = builder(configFilename);
 
    // reset the Simulation
-   testStation->event(mixr::base::Component::RESET_EVENT);
+   testStation->event(mixr::base::IComponent::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt{1.0 / static_cast<double>(bgRate)};
@@ -108,7 +109,7 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    testStation->updateData(dt);
    testStation->updateTC(dt);
-   testStation->event(mixr::base::Component::RESET_EVENT);
+   testStation->event(mixr::base::IComponent::RESET_EVENT);
 
    glutTimerFunc(millis, updateDataCB, 1);
 

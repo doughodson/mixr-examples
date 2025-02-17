@@ -2,7 +2,7 @@
 #ifndef __mixr_xzmq_ZeroMQContext_HPP__
 #define __mixr_xzmq_ZeroMQContext_HPP__
 
-#include "mixr/base/Component.hpp"
+#include "mixr/base/IComponent.hpp"
 
 namespace mixr {
 namespace base { class Boolean; class Integer; }
@@ -26,9 +26,9 @@ namespace xzmq {
 //    enableIPV6  - Enable IPV6 sockets
 //
 //------------------------------------------------------------------------------
-class ZeroMQContext : public base::Component
+class ZeroMQContext : public base::IComponent
 {
-   DECLARE_SUBCLASS(ZeroMQContext, base::Component)
+   DECLARE_SUBCLASS(ZeroMQContext, base::IComponent)
 
 public:
    ZeroMQContext();
@@ -49,7 +49,7 @@ protected:
 
 private:
    void initData();
-   
+
    void* context{};          // ZeroMQ context (they use void*)
    int   threadCount{-1};    // Number of I/O threads in pool (not set = -1)
    int   maxSockets{-1};     // Number of sockets (not set = -1)

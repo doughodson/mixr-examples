@@ -74,7 +74,7 @@ void PlaneAction::setPitchTrim(const double x)
    pitchTrimChanged = true;
 }
 
-bool PlaneAction::execute(base::Component* actor)
+bool PlaneAction::execute(base::IComponent* actor)
 {
    const auto airVehicle = dynamic_cast<models::AirVehicle*>(actor);
    if (airVehicle != nullptr) {
@@ -102,7 +102,7 @@ bool PlaneAction::execute(base::Component* actor)
             sms->setWeaponDeliveryMode(models::StoresMgr::A2A);
             std::cout << "Set A/A Weapon Mode!" << std::endl;
 
-            airVehicle->event(base::Component::WPN_REL_EVENT);
+            airVehicle->event(base::IComponent::WPN_REL_EVENT);
             //WPN_REL_EVENT         = 1405,  // Passes requested switch state as Boolean
                                           // or no argument for one-shot event
             std::cout << "Launched A/A Weapon !" << std::endl;

@@ -18,7 +18,7 @@ class PlaneAction final: public base::ubf::IAction
 public:
    PlaneAction();
 
-   bool execute(base::Component* actor) final;
+   bool execute(base::IComponent* actor) final;
 
    // get/set methods
    void setPitch(const double);

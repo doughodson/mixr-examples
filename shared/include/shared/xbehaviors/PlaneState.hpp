@@ -23,7 +23,7 @@ public:
    PlaneState();
 
    void reset() final;
-   void updateState(const base::Component* const actor) final;
+   void updateState(const base::IComponent* const actor) final;
 
    // set/get
    void setAlive(const bool x)                 { alive = x; return; }

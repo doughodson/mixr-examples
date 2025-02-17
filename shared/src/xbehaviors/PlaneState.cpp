@@ -63,7 +63,7 @@ void PlaneState::reset()
    BaseClass::reset();
 }
 
-void PlaneState::updateState(const base::Component* const actor)
+void PlaneState::updateState(const base::IComponent* const actor)
 {
    const auto airVehicle = dynamic_cast<const models::AirVehicle*>(actor);
    setAlive(false);

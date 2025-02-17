@@ -2,7 +2,7 @@
 #ifndef __DataRecordTest_HPP__
 #define __DataRecordTest_HPP__
 
-#include "mixr/base/Component.hpp"
+#include "mixr/base/IComponent.hpp"
 
 namespace mixr {
 namespace recorder { class IInputHandler; class OutputHandler; }
@@ -11,9 +11,9 @@ namespace recorder { class IInputHandler; class OutputHandler; }
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest final: public mixr::base::Component
+class DataRecordTest final: public mixr::base::IComponent
 {
-   DECLARE_SUBCLASS(DataRecordTest, mixr::base::Component)
+   DECLARE_SUBCLASS(DataRecordTest, mixr::base::IComponent)
 
 public:
    DataRecordTest();

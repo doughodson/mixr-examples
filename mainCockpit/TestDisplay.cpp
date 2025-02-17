@@ -5,6 +5,7 @@
 #include "shared/xpanel/DspRwr.hpp"
 #include "shared/xpanel/Pfd.hpp"
 
+
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/weapon/Missile.hpp"
 
@@ -18,6 +19,7 @@
 #include "mixr/simulation/Simulation.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 #include "mixr/graphics/SymbolLoader.hpp"
@@ -253,7 +255,7 @@ bool TestDisplay::onStepOwnshipKey()
 
 bool TestDisplay::shutdownNotification()
 {
-   mixr::base::Component* parent{container()};
+   mixr::base::IComponent* parent{container()};
    if (parent != nullptr) parent->event(SHUTDOWN_EVENT);
 
    return BaseClass::shutdownNotification();

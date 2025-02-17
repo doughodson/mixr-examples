@@ -4,6 +4,7 @@
 #include "mixr/simulation/Station.hpp"
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/base/edl_parser.hpp"
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/util/system_utils.hpp"
@@ -88,7 +89,7 @@ int main(int argc, char* argv[])
    station = builder(configFilename);
 
    // reset the simulation
-   station->event(mixr::base::Component::RESET_EVENT);
+   station->event(mixr::base::IComponent::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt{1.0 / static_cast<double>(BG_RATE)};

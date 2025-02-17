@@ -2,7 +2,7 @@
 #ifndef __Endpoint_HPP__
 #define __Endpoint_HPP__
 
-#include "mixr/base/Component.hpp"
+#include "mixr/base/IComponent.hpp"
 
 namespace mixr {
 namespace base { class Boolean; class INetHandler; class Integer; }
@@ -22,9 +22,9 @@ namespace base { class Boolean; class INetHandler; class Integer; }
 //                                  ! halting (default: infinite)
 //
 //------------------------------------------------------------------------------
-class Endpoint : public mixr::base::Component
+class Endpoint : public mixr::base::IComponent
 {
-   DECLARE_SUBCLASS(Endpoint, mixr::base::Component)
+   DECLARE_SUBCLASS(Endpoint, mixr::base::IComponent)
 
 public:
     static const int MAX_SIZE{1024};  // Max buffer size

@@ -1,5 +1,5 @@
 
-
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/edl_parser.hpp"
@@ -93,14 +93,14 @@ int main(int argc, char* argv[])
       std::exit(EXIT_FAILURE);
    }
 
-   station->event(base::Component::RESET_EVENT);
+   station->event(base::IComponent::RESET_EVENT);
 
    const double dt{1.0/static_cast<double>(frameRate)};
    const int msecs{static_cast<int>(dt * 1000)};
 
    station->updateData(dt);
    station->updateTC(dt);
-   station->event(base::Component::RESET_EVENT);
+   station->event(base::IComponent::RESET_EVENT);
 
    station->event(USER_EVENT_ON_ENTRY);
 

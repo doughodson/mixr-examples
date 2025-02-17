@@ -2,7 +2,7 @@
 #ifndef __Tester_HPP__
 #define __Tester_HPP__
 
-#include "mixr/base/Component.hpp"
+#include "mixr/base/IComponent.hpp"
 
 namespace mixr {
 namespace base { class PairStream; }
@@ -16,9 +16,9 @@ namespace base { class PairStream; }
 // Slots:
 //    timers   <PairStream>   ! List of timers to be tested
 //------------------------------------------------------------------------------
-class Tester final: public mixr::base::Component
+class Tester final: public mixr::base::IComponent
 {
-   DECLARE_SUBCLASS(Tester, mixr::base::Component)
+   DECLARE_SUBCLASS(Tester, mixr::base::IComponent)
 
 public:
    Tester();

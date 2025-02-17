@@ -4,6 +4,7 @@
 
 #include "factory.hpp"
 
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Timers.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"
@@ -90,7 +91,7 @@ int main(int argc, char* argv[])
    simStation = builder(configFilename);
 
    // reset station
-   simStation->event(base::Component::RESET_EVENT);
+   simStation->event(base::IComponent::RESET_EVENT);
 
    // set timer for background tasks
    const double dt{1.0 / static_cast<double>(BG_RATE)};

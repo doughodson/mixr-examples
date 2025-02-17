@@ -2,6 +2,8 @@
 // Example program that demonstrates UBF functionality
 //--------------------------------------------------------------
 
+#include "mixr/base/IComponent.hpp"
+
 #include "mixr/simulation/Station.hpp"
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/base/edl_parser.hpp"
@@ -92,7 +94,7 @@ int main(int argc, char* argv[])
    station = builder(configFilename);
 
    // reset the simulation
-   station->event(mixr::base::Component::RESET_EVENT);
+   station->event(mixr::base::IComponent::RESET_EVENT);
 
    // set timer for the background tasks
    const double dt{1.0 / static_cast<double>(bgRate)};
@@ -101,7 +103,7 @@ int main(int argc, char* argv[])
    // ensure everything is reset
    station->updateData(dt);
    station->updateTC(dt);
-   station->event(mixr::base::Component::RESET_EVENT);
+   station->event(mixr::base::IComponent::RESET_EVENT);
    station->reset();
 
    glutTimerFunc(msecs, updateDataCB, msecs);

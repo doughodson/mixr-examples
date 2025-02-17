@@ -65,7 +65,7 @@ void TestComputer::updateTC(const double dt0)
    // bypass System:: version, forward call to Component directly,
    // and use 'dt' because if we're frozen then so are our subcomponents.
    // ---
-   mixr::base::Component::updateTC(dt);
+   mixr::base::IComponent::updateTC(dt);
 
    switch (sim->phase()) {
 

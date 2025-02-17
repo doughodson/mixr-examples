@@ -7,6 +7,7 @@
 #include "Echo.hpp"
 
 #include "mixr/base/edl_parser.hpp"
+#include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
@@ -88,7 +89,7 @@ int main(int argc, char* argv[])
 
    // send a reset event
    std::cout << "Reset event: which will establish the networks." << std::endl;
-   endpoint->event(mixr::base::Component::RESET_EVENT);
+   endpoint->event(mixr::base::IComponent::RESET_EVENT);
 
    // system time of day
    const double dt{1.0 / static_cast<double>(UPDATE_RATE)};   // Delta time

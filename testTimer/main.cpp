@@ -15,7 +15,7 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Timers.hpp"
-#include "mixr/base/threads/PeriodicThread.hpp"
+#include "mixr/base/threads/IPeriodicThread.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
 // class factory
@@ -34,14 +34,14 @@ const double TIMERS_PRINT_RATE{5.0};   // Hz
 const double THREAD_RATE{20.0};        // hz
 const double THREAD_PRI{0.5};          // Pri (0 .. 1)
 
-class TimerThread final : public mixr::base::PeriodicThread
+class TimerThread final : public mixr::base::IPeriodicThread
 {
    public: TimerThread(mixr::base::IComponent* const parent, const double rate);
    private: unsigned long userFunc(const double dt) override;
 };
 
 TimerThread::TimerThread(mixr::base::IComponent* const parent, const double rate)
-      : PeriodicThread(parent, rate)
+      : IPeriodicThread(parent, rate)
 {
 }
 

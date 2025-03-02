@@ -33,7 +33,7 @@ simulation::Station* builder(const std::string& fileName)
    simulation::Station* p{};
    // Read the description file
    int errors{};
-   base::Object* obj{base::edl_parser(fileName, factory, &errors)};
+   base::IObject* obj{base::edl_parser(fileName, factory, &errors)};
    if (errors > 0) {
       std::cerr << "File: " << fileName << ", errors: " << errors << std::endl;
       std::exit(EXIT_FAILURE);

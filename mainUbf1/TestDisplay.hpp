@@ -54,7 +54,7 @@ public:
     void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);
 
     void mouseEvent(const int button, const int state, const int x, const int y) final;
-    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
     void updateData(const double dt = 0.0) final;
 
 private:

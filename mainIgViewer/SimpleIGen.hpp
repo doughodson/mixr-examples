@@ -30,7 +30,7 @@ public:
    void reshapeIt(int w, int h) final;
 
    // base::Component interface
-   bool event(const int event, ::mixr::base::Object* const obj = nullptr) final;
+   bool event(const int event, ::mixr::base::IObject* const obj = nullptr) final;
 
    // SimpleIGen interface
    bool onEntry() final;

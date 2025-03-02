@@ -4,7 +4,7 @@
 #include "SimStation.hpp"
 #include "SimpleIGen.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
@@ -14,9 +14,9 @@
 
 using namespace mixr;
 
-base::Object* factory(const std::string& name)
+base::IObject* factory(const std::string& name)
 {
-   base::Object* obj{};
+   base::IObject* obj{};
 
    if (name == SimpleIGen::getFactoryName()) {
       obj = new SimpleIGen;

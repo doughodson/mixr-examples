@@ -35,7 +35,7 @@ public:
    void updateTC(const double dt = 0.0f) final;
    void updateData(const double dt = 0.0f) final;
    void reset() final;
-   bool event(const int event, ::mixr::base::Object* const obj = nullptr) final;
+   bool event(const int event, ::mixr::base::IObject* const obj = nullptr) final;
 
    // SimStation interface
    bool onEntry();

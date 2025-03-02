@@ -1,7 +1,7 @@
 
 #include "shared/xzmq/factory.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "shared/xzmq/ZeroMQContext.hpp"
 #include "shared/xzmq/ZeroMQHandler.hpp"
@@ -11,9 +11,9 @@
 namespace mixr {
 namespace xzmq {
 
-base::Object* factory(const std::string& name)
+base::IObject* factory(const std::string& name)
 {
-    base::Object* obj{};
+    base::IObject* obj{};
 
     if ( name == ZeroMQContext::getFactoryName() ) {
         obj = new ZeroMQContext;

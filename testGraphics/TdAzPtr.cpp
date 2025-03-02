@@ -22,7 +22,7 @@ void TdAzPtr::copyData(const TdAzPtr& org, const bool)
 //------------------------------------------------------------------------------
 // event() -- default event handler
 //------------------------------------------------------------------------------
-bool TdAzPtr::event(const int event, base::Object* const obj)
+bool TdAzPtr::event(const int event, base::IObject* const obj)
 {
     bool used{};
 

@@ -34,7 +34,7 @@ public:
    bool setElevation(const double); // degs
 
    void draw() final;
-   bool event(const int event, base::Object* const obj = nullptr) final;
+   bool event(const int event, base::IObject* const obj = nullptr) final;
 
 private:
    bool onUpdateValue(const base::INumber* const);

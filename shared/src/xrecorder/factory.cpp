@@ -1,7 +1,7 @@
 
 #include "shared/xrecorder/factory.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "shared/xrecorder/DataRecorder.hpp"
 
@@ -10,9 +10,9 @@
 namespace mixr {
 namespace xrecorder {
 
-base::Object* factory(const std::string& name)
+base::IObject* factory(const std::string& name)
 {
-    base::Object* obj{};
+    base::IObject* obj{};
 
    if ( name == DataRecorder::getFactoryName() ) {
       obj = new DataRecorder();

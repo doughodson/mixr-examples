@@ -20,7 +20,7 @@ class TestTwo final: public mixr::graphics::Graphic
 public:
     TestTwo();
 
-    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
     void updateTC(const double dt = 0.0) final;
     void updateData(const double dt = 0.0) final;
     void reset() final;

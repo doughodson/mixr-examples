@@ -17,9 +17,9 @@
 const int frameRate{50};
 
 // class factory
-mixr::base::Object* factory(const std::string& name)
+mixr::base::IObject* factory(const std::string& name)
 {
-   mixr::base::Object* obj{mixr::simulation::factory(name)};
+   mixr::base::IObject* obj{mixr::simulation::factory(name)};
    if (obj == nullptr) obj = mixr::models::factory(name);
    if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);
    if (obj == nullptr) obj = mixr::terrain::factory(name);
@@ -32,7 +32,7 @@ mixr::simulation::Simulation* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
-   mixr::base::Object* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
+   mixr::base::IObject* obj{mixr::base::edl_parser(filename, factory, &num_errors)};
    if (num_errors > 0) {
       std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
       std::exit(EXIT_FAILURE);

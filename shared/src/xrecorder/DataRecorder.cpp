@@ -36,7 +36,7 @@ void DataRecorder::copyData(const DataRecorder& org, const bool)
 //    value[1] => fi
 //    value[2] => fo
 //------------------------------------------------------------------------------
-bool DataRecorder::recordMyData(const base::Object* objs[4], const double values[4])
+bool DataRecorder::recordMyData(const base::IObject* objs[4], const double values[4])
 {
    //const auto player = dynamic_cast<const simulation::Player*>( objs[0] );
    const auto msg = new recorder::pb::DataRecord();
@@ -63,7 +63,7 @@ bool DataRecorder::recordMyData(const base::Object* objs[4], const double values
 //    value[1] => marker source ID
 //    value[2] => foo
 //------------------------------------------------------------------------------
-bool DataRecorder::recordMarker(const base::Object* objs[4], const double values[4])
+bool DataRecorder::recordMarker(const base::IObject* objs[4], const double values[4])
 {
    //const auto player = dynamic_cast<const simulation::Player*>( objs[0] );
    const auto msg = new recorder::pb::DataRecord();

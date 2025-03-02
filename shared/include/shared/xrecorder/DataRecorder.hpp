@@ -32,14 +32,14 @@ public:
 protected:
    bool recordDataImp(
       const unsigned int id,              // Recorder event Id
-      const base::Object* pObjects[4],    // Sample objects
+      const base::IObject* pObjects[4],   // Sample objects
       const double values[4]              // Sample values
    ) override;
 
    // Recorder data event handlers
-   virtual bool recordMyData(const base::Object* objs[4], const double values[4]);
+   virtual bool recordMyData(const base::IObject* objs[4], const double values[4]);
 
-   bool recordMarker(const base::Object* objs[4], const double values[4]) override;
+   bool recordMarker(const base::IObject* objs[4], const double values[4]) override;
 };
 
 }

@@ -29,7 +29,7 @@ public:
     bool isAltSelected()                    { return isAlt; }
 
     void drawFunc() final;
-    bool event(const int event, base::Object* const obj = nullptr) final;
+    bool event(const int event, base::IObject* const obj = nullptr) final;
 
 protected:
     bool setSlotIsAlt(const base::Boolean*);

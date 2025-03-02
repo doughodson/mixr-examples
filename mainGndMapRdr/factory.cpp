@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "Display.hpp"
 #include "RealBeamRadar.hpp"
@@ -18,9 +18,9 @@
 
 #include <string>
 
-mixr::base::Object* factory(const std::string& name)
+mixr::base::IObject* factory(const std::string& name)
 {
-    mixr::base::Object* obj{};
+    mixr::base::IObject* obj{};
 
     if ( name == Display::getFactoryName() ) {
         obj = new Display();

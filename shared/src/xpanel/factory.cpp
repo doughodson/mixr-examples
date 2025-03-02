@@ -1,7 +1,7 @@
 
 #include "shared/xpanel/factory.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "shared/xpanel/DspRadar.hpp"
 #include "shared/xpanel/DspRwr.hpp"
@@ -15,9 +15,9 @@
 namespace mixr {
 namespace xpanel {
 
-base::Object* factory(const std::string& name)
+base::IObject* factory(const std::string& name)
 {
-    base::Object* obj{};
+    base::IObject* obj{};
 
     if ( name == DspRadar::getFactoryName() ) {
         obj = new DspRadar();

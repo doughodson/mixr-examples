@@ -20,7 +20,7 @@ class TdElevPtr final: public mixr::graphics::Graphic
 public:
     TdElevPtr();
 
-    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
     void draw() final;
 
     //event handler macro functions

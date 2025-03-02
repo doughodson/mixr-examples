@@ -2,7 +2,7 @@
 #ifndef __Block_HPP__
 #define __Block_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 namespace mixr {
 namespace base { class List; class Integer; }
@@ -15,9 +15,9 @@ namespace base { class List; class Integer; }
 // Block locations (x, y): lower left is (1,1)
 // Block type IDs are unique to blocks of the same type (e.g., size and shape)
 //------------------------------------------------------------------------------
-class Block : public mixr::base::Object
+class Block : public mixr::base::IObject
 {
-   DECLARE_SUBCLASS(Block, mixr::base::Object)
+   DECLARE_SUBCLASS(Block, mixr::base::IObject)
 
  public:
    static const int BOARD_X_SIZE{4};

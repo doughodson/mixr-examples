@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "SimIoHandler.hpp"
 #include "SimPlayer.hpp"
@@ -25,9 +25,9 @@
 
 #include <string>
 
-mixr::base::Object* factory(const std::string& name)
+mixr::base::IObject* factory(const std::string& name)
 {
-    mixr::base::Object* obj {};
+    mixr::base::IObject* obj {};
 
     // Sim3 Station & IoHandler
     if ( name == SimStation::getFactoryName() ) {

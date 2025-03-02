@@ -17,7 +17,7 @@ public:
     TestCompass();
 
     void updateData(const double dt = 0.0) final;
-    bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+    bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
 
     static const int MAX_TRACKS{8};
     static const int MAX_AIRPORTS{8};

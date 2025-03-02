@@ -5,10 +5,10 @@
 #include <string>
 
 namespace mixr {
-namespace base { class Object; }
+namespace base { class IObject; }
 namespace xzmq {
 
-base::Object* factory(const std::string& name);
+base::IObject* factory(const std::string& name);
 
 }
 }

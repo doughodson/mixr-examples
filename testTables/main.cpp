@@ -31,7 +31,7 @@
 const int TIMING_LOOPS{10000};
 
 // table builder
-mixr::base::Table* builder(const std::string& filename)
+mixr::base::ITable* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -56,7 +56,7 @@ mixr::base::Table* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto table = dynamic_cast<mixr::base::Table*>(obj);
+   const auto table = dynamic_cast<mixr::base::ITable*>(obj);
    if (table == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -324,7 +324,7 @@ int main(int argc, char* argv[])
    }
 
    // build table
-   const mixr::base::Table* table{builder(configFilename)};
+   const mixr::base::ITable* table{builder(configFilename)};
 
    // ---
    // Serialize the table to the output stream

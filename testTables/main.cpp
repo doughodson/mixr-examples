@@ -13,7 +13,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "mixr/base/relations/FStorage.hpp"
+#include "mixr/base/relations/IFStorage.hpp"
 #include "mixr/base/relations/Table1.hpp"
 #include "mixr/base/relations/Table2.hpp"
 #include "mixr/base/relations/Table3.hpp"
@@ -71,7 +71,7 @@ unsigned int testIt(const mixr::base::Table1* const tbl, const bool tflg, const 
 {
    int cnt{};
 
-   mixr::base::FStorage* s{};
+   mixr::base::IFStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
    const double maxX{tbl->getMaxX()};
@@ -109,7 +109,7 @@ unsigned int testIt(const mixr::base::Table2* const tbl, const bool tflg, const 
 {
    int cnt{};
 
-   mixr::base::FStorage* s{};
+   mixr::base::IFStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
    double maxY{tbl->getMaxY()};
@@ -158,7 +158,7 @@ unsigned int testIt(const mixr::base::Table3* const tbl, const bool tflg, const 
 {
    int cnt{};
 
-   mixr::base::FStorage* s{};
+   mixr::base::IFStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
    // Setup Z
@@ -222,7 +222,7 @@ unsigned int testIt(const mixr::base::Table4* const tbl, const bool tflg, const 
 {
    int cnt{};
 
-   mixr::base::FStorage* s{};
+   mixr::base::IFStorage* s{};
    if (sflg) s = tbl->storageFactory();
 
    // Setup W

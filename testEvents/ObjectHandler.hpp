@@ -19,7 +19,7 @@ class ObjectHandler final: public mixr::graphics::Graphic
 public:
    ObjectHandler()     { STANDARD_CONSTRUCTOR() }
 
-   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+   bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
 
 private:
    bool onUpdateObject(const TestObject* const);

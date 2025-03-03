@@ -1,7 +1,7 @@
 
 #include "factory.hpp"
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include "TestStateMachine01.hpp"
 #include "TestStateMachine02.hpp"
@@ -17,9 +17,9 @@
 
 using namespace mixr;
 
-base::Object* factory(const std::string& name)
+base::IObject* factory(const std::string& name)
 {
-    base::Object* obj {};
+    base::IObject* obj {};
 
     // Test #1
     if ( name == TestStateMachine01::getFactoryName() ) {

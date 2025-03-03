@@ -2,7 +2,7 @@
 #ifndef __AbstractRng_HPP__
 #define __AbstractRng_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include <random>
 
@@ -15,9 +15,9 @@ namespace mixr {
 // Description: Provides base functionality to generate random values
 //              for a specific distribution
 //------------------------------------------------------------------------------
-class AbstractRng : public mixr::base::Object
+class AbstractRng : public mixr::base::IObject
 {
-   DECLARE_SUBCLASS(AbstractRng, mixr::base::Object)
+   DECLARE_SUBCLASS(AbstractRng, mixr::base::IObject)
 
 public:
    AbstractRng();

@@ -189,9 +189,9 @@ void EventDisplay::updateData(const double dt)
     send("objtest", UPDATE_VALUE, obj, objSD);
     send("colors", SET_COLOR, myColor, colorSD);
     // convert materials to objects real quick, so we can send them down
-    base::Object* tempMat[MAX_MATERIALS]{};
+    base::IObject* tempMat[MAX_MATERIALS]{};
     for (int i{}; i < MAX_MATERIALS; i++) {
-        tempMat[i] = static_cast<base::Object*>(materials[i]);
+        tempMat[i] = static_cast<base::IObject*>(materials[i]);
     }
     send("matarray%d", SET_MATERIAL, tempMat, materialSD.data(), MAX_MATERIALS);
     // send rotations to our objects as well

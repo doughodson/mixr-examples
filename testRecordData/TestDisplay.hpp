@@ -53,7 +53,7 @@ public:
 
     void mouseEvent(const int button, const int state, const int x, const int y) override;
 
-    bool event(const int event, mixr::base::Object* const obj = nullptr) override;
+    bool event(const int event, mixr::base::IObject* const obj = nullptr) override;
     void updateData(const double dt = 0.0) override;
 
 protected:

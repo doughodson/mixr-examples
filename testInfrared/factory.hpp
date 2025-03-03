@@ -5,9 +5,9 @@
 #include <string>
 
 namespace mixr {
-namespace base { class Object; }
+namespace base { class IObject; }
 }
 
-mixr::base::Object* factory(const std::string& name);
+mixr::base::IObject* factory(const std::string& name);
 
 #endif

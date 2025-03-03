@@ -35,7 +35,7 @@ public:
 
    void draw() final;
 
-   bool event(const int event, mixr::base::Object* const obj = nullptr) final;
+   bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
 
 private:
    bool onUpdateValue(const mixr::base::INumber* const);

@@ -45,9 +45,9 @@ void timerFunc(int)
     sys->tcFrame( static_cast<double>(dt) );
 }
 
-base::Object* factory(const std::string& name)
+base::IObject* factory(const std::string& name)
 {
-    base::Object* obj{};
+    base::IObject* obj{};
 
     if ( name == TestDisplay::getFactoryName() ) {
         obj = new TestDisplay;
@@ -67,7 +67,7 @@ void builder(const std::string& filename)
 {
     // Read the description file
     int num_errors{};
-    base::Object* obj{base::edl_parser(filename, factory, &num_errors)};
+    base::IObject* obj{base::edl_parser(filename, factory, &num_errors)};
     if (num_errors > 0) {
         std::cerr << "File: " << filename << ", number of errors: " << num_errors << std::endl;
         std::exit(EXIT_FAILURE);

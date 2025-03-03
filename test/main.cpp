@@ -9,10 +9,10 @@ void testReadouts();
 void testFileReader();
 
 // factory to support object creation for all tests
-mixr::base::Object* factory(const std::string& name)
+mixr::base::IObject* factory(const std::string& name)
 {
    // base library
-   mixr::base::Object* obj{mixr::base::factory(name)};
+   mixr::base::IObject* obj{mixr::base::factory(name)};
    return obj;
 }
 

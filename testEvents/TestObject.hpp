@@ -2,7 +2,7 @@
 #ifndef __TestObject_HPP__
 #define __TestObject_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 #include <string>
 
 //------------------------------------------------------------------------------
@@ -12,9 +12,9 @@
 // ObjectHandler will extract the data and send it to the output.  This tests
 // the send command passing objects.
 //------------------------------------------------------------------------------
-class TestObject final: public mixr::base::Object
+class TestObject final: public mixr::base::IObject
 {
-   DECLARE_SUBCLASS(TestObject, mixr::base::Object)
+   DECLARE_SUBCLASS(TestObject, mixr::base::IObject)
 
 public:
    TestObject()                        { STANDARD_CONSTRUCTOR() }

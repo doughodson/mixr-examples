@@ -2,7 +2,7 @@
 #ifndef __MyObj_HPP__
 #define __MyObj_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 namespace mixr {
 namespace base { class Boolean; class PairStream; class List; class String; class Identifier; }
@@ -12,9 +12,9 @@ namespace base { class Boolean; class PairStream; class List; class String; clas
 // Class: MyObj
 // Description: example class
 //------------------------------------------------------------------------------
-class MyObj final: public mixr::base::Object
+class MyObj final: public mixr::base::IObject
 {
-   DECLARE_SUBCLASS(MyObj, mixr::base::Object)
+   DECLARE_SUBCLASS(MyObj, mixr::base::IObject)
 
 public:
    MyObj();

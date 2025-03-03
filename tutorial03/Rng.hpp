@@ -2,7 +2,7 @@
 #ifndef __Rng_HPP__
 #define __Rng_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include <random>
 
@@ -14,9 +14,9 @@ namespace mixr {
 // Class: Rng
 // Description: Generates random numbers
 //------------------------------------------------------------------------------
-class Rng final: public mixr::base::Object
+class Rng final: public mixr::base::IObject
 {
-   DECLARE_SUBCLASS(Rng, mixr::base::Object)
+   DECLARE_SUBCLASS(Rng, mixr::base::IObject)
 
 public:
    Rng();
@@ -27,7 +27,7 @@ public:
 
 private:
    // mersenne twister algoithm used to produce random integer
-   // values, uniformly distributed from [min(), max()] 
+   // values, uniformly distributed from [min(), max()]
    std::mt19937 engine;
    std::uniform_real_distribution<> dist;
 

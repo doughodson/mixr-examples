@@ -2,7 +2,7 @@
 #ifndef __mixr_base_LinkedList_HPP__
 #define __mixr_base_LinkedList_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 #include <cstring>
 #include <string>
@@ -117,30 +117,30 @@ namespace base {
 //
 //------------------------------------------------------------------------------
 template <class T>
-class LinkedList : public Object
+class LinkedList : public IObject
 {
 
 //-------------------------------------------------------------------------------------
 
 //   DECLARE_SUBCLASS(LinkedList<T>, Object)
 
-//    typedef BaseType BaseClass;                                                                                            
-    public: LinkedList(const LinkedList& org);                                                                                  
-    public: virtual ~LinkedList();                                                                                              
-    public: LinkedList* clone() const override;                                                                           
-    public: LinkedList& operator=(const LinkedList& org);                                                                           
-    protected: void copyData(const LinkedList& org, const bool cc = false);                                                       
-    protected: void deleteData();                                                                                               
-    public: bool isClassType(const std::type_info& type) const override;                                                
-    private: static ::mixr::base::MetaObject metaObject;                                                                                     
-    protected: static const ::mixr::base::MetaObject* getMetaObject();                                                                                
-    public: static const char* getFactoryName();                                                                                
-    public: bool isFactoryName(const std::string& name) const override;                                                       
-    protected: bool setSlotByIndex(const int slotindex, ::mixr::base::Object* const obj) override;                        
-    public: static const ::mixr::base::SlotTable& getSlotTable();                                                                 
-    protected: static const ::mixr::base::SlotTable slottable;                                                                    
-    private: static const char* slotnames[];                                                                                    
-    private: static const int nslots;                                                                                           
+//    typedef BaseType BaseClass;
+    public: LinkedList(const LinkedList& org);
+    public: virtual ~LinkedList();
+    public: LinkedList* clone() const override;
+    public: LinkedList& operator=(const LinkedList& org);
+    protected: void copyData(const LinkedList& org, const bool cc = false);
+    protected: void deleteData();
+    public: bool isClassType(const std::type_info& type) const override;
+    private: static ::mixr::base::MetaObject metaObject;
+    protected: static const ::mixr::base::MetaObject* getMetaObject();
+    public: static const char* getFactoryName();
+    public: bool isFactoryName(const std::string& name) const override;
+    protected: bool setSlotByIndex(const int slotindex, ::mixr::base::IObject* const obj) override;
+    public: static const ::mixr::base::SlotTable& getSlotTable();
+    protected: static const ::mixr::base::SlotTable slottable;
+    private: static const char* slotnames[];
+    private: static const int nslots;
 
 //-------------------------------------------------------------------------------------
 
@@ -215,62 +215,62 @@ private:
 
 //#define IMPLEMENT_SUBCLASS(ThisType, FACTORYNAME)  BELOW
 
-                                    
-template <class T>
-    ::mixr::base::MetaObject LinkedList<T>::metaObject(                                               
-      typeid(LinkedList).name(), "LinkedList",                   
-        &LinkedList::slottable, Object::getMetaObject()                                   
-    );                                                                                 
-
 
 template <class T>
-    const ::mixr::base::MetaObject* LinkedList<T>::getMetaObject() { return &metaObject; }                
+    ::mixr::base::MetaObject LinkedList<T>::metaObject(
+      typeid(LinkedList).name(), "LinkedList",
+        &LinkedList::slottable, IObject::getMetaObject()
+    );
 
 
 template <class T>
-    const char* LinkedList<T>::getFactoryName() { return metaObject.getFactoryName().c_str(); }                   
+    const ::mixr::base::MetaObject* LinkedList<T>::getMetaObject() { return &metaObject; }
+
 
 template <class T>
-    bool LinkedList<T>::isFactoryName(const std::string& name) const                              
-    {                                                                                  
-        if (name.empty()) return false;                                             
-        if (metaObject.getFactoryName() == name)  return true;                      
-        else return LinkedList<T>::Object::isFactoryName(name);                          
-    }                                                                                  
+    const char* LinkedList<T>::getFactoryName() { return metaObject.getFactoryName().c_str(); }
 
 template <class T>
-    const ::mixr::base::SlotTable& LinkedList<T>::getSlotTable()  { return slottable; }       
+    bool LinkedList<T>::isFactoryName(const std::string& name) const
+    {
+        if (name.empty()) return false;
+        if (metaObject.getFactoryName() == name)  return true;
+        else return LinkedList<T>::IObject::isFactoryName(name);
+    }
 
 template <class T>
-    bool LinkedList<T>::isClassType(const std::type_info& type) const                       
-    {                                                                                  
-        if ( type == typeid(LinkedList<T>) ) return true;                                   
-        else return LinkedList<T>::Object::isClassType(type);                            
-    }                                                                                  
+    const ::mixr::base::SlotTable& LinkedList<T>::getSlotTable()  { return slottable; }
 
 template <class T>
-    LinkedList<T>::~LinkedList() {                                                            
-        STANDARD_DESTRUCTOR()                                                          
-    }                                                                                
+    bool LinkedList<T>::isClassType(const std::type_info& type) const
+    {
+        if ( type == typeid(LinkedList<T>) ) return true;
+        else return LinkedList<T>::IObject::isClassType(type);
+    }
 
 template <class T>
-    LinkedList<T>* LinkedList<T>::clone() const                                                
-    {                                                                                
-        return new LinkedList<T>(*this);                                                  
-    }                                                                                
+    LinkedList<T>::~LinkedList() {
+        STANDARD_DESTRUCTOR()
+    }
 
 template <class T>
-    LinkedList<T>::LinkedList(const LinkedList<T>& org) : Object()                            
-    {                                                                                
-        STANDARD_CONSTRUCTOR()                                                       
-        copyData(org,true);                                                          
-    }                                                                                
+    LinkedList<T>* LinkedList<T>::clone() const
+    {
+        return new LinkedList<T>(*this);
+    }
 
 template <class T>
-    LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& org)                               
-    {                                                                                
-        if (this != &org) copyData(org,false);                                       
-        return *this;                                               
+    LinkedList<T>::LinkedList(const LinkedList<T>& org) : IObject()
+    {
+        STANDARD_CONSTRUCTOR()
+        copyData(org,true);
+    }
+
+template <class T>
+    LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& org)
+    {
+        if (this != &org) copyData(org,false);
+        return *this;
     }
 
 //#define EMPTY_SLOTTABLE(ThisType) BELOW
@@ -279,15 +279,15 @@ template <class T>
     const char* LinkedList<T>::slotnames[] = { "" };
 
 template <class T>
-    const int LinkedList<T>::nslots = 0;                                                        
+    const int LinkedList<T>::nslots = 0;
 
 template <class T>
-    const ::mixr::base::SlotTable LinkedList<T>::slottable(0, 0, Object::getSlotTable());      
+    const ::mixr::base::SlotTable LinkedList<T>::slottable(0, 0, IObject::getSlotTable());
 
 template <class T>
-    bool LinkedList<T>::setSlotByIndex(const int si, ::mixr::base::Object* const obj)             
-    {                                                                                      
-        return Object::setSlotByIndex(si,obj);                                          
+    bool LinkedList<T>::setSlotByIndex(const int si, ::mixr::base::IObject* const obj)
+    {
+        return IObject::setSlotByIndex(si,obj);
     }
 
 
@@ -303,7 +303,7 @@ template <class T>
 void LinkedList<T>::copyData(const LinkedList<T>& org, const bool cc)
 {
 //    BaseClass::copyData(org);   // DDH!!!!
-    Object::copyData(org);   // DDH!!!!
+    IObject::copyData(org);   // DDH!!!!
 
     if (cc) {
         headP = nullptr;
@@ -337,9 +337,9 @@ void LinkedList<T>::deleteData()
 template <class T>
 bool LinkedList<T>::isValid() const
 {
-    bool ok = Object::isValid();
+    bool ok = IObject::isValid();
     for (const Item* d = headP; ok && d != nullptr; d = d->getNext() ) {
-        const Object* obj = d->getValue();
+        const IObject* obj = d->getValue();
         if (obj != nullptr) {
             if (!obj->isValid()) ok = false;
         }

@@ -158,7 +158,7 @@ void Table::build()
          const base::List::Item* item{columns->getFirstItem()};
          while (item != nullptr) {
             const auto pair = static_cast<const base::Pair*>(item->getValue());
-            const base::Object* obj{pair->object()};
+            const base::IObject* obj{pair->object()};
             if (obj->isClassType(typeid(graphics::Graphic))) {
                base::Pair* pp{pair->clone()};
                const auto gobj = static_cast<graphics::Graphic*>(pp->object());

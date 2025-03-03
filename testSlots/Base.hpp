@@ -2,7 +2,7 @@
 #ifndef __Base_HPP__
 #define __Base_HPP__
 
-#include "mixr/base/Object.hpp"
+#include "mixr/base/IObject.hpp"
 
 namespace mixr {
    namespace base { class INumber; }
@@ -12,9 +12,9 @@ namespace mixr {
 // Class: Base
 // Description: Base class that processes slot inputs
 //------------------------------------------------------------------------------
-class Base : public mixr::base::Object
+class Base : public mixr::base::IObject
 {
-   DECLARE_SUBCLASS(Base, mixr::base::Object)
+   DECLARE_SUBCLASS(Base, mixr::base::IObject)
 
 public:
    Base();

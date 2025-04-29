@@ -2,9 +2,9 @@
 #ifndef __DataRecordTest_HPP__
 #define __DataRecordTest_HPP__
 
-#include "mixr/recorder/OutputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
 
-#include "mixr/recorder/PrintSelected.hpp"
+#include "mixr/recorder/protobuf_v2/PrintSelected.hpp"
 #include <string>
 #include <array>
 

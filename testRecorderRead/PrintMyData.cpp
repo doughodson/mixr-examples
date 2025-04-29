@@ -4,7 +4,7 @@
 #include "shared/xrecorder/protobuf/DataRecord.pb.h"
 #include "shared/xrecorder/dataRecorderTokens.hpp"
 
-#include "mixr/recorder/DataRecordHandle.hpp"
+#include "mixr/recorder/protobuf_v2/DataRecordHandle.hpp"
 
 using namespace mixr;
 

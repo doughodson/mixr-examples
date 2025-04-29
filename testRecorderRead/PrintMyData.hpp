@@ -2,7 +2,7 @@
 #ifndef __PrintMyData_HPP__
 #define __PrintMyData_HPP__
 
-#include "mixr/recorder/PrintHandler.hpp"
+#include "mixr/recorder/protobuf_v2/PrintHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class: PrintMyData

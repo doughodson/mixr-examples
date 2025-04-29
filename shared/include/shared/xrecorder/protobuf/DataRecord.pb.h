@@ -24,7 +24,7 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "mixr/recorder/protobuf/DataRecord.pb.h"
+#include "mixr/recorder/protobuf_v2/proto/DataRecord.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace mixr {

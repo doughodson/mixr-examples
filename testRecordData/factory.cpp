@@ -19,7 +19,7 @@
 #include "mixr/linkage/factory.hpp"
 #include "mixr/ighost/cigi/factory.hpp"
 #include "mixr/ighost/flightgear/factory.hpp"
-#include "mixr/recorder/factory.hpp"
+#include "mixr/recorder/protobuf_v2/factory.hpp"
 #include "mixr/models/factory.hpp"
 #include "mixr/models/dynamics/jsbsim/factory.hpp"
 #include "mixr/simulation/factory.hpp"

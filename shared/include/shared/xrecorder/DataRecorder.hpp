@@ -2,7 +2,7 @@
 #ifndef __mixr_xrecorder_DataRecorder_HPP__
 #define __mixr_xrecorder_DataRecorder_HPP__
 
-#include "mixr/recorder/DataRecorder.hpp"
+#include "mixr/recorder/protobuf_v2/DataRecorder.hpp"
 
 namespace mixr {
 namespace xrecorder {

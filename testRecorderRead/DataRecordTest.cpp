@@ -1,9 +1,9 @@
 
 #include "DataRecordTest.hpp"
 
-#include "mixr/recorder/IInputHandler.hpp"
-#include "mixr/recorder/OutputHandler.hpp"
-#include "mixr/recorder/DataRecordHandle.hpp"
+#include "mixr/recorder/protobuf_v2/IInputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/DataRecordHandle.hpp"
 
 #include "shared/xrecorder/protobuf/DataRecord.pb.h"
 #include <iostream>

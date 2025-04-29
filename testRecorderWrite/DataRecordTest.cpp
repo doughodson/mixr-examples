@@ -1,20 +1,20 @@
 
 #include "DataRecordTest.hpp"
 
-#include "mixr/recorder/FileReader.hpp"
-#include "mixr/recorder/FileWriter.hpp"
-#include "mixr/recorder/IInputHandler.hpp"
-#include "mixr/recorder/NetInput.hpp"
+#include "mixr/recorder/protobuf_v2/FileReader.hpp"
+#include "mixr/recorder/protobuf_v2/FileWriter.hpp"
+#include "mixr/recorder/protobuf_v2/IInputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/NetInput.hpp"
 
-#include "mixr/recorder/DataRecorder.hpp"
-#include "mixr/recorder/OutputHandler.hpp"
-#include "mixr/recorder/NetOutput.hpp"
-#include "mixr/recorder/DataRecordHandle.hpp"
-#include "mixr/recorder/TabPrinter.hpp"
-#include "mixr/recorder/PrintPlayer.hpp"
-#include "mixr/recorder/PrintSelected.hpp"
+#include "mixr/recorder/protobuf_v2/DataRecorder.hpp"
+#include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/NetOutput.hpp"
+#include "mixr/recorder/protobuf_v2/DataRecordHandle.hpp"
+#include "mixr/recorder/protobuf_v2/TabPrinter.hpp"
+#include "mixr/recorder/protobuf_v2/PrintPlayer.hpp"
+#include "mixr/recorder/protobuf_v2/PrintSelected.hpp"
 
-#include "mixr/recorder/protobuf/DataRecord.pb.h"
+#include "mixr/recorder/protobuf_v2/proto/DataRecord.pb.h"
 
 #include "mixr/models/player/Player.hpp"
 

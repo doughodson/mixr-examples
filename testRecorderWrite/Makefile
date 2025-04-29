@@ -5,7 +5,7 @@ PGM = testRecorderWrite
 OBJS = main.o DataRecordTest.o
 
 LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
-LDFLAGS += -lmixr_recorder -lmixr_simulation
+LDFLAGS += -lmixr_recorder_protobuf_v2 -lmixr_simulation
 LDFLAGS += -lmixr_terrain -lmixr_base
 LDFLAGS += -lprotobuf
 LDFLAGS += -lrt -lpthread
@@ -20,7 +20,7 @@ edl:
 	cpp configs/test.epp >test.edl   $(EPPFLAGS)
 
 $(PGM): $(OBJS)
-	$(CXX) -o $@ $(OBJS) $(LDFLAGS) 
+	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 
 clean:
 	-rm -f *.o

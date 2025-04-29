@@ -10,7 +10,6 @@ OBJS += factory.o main.o
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lxpanel
-LDFLAGS += -lmixr_recorder
 LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
 LDFLAGS += -lmixr_simulation -lmixr_instruments
 LDFLAGS += -lmixr_linkage

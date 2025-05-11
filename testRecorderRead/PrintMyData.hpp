@@ -10,15 +10,15 @@
 //
 // Factory name: PrintMyData
 //------------------------------------------------------------------------------
-class PrintMyData final: public mixr::recorder::PrintHandler
+class PrintMyData final: public mixr::recorder::protobuf_v2::PrintHandler
 {
-   DECLARE_SUBCLASS(PrintMyData, mixr::recorder::PrintHandler)
+   DECLARE_SUBCLASS(PrintMyData, mixr::recorder::protobuf_v2::PrintHandler)
 
 public:
    PrintMyData();
 
 protected:
-   void processRecordImp(const mixr::recorder::DataRecordHandle* const handle) final;
+   void processRecordImp(const mixr::recorder::protobuf_v2::DataRecordHandle* const handle) final;
 };
 
 #endif

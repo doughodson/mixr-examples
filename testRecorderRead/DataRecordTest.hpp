@@ -5,7 +5,10 @@
 #include "mixr/base/IComponent.hpp"
 
 namespace mixr {
-namespace recorder { class IInputHandler; class OutputHandler; }
+namespace recorder {
+namespace protobuf_v2 {
+   class IInputHandler; class OutputHandler; }
+}
 }
 
 //------------------------------------------------------------------------------
@@ -22,13 +25,13 @@ public:
    void runTest();
 
 private:
-   mixr::base::safe_ptr<mixr::recorder::IInputHandler> inputHandler;
-   mixr::base::safe_ptr<mixr::recorder::OutputHandler> outputHandler;
+   mixr::base::safe_ptr<mixr::recorder::protobuf_v2::IInputHandler> inputHandler;
+   mixr::base::safe_ptr<mixr::recorder::protobuf_v2::OutputHandler> outputHandler;
 
 private:
    // slot table helper methods
-   bool setSlotInputHandler(mixr::recorder::IInputHandler* const);
-   bool setSlotOutputHandler(mixr::recorder::OutputHandler* const);
+   bool setSlotInputHandler(mixr::recorder::protobuf_v2::IInputHandler* const);
+   bool setSlotOutputHandler(mixr::recorder::protobuf_v2::OutputHandler* const);
 };
 
 #endif

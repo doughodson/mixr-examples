@@ -7,7 +7,7 @@
 namespace mixr {
 namespace base { class Boolean; }
 namespace models { class Player; }
-namespace simulation { class Simulation; class Station; }
+namespace simulation { class ISimulation; class Station; }
 }
 
 // ----------------------------------------------------------------------------
@@ -28,7 +28,7 @@ public:
    Display();
 
    mixr::models::Player* getOwnship();
-   mixr::simulation::Simulation* getSimulation();
+   mixr::simulation::ISimulation* getSimulation();
    mixr::simulation::Station* getStation();
 
    void configure() final;

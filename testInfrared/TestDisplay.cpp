@@ -6,7 +6,7 @@
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/system/StoresMgr.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/graphics/SymbolLoader.hpp"
 
@@ -189,7 +189,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
    // find all air vehicles within range
    {
       // get the player list
-      mixr::simulation::Simulation* sim{getSimulation()};
+      mixr::simulation::ISimulation* sim{getSimulation()};
       mixr::base::PairStream* plist{sim->getPlayers()};
 
       // search for air vehicles or missiles within range
@@ -319,9 +319,9 @@ mixr::models::Player* TestDisplay::getOwnship()
    return p;
 }
 
-mixr::simulation::Simulation* TestDisplay::getSimulation()
+mixr::simulation::ISimulation* TestDisplay::getSimulation()
 {
-   mixr::simulation::Simulation* s{};
+   mixr::simulation::ISimulation* s{};
    mixr::simulation::Station* sta{getStation()};
    if (sta != nullptr) s = sta->getSimulation();
    return s;

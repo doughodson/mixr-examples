@@ -8,7 +8,7 @@
 #include "mixr/models/navigation/Navigation.hpp"
 #include "mixr/models/navigation/Route.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/base/concepts/linkage/IIoData.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
@@ -56,7 +56,7 @@ void SimIoHandler::inputDevicesImpl(const double dt)
    // ---
    const auto sta = static_cast<SimStation*>( findContainerByType(typeid(SimStation)) );
 
-   mixr::simulation::Simulation* sim{};
+   mixr::simulation::ISimulation* sim{};
    mixr::models::AirVehicle* av{};
 
    if (sta != nullptr) {

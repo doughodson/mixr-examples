@@ -1,7 +1,7 @@
 
 #include "SimStation.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 

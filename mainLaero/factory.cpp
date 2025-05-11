@@ -51,8 +51,8 @@ mixr::base::IObject* factory(const std::string& name)
     if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);
     if (obj == nullptr) obj = mixr::terrain::factory(name);
     if (obj == nullptr) obj = mixr::instruments::factory(name);
-    if (obj == nullptr) obj = mixr::flightgear::factory(name);
-    if (obj == nullptr) obj = mixr::pov::factory(name);
+    if (obj == nullptr) obj = mixr::ighost::flightgear::factory(name);
+    if (obj == nullptr) obj = mixr::ighost::pov::factory(name);
     if (obj == nullptr) obj = mixr::dis::factory(name);
     if (obj == nullptr) obj = mixr::graphics::factory(name);
     if (obj == nullptr) obj = mixr::graphics::ftgl::factory(name);

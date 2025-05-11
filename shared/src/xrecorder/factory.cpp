@@ -3,7 +3,7 @@
 
 #include "mixr/base/IObject.hpp"
 
-#include "shared/xrecorder/DataRecorder.hpp"
+#include "shared/xrecorder/XDataRecorder.hpp"
 
 #include <string>
 
@@ -14,8 +14,8 @@ base::IObject* factory(const std::string& name)
 {
     base::IObject* obj{};
 
-   if ( name == DataRecorder::getFactoryName() ) {
-      obj = new DataRecorder();
+   if ( name == XDataRecorder::getFactoryName() ) {
+      obj = new XDataRecorder();
    }
 
     return obj;

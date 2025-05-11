@@ -4,7 +4,7 @@
 
 #include "mixr/models/player/Player.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 #include "mixr/simulation/Station.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
@@ -64,9 +64,9 @@ models::Player* Display::getOwnship()
     return p;
 }
 
-simulation::Simulation* Display::getSimulation()
+simulation::ISimulation* Display::getSimulation()
 {
-    simulation::Simulation* s{};
+    simulation::ISimulation* s{};
     simulation::Station* sta{getStation()};
     if (sta != nullptr) s = sta->getSimulation();
     return s;

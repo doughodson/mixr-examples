@@ -7,7 +7,7 @@
 #include <array>
 
 namespace mixr {
-namespace simulation { class Simulation; class Station; }
+namespace simulation { class ISimulation; class Station; }
 namespace models { class Missile; class Player; }
 namespace graphics { class SymbolLoader; }
 namespace xpanel { class DspRadar; class DspRwr; }
@@ -47,7 +47,7 @@ public:
     TestDisplay();
 
     mixr::models::Player* getOwnship();
-    mixr::simulation::Simulation* getSimulation();
+    mixr::simulation::ISimulation* getSimulation();
     mixr::simulation::Station* getStation();
 
     void maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, const double rng);

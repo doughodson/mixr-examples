@@ -6,7 +6,7 @@
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/Player.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/instruments/eadi3d/Eadi3DPage.hpp"
 
@@ -50,9 +50,9 @@ mixr::models::Player* InstrumentPanel::getOwnship()
    return p;
 }
 
-mixr::simulation::Simulation* InstrumentPanel::getSimulation()
+mixr::simulation::ISimulation* InstrumentPanel::getSimulation()
 {
-   mixr::simulation::Simulation* s = nullptr;
+   mixr::simulation::ISimulation* s = nullptr;
    mixr::simulation::Station* sta = getStation();
    if (sta != nullptr) {
       s = sta->getSimulation();

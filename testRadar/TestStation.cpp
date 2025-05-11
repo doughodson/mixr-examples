@@ -4,7 +4,7 @@
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/player/air/AirVehicle.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"

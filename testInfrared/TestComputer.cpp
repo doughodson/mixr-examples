@@ -58,7 +58,7 @@ void TestComputer::updateTC(const double dt0)
    // ---
    // Four phases per frame
    // ---
-   mixr::simulation::Simulation* sim{getOwnship()->getWorldModel()};
+   mixr::simulation::ISimulation* sim{getOwnship()->getWorldModel()};
    if (sim == nullptr) return;
 
    // ---

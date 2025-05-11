@@ -8,7 +8,7 @@ namespace mixr {
 namespace xrecorder {
 
 //------------------------------------------------------------------------------
-// Class: DataRecorder
+// Class: XDataRecorder
 // Description: Example of an extended data recorder
 //
 // Factory name: XDataRecorder
@@ -22,12 +22,12 @@ namespace xrecorder {
 //    REID_MARKER             ! v[0] => id;  v[1] => source id;  v[2] => foo
 //
 //------------------------------------------------------------------------------
-class DataRecorder : public recorder::DataRecorder
+class XDataRecorder : public recorder::protobuf_v2::DataRecorder
 {
-   DECLARE_SUBCLASS(DataRecorder, recorder::DataRecorder)
+   DECLARE_SUBCLASS(XDataRecorder, recorder::protobuf_v2::DataRecorder)
 
 public:
-   DataRecorder();
+   XDataRecorder();
 
 protected:
    bool recordDataImp(

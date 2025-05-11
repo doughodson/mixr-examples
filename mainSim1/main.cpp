@@ -30,8 +30,8 @@ mixr::base::IObject* factory(const std::string& name)
    mixr::base::IObject* obj{mixr::xzmq::factory(name)};
 
    // framework libraries
-   if (obj == nullptr) obj = mixr::cigi::factory(name);
-   if (obj == nullptr) obj = mixr::flightgear::factory(name);
+   if (obj == nullptr) obj = mixr::ighost::cigi::factory(name);
+   if (obj == nullptr) obj = mixr::ighost::flightgear::factory(name);
    if (obj == nullptr) obj = mixr::simulation::factory(name);
    if (obj == nullptr) obj = mixr::models::factory(name);
    if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);

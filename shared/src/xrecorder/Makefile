@@ -4,8 +4,7 @@ include ../../../makedefs
 LIB = $(MIXR_SHARED_LIB_PATH)/libxrecorder.a
 
 OBJS += \
-	protobuf/DataRecord.pb.o \
-	DataRecorder.o \
+	XDataRecorder.o \
 	factory.o
 
 .PHONY: all clean
@@ -16,6 +15,6 @@ $(LIB) : $(OBJS)
 	ar rs $@ $(OBJS)
 
 clean:
-	-rm -f protobuf/*.o
+	-rm -f proto/*.o
 	-rm -f *.o
 	-rm -f $(LIB)

@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace models { class Player; }
-namespace simulation { class Simulation; class Station; }
+namespace simulation { class ISimulation; class Station; }
 }
 class DedDisplay;
 class MfdDisplay;
@@ -29,7 +29,7 @@ public:
    InstrumentPanel();
 
    mixr::models::Player* getOwnship();
-   mixr::simulation::Simulation* getSimulation();
+   mixr::simulation::ISimulation* getSimulation();
    mixr::simulation::Station* getStation();
 
    bool event(const int event, mixr::base::IObject* const obj = nullptr) final;

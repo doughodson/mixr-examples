@@ -111,7 +111,7 @@ void SimpleIGen::draw()
 
          // swap endian
          if (!base::is_big_endian()) {
-            mixr::pov::swap_endian(&pov);
+            mixr::ighost::pov::swap_endian(&pov);
          }
 
          // update position

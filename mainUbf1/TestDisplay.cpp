@@ -15,7 +15,7 @@
 #include "mixr/models/sensor/Gmti.hpp"
 #include "mixr/models/sensor/Tws.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 
@@ -398,7 +398,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
     // find all air vehicles within range
     {
         // get the player list
-        simulation::Simulation* sim{getSimulation()};
+        simulation::ISimulation* sim{getSimulation()};
         base::PairStream* plist{sim->getPlayers()};
 
         // search for air vehicles or missiles within range
@@ -517,9 +517,9 @@ models::Player* TestDisplay::getOwnship()
    return p;
 }
 
-simulation::Simulation* TestDisplay::getSimulation()
+simulation::ISimulation* TestDisplay::getSimulation()
 {
-   simulation::Simulation* s{};
+   simulation::ISimulation* s{};
    simulation::Station* sta{getStation()};
    if (sta != nullptr) s = sta->getSimulation();
    return s;

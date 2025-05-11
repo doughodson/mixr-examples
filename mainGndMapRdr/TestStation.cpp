@@ -5,7 +5,7 @@
 #include "mixr/models/player/Player.hpp"
 #include "mixr/models/system/Gimbal.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 

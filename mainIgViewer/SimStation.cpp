@@ -12,7 +12,7 @@
 #include "mixr/base/units/angles.hpp"
 #include "mixr/base/units/times.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 

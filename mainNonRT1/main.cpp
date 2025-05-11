@@ -1,5 +1,5 @@
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Pair.hpp"
 
@@ -28,7 +28,7 @@ mixr::base::IObject* factory(const std::string& name)
 }
 
 // simulation builder
-mixr::simulation::Simulation* builder(const std::string& filename)
+mixr::simulation::ISimulation* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -53,7 +53,7 @@ mixr::simulation::Simulation* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto simulation = dynamic_cast<mixr::simulation::Simulation*>(obj);
+   const auto simulation = dynamic_cast<mixr::simulation::ISimulation*>(obj);
    if (simulation == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
    }
 
    // build simulation
-   mixr::simulation::Simulation* simulation{builder(configFilename)};
+   mixr::simulation::ISimulation* simulation{builder(configFilename)};
 
    // reset component tree
    simulation->reset();

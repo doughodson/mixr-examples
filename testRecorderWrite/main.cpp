@@ -24,7 +24,7 @@ mixr::base::IObject* factory(const std::string& name)
       if (obj == nullptr) obj = mixr::models::factory(name);
       if (obj == nullptr) obj = mixr::models::jsbsim::factory(name);
       if (obj == nullptr) obj = mixr::base::factory(name);
-      if (obj == nullptr) obj = mixr::recorder::factory(name);
+      if (obj == nullptr) obj = mixr::recorder::protobuf_v2::factory(name);
    }
 
    return obj;

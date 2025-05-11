@@ -6,7 +6,7 @@
 #include "shared/xpanel/DspRwr.hpp"
 #include "shared/xpanel/Pfd.hpp"
 
-#include "shared/xrecorder/DataRecorder.hpp"
+#include "shared/xrecorder/XDataRecorder.hpp"
 #include "shared/xrecorder/dataRecorderTokens.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
@@ -19,7 +19,7 @@
 #include "mixr/models/sensor/Gmti.hpp"
 #include "mixr/models/sensor/Tws.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/IComponent.hpp"
@@ -443,7 +443,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
     // find all air vehicles within range
     {
         // get the player list
-        simulation::Simulation* sim = getSimulation();
+        simulation::ISimulation* sim = getSimulation();
         base::PairStream* plist = sim->getPlayers();
 
         // search for air vehicles or missiles within range
@@ -569,9 +569,9 @@ models::Player* TestDisplay::getOwnship()
    return p;
 }
 
-simulation::Simulation* TestDisplay::getSimulation()
+simulation::ISimulation* TestDisplay::getSimulation()
 {
-   simulation::Simulation* s = nullptr;
+   simulation::ISimulation* s = nullptr;
    simulation::Station* sta = getStation();
    if (sta != nullptr) s = sta->getSimulation();
    return s;

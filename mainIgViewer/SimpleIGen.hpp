@@ -48,7 +48,7 @@ private:
    ::osg::ref_ptr<::osg::LightSource> lightSource;
    ::osg::observer_ptr<osgViewer::GraphicsWindow> window;
    // data from simulation
-   ::mixr::pov::Pov pov;
+   ::mixr::ighost::pov::Pov pov;
    // coord System Shift (Z Up)
    ::osg::Matrix viewMatrix;
    ::osg::Matrix viewRotAndPosMatrix;

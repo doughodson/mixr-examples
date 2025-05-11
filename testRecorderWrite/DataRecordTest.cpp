@@ -46,13 +46,13 @@ BEGIN_SLOTTABLE(DataRecordTest)
 END_SLOTTABLE(DataRecordTest)
 
 BEGIN_SLOT_MAP(DataRecordTest)
-   ON_SLOT(1, setSlotTabPrinter,     recorder::TabPrinter)
-   ON_SLOT(2, setSlotFileWriter,     recorder::FileWriter)
-   ON_SLOT(3, setSlotFileReader,     recorder::FileReader)
+   ON_SLOT(1, setSlotTabPrinter,     recorder::protobuf_v2::TabPrinter)
+   ON_SLOT(2, setSlotFileWriter,     recorder::protobuf_v2::FileWriter)
+   ON_SLOT(3, setSlotFileReader,     recorder::protobuf_v2::FileReader)
    ON_SLOT(4, setSlotFileName,       base::String)
-   ON_SLOT(5, setSlotPrintPlayer,    recorder::PrintPlayer)
-   ON_SLOT(6, setSlotPrintSelected,  recorder::PrintSelected)
-   ON_SLOT(7, setSlotPrintSelected2, recorder::PrintSelected)
+   ON_SLOT(5, setSlotPrintPlayer,    recorder::protobuf_v2::PrintPlayer)
+   ON_SLOT(6, setSlotPrintSelected,  recorder::protobuf_v2::PrintSelected)
+   ON_SLOT(7, setSlotPrintSelected2, recorder::protobuf_v2::PrintSelected)
 
 END_SLOT_MAP()
 
@@ -81,7 +81,7 @@ void DataRecordTest::deleteData()
 //------------------------------------------------------------------------------
 //setSlotTabPrinter() -- Set slot for pointer to the TabPrinter class
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotTabPrinter(recorder::TabPrinter* const p)
+bool DataRecordTest::setSlotTabPrinter(recorder::protobuf_v2::TabPrinter* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -95,7 +95,7 @@ bool DataRecordTest::setSlotTabPrinter(recorder::TabPrinter* const p)
 //------------------------------------------------------------------------------
 //setSlotPrintPlayer() -- Set slot for pointer to the another print class
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotPrintPlayer(recorder::PrintPlayer* const p)
+bool DataRecordTest::setSlotPrintPlayer(recorder::protobuf_v2::PrintPlayer* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -109,7 +109,7 @@ bool DataRecordTest::setSlotPrintPlayer(recorder::PrintPlayer* const p)
 //------------------------------------------------------------------------------
 //setSlotPrintSelected() -- Set slot for pointer to the printer using reflection
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotPrintSelected(recorder::PrintSelected* const p)
+bool DataRecordTest::setSlotPrintSelected(recorder::protobuf_v2::PrintSelected* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -123,7 +123,7 @@ bool DataRecordTest::setSlotPrintSelected(recorder::PrintSelected* const p)
 //------------------------------------------------------------------------------
 //setSlotPrintSelected2() -- Set slot for pointer to the printer using reflection (std out only)
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotPrintSelected2(recorder::PrintSelected* const p)
+bool DataRecordTest::setSlotPrintSelected2(recorder::protobuf_v2::PrintSelected* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -137,7 +137,7 @@ bool DataRecordTest::setSlotPrintSelected2(recorder::PrintSelected* const p)
 //------------------------------------------------------------------------------
 //setSlotFileWriter() -- Set slot for pointer to the file (serialized) write class
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotFileWriter(recorder::FileWriter* const p)
+bool DataRecordTest::setSlotFileWriter(recorder::protobuf_v2::FileWriter* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -151,7 +151,7 @@ bool DataRecordTest::setSlotFileWriter(recorder::FileWriter* const p)
 //------------------------------------------------------------------------------
 //setSlotFileReader() -- Set slot for pointer to the file (serialized) read class
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotFileReader(recorder::FileReader* const p)
+bool DataRecordTest::setSlotFileReader(recorder::protobuf_v2::FileReader* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -178,7 +178,7 @@ bool DataRecordTest::setSlotFileName(base::String* const msg)
 //------------------------------------------------------------------------------
 //setSlotRecordData() -- Set slot for pointer to the RecorderComponent class
 //------------------------------------------------------------------------------
-bool DataRecordTest::setSlotRecordData(recorder::DataRecorder* const p)
+bool DataRecordTest::setSlotRecordData(recorder::protobuf_v2::DataRecorder* const p)
 {
    bool ok{};
    if (p != nullptr) {
@@ -297,7 +297,7 @@ void DataRecordTest::readSerialFromFile()
                std::string selTime;
                std::cin >> selTime;
                if ((selTime == "Y") || (selTime == "y")) {
-                  const auto dataRecord = new recorder::pb::DataRecord();
+                  const auto dataRecord = new recorder::protobuf_v2::proto::DataRecord();
                   processMessage(&dataRecord->time());
                }
             }
@@ -322,7 +322,7 @@ void DataRecordTest::readSerialFromFile()
 
                   // Go through the message to select the field and criteria to match
                   const google::protobuf::Message* processMsg = nullptr;
-                  const auto testDr = new recorder::pb::DataRecord();
+                  const auto testDr = new recorder::protobuf_v2::proto::DataRecord();
                   switch (eventNum) {
                      case REID_FILE_ID:           processMsg = &testDr->file_id_msg();                 break;
                      case REID_NEW_PLAYER:        processMsg = &testDr->new_player_event_msg();        break;
@@ -360,11 +360,11 @@ void DataRecordTest::readSerialFromFile()
       while (!fileDone) {
          std::cout << std::endl << "Parsing from file msg: " << msgNum+1 << std::endl;
          msgNum++;
-         const recorder::DataRecordHandle* readHandle = myFileRead->readRecord();
+         const recorder::protobuf_v2::DataRecordHandle* readHandle = myFileRead->readRecord();
 
          if (readHandle != nullptr) {
             // Check for last message
-            const mixr::recorder::pb::DataRecord* testDr{readHandle->getRecord()};
+            const mixr::recorder::protobuf_v2::proto::DataRecord* testDr{readHandle->getRecord()};
             unsigned int recId{testDr->id()};
             std::cout << "Data record ID: " << recId << std::endl;
             if (recId == REID_END_OF_DATA) {
@@ -514,11 +514,11 @@ void DataRecordTest::eventTestMenu()
 // ------------------------------------------------------------------------------------------------
 // testFileIdMsg: Sets some File ID msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::FileIdMsg* msg{recordMsg->mutable_file_id_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::FileIdMsg* msg{recordMsg->mutable_file_id_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_FILE_ID);
@@ -549,15 +549,15 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testFileIdMsg(int run)
 // ------------------------------------------------------------------------------------------------
 // testNewPlayerEventMsg: Sets some New Player msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::NewPlayerEventMsg* msg{recordMsg->mutable_new_player_event_msg()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::NewPlayerEventMsg* msg{recordMsg->mutable_new_player_event_msg()};
 
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_NEW_PLAYER);
@@ -598,13 +598,13 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewPlayerEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerRemovedEventMsg: Sets some Player Removed msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerRemovedEventMsg* msg{recordMsg->mutable_player_removed_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::PlayerRemovedEventMsg* msg{recordMsg->mutable_player_removed_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_REMOVED);
@@ -636,13 +636,13 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerRemovedEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerDataMsg: Sets some Player Data msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerDataMsg* msg{recordMsg->mutable_player_data_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::PlayerDataMsg* msg{recordMsg->mutable_player_data_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_DATA);
@@ -674,15 +674,15 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDataMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerDamagedEventMsg: Sets some Player Damaged msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerDamagedEventMsg* msg{recordMsg->mutable_player_damaged_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::PlayerDamagedEventMsg* msg{recordMsg->mutable_player_damaged_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
 
-   const auto recMsg = new mixr::recorder::pb::DataRecord();
+   const auto recMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
    const google::protobuf::Descriptor* descriptor{recMsg->GetDescriptor()};
    const google::protobuf::FieldDescriptor* id_field{descriptor->FindFieldByName("id")};
 
@@ -719,13 +719,13 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerDamagedEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerCollisionEventMsg: Sets some Player Collision msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerCollisionEventMsg* msg{recordMsg->mutable_player_collision_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::PlayerCollisionEventMsg* msg{recordMsg->mutable_player_collision_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
    /*mixr::recorder::pb::PlayerId* other = */ msg->mutable_other_player_id();
 
    // required
@@ -763,13 +763,13 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCollisionEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerCrashEventMsg: Sets some Player Crash msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerCrashEventMsg* msg{recordMsg->mutable_player_crash_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::PlayerCrashEventMsg* msg{recordMsg->mutable_player_crash_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_CRASH);
@@ -801,13 +801,13 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerCrashEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testPlayerKilledEventMsg: Sets some Player Killed msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsigned int type)
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsigned int type)
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::PlayerKilledEventMsg* msg{recordMsg->mutable_player_killed_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
-   mixr::recorder::pb::PlayerId* pIdMsg{msg->mutable_id()};
-   mixr::recorder::pb::PlayerState* pStMsg{msg->mutable_state()};
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::PlayerKilledEventMsg* msg{recordMsg->mutable_player_killed_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
+   mixr::recorder::protobuf_v2::proto::PlayerId* pIdMsg{msg->mutable_id()};
+   mixr::recorder::protobuf_v2::proto::PlayerState* pStMsg{msg->mutable_state()};
 
    // required
    recordMsg->set_id(REID_PLAYER_KILLED);
@@ -839,11 +839,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testPlayerKilledEventMsg(unsig
 // ------------------------------------------------------------------------------------------------
 // testWeaponReleaseEventMsg: Sets some Weapon Released msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsigned int side)
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsigned int side)
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::WeaponReleaseEventMsg* msg{recordMsg->mutable_weapon_release_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::WeaponReleaseEventMsg* msg{recordMsg->mutable_weapon_release_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_WEAPON_RELEASED);
@@ -882,11 +882,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponReleaseEventMsg(unsi
 // ------------------------------------------------------------------------------------------------
 // testWeaponHungEventMsg: Sets some Weapon Hung msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::WeaponHungEventMsg* msg{recordMsg->mutable_weapon_hung_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::WeaponHungEventMsg* msg{recordMsg->mutable_weapon_hung_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_WEAPON_HUNG);
@@ -925,11 +925,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponHungEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testWeaponDetonationEventMsg: Sets some Weapon Detonation msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::WeaponDetonationEventMsg* msg{recordMsg->mutable_weapon_detonation_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::WeaponDetonationEventMsg* msg{recordMsg->mutable_weapon_detonation_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_WEAPON_DETONATION);
@@ -937,7 +937,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
    recordMsg->mutable_time()->set_sim_time(getSimTime());
    recordMsg->mutable_time()->set_utc_time(getUtcTime());
 
-   msg->set_det_type(mixr::recorder::pb::WeaponDetonationEventMsg_DetonationType_DETONATE_GROUND_IMPACT);
+   msg->set_det_type(mixr::recorder::protobuf_v2::proto::WeaponDetonationEventMsg_DetonationType_DETONATE_GROUND_IMPACT);
 
    // required PlayerId    wpn_id       = 1;
    msg->mutable_wpn_id()->set_id(531);
@@ -978,11 +978,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testWeaponDetonationEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testGunFiredEventMsg: Sets some Gun Fired msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::GunFiredEventMsg* msg{recordMsg->mutable_gun_fired_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::GunFiredEventMsg* msg{recordMsg->mutable_gun_fired_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_GUN_FIRED);
@@ -1004,11 +1004,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testGunFiredEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testNewTrackEventMsg: Sets some New Track msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::NewTrackEventMsg* msg{recordMsg->mutable_new_track_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::NewTrackEventMsg* msg{recordMsg->mutable_new_track_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_NEW_TRACK);
@@ -1080,7 +1080,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
    msg->mutable_emission_data()->set_bandwidth(3000);
    msg->mutable_emission_data()->set_prf(4000);
    msg->mutable_emission_data()->set_power(5000);
-   msg->mutable_emission_data()->set_polarization(mixr::recorder::pb::EmissionData_Polarization_NONE);
+   msg->mutable_emission_data()->set_polarization(mixr::recorder::protobuf_v2::proto::EmissionData_Polarization_NONE);
 
    // enum Polarization {
    //   NONE        = 0;
@@ -1100,11 +1100,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testNewTrackEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testTrackRemovedEventMsg: Sets some Track Removed msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::TrackRemovedEventMsg* msg{recordMsg->mutable_track_removed_event_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::TrackRemovedEventMsg* msg{recordMsg->mutable_track_removed_event_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_TRACK_REMOVED);
@@ -1128,11 +1128,11 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackRemovedEventMsg()
 // ------------------------------------------------------------------------------------------------
 // testTrackDataMsg: Sets some Track Data msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testTrackDataMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
-   mixr::recorder::pb::TrackDataMsg* msg{recordMsg->mutable_track_data_msg()};
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
+   mixr::recorder::protobuf_v2::proto::TrackDataMsg* msg{recordMsg->mutable_track_data_msg()};
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // required
    recordMsg->set_id(REID_TRACK_DATA);
@@ -1204,7 +1204,7 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
    msg->mutable_emission_data()->set_bandwidth(3000);
    msg->mutable_emission_data()->set_prf(4000);
    msg->mutable_emission_data()->set_power(5000);
-   msg->mutable_emission_data()->set_polarization(mixr::recorder::pb::EmissionData_Polarization_NONE);
+   msg->mutable_emission_data()->set_polarization(mixr::recorder::protobuf_v2::proto::EmissionData_Polarization_NONE);
 
    const int messageSize{recordMsg->ByteSize()};
    std::cout << "Message size: " << messageSize << std::endl;
@@ -1215,12 +1215,12 @@ mixr::recorder::DataRecordHandle* DataRecordTest::testTrackDataMsg()
 // ------------------------------------------------------------------------------------------------
 // testLastMsg: Sets some Last msg data and returns a handle
 // ------------------------------------------------------------------------------------------------
-mixr::recorder::DataRecordHandle* DataRecordTest::testLastMsg()
+mixr::recorder::protobuf_v2::DataRecordHandle* DataRecordTest::testLastMsg()
 {
-   const auto recordMsg = new mixr::recorder::pb::DataRecord();
+   const auto recordMsg = new mixr::recorder::protobuf_v2::proto::DataRecord();
    recordMsg->set_id(REID_END_OF_DATA);
 
-   const auto handle = new mixr::recorder::DataRecordHandle(recordMsg);
+   const auto handle = new mixr::recorder::protobuf_v2::DataRecordHandle(recordMsg);
 
    // Still need "required" data:
    recordMsg->mutable_time()->set_exec_time(getExecTime());
@@ -1301,14 +1301,14 @@ bool DataRecordTest::processMessage(const google::protobuf::Message* const msg)
                   unsigned int cond{};
                   std::cin >>  cond;
                   if (cond == 1) {
-                     setCompareCondition(mixr::recorder::PrintSelected::Condition::LT);
+                     setCompareCondition(mixr::recorder::protobuf_v2::PrintSelected::Condition::LT);
                   } else if (cond == 2) {
-                     setCompareCondition(mixr::recorder::PrintSelected::Condition::GT);
+                     setCompareCondition(mixr::recorder::protobuf_v2::PrintSelected::Condition::GT);
                   } else {
-                     setCompareCondition(mixr::recorder::PrintSelected::Condition::EQ);
+                     setCompareCondition(mixr::recorder::protobuf_v2::PrintSelected::Condition::EQ);
                   }
                } else {
-                  setCompareCondition(mixr::recorder::PrintSelected::Condition::EQ); // not needed in this case
+                  setCompareCondition(mixr::recorder::protobuf_v2::PrintSelected::Condition::EQ); // not needed in this case
                }
             } else if (select == "Q" || select == "q") {
                fieldSelected = true;  // force exit
@@ -1394,7 +1394,7 @@ bool DataRecordTest::setCompareToValue(const double dblVal )
 //------------------------------------------------------------------------------
 // setCompareCondition(): Set comparison condition
 //---------------------------------------------------------------------------
-bool DataRecordTest::setCompareCondition(const mixr::recorder::PrintSelected::Condition cc )
+bool DataRecordTest::setCompareCondition(const mixr::recorder::protobuf_v2::PrintSelected::Condition cc )
 {
    selection[selectionNum].condition = cc;
    return true;

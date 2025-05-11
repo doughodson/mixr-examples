@@ -7,7 +7,7 @@
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 
-#include "mixr/simulation/Simulation.hpp"
+#include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 

@@ -1,9 +1,9 @@
 
-#include "shared/xrecorder/factory.hpp"
+#include "factory.hpp"
 
 #include "mixr/base/IObject.hpp"
 
-#include "shared/xrecorder/XDataRecorder.hpp"
+#include "XDataRecorder.hpp"
 
 #include <string>
 

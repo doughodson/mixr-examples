@@ -1,8 +1,8 @@
 
-#include "shared/xrecorder/XDataRecorder.hpp"
+#include "XDataRecorder.hpp"
 
-#include "shared/xrecorder/proto/DataRecord.pb.h"
-#include "shared/xrecorder/dataRecorderTokens.hpp"
+#include "proto/DataRecord.pb.h"
+#include "dataRecorderTokens.hpp"
 
 #include "mixr/base/util/math_utils.hpp"
 

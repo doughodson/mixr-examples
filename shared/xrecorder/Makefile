@@ -1,5 +1,5 @@
 #
-include ../../../makedefs
+include ../../makedefs
 
 LIB = $(MIXR_SHARED_LIB_PATH)/libxrecorder.a
 

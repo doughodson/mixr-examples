@@ -4,6 +4,7 @@ include ../../../makedefs
 LIB = $(MIXR_SHARED_LIB_PATH)/libxrecorder.a
 
 OBJS += \
+	proto/DataRecord.pb.cc \
 	XDataRecorder.o \
 	factory.o
 

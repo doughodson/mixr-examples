@@ -9,7 +9,7 @@
 #include "MapPage.hpp"
 
 // factories
-#include "shared/xzmq/factory.hpp"
+#include "xzmq/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/simulation/factory.hpp"
 #include "mixr/models/factory.hpp"

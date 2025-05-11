@@ -7,10 +7,10 @@
 #include "TestIoHandler.hpp"
 #include "SimStation.hpp"
 
-#include "shared/xpanel/factory.hpp"
+#include "xpanel/factory.hpp"
 
 // factories
-#include "shared/xzmq/factory.hpp"
+#include "xzmq/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/graphics/fonts/ftgl/factory.hpp"

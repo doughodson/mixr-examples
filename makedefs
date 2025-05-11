@@ -8,7 +8,7 @@ include ${MIXR_ROOT}/src/makedefs
 # ---
 # MIXR examples library path
 # ---
-MIXR_SHARED_INC_PATH=$(MIXR_EXAMPLES_ROOT)/shared/include
+MIXR_SHARED_INC_PATH=$(MIXR_EXAMPLES_ROOT)/shared/
 MIXR_SHARED_LIB_PATH=$(MIXR_EXAMPLES_ROOT)/shared/lib
 
 # ---
@@ -36,7 +36,7 @@ CPPFLAGS += -I$(MIXR_SHARED_INC_PATH)
 # ---
 EPPFLAGS = \
 	-I$(MIXR_DATA_ROOT) \
-	-I$(MIXR_ROOT)/../mixr-examples/shared/include/shared \
+	-I$(MIXR_ROOT)/../mixr-examples/shared \
 	-I$(MIXR_ROOT)/include \
 	-DMIXR_DATA_PATH=\"$(MIXR_DATA_ROOT)/\" \
 	-DMIXR_DATA_FONT_PATH=\"$(MIXR_DATA_ROOT)/fonts/\" \

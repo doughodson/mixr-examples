@@ -1,9 +1,9 @@
 
 #include "TestDisplay.hpp"
 #include "SimStation.hpp"
-#include "shared/xpanel/DspRadar.hpp"
-#include "shared/xpanel/DspRwr.hpp"
-#include "shared/xpanel/Pfd.hpp"
+#include "xpanel/DspRadar.hpp"
+#include "xpanel/DspRwr.hpp"
+#include "xpanel/Pfd.hpp"
 
 
 #include "mixr/models/player/air/AirVehicle.hpp"

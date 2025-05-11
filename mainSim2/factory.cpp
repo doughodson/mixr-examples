@@ -9,7 +9,7 @@
 #include "InstrumentPanel.hpp"
 
 // factories
-#include "shared/xzmq/factory.hpp"
+#include "xzmq/factory.hpp"
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
 #include "mixr/interop/dis/factory.hpp"

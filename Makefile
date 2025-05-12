@@ -72,8 +72,8 @@ APPLICATIONS += testNetHandler
 APPLICATIONS += testLinearSys
 
 # data recorder read/write tests
-#APPLICATIONS += testRecordData
-#APPLICATIONS += testRecorderRead
+APPLICATIONS += testRecordData
+APPLICATIONS += testRecorderRead
 APPLICATIONS += testRecorderWrite
 
 # test VMAP0 loader library

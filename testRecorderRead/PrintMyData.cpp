@@ -57,7 +57,7 @@ void PrintMyData::processRecordImp(const mixr::recorder::protobuf_v2::DataRecord
 
       // MyData message event
       case REID_MY_DATA_EVENT : {
-         if (dataRecord->HasExtension( mixr::xrecorder::proto::my_data_msg )) {
+         if (dataRecord->HasExtension(mixr::xrecorder::proto::my_data_msg)) {
             std::stringstream sout;
 
             sout << "MY_DATA " << "   ";
@@ -67,7 +67,7 @@ void PrintMyData::processRecordImp(const mixr::recorder::protobuf_v2::DataRecord
                }
             }
 
-            const mixr::xrecorder::proto::MyDataMsg* msg = &dataRecord->GetExtension( mixr::xrecorder::proto::my_data_msg );
+            const mixr::xrecorder::proto::MyDataMsg* msg = &dataRecord->GetExtension(mixr::xrecorder::proto::my_data_msg);
 
             if (msg->has_fee()) sout << "fee= " << msg->fee() << ";  ";
             if (msg->has_fi()) sout << "fi= " << msg->fi() << ";  ";

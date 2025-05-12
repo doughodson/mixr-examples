@@ -5,7 +5,7 @@
 #include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
 #include "mixr/recorder/protobuf_v2/DataRecordHandle.hpp"
 
-#include "shared/xrecorder/proto/DataRecord.pb.h"
+#include "xrecorder/proto/DataRecord.pb.h"
 #include <iostream>
 
 using namespace mixr;

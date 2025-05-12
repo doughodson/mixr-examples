@@ -9,10 +9,7 @@ project "mainGlut"
    targetdir "../../mainGlut"
    debugdir "../../mainGlut"
    files {
-      "../../mainGlut/**.h*",
-      "../../mainGlut/**.cpp",
-      "../../mainGlut/**.epp",
-      "../../mainGlut/**.edl"
+      "../../mainGlut/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }

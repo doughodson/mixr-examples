@@ -9,8 +9,7 @@ project "tutorial01"
    targetdir "../../tutorial01"
    debugdir "../../tutorial01"
    files {
-      "../../tutorial01/**.h*",
-      "../../tutorial01/**.cpp",
+      "../../tutorial01/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -28,8 +27,7 @@ project "tutorial02"
    targetdir "../../tutorial02"
    debugdir "../../tutorial02"
    files {
-      "../../tutorial02/**.h*",
-      "../../tutorial02/**.cpp",
+      "../../tutorial02/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -47,10 +45,7 @@ project "tutorial03"
    targetdir "../../tutorial03"
    debugdir "../../tutorial03"
    files {
-      "../../tutorial03/**.h*",
-      "../../tutorial03/**.cpp",
-      "../../tutorial03/**.epp",
-      "../../tutorial03/**.edl"
+      "../../tutorial03/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -68,10 +63,7 @@ project "tutorial04"
    targetdir "../../tutorial04"
    debugdir "../../tutorial04"
    files {
-      "../../tutorial04/**.h*",
-      "../../tutorial04/**.cpp",
-      "../../tutorial04/**.epp",
-      "../../tutorial04/**.edl"
+      "../../tutorial04/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -89,10 +81,7 @@ project "tutorial05"
    targetdir "../../tutorial05"
    debugdir "../../tutorial05"
    files {
-      "../../tutorial05/**.h*",
-      "../../tutorial05/**.cpp",
-      "../../tutorial05/**.epp",
-      "../../tutorial05/**.edl"
+      "../../tutorial05/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -110,10 +99,7 @@ project "tutorial06"
    targetdir "../../tutorial06"
    debugdir "../../tutorial06"
    files {
-      "../../tutorial06/**.h*",
-      "../../tutorial06/**.cpp",
-      "../../tutorial06/**.epp",
-      "../../tutorial06/**.edl"
+      "../../tutorial06/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -131,10 +117,7 @@ project "tutorial07"
    targetdir "../../tutorial07"
    debugdir "../../tutorial07"
    files {
-      "../../tutorial07/**.h*",
-      "../../tutorial07/**.cpp",
-      "../../tutorial07/**.epp",
-      "../../tutorial07/**.edl"
+      "../../tutorial07/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -155,10 +138,7 @@ project "tutorial08"
    targetdir "../../tutorial08"
    debugdir "../../tutorial08"
    files {
-      "../../tutorial08/**.h*",
-      "../../tutorial08/**.cpp",
-      "../../tutorial08/**.epp",
-      "../../tutorial08/**.edl"
+      "../../tutorial08/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }

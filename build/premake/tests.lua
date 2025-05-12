@@ -9,11 +9,7 @@ project "testDafif"
    targetdir "../../testDafif"
    debugdir "../../testDafif"
    files {
-      "../../testDafif/**.h*",
-      "../../testDafif/**.cpp",
-      "../../testDafif/**.cxx",
-      "../../testDafif/**.epp",
-      "../../testDafif/**.edl"
+      "../../testDafif/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -31,10 +27,7 @@ project "testEvents"
    targetdir "../../testEvents"
    debugdir "../../testEvents"
    files {
-      "../../testEvents/**.h*",
-      "../../testEvents/**.cpp",
-      "../../testEvents/**.epp",
-      "../../testEvents/**.edl"
+      "../../testEvents/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -54,10 +47,7 @@ project "testGraphics"
    targetdir "../../testGraphics"
    debugdir "../../testGraphics"
    files {
-      "../../testGraphics/**.h*",
-      "../../testGraphics/**.cpp",
-      "../../testGraphics/**.epp",
-      "../../testGraphics/**.edl"
+      "../../testGraphics/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -77,10 +67,7 @@ project "testInfrared"
    targetdir "../../testInfrared"
    debugdir "../../testInfrared"
    files {
-      "../../testInfrared/**.h*",
-      "../../testInfrared/**.cpp",
-      "../../testInfrared/**.epp",
-      "../../testInfrared/**.edl"
+      "../../testInfrared/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -108,10 +95,7 @@ project "testLinearSys"
    targetdir "../../testLinearSys"
    debugdir "../../testLinearSys"
    files {
-      "../../testLinearSys/**.h*",
-      "../../testLinearSys/**.cpp",
-      "../../testLinearSys/**.epp",
-      "../../testLinearSys/**.edl"
+      "../../testLinearSys/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -129,10 +113,7 @@ project "testLinkage"
    targetdir "../../testLinkage"
    debugdir "../../testLinkage"
    files {
-      "../../testLinkage/**.h*",
-      "../../testLinkage/**.cpp",
-      "../../testLinkage/**.epp",
-      "../../testLinkage/**.edl"
+      "../../testLinkage/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -152,10 +133,7 @@ project "testMatrix"
    targetdir "../../testMatrix"
    debugdir "../../testMatrix"
    files {
-      "../../testMatrix/**.h*",
-      "../../testMatrix/**.cpp",
-      "../../testMatrix/**.epp",
-      "../../testMatrix/**.edl"
+      "../../testMatrix/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -173,10 +151,7 @@ project "testMetaObject"
    targetdir "../../testMetaObject"
    debugdir "../../testMetaObject"
    files {
-      "../../testMetaObject/**.h*",
-      "../../testMetaObject/**.cpp",
-      "../../testMetaObject/**.epp",
-      "../../testMetaObject/**.edl"
+      "../../testMetaObject/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -194,10 +169,7 @@ project "testNavUtils"
    targetdir "../../testNavUtils"
    debugdir "../../testNavUtils"
    files {
-      "../../testNavUtils/**.h*",
-      "../../testNavUtils/**.cpp",
-      "../../testNavUtils/**.epp",
-      "../../testNavUtils/**.edl"
+      "../../testNavUtils/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -215,10 +187,7 @@ project "testNetHandler"
    targetdir "../../testNetHandler"
    debugdir "../../testNetHandler"
    files {
-      "../../testNetHandler/**.h*",
-      "../../testNetHandler/**.cpp",
-      "../../testNetHandler/**.epp",
-      "../../testNetHandler/**.edl"
+      "../../testNetHandler/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
@@ -239,10 +208,7 @@ project "testRadar"
    targetdir "../../testRadar"
    debugdir "../../testRadar"
    files {
-      "../../testRadar/**.h*",
-      "../../testRadar/**.cpp",
-      "../../testRadar/**.epp",
-      "../../testRadar/**.edl"
+      "../../testRadar/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -268,10 +234,7 @@ project "testRecordData"
    targetdir "../../testRecordData"
    debugdir "../../testRecordData"
    files {
-      "../../testRecordData/**.h*",
-      "../../testRecordData/**.cpp",
-      "../../testRecordData/**.epp",
-      "../../testRecordData/**.edl"
+      "../../testRecordData/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
@@ -302,10 +265,7 @@ project "testRecorderRead"
    targetdir "../../testRecorderRead"
    debugdir "../../testRecorderRead"
    files {
-      "../../testRecorderRead/**.h*",
-      "../../testRecorderRead/**.cpp",
-      "../../testRecorderRead/**.epp",
-      "../../testRecorderRead/**.edl"
+      "../../testRecorderRead/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
@@ -326,10 +286,7 @@ project "testRecorderWrite"
    targetdir "../../testRecorderWrite"
    debugdir "../../testRecorderWrite"
    files {
-      "../../testRecorderWrite/**.h*",
-      "../../testRecorderWrite/**.cpp",
-      "../../testRecorderWrite/**.epp",
-      "../../testRecorderWrite/**.edl"
+      "../../testRecorderWrite/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath, MIXR_ExamplesLibPath }
@@ -350,10 +307,7 @@ project "testSlots"
    targetdir "../../testSlots"
    debugdir "../../testSlots"
    files {
-      "../../testSlots/**.h*",
-      "../../testSlots/**.cpp",
-      "../../testSlots/**.epp",
-      "../../testSlots/**.edl"
+      "../../testSlots/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -371,10 +325,7 @@ project "testStateMach"
    targetdir "../../testStateMach"
    debugdir "../../testStateMach"
    files {
-      "../../testStateMach/**.h*",
-      "../../testStateMach/**.cpp",
-      "../../testStateMach/**.epp",
-      "../../testStateMach/**.edl"
+      "../../testStateMach/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -392,10 +343,7 @@ project "testTables"
    targetdir "../../testTables"
    debugdir "../../testTables"
    files {
-      "../../testTables/**.h*",
-      "../../testTables/**.cpp",
-      "../../testTables/**.epp",
-      "../../testTables/**.edl"
+      "../../testTables/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -413,10 +361,7 @@ project "testTemplates"
    targetdir "../../testTemplates"
    debugdir "../../testTemplates"
    files {
-      "../../testTemplates/**.h*",
-      "../../testTemplates/**.cpp",
-      "../../testTemplates/**.epp",
-      "../../testTemplates/**.edl"
+      "../../testTemplates/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -434,9 +379,7 @@ project "testTimer"
    targetdir "../../testTimer"
    debugdir "../../testTimer"
    files {
-      "../../testTimer/*.h*",
-      "../../testTimer/*.cpp",
-      "../../testTimer/*.edl"
+      "../../testTimer/**"
    }
    includedirs { MIXR_IncPath }
    libdirs     { MIXR_LibPath }
@@ -454,10 +397,7 @@ project "test"
    targetdir "../../test"
    debugdir "../../test"
    files {
-      "../../test/**.h*",
-      "../../test/**.cpp",
-      "../../test/**.epp",
-      "../../test/**.edl"
+      "../../test/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
@@ -475,9 +415,7 @@ project "testVmap"
    targetdir "../../testVmap"
    debugdir "../../testVmap"
    files {
-      "../../testVmap/*.h*",
-      "../../testVmap/*.cpp",
-      "../../testVmap/*.edl"
+      "../../testVmap/**"
    }
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }

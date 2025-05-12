@@ -10,8 +10,7 @@ project "libxbehaviors"
    targetdir (MIXR_ExamplesLibPath)
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    files {
-      "../../shared/include/shared/xbehaviors/*.h*",
-      "../../shared/src/xbehaviors/*.cpp",
+      "../../shared/xbehaviors/**"
    }
    defines { "_LIB" }
 
@@ -23,10 +22,7 @@ project "libxrecorder"
    targetname "xrecorder"
    targetdir (MIXR_ExamplesLibPath)
    files {
-      "../../shared/include/shared/xrecorder/**.h*",
-      "../../shared/src/xrecorder/**.cpp",
-      "../../shared/src/xrecorder/**.cc",
-      "../../shared/src/xrecorder/**.proto",
+      "../../shared/xrecorder/**"
    }
    defines { "_LIB" }
    defines { "_SCL_SECURE_NO_WARNINGS" } -- suppress protocol buffer warning
@@ -39,9 +35,7 @@ project "libxpanel"
    targetdir (MIXR_ExamplesLibPath)
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    files {
-      "../../shared/include/shared/xpanel/*.h*",
-      "../../shared/include/shared/xpanel/**.epp",
-      "../../shared/src/xpanel/*.cpp",
+      "../../shared/xpanel/**"
    }
    defines { "_LIB" }
 
@@ -54,8 +48,6 @@ project "libxzmq"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath, MIXR_ExamplesIncPath }
    defines { "ZMQ_STATIC" }
    files {
-      "../../shared/include/shared/xzmq/*.h*",
-      "../../shared/include/shared/xzmq/**.epp",
-      "../../shared/src/xzmq/*.cpp",
+      "../../shared/xzmq/**"
    }
    defines { "_LIB" }

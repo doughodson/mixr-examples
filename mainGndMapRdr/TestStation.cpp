@@ -3,7 +3,7 @@
 #include "Display.hpp"
 
 #include "mixr/models/player/Player.hpp"
-#include "mixr/models/system/Gimbal.hpp"
+#include "mixr/models/system/IGimbal.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 

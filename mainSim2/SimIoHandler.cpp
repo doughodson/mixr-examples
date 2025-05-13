@@ -5,7 +5,7 @@
 
 #include "mixr/models/system/Autopilot.hpp"
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/navigation/Navigation.hpp"
+#include "mixr/models/navigation/INavigation.hpp"
 #include "mixr/models/navigation/Route.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
@@ -235,7 +235,7 @@ void SimIoHandler::inputDevicesImpl(const double dt)
          inData->getDiscreteInput(DMS_UP_SW, &incStptSw);
          if (incStptSw && !incStptSw1) {
             // find our route and increment the steerpoint
-            mixr::models::Navigation* myNav{av->getNavigation()};
+            mixr::models::INavigation* myNav{av->getNavigation()};
             if (myNav != nullptr) {
                myNav->ref();
                mixr::models::Route* myRoute{myNav->getPriRoute()};
@@ -254,7 +254,7 @@ void SimIoHandler::inputDevicesImpl(const double dt)
          inData->getDiscreteInput(DMS_DOWN_SW, &decStptSw);
          if (decStptSw && !decStptSw1) {
             // find our route and increment the steerpoint
-            mixr::models::Navigation* myNav{av->getNavigation()};
+            mixr::models::INavigation* myNav{av->getNavigation()};
             if (myNav != nullptr) {
                myNav->ref();
                mixr::models::Route* myRoute{myNav->getPriRoute()};

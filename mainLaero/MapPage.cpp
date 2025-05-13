@@ -6,7 +6,7 @@
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/Player.hpp"
 #include "mixr/models/system/Autopilot.hpp"
-#include "mixr/models/navigation/Navigation.hpp"
+#include "mixr/models/navigation/INavigation.hpp"
 #include "mixr/models/navigation/Route.hpp"
 #include "mixr/models/navigation/Steerpoint.hpp"
 
@@ -370,7 +370,7 @@ void MapPage::updateData(const double dt)
             // get our player's route
             const auto ply = dynamic_cast<mixr::models::Player*>(pStn->getOwnship());
             if (ply != nullptr) {
-               mixr::models::Navigation* nav{ply->getNavigation()};
+               mixr::models::INavigation* nav{ply->getNavigation()};
                if (nav != nullptr) {
                   mixr::models::Route* rte{nav->getPriRoute()};
                   if (rte != nullptr) {

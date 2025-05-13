@@ -4,7 +4,7 @@
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/system/Radar.hpp"
 #include "mixr/models/Track.hpp"
-#include "mixr/models/system/trackmanager/TrackManager.hpp"
+#include "mixr/models/system/trackmanager/ITrackMgr.hpp"
 
 #include "mixr/base/colors/Hsv.hpp"
 
@@ -45,7 +45,7 @@ void DspRadar::updateData(const double dt)
       antenna = radar->getAntenna();
 
       // Get our track manager
-      const models::TrackManager* tm{radar->getTrackManager()};
+      const models::ITrackMgr* tm{radar->getTrackManager()};
 
       // ---
       // Get the track list and convert them to display coordinates

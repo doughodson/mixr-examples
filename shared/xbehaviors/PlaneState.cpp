@@ -131,7 +131,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
       if (sensorPair != nullptr) {
          const auto radar = static_cast<const models::Radar*>(sensorPair->object());
          if (radar != nullptr) {
-            const models::TrackManager* trackManager{radar->getTrackManager()};
+            const models::ITrackMgr* trackManager{radar->getTrackManager()};
             base::safe_ptr<models::Track> trackList[50];
             int nTracks{trackManager->getTrackList(trackList, 50)};
 
@@ -166,7 +166,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
 
       const models::OnboardComputer* oc{airVehicle->getOnboardComputer()};
       if (oc != nullptr) {
-         const models::TrackManager* rtm{oc->getTrackManagerByType(typeid(models::RwrTrkMgr))};
+         const models::ITrackMgr* rtm{oc->getTrackManagerByType(typeid(models::RwrTrkMgr))};
          if(rtm !=nullptr) {
             base::safe_ptr<models::Track> trackList[50];
             int nTracks{rtm->getTrackList(trackList, 50)};

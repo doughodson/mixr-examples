@@ -163,7 +163,7 @@ void TestComputer::updateShootList(const bool step)
    mixr::base::safe_ptr<mixr::models::Track> trackList[MAX_TRKS];
 
    int n{};
-   mixr::models::TrackManager* tm{getTrackManagerByType(typeid(mixr::models::AngleOnlyTrackManager))};
+   mixr::models::ITrackMgr* tm{getTrackManagerByType(typeid(mixr::models::AngleOnlyTrackManager))};
    if (tm != nullptr) n = tm->getTrackList(trackList, MAX_TRKS);
 
    if (isMessageEnabled(MSG_DEBUG)) {

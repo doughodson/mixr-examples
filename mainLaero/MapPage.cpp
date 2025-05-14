@@ -16,8 +16,6 @@
 #include "mixr/graphics/Display.hpp"
 #include "mixr/graphics/Shapes.hpp"
 
-#include "mixr/models/dynamics/LaeroModel.hpp"
-
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
@@ -135,7 +133,7 @@ void MapPage::drawSemiCircle(const double startAngle, const double radius)
    //if (pStn != nullptr) {
    //   simulation::Player* pPlr  = pStn->getOwnship();
    //   if (pPlr != nullptr) {
-   //      Vehicle::LaeroModel* pRac = (Vehicle::LaeroModel*) pPlr->getDynamicsModel();
+   //      Vehicle::LaeroDynamics* pRac = (Vehicle::LaeroDynamics*) pPlr->getDynamicsModel();
    //      if (pRac != nullptr) {
 
    //         pRac->setAnchorLat(aLat);

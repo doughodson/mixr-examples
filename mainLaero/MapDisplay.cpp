@@ -6,7 +6,6 @@
 #include "mixr/models/player/air/Aircraft.hpp"
 #include "mixr/models/player/Player.hpp"
 #include "mixr/models/system/Autopilot.hpp"
-#include "mixr/models/dynamics/LaeroModel.hpp"
 
 #include "mixr/base/units/angles.hpp"
 #include "mixr/base/units/lengths.hpp"

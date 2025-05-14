@@ -56,7 +56,7 @@
                )
 
                dynamicsModel:
-               ( LaeroModel )
+               ( LaeroDynamics )
 
                navigation:
                ( Navigation

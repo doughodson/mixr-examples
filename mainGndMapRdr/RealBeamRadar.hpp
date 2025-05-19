@@ -2,7 +2,7 @@
 #ifndef __RealBeamRadar_HPP__
 #define __RealBeamRadar_HPP__
 
-#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/IRadar.hpp"
 
 namespace mixr {
 namespace base { class Angle; class Boolean; class Distance; }
@@ -14,9 +14,9 @@ namespace terrain { class ITerrain; }
 //
 // Description: Real-Beam Radar Model
 //------------------------------------------------------------------------------
-class RealBeamRadar final: public mixr::models::Radar
+class RealBeamRadar final: public mixr::models::IRadar
 {
-    DECLARE_SUBCLASS(RealBeamRadar, mixr::models::Radar)
+    DECLARE_SUBCLASS(RealBeamRadar, mixr::models::IRadar)
 
 public:
     RealBeamRadar();

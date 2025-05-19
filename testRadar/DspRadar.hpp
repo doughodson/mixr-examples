@@ -7,7 +7,7 @@
 
 namespace mixr {
 namespace base { class PairStream; }
-namespace models { class Radar; }
+namespace models { class IRadar; }
 }
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ class DspRadar final: public mixr::graphics::Graphic
 public:
    DspRadar();
 
-   const mixr::models::Radar* getRadar()             { return radar; }
-   const mixr::models::Radar* getRadar() const       { return radar; }
-   bool setRadar(mixr::models::Radar* const s)       { radar = s; return true; }
+   const mixr::models::IRadar* getRadar()             { return radar; }
+   const mixr::models::IRadar* getRadar() const       { return radar; }
+   bool setRadar(mixr::models::IRadar* const s)       { radar = s; return true; }
 
    void drawFunc() final;
 
@@ -34,7 +34,7 @@ public:
 private:
     static const int MAX_TRKS{50};
 
-    const mixr::models::Radar* radar{};  // The test RADAR sensor
+    const mixr::models::IRadar* radar{};  // The test RADAR sensor
     SendData azSD;
     SendData elSD;
 

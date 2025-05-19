@@ -6,7 +6,7 @@
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/weapon/Missile.hpp"
-#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/system/trackmanager/RwrTrkMgr.hpp"
 #include "mixr/models/Track.hpp"
 #include "mixr/models/system/OnboardComputer.hpp"
@@ -126,10 +126,10 @@ void PlaneState::updateState(const base::IComponent* const actor)
       //const base::String* playerName = airVehicle->getName();
       // DH - DOES NOT COMPILE WITH CONST -- ????
       auto airVehicleX = const_cast<models::AirVehicle*>(airVehicle);
-      const base::Pair* sensorPair{airVehicleX->getSensorByType(typeid(models::Radar))};
+      const base::Pair* sensorPair{airVehicleX->getSensorByType(typeid(models::IRadar))};
 
       if (sensorPair != nullptr) {
-         const auto radar = static_cast<const models::Radar*>(sensorPair->object());
+         const auto radar = static_cast<const models::IRadar*>(sensorPair->object());
          if (radar != nullptr) {
             const models::ITrackMgr* trackManager{radar->getTrackManager()};
             base::safe_ptr<models::Track> trackList[50];

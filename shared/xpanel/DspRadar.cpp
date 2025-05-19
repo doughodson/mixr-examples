@@ -2,7 +2,7 @@
 #include "DspRadar.hpp"
 
 #include "mixr/models/system/Antenna.hpp"
-#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/Track.hpp"
 #include "mixr/models/system/trackmanager/ITrackMgr.hpp"
 

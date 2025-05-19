@@ -9,7 +9,7 @@
 #include "mixr/models/player/weapon/IWeapon.hpp"
 
 #include "mixr/models/system/Jammer.hpp"
-#include "mixr/models/system/Radar.hpp"
+#include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/system/Rwr.hpp"
 #include "mixr/models/system/StoresMgr.hpp"
 #include "mixr/models/sensor/Gmti.hpp"
@@ -170,17 +170,17 @@ bool TestDisplay::onAir2GndKey()
 bool TestDisplay::onIncRngKey()
 {
     if (getOwnship() != nullptr) {
-        models::Radar* rdr{};
+        models::IRadar* rdr{};
         {
            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
-           if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+           if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
         }
         models::StoresMgr* sms = getOwnship()->getStoresManagement();
         if (sms != nullptr) {
             // But could be GMTI ...
             if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
                 base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
-                if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+                if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
             }
         }
         if (rdr != nullptr) {
@@ -196,17 +196,17 @@ bool TestDisplay::onIncRngKey()
 bool TestDisplay::onDecRngKey()
 {
     if (getOwnship() != nullptr) {
-        models::Radar* rdr{};
+        models::IRadar* rdr{};
         {
            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
-           if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+           if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
         }
         models::StoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
             // But could be GMTI
             if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
                 base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
-                if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+                if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
             }
         }
         if (rdr != nullptr) {
@@ -238,17 +238,17 @@ void TestDisplay::updateData(const double dt)
     }
     if (rdrDisplay != nullptr && getOwnship() != nullptr) {
         // Default is TWS
-        models::Radar* rdr{};
+        models::IRadar* rdr{};
         {
            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
-           if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+           if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
         }
         models::StoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
             // But could be GMTI ...
             if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
                 base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
-                if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+                if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
             }
         }
         rdrDisplay->setRadar(rdr);
@@ -272,17 +272,17 @@ void TestDisplay::updateData(const double dt)
    if (getOwnship() != nullptr) {
 
       {
-         models::Radar* rdr{};
+         models::IRadar* rdr{};
          {
             base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
-            if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+            if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
          }
          models::StoresMgr* sms{getOwnship()->getStoresManagement()};
          if (sms != nullptr) {
                // But could be GMTI ...
                if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
                   base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
-                  if (pair != nullptr) rdr = static_cast<models::Radar*>(pair->object());
+                  if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
                }
          }
          if (rdr != nullptr) range = rdr->getRange();

@@ -109,7 +109,7 @@ void TestComputer::process(const double dt)
 bool TestComputer::processIr()
 {
    // set the seeker/gimbal free to track target if just launched
-   if (uncaged==false && getOwnship()->isMode(mixr::models::Player::Mode::ACTIVE))
+   if (uncaged==false && getOwnship()->isMode(mixr::models::IPlayer::Mode::ACTIVE))
       uncaged = true;
 
    // waiting on getnexttarget may mean missing one or two updates
@@ -137,7 +137,7 @@ bool TestComputer::processIr()
    // weapon::targetPlayer tells the dynamics model where the target is -
    // if the seeker has no track, then the targetPlayer must be cleared
 
-   mixr::models::Player* irTarget{};
+   mixr::models::IPlayer* irTarget{};
    if (irTrk)
       irTarget = irTrk->getTarget();
    // tell the missile what to track

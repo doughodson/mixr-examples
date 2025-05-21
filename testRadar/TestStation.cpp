@@ -94,8 +94,8 @@ void TestStation::stepOwnshipPlayer()
    base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
-      models::Player* f{};
-      models::Player* n{};
+      models::IPlayer* f{};
+      models::IPlayer* n{};
       bool found{};
 
       // Find the next player
@@ -103,8 +103,8 @@ void TestStation::stepOwnshipPlayer()
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
          if (pair != nullptr) {
-            const auto ip = static_cast<models::Player*>(pair->object());
-            if ( ip->isMode(models::Player::Mode::ACTIVE) &&
+            const auto ip = static_cast<models::IPlayer*>(pair->object());
+            if ( ip->isMode(models::IPlayer::Mode::ACTIVE) &&
                ip->isLocalPlayer() &&
                ip->isClassType(typeid(models::AirVehicle))
                ) {

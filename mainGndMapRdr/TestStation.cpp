@@ -2,7 +2,7 @@
 #include "TestStation.hpp"
 #include "Display.hpp"
 
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 

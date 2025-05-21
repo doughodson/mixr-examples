@@ -103,8 +103,8 @@ void SimStation::stepOwnshipPlayer()
    mixr::base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
-      mixr::models::Player* f{};
-      mixr::models::Player* n{};
+      mixr::models::IPlayer* f{};
+      mixr::models::IPlayer* n{};
       bool found = false;
 
       // Find the next player
@@ -112,8 +112,8 @@ void SimStation::stepOwnshipPlayer()
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          if (pair != nullptr) {
-            const auto ip = static_cast<mixr::models::Player*>(pair->object());
-            if ( ip->isMode(mixr::models::Player::Mode::ACTIVE) &&
+            const auto ip = static_cast<mixr::models::IPlayer*>(pair->object());
+            if ( ip->isMode(mixr::models::IPlayer::Mode::ACTIVE) &&
                ip->isLocalPlayer() &&
                ip->isClassType(typeid(mixr::models::AirVehicle))
                ) {

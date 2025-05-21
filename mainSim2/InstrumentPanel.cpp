@@ -4,7 +4,7 @@
 #include "SimPlayer.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 
@@ -40,12 +40,12 @@ void InstrumentPanel::copyData(const InstrumentPanel& org, const bool)
    myStation = nullptr;
 }
 
-mixr::models::Player* InstrumentPanel::getOwnship()
+mixr::models::IPlayer* InstrumentPanel::getOwnship()
 {
-   mixr::models::Player* p = nullptr;
+   mixr::models::IPlayer* p = nullptr;
    mixr::simulation::Station* sta = getStation();
    if (sta != nullptr) {
-      p = dynamic_cast<mixr::models::Player*>(sta->getOwnship());
+      p = dynamic_cast<mixr::models::IPlayer*>(sta->getOwnship());
    }
    return p;
 }

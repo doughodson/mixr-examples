@@ -4,7 +4,7 @@
 #include "MapPage.hpp"
 
 #include "mixr/models/player/air/Aircraft.hpp"
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 #include "mixr/models/system/Autopilot.hpp"
 
 #include "mixr/base/units/angles.hpp"
@@ -148,7 +148,7 @@ void MapDisplay::buttonEvent(const int b)
    const auto page = static_cast<MapPage*>(subpage());
 
    // cmdAirspeed, cmdAltitude, cmdHeading up, down
-   mixr::models::Player* pA{getOwnship()};
+   mixr::models::IPlayer* pA{getOwnship()};
    mixr::models::Autopilot* ap{};
    if (pA != nullptr) {
       ap = static_cast<mixr::models::Autopilot*>(pA->getPilot());

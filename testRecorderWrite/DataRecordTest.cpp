@@ -16,7 +16,7 @@
 
 #include "mixr/recorder/protobuf_v2/proto/DataRecord.pb.h"
 
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/Pair.hpp"

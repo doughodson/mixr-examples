@@ -112,8 +112,8 @@ void SimStation::stepOwnshipPlayer()
 {
    base::PairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
-      models::Player* f{};
-      models::Player* n{};
+      models::IPlayer* f{};
+      models::IPlayer* n{};
       bool found{};
 
       // Find the next player
@@ -121,8 +121,8 @@ void SimStation::stepOwnshipPlayer()
       while (item != nullptr) {
          base::Pair* pair {static_cast<base::Pair*>(item->getValue())};
          if (pair != nullptr) {
-            models::Player* ip{static_cast<models::Player*>(pair->object())};
-            if ( ip->isMode(models::Player::Mode::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::AirVehicle)) ) {
+            models::IPlayer* ip{static_cast<models::IPlayer*>(pair->object())};
+            if ( ip->isMode(models::IPlayer::Mode::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::AirVehicle)) ) {
                if (f == nullptr) { f = ip; }  // Remember the first
                if (found) { n = ip; ; break; }
                if (ip == getOwnship()) found = true;

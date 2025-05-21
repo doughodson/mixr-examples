@@ -3,7 +3,7 @@
 #include "Station.hpp"
 #include "Display.hpp"
 
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 #include "mixr/models/WorldModel.hpp"
 
 #include "mixr/graphics/SymbolLoader.hpp"
@@ -192,14 +192,14 @@ void MapPage::updateData(const double dt)
         mixr::base::PairStream* stream {stn->getPlayers()};
         if (stream != nullptr) {
             // create our new player list
-            mixr::models::Player* newPlayers[MAX_PLAYERS]{};
+            mixr::models::IPlayer* newPlayers[MAX_PLAYERS]{};
             int numNewPlayers{};
             // go through all of our non-ownship players and populate our new list
             mixr::base::List::Item* item {stream->getFirstItem()};
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
                 const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
                 if (pair != nullptr) {
-                    const auto ply = dynamic_cast<mixr::models::Player*>(pair->object());
+                    const auto ply = dynamic_cast<mixr::models::IPlayer*>(pair->object());
                     if (ply != nullptr) {
                         newPlayers[numNewPlayers] = ply;
                         newPlayers[numNewPlayers++]->ref();
@@ -245,7 +245,7 @@ void MapPage::updateData(const double dt)
                             player[j] = newPlayers[i];
                             player[j]->ref();
                             int type{1};
-                            if (player[j]->isSide(mixr::models::Player::RED)) type = 2;
+                            if (player[j]->isSide(mixr::models::IPlayer::RED)) type = 2;
                             playerIdx[j] = loader->addSymbol(type, "player");
                             if (player[j]->getName() != "") {
                                 loader->updateSymbolText(playerIdx[j], "name", player[j]->getName().c_str());

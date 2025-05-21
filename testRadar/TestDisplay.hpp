@@ -7,7 +7,7 @@
 #include <array>
 
 namespace mixr {
-namespace models { class Missile; class Player; }
+namespace models { class Missile; class IPlayer; }
 namespace simulation { class ISimulation; class Station; }
 namespace graphics { class SymbolLoader; }
 }
@@ -43,7 +43,7 @@ class TestDisplay final: public mixr::glut::GlutDisplay
 public:
     TestDisplay();
 
-    mixr::models::Player* getOwnship();
+    mixr::models::IPlayer* getOwnship();
     mixr::simulation::ISimulation* getSimulation();
     mixr::simulation::Station* getStation();
 
@@ -78,8 +78,8 @@ private:
     mixr::base::safe_ptr<mixr::simulation::Station> myStation;
 
     static const unsigned int MAX_TRACKS = 200;
-    std::array<mixr::models::Player*, MAX_TRACKS> tracks {};  // players that we're displaying
-    std::array<int, MAX_TRACKS> trkIdx {};                  // Index of track symbols
+    std::array<mixr::models::IPlayer*, MAX_TRACKS> tracks {};  // players that we're displaying
+    std::array<int, MAX_TRACKS> trkIdx {};                     // Index of track symbols
 };
 
 #endif

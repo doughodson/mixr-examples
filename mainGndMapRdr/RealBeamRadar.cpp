@@ -1,7 +1,7 @@
 
 #include "RealBeamRadar.hpp"
 
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/WorldModel.hpp"
 
@@ -93,7 +93,7 @@ void RealBeamRadar::transmit(const double dt)
    beamWidth = 7.0;
 
    //
-   const models::Player* own{getOwnship()};
+   const models::IPlayer* own{getOwnship()};
    if (own != nullptr) {
       // Get our ownship parameters
       altitude = static_cast<double>(own->getAltitude());

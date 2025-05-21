@@ -382,7 +382,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
     int codes[MAX_TRACKS]{};         // Work codes: empty(0), matched(1), unmatched(-1)
     double rng2{rng * rng};          // Range squared (KM * KM)
 
-    models::Player* newTracks[MAX_TRACKS];    // New tracks to add
+    models::IPlayer* newTracks[MAX_TRACKS];   // New tracks to add
     int nNewTracks{};                         // Number of new tracks
 
     // The real maximum number of tracks is the smaller of MAX_TRACKS and the loader's maximum
@@ -406,7 +406,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
         while (item != nullptr && nNewTracks < maxTracks) {
 
             const auto pair = static_cast<base::Pair*>(item->getValue());
-            const auto p = static_cast<models::Player*>(pair->object());
+            const auto p = static_cast<models::IPlayer*>(pair->object());
             base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
             double x{rpos[0] * base::length::M2NM};
             double y{rpos[1] * base::length::M2NM};
@@ -467,8 +467,8 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
                 if (newTracks[inew]->isClassType(typeid(models::AirVehicle))) {
                   if (newTracks[inew]->getSensorByType(typeid(models::Jammer)) == nullptr) {
                      // non-jammers
-                     if (newTracks[inew]->isSide(models::Player::BLUE)) type = 1;      // friend
-                     else if (newTracks[inew]->isSide(models::Player::RED)) type = 2; // foe
+                     if (newTracks[inew]->isSide(models::IPlayer::BLUE)) type = 1;      // friend
+                     else if (newTracks[inew]->isSide(models::IPlayer::RED)) type = 2; // foe
                      else type = 3; // neutral/commercial
                   }
                 } else if (newTracks[inew]->isClassType(typeid(models::Missile))) {
@@ -507,12 +507,12 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
     }
 }
 
-models::Player* TestDisplay::getOwnship()
+models::IPlayer* TestDisplay::getOwnship()
 {
-   models::Player* p{};
+   models::IPlayer* p{};
    simulation::Station* sta{getStation()};
    if (sta != nullptr) {
-      p = dynamic_cast<models::Player*>(sta->getOwnship());
+      p = dynamic_cast<models::IPlayer*>(sta->getOwnship());
    }
    return p;
 }

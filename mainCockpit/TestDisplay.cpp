@@ -378,7 +378,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
     int codes[MAX_TRACKS]{};         // Work codes: empty(0), matched(1), unmatched(-1)
     double rng2{rng * rng};          // Range squared (KM * KM)
 
-    mixr::models::Player* newTracks[MAX_TRACKS];  // New tracks to add
+    mixr::models::IPlayer* newTracks[MAX_TRACKS];  // New tracks to add
     int nNewTracks{};                             // Number of new tracks
 
     // The real maximum number of tracks is the smaller of MAX_TRACKS and the loader's maximum
@@ -402,7 +402,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
         while (item != nullptr && nNewTracks < maxTracks) {
 
             const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
-            const auto p = static_cast<mixr::models::Player*>(pair->object());
+            const auto p = static_cast<mixr::models::IPlayer*>(pair->object());
             mixr::base::Vec3d rpos{p->getPosition() - getOwnship()->getPosition()};
             double x{rpos[0] * mixr::base::length::M2NM};
             double y{rpos[1] * mixr::base::length::M2NM};
@@ -463,8 +463,8 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
                 if (newTracks[inew]->isClassType(typeid(mixr::models::AirVehicle))) {
                    if (newTracks[inew]->getSensorByType(typeid(mixr::models::Jammer)) == nullptr) {
                       // non-jammers
-                      if (newTracks[inew]->isSide(mixr::models::Player::BLUE)) type = 1;      // friend
-                      else if (newTracks[inew]->isSide(mixr::models::Player::RED)) type = 2; // foe
+                      if (newTracks[inew]->isSide(mixr::models::IPlayer::BLUE)) type = 1;      // friend
+                      else if (newTracks[inew]->isSide(mixr::models::IPlayer::RED)) type = 2; // foe
                       else type = 3; // neutral/commercial
                    }
                 } else if (newTracks[inew]->isClassType(typeid(mixr::models::Missile))) {
@@ -506,12 +506,12 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
 //------------------------------------------------------------------------------
 // Simulation access functions
 //------------------------------------------------------------------------------
-mixr::models::Player* TestDisplay::getOwnship()
+mixr::models::IPlayer* TestDisplay::getOwnship()
 {
-   mixr::models::Player* p{};
+   mixr::models::IPlayer* p{};
    mixr::simulation::Station* sta{getStation()};
    if (sta != nullptr) {
-      p = dynamic_cast<mixr::models::Player*>(sta->getOwnship());
+      p = dynamic_cast<mixr::models::IPlayer*>(sta->getOwnship());
    }
    return p;
 }

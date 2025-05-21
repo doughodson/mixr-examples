@@ -8,7 +8,7 @@
 
 namespace mixr {
 namespace simulation { class ISimulation; class Station; }
-namespace models { class Missile; class Player; }
+namespace models { class Missile; class IPlayer; }
 namespace graphics { class SymbolLoader; }
 namespace xpanel { class DspRadar; class DspRwr; }
 }
@@ -46,7 +46,7 @@ public:
 public:
     TestDisplay();
 
-    mixr::models::Player* getOwnship();
+    mixr::models::IPlayer* getOwnship();
     mixr::simulation::ISimulation* getSimulation();
     mixr::simulation::Station* getStation();
 
@@ -87,7 +87,7 @@ private:
     // RADAR, RWR and SA stuff
     // ---
 
-    std::array<mixr::models::Player*, MAX_TRACKS> tracks{};  // players that we're displaying
+    std::array<mixr::models::IPlayer*, MAX_TRACKS> tracks{}; // players that we're displaying
     std::array<int, MAX_TRACKS> trkIdx{};                    // Index of track symbols
 
     // ---

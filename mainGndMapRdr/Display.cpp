@@ -2,7 +2,7 @@
 #include "Display.hpp"
 #include "RealBeamRadar.hpp"
 
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 #include "mixr/simulation/Station.hpp"
@@ -54,12 +54,12 @@ void Display::deleteData()
 //------------------------------------------------------------------------------
 // Simulation access functions
 //------------------------------------------------------------------------------
-models::Player* Display::getOwnship()
+models::IPlayer* Display::getOwnship()
 {
-    models::Player* p{};
+    models::IPlayer* p{};
     simulation::Station* sta{getStation()};
     if (sta != nullptr) {
-        p = dynamic_cast<models::Player*>(sta->getOwnship());
+        p = dynamic_cast<models::IPlayer*>(sta->getOwnship());
     }
     return p;
 }
@@ -94,7 +94,7 @@ bool Display::setSlotTextureTest(const base::Boolean* const msg)
 
 void Display::drawFunc()
 {
-   const auto own = dynamic_cast<models::Player*>(getOwnship());
+   const auto own = dynamic_cast<models::IPlayer*>(getOwnship());
 
    const base::Pair* pair{};
    if (own != nullptr) pair = own->getSensorByType(typeid(RealBeamRadar));

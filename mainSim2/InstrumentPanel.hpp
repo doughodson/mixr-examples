@@ -5,7 +5,7 @@
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 namespace mixr {
-namespace models { class Player; }
+namespace models { class IPlayer; }
 namespace simulation { class ISimulation; class Station; }
 }
 class DedDisplay;
@@ -28,7 +28,7 @@ class InstrumentPanel final: public mixr::glut::GlutDisplay
 public:
    InstrumentPanel();
 
-   mixr::models::Player* getOwnship();
+   mixr::models::IPlayer* getOwnship();
    mixr::simulation::ISimulation* getSimulation();
    mixr::simulation::Station* getStation();
 

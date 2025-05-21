@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace base { class Boolean; }
-namespace models { class Player; }
+namespace models { class IPlayer; }
 namespace simulation { class ISimulation; class Station; }
 }
 
@@ -27,7 +27,7 @@ class Display final: public mixr::glut::GlutDisplay
 public:
    Display();
 
-   mixr::models::Player* getOwnship();
+   mixr::models::IPlayer* getOwnship();
    mixr::simulation::ISimulation* getSimulation();
    mixr::simulation::Station* getStation();
 

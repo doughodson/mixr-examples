@@ -1,7 +1,7 @@
 
 #include "INavRadio.hpp"
 
-#include "mixr/models/player/Player.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/dafif/loaders/AirportLoader.hpp"
 #include "mixr/dafif/loaders/NavaidLoader.hpp"
@@ -98,7 +98,7 @@ bool INavRadio::setPosition()
 {
    bool ok{};
 
-   const mixr::models::Player* p{getOwnship()};
+   const mixr::models::IPlayer* p{getOwnship()};
    if (p != nullptr) {
       latitude = p->getLatitude();
       longitude = p->getLongitude();

@@ -7,7 +7,7 @@
 #include <array>
 
 namespace mixr {
-namespace models { class Player; }
+namespace models { class IPlayer; }
 namespace graphics { class SymbolLoader; }
 }
 class Station;
@@ -33,7 +33,7 @@ private:
     // holds our players
     static const int MAX_PLAYERS{200};
     static const int MAX_READOUTS{20};
-    std::array<mixr::models::Player*, MAX_PLAYERS> player{};  // player pointer
+    std::array<mixr::models::IPlayer*, MAX_PLAYERS> player{}; // player pointer
     std::array<int, MAX_PLAYERS> playerIdx{};                 // index of our symbol for the given player
     mixr::graphics::SymbolLoader* loader{};          // our loader for quick reference
     Station* stn{};                                  // our station (to get the player list quickly)

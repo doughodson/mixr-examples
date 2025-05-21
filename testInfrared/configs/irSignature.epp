@@ -4,15 +4,15 @@ irSignature:
 ( IrSignature
    irShapeSignature:
 #if 0
-   ( IrShape area: (SquareMeters 1.0) )
+   ( IrShapeSignature area: (SquareMeters 1.0) )
 #else
-   ( IrBox
+   ( IrBoxSignature
       x: (Meters 1.0)
       y: (Meters 1.0)
       z: (Meters 1.0)
    )
 #endif
- 
+
    baseHeatSignature: 320.0
    emissivity: 0.75
    effectiveArea: (SquareMeters 1.0)

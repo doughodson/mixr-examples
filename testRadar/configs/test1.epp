@@ -1,5 +1,5 @@
 // ---
-// Simple radar test; ownship vs. 3 targets 
+// Simple radar test; ownship vs. 3 targets
 //
 //   1) Ownship has a radar, a track manager, and four A/A missiles,
 //      and is looking at three target players.  You need to select
@@ -33,10 +33,10 @@
    // ---
    ownship: ownship
    simulation: ( WorldModel
-   
+
      latitude:  REF_LAT
      longitude: REF_LON
-   
+
       //gamingAreaRange: ( KiloMeters 200.0 )
 
       //simulationTime: ( Seconds ( + ( * 13 3600 ) ( * 29 60 )  0 ) )
@@ -55,7 +55,7 @@
             id: 1
             side: blue
             type: "F-16"
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
 
             initLatitude:  ( Degrees  REF_LAT )
             initLongitude: ( Degrees  REF_LON )
@@ -70,7 +70,7 @@
                antennas: ( Gimbal
                   components: {
 
-                     rwr: ( Antenna 
+                     rwr: ( Antenna
                         scanMode: manual
                         polarization: horizontal
                         gain: ( dB 12 )
@@ -109,15 +109,15 @@
                         powerPeak:  ( KiloWatts 500.0 )
                         frequency:  ( GigaHertz 3.0 )
                         bandwidth:  ( GigaHertz 2.0 )
-                        PRF:        ( Hertz 500.0 ) 
+                        PRF:        ( Hertz 500.0 )
                         pulseWidth: ( MilliSeconds 0.01 )
                         threshold:  ( dB 0.0 )
                         igain: ( dB 0 )
                         ranges:     [ 10 20 40 80 160 ]
                         initRangeIdx: 2
                      )
-                     ( Rwr 
-                        antennaName: rwr  
+                     ( Rwr
+                        antennaName: rwr
                         threshold:  ( dB 0.0 )
                         frequency:  ( GigaHertz 3.0 )
                         bandwidth:  ( GigaHertz 2.0 )
@@ -219,20 +219,20 @@
             side: red
             type: "F-16"
             id: 1000
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             initPosition: [ 10000 15000 -10000 ]
             initHeading: ( Degrees 220 )
             initVelocity: 80
             positionFreeze: PFRZ
             killRemoval: true
             components: {
-               rwr: ( Antenna 
+               rwr: ( Antenna
                   scanMode: manual
                   polarization: horizontal
                   gain: ( dB 12 )
                )
-               ( Rwr 
-                  antennaName: rwr  
+               ( Rwr
+                  antennaName: rwr
                   threshold:  ( dB 0.0 )
                   frequency:  ( GigaHertz 3.0 )
                   bandwidth:  ( GigaHertz 2.0 )
@@ -246,20 +246,20 @@
             type: "F-16"
             id: 1001
             camouflageType: 1
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             initPosition: [ 12000 16000 -10000 ]
             initHeading: ( Degrees 220 )
             initVelocity: 80
             positionFreeze: PFRZ
             killRemoval: true
             components: {
-               rwr: ( Antenna 
+               rwr: ( Antenna
                   scanMode: manual
                   polarization: horizontal
                   gain: ( dB 12 )
                )
-               ( Rwr 
-                  antennaName: rwr  
+               ( Rwr
+                  antennaName: rwr
                   threshold:  ( dB 0.0 )
                   frequency:  ( GigaHertz 3.0 )
                   bandwidth:  ( GigaHertz 2.0 )
@@ -273,20 +273,20 @@
             type: "F-16"
             id: 1002
             camouflageType: 2
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             initPosition: [ 12000 14000 -10000 ]
             initHeading: ( Degrees 45 )
             initVelocity: 80
             positionFreeze: PFRZ
             killRemoval: true
             components: {
-               rwr: ( Antenna 
+               rwr: ( Antenna
                   scanMode: manual
                   polarization: horizontal
                   gain: ( dB 12 )
                )
-               ( Rwr 
-                  antennaName: rwr  
+               ( Rwr
+                  antennaName: rwr
                   threshold:  ( dB 0.0 )
                   frequency:  ( GigaHertz 3.0 )
                   bandwidth:  ( GigaHertz 2.0 )

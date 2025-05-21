@@ -3,7 +3,7 @@ p01:
     id: 1
     side: blue
     type: "F-16"
-    signature: ( SigSphere radius: 2.0 )
+    signature: ( RfSphereSignature radius: 2.0 )
 
     initAlt: ( Meters 5000 )
     initHeading: ( Degrees 90.0 )      // initial heading

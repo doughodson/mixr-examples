@@ -78,7 +78,7 @@
 
       enableTimingStats: true
       printTimingStats: true
-      
+
       players: {
 
          p00:
@@ -86,7 +86,7 @@
             side: red
             type: "F-16"
             id: 1000
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             //initPosition: [ 10000 -6000 -10000 ]
             //initPosition: [ 0 0 -10000 ]
              initXPos:  ( Meters  10000 )
@@ -96,7 +96,7 @@
             initHeading: ( Degrees 0 )
             initVelocity: 250
             positionFreeze: PFRZ
-            
+
 #if 0 /* used to checkout the player's "test angular rate slots" */
             initRoll: ( Degrees 0.0 )
             initPitch: ( Degrees 0.0 )
@@ -124,7 +124,7 @@
                            useWorldCoordinates: USE_WORLD
 
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 10 )
                            maxPlayersOfInterest: 0
@@ -138,21 +138,21 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
                         )
                      }
                   )
-            }                
+            }
          )
 
 #if 0
@@ -161,13 +161,13 @@
             side: red
             type: "F-16"
             id: 1001
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             initPosition: [ 10200 -4800 -10000 ]
             initHeading: ( Degrees 100 )
             initVelocity: 250
             positionFreeze: PFRZ
             components: {
-               rwr: ( Antenna 
+               rwr: ( Antenna
                   scanMode: manual
                   polarization: horizontal
                   gain: ( dB 1 )
@@ -176,7 +176,7 @@
                   antennaName: rwr
                   threshold:  ( dB 75.0 )
                )
-            }                
+            }
          )
 #endif
 

@@ -1,5 +1,5 @@
 
-ownship: ownship    
+ownship: ownship
 
 simulation:
 ( WorldModel
@@ -16,7 +16,7 @@ simulation:
             id: 1
             side: blue
             type: "F-16"
-            signature: ( SigSphere radius: 1.0 )
+            signature: ( RfSphereSignature radius: 1.0 )
 
             initLatitude:  ( Latitude  direction: north degrees:  38 minutes: 0.0 )
             initLongitude: ( Longitude direction: west  degrees: 114 minutes: 0.0 )
@@ -43,12 +43,12 @@ simulation:
                     antennaName: radar
                     powerPeak:  ( KiloWatts 500.0 )
                     frequency:  ( GigaHertz 3.0 )
-                    PRF:        ( Hertz 500.0 ) 
+                    PRF:        ( Hertz 500.0 )
                     pulseWidth: ( MilliSeconds 0.01 )
                     threshold:  ( dB 2.0 )
                     ranges:     [ 60 120 ]
                     initRangeIdx: 1
-    
+
                     interpolate: true       // True to interpolate between elevation posts, else use nearest
 
                 )

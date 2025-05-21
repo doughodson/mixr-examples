@@ -3,7 +3,7 @@
 //
 //    Each player with a RADAR and a RWR (plus one red player with an
 //    optional noise jammer), and each player's radar will process
-//    all other players as targets (simple n-squared problem). 
+//    all other players as targets (simple n-squared problem).
 //
 //    Blue has 6 rows of 8 (48 players) and Red has 6 rows of
 //    8 players (48 players), or 96 total players.  To show the doppler
@@ -52,11 +52,11 @@
             // ---
             // Blue row #1
             // ---
-            
+
             p011: ( Aircraft
                 id: 1011
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0     0 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -78,7 +78,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -91,14 +91,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -111,7 +111,7 @@
             p012: ( Aircraft
                 id: 1012
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  2000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -133,7 +133,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -146,14 +146,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -166,7 +166,7 @@
             p013: ( Aircraft
                 id: 1013
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  4000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -188,7 +188,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -201,14 +201,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -221,7 +221,7 @@
             p014: ( Aircraft
                 id: 1014
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  6000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -243,7 +243,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -256,14 +256,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -276,7 +276,7 @@
             p015: ( Aircraft
                 id: 1015
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  8000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -298,7 +298,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -311,14 +311,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -331,7 +331,7 @@
             p016: ( Aircraft
                 id: 1016
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 10000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -353,7 +353,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -366,14 +366,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -386,7 +386,7 @@
             p017: ( Aircraft
                 id: 1017
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 12000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -408,7 +408,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -421,14 +421,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -441,7 +441,7 @@
             p018: ( Aircraft
                 id: 1018
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 14000 ) )
                 initYPos:  ( Meters ( + -15000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -463,7 +463,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -476,14 +476,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -496,11 +496,11 @@
             // ---
             // Blue row #2
             // ---
-            
+
             p021: ( Aircraft
                 id: 1021
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0     0 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -522,7 +522,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -535,14 +535,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -555,7 +555,7 @@
             p022: ( Aircraft
                 id: 1022
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  2000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -577,7 +577,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -590,14 +590,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -610,7 +610,7 @@
             p023: ( Aircraft
                 id: 1023
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  4000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -632,7 +632,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -645,14 +645,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -665,7 +665,7 @@
             p024: ( Aircraft
                 id: 1024
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  6000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -687,7 +687,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -700,14 +700,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -720,7 +720,7 @@
             p025: ( Aircraft
                 id: 1025
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  8000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -742,7 +742,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -755,14 +755,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -775,7 +775,7 @@
             p026: ( Aircraft
                 id: 1026
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 10000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -797,7 +797,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -810,14 +810,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -830,7 +830,7 @@
             p027: ( Aircraft
                 id: 1027
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 12000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -852,7 +852,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -865,14 +865,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -885,7 +885,7 @@
             p028: ( Aircraft
                 id: 1028
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 14000 ) )
                 initYPos:  ( Meters ( + -15000  2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -907,7 +907,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -920,14 +920,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -940,11 +940,11 @@
             // ---
             // Blue row #3
             // ---
-            
+
             p031: ( Aircraft
                 id: 1031
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0     0 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -966,7 +966,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -979,14 +979,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -999,7 +999,7 @@
             p032: ( Aircraft
                 id: 1032
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  2000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1021,7 +1021,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1034,14 +1034,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1054,7 +1054,7 @@
             p033: ( Aircraft
                 id: 1033
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  4000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1076,7 +1076,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1089,14 +1089,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1109,7 +1109,7 @@
             p034: ( Aircraft
                 id: 1034
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  6000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1131,7 +1131,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1144,14 +1144,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1164,7 +1164,7 @@
             p035: ( Aircraft
                 id: 1035
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  8000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1186,7 +1186,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1199,14 +1199,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1219,7 +1219,7 @@
             p036: ( Aircraft
                 id: 1036
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 10000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1241,7 +1241,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1254,14 +1254,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1269,12 +1269,12 @@
                      }
                   )
                }
-            )            
+            )
 
             p037: ( Aircraft
                 id: 1037
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 12000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1296,7 +1296,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1309,14 +1309,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1325,11 +1325,11 @@
                   )
                }
             )
-     
+
             p038: ( Aircraft
                 id: 1038
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 14000 ) )
                 initYPos:  ( Meters ( + -15000  4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1351,7 +1351,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1364,14 +1364,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1384,11 +1384,11 @@
             // ---
             // Blue row #4
             // ---
-            
+
             p041: ( Aircraft
                 id: 1041
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0     0 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1410,7 +1410,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1423,14 +1423,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1443,7 +1443,7 @@
             p042: ( Aircraft
                 id: 1042
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  2000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1465,7 +1465,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1478,14 +1478,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1498,7 +1498,7 @@
             p043: ( Aircraft
                 id: 1043
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  4000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1520,7 +1520,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1533,14 +1533,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1553,7 +1553,7 @@
             p044: ( Aircraft
                 id: 1044
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  6000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1575,7 +1575,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1588,14 +1588,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1608,7 +1608,7 @@
             p045: ( Aircraft
                 id: 1045
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  8000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1630,7 +1630,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1643,14 +1643,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1663,7 +1663,7 @@
             p046: ( Aircraft
                 id: 1046
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 10000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1685,7 +1685,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1698,14 +1698,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1718,7 +1718,7 @@
             p047: ( Aircraft
                 id: 1047
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 12000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1740,7 +1740,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1753,14 +1753,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1773,7 +1773,7 @@
             p048: ( Aircraft
                 id: 1048
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 14000 ) )
                 initYPos:  ( Meters ( + -15000  -2000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1795,7 +1795,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1808,14 +1808,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1828,11 +1828,11 @@
             // ---
             // Blue row #5
             // ---
-            
+
             p051: ( Aircraft
                 id: 1051
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0     0 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1854,7 +1854,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1867,14 +1867,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1887,7 +1887,7 @@
             p052: ( Aircraft
                 id: 1052
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  2000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1909,7 +1909,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1922,14 +1922,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1942,7 +1942,7 @@
             p053: ( Aircraft
                 id: 1053
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  4000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -1964,7 +1964,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -1977,14 +1977,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -1997,7 +1997,7 @@
             p054: ( Aircraft
                 id: 1054
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  6000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2019,7 +2019,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2032,14 +2032,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2052,7 +2052,7 @@
             p055: ( Aircraft
                 id: 1055
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  8000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2074,7 +2074,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2087,14 +2087,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2107,7 +2107,7 @@
             p056: ( Aircraft
                 id: 1056
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 10000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2129,7 +2129,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2142,14 +2142,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2162,7 +2162,7 @@
             p057: ( Aircraft
                 id: 1057
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 12000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2184,7 +2184,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2197,14 +2197,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2217,7 +2217,7 @@
             p058: ( Aircraft
                 id: 1058
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 14000 ) )
                 initYPos:  ( Meters ( + -15000  -4000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2239,7 +2239,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2252,14 +2252,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2272,11 +2272,11 @@
             // ---
             // Blue row #6
             // ---
-            
+
             p061: ( Aircraft
                 id: 1061
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0     0 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2298,7 +2298,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2311,14 +2311,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2331,7 +2331,7 @@
             p062: ( Aircraft
                 id: 1062
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  2000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2353,7 +2353,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2366,14 +2366,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2386,7 +2386,7 @@
             p063: ( Aircraft
                 id: 1063
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  4000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2408,7 +2408,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2421,14 +2421,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2441,7 +2441,7 @@
             p064: ( Aircraft
                 id: 1064
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  6000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2463,7 +2463,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2476,14 +2476,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2496,7 +2496,7 @@
             p065: ( Aircraft
                 id: 1065
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0  8000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2518,7 +2518,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2531,14 +2531,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2551,7 +2551,7 @@
             p066: ( Aircraft
                 id: 1066
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 10000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2573,7 +2573,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2586,14 +2586,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2601,12 +2601,12 @@
                      }
                   )
                }
-            )            
+            )
 
             p067: ( Aircraft
                 id: 1067
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 12000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2628,7 +2628,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2641,14 +2641,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2657,11 +2657,11 @@
                   )
                }
             )
-     
+
             p068: ( Aircraft
                 id: 1068
                 side: blue
-                signature: ( SigSphere radius: 1.0 )
+                signature: ( RfSphereSignature radius: 1.0 )
                 initXPos:  ( Meters ( +      0 14000 ) )
                 initYPos:  ( Meters ( + -15000  -6000 ) )
                 initAlt:   ( Meters  10000 )
@@ -2683,7 +2683,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2696,14 +2696,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2712,15 +2712,15 @@
                   )
                }
             )
-       
+
             // ---
             // Red row #1
             // ---
-            
+
             p111: ( Aircraft
                 id: 1111
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000     0 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -2742,7 +2742,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2755,14 +2755,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2775,7 +2775,7 @@
             p112: ( Aircraft
                 id: 1112
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  2000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -2796,7 +2796,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2809,14 +2809,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2829,7 +2829,7 @@
             p113: ( Aircraft
                 id: 1113
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  4000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -2850,7 +2850,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2863,14 +2863,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2883,7 +2883,7 @@
             p114: ( Aircraft
                 id: 1114
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  6000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -2904,7 +2904,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2917,14 +2917,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 3.0 )
@@ -2937,7 +2937,7 @@
             p115: ( Aircraft
                 id: 1115
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  8000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -2958,7 +2958,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -2971,14 +2971,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -2991,7 +2991,7 @@
             p116: ( Aircraft
                 id: 1116
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 10000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3012,7 +3012,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3025,14 +3025,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3045,7 +3045,7 @@
             p117: ( Aircraft
                 id: 1117
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 12000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3066,7 +3066,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3079,14 +3079,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3099,7 +3099,7 @@
             p118: ( Aircraft
                 id: 1118
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 14000 ) )
                 initYPos:  ( Meters ( +      0     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3120,7 +3120,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3133,14 +3133,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3150,15 +3150,15 @@
                }
             )
 
-            
+
             // ---
             // Red row #2
             // ---
-            
+
             p121: ( Aircraft
                 id: 1121
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000     0 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3179,7 +3179,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3192,14 +3192,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3212,7 +3212,7 @@
             p122: ( Aircraft
                 id: 1122
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  2000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3233,7 +3233,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3246,14 +3246,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3266,7 +3266,7 @@
             p123: ( Aircraft
                 id: 1123
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  4000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3287,7 +3287,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3300,14 +3300,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3320,7 +3320,7 @@
             p124: ( Aircraft
                 id: 1124
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  6000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3341,7 +3341,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3354,14 +3354,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3374,7 +3374,7 @@
             p125: ( Aircraft
                 id: 1125
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  8000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3395,7 +3395,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3408,14 +3408,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3428,7 +3428,7 @@
             p126: ( Aircraft
                 id: 1126
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 10000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3449,7 +3449,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3462,14 +3462,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3482,7 +3482,7 @@
             p127: ( Aircraft
                 id: 1127
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 12000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3503,7 +3503,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3516,14 +3516,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3536,7 +3536,7 @@
             p128: ( Aircraft
                 id: 1128
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 14000 ) )
                 initYPos:  ( Meters ( +   2000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3557,7 +3557,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3570,14 +3570,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3586,16 +3586,16 @@
                   )
                }
             )
-            
-                        
+
+
             // ---
             // Red row #3
             // ---
-            
+
             p131: ( Aircraft
                 id: 1131
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000     0 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3616,7 +3616,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3629,14 +3629,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3649,7 +3649,7 @@
             p132:  ( Aircraft
                 id: 1132
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  2000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3670,7 +3670,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3683,14 +3683,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3703,7 +3703,7 @@
             p133: ( Aircraft
                 id: 1133
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  4000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3724,7 +3724,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3737,14 +3737,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3757,7 +3757,7 @@
             p134: ( Aircraft
                 id: 1134
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  6000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3778,7 +3778,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3791,14 +3791,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3811,7 +3811,7 @@
             p135: ( Aircraft
                 id: 1135
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  8000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3832,7 +3832,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3854,14 +3854,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3883,7 +3883,7 @@
             p136: ( Aircraft
                 id: 1136
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 10000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3904,7 +3904,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3917,14 +3917,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3937,7 +3937,7 @@
             p137:  ( Aircraft
                 id: 1137
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 12000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -3958,7 +3958,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -3971,14 +3971,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -3991,7 +3991,7 @@
             p138: ( Aircraft
                 id: 1138
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 14000 ) )
                 initYPos:  ( Meters ( +   4000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4012,7 +4012,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4025,14 +4025,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4041,15 +4041,15 @@
                   )
                }
             )
-            
+
             // ---
             // Red row #4
             // ---
-            
+
             p141: ( Aircraft
                 id: 1141
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000     0 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4071,7 +4071,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4084,14 +4084,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4104,7 +4104,7 @@
             p142: ( Aircraft
                 id: 1142
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  2000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4125,7 +4125,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4138,14 +4138,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4158,7 +4158,7 @@
             p143: ( Aircraft
                 id: 1143
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  4000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4179,7 +4179,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4192,14 +4192,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4212,7 +4212,7 @@
             p144: ( Aircraft
                 id: 1144
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  6000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4233,7 +4233,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4246,14 +4246,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 3.0 )
@@ -4266,7 +4266,7 @@
             p145: ( Aircraft
                 id: 1145
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  8000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4287,7 +4287,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4300,14 +4300,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4320,7 +4320,7 @@
             p146: ( Aircraft
                 id: 1146
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 10000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4341,7 +4341,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4354,14 +4354,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4374,7 +4374,7 @@
             p147: ( Aircraft
                 id: 1147
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 12000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4395,7 +4395,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4408,14 +4408,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4428,7 +4428,7 @@
             p148: ( Aircraft
                 id: 1148
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 14000 ) )
                 initYPos:  ( Meters ( +   6000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4449,7 +4449,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4462,14 +4462,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4479,15 +4479,15 @@
                }
             )
 
-            
+
             // ---
             // Red row #5
             // ---
-            
+
             p151: ( Aircraft
                 id: 1151
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000     0 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4508,7 +4508,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4521,14 +4521,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4541,7 +4541,7 @@
             p152: ( Aircraft
                 id: 1152
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  2000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4562,7 +4562,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4575,14 +4575,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4595,7 +4595,7 @@
             p153: ( Aircraft
                 id: 1153
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  4000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4616,7 +4616,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4629,14 +4629,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4649,7 +4649,7 @@
             p154: ( Aircraft
                 id: 1154
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  6000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4670,7 +4670,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4683,14 +4683,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4703,7 +4703,7 @@
             p155: ( Aircraft
                 id: 1155
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  8000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4724,7 +4724,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4737,14 +4737,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4757,7 +4757,7 @@
             p156: ( Aircraft
                 id: 1156
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 10000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4778,7 +4778,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4791,14 +4791,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4811,7 +4811,7 @@
             p157: ( Aircraft
                 id: 1157
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 12000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4832,7 +4832,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4845,14 +4845,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4865,7 +4865,7 @@
             p158: ( Aircraft
                 id: 1158
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 14000 ) )
                 initYPos:  ( Meters ( +   8000     0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4886,7 +4886,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4899,14 +4899,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4915,16 +4915,16 @@
                   )
                }
             )
-            
-                        
+
+
             // ---
             // Red row #6
             // ---
-            
+
             p161: ( Aircraft
                 id: 1161
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000     0 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4945,7 +4945,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -4958,14 +4958,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -4978,7 +4978,7 @@
             p162:  ( Aircraft
                 id: 1162
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  2000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -4999,7 +4999,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5012,14 +5012,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -5032,7 +5032,7 @@
             p163: ( Aircraft
                 id: 1163
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  4000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -5053,7 +5053,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5066,14 +5066,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -5086,7 +5086,7 @@
             p164: ( Aircraft
                 id: 1164
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  6000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -5107,7 +5107,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5120,14 +5120,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -5140,7 +5140,7 @@
             p165: ( Aircraft
                 id: 1165
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000  8000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -5161,7 +5161,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5183,14 +5183,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -5212,7 +5212,7 @@
             p166: ( Aircraft
                 id: 1166
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 10000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -5233,7 +5233,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5246,14 +5246,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -5266,7 +5266,7 @@
             p167:  ( Aircraft
                 id: 1167
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 12000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -5287,7 +5287,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5300,14 +5300,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )
@@ -5320,7 +5320,7 @@
             p168: ( Aircraft
                 id: 1168
                 side: red
-                signature: ( SigConstant rcs: 1.0 )
+                signature: ( RfConstantSignature rcs: 1.0 )
                 initXPos:  ( Meters ( +  16000 14000 ) )
                 initYPos:  ( Meters ( +  10000      0 ) )
                 initAlt:   ( Meters  10000 )
@@ -5341,7 +5341,7 @@
                            searchVolume: [ 1.0472 0.05 ]
                            numBars: NUM_BARS
                         )
-                        rwr: ( Antenna 
+                        rwr: ( Antenna
                            polarization: horizontal
                            gain: ( dB 1 )
                         )
@@ -5354,14 +5354,14 @@
                            powerPeak:  ( KiloWatts 500.0 )
                            frequency:  ( GigaHertz 3.0 )
                            bandwidth:  ( GigaHertz 0.2 )
-                           PRF:        ( Hertz 500.0 ) 
+                           PRF:        ( Hertz 500.0 )
                            pulseWidth: ( MilliSeconds 0.01 )
                            threshold:  ( dB 2.0 )
                            ranges:     [ 10 20 40 80 160 ]
                            initRangeIdx: 2
                         )
                         ( Rwr
-                            antennaName: rwr 
+                            antennaName: rwr
                             threshold:  ( dB 0.0 )
                             frequency:  ( GigaHertz 3.0 )
                             bandwidth:  ( GigaHertz 2.0 )

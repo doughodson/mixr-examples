@@ -85,7 +85,7 @@ simulation: ( WorldModel
           id: 1
           side: blue
           type: "F-15"
-          signature: ( SigSphere radius: 2.0 )
+          signature: ( RfSphereSignature radius: 2.0 )
 
           initLatitude:  ( Latitude  direction: north degrees: 39 minutes: 54.0 )
           initLongitude: ( Longitude direction: west  degrees: 84 minutes: 13.5 )
@@ -279,7 +279,7 @@ simulation: ( WorldModel
           side: red
           type: "F-16"
           id: 1000
-          signature: ( SigSphere radius: 2.0 )
+          signature: ( RfSphereSignature radius: 2.0 )
           initLatitude:  ( Latitude  direction: north degrees: 40 minutes:  5.0 )
           initLongitude: ( Longitude direction: west  degrees: 84 minutes: 13.5 )
           initAlt: ( Feet 15000 )
@@ -397,7 +397,7 @@ simulation: ( WorldModel
           side: red
           type: "F-16"
           id: 1001
-          signature: ( SigSphere radius: 2.0 )
+          signature: ( RfSphereSignature radius: 2.0 )
           initLatitude:  ( Latitude  direction: north degrees: 40 minutes:  4.5 )
           initLongitude: ( Longitude direction: west  degrees: 84 minutes: 13.0 )
           initAlt: ( Feet 15000 )

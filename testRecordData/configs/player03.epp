@@ -4,7 +4,7 @@ duck12:
     id: 1012
     type: "F-16"
     side: red
-    signature: ( SigSphere radius: 2.0 )
+    signature: ( RfSphereSignature radius: 2.0 )
 
     initLatitude:  ( Latitude  direction: north degrees: 36  minutes: 54.0 )
     initLongitude: ( Longitude direction: west  degrees: 116 minutes:  1.0 )
@@ -14,7 +14,7 @@ duck12:
     initVelocity: 300
     positionFreeze: false
     killRemoval: true
- 
+
     dataLogTime: ( Seconds 0.5 )      // test data recorder at 2hz
 
     components: {
@@ -23,14 +23,14 @@ duck12:
           rootDir: MIXR_DATA_JSBSIM_PATH
           model: "f16"
       )
-     
+
       pilot: ( Autopilot
          navMode: false
          altitudeHoldMode: false
          headingHoldMode: false
          velocityHoldMode: false
       )
-    
+
       antennas: ( Gimbal
          components: {
             radar: ( Antenna
@@ -51,14 +51,14 @@ duck12:
                   localPlayersOfInterestOnly: false
                   useWorldCoordinates: false
             )
-            rwr: ( Antenna 
+            rwr: ( Antenna
                   scanMode: manual
                   polarization: horizontal
                   gain: ( dB 12 )
             )
          }
       )
-      
+
       sensors: ( SensorMgr
          components: {
             ( Tws
@@ -67,21 +67,21 @@ duck12:
                powerPeak:  ( KiloWatts 500.0 )
                frequency:  ( GigaHertz 3.0 )
                bandwidth:  ( GigaHertz 2.0 )
-               PRF:        ( Hertz 500.0 ) 
+               PRF:        ( Hertz 500.0 )
                pulseWidth: ( MilliSeconds 0.01 )
                threshold:  ( dB 0.0 )
                ranges:     [ 10 20 40 80 160 ]
                initRangeIdx: 2
             )
-            ( Rwr 
-                antennaName: rwr  
+            ( Rwr
+                antennaName: rwr
                 threshold:  ( dB 0.0 )
                 frequency:  ( GigaHertz 3.0 )
                 bandwidth:  ( GigaHertz 2.0 )
             )
          }
       )
-      
+
       obc: ( OnboardComputer
          components: {
             twsTrkMgr: ( AirTrkMgr
@@ -162,6 +162,6 @@ duck12:
                )
             }
         )
-        
+
     }
 )

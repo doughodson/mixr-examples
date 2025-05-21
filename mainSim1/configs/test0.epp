@@ -21,14 +21,14 @@
    // Simulation scenario
    ownship: xper
    simulation: ( WorldModel
-                  latitude:   37.0  
+                  latitude:   37.0
                   longitude: -116.0
 
                   players: {
                      xper: ( Aircraft
                         id: 101
                         type: "F-16A"
-                        signature: ( SigSphere radius: 1.0 )
+                        signature: ( RfSphereSignature radius: 1.0 )
                         initXPos: ( NauticalMiles 0 )
                         initYPos: ( NauticalMiles 0 )
                         initAlt: ( Feet 20000 )
@@ -36,7 +36,7 @@
                         initVelocity: 250
                         side: blue
                      )
-              
+
                   } // players
 
                ) // simulation

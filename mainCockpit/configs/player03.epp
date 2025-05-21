@@ -4,7 +4,7 @@ duck12:
     id: 1012
     type: "F-16"
     side: red
-    signature: ( SigSphere radius: 2.0 )
+    signature: ( RfSphereSignature radius: 2.0 )
 
     initXPos: ( Meters -1000 )
     initYPos: ( Meters 7000 )

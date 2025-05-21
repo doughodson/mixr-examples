@@ -23,7 +23,7 @@ simulation: ( WorldModel
          id: 1
          side: blue
          type: "F-16"
-         signature: ( SigSphere radius: 2.0 )
+         signature: ( RfSphereSignature radius: 2.0 )
 
          // Starting position (relative to ref point)
          initXPos: ( NauticalMiles 0 )

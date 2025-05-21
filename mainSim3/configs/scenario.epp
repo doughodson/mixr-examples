@@ -1,8 +1,8 @@
 // this is our simulation, which runs our scenario
 simulation:
-( WorldModel 
+( WorldModel
     // just random lat / lon to start our simulation at.
-    latitude: 37.0 
+    latitude: 37.0
     longitude: -116.0
     players: {
         // ownship
@@ -11,7 +11,7 @@ simulation:
             id: 11
             side: blue
             type: "F-16C"
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             initXPos: ( NauticalMiles 0.25 )
             initYPos: ( NauticalMiles 0 )
             initAlt: ( Feet 5000 )
@@ -23,13 +23,13 @@ simulation:
                 ( Autopilot )
             }
          )
-         
+
          player2:
         ( Aircraft
             id: 12
             side: red
             type: "F-16C"
-            signature: ( SigSphere radius: 2.0 )
+            signature: ( RfSphereSignature radius: 2.0 )
             initXPos: ( Meters 15000 )
             initYPos: ( Meters 0 )
             initAlt: ( Meters 10000 )

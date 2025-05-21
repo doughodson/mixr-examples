@@ -9,7 +9,7 @@ p01: ( Aircraft
    id: 1
    side: blue
    type: "F-15"
-   signature: ( SigSphere radius: 2.0 )
+   signature: ( RfSphereSignature radius: 2.0 )
 
    initLatitude:  ( Latitude  direction: north degrees: 39 minutes: 54.0 )
    initLongitude: ( Longitude direction: west  degrees: 84 minutes: 13.5 )
@@ -56,7 +56,7 @@ p01: ( Aircraft
                localPlayersOfInterestOnly: false
                useWorldCoordinates: false
             )
-            rwr: ( Antenna 
+            rwr: ( Antenna
                scanMode: manual
                polarization: horizontal
                gain: ( dB 12 )
@@ -80,15 +80,15 @@ p01: ( Aircraft
                powerPeak:  ( KiloWatts 500.0 )
                frequency:  ( GigaHertz 3.0 )
                bandwidth:  ( GigaHertz 2.0 )
-               PRF:        ( Hertz 500.0 ) 
+               PRF:        ( Hertz 500.0 )
                pulseWidth: ( MilliSeconds 0.01 )
                threshold:  ( dB 0.0 )
                ranges:     [ 10 20 40 80 160 ]
                initRangeIdx: 2
             )
-            ( Rwr 
+            ( Rwr
                trackManagerName: rwrTrkMgr
-               antennaName: rwr  
+               antennaName: rwr
                threshold:  ( dB 0.0 )
                frequency:  ( GigaHertz 3.0 )
                bandwidth:  ( GigaHertz 2.0 )

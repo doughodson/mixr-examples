@@ -3,7 +3,7 @@
 
 #include "mixr/models/system/Antenna.hpp"
 #include "mixr/models/system/IRadar.hpp"
-#include "mixr/models/Track.hpp"
+#include "mixr/models/track/ITrack.hpp"
 #include "mixr/models/system/trackmanager/ITrackMgr.hpp"
 
 #include "mixr/base/colors/Hsv.hpp"
@@ -50,7 +50,7 @@ void DspRadar::updateData(const double dt)
       // ---
       // Get the track list and convert them to display coordinates
       if (tm != nullptr) {
-         base::safe_ptr<models::Track> trackList[MAX_TRKS];
+         base::safe_ptr<models::ITrack> trackList[MAX_TRKS];
          int n{tm->getTrackList(trackList, MAX_TRKS)};
          for (int i{}; i < n; i++) {
             base::Vec3d pos       = trackList[i]->getPosition();

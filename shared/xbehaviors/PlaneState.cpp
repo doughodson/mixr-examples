@@ -8,7 +8,7 @@
 #include "mixr/models/player/weapon/Missile.hpp"
 #include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/system/trackmanager/RwrTrkMgr.hpp"
-#include "mixr/models/Track.hpp"
+#include "mixr/models/track/ITrack.hpp"
 #include "mixr/models/system/OnboardComputer.hpp"
 #include "mixr/models/system/StoresMgr.hpp"
 
@@ -132,7 +132,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
          const auto radar = static_cast<const models::IRadar*>(sensorPair->object());
          if (radar != nullptr) {
             const models::ITrackMgr* trackManager{radar->getTrackManager()};
-            base::safe_ptr<models::Track> trackList[50];
+            base::safe_ptr<models::ITrack> trackList[50];
             int nTracks{trackManager->getTrackList(trackList, 50)};
 
             for (int trackIndex = nTracks -1; trackIndex >= 0; trackIndex--) {
@@ -168,7 +168,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
       if (oc != nullptr) {
          const models::ITrackMgr* rtm{oc->getTrackManagerByType(typeid(models::RwrTrkMgr))};
          if(rtm !=nullptr) {
-            base::safe_ptr<models::Track> trackList[50];
+            base::safe_ptr<models::ITrack> trackList[50];
             int nTracks{rtm->getTrackList(trackList, 50)};
             int newTracks{};
             for (int trackIndex = 0; trackIndex < nTracks; trackIndex++) {

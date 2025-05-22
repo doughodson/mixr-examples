@@ -1,7 +1,8 @@
 
 #include "TestComputer.hpp"
 
-#include "mixr/models/Track.hpp"
+#include "mixr/models/track/ITrack.hpp"
+#include "mixr/models/track/IrTrack.hpp"
 #include "mixr/models/system/trackmanager/AngleOnlyTrackManager.hpp"
 #include "mixr/models/player/weapon/IWeapon.hpp"
 #include "mixr/models/system/IrSeeker.hpp"
@@ -114,7 +115,7 @@ bool TestComputer::processIr()
 
    // waiting on getnexttarget may mean missing one or two updates
    // because we have to wait for obc::updateShootList which is an updateData task
-   mixr::models::Track* irTrk{getNextTarget()};
+   mixr::models::ITrack* irTrk{getNextTarget()};
    if (irTrk && uncaged) {
       // we have a target and our gimbal must be updated
       double pt_az{irTrk->getPredictedAzimuth()};
@@ -160,7 +161,7 @@ void TestComputer::updateShootList(const bool step)
 
    // First, let's get the active track list
    const unsigned int MAX_TRKS{20};
-   mixr::base::safe_ptr<mixr::models::Track> trackList[MAX_TRKS];
+   mixr::base::safe_ptr<mixr::models::ITrack> trackList[MAX_TRKS];
 
    int n{};
    mixr::models::ITrackMgr* tm{getTrackManagerByType(typeid(mixr::models::AngleOnlyTrackManager))};
@@ -168,7 +169,7 @@ void TestComputer::updateShootList(const bool step)
 
    if (isMessageEnabled(MSG_DEBUG)) {
       for (int i = 0; i < n; i++) {
-         mixr::models::Track* trk{trackList[i]};
+         mixr::models::ITrack* trk{trackList[i]};
          const auto irTrk = dynamic_cast<mixr::models::IrTrack*>(trk);
          std::cout << irTrk->getTarget()->getID() << " avg " << irTrk->getAvgSignal() << " max " << irTrk->getMaxSignal() << std::endl;
       }
@@ -185,7 +186,7 @@ void TestComputer::updateShootList(const bool step)
             //if (trackList[i]->getGroundSpeed() >= 1.0f) {
                if (nNTS >= 0) {
                   // is this one closer?
-                  mixr::models::Track* trk{trackList[i]};
+                  mixr::models::ITrack* trk{trackList[i]};
                   const auto irTrk = dynamic_cast<mixr::models::IrTrack*>(trk);
 
                   trk = trackList[nNTS];

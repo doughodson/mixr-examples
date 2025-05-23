@@ -4,7 +4,7 @@
 
 #include "mixr/models/player/weapon/Aam.hpp"
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/system/StoresMgr.hpp"
+#include "mixr/models/system/IStoresMgr.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 
@@ -83,9 +83,9 @@ bool TestDisplay::onFreezeKey()
 bool TestDisplay::onWpnRelKey()
 {
    if (getOwnship() != nullptr) {
-      mixr::models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+      mixr::models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
       if (sms != nullptr) {
-         sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2A);
+         sms->setWeaponDeliveryMode(mixr::models::IStoresMgr::A2A);
          getOwnship()->event(WPN_REL_EVENT);
       }
    }
@@ -96,9 +96,9 @@ bool TestDisplay::onWpnRelKey()
 bool TestDisplay::onPreRelKey()
 {
     if (getOwnship() != nullptr) {
-       mixr::models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+       mixr::models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
-            sms->setWeaponDeliveryMode(mixr::models::StoresMgr::A2A);
+            sms->setWeaponDeliveryMode(mixr::models::IStoresMgr::A2A);
             mixr::models::IWeapon* wpn{sms->getCurrentWeapon()};
             if (wpn != nullptr) {
                wpn->prerelease();

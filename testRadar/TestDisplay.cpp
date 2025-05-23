@@ -11,7 +11,7 @@
 #include "mixr/models/system/Jammer.hpp"
 #include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/system/Rwr.hpp"
-#include "mixr/models/system/StoresMgr.hpp"
+#include "mixr/models/system/IStoresMgr.hpp"
 #include "mixr/models/sensor/Gmti.hpp"
 #include "mixr/models/sensor/Tws.hpp"
 
@@ -110,7 +110,7 @@ bool TestDisplay::onWpnRelKey()
 bool TestDisplay::onPreRelKey()
 {
     if (getOwnship() != nullptr) {
-       models::StoresMgr* sms = getOwnship()->getStoresManagement();
+       models::IStoresMgr* sms = getOwnship()->getStoresManagement();
         if (sms != nullptr) {
             models::IWeapon* wpn = sms->getCurrentWeapon();
             if (wpn != nullptr) {
@@ -144,9 +144,9 @@ bool TestDisplay::onRtn2SearchKey()
 bool TestDisplay::onAir2AirKey()
 {
     if (getOwnship() != nullptr) {
-       models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+       models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
-            sms->setWeaponDeliveryMode(models::StoresMgr::A2A);
+            sms->setWeaponDeliveryMode(models::IStoresMgr::A2A);
             std::cout << "Set A/A Weapon Mode!" << std::endl;
         }
     }
@@ -157,9 +157,9 @@ bool TestDisplay::onAir2AirKey()
 bool TestDisplay::onAir2GndKey()
 {
     if (getOwnship() != nullptr) {
-        models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+        models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
-            sms->setWeaponDeliveryMode(models::StoresMgr::A2G);
+            sms->setWeaponDeliveryMode(models::IStoresMgr::A2G);
             std::cout << "Set A/G Weapon Mode!" << std::endl;
         }
     }
@@ -175,10 +175,10 @@ bool TestDisplay::onIncRngKey()
            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
            if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
         }
-        models::StoresMgr* sms = getOwnship()->getStoresManagement();
+        models::IStoresMgr* sms = getOwnship()->getStoresManagement();
         if (sms != nullptr) {
             // But could be GMTI ...
-            if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
+            if (sms->isWeaponDeliveryMode(models::IStoresMgr::A2G)) {
                 base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
                 if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
             }
@@ -201,10 +201,10 @@ bool TestDisplay::onDecRngKey()
            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
            if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
         }
-        models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+        models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
             // But could be GMTI
-            if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
+            if (sms->isWeaponDeliveryMode(models::IStoresMgr::A2G)) {
                 base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
                 if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
             }
@@ -243,10 +243,10 @@ void TestDisplay::updateData(const double dt)
            base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
            if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
         }
-        models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+        models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
         if (sms != nullptr) {
             // But could be GMTI ...
-            if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
+            if (sms->isWeaponDeliveryMode(models::IStoresMgr::A2G)) {
                 base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
                 if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
             }
@@ -277,10 +277,10 @@ void TestDisplay::updateData(const double dt)
             base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Tws))};
             if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
          }
-         models::StoresMgr* sms{getOwnship()->getStoresManagement()};
+         models::IStoresMgr* sms{getOwnship()->getStoresManagement()};
          if (sms != nullptr) {
                // But could be GMTI ...
-               if (sms->isWeaponDeliveryMode(models::StoresMgr::A2G)) {
+               if (sms->isWeaponDeliveryMode(models::IStoresMgr::A2G)) {
                   base::Pair* pair{getOwnship()->getSensorByType(typeid(models::Gmti))};
                   if (pair != nullptr) rdr = static_cast<models::IRadar*>(pair->object());
                }

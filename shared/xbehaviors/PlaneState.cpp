@@ -10,7 +10,7 @@
 #include "mixr/models/system/trackmanager/RwrTrkMgr.hpp"
 #include "mixr/models/track/ITrack.hpp"
 #include "mixr/models/system/OnboardComputer.hpp"
-#include "mixr/models/system/StoresMgr.hpp"
+#include "mixr/models/system/IStoresMgr.hpp"
 
 #include "mixr/models/WorldModel.hpp"
 
@@ -87,7 +87,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
 
       // determine if we have a missile to fire
 #if 1
-      const models::StoresMgr* stores{airVehicle->getStoresManagement()};
+      const models::IStoresMgr* stores{airVehicle->getStoresManagement()};
       if (stores == nullptr || stores->getNextMissile() == nullptr) {
          // either we have no SMS, or we have no more missile
          setMissileFired(true);
@@ -112,7 +112,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
 #else
       // this state class has no way to determine whether we've fired a missile other than checking to see if sms is out of missiles to fire.
       // which means, it will fire all its missiles at first target.
-      const simulation::StoresMgr* stores{airVehicle->getStoresManagement()};
+      const simulation::IStoresMgr* stores{airVehicle->getStoresManagement()};
       if (stores != nullptr) {
          const simulation::Missile* wpn{stores->getNextMissile()};
          if (!wpn)

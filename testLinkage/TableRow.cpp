@@ -63,7 +63,7 @@ void TableRow::position()
       int ln{line()};
       int cp{column()};
 
-      base::List::Item* item{subcomponents->getFirstItem()};
+      base::IList::Item* item{subcomponents->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
          const auto ti = static_cast<graphics::IReadout*>(pair->object());

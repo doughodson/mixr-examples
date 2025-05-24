@@ -4,7 +4,7 @@
 #include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/PairStream.hpp"
-#include "mixr/base/List.hpp"
+#include "mixr/base/IList.hpp"
 #include "mixr/base/String.hpp"
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/colors/IColor.hpp"
@@ -18,7 +18,7 @@ BEGIN_SLOTTABLE(MyObj)
    "colorTable",         // 1: The Color table     <PairStream>
    "textColor",          // 2: Text color          <Identifier>
    "backColor",          // 3: Background color    <Identifier>
-   "vector",             // 4: Vector              <List>
+   "vector",             // 4: Vector              <IList>
    "visible",            // 5: Visibility flag     <Boolean>
    "message",            // 6: The message         <String>
 END_SLOTTABLE(MyObj)
@@ -27,7 +27,7 @@ BEGIN_SLOT_MAP(MyObj)
    ON_SLOT(1, setSlotColorTable, mixr::base::PairStream)
    ON_SLOT(2, setSlotTextColor,  mixr::base::Identifier)
    ON_SLOT(3, setSlotBackColor,  mixr::base::Identifier)
-   ON_SLOT(4, setSlotVector,     mixr::base::List)
+   ON_SLOT(4, setSlotVector,     mixr::base::IList)
    ON_SLOT(5, setSlotVisible,    mixr::base::Boolean)
    ON_SLOT(6, setSlotMessage,    mixr::base::String)
 END_SLOT_MAP()
@@ -107,7 +107,7 @@ const mixr::base::Identifier* MyObj::getBackColor() const
    return backColor;
 }
 
-bool MyObj::setVector(const mixr::base::List* const x)
+bool MyObj::setVector(const mixr::base::IList* const x)
 {
    if (vector != nullptr) vector->unref();
    vector = x;
@@ -115,7 +115,7 @@ bool MyObj::setVector(const mixr::base::List* const x)
    return true;
 }
 
-const mixr::base::List* MyObj::getVector() const
+const mixr::base::IList* MyObj::getVector() const
 {
    return vector;
 }
@@ -171,7 +171,7 @@ bool MyObj::setSlotBackColor(const mixr::base::Identifier* const x)
    return ok;
 }
 
-bool MyObj::setSlotVector(const mixr::base::List* const x)
+bool MyObj::setSlotVector(const mixr::base::IList* const x)
 {
    bool ok{};
    if (x != nullptr) {
@@ -223,7 +223,7 @@ void MyObj::dumpContents() const
    }
 
    // print out vector information
-   const mixr::base::List* vector{getVector()};
+   const mixr::base::IList* vector{getVector()};
    if (vector != nullptr) {
       const int numValues{static_cast<int>(vector->entries())};
       std::unique_ptr<int[]> values(new int[numValues]);

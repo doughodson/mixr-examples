@@ -18,7 +18,7 @@ bool MyPager::onEntry()
 {
    mixr::base::PairStream* components{getComponents()};
    if (components != nullptr) {
-      mixr::base::List::Item* item{components->getFirstItem()};
+      mixr::base::IList::Item* item{components->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto cp = static_cast<mixr::base::IComponent*>(pair->object());

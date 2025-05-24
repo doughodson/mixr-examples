@@ -112,7 +112,7 @@ void SimStation::stepOwnshipPlayer()
       bool found = false;
 
       // Find the next player
-      base::List::Item* item = pl->getFirstItem();
+      base::IList::Item* item = pl->getFirstItem();
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
          if (pair != nullptr) {

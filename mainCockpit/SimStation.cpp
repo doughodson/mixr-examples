@@ -108,7 +108,7 @@ void SimStation::stepOwnshipPlayer()
       bool found = false;
 
       // Find the next player
-      mixr::base::List::Item* item{pl->getFirstItem()};
+      mixr::base::IList::Item* item{pl->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          if (pair != nullptr) {

@@ -121,7 +121,7 @@ void Table::position()
       int cp{column()};
 
       // Position our subcomponents, which are all TableRow objects (see build())
-      base::List::Item* item{subcomponents->getFirstItem()};
+      base::IList::Item* item{subcomponents->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<base::Pair*>(item->getValue());
          const auto row = static_cast<TableRow*>(pair->object());
@@ -155,7 +155,7 @@ void Table::build()
          const auto row = new TableRow();
          row->container(this);
 
-         const base::List::Item* item{columns->getFirstItem()};
+         const base::IList::Item* item{columns->getFirstItem()};
          while (item != nullptr) {
             const auto pair = static_cast<const base::Pair*>(item->getValue());
             const base::IObject* obj{pair->object()};
@@ -223,7 +223,7 @@ bool Table::setSlotColumns(base::PairStream* const msg)
    if (msg != nullptr) {
       // Make a copy of the list and Make sure we have only Field objexts
       const auto newColumns = new base::PairStream();
-      base::List::Item* item{msg->getFirstItem()};
+      base::IList::Item* item{msg->getFirstItem()};
       while (item != nullptr) {
           const auto pair = static_cast<base::Pair*>(item->getValue());
           const auto g = dynamic_cast<graphics::IReadout*>(pair->object());

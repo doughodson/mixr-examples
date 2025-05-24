@@ -5,7 +5,7 @@
 #include "mixr/base/IObject.hpp"
 
 namespace mixr {
-namespace base { class Boolean; class PairStream; class List; class String; class Identifier; }
+namespace base { class Boolean; class PairStream; class IList; class String; class Identifier; }
 }
 
 //------------------------------------------------------------------------------
@@ -27,8 +27,8 @@ public:
    bool setBackColor(const mixr::base::Identifier* const);
    const mixr::base::Identifier* getBackColor() const;
 
-   bool setVector(const mixr::base::List* const);
-   const mixr::base::List* getVector() const;
+   bool setVector(const mixr::base::IList* const);
+   const mixr::base::IList* getVector() const;
 
    bool setVisible(bool);
    bool getVisible() const;
@@ -44,7 +44,7 @@ private:
    const mixr::base::PairStream* colorTable{};
    const mixr::base::Identifier* textColor{};
    const mixr::base::Identifier* backColor{};
-   const mixr::base::List* vector{};
+   const mixr::base::IList* vector{};
    const mixr::base::String* message{};
    bool visible{};
 
@@ -53,7 +53,7 @@ private:
    bool setSlotColorTable(const mixr::base::PairStream* const);
    bool setSlotTextColor(const mixr::base::Identifier* const);
    bool setSlotBackColor(const mixr::base::Identifier* const);
-   bool setSlotVector(const mixr::base::List* const);
+   bool setSlotVector(const mixr::base::IList* const);
    bool setSlotVisible(const mixr::base::Boolean* const);
    bool setSlotMessage(const mixr::base::String* const);
 };

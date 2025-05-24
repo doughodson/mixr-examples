@@ -44,7 +44,7 @@ bool Tester::areAllActiveTimerAlarmsOn() const
 
    if (timers != nullptr) {
 
-      const mixr::base::List::Item* item{timers->getFirstItem()};
+      const mixr::base::IList::Item* item{timers->getFirstItem()};
       while (item != nullptr && on) {
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<const mixr::base::Timer*>(pair->object());
@@ -63,7 +63,7 @@ void Tester::printTimers() const
 {
    if (timers != nullptr) {
 
-      const mixr::base::List::Item* item{timers->getFirstItem()};
+      const mixr::base::IList::Item* item{timers->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<const mixr::base::Timer*>(pair->object());
@@ -95,7 +95,7 @@ void Tester::restartAllTimers()
 {
    if (timers != nullptr) {
 
-      mixr::base::List::Item* item{timers->getFirstItem()};
+      mixr::base::IList::Item* item{timers->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<mixr::base::Timer*>(pair->object());
@@ -110,7 +110,7 @@ void Tester::reset()
    BaseClass::reset();
 
    if (timers != nullptr) {
-      mixr::base::List::Item* item{timers->getFirstItem()};
+      mixr::base::IList::Item* item{timers->getFirstItem()};
       while (item != nullptr) {
          const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
          const auto timer = static_cast<mixr::base::Timer*>(pair->object());
@@ -133,7 +133,7 @@ bool Tester::setSlotTimers(const mixr::base::PairStream* const msg)
       const auto newList = new mixr::base::PairStream();
 
       unsigned int n{};
-      const mixr::base::List::Item* item{msg->getFirstItem()};
+      const mixr::base::IList::Item* item{msg->getFirstItem()};
       while (item != nullptr) {
          n++;
          const auto pair = static_cast<const mixr::base::Pair*>(item->getValue());

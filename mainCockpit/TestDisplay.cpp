@@ -398,7 +398,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
         mixr::base::PairStream* plist{sim->getPlayers()};
 
         // search for air vehicles or missiles within range
-        mixr::base::List::Item* item{plist->getFirstItem()};
+        mixr::base::IList::Item* item{plist->getFirstItem()};
         while (item != nullptr && nNewTracks < maxTracks) {
 
             const auto pair = static_cast<mixr::base::Pair*>(item->getValue());

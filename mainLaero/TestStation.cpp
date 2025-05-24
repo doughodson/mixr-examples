@@ -8,7 +8,7 @@
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
@@ -48,7 +48,7 @@ void TestStation::deleteData()
 void TestStation::updateTC(const double dt)
 {
    // manage the timers
-   mixr::base::Timer::updateTimers(dt);
+   mixr::base::ITimer::updateTimers(dt);
    mixr::graphics::Graphic::flashTimer(dt);
 
    if (glutDisplay != nullptr) glutDisplay->updateTC(dt);

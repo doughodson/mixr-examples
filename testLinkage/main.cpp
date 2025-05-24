@@ -5,7 +5,7 @@
 #include "factory.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/edl_parser.hpp"
 
 #include <GL/glut.h>
@@ -23,7 +23,7 @@ void timerFunc(int)
    const int millis{static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
-   mixr::base::Timer::updateTimers(dt);
+   mixr::base::ITimer::updateTimers(dt);
    mixr::graphics::Graphic::flashTimer(dt);
    display->updateTC(dt);
 }

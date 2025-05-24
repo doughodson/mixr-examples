@@ -10,7 +10,7 @@
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/units/angles.hpp"
 #include "mixr/base/units/times.hpp"
@@ -71,7 +71,7 @@ void SimStation::updateTC(const double dt)
     // First update the simulation
     BaseClass::updateTC(dt);
 
-    base::Timer::updateTimers(dt);
+    base::ITimer::updateTimers(dt);
     graphics::Graphic::flashTimer(dt);
 
     // Update any TC stuff in our main display

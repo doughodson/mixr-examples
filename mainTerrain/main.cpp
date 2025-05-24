@@ -7,7 +7,7 @@
 #include "mixr/terrain/ded/DedFile.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/units/angles.hpp"
 #include "mixr/base/util/system_utils.hpp"
@@ -30,7 +30,7 @@ void timerFunc(int)
    const int millis{static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
-   mixr::base::Timer::updateTimers(static_cast<double>(dt));
+   mixr::base::ITimer::updateTimers(static_cast<double>(dt));
    mixr::graphics::Graphic::flashTimer(static_cast<double>(dt));
    display->tcFrame(static_cast<double>(dt));
 }

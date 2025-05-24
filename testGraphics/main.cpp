@@ -1,6 +1,6 @@
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/units/angles.hpp"
 
@@ -41,7 +41,7 @@ void timerFunc(int)
 {
    glutTimerFunc(dt_msecs, timerFunc, 1);
 
-   mixr::base::Timer::updateTimers(dt_secs);
+   mixr::base::ITimer::updateTimers(dt_secs);
    mixr::graphics::Graphic::flashTimer(dt_secs);
    testDisplay->tcFrame(dt_secs);
 }

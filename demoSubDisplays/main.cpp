@@ -2,7 +2,7 @@
 // demo of sub-displays
 //------------------------------------------------------------------------------
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/ui/glut/GlutDisplay.hpp"
@@ -49,7 +49,7 @@ void timerFunc(int)
    const int millis{static_cast<int>(dt * 1000)};
    glutTimerFunc(millis, timerFunc, 1);
 
-   mixr::base::Timer::updateTimers(dt);
+   mixr::base::ITimer::updateTimers(dt);
    mixr::graphics::Graphic::flashTimer(dt);
    glutDisplay->updateTC(dt);
 }

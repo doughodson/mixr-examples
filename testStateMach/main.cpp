@@ -5,7 +5,7 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/IComponent.hpp"
 #include "mixr/base/IStateMachine.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 
 #include <string>
 #include <cstdlib>
@@ -50,7 +50,7 @@ void theTest(mixr::base::IStateMachine* stateMachine)
    const double dt{0.05};  // Fake delta time
 
    while (stateMachine->getState() != 99) {
-      mixr::base::Timer::updateTimers(dt);
+      mixr::base::ITimer::updateTimers(dt);
       stateMachine->updateTC(dt);
       stateMachine->updateData(dt);
    }

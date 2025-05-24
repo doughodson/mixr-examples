@@ -4,7 +4,7 @@
 
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
 #include <iostream>
@@ -32,7 +32,7 @@ void timerCB(int)
    const double dt{time - time0};
    time0 = time;
 
-   mixr::base::Timer::updateTimers(static_cast<double>(dt));
+   mixr::base::ITimer::updateTimers(static_cast<double>(dt));
    mixr::graphics::Graphic::flashTimer(static_cast<double>(dt));
    board->tcFrame(dt);
 }

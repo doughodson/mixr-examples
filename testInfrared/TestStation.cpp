@@ -3,7 +3,7 @@
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 
@@ -61,7 +61,7 @@ void TestStation::updateData(const double dt)
    // own displays.
 
    // manage the timers
-   mixr::base::Timer::updateTimers(dt);
+   mixr::base::ITimer::updateTimers(dt);
    mixr::graphics::Graphic::flashTimer(dt);
 
    BaseClass::updateData(dt);

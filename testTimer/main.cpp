@@ -14,7 +14,7 @@
 
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/edl_parser.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/UpTimer.hpp"
 #include "mixr/base/threads/IPeriodicThread.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
@@ -47,7 +47,7 @@ TimerThread::TimerThread(mixr::base::IComponent* const parent, const double rate
 
 unsigned long TimerThread::userFunc(const double dt)
 {
-   mixr::base::Timer::updateTimers(dt);
+   mixr::base::ITimer::updateTimers(dt);
    return 0;
 }
 
@@ -120,7 +120,7 @@ Tester* builder(const std::string& filename)
 void run(Tester* const tester)
 {
    if (tester != nullptr) {
-      mixr::base::Timer::freeze(true);
+      mixr::base::ITimer::freeze(true);
 
       // Time between printing the timer data
       const double dt{1.0 / TIMERS_PRINT_RATE};
@@ -135,7 +135,7 @@ void run(Tester* const tester)
       // ---
       std::cout << "#### First Test ####" << std::endl;
 
-      mixr::base::Timer::freeze(false);
+      mixr::base::ITimer::freeze(false);
       while ( !mainTimer->alarm()) {
          mixr::base::msleep( static_cast<unsigned int>(dt * 1000.0 + 0.5) );
          std::printf("time(%4.1f)\n", mainTimer->getCurrentTime());
@@ -145,7 +145,7 @@ void run(Tester* const tester)
       // ---
       // Restart the timers
       // ---
-      mixr::base::Timer::freeze(true);
+      mixr::base::ITimer::freeze(true);
 
       std::cout << std::endl;
       std::cout << "#### Restarting Timers (all active) ####" << std::endl;
@@ -158,7 +158,7 @@ void run(Tester* const tester)
       std::cout << std::endl;
       std::cout << "#### Second Test ####" << std::endl;
 
-      mixr::base::Timer::freeze(false);
+      mixr::base::ITimer::freeze(false);
       while ( !mainTimer->alarm()) {
          mixr::base::msleep( static_cast<unsigned int>(dt * 1000.0 + 0.5) );
          std::printf("time(%4.1f)\n", mainTimer->getCurrentTime());

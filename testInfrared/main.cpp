@@ -10,7 +10,7 @@
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
 #include <GL/glut.h>
@@ -77,7 +77,7 @@ void updateDataCB(int)
    const double dt{time - time0};
    time0 = time;
 
-   mixr::base::Timer::updateTimers(dt);
+   mixr::base::ITimer::updateTimers(dt);
    mixr::graphics::Graphic::flashTimer(dt);
    testStation->updateData(dt);
 }

@@ -1,6 +1,6 @@
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/Timers.hpp"
+#include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/edl_parser.hpp"
 
@@ -40,7 +40,7 @@ void timerFunc(int)
     const unsigned int millis{static_cast<unsigned int>(dt * 1000)};
     glutTimerFunc(millis, timerFunc, 1);
 
-    base::Timer::updateTimers( static_cast<double>(dt) );
+    base::ITimer::updateTimers( static_cast<double>(dt) );
     graphics::Graphic::flashTimer( static_cast<double>(dt) );
     sys->tcFrame( static_cast<double>(dt) );
 }

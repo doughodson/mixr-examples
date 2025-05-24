@@ -428,7 +428,7 @@ bool State::setSlotBlocks(const base::PairStream* const msg)
       ok = true;
 
       // Find all blocks (and check their type to make sure)
-      const base::List::Item* item{msg->getFirstItem()};
+      const base::IList::Item* item{msg->getFirstItem()};
       while (item != nullptr && n < MAX_BLOCKS && ok) {
          const auto pair = static_cast<const base::Pair*>(item->getValue());
          const auto p = dynamic_cast<const Block*>( pair->object() );

@@ -399,7 +399,7 @@ void MapPage::updateData(const double dt)
             mixr::models::IPlayer* newPlayers[MAX_PLAYERS]{};
             int numNewPlayers{};
             // go through all of our non-ownship players and populate our new list
-            mixr::base::List::Item* item{stream->getFirstItem()};
+            mixr::base::IList::Item* item{stream->getFirstItem()};
             while (item != nullptr && numNewPlayers < MAX_PLAYERS) {
                 const auto pair = static_cast<mixr::base::Pair*>(item->getValue());
                 if (pair != nullptr) {

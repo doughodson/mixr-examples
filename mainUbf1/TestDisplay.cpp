@@ -402,7 +402,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
         base::PairStream* plist{sim->getPlayers()};
 
         // search for air vehicles or missiles within range
-        base::List::Item* item{plist->getFirstItem()};
+        base::IList::Item* item{plist->getFirstItem()};
         while (item != nullptr && nNewTracks < maxTracks) {
 
             const auto pair = static_cast<base::Pair*>(item->getValue());

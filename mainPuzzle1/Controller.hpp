@@ -7,7 +7,7 @@
 #include <array>
 
 namespace mixr {
-namespace base { class List; }
+namespace base { class IList; }
 }
 class State;
 
@@ -57,7 +57,7 @@ private:
    const State* goalState{};   // Goal (ending) state
 
    // open list
-   mixr::base::List* openStates{};   // List of 'open' states (still need to be expanded)
+   mixr::base::IList* openStates{};  // List of 'open' states (still need to be expanded)
                                      // (list is ordered by the state's f() values)
 
    // hash table

@@ -5,7 +5,7 @@
 #include "mixr/base/ubf/Arbiter.hpp"
 
 namespace mixr {
-namespace base { class List; class IAction; }
+namespace base { class IList; class IAction; }
 namespace xbehaviors {
 
 //------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ class PriorityArbiter final: public base::ubf::Arbiter
 public:
    PriorityArbiter();
 
-   base::ubf::IAction* genComplexAction(base::List* const actionSet) final;
+   base::ubf::IAction* genComplexAction(base::IList* const actionSet) final;
 
 private:
 

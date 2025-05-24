@@ -2,7 +2,7 @@
 #include "Blocks.hpp"
 
 #include "mixr/base/numeric/Integer.hpp"
-#include "mixr/base/List.hpp"
+#include "mixr/base/IList.hpp"
 
 IMPLEMENT_ABSTRACT_SUBCLASS(Block, "PuzzleBlock")
 EMPTY_DELETEDATA(Block)
@@ -13,7 +13,7 @@ BEGIN_SLOTTABLE(Block)
 END_SLOTTABLE(Block)
 
 BEGIN_SLOT_MAP(Block)
-    ON_SLOT( 1, setSlotPosition, mixr::base::List)
+    ON_SLOT( 1, setSlotPosition, mixr::base::IList)
     ON_SLOT( 2, setSlotRefId, mixr::base::Integer)
 END_SLOT_MAP()
 
@@ -148,7 +148,7 @@ bool Block::setReferenceID(const int v)
 //------------------------------------------------------------------------------
 // Slot function(s)
 //------------------------------------------------------------------------------
-bool Block::setSlotPosition(const mixr::base::List* const msg)
+bool Block::setSlotPosition(const mixr::base::IList* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

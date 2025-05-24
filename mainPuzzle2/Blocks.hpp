@@ -5,7 +5,7 @@
 #include "mixr/base/IObject.hpp"
 
 namespace mixr {
-namespace base { class List; class Integer; }
+namespace base { class IList; class Integer; }
 }
 
 class Controller;
@@ -59,7 +59,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotPosition(const mixr::base::List* const);
+   bool setSlotPosition(const mixr::base::IList* const);
    bool setSlotRefId(const mixr::base::Integer* const);
 
 };

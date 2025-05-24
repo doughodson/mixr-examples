@@ -3,7 +3,7 @@
 #include "Controller.hpp"
 
 #include "mixr/base/numeric/Integer.hpp"
-#include "mixr/base/List.hpp"
+#include "mixr/base/IList.hpp"
 
 using namespace mixr;
 
@@ -20,7 +20,7 @@ BEGIN_SLOTTABLE(Block)
 END_SLOTTABLE(Block)
 
 BEGIN_SLOT_MAP(Block)
-    ON_SLOT( 1, setSlotPosition, base::List)
+    ON_SLOT( 1, setSlotPosition, base::IList)
     ON_SLOT( 2, setSlotRefId, base::Integer)
 END_SLOT_MAP()
 
@@ -178,7 +178,7 @@ bool Block::setReferenceID(const unsigned int v)
 //------------------------------------------------------------------------------
 // Slot function(s)
 //------------------------------------------------------------------------------
-bool Block::setSlotPosition(const base::List* const msg)
+bool Block::setSlotPosition(const base::IList* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

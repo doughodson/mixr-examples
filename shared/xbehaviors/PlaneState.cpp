@@ -1,7 +1,7 @@
 
 #include "PlaneState.hpp"
 
-#include "mixr/base/List.hpp"
+#include "mixr/base/IList.hpp"
 #include "mixr/base/PairStream.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
@@ -98,7 +98,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
          const models::WorldModel* sim{airVehicle->getWorldModel()};
          const base::PairStream* players{sim->getPlayers()};
          bool finished{};
-         for (const base::List::Item* item = players->getFirstItem(); item != nullptr && !finished; item = item->getNext()) {
+         for (const base::IList::Item* item = players->getFirstItem(); item != nullptr && !finished; item = item->getNext()) {
             // Get the pointer to the target player
             const auto pair = static_cast<const base::Pair*>(item->getValue());
             const auto player = static_cast<const models::IPlayer*>(pair->object());

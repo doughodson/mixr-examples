@@ -14,7 +14,7 @@
       ( EmissionPduHandler
          emitterName: 999
          emitterFunction: 1
-         sensor: ( Radar )
+         sensor: ( IRadar )
          antenna: ( Antenna
             localPlayersOfInterestOnly: true
             #include "../gainPattern.epp"

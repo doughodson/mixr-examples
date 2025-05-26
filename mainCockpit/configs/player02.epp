@@ -103,7 +103,7 @@ duck11:
                1: ( AamMissile
                   id: 201
                   type: "AIM-120C"
-                  signature: ( SigDihedralCR a: 0.1 )
+                  signature: ( RfDihedralCRSignature a: 0.1 )
                   mode: inactive
                   minSpeed: 0
                   maxSpeed: 800
@@ -118,7 +118,7 @@ duck11:
                2: ( AamMissile
                   id: 202
                   type: "AIM-120C"
-                  signature: ( SigDihedralCR a: 0.1 )
+                  signature: ( RfDihedralCRSignature a: 0.1 )
                   mode: inactive
                   minSpeed: 0
                   maxSpeed: 800
@@ -133,7 +133,7 @@ duck11:
                3: ( AamMissile
                   id: 203
                   type: "AIM-120C"
-                  signature: ( SigDihedralCR a: 0.1 )
+                  signature: ( RfDihedralCRSignature a: 0.1 )
                   mode: inactive
                   minSpeed: 0
                   maxSpeed: 800
@@ -148,7 +148,7 @@ duck11:
                4: ( AamMissile
                   id: 204
                   type: "AIM-120C"
-                  signature: ( SigDihedralCR a: 0.1 )
+                  signature: ( RfDihedralCRSignature a: 0.1 )
                   mode: inactive
                   minSpeed: 0
                   maxSpeed: 800

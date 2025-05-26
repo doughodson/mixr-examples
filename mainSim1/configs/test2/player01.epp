@@ -21,7 +21,7 @@ p01:
 
     components: {
 
-      dynamicsModel: ( RacModel )
+      dynamicsModel: ( RacDynamics )
 
       pilot: ( Autopilot
          navMode: true

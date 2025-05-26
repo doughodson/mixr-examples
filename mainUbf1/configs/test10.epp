@@ -61,7 +61,7 @@ simulation: ( WorldModel
 
           components: {
 
-            dynamicsModel: ( JSBSimModel
+            dynamicsModel: ( JSBSimDynamics
                 rootDir: MIXR_DATA_JSBSIM_PATH
                 model: "f16"
             )
@@ -270,7 +270,7 @@ simulation: ( WorldModel
 
           components: {
 
-            dynamicsModel: ( JSBSimModel
+            dynamicsModel: ( JSBSimDynamics
                 rootDir: MIXR_DATA_JSBSIM_PATH
                 model: "f15"
             )

@@ -19,7 +19,7 @@ duck12:
 
     components: {
 
-      dynamicsModel: ( JSBSimModel
+      dynamicsModel: ( JSBSimDynamics
           rootDir: MIXR_DATA_JSBSIM_PATH
           model: "f16"
       )

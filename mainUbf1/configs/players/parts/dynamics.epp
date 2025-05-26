@@ -4,11 +4,11 @@
 // ----------------------
 
 #define JSBSIM_DYNAMICS(MODEL)      \
-( JSBSimModel                       \
+( JSBSimDynamics                    \
    rootDir: MIXR_DATA_JSBSIM_PATH   \
    model: MODEL                     \
 )
 
-#define LAERO_DYNAMICS()         \
-( LaeroModel )
+#define LAERO_DYNAMICS()            \
+( LaeroDynamics )
 

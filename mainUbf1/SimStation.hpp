@@ -2,8 +2,7 @@
 #ifndef __SimStation_HPP__
 #define __SimStation_HPP__
 
-//#include "agent/AgentStation.h"
-#include "mixr/simulation/Station.hpp"
+#include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
 namespace base { class Table1; class PairStream; }
@@ -23,9 +22,9 @@ namespace glut { class GlutDisplay; }
 //      display       <graphics::GlutDisplay>  ! Main graphics display
 //
 //------------------------------------------------------------------------------
-class SimStation final: public mixr::simulation::Station
+class SimStation final: public mixr::simulation::IStation
 {
-   DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
+   DECLARE_SUBCLASS(SimStation, mixr::simulation::IStation)
 
 public:
    SimStation();

@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace models { class Aircraft; }
-namespace simulation { class Station; }
+namespace simulation { class IStation; }
 }
 
 // -------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ public:
 
 private:
    mixr::models::Aircraft* getOwnship();
-   mixr::simulation::Station* getStation();
+   mixr::simulation::IStation* getStation();
 
    // button hit enumerations
    enum class Btn:int {
@@ -56,7 +56,7 @@ private:
       CHANGE_AP_MODE             // Change the autopilot mode (Nav/Loiter/FollowTheLead or None)
    };
 
-   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::IStation> myStation;
 
    int startX{};         // startX of our last mouse position
    int startY{};         // startY of our last mouse position

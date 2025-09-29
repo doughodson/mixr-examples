@@ -2,7 +2,7 @@
 #ifndef __TestStation_HPP__
 #define __TestStation_HPP__
 
-#include "mixr/simulation/Station.hpp"
+#include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
    namespace graphics { class GlutDisplay; }
@@ -15,9 +15,9 @@ class Display;
 //
 // Description: Test station for the Ground mapping radar demo
 //------------------------------------------------------------------------------
-class TestStation final: public mixr::simulation::Station
+class TestStation final: public mixr::simulation::IStation
 {
-    DECLARE_SUBCLASS(TestStation, mixr::simulation::Station)
+    DECLARE_SUBCLASS(TestStation, mixr::simulation::IStation)
 
 public:
     TestStation();

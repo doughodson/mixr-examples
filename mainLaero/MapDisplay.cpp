@@ -315,10 +315,10 @@ void MapDisplay::updateData(const double dt)
    send("cmdBank", UPDATE_VALUE, maxBank, maxBankSD);
 }
 
-mixr::simulation::Station* MapDisplay::getStation()
+mixr::simulation::IStation* MapDisplay::getStation()
 {
     if (myStation == nullptr) {
-        auto s = dynamic_cast<mixr::simulation::Station*>( findContainerByType(typeid(mixr::simulation::Station)) );
+        auto s = dynamic_cast<mixr::simulation::IStation*>( findContainerByType(typeid(mixr::simulation::IStation)) );
         if (s != nullptr) myStation = s;
     }
     return myStation;
@@ -327,7 +327,7 @@ mixr::simulation::Station* MapDisplay::getStation()
 mixr::models::Aircraft* MapDisplay::getOwnship()
 {
    mixr::models::Aircraft* p{};
-   mixr::simulation::Station* sta{getStation()};
+   mixr::simulation::IStation* sta{getStation()};
    if (sta != nullptr) {
       p = dynamic_cast<mixr::models::Aircraft*>(sta->getOwnship());
    }

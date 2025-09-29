@@ -81,10 +81,10 @@ void AdiDisplay::updateData(const double dt)
    //send("pitchangle",   UPDATE_INSTRUMENTS, pitch,    pitchSD);
 }
 
-mixr::simulation::Station* AdiDisplay::getStation()
+mixr::simulation::IStation* AdiDisplay::getStation()
 {
    if (myStation == nullptr) {
-      const auto s = dynamic_cast<mixr::simulation::Station*>( findContainerByType(typeid(mixr::simulation::Station)) );
+      const auto s = dynamic_cast<mixr::simulation::IStation*>( findContainerByType(typeid(mixr::simulation::IStation)) );
       if (s != nullptr) {
          myStation = s;
       }
@@ -95,7 +95,7 @@ mixr::simulation::Station* AdiDisplay::getStation()
 mixr::models::Aircraft* AdiDisplay::getOwnship()
 {
    mixr::models::Aircraft* pA{};
-   mixr::simulation::Station* sta{getStation()};
+   mixr::simulation::IStation* sta{getStation()};
    if (sta != nullptr) {
       pA = dynamic_cast<mixr::models::Aircraft*>(sta->getOwnship());
       //const unsigned int ffrate = 5;    //LDB

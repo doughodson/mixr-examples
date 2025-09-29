@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace models { class IPlayer; }
-namespace simulation { class ISimulation; class Station; }
+namespace simulation { class ISimulation; class IStation; }
 }
 class DedDisplay;
 class MfdDisplay;
@@ -30,7 +30,7 @@ public:
 
    mixr::models::IPlayer* getOwnship();
    mixr::simulation::ISimulation* getSimulation();
-   mixr::simulation::Station* getStation();
+   mixr::simulation::IStation* getStation();
 
    bool event(const int event, mixr::base::IObject* const obj = nullptr) final;
    void updateData(const double dt = 0.0) final;
@@ -42,7 +42,7 @@ protected:
    bool onStepOwnshipKey();
 
 private:
-   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::IStation> myStation;
 
    // ALT Stuff
    double altitude{};         // our current altitude

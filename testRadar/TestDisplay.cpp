@@ -479,7 +479,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
 models::IPlayer* TestDisplay::getOwnship()
 {
     models::IPlayer* p{};
-    simulation::Station* sta{getStation()};
+    simulation::IStation* sta{getStation()};
     if (sta != nullptr) {
        p = dynamic_cast<models::IPlayer*>(sta->getOwnship());
     }
@@ -489,15 +489,15 @@ models::IPlayer* TestDisplay::getOwnship()
 simulation::ISimulation* TestDisplay::getSimulation()
 {
     simulation::ISimulation* s{};
-    simulation::Station* sta{getStation()};
+    simulation::IStation* sta{getStation()};
     if (sta != nullptr) s = sta->getSimulation();
     return s;
 }
 
-simulation::Station* TestDisplay::getStation()
+simulation::IStation* TestDisplay::getStation()
 {
     if (myStation == nullptr) {
-        const auto s = dynamic_cast<simulation::Station*>( findContainerByType(typeid(simulation::Station)) );
+        const auto s = dynamic_cast<simulation::IStation*>( findContainerByType(typeid(simulation::IStation)) );
         if (s != nullptr) myStation = s;
     }
     return myStation;

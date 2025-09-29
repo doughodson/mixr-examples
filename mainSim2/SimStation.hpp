@@ -2,7 +2,7 @@
 #ifndef __SimStation_HPP__
 #define __SimStation_HPP__
 
-#include "mixr/simulation/Station.hpp"
+#include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
 namespace glut { class GlutDisplay; }
@@ -21,9 +21,9 @@ namespace glut { class GlutDisplay; }
 //      display                 <glut::GlutDisplay>  ! Main graphics display
 //      autoResetTimer          <ITime>              ! Auto RESET timer value (base::Time); default: 0
 //------------------------------------------------------------------------------
-class SimStation final: public mixr::simulation::Station
+class SimStation final: public mixr::simulation::IStation
 {
-    DECLARE_SUBCLASS(SimStation, mixr::simulation::Station)
+    DECLARE_SUBCLASS(SimStation, mixr::simulation::IStation)
 
 public:
     SimStation();

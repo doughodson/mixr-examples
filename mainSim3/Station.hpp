@@ -2,7 +2,7 @@
 #ifndef __Station_HPP__
 #define __Station_HPP__
 
-#include "mixr/simulation/Station.hpp"
+#include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
    namespace glut { class GlutDisplay; }
@@ -16,9 +16,9 @@ namespace mixr {
 //      it.  This also runs the simulation, and acts as the interface between the
 //      graphics and simulation.
 // -------------------------------------------------------------------------------
-class Station final: public mixr::simulation::Station
+class Station final: public mixr::simulation::IStation
 {
-    DECLARE_SUBCLASS(Station, mixr::simulation::Station)
+    DECLARE_SUBCLASS(Station, mixr::simulation::IStation)
 
 public:
     Station();

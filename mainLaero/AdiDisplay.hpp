@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace models { class Aircraft; }
-namespace simulation { class Station; }
+namespace simulation { class IStation; }
 }
 
 //------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ public:
 
 private:
    mixr::models::Aircraft* getOwnship();
-   mixr::simulation::Station* getStation();
+   mixr::simulation::IStation* getStation();
 
-   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::IStation> myStation;
 
    //-----------------------------
    double psiRO{};     // [deg]

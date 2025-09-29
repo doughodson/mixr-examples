@@ -43,7 +43,7 @@ void InstrumentPanel::copyData(const InstrumentPanel& org, const bool)
 mixr::models::IPlayer* InstrumentPanel::getOwnship()
 {
    mixr::models::IPlayer* p = nullptr;
-   mixr::simulation::Station* sta = getStation();
+   mixr::simulation::IStation* sta = getStation();
    if (sta != nullptr) {
       p = dynamic_cast<mixr::models::IPlayer*>(sta->getOwnship());
    }
@@ -53,17 +53,17 @@ mixr::models::IPlayer* InstrumentPanel::getOwnship()
 mixr::simulation::ISimulation* InstrumentPanel::getSimulation()
 {
    mixr::simulation::ISimulation* s = nullptr;
-   mixr::simulation::Station* sta = getStation();
+   mixr::simulation::IStation* sta = getStation();
    if (sta != nullptr) {
       s = sta->getSimulation();
    }
    return s;
 }
 
-mixr::simulation::Station* InstrumentPanel::getStation()
+mixr::simulation::IStation* InstrumentPanel::getStation()
 {
    if (myStation == nullptr) {
-      const auto s = dynamic_cast<mixr::simulation::Station*>( findContainerByType(typeid(mixr::simulation::Station)) );
+      const auto s = dynamic_cast<mixr::simulation::IStation*>( findContainerByType(typeid(mixr::simulation::IStation)) );
       if (s != nullptr) {
          myStation = s;
       }

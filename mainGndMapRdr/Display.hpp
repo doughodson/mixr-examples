@@ -7,7 +7,7 @@
 namespace mixr {
 namespace base { class Boolean; }
 namespace models { class IPlayer; }
-namespace simulation { class ISimulation; class Station; }
+namespace simulation { class ISimulation; class IStation; }
 }
 
 // ----------------------------------------------------------------------------

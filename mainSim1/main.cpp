@@ -42,7 +42,7 @@ mixr::base::IObject* factory(const std::string& name)
 }
 
 // station builder
-mixr::simulation::IStation* builder(const std::string& filename)
+mixr::simulation::Station* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -67,7 +67,7 @@ mixr::simulation::IStation* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<mixr::simulation::IStation*>(obj);
+   const auto station = dynamic_cast<mixr::simulation::Station*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);
@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
    }
 
    // build Station
-   mixr::simulation::IStation* station{builder(configFilename)};
+   mixr::simulation::Station* station{builder(configFilename)};
 
    // send a reset event and frame sim once
    station->event(mixr::base::IComponent::RESET_EVENT);

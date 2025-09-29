@@ -1,7 +1,6 @@
 
 
 #include "SimStation.hpp"
-
 #include "factory.hpp"
 
 #include "mixr/base/IComponent.hpp"

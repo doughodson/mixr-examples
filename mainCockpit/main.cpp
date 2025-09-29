@@ -1,13 +1,14 @@
 
 #include "factory.hpp"
 
-#include "mixr/simulation/Station.hpp"
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/util/system_utils.hpp"
+
+#include "SimStation.hpp"
 
 #include <cstdlib>
 #include <string>
@@ -16,10 +17,10 @@
 
 // default background frame rate
 const int BG_RATE{10};
-mixr::simulation::IStation* station{};
+SimStation* station{};
 
 // station builder
-mixr::simulation::IStation* builder(const std::string& filename)
+SimStation* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -44,7 +45,7 @@ mixr::simulation::IStation* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<mixr::simulation::IStation*>(obj);
+   const auto station = dynamic_cast<SimStation*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

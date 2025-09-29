@@ -7,9 +7,9 @@
 #include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/timers/ITimer.hpp"
-#include "mixr/simulation/Station.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
+#include "TestStation.hpp"
 #include "factory.hpp"
 
 #include <GL/glut.h>
@@ -18,10 +18,10 @@
 
 // background frame rate
 const int bgRate{10};
-mixr::simulation::IStation* station{};
+TestStation* station{};
 
 // station builder
-mixr::simulation::IStation* builder(const std::string& filename)
+TestStation* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -46,7 +46,7 @@ mixr::simulation::IStation* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<mixr::simulation::IStation*>(obj);
+   const auto station = dynamic_cast<TestStation*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

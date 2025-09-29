@@ -16,10 +16,10 @@
 
 // default background frame rate
 const int BG_RATE{10};
-mixr::simulation::Station* station{};
+mixr::simulation::IStation* station{};
 
 // station builder
-mixr::simulation::Station* builder(const std::string& filename)
+mixr::simulation::IStation* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -44,7 +44,7 @@ mixr::simulation::Station* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<mixr::simulation::Station*>(obj);
+   const auto station = dynamic_cast<mixr::simulation::IStation*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

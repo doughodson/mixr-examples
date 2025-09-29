@@ -57,7 +57,7 @@ void Display::deleteData()
 models::IPlayer* Display::getOwnship()
 {
     models::IPlayer* p{};
-    simulation::Station* sta{getStation()};
+    simulation::IStation* sta{getStation()};
     if (sta != nullptr) {
         p = dynamic_cast<models::IPlayer*>(sta->getOwnship());
     }
@@ -67,15 +67,15 @@ models::IPlayer* Display::getOwnship()
 simulation::ISimulation* Display::getSimulation()
 {
     simulation::ISimulation* s{};
-    simulation::Station* sta{getStation()};
+    simulation::IStation* sta{getStation()};
     if (sta != nullptr) s = sta->getSimulation();
     return s;
 }
 
-simulation::Station* Display::getStation()
+simulation::IStation* Display::getStation()
 {
     if (myStation == nullptr) {
-        const auto s = dynamic_cast<simulation::Station*>( findContainerByType(typeid(simulation::Station)) );
+        const auto s = dynamic_cast<simulation::IStation*>( findContainerByType(typeid(simulation::IStation)) );
         if (s != nullptr) myStation = s;
     }
     return myStation;

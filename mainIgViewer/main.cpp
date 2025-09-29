@@ -25,12 +25,12 @@ USE_OSGPLUGIN(txp)
 using namespace mixr;
 
 const int frameRate{60};
-simulation::Station* station{};
+simulation::IStation* station{};
 
 // build a station
-simulation::Station* builder(const std::string& fileName)
+simulation::IStation* builder(const std::string& fileName)
 {
-   simulation::Station* p{};
+   simulation::IStation* p{};
    // Read the description file
    int errors{};
    base::IObject* obj{base::edl_parser(fileName, factory, &errors)};
@@ -54,7 +54,7 @@ simulation::Station* builder(const std::string& fileName)
    }
 
    // try to cast to proper object, and check
-   const auto station = dynamic_cast<mixr::simulation::Station*>(obj);
+   const auto station = dynamic_cast<mixr::simulation::IStation*>(obj);
    if (station == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

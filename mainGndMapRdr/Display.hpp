@@ -29,13 +29,13 @@ public:
 
    mixr::models::IPlayer* getOwnship();
    mixr::simulation::ISimulation* getSimulation();
-   mixr::simulation::Station* getStation();
+   mixr::simulation::IStation* getStation();
 
    void configure() final;
    void drawFunc() final;
 
 private:
-   mixr::base::safe_ptr<mixr::simulation::Station> myStation;
+   mixr::base::safe_ptr<mixr::simulation::IStation> myStation;
 
    bool testTexture{};      // Texture image test
    GLuint texture{};        // Texture

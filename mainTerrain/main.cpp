@@ -9,7 +9,7 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/edl_parser.hpp"
-#include "mixr/base/units/angles.hpp"
+#include "mixr/base/qty/angles.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
 #include "mixr/graphics/Graphic.hpp"

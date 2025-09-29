@@ -9,8 +9,8 @@
 #include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/osg/Vec4d"
-#include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/times.hpp"
+#include "mixr/base/qty/angles.hpp"
+#include "mixr/base/qty/times.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 

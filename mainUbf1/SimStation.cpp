@@ -8,8 +8,8 @@
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/times.hpp"
+#include "mixr/base/qty/angles.hpp"
+#include "mixr/base/qty/times.hpp"
 
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/Pair.hpp"

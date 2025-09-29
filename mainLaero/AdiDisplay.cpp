@@ -8,8 +8,8 @@
 
 #include "mixr/base/osg/Vec3d"
 
-#include "mixr/base/units/lengths.hpp"
-#include "mixr/base/units/times.hpp"
+#include "mixr/base/qty/lengths.hpp"
+#include "mixr/base/qty/times.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(AdiDisplay, "AdiDisplay")
 EMPTY_DELETEDATA(AdiDisplay)

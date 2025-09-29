@@ -3,8 +3,8 @@
 
 #include "mixr/dafif/loaders/NavaidLoader.hpp"
 
-#include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/lengths.hpp"
+#include "mixr/base/qty/angles.hpp"
+#include "mixr/base/qty/lengths.hpp"
 #include "mixr/base/util/str_utils.hpp"
 
 #include <cstring>

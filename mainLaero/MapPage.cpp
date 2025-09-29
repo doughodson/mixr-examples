@@ -19,7 +19,7 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
-#include "mixr/base/units/util/time_utils.hpp"
+#include "mixr/base/qty/util/time_utils.hpp"
 
 #include <array>
 #include <GL/glut.h>

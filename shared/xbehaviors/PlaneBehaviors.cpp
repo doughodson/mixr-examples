@@ -17,7 +17,7 @@
 #include "PlaneState.hpp"
 
 #include "mixr/base/numeric/Integer.hpp"
-#include "mixr/base/units/lengths.hpp"
+#include "mixr/base/qty/lengths.hpp"
 #include "mixr/base/ubf/IAction.hpp"
 #include "mixr/base/ubf/IState.hpp"
 #include "mixr/base/util/constants.hpp"

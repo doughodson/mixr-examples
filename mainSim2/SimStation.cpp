@@ -12,8 +12,8 @@
 #include "mixr/base/PairStream.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
-#include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/times.hpp"
+#include "mixr/base/qty/angles.hpp"
+#include "mixr/base/qty/times.hpp"
 
 IMPLEMENT_SUBCLASS(SimStation, "SimStation")
 EMPTY_DELETEDATA(SimStation)

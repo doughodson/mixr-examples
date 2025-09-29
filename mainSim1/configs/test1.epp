@@ -39,9 +39,9 @@
                     initPitch: ( Degrees 0 )
                     initHeading: ( Degrees 0 )
 
-                    //testRollRate: ( Degrees 0.0 )   // Test roll rate (units per second)
-                    //testPitchRate: ( Degrees 0.0 )  // Test pitch rate (units per second)
-                    testYawRate: ( Degrees 5.0 )      // Test heading rate (units per second)
+                    //testRollRate: ( Degrees 0.0 )   // Test roll rate (qty per second)
+                    //testPitchRate: ( Degrees 0.0 )  // Test pitch rate (qty per second)
+                    testYawRate: ( Degrees 5.0 )      // Test heading rate (qty per second)
                     //testBodyAxis: false             // Test rates are in body coordinates else euler rates (default: false)
                   )
 

@@ -20,7 +20,7 @@ http://marian.creighton.edu/~besser/javascr/area.html - Creighton University
 1 square meter = 1550.0030399 square inches 
 1 square meter = 1.19599 square yards
 
-http://www.units.muohio.edu/hydrogeology/glg207l/207lexercises/areas.jpg
+http://www.qty.muohio.edu/hydrogeology/glg207l/207lexercises/areas.jpg
 1 square meter 	= 10.76 ft2
 	 	= 2.471 x 10-04 acres
 		= 1550 inches2// same as Creighton

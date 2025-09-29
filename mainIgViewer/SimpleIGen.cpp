@@ -5,8 +5,8 @@
 
 #include "mixr/base/String.hpp"
 #include "mixr/base/network/INetHandler.hpp"
-#include "mixr/base/units/util/length_utils.hpp"
-#include "mixr/base/units/util/angle_utils.hpp"
+#include "mixr/base/qty/util/length_utils.hpp"
+#include "mixr/base/qty/util/angle_utils.hpp"
 #include "mixr/base/util/endian_utils.hpp"
 
 #include "mixr/ighost/pov/Pov.hpp"

@@ -14,8 +14,8 @@
 #include "mixr/base/Pair.hpp"
 #include "mixr/base/PairStream.hpp"
 
-#include "mixr/base/units/angles.hpp"
-#include "mixr/base/units/lengths.hpp"
+#include "mixr/base/qty/angles.hpp"
+#include "mixr/base/qty/lengths.hpp"
 
 #include "mixr/base/util/nav_utils.hpp"
 #include "mixr/base/util/system_utils.hpp"

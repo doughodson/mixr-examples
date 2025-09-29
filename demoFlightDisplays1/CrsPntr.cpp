@@ -3,7 +3,7 @@
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/numeric/Integer.hpp"
 #include "mixr/base/numeric/INumber.hpp"
-#include "mixr/base/units/angles.hpp"
+#include "mixr/base/qty/angles.hpp"
 
 IMPLEMENT_SUBCLASS(CrsPntr, "CrsPntr")
 EMPTY_DELETEDATA(CrsPntr)

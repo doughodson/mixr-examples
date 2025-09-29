@@ -8,7 +8,7 @@
 
 #include "WorldModel.hpp"
 
-#include "mixr/base/units/lengths.hpp"
+#include "mixr/base/qty/lengths.hpp"
 #include "mixr/base/util/nav_utils.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(TacanRadio, "TacanRadio")

@@ -3,7 +3,7 @@
 #define __Display_HPP__
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
-#include "mixr/base/units/util/length_utils.hpp"
+#include "mixr/base/qty/util/length_utils.hpp"
 
 namespace mixr {
 namespace base { class IAngle; class Boolean; class Integer; class ILength; }

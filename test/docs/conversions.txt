@@ -65,6 +65,3 @@ http://virtualskies.arc.nasa.gov/navigation/tutorial/tutorial5.html - NASA navig
 ENERGY:
 http://www.eia.doe.gov/kids/units.xls - Department of Energy
 	- see Excel spreadsheet  Energy.xls
-
-		
-		

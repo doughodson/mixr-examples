@@ -24,7 +24,7 @@
 
 using namespace mixr;
 
-IMPLEMENT_SUBCLASS(Display, "TerrainDisplay")
+IMPLEMENT_SUBCLASS(Display, "Display")
 
 BEGIN_SLOTTABLE(Display)
    "terrain",        //  1) Terrain database

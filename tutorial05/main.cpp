@@ -7,7 +7,7 @@
 #include "mixr/base/colors/IColor.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/String.hpp"
 

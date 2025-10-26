@@ -3,7 +3,7 @@
 
 #include "mixr/base/numeric/Boolean.hpp"
 
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 #include "mixr/base/IList.hpp"
 #include "mixr/base/String.hpp"
 #include "mixr/base/Identifier.hpp"
@@ -15,7 +15,7 @@
 IMPLEMENT_SUBCLASS(MyObj, "MyObj")
 
 BEGIN_SLOTTABLE(MyObj)
-   "colorTable",         // 1: The Color table     <PairStream>
+   "colorTable",         // 1: The Color table     <IPairStream>
    "textColor",          // 2: Text color          <Identifier>
    "backColor",          // 3: Background color    <Identifier>
    "vector",             // 4: Vector              <IList>
@@ -24,7 +24,7 @@ BEGIN_SLOTTABLE(MyObj)
 END_SLOTTABLE(MyObj)
 
 BEGIN_SLOT_MAP(MyObj)
-   ON_SLOT(1, setSlotColorTable, mixr::base::PairStream)
+   ON_SLOT(1, setSlotColorTable, mixr::base::IPairStream)
    ON_SLOT(2, setSlotTextColor,  mixr::base::Identifier)
    ON_SLOT(3, setSlotBackColor,  mixr::base::Identifier)
    ON_SLOT(4, setSlotVector,     mixr::base::IList)
@@ -68,7 +68,7 @@ void MyObj::deleteData()
    setMessage(nullptr);
 }
 
-bool MyObj::setColorTable(const mixr::base::PairStream* const x)
+bool MyObj::setColorTable(const mixr::base::IPairStream* const x)
 {
    if (colorTable != nullptr) colorTable->unref();
    colorTable = x;
@@ -76,7 +76,7 @@ bool MyObj::setColorTable(const mixr::base::PairStream* const x)
    return true;
 }
 
-const mixr::base::PairStream* MyObj::getColorTable() const
+const mixr::base::IPairStream* MyObj::getColorTable() const
 {
    return colorTable;
 }
@@ -144,7 +144,7 @@ const mixr::base::String* MyObj::getMessage() const
    return message;
 }
 
-bool MyObj::setSlotColorTable(const mixr::base::PairStream* const x)
+bool MyObj::setSlotColorTable(const mixr::base::IPairStream* const x)
 {
    bool ok{};
    if (x != nullptr) {
@@ -201,7 +201,7 @@ bool MyObj::setSlotMessage(const mixr::base::String* const x)
 void MyObj::dumpContents() const
 {
    // print out some color information
-   const mixr::base::PairStream* colorTable{getColorTable()};
+   const mixr::base::IPairStream* colorTable{getColorTable()};
    if (colorTable != nullptr) {
 //    Pair* p = colorTable->findByName("green");
       const mixr::base::Identifier* id{getTextColor()};

@@ -20,7 +20,7 @@
 #include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 
 #include "mixr/graphics/SymbolLoader.hpp"
 
@@ -364,7 +364,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
     {
         // get the player list
         simulation::ISimulation* sim{getSimulation()};
-        base::PairStream* plist{sim->getPlayers()};
+        base::IPairStream* plist{sim->getPlayers()};
 
         // search for air vehicles or missiles within range
         base::IList::Item* item{plist->getFirstItem()};

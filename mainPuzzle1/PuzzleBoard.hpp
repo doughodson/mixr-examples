@@ -7,7 +7,7 @@
 #include <array>
 
 namespace mixr {
-   namespace base { class PairStream; }
+   namespace base { class IPairStream; }
    namespace graphics { class Graphic; }
 }
 
@@ -41,7 +41,7 @@ protected:
    virtual void updateBlockDeltaPositions();                 // Updates the blocks' delta positions
 
 private:
-   const mixr::base::PairStream* templates {};   // Graphical templates for the blocks
+   const mixr::base::IPairStream* templates {};  // Graphical templates for the blocks
    Controller* controller{};                     // puzzle controller
    double startupTimer{};                        // Movement timer
 
@@ -65,8 +65,8 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotController(Controller* const);                    // Sets the puzzle controller
-   bool setSlotTemplates(const mixr::base::PairStream* const);   // Sets a list of the graphical templates for the blocks
+   bool setSlotController(Controller* const);                 // Sets the puzzle controller
+   bool setSlotTemplates(const mixr::base::IPairStream* const);     // Sets a list of the graphical templates for the blocks
 };
 
 #endif

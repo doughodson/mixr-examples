@@ -3,7 +3,7 @@
 
 #include "mixr/base/IComponent.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 
 IMPLEMENT_EMPTY_SLOTTABLE_SUBCLASS(MyPager, "MyPager")
 EMPTY_COPYDATA(MyPager)
@@ -16,7 +16,7 @@ MyPager::MyPager()
 
 bool MyPager::onEntry()
 {
-   mixr::base::PairStream* components{getComponents()};
+   mixr::base::IPairStream* components{getComponents()};
    if (components != nullptr) {
       mixr::base::IList::Item* item{components->getFirstItem()};
       while (item != nullptr) {

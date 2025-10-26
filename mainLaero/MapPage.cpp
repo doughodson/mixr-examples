@@ -17,7 +17,7 @@
 #include "mixr/graphics/Shapes.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 
 #include "mixr/base/qty/util/time_utils.hpp"
 
@@ -393,7 +393,7 @@ void MapPage::updateData(const double dt)
 
     // let's update our players
     if (loader != nullptr && pStn != nullptr) {
-        mixr::base::PairStream* stream = pStn->getPlayers();
+        mixr::base::IPairStream* stream = pStn->getPlayers();
         if (stream != nullptr) {
             // create our new player list
             mixr::models::IPlayer* newPlayers[MAX_PLAYERS]{};

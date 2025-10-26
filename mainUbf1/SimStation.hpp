@@ -5,7 +5,7 @@
 #include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
-namespace base { class Table1; class PairStream; }
+namespace base { class Table1; }
 namespace glut { class GlutDisplay; }
 }
 

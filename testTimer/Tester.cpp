@@ -2,7 +2,7 @@
 #include "Tester.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 
 #include <cstdio>
@@ -15,7 +15,7 @@ BEGIN_SLOTTABLE(Tester)
 END_SLOTTABLE(Tester)
 
 BEGIN_SLOT_MAP(Tester)
-   ON_SLOT(1, setSlotTimers, mixr::base::PairStream)
+   ON_SLOT(1, setSlotTimers, mixr::base::IPairStream)
 END_SLOT_MAP()
 
 Tester::Tester()
@@ -121,7 +121,7 @@ void Tester::reset()
    }
 }
 
-bool Tester::setSlotTimers(const mixr::base::PairStream* const msg)
+bool Tester::setSlotTimers(const mixr::base::IPairStream* const msg)
 {
    // Clear the old timer list
    if (timers != nullptr) timers->unref();
@@ -130,7 +130,7 @@ bool Tester::setSlotTimers(const mixr::base::PairStream* const msg)
    // Copy the new timer list, and make sure we have only Timers
    if (msg != nullptr) {
 
-      const auto newList = new mixr::base::PairStream();
+      const auto newList = new mixr::base::IPairStream();
 
       unsigned int n{};
       const mixr::base::IList::Item* item{msg->getFirstItem()};

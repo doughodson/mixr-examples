@@ -4,7 +4,7 @@
 #include "Controller.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 
 IMPLEMENT_SUBCLASS(State, "PuzzleState")
 
@@ -13,7 +13,7 @@ BEGIN_SLOTTABLE(State)
 END_SLOTTABLE(State)
 
 BEGIN_SLOT_MAP(State)
-    ON_SLOT( 1, setSlotBlocks, mixr::base::PairStream )
+    ON_SLOT( 1, setSlotBlocks, mixr::base::IPairStream )
 END_SLOT_MAP()
 
 State::State()
@@ -321,7 +321,7 @@ void State::clearBlocks()
 //------------------------------------------------------------------------------
 
 // Blocks (list of Blocks)
-bool State::setSlotBlocks(const mixr::base::PairStream* const msg)
+bool State::setSlotBlocks(const mixr::base::IPairStream* const msg)
 {
    bool ok{};
    if (msg != nullptr) {

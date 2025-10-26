@@ -10,7 +10,7 @@
 #include "mixr/graphics/Display.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 #include "mixr/base/util/math_utils.hpp"
 
 IMPLEMENT_SUBCLASS(MapPage, "MapTestMapPage")
@@ -189,7 +189,7 @@ void MapPage::updateData(const double dt)
 
     // let's update our players
     if (loader != nullptr && stn != nullptr) {
-        mixr::base::PairStream* stream {stn->getPlayers()};
+        mixr::base::IPairStream* stream {stn->getPlayers()};
         if (stream != nullptr) {
             // create our new player list
             mixr::models::IPlayer* newPlayers[MAX_PLAYERS]{};

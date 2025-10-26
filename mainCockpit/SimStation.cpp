@@ -9,7 +9,7 @@
 
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/qty/angles.hpp"
@@ -100,7 +100,7 @@ void SimStation::updateData(const double dt)
 // step to the next local player
 void SimStation::stepOwnshipPlayer()
 {
-   mixr::base::PairStream* pl{getSimulation()->getPlayers()};
+   mixr::base::IPairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
       mixr::models::IPlayer* f{};

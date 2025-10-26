@@ -5,7 +5,7 @@
 #include "mixr/base/IComponent.hpp"
 
 namespace mixr {
-namespace base { class PairStream; }
+namespace base { class IPairStream; }
 }
 
 //------------------------------------------------------------------------------
@@ -14,7 +14,7 @@ namespace base { class PairStream; }
 //
 // Factory name: Tester
 // Slots:
-//    timers   <PairStream>   ! List of timers to be tested
+//    timers   <IPairStream>   ! List of timers to be tested
 //------------------------------------------------------------------------------
 class Tester final: public mixr::base::IComponent
 {
@@ -33,11 +33,11 @@ public:
    void reset() final;
 
 private:
-   mixr::base::PairStream* timers{};    // List of timers
+   mixr::base::IPairStream* timers{};    // List of timers
 
 private:
    // slot table helper methods
-   bool setSlotTimers(const mixr::base::PairStream* const);
+   bool setSlotTimers(const mixr::base::IPairStream* const);
 };
 
 #endif

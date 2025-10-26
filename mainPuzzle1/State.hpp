@@ -7,7 +7,7 @@
 #include <array>
 
 namespace mixr {
-namespace base { class PairStream; }
+namespace base { class IPairStream; }
 }
 
 class Block;
@@ -67,7 +67,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotBlocks(const mixr::base::PairStream* const);
+   bool setSlotBlocks(const mixr::base::IPairStream* const);
 };
 
 #endif

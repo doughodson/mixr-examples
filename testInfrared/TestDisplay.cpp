@@ -13,7 +13,7 @@
 #include "mixr/base/numeric/Boolean.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 
 IMPLEMENT_SUBCLASS(TestDisplay, "TestDisplay")
 EMPTY_SLOTTABLE(TestDisplay)
@@ -190,7 +190,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
    {
       // get the player list
       mixr::simulation::ISimulation* sim{getSimulation()};
-      mixr::base::PairStream* plist{sim->getPlayers()};
+      mixr::base::IPairStream* plist{sim->getPlayers()};
 
       // search for air vehicles or missiles within range
       mixr::base::IList::Item* item{plist->getFirstItem()};

@@ -7,7 +7,7 @@
 #include "mixr/simulation/ISimulation.hpp"
 
 #include "mixr/base/Pair.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
@@ -91,7 +91,7 @@ void TestStation::reset()
 //------------------------------------------------------------------------------
 void TestStation::stepOwnshipPlayer()
 {
-   base::PairStream* pl{getSimulation()->getPlayers()};
+   base::IPairStream* pl{getSimulation()->getPlayers()};
    if (pl != nullptr) {
 
       models::IPlayer* f{};

@@ -2,7 +2,7 @@
 #include "PlaneState.hpp"
 
 #include "mixr/base/IList.hpp"
-#include "mixr/base/PairStream.hpp"
+#include "mixr/base/IPairStream.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/weapon/Missile.hpp"
@@ -96,7 +96,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
          // loop through player list and attempt to find out if one of our missiles is active
          // if there is an active missile, then for the time being, we do not have a missile to fire
          const models::WorldModel* sim{airVehicle->getWorldModel()};
-         const base::PairStream* players{sim->getPlayers()};
+         const base::IPairStream* players{sim->getPlayers()};
          bool finished{};
          for (const base::IList::Item* item = players->getFirstItem(); item != nullptr && !finished; item = item->getNext()) {
             // Get the pointer to the target player

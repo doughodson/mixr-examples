@@ -7,7 +7,7 @@
 namespace mixr {
 namespace recorder {
 namespace protobuf_v2 {
-   class IInputHandler; class OutputHandler; }
+   class IInputHandler; class IOutputHandler; }
 }
 }
 
@@ -26,12 +26,12 @@ public:
 
 private:
    mixr::base::safe_ptr<mixr::recorder::protobuf_v2::IInputHandler> inputHandler;
-   mixr::base::safe_ptr<mixr::recorder::protobuf_v2::OutputHandler> outputHandler;
+   mixr::base::safe_ptr<mixr::recorder::protobuf_v2::IOutputHandler> outputHandler;
 
 private:
    // slot table helper methods
    bool setSlotInputHandler(mixr::recorder::protobuf_v2::IInputHandler* const);
-   bool setSlotOutputHandler(mixr::recorder::protobuf_v2::OutputHandler* const);
+   bool setSlotOutputHandler(mixr::recorder::protobuf_v2::IOutputHandler* const);
 };
 
 #endif

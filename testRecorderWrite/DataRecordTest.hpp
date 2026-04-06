@@ -2,7 +2,7 @@
 #ifndef __DataRecordTest_HPP__
 #define __DataRecordTest_HPP__
 
-#include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/IOutputHandler.hpp"
 
 #include "mixr/recorder/protobuf_v2/PrintSelected.hpp"
 #include <string>
@@ -25,9 +25,9 @@ class DataRecordHandle;
 //------------------------------------------------------------------------------
 // Class: DataRecordTest
 //------------------------------------------------------------------------------
-class DataRecordTest final: public mixr::recorder::protobuf_v2::OutputHandler
+class DataRecordTest final: public mixr::recorder::protobuf_v2::IOutputHandler
 {
-   DECLARE_SUBCLASS(DataRecordTest, mixr::recorder::protobuf_v2::OutputHandler)
+   DECLARE_SUBCLASS(DataRecordTest, mixr::recorder::protobuf_v2::IOutputHandler)
 
 public:
    DataRecordTest();

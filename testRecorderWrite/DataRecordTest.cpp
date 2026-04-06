@@ -6,8 +6,8 @@
 #include "mixr/recorder/protobuf_v2/IInputHandler.hpp"
 #include "mixr/recorder/protobuf_v2/NetInput.hpp"
 
+#include "mixr/recorder/protobuf_v2/IOutputHandler.hpp"
 #include "mixr/recorder/protobuf_v2/DataRecorder.hpp"
-#include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
 #include "mixr/recorder/protobuf_v2/NetOutput.hpp"
 #include "mixr/recorder/protobuf_v2/DataRecordHandle.hpp"
 #include "mixr/recorder/protobuf_v2/TabPrinter.hpp"

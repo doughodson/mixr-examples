@@ -2,7 +2,7 @@
 #ifndef __PrintMyData_HPP__
 #define __PrintMyData_HPP__
 
-#include "mixr/recorder/protobuf_v2/PrintHandler.hpp"
+#include "mixr/recorder/protobuf_v2/IPrintHandler.hpp"
 
 //------------------------------------------------------------------------------
 // Class: PrintMyData
@@ -10,9 +10,9 @@
 //
 // Factory name: PrintMyData
 //------------------------------------------------------------------------------
-class PrintMyData final: public mixr::recorder::protobuf_v2::PrintHandler
+class PrintMyData final: public mixr::recorder::protobuf_v2::IPrintHandler
 {
-   DECLARE_SUBCLASS(PrintMyData, mixr::recorder::protobuf_v2::PrintHandler)
+   DECLARE_SUBCLASS(PrintMyData, mixr::recorder::protobuf_v2::IPrintHandler)
 
 public:
    PrintMyData();

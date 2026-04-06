@@ -2,7 +2,7 @@
 #include "DataRecordTest.hpp"
 
 #include "mixr/recorder/protobuf_v2/IInputHandler.hpp"
-#include "mixr/recorder/protobuf_v2/OutputHandler.hpp"
+#include "mixr/recorder/protobuf_v2/IOutputHandler.hpp"
 #include "mixr/recorder/protobuf_v2/DataRecordHandle.hpp"
 
 #include "xrecorder/proto/DataRecord.pb.h"
@@ -19,7 +19,7 @@ END_SLOTTABLE(DataRecordTest)
 
 BEGIN_SLOT_MAP(DataRecordTest)
    ON_SLOT(1, setSlotInputHandler, mixr::recorder::protobuf_v2::IInputHandler)
-   ON_SLOT(2, setSlotOutputHandler, mixr::recorder::protobuf_v2::OutputHandler)
+   ON_SLOT(2, setSlotOutputHandler, mixr::recorder::protobuf_v2::IOutputHandler)
 END_SLOT_MAP()
 
 DataRecordTest::DataRecordTest()
@@ -39,7 +39,7 @@ void DataRecordTest::copyData(const DataRecordTest& org, const bool)
    }
 
    {  // Clone output handler
-      mixr::recorder::protobuf_v2::OutputHandler* clone{};
+      mixr::recorder::protobuf_v2::IOutputHandler* clone{};
       if (org.outputHandler != nullptr) clone = org.outputHandler->clone();
       setSlotOutputHandler(clone);
       if (clone != nullptr) clone->unref();
@@ -82,7 +82,7 @@ bool DataRecordTest::setSlotInputHandler(mixr::recorder::protobuf_v2::IInputHand
    return true;
 }
 
-bool DataRecordTest::setSlotOutputHandler(mixr::recorder::protobuf_v2::OutputHandler* const msg)
+bool DataRecordTest::setSlotOutputHandler(mixr::recorder::protobuf_v2::IOutputHandler* const msg)
 {
    outputHandler = msg;
    if (outputHandler != nullptr) outputHandler->container(this);

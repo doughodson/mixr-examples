@@ -5,7 +5,7 @@
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
 namespace mixr {
-namespace models { class Aircraft; }
+namespace models { class IAircraft; }
 namespace simulation { class IStation; }
 }
 
@@ -22,7 +22,7 @@ public:
    void updateData(const double dt = 0.0) final;
 
 private:
-   mixr::models::Aircraft* getOwnship();
+   mixr::models::IAircraft* getOwnship();
    mixr::simulation::IStation* getStation();
 
    mixr::base::safe_ptr<mixr::simulation::IStation> myStation;

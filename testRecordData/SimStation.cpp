@@ -3,7 +3,7 @@
 
 #include "mixr/simulation/ISimulation.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
@@ -119,7 +119,7 @@ void SimStation::stepOwnshipPlayer()
             const auto ip = static_cast<models::IPlayer*>(pair->object());
             if ( ip->isMode(models::IPlayer::Mode::ACTIVE) &&
                ip->isLocalPlayer() &&
-               ip->isClassType(typeid(models::AirVehicle))
+               ip->isClassType(typeid(models::IAirVehicle))
                ) {
                   if (f == nullptr) { f = ip; }  // Remember the first
                   if (found)        { n = ip; ; break; }

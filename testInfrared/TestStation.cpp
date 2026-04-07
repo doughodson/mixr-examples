@@ -5,7 +5,7 @@
 #include "mixr/base/IPairStream.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
 

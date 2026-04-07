@@ -1,7 +1,7 @@
 
 #include "PlaneAction.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 #include "mixr/models/system/IStoresMgr.hpp"
 
 namespace mixr {
@@ -76,7 +76,7 @@ void PlaneAction::setPitchTrim(const double x)
 
 bool PlaneAction::execute(base::IComponent* actor)
 {
-   const auto airVehicle = dynamic_cast<models::AirVehicle*>(actor);
+   const auto airVehicle = dynamic_cast<models::IAirVehicle*>(actor);
    if (airVehicle != nullptr) {
       airVehicle->setControlStick(static_cast<double>(getRoll()), static_cast<double>(getPitch()));
 

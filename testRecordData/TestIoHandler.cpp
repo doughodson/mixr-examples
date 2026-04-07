@@ -4,7 +4,7 @@
 #include "configs/linkage/channel_map.hpp"
 
 #include "mixr/models/system/Autopilot.hpp"
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 #include "mixr/models/navigation/INavigation.hpp"
 #include "mixr/models/navigation/Route.hpp"
 
@@ -62,11 +62,11 @@ void TestIoHandler::inputDevicesImpl(const double dt)
    const auto sta = static_cast<SimStation*>( findContainerByType(typeid(SimStation)) );
 
    simulation::ISimulation* sim {};
-   models::AirVehicle* av {};
+   models::IAirVehicle* av {};
 
    if (sta != nullptr) {
       sim = sta->getSimulation();
-      av = dynamic_cast<models::AirVehicle*>(sta->getOwnship());
+      av = dynamic_cast<models::IAirVehicle*>(sta->getOwnship());
    }
 
    // ---

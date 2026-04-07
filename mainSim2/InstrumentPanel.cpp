@@ -3,7 +3,7 @@
 #include "SimStation.hpp"
 #include "SimPlayer.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 #include "mixr/models/player/IPlayer.hpp"
 
 #include "mixr/simulation/ISimulation.hpp"
@@ -79,7 +79,7 @@ void InstrumentPanel::updateData(const double dt)
    // try to get an Sim3 first.  If that doesn't work, then get a generic air vehicle
    // Get the data from our ownship, if we have a valid one.  Else everything goes to a default value
    // we need to dynamically cast to an AirVehicle* for this instrument panel
-   const auto tempOwnship = dynamic_cast<mixr::models::AirVehicle*>( getOwnship() );
+   const auto tempOwnship = dynamic_cast<mixr::models::IAirVehicle*>( getOwnship() );
    if (tempOwnship != nullptr) {
       tempOwnship->ref();
 #if 0

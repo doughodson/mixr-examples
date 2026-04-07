@@ -6,7 +6,7 @@
 #include "xpanel/Pfd.hpp"
 
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 #include "mixr/models/player/weapon/IMissile.hpp"
 
 #include "mixr/models/system/Jammer.hpp"
@@ -411,7 +411,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
                p != getOwnship() &&
                p->isActive() &&
                ((x*x + y*y) < rng2) &&
-               (p->isClassType(typeid(mixr::models::AirVehicle)) || p->isClassType(typeid(mixr::models::IMissile))) ) {
+               (p->isClassType(typeid(mixr::models::IAirVehicle)) || p->isClassType(typeid(mixr::models::IMissile))) ) {
                 // Ok, it's an active air vehicle or missile that's within range, and it's not us.
 
                 // Are we already in the track list?
@@ -460,7 +460,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
                 // We have an empty slot, so add the symbol
 
                 int type{4};                                       // unknown
-                if (newTracks[inew]->isClassType(typeid(mixr::models::AirVehicle))) {
+                if (newTracks[inew]->isClassType(typeid(mixr::models::IAirVehicle))) {
                    if (newTracks[inew]->getSensorByType(typeid(mixr::models::Jammer)) == nullptr) {
                       // non-jammers
                       if (newTracks[inew]->isSide(mixr::models::IPlayer::BLUE)) type = 1;      // friend
@@ -538,7 +538,7 @@ mixr::simulation::IStation* TestDisplay::getStation()
 //------------------------------------------------------------------------------
 void TestDisplay::updatePfd(const double)
 {
-    const auto av = static_cast<mixr::models::AirVehicle*>(getOwnship());
+    const auto av = static_cast<mixr::models::IAirVehicle*>(getOwnship());
 
     // pitch
     pitch = av->getPitchD();

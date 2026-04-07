@@ -4,7 +4,7 @@
 #include "DspRadar.hpp"
 #include "DspRwr.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 #include "mixr/models/player/weapon/IMissile.hpp"
 #include "mixr/models/player/weapon/IWeapon.hpp"
 
@@ -380,7 +380,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
                p != getOwnship() &&
                p->isActive() &&
                ((x*x + y*y) < rng2) &&
-               (p->isClassType(typeid(models::AirVehicle)) || p->isClassType(typeid(models::IMissile))) ) {
+               (p->isClassType(typeid(models::IAirVehicle)) || p->isClassType(typeid(models::IMissile))) ) {
                 // Ok, it's an active air vehicle or missile that's within range, and it's not us.
 
                 // Are we already in the track list?
@@ -429,7 +429,7 @@ void TestDisplay::maintainAirTrackSymbols(graphics::SymbolLoader* loader, const 
                 // We have an empty slot, so add the symbol
 
                 int type{4};                                       // unknown
-                if (newTracks[inew]->isClassType(typeid(models::AirVehicle))) {
+                if (newTracks[inew]->isClassType(typeid(models::IAirVehicle))) {
                   if (newTracks[inew]->getSensorByType(typeid(models::Jammer)) == nullptr) {
                      // non-jammers
                      if (newTracks[inew]->isSide(models::IPlayer::BLUE)) type = 1;      // friend

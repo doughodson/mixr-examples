@@ -3,8 +3,8 @@
 
 #include "TestStation.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/player/air/Aircraft.hpp"
+//#include "mixr/models/player/air/IAirVehicle.hpp"
+#include "mixr/models/player/air/IAircraft.hpp"
 
 #include "mixr/base/osg/Vec3d"
 
@@ -45,7 +45,7 @@ void AdiDisplay::updateData(const double dt)
    mixr::base::Vec3d av;
 
    // get access pointer to ownship
-   mixr::models::Aircraft* pA{getOwnship()};
+   mixr::models::IAircraft* pA{getOwnship()};
    if (pA != nullptr) {
       psiRO = pA->getHeadingD();
       thtRO = pA->getPitchD();
@@ -92,12 +92,12 @@ mixr::simulation::IStation* AdiDisplay::getStation()
    return myStation;
 }
 
-mixr::models::Aircraft* AdiDisplay::getOwnship()
+mixr::models::IAircraft* AdiDisplay::getOwnship()
 {
-   mixr::models::Aircraft* pA{};
+   mixr::models::IAircraft* pA{};
    mixr::simulation::IStation* sta{getStation()};
    if (sta != nullptr) {
-      pA = dynamic_cast<mixr::models::Aircraft*>(sta->getOwnship());
+      pA = dynamic_cast<mixr::models::IAircraft*>(sta->getOwnship());
       //const unsigned int ffrate = 5;    //LDB
       //sta->setFastForwardRate(ffrate);  //LDB
    }

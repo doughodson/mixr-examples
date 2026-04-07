@@ -14,7 +14,7 @@
 
 #include "mixr/simulation/ISimulation.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 
 #include "mixr/ui/glut/GlutDisplay.hpp"
 
@@ -122,7 +122,7 @@ void SimStation::stepOwnshipPlayer()
          base::Pair* pair {static_cast<base::Pair*>(item->getValue())};
          if (pair != nullptr) {
             models::IPlayer* ip{static_cast<models::IPlayer*>(pair->object())};
-            if ( ip->isMode(models::IPlayer::Mode::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::AirVehicle)) ) {
+            if ( ip->isMode(models::IPlayer::Mode::ACTIVE) &&  ip->isLocalPlayer() && ip->isClassType(typeid(models::IAirVehicle)) ) {
                if (f == nullptr) { f = ip; }  // Remember the first
                if (found) { n = ip; ; break; }
                if (ip == getOwnship()) found = true;

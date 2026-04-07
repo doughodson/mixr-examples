@@ -3,7 +3,7 @@
 #include "TestStation.hpp"
 #include "MapPage.hpp"
 
-#include "mixr/models/player/air/Aircraft.hpp"
+#include "mixr/models/player/air/IAircraft.hpp"
 #include "mixr/models/player/IPlayer.hpp"
 #include "mixr/models/system/Autopilot.hpp"
 
@@ -280,7 +280,7 @@ void MapDisplay::updateData(const double dt)
    double maxAccel{}, maxTurn{}, maxBank{}, maxClimb{};
    // default to autopilot mode off
    int apMode{1};
-   const auto pA = static_cast<mixr::models::Aircraft*>(getOwnship());
+   const auto pA = static_cast<mixr::models::IAircraft*>(getOwnship());
    if (pA != nullptr) {
       const auto ap = static_cast<mixr::models::Autopilot*>(pA->getPilot());
       if (ap != nullptr) {
@@ -324,12 +324,12 @@ mixr::simulation::IStation* MapDisplay::getStation()
     return myStation;
 }
 
-mixr::models::Aircraft* MapDisplay::getOwnship()
+mixr::models::IAircraft* MapDisplay::getOwnship()
 {
-   mixr::models::Aircraft* p{};
+   mixr::models::IAircraft* p{};
    mixr::simulation::IStation* sta{getStation()};
    if (sta != nullptr) {
-      p = dynamic_cast<mixr::models::Aircraft*>(sta->getOwnship());
+      p = dynamic_cast<mixr::models::IAircraft*>(sta->getOwnship());
    }
    return p;
 }

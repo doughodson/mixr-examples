@@ -7,7 +7,6 @@
 namespace mixr {
 namespace base { class ITime; class Table1; }
 namespace glut  { class GlutDisplay; }
-namespace simulation { class AirVehicle; }
 }
 
 //------------------------------------------------------------------------------

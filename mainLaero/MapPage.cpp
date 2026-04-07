@@ -3,7 +3,6 @@
 #include "TestStation.hpp"
 #include "MapDisplay.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
 #include "mixr/models/player/IPlayer.hpp"
 #include "mixr/models/system/Autopilot.hpp"
 #include "mixr/models/navigation/INavigation.hpp"

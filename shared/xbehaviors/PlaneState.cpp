@@ -4,7 +4,7 @@
 #include "mixr/base/IList.hpp"
 #include "mixr/base/IPairStream.hpp"
 
-#include "mixr/models/player/air/AirVehicle.hpp"
+#include "mixr/models/player/air/IAirVehicle.hpp"
 #include "mixr/models/player/weapon/IWeapon.hpp"
 #include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/system/trackmanager/RwrTrkMgr.hpp"
@@ -65,7 +65,7 @@ void PlaneState::reset()
 
 void PlaneState::updateState(const base::IComponent* const actor)
 {
-   const auto airVehicle = dynamic_cast<const models::AirVehicle*>(actor);
+   const auto airVehicle = dynamic_cast<const models::IAirVehicle*>(actor);
    setAlive(false);
    if (airVehicle != nullptr && airVehicle->isActive()) {
       setAltitude(airVehicle->getAltitude());
@@ -125,7 +125,7 @@ void PlaneState::updateState(const base::IComponent* const actor)
 
       //const base::String* playerName = airVehicle->getName();
       // DH - DOES NOT COMPILE WITH CONST -- ????
-      auto airVehicleX = const_cast<models::AirVehicle*>(airVehicle);
+      auto airVehicleX = const_cast<models::IAirVehicle*>(airVehicle);
       const base::Pair* sensorPair{airVehicleX->getSensorByType(typeid(models::IRadar))};
 
       if (sensorPair != nullptr) {

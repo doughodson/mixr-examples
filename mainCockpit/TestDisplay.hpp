@@ -8,7 +8,7 @@
 
 namespace mixr {
 namespace simulation { class ISimulation; class IStation; }
-namespace models { class Missile; class IPlayer; }
+namespace models { class IPlayer; }
 namespace graphics { class SymbolLoader; }
 namespace xpanel { class DspRadar; class DspRwr; }
 }

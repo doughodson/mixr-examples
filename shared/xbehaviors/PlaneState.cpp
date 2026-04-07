@@ -5,7 +5,7 @@
 #include "mixr/base/IPairStream.hpp"
 
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/player/weapon/Missile.hpp"
+#include "mixr/models/player/weapon/IWeapon.hpp"
 #include "mixr/models/system/IRadar.hpp"
 #include "mixr/models/system/trackmanager/RwrTrkMgr.hpp"
 #include "mixr/models/track/ITrack.hpp"

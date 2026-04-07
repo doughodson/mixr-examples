@@ -6,7 +6,7 @@
 #include <array>
 
 namespace mixr {
-namespace models { class Missile; class IPlayer; }
+namespace models { class IPlayer; }
 namespace simulation { class ISimulation; class IStation; }
 namespace graphics { class SymbolLoader; }
 }

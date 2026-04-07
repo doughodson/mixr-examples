@@ -7,7 +7,7 @@
 
 
 #include "mixr/models/player/air/AirVehicle.hpp"
-#include "mixr/models/player/weapon/Missile.hpp"
+#include "mixr/models/player/weapon/IMissile.hpp"
 
 #include "mixr/models/system/Jammer.hpp"
 #include "mixr/models/system/IRadar.hpp"
@@ -411,7 +411,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
                p != getOwnship() &&
                p->isActive() &&
                ((x*x + y*y) < rng2) &&
-               (p->isClassType(typeid(mixr::models::AirVehicle)) || p->isClassType(typeid(mixr::models::Missile))) ) {
+               (p->isClassType(typeid(mixr::models::AirVehicle)) || p->isClassType(typeid(mixr::models::IMissile))) ) {
                 // Ok, it's an active air vehicle or missile that's within range, and it's not us.
 
                 // Are we already in the track list?
@@ -467,7 +467,7 @@ void TestDisplay::maintainAirTrackSymbols(mixr::graphics::SymbolLoader* loader, 
                       else if (newTracks[inew]->isSide(mixr::models::IPlayer::RED)) type = 2; // foe
                       else type = 3; // neutral/commercial
                    }
-                } else if (newTracks[inew]->isClassType(typeid(mixr::models::Missile))) {
+                } else if (newTracks[inew]->isClassType(typeid(mixr::models::IMissile))) {
                    type = 5; // Missile
                 }
 

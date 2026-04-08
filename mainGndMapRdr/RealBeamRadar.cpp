@@ -3,7 +3,7 @@
 
 #include "mixr/models/player/IPlayer.hpp"
 #include "mixr/models/system/Antenna.hpp"
-#include "mixr/models/WorldModel.hpp"
+#include "mixr/models/IWorldModel.hpp"
 
 #include "mixr/terrain/ITerrain.hpp"
 
@@ -103,7 +103,7 @@ void RealBeamRadar::transmit(const double dt)
       // Locate the terrain elevation database
       if (terrain == nullptr) {
 
-         const models::WorldModel* sim{own->getWorldModel()};
+         const models::IWorldModel* sim{own->getWorldModel()};
          if (sim != nullptr) {
             setTerrain( dynamic_cast<const mixr::terrain::ITerrain*>(sim->getTerrain()) );    // ddh
          }

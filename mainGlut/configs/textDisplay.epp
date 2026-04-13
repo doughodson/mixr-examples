@@ -3,7 +3,7 @@
 //
 ( GlutDisplay
 
-    name: "Text Display"
+    name: "mainGlut textDisplay"
 
     left:       -10
     right:       10
@@ -24,7 +24,7 @@
 
     fonts: {
         default:
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             fontPosition: [ -10 10 ]
             fontWidth: 1.0
             fontHeight: 1.0
@@ -32,7 +32,7 @@
             lineSpacing: 1
             path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
-        )   
+        )
     }
 
     components: {

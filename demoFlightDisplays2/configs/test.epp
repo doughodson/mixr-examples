@@ -1,5 +1,5 @@
 ( GlutDisplay
-    name: "Flight Display2 Test"
+    name: "demoFlightDisplays2"
     left:   -10
     right:   10
     bottom: -10

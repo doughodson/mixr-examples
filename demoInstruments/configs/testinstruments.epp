@@ -3,7 +3,7 @@
 
 ( GlutDisplay
 
-    name: "Instrument test"
+    name: "demoInstruments"
     left:   -10.5
     right:   10.5
     bottom: -10.5

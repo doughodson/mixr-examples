@@ -2,21 +2,31 @@
 source setenv.sh
 echo "demoEfis"
 cd demoEfis
-./demoEfis glutdisplay.edl
+./demoEfis -f glutdisplay.edl
 echo "demoFlightDisplay1"
 cd ../demoFlightDisplays1
-./demoFlightDisplays1 test.edl
+./demoFlightDisplays1 -f test.edl
 echo "demoFlightDisplay2"
 cd ../demoFlightDisplays2
-./demoFlightDisplays2 test.edl
+./demoFlightDisplays2 -f test.edl
 echo "demoInstruments"
 cd ../demoInstruments
-./demoInstruments testinstruments.edl
+./demoInstruments -f testinstruments.edl
 echo "demoSubDisplays"
 cd ../demoSubDisplays
-./demoSubDisplays test.edl
+./demoSubDisplays -f test.edl
 echo "mainCockpit"
 cd ../mainCockpit
-./mainCockpit test1.edl
+./mainCockpit -f test1.edl
+echo "mainGlut"
+cd ../mainGlut
+./mainGlut -f alignmentPattern.edl
+./mainGlut -f textDisplay.edl
+echo "mainGndMapRdr"
+cd ../mainGndMapRdr
+./mainGndMapRdr -f test.edl
+echo "mainIgViewer"
+cd ../mainIgViewer
+./mainIgViewer -f test.edl
 
 

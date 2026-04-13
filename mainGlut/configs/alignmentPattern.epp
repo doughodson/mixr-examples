@@ -4,9 +4,9 @@
 
 ( GlutDisplay
 
-    name: "Alignment Window"
+    name: "mainGlut alignmentPattern"
     color: red
-    fullScreen: true
+    fullScreen: false
 
     left:       -15.0   // 30 degrees horizontal
     right:       15.0

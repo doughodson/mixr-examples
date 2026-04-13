@@ -3,7 +3,7 @@
 display:
 ( RbrDisplay
     
-    name: "Ground Mapping Radar Example"
+    name: "mainGndMapRdr"
     
     textureTest:    true            // True to load & draw a texture, else use glDrawPixels()
     

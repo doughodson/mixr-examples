@@ -15,5 +15,8 @@ cd ../demoInstruments
 echo "demoSubDisplays"
 cd ../demoSubDisplays
 ./demoSubDisplays test.edl
+echo "mainCockpit"
+cd ../mainCockpit
+./mainCockpit test1.edl
 
 

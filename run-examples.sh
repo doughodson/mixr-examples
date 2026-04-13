@@ -37,7 +37,8 @@ cd ../mainNonRT1
 ./mainNonRT1 -f test2.edl
 echo "mainPuzzle1"
 cd ../mainPuzzle1
-./mainPuzzle1 -f echo "mainNonRT1"
-cd ../mainNonRT1
-./mainNonRT1 -f test1.edl
+./mainPuzzle1 -f puzzle.edl
+echo "mainPuzzle2"
+cd ../mainPuzzle2
+./mainPuzzle2 -f puzzle.edl
 

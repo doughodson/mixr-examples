@@ -20,16 +20,16 @@
 #define P16 position: [ 4 1 ]
 
 ( PuzzleBoard
-    
-    name: "Puzzle Board"
-    
+
+    name: "mainPuzzle2"
+
     left:         0.8
     right:        5.0
     bottom:       0.8
     top:          6.0
     near:        -2.0
     far:          2.0
-    
+
     vpWidth:    420
     vpHeight:   520
 
@@ -43,7 +43,7 @@
         cyan:       ( rgb 0 1 1 )
         white:      ( rgb 1 1 1 )
     }
-    
+
     clearDepth: 1.0
     clearColor: ( hsv 180.0 0.4 0.2 )
 
@@ -108,7 +108,7 @@
     //  (positions in list (slot numbers) MUST match block type IDs)
     // ---
     templates: {
-    
+
         1: ( Polygon
             color: ( hsv 0.0 0.2 0.6 )
             vertices: {
@@ -118,7 +118,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         2: ( Polygon
             color: ( hsv 0.0 0.4 0.7 )
             vertices: {
@@ -128,7 +128,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         3: ( Polygon
             color: ( hsv 0.0 0.6 0.8 )
             vertices: {
@@ -138,7 +138,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         4: ( Polygon
             color: ( hsv 0.0 0.8 0.9 )
             vertices: {
@@ -148,7 +148,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         5: ( Polygon
             color: ( hsv 60.0 0.2 0.6 )
             vertices: {
@@ -158,7 +158,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         6: ( Polygon
             color: ( hsv 60.0 0.4 0.7 )
             vertices: {
@@ -168,7 +168,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         7: ( Polygon
             color: ( hsv 60.0 0.6 0.8 )
             vertices: {
@@ -178,7 +178,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         8: ( Polygon
             color: ( hsv 60.0 0.8 0.9 )
             vertices: {
@@ -188,7 +188,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         9: ( Polygon
             color: ( hsv 120.0 0.2 0.6 )
             vertices: {
@@ -198,7 +198,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         10: ( Polygon
             color: ( hsv 120.0 0.4 0.7 )
             vertices: {
@@ -208,7 +208,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         11: ( Polygon
             color: ( hsv 120.0 0.6 0.8 )
             vertices: {
@@ -218,7 +218,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         12: ( Polygon
             color: ( hsv 120.0 0.8 0.9 )
             vertices: {
@@ -228,7 +228,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         13: ( Polygon
             color: ( hsv 180.0 0.2 0.6 )
             vertices: {
@@ -238,7 +238,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         14: ( Polygon
             color: ( hsv 180.0 0.4 0.7 )
             vertices: {
@@ -248,7 +248,7 @@
                 [  0.8  0.0 ]
             }
         )
-    
+
         15: ( Polygon
             color: ( hsv 180.0 0.6 0.8 )
             vertices: {
@@ -258,10 +258,10 @@
                 [  0.8  0.0 ]
             }
         )
-        
+
     }
-    
-    
+
+
     // ---
     // Background components
     // ---
@@ -277,5 +277,5 @@
             }
         )
     }
-     
+
 )

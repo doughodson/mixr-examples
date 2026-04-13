@@ -14,6 +14,7 @@
 // factories
 #include "mixr/base/factory.hpp"
 #include "mixr/graphics/factory.hpp"
+#include "mixr/graphics/fonts/ftgl/factory.hpp"
 #include "mixr/ui/glut/factory.hpp"
 
 #include <GL/glut.h>
@@ -39,6 +40,7 @@ void timerFunc(int)
 mixr::base::IObject* factory(const std::string& name)
 {
    mixr::base::IObject* obj{mixr::glut::factory(name)};
+   if (obj == nullptr) obj = mixr::graphics::ftgl::factory(name);
    if (obj == nullptr) obj = mixr::graphics::factory(name);
    if (obj == nullptr) obj = mixr::base::factory(name);
 

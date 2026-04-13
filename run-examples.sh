@@ -28,5 +28,16 @@ cd ../mainGndMapRdr
 echo "mainIgViewer"
 cd ../mainIgViewer
 ./mainIgViewer -f test.edl
-
+echo "mainLaero"
+cd ../mainLaero
+./mainLaero -f test.edl
+echo "mainNonRT1"
+cd ../mainNonRT1
+./mainNonRT1 -f test1.edl
+./mainNonRT1 -f test2.edl
+echo "mainPuzzle1"
+cd ../mainPuzzle1
+./mainPuzzle1 -f echo "mainNonRT1"
+cd ../mainNonRT1
+./mainNonRT1 -f test1.edl
 

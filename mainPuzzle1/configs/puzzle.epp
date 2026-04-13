@@ -4,7 +4,7 @@
 
 ( PuzzleBoard
 
-    name: "Puzzle Board"
+    name: "mainPuzzle1"
     textures: {
         marble: ( BitmapTexture width: 128 height: 128 path: MIXR_DATA_TEXTURES_PATH file: "Green_Veined_Marble.bmp" )
     }

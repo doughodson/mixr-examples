@@ -2,7 +2,7 @@
 #ifndef __AdiDisplay_HPP__
 #define __AdiDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 namespace mixr {
 namespace models { class IAircraft; }
@@ -12,9 +12,9 @@ namespace simulation { class IStation; }
 //------------------------------------------------------------------------------
 // Class: AdiDisplay
 //------------------------------------------------------------------------------
-class AdiDisplay final: public mixr::glut::GlutDisplay
+class AdiDisplay final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(AdiDisplay, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(AdiDisplay, mixr::glut::IGlutDisplay)
 
 public:
    AdiDisplay();

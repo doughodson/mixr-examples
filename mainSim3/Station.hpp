@@ -5,7 +5,7 @@
 #include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
-   namespace glut { class GlutDisplay; }
+   namespace glut { class IGlutDisplay; }
 }
 
 // -------------------------------------------------------------------------------
@@ -26,12 +26,12 @@ public:
     void reset() final;
 
 private:
-    mixr::base::safe_ptr<mixr::glut::GlutDisplay> display;  // main display
-    bool displayInit{};                                     // display created?
+    mixr::base::safe_ptr<mixr::glut::IGlutDisplay> display;  // main display
+    bool displayInit{};                                      // display created?
 
 private:
     // slot table helper methods
-    bool setSlotDisplay(mixr::glut::GlutDisplay*);
+    bool setSlotDisplay(mixr::glut::IGlutDisplay*);
 };
 
 #endif

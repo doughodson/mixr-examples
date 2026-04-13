@@ -7,7 +7,7 @@
 #include "mixr/graphics/Graphic.hpp"
 #include "mixr/graphics/Image.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include "TestDisplay.hpp"
 

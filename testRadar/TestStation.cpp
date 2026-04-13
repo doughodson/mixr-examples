@@ -10,7 +10,7 @@
 #include "mixr/base/IPairStream.hpp"
 #include "mixr/base/timers/ITimer.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 using namespace mixr;
 
@@ -21,7 +21,7 @@ BEGIN_SLOTTABLE(TestStation)
 END_SLOTTABLE(TestStation)
 
 BEGIN_SLOT_MAP(TestStation)
-    ON_SLOT(1, setSlotGlutDisplay, glut::GlutDisplay)
+    ON_SLOT(1, setSlotGlutDisplay, glut::IGlutDisplay)
 END_SLOT_MAP()
 
 TestStation::TestStation()
@@ -122,7 +122,7 @@ void TestStation::stepOwnshipPlayer()
    }
 }
 
-bool TestStation::setSlotGlutDisplay(glut::GlutDisplay* const d)
+bool TestStation::setSlotGlutDisplay(glut::IGlutDisplay* const d)
 {
    glutDisplay = d;
    glutDisplay->container(this);

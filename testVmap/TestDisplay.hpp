@@ -2,7 +2,7 @@
 #ifndef __TestDisplay_HPP__
 #define __TestDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include "mixr/base/osg/Vec3d"
 
@@ -14,13 +14,13 @@ namespace graphics { class Graphic; }
 namespace vpf { class VpfTable; class VMap0MainDirectory; }
 }
 
-class TestDisplay final: public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::IGlutDisplay
 {
-    DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
+    DECLARE_SUBCLASS(TestDisplay, mixr::glut::IGlutDisplay)
 
 public:
     TestDisplay();
-    
+
     void drawIt() final;
     void mouseEvent(const int button, const int state, const int x, const int y) final;
     void updateData(const double dt = 0.0) final;

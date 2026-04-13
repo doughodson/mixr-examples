@@ -6,7 +6,7 @@
 
 namespace mixr {
    namespace base { class Table1; }
-   namespace glut  { class GlutDisplay; }
+   namespace glut  { class IGlutDisplay; }
 }
 
 //------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ public:
 
 private:
    // Main Display
-   mixr::base::safe_ptr<mixr::glut::GlutDisplay> mainDisplay;
+   mixr::base::safe_ptr<mixr::glut::IGlutDisplay> mainDisplay;
    bool displayInit{};
 
    // Auto reset timer
@@ -47,7 +47,7 @@ private:
 
 private:
    // slot table helper methods
-   bool setSlotMainDisplay(mixr::glut::GlutDisplay* const);
+   bool setSlotMainDisplay(mixr::glut::IGlutDisplay* const);
    bool setSlotAutoResetTime(const mixr::base::ITime* const);     // Sets the auto RESET timer
 };
 

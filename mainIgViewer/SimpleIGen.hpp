@@ -2,7 +2,7 @@
 #ifndef __SimpleIGen_HPP__
 #define __SimpleIGen_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include "mixr/ighost/pov/Pov.hpp"
 
@@ -13,9 +13,9 @@ namespace mixr {
 namespace base { class INetHandler; class String; }
 }
 
-class SimpleIGen final: public ::mixr::glut::GlutDisplay
+class SimpleIGen final: public ::mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(SimpleIGen, ::mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(SimpleIGen, ::mixr::glut::IGlutDisplay)
 
 public:
    SimpleIGen();

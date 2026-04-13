@@ -2,7 +2,7 @@
 #ifndef __InstrumentPanel_HPP__
 #define __InstrumentPanel_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 namespace mixr {
 namespace models { class IPlayer; }
@@ -21,9 +21,9 @@ class MfdDisplay;
 //   'f' or 'F'   -- Toggle simulation freeze
 //   '+'          -- Ownship step (to next local air vehicle)
 //------------------------------------------------------------------------------
-class InstrumentPanel final: public mixr::glut::GlutDisplay
+class InstrumentPanel final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(InstrumentPanel, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(InstrumentPanel, mixr::glut::IGlutDisplay)
 
 public:
    InstrumentPanel();

@@ -6,7 +6,7 @@
 
 namespace mixr {
 namespace base { class Number; }
-namespace glut { class GlutDisplay; }
+namespace glut { class IGlutDisplay; }
 }
 
 //------------------------------------------------------------------------------
@@ -32,15 +32,15 @@ public:
    void reset() final;
 
 private:
-   mixr::base::safe_ptr<mixr::glut::GlutDisplay> glutDisplay;
-   mixr::base::safe_ptr<mixr::glut::GlutDisplay> mapDisplay;
+   mixr::base::safe_ptr<mixr::glut::IGlutDisplay> glutDisplay;
+   mixr::base::safe_ptr<mixr::glut::IGlutDisplay> mapDisplay;
    bool glutDisplayInit{};
    bool mapDisplayInit{};
 
 private:
    // slot table helper methods
-   bool setSlotGlutDisplay(mixr::glut::GlutDisplay* const);
-   bool setSlotMapDisplay(mixr::glut::GlutDisplay* const);
+   bool setSlotGlutDisplay(mixr::glut::IGlutDisplay* const);
+   bool setSlotMapDisplay(mixr::glut::IGlutDisplay* const);
 };
 
 #endif

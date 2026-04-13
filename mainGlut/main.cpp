@@ -9,7 +9,7 @@
 
 #include "mixr/graphics/Graphic.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 // factories
 #include "mixr/base/factory.hpp"
@@ -22,7 +22,7 @@
 #include <string>
 
 const int frameRate{20};
-mixr::glut::GlutDisplay* display{};
+mixr::glut::IGlutDisplay* display{};
 
 // timerFunc() -- Time critical stuff
 void timerFunc(int)
@@ -48,7 +48,7 @@ mixr::base::IObject* factory(const std::string& name)
 }
 
 // display builder
-mixr::glut::GlutDisplay* builder(const std::string& filename)
+mixr::glut::IGlutDisplay* builder(const std::string& filename)
 {
    // read configuration file
    int num_errors{};
@@ -73,7 +73,7 @@ mixr::glut::GlutDisplay* builder(const std::string& filename)
    }
 
    // try to cast to proper object, and check
-   const auto glutDisplay = dynamic_cast<mixr::glut::GlutDisplay*>(obj);
+   const auto glutDisplay = dynamic_cast<mixr::glut::IGlutDisplay*>(obj);
    if (glutDisplay == nullptr) {
       std::cerr << "Invalid configuration file!" << std::endl;
       std::exit(EXIT_FAILURE);

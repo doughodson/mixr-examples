@@ -2,7 +2,7 @@
 #ifndef __TestDisplay_HPP__
 #define __TestDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 #include <array>
 
 namespace mixr {
@@ -25,9 +25,9 @@ namespace graphics { class SymbolLoader; }
 //   'i' or 'I'   -- Increase Range
 //   'd' or 'D'   -- Decrease Range
 //------------------------------------------------------------------------------
-class TestDisplay final: public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::IGlutDisplay
 {
-    DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
+    DECLARE_SUBCLASS(TestDisplay, mixr::glut::IGlutDisplay)
 
 public:
     TestDisplay();

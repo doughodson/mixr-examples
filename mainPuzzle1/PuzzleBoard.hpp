@@ -2,7 +2,7 @@
 #ifndef __PuzzleBoard_HPP__
 #define __PuzzleBoard_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include <array>
 
@@ -18,9 +18,9 @@ class State;
 // Class: PuzzleBoard
 // Description: Puzzle board
 //------------------------------------------------------------------------------
-class PuzzleBoard final: public mixr::glut::GlutDisplay
+class PuzzleBoard final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(PuzzleBoard, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(PuzzleBoard, mixr::glut::IGlutDisplay)
 
 public:
    PuzzleBoard();

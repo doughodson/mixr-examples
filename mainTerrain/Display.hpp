@@ -2,7 +2,7 @@
 #ifndef __Display_HPP__
 #define __Display_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 #include "mixr/base/qty/util/length_utils.hpp"
 
 namespace mixr {
@@ -34,9 +34,9 @@ class MainWindow;
 //    textureTest    <Boolean>              ! Texture test enabled
 //
 // ----------------------------------------------------------------------------
-class Display final: public mixr::glut::GlutDisplay
+class Display final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mixr::glut::IGlutDisplay)
 
 public:
    enum class ColorDepth {GRAY=0, COLOR=1, GREEN=2};

@@ -2,7 +2,7 @@
 #ifndef __EventDisplay_HPP__
 #define __EventDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 #include <array>
 #include <string>
 
@@ -19,9 +19,9 @@ class TestObject;
 // and distribution to test event handling capabilities of the Component
 // class
 //------------------------------------------------------------------------------
-class EventDisplay final: public mixr::glut::GlutDisplay
+class EventDisplay final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(EventDisplay, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(EventDisplay, mixr::glut::IGlutDisplay)
 
 public:
    EventDisplay();

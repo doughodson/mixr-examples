@@ -2,7 +2,7 @@
 #ifndef __Display_HPP__
 #define __Display_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 namespace mixr {
 namespace base { class Boolean; }
@@ -20,9 +20,9 @@ namespace simulation { class ISimulation; class IStation; }
 // Slots:
 //    textureTest <Boolean>   Texture test enabled
 // ----------------------------------------------------------------------------
-class Display final: public mixr::glut::GlutDisplay
+class Display final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(Display, mixr::glut::IGlutDisplay)
 
 public:
    Display();

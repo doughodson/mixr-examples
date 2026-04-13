@@ -2,7 +2,7 @@
 #ifndef __TestDisplay_HPP__
 #define __TestDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 namespace mixr {
    namespace graphics { class Graphic; }
@@ -11,9 +11,9 @@ namespace mixr {
 //------------------------------------------------------------------------------
 // TestDisplay
 //------------------------------------------------------------------------------
-class TestDisplay final: public mixr::glut::GlutDisplay
+class TestDisplay final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(TestDisplay, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(TestDisplay, mixr::glut::IGlutDisplay)
 
 public:
    TestDisplay();

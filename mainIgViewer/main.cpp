@@ -5,7 +5,7 @@
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/util/system_utils.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include "mixr/simulation/Station.hpp"
 

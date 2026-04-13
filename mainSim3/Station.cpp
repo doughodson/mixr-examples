@@ -1,7 +1,7 @@
 
 #include "Station.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(Station, "MapTestStation")
 EMPTY_DELETEDATA(Station)
@@ -11,7 +11,7 @@ BEGIN_SLOTTABLE(Station)
 END_SLOTTABLE(Station)
 
 BEGIN_SLOT_MAP(Station)
-    ON_SLOT(1, setSlotDisplay, mixr::glut::GlutDisplay)
+    ON_SLOT(1, setSlotDisplay, mixr::glut::IGlutDisplay)
 END_SLOT_MAP()
 
 Station::Station()
@@ -48,7 +48,7 @@ void Station::reset()
 //------------------------------------------------------------------------------
 // setSlotDisplay() - sets our display
 //------------------------------------------------------------------------------
-bool Station::setSlotDisplay(mixr::glut::GlutDisplay* x)
+bool Station::setSlotDisplay(mixr::glut::IGlutDisplay* x)
 {
     bool ok{};
     if (x != nullptr) {

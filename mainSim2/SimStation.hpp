@@ -5,7 +5,7 @@
 #include "mixr/simulation/IStation.hpp"
 
 namespace mixr {
-namespace glut { class GlutDisplay; }
+namespace glut { class IGlutDisplay; }
 }
 
 //------------------------------------------------------------------------------
@@ -37,16 +37,16 @@ public:
 
 private:
     // main Display
-    mixr::base::safe_ptr<mixr::glut::GlutDisplay> display;  // main display
-    bool displayInit{};                                     // display created?
+    mixr::base::safe_ptr<mixr::glut::IGlutDisplay> display;     // main display
+    bool displayInit{};                                         // display created?
 
     // auto reset timer
-    double autoResetTimer{};                                   // auto RESET timer (sends a RESET_EVENT after timeout)
+    double autoResetTimer{};                                    // auto RESET timer (sends a RESET_EVENT after timeout)
     mixr::base::safe_ptr<mixr::base::ITime> autoResetTimer0{};  // init value of the auto RESET timer
 
 private:
     // slot table helper methods
-    bool setSlotDisplay(mixr::glut::GlutDisplay* const);
+    bool setSlotDisplay(mixr::glut::IGlutDisplay* const);
     bool setSlotAutoResetTime(mixr::base::ITime* const);
 };
 

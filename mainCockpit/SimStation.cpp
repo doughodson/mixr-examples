@@ -5,7 +5,7 @@
 
 #include "mixr/models/player/air/IAirVehicle.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include "mixr/base/Identifier.hpp"
 #include "mixr/base/Pair.hpp"
@@ -24,7 +24,7 @@ BEGIN_SLOTTABLE(SimStation)
 END_SLOTTABLE(SimStation)
 
 BEGIN_SLOT_MAP(SimStation)
-    ON_SLOT( 1, setSlotMainDisplay,    mixr::glut::GlutDisplay)
+    ON_SLOT( 1, setSlotMainDisplay,    mixr::glut::IGlutDisplay)
     ON_SLOT( 2, setSlotAutoResetTime,  mixr::base::ITime)
 END_SLOT_MAP()
 
@@ -132,7 +132,7 @@ void SimStation::stepOwnshipPlayer()
 }
 
 // Main Display
-bool SimStation::setSlotMainDisplay(mixr::glut::GlutDisplay* const d)
+bool SimStation::setSlotMainDisplay(mixr::glut::IGlutDisplay* const d)
 {
     if (mainDisplay != nullptr) mainDisplay->container(nullptr);
     mainDisplay = d;

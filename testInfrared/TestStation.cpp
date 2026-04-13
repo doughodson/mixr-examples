@@ -9,7 +9,7 @@
 
 #include "mixr/simulation/ISimulation.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 IMPLEMENT_SUBCLASS(TestStation, "TestStation")
 
@@ -18,7 +18,7 @@ BEGIN_SLOTTABLE(TestStation)
 END_SLOTTABLE(TestStation)
 
 BEGIN_SLOT_MAP(TestStation)
-    ON_SLOT(1, setSlotGlutDisplay, mixr::glut::GlutDisplay)
+    ON_SLOT(1, setSlotGlutDisplay, mixr::glut::IGlutDisplay)
 END_SLOT_MAP()
 
 TestStation::TestStation()
@@ -119,7 +119,7 @@ void TestStation::stepOwnshipPlayer()
    }
 }
 
-bool TestStation::setSlotGlutDisplay(mixr::glut::GlutDisplay* const d)
+bool TestStation::setSlotGlutDisplay(mixr::glut::IGlutDisplay* const d)
 {
     glutDisplay = d;
     glutDisplay->container(this);

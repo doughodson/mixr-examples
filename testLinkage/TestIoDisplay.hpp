@@ -2,7 +2,7 @@
 #ifndef __TestIoDisplay_HPP__
 #define __TestIoDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include <array>
 #include <string>
@@ -35,9 +35,9 @@ namespace base { class IIoHandler; class Integer; class String; }
 //       item:  5   di: 11    // Item #4 is DI #11
 //   )
 //------------------------------------------------------------------------------
-class TestIoDisplay final: public mixr::glut::GlutDisplay
+class TestIoDisplay final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(TestIoDisplay, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(TestIoDisplay, mixr::glut::IGlutDisplay)
 
 public:
    static const int ROWS{20};            // see display.epp/

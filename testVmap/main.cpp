@@ -7,7 +7,6 @@
 #include "mixr/graphics/Readouts.hpp"
 #include "mixr/graphics/SymbolLoader.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
 #include <GL/glut.h>
 
 #include "TestDisplay.hpp"

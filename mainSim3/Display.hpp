@@ -2,7 +2,7 @@
 #ifndef __Display_HPP__
 #define __Display_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 // -------------------------------------------------------------------------------
 // Class: Display
@@ -10,9 +10,9 @@
 // Description:
 //      Derived Display that will make our map page move.
 // -------------------------------------------------------------------------------
-class Display final: public mixr::glut::GlutDisplay
+class Display final: public mixr::glut::IGlutDisplay
 {
-    DECLARE_SUBCLASS(Display, mixr::glut::GlutDisplay)
+    DECLARE_SUBCLASS(Display, mixr::glut::IGlutDisplay)
 
 public:
     Display();

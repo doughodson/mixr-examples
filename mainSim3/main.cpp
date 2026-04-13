@@ -4,7 +4,7 @@
 #include "mixr/base/timers/ITimer.hpp"
 #include "mixr/base/edl_parser.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 #include <GL/glut.h>
 #include "mixr/base/util/system_utils.hpp"
 

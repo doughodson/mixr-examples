@@ -16,7 +16,7 @@
 
 #include "mixr/models/player/air/IAirVehicle.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 using namespace mixr;
 
@@ -33,7 +33,7 @@ BEGIN_EVENT_HANDLER(SimStation)
 END_EVENT_HANDLER()
 
 BEGIN_SLOT_MAP(SimStation)
-   ON_SLOT( 1, setSlotMainDisplay,   glut::GlutDisplay)
+   ON_SLOT( 1, setSlotMainDisplay,   glut::IGlutDisplay)
    ON_SLOT( 2, setSlotAutoResetTime, base::ITime)
 END_SLOT_MAP()
 
@@ -140,7 +140,7 @@ void SimStation::stepOwnshipPlayer()
 // Set Slot Functions
 //------------------------------------------------------------------------------
 
-bool SimStation::setSlotMainDisplay(glut::GlutDisplay* const x)
+bool SimStation::setSlotMainDisplay(glut::IGlutDisplay* const x)
 {
    if (mainDisplay != nullptr) {
       mainDisplay->container(nullptr);

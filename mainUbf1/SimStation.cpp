@@ -5,7 +5,7 @@
 
 #include "mixr/models/player/air/IAirVehicle.hpp"
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 #include "mixr/base/numeric/Boolean.hpp"
 #include "mixr/base/qty/angles.hpp"
@@ -29,7 +29,7 @@ BEGIN_SLOTTABLE(SimStation)
 END_SLOTTABLE(SimStation)
 
 BEGIN_SLOT_MAP(SimStation)
-    ON_SLOT( 1, setSlotMainDisplay, glut::GlutDisplay)
+    ON_SLOT( 1, setSlotMainDisplay, glut::IGlutDisplay)
 END_SLOT_MAP()
 
 SimStation::SimStation()
@@ -104,7 +104,7 @@ void SimStation::stepOwnshipPlayer()
     }
 }
 
-bool SimStation::setSlotMainDisplay(glut::GlutDisplay* const d)
+bool SimStation::setSlotMainDisplay(glut::IGlutDisplay* const d)
 {
     if (mainDisplay != nullptr) mainDisplay->container(nullptr);
     mainDisplay = d;

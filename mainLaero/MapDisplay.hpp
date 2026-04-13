@@ -2,7 +2,7 @@
 #ifndef __MapDisplay_HPP__
 #define __MapDisplay_HPP__
 
-#include "mixr/ui/glut/GlutDisplay.hpp"
+#include "mixr/ui/glut/IGlutDisplay.hpp"
 
 namespace mixr {
 namespace models { class IAircraft; }
@@ -15,9 +15,9 @@ namespace simulation { class IStation; }
 // Description:
 //      Derived MapDisplay that will simply make our map page move.
 // -------------------------------------------------------------------------------
-class MapDisplay final: public mixr::glut::GlutDisplay
+class MapDisplay final: public mixr::glut::IGlutDisplay
 {
-   DECLARE_SUBCLASS(MapDisplay, mixr::glut::GlutDisplay)
+   DECLARE_SUBCLASS(MapDisplay, mixr::glut::IGlutDisplay)
 
 public:
    MapDisplay();

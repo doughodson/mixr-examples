@@ -37,7 +37,7 @@
     fonts: {
         // normal font for the instruments
         default: 
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another
@@ -53,7 +53,7 @@
         
         // reverse font for the instruments
         instrevfont: 
-        (FTGLPolygonFonts
+        (FTGLPolygonFont
             fontPosition: [ -10.5 10.5 ]
             fontWidth: 1
             fontHeight: 1
@@ -65,7 +65,7 @@
         
         // special font for the instruments
         instspecfont:
-        ( FTGLPolygonFonts 
+        ( FTGLPolygonFont 
             fontPosition: [ -10.5 10.5 ]
             fontWidth: 1          // Font width scaling 
             fontHeight: 1         // Font height scaling 
@@ -77,7 +77,7 @@
      
         // normal font
         pfdnormfont: 
-        ( FTGLPolygonFonts 
+        ( FTGLPolygonFont 
             fontPosition: [ -3.1 4.15 ]
             path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
@@ -91,7 +91,7 @@
         
         // special font 
         pfdspecfont: 
-        ( FTGLPolygonFonts 
+        ( FTGLPolygonFont 
             path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
             // facesize is default to 1 inch, so you can maninpulate the norm with font width and height

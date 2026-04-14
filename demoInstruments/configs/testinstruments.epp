@@ -49,7 +49,7 @@
     fonts: {
         // normal font for the instruments
         default: 
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another
@@ -63,7 +63,7 @@
         )
         // small font for the instruments
         smallfont: 
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another
@@ -79,7 +79,7 @@
         
         // smaller font for the instruments
         smallerfont: 
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another
@@ -95,7 +95,7 @@
         
         // used for the CAS mach readout
         arialfont: 
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another

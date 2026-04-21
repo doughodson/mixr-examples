@@ -1,7 +1,7 @@
 // TestEvents - tests our Components send routines, using different parameters
 ( EventDisplay
 
-    name: "Test Events"
+    name: "testEvents -f testEvents.edl"
 
     left:       -10
     right:       10
@@ -22,7 +22,7 @@
 
     fonts: {
         default:
-        ( FTGLPolygonFonts
+        ( FTGLPolygonFont
             fontPosition: [ -10 10 ]
             fontWidth: 1.0
             fontHeight: 1.0

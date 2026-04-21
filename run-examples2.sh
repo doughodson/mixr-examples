@@ -8,4 +8,10 @@ echo "mainSim3 -f test.edl"
 cd ../mainTerrain
 echo "mainTerrain -f test.edl"
 ./mainTerrain -f test.edl
+cd ../mainUbf1
+echo "mainUbf1 -f test00.edl"
+./mainUbf1 -f test00.edl
+cd ../testDafif
+echo "testDafif"
+./testDafif
 

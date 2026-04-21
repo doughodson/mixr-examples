@@ -1,6 +1,6 @@
 ( AdiDisplay
 
-      name: "Cockpit Display"
+      name: "mainLareo -f test.edl"
 
       left:   -10.5
       right:   10.5

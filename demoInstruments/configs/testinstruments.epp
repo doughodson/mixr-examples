@@ -3,7 +3,7 @@
 
 ( GlutDisplay
 
-    name: "demoInstruments"
+    name: "demoInstruments -f testinstruments.edl"
     left:   -10.5
     right:   10.5
     bottom: -10.5

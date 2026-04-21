@@ -1,5 +1,5 @@
 glutdisplay: ( GlutDisplay
-    name: "demoEfis"
+    name: "demoEfis -f glutDisplay.edl"
     left:   -3
     right:   3
     bottom: -3

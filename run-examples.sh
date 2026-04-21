@@ -17,6 +17,7 @@ cd ../demoSubDisplays
 ./demoSubDisplays -f test.edl
 echo "mainCockpit"
 cd ../mainCockpit
+echo "mainCockpit -f test1.edl"
 ./mainCockpit -f test1.edl
 echo "mainGlut"
 cd ../mainGlut
@@ -33,7 +34,9 @@ cd ../mainLaero
 ./mainLaero -f test.edl
 echo "mainNonRT1"
 cd ../mainNonRT1
+echo "mainNonRT1 -f test1.edl"
 ./mainNonRT1 -f test1.edl
+echo "mainNonRT1 -f test2.edl"
 ./mainNonRT1 -f test2.edl
 echo "mainPuzzle1"
 cd ../mainPuzzle1

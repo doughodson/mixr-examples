@@ -3,7 +3,7 @@
 //
 ( GlutDisplay
 
-    name: "mainGlut textDisplay"
+    name: "mainGlut -f textDisplay.edl"
 
     left:       -10
     right:       10

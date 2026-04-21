@@ -21,7 +21,7 @@
 
 ( PuzzleBoard
 
-    name: "mainPuzzle2"
+    name: "mainPuzzle2 -f puzzle.edl"
 
     left:         0.8
     right:        5.0

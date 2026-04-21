@@ -3,7 +3,7 @@
 
    display:
    ( SimpleIGen
-      name: "mainIgViewer"
+      name: "mainIgViewer -f test.edl"
       left:       -5.0
       right:       5.0
       bottom:     -3.0

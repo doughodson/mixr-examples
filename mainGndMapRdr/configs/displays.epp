@@ -3,7 +3,7 @@
 display:
 ( RbrDisplay
     
-    name: "mainGndMapRdr"
+    name: "mainGndMapRdr -f test.edl"
     
     textureTest:    true            // True to load & draw a texture, else use glDrawPixels()
     

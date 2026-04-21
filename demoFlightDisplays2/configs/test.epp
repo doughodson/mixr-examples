@@ -1,5 +1,5 @@
 ( GlutDisplay
-    name: "demoFlightDisplays2"
+    name: "demoFlightDisplays2 -f test.edl"
     left:   -10
     right:   10
     bottom: -10

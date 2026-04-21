@@ -1,6 +1,6 @@
 display: ( MapTestDisplay
     
-    name: "Map Test"
+    name: "mainSim3 -f test.edl"
   
     left:        -10
     right:        10

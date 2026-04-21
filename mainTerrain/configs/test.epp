@@ -2,10 +2,10 @@
 
 ( Display
 
-    name: "My Main Window"
+    name: "mainTerrain -f test.edl"
 
-    //minElevation: ( Feet     0 )    // Min elevation (default: use min elevation from files)
-    //maxElevation: ( Feet 15000 )    // Max elevation (default: use max elevation from files)
+    //minElevation: ( Feet     0 )  // Min elevation (default: use min elevation from files)
+    //maxElevation: ( Feet 15000 )  // Max elevation (default: use max elevation from files)
     altitude:     ( Feet 30000 )    // Ref altitude
 
     colorDepth:      1              // gray(0), color(1), green(2)

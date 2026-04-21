@@ -8,7 +8,7 @@ display:
 ( InstrumentPanel
     idleSleepTime: 20
 
-    name: "Sim2 Display"
+    name: "mainSim2 -f test0.edl"
 
     textures: {
     }

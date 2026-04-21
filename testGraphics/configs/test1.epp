@@ -7,7 +7,7 @@
     pickWidth:  14
     pickHeight: 14
 
-    name: "Main Window"
+    name: "testGraphics -f test1.edl"
 
     left:       -10.5
     right:       10.5

@@ -4,7 +4,7 @@
 
 ( TestDisplay
     
-    name: "Main Window"
+    name: "testGraphics -f test2.edl"
     
     vpX:        100
     vpY:        100

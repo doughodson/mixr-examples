@@ -3,9 +3,6 @@ source setenv.sh
 cd demoEfis; make run; cd ..
 cd demoFlightDisplays1; make run; cd ..
 cd demoFlightDisplays2; make run; cd ..
-cd ../demoInstruments
-echo "demoInstruments -f testinstruments.edl"
-./demoInstruments -f testinstruments.edl
 cd ../demoSubDisplays
 echo "demoSubDisplays -f test.edl"
 ./demoSubDisplays -f test.edl

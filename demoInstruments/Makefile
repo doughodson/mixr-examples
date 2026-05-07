@@ -25,15 +25,20 @@ OBJS =  \
 	test_pages/TestVVI.o \
 	main.o
 
+EDLS = testinstruments.edl
+
 LDFLAGS += -lmixr_instruments -lmixr_ui_glut -lmixr_graphics -lmixr_graphics_ftgl -lmixr_base
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt
 
-all: edl $(PGM)
+all: $(EDLS) $(PGM)
 
-edl:
-	cpp configs/testinstruments.epp >testinstruments.edl $(EPPFLAGS)
+run: all
+	./$(PGM) -f testinstruments.edl
+
+$(EDLS):
+	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

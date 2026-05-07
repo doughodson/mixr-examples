@@ -3,6 +3,8 @@ include ../makedefs
 
 PGM = mainIgViewer
 
+EDLS = test.edl
+
 OBJS = \
 	SimpleIGen.o \
 	SimStation.o \
@@ -22,10 +24,13 @@ LDFLAGS += -lfontconfig -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt
 
-all: edl $(PGM)
+all: $(EDLS) $(PGM)
 
-edl:
-	cpp configs/test.epp > test.edl $(EPPFLAGS)
+run: all
+	./$(PGM) -f test1.edl
+
+$(EDLS):
+	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

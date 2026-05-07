@@ -35,11 +35,11 @@
          gray8:      ( rgb 0.8 0.8 0.8 )
       }
 
-      // Again, an example of an PairStream, this time setting up our fonts. 
+      // Again, an example of an PairStream, this time setting up our fonts.
       fonts: {
         // normal font for the instruments
-        default: 
-        ( FTGLPolygonFonts
+        default:
+        ( FTGLPolygonFont
            // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another
@@ -51,10 +51,10 @@
             path: MIXR_DATA_FONT_PATH
             file: "arialn.ttf"
         )
-        
+
         // smaller font for the instruments
-        smallerfont: 
-        ( FTGLPolygonFonts
+        smallerfont:
+        ( FTGLPolygonFont
            // starting position of our font, notice it the upper left corner of our display, (see the orthos, up top)
             fontPosition: [ -10.5 10.5 ]
             // this is a unit value, telling us our width and height are proportional to one another
@@ -68,9 +68,9 @@
             file: "arialn.ttf"
         )
       }
-      
+
       normalFont: default
-      
+
         components: {
          //-------------------------------------------
          // start of readouts graphic
@@ -81,9 +81,9 @@
                  // start bank NRO graphic
                  //-------------------------------------------
                  ( Graphic
-                     transform: ( Translation -7.85  6.15 ) 
+                     transform: ( Translation -7.85  6.15 )
                      components: {
-                         phiRO: 
+                         phiRO:
                          ( NumericReadout
                              color: white
                              value: 999
@@ -96,16 +96,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
@@ -123,15 +123,15 @@
                  //-------------------------------------------
                  // start pitch NRO graphic
                  //-------------------------------------------
-                 pitch: 
+                 pitch:
                  ( Graphic
                      transform: ( Translation -1.325 6.15  )
                      components: {
-                         thtRO: 
+                         thtRO:
                          ( NumericReadout
                              color: white
                              value: 999
-                             transform: ( Translation 0 0 ) 
+                             transform: ( Translation 0 0 )
                              format: "#####"
                          )
                          ( LineLoop
@@ -140,16 +140,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
@@ -167,11 +167,11 @@
                  //-------------------------------------------
                  // start heading NRO graphic
                  //-------------------------------------------
-                 magneticheading: 
+                 magneticheading:
                  (Graphic
                      transform: ( Translation 5.5 6.15 )
                      components: {
-                         psiRO: 
+                         psiRO:
                          ( NumericReadout
                              color: white
                              transform: ( Translation 0 0 )
@@ -183,16 +183,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
@@ -213,10 +213,10 @@
                  ( Graphic
                      transform: ( Translation -9.85 9.0 )
                      components: {
-                         velRO:  
+                         velRO:
                          ( NumericReadout
                              color: white
-                             transform: ( Translation 0.0 0.0  ) 
+                             transform: ( Translation 0.0 0.0  )
                              format: "#####"
                          )
                          ( LineLoop
@@ -225,16 +225,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.5    0.85 ] 
+                                 [  2.5    0.85 ]
                                  [  2.5   -0.15 ]
                              }
                          )
@@ -254,9 +254,9 @@
                  //-------------------------------------------
                  altitude:
                  ( Graphic
-                     transform: ( Translation 7.0 9.0 ) 
+                     transform: ( Translation 7.0 9.0 )
                      components: {
-                         altRO: 
+                         altRO:
                          ( NumericReadout
                              color: white
                              transform: ( Translation 0 0 )
@@ -268,7 +268,7 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  3.0    0.85 ] 
+                                 [  3.0    0.85 ]
                                  [  3.0   -0.15 ]
                              }
                          )
@@ -277,7 +277,7 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  3.0    0.85 ] 
+                                 [  3.0    0.85 ]
                                  [  3.0   -0.15 ]
                              }
                          )
@@ -296,7 +296,7 @@
                  // start roll rate NRO graphic
                  //-------------------------------------------
                  ( Graphic
-                     transform: ( Translation -7.85  -6.875 ) 
+                     transform: ( Translation -7.85  -6.875 )
                      components: {
                          pRO:
                          ( NumericReadout
@@ -311,16 +311,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.0    0.85 ] 
+                                 [  2.0    0.85 ]
                                  [  2.0   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.0    0.85 ] 
+                                 [  2.0    0.85 ]
                                  [  2.0   -0.15 ]
                              }
                          )
@@ -339,9 +339,9 @@
                  // start pitch rate NRO graphic
                  //-------------------------------------------
                  ( Graphic
-                     transform: ( Translation -0.925 -6.875 ) 
+                     transform: ( Translation -0.925 -6.875 )
                      components: {
-                         qRO: 
+                         qRO:
                          ( NumericReadout
                              color: white
                              value: 999
@@ -354,16 +354,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.0    0.85 ] 
+                                 [  2.0    0.85 ]
                                  [  2.0   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.0    0.85 ] 
+                                 [  2.0    0.85 ]
                                  [  2.0   -0.15 ]
                              }
                          )
@@ -384,7 +384,7 @@
                  ( Graphic
                      transform: ( Translation 6.0 -6.875 )
                      components: {
-                         rRO: 
+                         rRO:
                          ( NumericReadout
                              color: white
                              value: 9
@@ -397,16 +397,16 @@
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.0    0.85 ] 
+                                 [  2.0    0.85 ]
                                  [  2.0   -0.15 ]
                              }
                          )
-                         ( Polygon 
+                         ( Polygon
                              color: red
                              vertices: {
                                  [ -0.15  -0.15 ]
                                  [ -0.15   0.85 ]
-                                 [  2.0    0.85 ] 
+                                 [  2.0    0.85 ]
                                  [  2.0   -0.15 ]
                              }
                          )
@@ -447,13 +447,13 @@
                  )
                  // this rotates with our bank angle, and is our bank angle.
                  // DialPointer is explained in speedbrake.epp
-                 bankADI:  
+                 bankADI:
                  ( DialPointer
                      components: {
                          ( Polygon
-                             transform: ( Translation 0.0 -4.5 ) 
+                             transform: ( Translation 0.0 -4.5 )
                              vertices: {
-                                 [ -0.2  0.0 ] 
+                                 [ -0.2  0.0 ]
                                  [  0.2  0.0 ]
                                  [  0.0  0.4 ]
                              }
@@ -462,7 +462,7 @@
                  )
 
                  // these are the tic marks that are ALWAYS visible
-                 bankangleticmarks: 
+                 bankangleticmarks:
                  ( Graphic
                      color: black
                      components: {
@@ -476,38 +476,38 @@
                              }
                          )
                          // +- 10 and 20 degree tics
-                         ( Line 
-                             transform: ( Rotation 0.174444584  ) 
+                         ( Line
+                             transform: ( Rotation 0.174444584  )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.9 ] }
                          )
-                         ( Line 
-                             transform: ( Rotation 0.348889168  ) 
+                         ( Line
+                             transform: ( Rotation 0.348889168  )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.9 ] }
                          )
-                         ( Line 
-                             transform: ( Rotation -0.174444584  ) 
+                         ( Line
+                             transform: ( Rotation -0.174444584  )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.9 ] }
                          )
-                         ( Line 
-                             transform: ( Rotation -0.348889168  ) 
+                         ( Line
+                             transform: ( Rotation -0.348889168  )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.9 ] }
                          )
                          // +- 30 degree tics
-                         ( Line 
+                         ( Line
                              linewidth: 2
                              transform: ( Rotation 0.523333752 )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.6 ] }
                          )
-                         ( Line 
+                         ( Line
                              linewidth: 2
                              transform: ( Rotation -0.523333752 )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.6 ] }
                          )
-                         
-                     }
-                 ) // end of bank angle tic marks graphic 
 
-                 // Our test routine TestMfdAdi.cpp will look up each of these graphics by name 
+                     }
+                 ) // end of bank angle tic marks graphic
+
+                 // Our test routine TestMfdAdi.cpp will look up each of these graphics by name
                  // and depending on the roll value, will make them visible or not by sending
                  // the event message SET_VISIBILITY
                  // 45 and 60 degree tic marks for a roll over 25 degrees
@@ -535,9 +535,9 @@
                      }
                  ) // end of over 25 neg graphic
 
-                 // 90 degree tic mark for a roll over 55 degrees 
-                 over55: 
-                 ( Graphic 
+                 // 90 degree tic mark for a roll over 55 degrees
+                 over55:
+                 ( Graphic
                      linewidth: 2
                      color: black
                      components: {
@@ -548,7 +548,7 @@
                          ( Line
                                  transform: ( Rotation -1.570001256 )
                              vertices: { [ 0.0 -4.1 ] [ 0.0 -3.6 ] }
-                         )   
+                         )
                      }
                  ) // end of over 55 graphic
 
@@ -573,33 +573,33 @@
              // here is our MfdAdi - notice we scissor it instead of giving it an AdiOcclusionCircle
          ( Graphic
              scissorX: -8
-             scissorWidth: 16 
+             scissorWidth: 16
              scissorY: -6
              scissorHeight: 12
              components: {
-                 // MfdAdi works a lot like adi, which is explained in adi.epp.  However, MfdAdi also 
-                 // has a slot which handles the ghost horizon, and tells us how much pitch we have to 
-                 // exceed for the ghost horizon to show up.  MfdAdi also has a climb dive marker, which 
-                 // will translate and rotate in accordance to the values it receives.  Other than that, 
+                 // MfdAdi works a lot like adi, which is explained in adi.epp.  However, MfdAdi also
+                 // has a slot which handles the ghost horizon, and tells us how much pitch we have to
+                 // exceed for the ghost horizon to show up.  MfdAdi also has a climb dive marker, which
+                 // will translate and rotate in accordance to the values it receives.  Other than that,
                  // it works exactly like the regular adi.
                  mfdADI:
                  ( Adi
                      // Every time you pitch over 40 or -40 degrees, the ghost horizon bar will become visible
-                     scalingTable: 
+                     scalingTable:
                      ( Table1
                          x:    [ -90  90 ]
                          data: [  20 -20 ]
-                     ) 
+                     )
                      components: {
-                         //pitchladder:  
+                         //pitchladder:
                          ( Graphic
                              components: {
                                  // sky background
-                                 ( Polygon 
+                                 ( Polygon
                                      color: ( rgb 0 0 0.5  )
                                      transform: ( Translation 0 0 -1 )
                                      vertices: {
-                                         [ -100.0   0.0 ] 
+                                         [ -100.0   0.0 ]
                                          [ -100.0 100.0 ]
                                          [  100.0 100.0 ]
                                          [  100.0   0.0 ]
@@ -616,14 +616,14 @@
                                          [  100.0    0.0 ]
                                      }
                                  )
-                                 zenith: 
+                                 zenith:
                                  ( Graphic
-                                     transform: ( Translation 0.0 20 ) 
+                                     transform: ( Translation 0.0 20 )
                                      color: white
                                      linewidth: 2
                                      components: {
                                          ( LineLoop
-                                             vertices: { 
+                                             vertices: {
                                                  [  0.0  -0.92 ]
                                                  [  0.06 -0.08 ]
                                                  [  0.29  0.0  ]
@@ -646,7 +646,7 @@
                                          )
                                      }
                                  ) // end of zenith graphic
-                                 horizonbar: 
+                                 horizonbar:
                                  ( Line
                                      color: white
                                      linewidth: 2
@@ -705,7 +705,7 @@
                                  ( NumericReadout
                                      color: cyan
                                      font: smallerfont
-                                     transform: ( Translation -1.6 6.2 ) 
+                                     transform: ( Translation -1.6 6.2 )
                                      value: 30
                                      format: "##"
                                  )
@@ -713,7 +713,7 @@
                                  ( NumericReadout
                                      color: cyan
                                      font: smallerfont
-                                     transform: ( Translation -1.6 12.9 ) 
+                                     transform: ( Translation -1.6 12.9 )
                                      value: 60
                                      format: "##"
                                  )
@@ -723,18 +723,18 @@
                                      transform: ( Translation 0.0 -20 )
                                      color: white
                                      components: {
-                                         ( OcclusionCircle 
-                                             radius: 0.35 
+                                         ( OcclusionCircle
+                                             radius: 0.35
                                              outerRadius: 0.4
                                              slices: 100
                                              filled: true
                                          )
-                                         ( Line 
+                                         ( Line
                                              linewidth: 2
-                                             vertices: { 
-                                                 [ 0.0 0.4 ] 
-                                                 [ 0.0 0.8 ] 
-                                             } 
+                                             vertices: {
+                                                 [ 0.0 0.4 ]
+                                                 [ 0.0 0.8 ]
+                                             }
                                          )
                                          // occlude those last two tick marks
                                          ( Polygon
@@ -750,7 +750,7 @@
                                  ) // end of nadir graphic
 
                                  // negative tick marks
-                                 ( TickMarks  
+                                 ( TickMarks
                                      linewidth: 2
                                      transform: ( Translation 1 -2.2 )
                                      gaugeLength: -20
@@ -759,7 +759,7 @@
                                      tickLength: 0.3
                                      color: white
                                  )
-                                 ( TickMarks  
+                                 ( TickMarks
                                      linewidth: 2
                                      transform: ( Translation -1 -2.2 )
                                      gaugeLength: -20
@@ -770,7 +770,7 @@
                                  )
 
                                  -10degree:
-                                 ( Graphic 
+                                 ( Graphic
                                      color: white
                                      transform: ( Translation 0 -2.2 )
                                      components: {
@@ -856,12 +856,12 @@
                                          )
                                      }
                                  ) // end of -30 degree graphic (small bar)
-                                 
-                                 -30degreetext:   
+
+                                 -30degreetext:
                                  ( NumericReadout
                                      color: cyan
                                      font: smallerfont
-                                     transform: ( Translation 1.6 -6.6 ) 
+                                     transform: ( Translation 1.6 -6.6 )
                                      value: 30
                                      format: "##"
                                  )
@@ -953,11 +953,11 @@
                                          )
                                      }
                                  ) // end of -60 degree graphic (small bar)
-                                 -60degreetext:   
+                                 -60degreetext:
                                  ( NumericReadout
                                      color: cyan
                                      font: smallerfont
-                                     transform: ( Translation 1.6 -13.3 ) 
+                                     transform: ( Translation 1.6 -13.3 )
                                      value: 60
                                      format: "##"
                                  )

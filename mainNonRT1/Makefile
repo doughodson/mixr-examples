@@ -5,6 +5,9 @@ PGM = mainNonRT1
 
 OBJS = main.o
 
+EDLS  = test1.edl
+EDLS += test2.edl
+
 LDFLAGS += -lmixr_models_jsbsim -lmixr_models -lJSBSim
 LDFLAGS += -lmixr_simulation
 LDFLAGS += -lmixr_instruments -lmixr_terrain
@@ -15,11 +18,14 @@ LDFLAGS += -lpthread
 
 CPPFLAGS += -I/usr/local/include
 
-all: edl $(PGM)
+all: $(EDLS) $(PGM)
 
-edl:
-	cpp configs/test1.epp >test1.edl   $(EPPFLAGS)
-	cpp configs/test2.epp >test2.edl   $(EPPFLAGS)
+run: all
+	.\$(PGM) -f test1.edl
+	.\$(PGM) -f test2.edl
+
+$(EDLS):
+	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

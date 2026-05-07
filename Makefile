@@ -104,8 +104,8 @@ $(PROJECTS):
 
 $(APPLICATIONS): shared
 
-edl:
-	-for d in $(PROJECTS); do (cd $$d; $(MAKE) edl ); done
+run:
+	-for d in $(PROJECTS); do (cd $$d; $(MAKE) run ); done
 
 clean:
 	-for d in $(PROJECTS); do (cd $$d; $(MAKE) clean ); done

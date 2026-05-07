@@ -3,6 +3,8 @@ include ../makedefs
 
 PGM = mainCockpit
 
+EDLS  = test1.edl
+
 OBJS  = SimStation.o TestDisplay.o
 OBJS += TestIoHandler.o
 OBJS += factory.o main.o
@@ -25,13 +27,16 @@ CPPFLAGS += -I/usr/local/include
 
 EPPFLAGS += -I.
 
-all: edl $(PGM)
+all: $(EDLS) $(PGM)
+
+run: all
+	./$(PGM) -f test1.edl
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 
-edl:
-	cpp configs/test1.epp >test1.edl $(EPPFLAGS)
+$(EDLS):
+	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)
 
 clean:
 	-rm -f *.o

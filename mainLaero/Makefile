@@ -3,6 +3,8 @@ include ../makedefs
 
 PGM = mainLaero
 
+EDLS = test.edl
+
 OBJS =  \
 	main.o \
 	AdiDisplay.o \
@@ -19,10 +21,13 @@ LDFLAGS += -lmixr_ui_glut -lmixr_instruments -lmixr_graphics -lmixr_graphics_ftg
 LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 LDFLAGS += -lrt
 
-all: edl $(PGM)
+all: $(EDLS) $(PGM)
 
-edl:
-	cpp configs/test.epp >test.edl $(EPPFLAGS)
+run: all
+	./$(PGM) -f test.edl
+
+$(EDLS):
+	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

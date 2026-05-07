@@ -14,9 +14,9 @@ LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt
 
-all: edl $(PGM) run
+all: edl $(PGM)
 
-run: edl $(PGM)
+run: all
 	./$(PGM) -f test.edl
 
 edl:

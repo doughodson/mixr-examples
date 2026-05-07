@@ -12,9 +12,7 @@ cd mainLaero;           make run; cd ..
 cd mainNonRT1;          make run; cd ..
 cd mainNonRT2;          make run; cd ..
 cd mainPuzzle1;         make run; cd ..
-#cd ../mainPuzzle2
-#echo "mainPuzzle2 -f puzzle.edl"
-#./mainPuzzle2 -f puzzle.edl
+cd mainPuzzle2;         make run; cd ..
 #cd ../mainSim1
 #echo "mainSim1 -f test0.edl"
 #./mainSim1 -f test0.edl

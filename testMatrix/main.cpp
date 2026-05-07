@@ -46,6 +46,7 @@ int main(int argc, char**)
              << "   7) getTriDiagonal()" << std::endl
              << "   8) getEigenPower()" << std::endl
              << "   9) getInverse()" << std::endl
+             << "   0) exit" << std::endl
              << std::endl;
 
    int num = 0;
@@ -88,6 +89,11 @@ int main(int argc, char**)
 
       case 9:
          test_getInverse();
+         break;
+
+      case 0:
+         std::cout << "Exit\n";
+         std::exit(EXIT_SUCCESS);
          break;
 
       default:

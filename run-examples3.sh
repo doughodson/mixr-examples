@@ -25,8 +25,8 @@ echo "testMetaObject"
 cd ../testNavUtils
 echo "testNavUtils"
 ./testNavUtils
-cd ../testNetHandler
-echo "testNetHandler"
+#cd ../testNetHandler
+#echo "testNetHandler"
 ./testNetHandler
 cd ../testRadar
 echo "testRadar -f test1.edl"

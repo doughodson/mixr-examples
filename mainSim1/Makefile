@@ -5,6 +5,12 @@ PGM = mainSim1
 
 OBJS = main.o
 
+EDLS = test0.edl
+EDLS += test1.edl
+EDLS += test2.edl
+EDLS += test3.edl
+EDLS += test4.edl
+
 LDFLAGS += -lxzmq -l:libzmq.a
 LDFLAGS += -lmixr_interop_dis -lmixr_interop
 LDFLAGS += -lmixr_ighost_cigi -lmixr_ighost_flightgear
@@ -18,14 +24,22 @@ CPPFLAGS += -I/usr/local/include
 
 EPPFLAGS +=  -I.
 
-all: edl $(PGM)
+all: $(EDLS) $(PGM)
 
-edl:
-	cpp configs/test0.epp > test0.edl $(EPPFLAGS)
-	cpp configs/test1.epp > test1.edl $(EPPFLAGS)
-	cpp configs/test2.epp > test2.edl $(EPPFLAGS)
-	cpp configs/test3.epp > test3.edl $(EPPFLAGS)
-	cpp configs/test4.epp > test4.edl $(EPPFLAGS)
+run: all
+	echo "mainSim1 -f test0.edl"
+	./$(PGM) -f test0.edl
+	echo "mainSim1 -f test1.edl"
+	./$(PGM) -f test1.edl
+	echo "mainSim1 -f test2.edl"
+	./$(PGM) -f test2.edl
+	echo "mainSim1 -f test3.edl"
+	./$(PGM) -f test3.edl
+	echo "mainSim1 -f test4.edl"
+	./$(PGM) -f test4.edl
+
+$(EDLS):
+	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)
 
 $(PGM): $(OBJS)
 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)

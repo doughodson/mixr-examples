@@ -3,14 +3,13 @@ include ../makedefs
 
 PGM = mainIgViewer
 
-EDLS = test.edl
-
 OBJS = \
 	SimpleIGen.o \
 	SimStation.o \
 	main.o \
 	factory.o
 
+EDLS = test.edl
 
 CPPFLAGS += -DOSG_LIBRARY_STATIC
 
@@ -27,7 +26,7 @@ LDFLAGS += -lrt
 all: $(EDLS) $(PGM)
 
 run: all
-	./$(PGM) -f test1.edl
+	./$(PGM) -f test.edl
 
 $(EDLS):
 	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)

@@ -90,13 +90,16 @@ mixr::simulation::ISimulation* builder(const std::string& filename)
 //
 // create simulation_with_players
 //
-int builder2() {
+mixr::simulation::ISimulation* builder2() {
 
-   return 0;
+   return nullptr;
 }
 
 int main(int argc, char* argv[])
 {
+   // build simulation without config file
+   mixr::simulation::ISimulation* simulation2{builder2()};
+
    // default configuration filename
    std::string configFilename{"test1.edl"};
 
@@ -119,10 +122,11 @@ int main(int argc, char* argv[])
    // execute simulation as fast as possible
    for(; simulation->getExecTimeSec() < 50.0; ) {
       // print out simulation time
-      std::cout << simulation->getExecTimeSec() << std::endl;
+//      std::cout << simulation->getExecTimeSec() << std::endl;
       // execute timestep
       simulation->tcFrame( dt );
       simulation->updateData( dt );
+
    }
    return 0;
 }

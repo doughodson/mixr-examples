@@ -1,0 +1,13 @@
+p2:
+( Aircraft
+    id: 102
+    type: "F-16A"
+    signature: ( RfSphereSignature radius: 1.0 )
+    initXPos: ( NauticalMiles 0 )
+    initYPos: ( NauticalMiles 0 )
+    initAlt: ( Feet 25000 )
+    initHeading: ( Degrees 30 )
+    initVelocity: 200
+    side: blue
+)
+

@@ -21,8 +21,8 @@ CPPFLAGS += -I/usr/local/include
 all: $(EDLS) $(PGM)
 
 run: all
-	.\$(PGM) -f test1.edl
-	.\$(PGM) -f test2.edl
+	./$(PGM) -f test1.edl
+	./$(PGM) -f test2.edl
 
 $(EDLS):
 	cpp configs/$(basename $@).epp > $@ $(EPPFLAGS)

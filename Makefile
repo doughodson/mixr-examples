@@ -17,6 +17,7 @@ APPLICATIONS += mainGlut
 
 # non-real-time simulation
 APPLICATIONS += mainNonRT1
+APPLICATIONS += mainNonRT2
 
 # terrain database loader
 APPLICATIONS += mainTerrain

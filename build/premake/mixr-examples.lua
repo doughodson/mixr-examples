@@ -136,8 +136,8 @@ workspace "examples"
    -- demos
    dofile "demos.lua"
 
-   -- examples
-   dofile "examples.lua"
+   -- mains
+   dofile "mains.lua"
 
    -- tests
    dofile "tests.lua"

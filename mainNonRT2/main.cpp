@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
 }
 */
 
+
 #include "mixr/simulation/ISimulation.hpp"
 #include "mixr/base/edl_parser.hpp"
 #include "mixr/base/Pair.hpp"
@@ -87,18 +88,36 @@ mixr::simulation::ISimulation* builder(const std::string& filename)
    return simulation;
 }
 
+
+#include "mixr/models/WorldModel.hpp"
+#include "mixr/models/player/air/Aircraft.hpp"
+#include "mixr/models/player/weapon/Aam.hpp"
+#include "mixr/models/system/StoresMgr.hpp"
+
 //
 // create simulation_with_players
 //
-mixr::simulation::ISimulation* builder2() {
+mixr::simulation::ISimulation* build_simulation()
+{
+   // create a simulation (model of the world)
+   auto* simulation = new mixr::models::WorldModel();
+   // aircraft
+   auto* aircraft = new mixr::models::Aircraft();
+   // air to air missile
+   auto* missile = new mixr::models::Aam();
+   // create a storage manager for missile
+   auto* store = new mixr::models::StoresMgr();
 
-   return nullptr;
+   // add aircraft to world model
+   simulation->addNewPlayer("p0", aircraft);
+
+   return simulation;
 }
 
 int main(int argc, char* argv[])
 {
    // build simulation without config file
-   mixr::simulation::ISimulation* simulation2{builder2()};
+   mixr::simulation::ISimulation* simulation2{build_simulation()};
 
    // default configuration filename
    std::string configFilename{"test1.edl"};

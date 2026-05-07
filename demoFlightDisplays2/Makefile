@@ -14,7 +14,10 @@ LDFLAGS += -lftgl -lfreetype -lglut -lGLU -lGL -lX11 -lpthread
 #LDFLAGS += -lXi -lXmu
 LDFLAGS += -lrt
 
-all: edl $(PGM)
+all: edl $(PGM) run
+
+run: edl $(PGM)
+	./$(PGM) -f test.edl
 
 edl:
 	cpp configs/test.epp >test.edl $(EPPFLAGS)

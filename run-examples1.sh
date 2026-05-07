@@ -1,14 +1,8 @@
 
 source setenv.sh
-cd demoEfis
-echo "demoEfis -f glutdisplay.edl"
-./demoEfis -f glutdisplay.edl
-cd ../demoFlightDisplays1
-echo "demoFlightDisplay1 -f test.edl"
-./demoFlightDisplays1 -f test.edl
-cd ../demoFlightDisplays2
-echo "demoFlightDisplay2 -f test.edl"
-./demoFlightDisplays2 -f test.edl
+cd demoEfis; make run; cd ..
+cd demoFlightDisplays1; make run; cd ..
+cd demoFlightDisplays2; make run; cd ..
 cd ../demoInstruments
 echo "demoInstruments -f testinstruments.edl"
 ./demoInstruments -f testinstruments.edl

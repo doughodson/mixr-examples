@@ -9,5 +9,30 @@ p1:
     initHeading: ( Degrees 0 )
     initVelocity: 250
     side: blue
+
+    components: {
+      sms: ( StoresMgr
+         numStations: 1
+         stores: {
+               1: ( AamMissile
+                  id: 201
+                  type: "AIM-120C"
+                  signature: ( RfDihedralCRSignature a: 0.1 )
+                  mode: inactive
+                  minSpeed: 0
+                  maxSpeed: 800
+                  speedMaxG: 800
+                  maxg: 9
+                  maxAccel: 200
+                  maxBurstRng: 50
+                  maxTOF: 30
+                  eobt: 90
+                  tsg: 0
+                  dataLogTime: ( Seconds 0.2 ) // record missile at 5hz
+               )
+            }
+        )
+
+    }
 )
 

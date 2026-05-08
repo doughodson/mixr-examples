@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
    // execute simulation as fast as possible
    for(; simulation->getExecTimeSec() < 50.0; ) {
       // print out simulation time
-//      std::cout << simulation->getExecTimeSec() << std::endl;
+      std::cout << simulation->getExecTimeSec() << std::endl;
       // execute timestep
       simulation->tcFrame( dt );
       simulation->updateData( dt );

@@ -108,6 +108,10 @@ mixr::simulation::ISimulation* build_simulation()
    // create a storage manager for missile
    auto* store = new mixr::models::StoresMgr();
 
+   // add missile to stores manager
+
+
+
    // add aircraft to world model
    simulation->addNewPlayer("p0", aircraft);
 

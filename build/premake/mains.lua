@@ -151,15 +151,13 @@ project "mainNonRT2"
    includedirs { MIXR_IncPath, MIXR_3rdPartyIncPath }
    libdirs     { MIXR_LibPath, MIXR_3rdPartyLibPath }
    filter "configurations:Release"
-      links {"mixr_models_jsbsim", "mixr_models", "JSBSim"}
-      links {"mixr_ighost_cigi", LibCigi, "mixr_ighost_flightgear"}
+      links {"mixr_models"}
       links {"mixr_simulation", "mixr_terrain"}
       links {"mixr_ui_glut", "mixr_instruments", "mixr_graphics", "mixr_base"}
       links {LibFtgl, LibFreetype, LibGlut, LibGLU, LibGL}
       links {LibWindows}
    filter "configurations:Debug"
-      links {"mixr_models_jsbsim_d", "mixr_models_d", "JSBSim_d"}
-      links {"mixr_ighost_cigi_d", LibCigi_d, "mixr_ighost_flightgear_d"}
+      links {"mixr_models_d"}
       links {"mixr_simulation_d", "mixr_terrain_d"}
       links {"mixr_ui_glut_d", "mixr_instruments_d", "mixr_graphics_d", "mixr_base_d"}
       links {LibFtgl_d, LibFreetype_d, LibGlut_d, LibGLU, LibGL}

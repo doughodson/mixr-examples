@@ -11,6 +11,9 @@ echo "mainTerrain -f test.edl"
 cd ../mainUbf1
 echo "mainUbf1 -f test00.edl"
 ./mainUbf1 -f test00.edl
+cd ../mainUbf2
+echo "mainUbf2 -f test00.edl"
+./mainUbf2 -f test00.edl
 cd ../testDafif
 echo "testDafif"
 ./testDafif

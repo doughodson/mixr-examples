@@ -1,0 +1,19 @@
+
+( DisNetIO
+
+   siteID: 1
+   applicationID: 1
+   exerciseID: 1
+       
+   enableInput: true
+   enableOutput: true
+   enableRelay: false
+      
+   netInput:  ( UdpBroadcastHandler localIpAddress: localhost  networkMask: "255.0.0.0"  port: 3000  ignoreSourcePort: 3251 shared: true )
+   netOutput: ( UdpBroadcastHandler localIpAddress: localhost  networkMask: "255.0.0.0"  port: 3000  localPort: 3251        shared: true )
+
+   // DIS entity type files
+   #include "DisIncomingEntityTypes.epp"
+   #include "DisOutgoingEntityTypes.epp"
+)
+

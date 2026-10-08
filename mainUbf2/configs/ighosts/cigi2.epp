@@ -1,0 +1,31 @@
+
+#define IG_INPUT_IP                "127.0.0.1"              // IP address for IG input (local TN)
+#define IG_INPUT_PORT              8008                     // Port number the IG machine is broadcasting on
+#define IG_OUTPUT_IP               "127.0.0.1"              // IP address for IG output (remote TN)
+#define IG_OUTPUT_PORT             8108                     // IG's incoming port
+#define IG_OUTPUT_SOURCE_PORT      8208
+
+( CigiHost
+   maxRange: ( NauticalMiles 20.0 )
+   maxModels: 50
+   maxElevations: 20
+   async: true
+   session: (CigiHostSession
+      netInput:  ( UdpUnicastHandler localIpAddress: IG_INPUT_IP ipAddress: IG_INPUT_IP  port: IG_INPUT_PORT )
+      netOutput: ( UdpUnicastHandler localIpAddress: IG_INPUT_IP ipAddress: IG_OUTPUT_IP port: IG_OUTPUT_PORT localPort: IG_OUTPUT_SOURCE_PORT )
+   )
+
+   typeMap: {
+      ( Player2CigiMap  factoryName: UnmannedAirVehicle  typeName: "GenericUnmannedAirVehicle"  entityId: 403 )
+      ( Player2CigiMap  factoryName: UnmannedAirVehicle  typeName: "RQ-1"                       entityId: 405 )
+   }
+
+/*
+    <!-- HostAddressList is the address to communicate with host that is sending position info to SubrSceneControl -->
+    <!-- HostPort is the port to communicate with host that is sending position info to SubrSceneControl -->
+    <!-- these correspond to netInput line of IG -->
+
+    <!-- ControlAddress is automatic, address of machine on which SubrSceneControl is running - IG Ethernet IP -->
+    <!-- ControlPortList is the port on which it listens for input - IG Port -->
+    <!-- these corresponds to netOutput line of IG -->
+*/

@@ -31,8 +31,9 @@ APPLICATIONS += mainSim1 mainSim2 mainSim3
 # ground mapping radar example
 APPLICATIONS += mainGndMapRdr
 
-# ubf example
+# ubf examples
 APPLICATIONS += mainUbf1
+APPLICATIONS += mainUbf2
 
 # example of Laero model and autopilot functionality
 APPLICATIONS += mainLaero
@@ -103,6 +104,9 @@ $(PROJECTS):
 	$(MAKE) -C $@
 
 $(APPLICATIONS): shared
+
+edl:
+	-for d in $(PROJECTS); do (cd $$d; $(MAKE) edl ); done
 
 run:
 	-for d in $(PROJECTS); do (cd $$d; $(MAKE) run ); done

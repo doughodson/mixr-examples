@@ -1,0 +1,14 @@
+
+// ----------------------
+// dynamics
+// ----------------------
+
+#define JSBSIM_DYNAMICS(MODEL)      \
+( JSBSimDynamics                    \
+   rootDir: MIXR_DATA_JSBSIM_PATH   \
+   model: MODEL                     \
+)
+
+#define LAERO_DYNAMICS()            \
+( LaeroDynamics )
+

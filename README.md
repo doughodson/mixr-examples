@@ -56,6 +56,8 @@ Example Applications
 
 * mainUbf1 -- A version of 'mainCockpit' that uses UBF behaviors to 'fly' an aircraft
 
+* mainUbf2 -- A version of 'mainCockpit' that uses UBF behaviors to 'fly' an aircraft
+
 Example GUI Applications
 ------------------------
 
